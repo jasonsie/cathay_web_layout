@@ -1,4 +1,4 @@
-# 國泰世華銀行海外分行網站 Layout
+# 國泰世華銀行海外分行網站 Layout - Test Only
 
 ## 專案結構 (Project Structure)
 
@@ -15,17 +15,17 @@ cathay/
 
 ## 技術規格 (Tech Stack)
 
-- **HTML5** - 語意化標記
-- **CSS3** - 現代化樣式設計
-- **響應式設計** - 支援多種螢幕尺寸
-- **無障礙設計** - 符合網頁可及性標準
+-  **HTML5** - 語意化標記
+-  **CSS3** - 現代化樣式設計
+-  **響應式設計** - 支援多種螢幕尺寸
+-  **無障礙設計** - 符合網頁可及性標準
 
 ## 開發環境設置 (Development Setup)
 
 ### 環境需求 (Prerequisites)
 
-- 現代化網頁瀏覽器 (Chrome, Firefox, Safari, Edge)
-- 本機伺服器工具 (推薦使用 Live Server)
+-  現代化網頁瀏覽器 (Chrome, Firefox, Safari, Edge)
+-  本機伺服器工具 (推薦使用 Live Server)
 
 ### 安裝與運行 (Installation & Running)
 
@@ -88,18 +88,18 @@ php -S localhost:8000
 
 ## 開發注意事項 (Development Notes)
 
-- 所有圖片資源目前連結到 `cathaybk.com.tw` 的外部資源
-- 網銀登入連結指向正式環境的登入頁面
-- 導航連結目前指向相對路徑，需要配合完整網站結構使用
-- CSS 檔案採用模組化設計，分別處理不同組件的樣式
+-  所有圖片資源目前連結到 `cathaybk.com.tw` 的外部資源
+-  網銀登入連結指向正式環境的登入頁面
+-  導航連結目前指向相對路徑，需要配合完整網站結構使用
+-  CSS 檔案採用模組化設計，分別處理不同組件的樣式
 
 ## 瀏覽器支援 (Browser Support)
 
-- Chrome (最新版本)
-- Firefox (最新版本)
-- Safari (最新版本)
-- Edge (最新版本)
-- 支援響應式設計，適用於桌面、平板、手機
+-  Chrome (最新版本)
+-  Firefox (最新版本)
+-  Safari (最新版本)
+-  Edge (最新版本)
+-  支援響應式設計，適用於桌面、平板、手機
 
 ## 貢獻指南 (Contributing)
 
@@ -107,10 +107,6 @@ php -S localhost:8000
 2. 確保響應式設計在各種裝置上正常運作
 3. 測試多語言切換功能
 4. 維持無障礙設計標準
-
-## 授權 (License)
-
-© 國泰世華商業銀行股份有限公司
 
 ---
 

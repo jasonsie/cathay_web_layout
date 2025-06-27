@@ -930,6 +930,11 @@
    margin: 0;
 }
 
+.component-header .ch-nav-lv2-item .ch-nav-lv3-title {
+   font-size: 20px;
+   font-weight: 800;
+}
+
 @media (min-width: 992px) {
    .component-header .ch-nav-lv2-item {
       padding: 0 25px;

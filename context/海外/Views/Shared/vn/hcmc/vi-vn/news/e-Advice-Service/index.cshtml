@@ -1,0 +1,54 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "e-Advice Service - New Transaction Type and Function Announcement";
+    ViewBag.PageDescription = "";
+}
+@section Scripts {}
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news.jpg")' alt='@ViewBag.nav_news'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_news</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_news</h1>
+        </div>
+    </div>
+</div>
+
+<!-- newsview -->
+<article class="component-newsview">
+    <div class="component-newsview-inner">
+        <header class="component-newsview-header">
+            <div class="component-newsview-date"></div>
+            <h1 class="component-newsview-title">Dịch vụ e-Advice - Thông báo về Loại Giao dịch và Chức năng mới</h1>
+        </header>
+
+        <div class="component-newsview-body">
+            <p>
+                Bắt đầu từ ngày 10 tháng 03 năm 2025, dịch vụ e-Advice “Tiền gửi và Chuyển tiền” sẽ bao gồm thêm thông tin giao dịch “Tiền Gửi Có Kỳ Hạn”.<br>
+
+            <p>
+                Bên cạnh đó, người dùng mới của “Global MyB2B” (hiện chỉ áp dụng cho khách hàng doanh nghiệp) có thể nhanh chóng kích hoạt dịch vụ e-Advice và thiết lập địa chỉ email thông qua hướng dẫn từng bước trong hệ thống. Các tính năng này giúp khách hàng tiếp cận các thông tin giao dịch một cách nhanh chóng và thuận tiện hơn.<br>
+
+            <p>
+                Chúng tôi cam kết cung cấp dịch vụ hiệu quả hơn đến quý khách hàng và hy vọng quý khách hàng sẽ tận hưởng sự tiện lợi mà các tính năng mới này mang lại.<br>
+
+            <p>Nếu quý khách hàng có bất kỳ câu hỏi nào về dịch vụ e-Advice, vui lòng liên hệ với với quản lý quan hệ khách hàng hoặc gọi đến đường dây nóng dịch vụ khách hàng của chúng tôi theo số: +84-28-3825-8768.<br>
+
+</div>
+
+        <footer class="component-newsview-footer">
+            <div class="component-btn-row">
+                <a class="component-btn-main btn-green" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/")">Trở lại</a>
+            </div>
+        </footer>
+    </div>
+</article><!--/.component-newsview-->

@@ -1,0 +1,74 @@
+﻿@if (ViewBag.lang == "zh-hant")
+{
+    <div class='component-oversea-modal component-oversea-modal--fraud'>
+        <div class="modal" tabindex="-1">
+            <div class="modal-dialog  modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="com-body">
+                        <div class="com-title">提醒您切勿相信<br/>來路不明之簡訊訊息</div>
+                        <p class="com-p com-p--align-left">
+                            國泰世華提醒您：<br/>
+                            本行不會主動請您登入網路銀行綁定用戶資料。<br /><br />
+                            若收到假借本行名義或來路不明之簡訊訊息，切勿相信或點選連結，以維護您的權益。
+                            如您近日已於可疑網址輸入網路銀行的用戶代號及網銀密碼，建議您儘速進行更改。<br /><br />
+                            如有任何疑問，<br />請致電本行客服專線：+65 6593 9280。
+                        </p>
+                        <div class="com-btn-wrap">
+                            <a href="javascript:;" role='close-com-modal' class="com-btn">關閉視窗</a>
+                        </div>
+                    </div>
+                    <button type="button" role='close-com-modal' class="com-btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+}else if(ViewBag.lang == "zh-cn")
+{
+    <div class='component-oversea-modal component-oversea-modal--fraud'>
+        <div class="modal" tabindex="-1">
+            <div class="modal-dialog  modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="com-body">
+                        <div class="com-title">提醒您切勿相信<br/>来路不明之简讯讯息</div>
+                        <p class="com-p com-p--align-left">
+                            国泰世华提醒您：<br/>
+                            本行不会主动请您登入网路银行绑定用户资料。 <br /><br />
+                            若收到假借本行名义或来路不明之简讯讯息，切勿相信或点选连结，以维护您的权益。
+                            如您近日已于可疑网址输入网路银行的用户代号及网银密码，建议您尽速进行更改。 <br /><br />
+                            如有任何疑问，<br />请致电本行客服专线：+65 6593 9280。
+                        </p>
+                        <div class="com-btn-wrap">
+                            <a href="javascript:;" role='close-com-modal' class="com-btn">关闭视窗</a>
+                        </div>
+                    </div>
+                    <button type="button" role='close-com-modal' class="com-btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else if(ViewBag.lang == "en")
+{
+    <div class='component-oversea-modal component-oversea-modal--fraud'>
+        <div class="modal" tabindex="-1">
+            <div class="modal-dialog  modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="com-body">
+                        <div class="com-title">Don't trust SMS<br/>from unknown sources</div>
+                        <p class="com-p com-p--align-left">
+                            Cathay United Bank reminds you:<br/>
+                            The Bank will not ask you to log in to Internet Banking to bind your user information.<br /><br />
+                            If you receive a text message in the name of the Bank or from an unknown source, to protect your rights and interests, do not believe it or click on the link. If you have recently entered your Internet Banking User ID and Password on a suspicious website, it is advised to change them as soon as possible.<br /><br />
+                            If you have any questions, please call our Customer Service Hotline at +65 6593 9280 (General Line)
+                        </p>
+                        <div class="com-btn-wrap">
+                            <a href="javascript:;" role='close-com-modal' class="com-btn">Close</a>
+                        </div>
+                    </div>
+                    <button type="button" role='close-com-modal' class="com-btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}

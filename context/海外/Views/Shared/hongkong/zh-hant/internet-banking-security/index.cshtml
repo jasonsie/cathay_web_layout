@@ -1,0 +1,110 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "網路安全注意事項";
+    ViewBag.PageDescription = "國泰世華商業銀行香港分行提醒您，使用網路銀行請遵守本分行之安全建議。";
+}
+
+
+@section Scripts {}
+
+    <div class='component-oversea-kv-short'>
+        <figure class='coks-figure'>
+            <picture>
+                <source media='(min-width: 768px)'
+                        data-srcset='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/financial-disclosure-lg.jpg")' />
+                <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/financial-disclosure.jpg")' alt='Security and Privacy'>
+            </picture>
+            <figcaption hidden>@ViewBag.nav_privacy_security</figcaption>
+        </figure>
+        <div class="coks-inner">
+            <div class="coks-content">
+                <h1 class='coks-title'>@ViewBag.nav_privacy_security</h1>
+            </div>
+        </div>
+    </div>
+    <div class='component-oversea-info'>
+        <div class="coi-inner">
+            <h1 class="coi-title">
+                網路安全注意事項
+            </h1>
+            <div class="coi-content">
+                <p class="coi-p"><b>網路銀行使用安全建議</b></p>
+                <ul class="coi-ul">
+                    <li class='coi-li'>本行不會主動要求客戶登入網路銀行輸入賬戶及個人資料，包括用戶名稱及私人密碼。</li>
+                    <li class='coi-li'>若收到假藉本行名義或來路不明之簡訊訊息及電郵，切勿相信或點選連結，以維護您的權益。 </li>
+                    <li class='coi-li'>數碼KEY需看緊，按連結前要三思，小心保護個人登入資料，按連結前要再三考慮！</li>
+                    <li class='coi-li'>了解更多，請參考香港金融管理局提供關於「網絡釣魚」攻擊的防範及資訊。<br /><a class='coi-link' href='https://www.hkma.gov.hk/chi/smart-consumers/beware-of-fraudsters/' target="_blank" rel='noopener nofollow'>https://www.hkma.gov.hk/chi/smart-consumers/beware-of-fraudsters/</a> </li>
+                    <li class='coi-li'>登入網上銀行後，請勿離開電腦。</li>
+                    <li class='coi-li'>檢查登入網頁及過程有否異樣。</li>
+                    <li class='coi-li'>請謹記當您完成所有網路銀行服務後，一定要登出網址以及關閉瀏覽器。 </li>
+                    <li class='coi-li'>如用瀏覽器內的標籤及使用搜索引擎連接到網上銀行網站，請確定網站之真實。</li>
+                    <li class='coi-li'>當您申請網路銀行時，請於第一時間內變更銀行發給您的網路銀行密碼單內之登入密碼，使用紙本密碼單完成密碼變更動作後，請務必將紙本密碼單銷毀。</li>
+                    <li class='coi-li'>每隔一段時間更改密碼，例如最少每三個月更改一次(尤其懷疑密碼有外洩情形時更應馬上掛失或變更網路銀行密碼)。</li>
+                    <li class='coi-li'>不要向任何人士披露用戶名稱及密碼。(甚至連國泰世華商業銀行的任何人員，都不會要求閣下說出密碼。)  請不要將您的密碼之任何書面紀錄隨意紀錄在：(1)任何可登入網路銀行的裝置、(2)經常隨身攜帶的物件、(3)靠近電腦或裝置的地方。</li>
+                    <li class='coi-li'>不要寫下或記錄密碼而不加掩藏。</li>
+                    <li class='coi-li'>設定難以猜破的登入密碼，不要用您的出生日期、姓名、身份證號碼、電話號碼或類似數字作為密碼。</li>
+                    <li class='coi-li'>輸入用戶名稱、密碼或任何重要個人資料時注意不要被周遭他人窺視。</li>
+                    <li class='coi-li'>於不同的網站使用不同的用戶名稱及密碼，不要選用您於其他網站登記使用的密碼。</li>
+                    <li class='coi-li'>不應使用公眾電腦 (例如數碼咖啡室／網吧內的電腦) 或在公眾地方提供的上網服務進入網路銀行進行交易或查詢戶口結餘，因為這些電腦有可能已遭入侵（別人可能藉此取得您的個人或戶口資料）。</li>
+                    <li class='coi-li'>於使用網路銀行服務時，切勿同時開啟其他瀏覽器及瀏覽其他網站。</li>
+                    <li class='coi-li'>使用網上銀行服務後，請緊記以「登出」按鈕離開，並查核確認離開系統之畫面。</li>
+                    <li class='coi-li'>瀏覽其他網頁之前，請先登出網上銀行服務網頁。</li>
+                    <li class='coi-li'>於使用網路銀行服務時，切勿讓網頁長時間閒置。</li>
+                    <li class='coi-li'>為避免閣下的個人資料為他人所用，請勿以他人熟悉的格式寫下您的個人網上銀行戶口資料。若閣下使用電子工具儲存個人資料，請確保該資料保密以防止被他人盜取及使用。</li>
+                    <li class='coi-li'>如果您忘記了使用者密碼，請洽本分行重新申請。</li>
+                    <li class='coi-li'>請注意某些資料(如密碼)是有可能暫存在硬碟機的記憶體內，務必先清除貯藏處，關掉瀏覽器。</li>
+                    <li class='coi-li'>國泰世華商業銀行不會以電子郵件或致電客戶要求客戶提供密碼及相關個人資料。</li>
+                    <li class='coi-li'>本行不會寄送任何附於超連結、二維條碼或QR碼的電郵給客戶。</li>
+                    <li class='coi-li'>不要開啟來歷不明並載有附件的電子郵件，並應刪除垃圾郵件，切勿經由電子郵件、未知應用程式內的連結或網路搜尋器登入網路銀行，並避免安裝或執行來源不明的軟體及程式，應避免使用電子郵件傳送個人資訊或密碼。</li>
+                    <li class='coi-li'>請您定期更新您電腦上的防毒軟體版本並掃除病毒，請於您的電腦加裝正版安全性防衛軟體(例如：防火牆或防毒軟體)，並隨時更新病毒碼、掃瞄引擎，以減少木馬程式(後門程式)、病毒、蠕蟲及其他程式惡意碼入侵您的電腦，側錄個人資料。</li>
+                    <li class='coi-li'>請您使用正版的作業系統及軟體並安裝最新的作業系統和瀏覽器安全修正並於您登入網路銀行的電腦設置開機密碼。</li>
+                    <li class='coi-li'>如使用手提電腦連接網路銀行，請關閉無需使用的無線網絡功能(如藍芽及NFC等等)。</li>
+                    <li class='coi-li'>為確保您的網上交易獲得更週全保障，所有轉賬至銀行第三者戶口，必須於本行預先登記有關賬戶或以雙重認證服務方式轉賬至銀行戶口。</li>
+                    <li class='coi-li'>如貴客戶為企業用戶，建議儘可使用雙控(Maker/Checker)以上的安全機制。</li>
+                    <li class='coi-li'>應定期檢查您的銀行月結單，以確保您的網上交易記錄正確，如發現異常請告知本分行。 </li>
+                    <li class='coi-li'>即時查閱銀行發出的交易紀錄。</li>
+                    <li class='coi-li'>客戶應自行安裝電腦所需之軟體、硬體，以及其它與安全相關之設備。安裝所需之費用及風險，由客戶自行負擔。</li>
+                    <li class='coi-li'>如果您對網上保安或閣下的戶口活動有懷疑，請在合理切實及可行範圍內於香港辦公時間內致電+852 2877 5488與本行服務人員聯絡及應盡快更改密碼。</li>
+                </ul>
+                <br />
+
+                <p class="coi-p"><b>行動裝置安全建議</b></p>
+                <ul class="coi-ul">
+                    <li class='coi-li'>行動裝置（如：智能手機、平板電腦）已成為我們生活中不可或缺的工具，透過行動裝置使用網路銀行服務時，應注意各種資訊安全的措施，以防止不肖人士透過保安漏洞入侵您的行動裝置。</li>
+                    <li class='coi-li'>提醒您，國泰世華商業銀行香港分行並沒有提供任何由AppStore及GooglePlay™ 等來源下載的官方應用程式（APP），千萬不要下載任何疑似偽冒本行應用程式（APP），如有疑問，請致電本行。</li>
+                    <li class='coi-li'>在行動裝置上安裝信譽良好品牌的防毒軟件，並隨時保持病毒碼更新，以提升使用的安全性。</li>
+                    <li class='coi-li'>
+                        <p class="coi-p"><b>若您使用行動裝置的網頁瀏覽器，透過網路銀行登入網頁登入，請注意以下安全事項：</b></p>
+                        <ul class="coi-ul">
+                            <li class='coi-li'>請持續更新行動裝置的操作系統（OS）和應用程式。</li>
+                            <li class='coi-li'>請使用自動上鎖或啟用密碼鎖功能，防止他人未經許可使用您的行動裝置。</li>
+                            <li class='coi-li'>切勿使用他人設備登入個人的電子銀行帳戶。</li>
+                            <li class='coi-li'>請避免將帳號及密碼儲存在行動裝置上及網頁上。</li>
+                            <li class='coi-li'>請避免使用已破解或非法入侵的行動裝置（如：越獄(jailbreak)、超級用戶權限(root)）。</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <br />
+                <p class="coi-p"><b>相關連結</b></p>
+                <ul class="coi-ul">
+                    <li class='coi-li'>
+                         <a href="https://www.hkma.gov.hk/chi/" class="coi-link" target="_blank" rel='noopener nofollow'>香港金融管理局</a>
+                    </li>
+                    <li class='coi-li'>
+                        <a href = "http://www.hkab.org.hk/index.jsp?lang=b5" class="coi-link" target="_blank" rel='noopener nofollow'>香港銀行公會</a>
+                    </li>
+                    <li class='coi-li'>
+                        <a href="https://www.sfc.hk/TC/" class="coi-link" target="_blank" rel='noopener nofollow'>香港證券及期貨事務監察委員會</a>
+                    </li>
+                </ul>
+    
+                <p class="coi-p">
+                    注意：倘若閣下作出欺詐行為或因為嚴重疏忽或未能遵守上述之保障措施而招致任何損失，閣下將要承擔所有損失。本分行一貫採取嚴格的保安標準及程序，以防止未獲授權人士取得有關閣下的資料。國泰世華商業銀行絕對不會在正常的網路銀行登入程序以外，接觸閣下及要求閣下確認個人資料，例如網路銀行使用者ID、使用者密碼或使用者代號。倘閣下接獲此等要求，請立即致電+852 2877 5488通知本行。
+                </p>
+
+            </div>
+
+        </div>
+    </div><!--/.component-oversea-info-->

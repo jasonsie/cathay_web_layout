@@ -1,0 +1,270 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "Key Financial Information Disclosure Statement";
+    ViewBag.PageDescription = "Key Financial Information Disclosure Statement、流動性維持比率、財務披露聲明書";
+}
+@section Scripts {
+    <script>
+    var country = "@ViewBag.country_url";
+    var city = "@ViewBag.city_url";
+    var lang = "en";
+    var branchId = "610";
+    </script>
+    <script src="@Url.Content("~/OVSWS/Content/js/backendSystem/Financial.js")"></script>
+}
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/financial-disclosure-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/financial-disclosure.jpg")' alt='@ViewBag.nav_financial_disclosure'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_financial_disclosure</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_financial_disclosure</h1>
+        </div>
+    </div>
+</div>
+
+<div class='component-oversea-list'>
+    <div class="col-inner">
+        <div class="col-list-wrap">
+            <ul class='col-list'>
+                <li class='col-item'>
+                    <span class='col-item-date'>2025.03.31</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Q1</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2025/2025Q1.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2024.03.31</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Q1</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2024/2024Q1.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2024.06.30</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Q2</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2024/2024Q2.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2024.09.30</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Q3</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2024/2024Q3.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2024.12.31</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Q4</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2024/2024Q4.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2024.12.31</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Annual</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2024/2024Annual.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2023.03.31</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Q1</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2023/2023Q1.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2023.06.30</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Q2</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2023/2023Q2.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2023.09.30</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Q3</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2023/2023Q3.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2023.12.31</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Q4</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2023/2023Q4.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2023.12.31</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Annual</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2023/2023Annual.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2022.03.31</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Q1</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2022/2022Q1.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2022.06.30</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Q2</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2022/2022Q2.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2022.09.30</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Q3</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2022/2022Q3.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2022.12.31</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Q4</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2022/2022Q4.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2022.12.31</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Annual</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2022/2022Annual.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2021.03.31</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Q1</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2021/2021Q1.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2021.06.30</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Q2</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2021/2021Q2.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2021.09.30</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Q3</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2021/2021Q3.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2021.12.31</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Q4</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2021/2021Q4.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2021.12.31</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Annual</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2021/2021Annual.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2020.03.31</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Q1</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2020/2020Q1.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2020.06.30</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Q2</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2020/2020Q3.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2020.09.30</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Q3</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2020/2020Q3.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2020.12.31</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Q4</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2020/2020Q4.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2020.12.31</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Annual</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2020/2020Annual.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2019.03.31</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Q1</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2019/2019Q1.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2019.06.30</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Q2</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2019/2019Q3.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2019.09.30</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Q3</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2019/2019Q3.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2019.12.31</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Q4</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2019/2019Q4.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2019.12.31</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Annual</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2019/2019Annual.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2018.03.31</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Q1</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2018/2018Q1.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2018.06.30</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Q2</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2018/2018Q3.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2018.09.30</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Q3</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2018/2018Q3.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2018.12.31</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Q4</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2018/2018Q4.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2018.12.31</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Annual</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2018/2018Annual.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2017.03.31</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Q1</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2017/2017Q1.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2017.06.30</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Q2</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2017/2017Q3.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2017.09.30</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Q3</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2017/2017Q3.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2017.12.31</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Q4</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2017/2017Q4.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2017.12.31</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Annual</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2017/2017Annual.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2016.03.31</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Q1</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2016/2016Q1.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2016.06.30</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Q2</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2016/2016Q3.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2016.09.30</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Q3</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2016/2016Q3.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2016.12.31</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Q4</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2016/2016Q4.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-date'>2016.12.31</span>
+                    <span class='col-item-title'>Key Financial Information Disclosure Statement Annual</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/2016/2016Annual.PDF")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

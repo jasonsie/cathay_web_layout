@@ -1,0 +1,43 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "Thông tin liên hệ";
+    ViewBag.PageDescription = "Phòng 506, Tầng 5, Tháp Hà Nội, 49 Hai Ba Trưng, Quận Hoàn Kiếm, TP.Hà Nội, Việt Nam";
+}
+
+@section Scripts {}
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/contact-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img"+"/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/contact.jpg")' alt='@ViewBag.nav_contact'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_contact</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_contact</h1>
+        </div>
+    </div>
+</div>
+
+
+    <div class='component-oversea-info'>
+        <div class='coi-inner'>
+            <h2 class='coi-title'>Thông tin liên hệ</h2>
+
+            <div class='coi-content'>
+                <ul class="coi-list">
+                    <li class="coi-item">
+                        <span class='coi-item-label'>Địa chỉ:</span>
+                        <span class="coi-item-content">Phòng 506, Tầng 5, Tháp Hà Nội, Số 49 Hai Bà Trưng, Quận Hoàn Kiếm, TP.Hà Nội, Việt Nam</span>
+                    </li>
+                    <li class="coi-item">
+                        <span class='coi-item-label'>'Điện thoại:</span>
+                        <span class="coi-item-content">+84 24 39366566</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>

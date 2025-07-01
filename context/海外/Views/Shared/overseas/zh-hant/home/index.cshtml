@@ -1,0 +1,289 @@
+﻿@model IndexViewModel
+@using System.Web.Configuration;
+@{
+    ViewBag.PageTitle = "國泰世華銀行海外據點";
+    ViewBag.PageDescription = "國泰世華銀行致力於提供客戶廣泛的創新金融解決方案，降低風險並支持國際業務增長和機遇，並持續在全世界拓展業務";
+}
+
+@section Scripts {
+
+}
+<div class='component-oversea-kv'>
+    <div class="cok-inner">
+        <figure class='cok-figure'>
+            <picture>
+                <source media='(min-width: 992px)' srcset='@Url.Content("~/OVSWS/Content/img/overseas/kv/bg-lg.jpg")' />
+                <img class='cok-img' src='@Url.Content("~/OVSWS/Content/img/overseas/kv/bg.jpg")' alt='海外據點'>
+            </picture>
+
+
+            <figcaption hidden>海外據點</figcaption>
+        </figure>
+        <h1 class="cok-title">海外據點</h1>
+    </div>
+</div>
+<div class='component-oversea-overview'>
+    <div class="coo-inner">
+        <div class="coo-description">
+            國泰世華銀行致力於提供客戶廣泛的創新金融解決方案，
+            <br />降低風險並支持國際業務增長和機遇，並持續在全世界拓展業務
+        </div>
+    </div>
+</div>
+<div class='component-oversea-list'>
+    <div class="col-inner">
+
+            <div class="col-list-wrap">
+                <h2 class='col-title'>子行</h2>
+                <ul class='col-list'>
+                    <li class='col-item'>
+                        <a href="https://www.cathaybk.com.kh/" target="_blank" rel="noopener">
+                            <figure class='col-item-figure'>
+                                <picture>
+                                    <img class='col-item-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/city")/cambodia.png'
+                                         alt='柬埔寨子行'>
+                                </picture>
+                                <figcaption hidden>柬埔寨子行</figcaption>
+                            </figure>
+                            <div class='col-item-title-wrap'>
+                                <div class='col-item-icon'>
+                                    <img class='col-item-icon-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/flag")/cambodia.png'>
+                                </div>
+                                <h3 class='col-item-title'>柬埔寨子行</h3>
+                            </div>
+                        </a>
+                    </li>
+                    <li class='col-item'>
+                        <a href="https://www.cathaybk.com.cn/Cathaybk/oversea/ShangHai/index.aspx" target="_blank" rel="noopener">
+                            <figure class='col-item-figure'>
+                                <picture>
+                                    <img class='col-item-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/city")/china.png'
+                                         alt='大陸子行'>
+                                </picture>
+                                <figcaption hidden>大陸子行</figcaption>
+                            </figure>
+                            <div class='col-item-title-wrap'>
+                                <div class='col-item-icon'>
+                                    <img class='col-item-icon-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/flag")/china.png'>
+                                </div>
+                                <h3 class='col-item-title'>大陸子行</h3>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        <div class="col-list-wrap">
+            <h2 class='col-title'>分行</h2>
+            <ul class='col-list'>
+                <li class='col-item'>
+                    <a href="@Url.Content("~/hongkong")" target="_blank" rel="noopener">
+                        <figure class='col-item-figure'>
+                            <picture>
+                                <img class='col-item-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/city")/hongkong.png'
+                                     alt='香港分行'>
+                            </picture>
+                            <figcaption hidden>香港分行</figcaption>
+                        </figure>
+                        <div class='col-item-title-wrap'>
+                            <div class='col-item-icon'>
+                                <img class='col-item-icon-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/flag")/hongkong.png'>
+                            </div>
+                            <h3 class='col-item-title'>香港分行</h3>
+                        </div>
+                    </a>
+                </li>
+                <li class='col-item'>
+                    <a href="@Url.Content("~/sg/")" target="_blank" rel="noopener">
+                        <figure class='col-item-figure'>
+                            <picture>
+                                <img class='col-item-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/city")/singapore.png'
+                                     alt='新加坡分行'>
+                            </picture>
+                            <figcaption hidden>新加坡分行</figcaption>
+                        </figure>
+                        <div class='col-item-title-wrap'>
+                            <div class='col-item-icon'>
+                                <img class='col-item-icon-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/flag")/singapore.png'>
+                            </div>
+                            <h3 class='col-item-title'>新加坡分行</h3>
+                        </div>
+                    </a>
+                </li>
+                <li class='col-item'>
+                    <a href="@Url.Content("~/ph/manila/")" target="_blank" rel="noopener">
+                        <figure class='col-item-figure'>
+                            <picture>
+                                <img class='col-item-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/city")/manila.png'
+                                     alt='菲律賓馬尼拉分行'>
+                            </picture>
+                            <figcaption hidden>菲律賓馬尼拉分行</figcaption>
+                        </figure>
+                        <div class='col-item-title-wrap'>
+                            <div class='col-item-icon'>
+                                <img class='col-item-icon-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/flag")/philippines.png'>
+                            </div>
+                            <h3 class='col-item-title'>菲律賓馬尼拉分行</h3>
+                        </div>
+                    </a>
+                </li>
+                <li class='col-item'>
+                    <a href="@Url.Content("~/my/labuan/")" target="_blank" rel="noopener">
+                        <figure class='col-item-figure'>
+                            <picture>
+                                <img class='col-item-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/city")/labuan.png'
+                                     alt='馬來西亞納閩島分行'>
+                            </picture>
+                            <figcaption hidden>馬來西亞納閩島分行</figcaption>
+                        </figure>
+                        <div class='col-item-title-wrap'>
+                            <div class='col-item-icon'>
+                                <img class='col-item-icon-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/flag")/malaysia.png'>
+                            </div>
+                            <h3 class='col-item-title'>馬來西亞納閩島分行</h3>
+                        </div>
+                    </a>
+                </li>
+                <li class='col-item'>
+                    <a href="@Url.Content("~/vn/hcmc/")" target="_blank" rel="noopener">
+                        <figure class='col-item-figure'>
+                            <picture>
+                                <img class='col-item-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/city")/chu-lai.png'
+                                     alt='越南胡志明市分行'>
+                            </picture>
+                            <figcaption hidden>越南胡志明市分行</figcaption>
+                        </figure>
+                        <div class='col-item-title-wrap'>
+                            <div class='col-item-icon'>
+                                <img class='col-item-icon-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/flag")/vietnam.png'>
+                            </div>
+                            <h3 class='col-item-title'>越南胡志明市分行</h3>
+                        </div>
+                    </a>
+                </li>
+                <li class='col-item'>
+                    <a href="@Url.Content("~/la/vientiane/")" target="_blank" rel="noopener">
+                        <figure class='col-item-figure'>
+                            <picture>
+                                <img class='col-item-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/city")/vientiane.png'
+                                     alt='寮國永珍分行'>
+                            </picture>
+                            <figcaption hidden>
+                                寮國永珍分行
+                            </figcaption>
+                        </figure>
+                        <div class='col-item-title-wrap'>
+                            <div class='col-item-icon'>
+                                <img class='col-item-icon-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/flag")/laos.png'>
+                            </div>
+                            <h3 class='col-item-title'>
+                                寮國永珍分行
+                            </h3>
+                        </div>
+                    </a>
+                </li>
+                <li class='col-item'>
+                    <a href="@Url.Content("~/mm/yangon/")" target="_blank" rel="noopener">
+                        <figure class='col-item-figure'>
+                            <picture>
+                                <img class='col-item-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/city")/yangon.png'
+                                     alt='緬甸仰光分行'>
+                            </picture>
+                            <figcaption hidden>緬甸仰光分行</figcaption>
+                        </figure>
+                        <div class='col-item-title-wrap'>
+                            <div class='col-item-icon'>
+                                <img class='col-item-icon-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/flag")/myanmar.png'>
+                            </div>
+                            <h3 class='col-item-title'>緬甸仰光分行</h3>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+            <div class="col-list-wrap">
+                <h2 class='col-title'>辦事處</h2>
+                <ul class='col-list'>
+                    <li class='col-item'>
+                        <a href="@Url.Content("~/th/bangkok/")" target="_blank" rel="noopener">
+                            <figure class='col-item-figure'>
+                                <picture>
+                                    <img class='col-item-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/city")/bangkok.png'
+                                         alt='泰國曼谷代表人辦事處'>
+                                </picture>
+                                <figcaption hidden>
+                                    泰國曼谷代表人辦事處
+                                </figcaption>
+                            </figure>
+                            <div class='col-item-title-wrap'>
+                                <div class='col-item-icon'>
+                                    <img class='col-item-icon-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/flag")/thailand.png'>
+                                </div>
+                                <h3 class='col-item-title'>
+                                    泰國曼谷代表人辦事處
+                                </h3>
+                            </div>
+                        </a>
+                    </li>
+                    <li class='col-item'>
+                        <a href="@Url.Content("~/vn/hanoi/")" target="_blank" rel="noopener">
+                            <figure class='col-item-figure'>
+                                <picture>
+                                    <img class='col-item-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/city")/hanoi.png'
+                                         alt='越南河內代表人辦事處'>
+                                </picture>
+                                <figcaption hidden>
+                                    越南河內代表人辦事處
+                                </figcaption>
+                            </figure>
+                            <div class='col-item-title-wrap'>
+                                <div class='col-item-icon'>
+                                    <img class='col-item-icon-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/flag")/vietnam.png'>
+                                </div>
+                                <h3 class='col-item-title'>
+                                    越南河內代表人辦事處
+                                </h3>
+                            </div>
+                        </a>
+                    </li>
+                    <li class='col-item'>
+                        <a href="@Url.Content("~/vn/quang-nam/")" target="_blank" rel="noopener">
+                            <figure class='col-item-figure'>
+                                <picture>
+                                    <img class='col-item-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/city")/ho-chi-minh.png'
+                                         alt='越南廣南代表人辦事處'>
+                                </picture>
+                                <figcaption hidden>越南廣南代表人辦事處</figcaption>
+                            </figure>
+                            <div class='col-item-title-wrap'>
+                                <div class='col-item-icon'>
+                                    <img class='col-item-icon-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/flag")/vietnam.png'>
+                                </div>
+                                <h3 class='col-item-title'>越南廣南代表人辦事處</h3>
+                            </div>
+                        </a>
+                    </li>
+                    <li class='col-item'>
+                        <a href="@Url.Content("~/id/jakarta/")" target="_blank" rel="noopener">
+                            <figure class='col-item-figure'>
+                                <picture>
+                                    <img class='col-item-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/city")/jakarta.png'
+                                         alt='印尼雅加達代表人辦事處'>
+                                </picture>
+                                <figcaption hidden>
+                                    印尼雅加達代表人辦事處
+                                </figcaption>
+                            </figure>
+                            <div class='col-item-title-wrap'>
+                                <div class='col-item-icon'>
+                                    <img class='col-item-icon-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/flag")/indonesia.png'>
+                                </div>
+                                <h3 class='col-item-title'>
+                                    印尼雅加達代表人辦事處
+                                </h3>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+    </div>
+</div>

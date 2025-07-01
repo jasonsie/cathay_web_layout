@@ -1,0 +1,71 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "Cathay United Bank - Chu Lai Branch is expected to relocate to Ho Chi Minh City";
+    ViewBag.PageDescription = "Chu Lai Branch received the Principle Approval Decision on April 23, 2021 from SBV to relocate to Ho Chi Minh City. The relocation details will be announced separately later.";
+}
+
+@section Scripts {}
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news.jpg")' alt='@ViewBag.nav_news'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_news</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_news</h1>
+        </div>
+    </div>
+</div>
+
+<!-- newsview -->
+<article class="component-newsview">
+    <div class="component-newsview-inner">
+        <header class="component-newsview-header">
+            <div class="component-newsview-date"></div>
+            <h1 class="component-newsview-title">Notice of Relocation and New Name </h1>
+        </header>
+
+        <div class="component-newsview-body">
+            Please be informed that Cathay United Bank – Ho Chi Minh City Representative Office (“Rep. Office”) will be relocated to the new address and renamed to the new name from 22 April, 2022. The name, address, telephone and fax numbers of the Rep. Office will be changed as follows:<br />
+            <p>
+                Old information:
+                <ul>
+                    <li>Old name: Cathay United Bank – Ho Chi Minh City Representative Office</li>
+                    <li>Old address: 1st & 5th Floor, The World Centre Building, 46-48-50 Pham Hong Thai Street, Ben Thanh Ward, District 1, Ho Chi Minh City, Vietnam</li>
+                    <li>Old Telephone number: +84 28-3825-8761-63/65</li>
+                    <li>
+                        Old Facsimile number: +84 28-3825-8700
+                    </li>
+
+                </ul>
+            <p>
+
+                New information:
+                <ul>
+                    <li>New name: Cathay United Bank - Quang Nam Representative Office</li>
+                    <li>New address: 4th Floor, Viettel Quang Nam Building, No. 121 Hung Vuong Street, An My Ward, Tam Ky City, Quang Nam Province, Vietnam</li>
+                    <li>New Telephone number: +84 235 38 13035</li>
+                    <li>New Facsimile number: +84 235 38 13043~44</li>
+                </ul>
+
+            <p>
+                We apologize for any inconvenience caused. Should you have any questions regarding the relocation, please feel free to contact us.
+            <p>
+                We look forward to serving you at our new location.
+
+       </div>
+
+        <footer class="component-newsview-footer">
+            <div class="component-btn-row">
+                <a class="component-btn-main btn-green" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/")">Back</a>
+            </div>
+        </footer>
+    </div>
+</article><!--/.component-newsview-->

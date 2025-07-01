@@ -1,0 +1,69 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "Cathay United Bank - Chu Lai Branch is expected to relocate to Ho Chi Minh City";
+    ViewBag.PageDescription = "Chu Lai Branch received the Principle Approval Decision on April 23, 2021 from SBV to relocate to Ho Chi Minh City. The relocation details will be announced separately later.";
+}
+
+@section Scripts {}
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news.jpg")' alt='@ViewBag.nav_news'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_news</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_news</h1>
+        </div>
+    </div>
+</div>
+
+<!-- newsview -->
+<article class="component-newsview">
+    <div class="component-newsview-inner">
+        <header class="component-newsview-header">
+            <div class="component-newsview-date"></div>
+            <h1 class="component-newsview-title">Thông báo thay đổi địa điểm trụ sở và đổi tên </h1>
+        </header>
+
+        <div class="component-newsview-body">
+            Ngân hàng Cathay United Bank – Văn phòng đại diện tại Thành phố Hồ Chí Minh (“VPĐD”) xin trân trọng thông báo rằng VPĐD sẽ thay đổi địa điểm trụ sở sang địa điểm mới và đổi tên mới kể từ ngày 22 tháng 04 năm 2022. Tên gọi, địa điểm, số điện thoại và số fax của VPĐD sẽ được thay đổi như sau:<br />
+            <p>
+                Thông tin cũ:
+                <ul>
+                    <li>Tên gọi cũ: Ngân hàng Cathay United Bank – Văn phòng đại diện tại Thành phố Hồ Chí Minh</li>
+                    <li>Địa điểm trụ sở cũ: Tầng 1&5, Số 46-48 Phạm Hồng Thái, Quận 1, Thành phố Hồ Chí Minh, Việt Nam</li>
+                    <li>Số điện thoại cũ: +84 28-3825-8761-63/65</li>
+                    <li>Số fax cũ: +84 28-3825-8700</li>
+
+                </ul>
+            <p>
+
+                Thông tin mới:
+                <ul>
+                    <li>Tên gọi mới: Văn phòng đại diện Ngân hàng Cathay United Bank – Tỉnh Quảng Nam</li>
+                    <li>Địa điểm trụ sở mới: Tầng 4, Tòa nhà Viettel Quảng Nam, Số 121 đường Hùng Vương, Phường An Mỹ, Thành phố Tam Kỳ, Tỉnh Quảng Nam, Việt Nam</li>
+                    <li>Số điện thoại mới: +84 235 38 13035</li>
+                    <li>Số fax mới: +84 235 38 13043~44</li>
+                </ul>
+
+            <p>
+                VPĐD xin chân thành cáo lỗi vì sự bất tiện này. Nếu có bất kỳ thắc mắc nào, Quý Khách hàng/ Quý cơ quan vui lòng liên hệ với chúng tôi.
+            <p>
+                Chúng tôi mong muốn được tiếp tục đón tiếp Quý Khách hàng/ Quý cơ quan tại địa điểm trụ sở mới.
+
+</div>
+
+        <footer class="component-newsview-footer">
+            <div class="component-btn-row">
+                <a class="component-btn-main btn-green" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/")">Trở lại</a>
+            </div>
+        </footer>
+    </div>
+</article><!--/.component-newsview-->

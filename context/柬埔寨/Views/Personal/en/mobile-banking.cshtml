@@ -1,0 +1,324 @@
+@{
+   ViewData["PageTitle"] = "mBanking";
+   ViewData["PageDescription"] = "";
+}
+
+
+<!-- Page START -->
+<main class="mastbody">
+	
+	<!--
+		mBanking
+	-->
+	<div class="topkv kv  kv--txt-left">
+		<div class="kv-bg">
+			<div class="kv-bg-inner">
+				<figure class="kv-bg-img">
+					<picture>
+						<source media="(min-width:769px)" srcset="/assets/img/topkv/personal-online.jpg" />
+						<img srcset="/assets/img/topkv/personal-online-mb.jpg">
+					</picture>
+				</figure>
+			</div>
+		</div>
+		<div class="kv-cont">
+			<div class="kv-cont-inner">
+				<h2 class="display-1  fw-bold lh-xs">Online Banking</h2>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Breadcrumb  (lays on top of .topkv if places right after it) -->
+	<nav class="breadcrumb-nav text-white" aria-label="breadcrumb">
+		<div class="fluid">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]"><span>Home</span><i class="ico-ui-home"></i></a></li>
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]personal/">Personal Banking</a></li>
+				<li class="breadcrumb-item active" aria-current="page">mBanking</li>
+			</ol>
+		</div>
+	</nav>
+	
+	<!-- Menu -->
+	<nav class="tabmenu    d-none d-sm-block">
+		<div class="tabmenu-inner">
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/internet-banking/">
+				<span class="tabmenu-btn-txt">iBanking</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn active" href="@ViewData["siteLangUrl"]personal/mobile-banking/">
+				<span class="tabmenu-btn-txt">mBanking</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/merchant-app/">
+				<span class="tabmenu-btn-txt">Merchant App</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/alert-services/">
+				<span class="tabmenu-btn-txt">Alert Services</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/user-guide/">
+				<span class="tabmenu-btn-txt">User Guide</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+		</div>
+	</nav>
+	<!-- Mobile dropdown -->
+	<div class="tabmenu-dropdown dropdown    d-block d-sm-none">
+		<a href="javascript:;" class="btn btn-sm btn-block  dropdown-toggle" data-toggle="dropdown">
+			<span class="text-truncate d-inline-block">mBanking</span>
+		</a>
+		<div class="dropdown-menu">
+			<span class="dropdown-item disabled">-- Select page --</span>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/internet-banking/">iBanking</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/mobile-banking/">mBanking</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/merchant-app/">Merchant App</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/alert-services/">Alert Services</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/user-guide/">User Guide</a>
+		</div>
+	</div>
+
+	
+	
+	<!--
+		mBanking - Detail
+	-->
+	<section class="fluid overflow-hidden">
+		
+		<div class="py-page"></div>
+		
+		<!-- Page heading -->
+		<header class="compact  mb-5  text-center">
+			<h1 class="h3 h4-mb  mb-2 mb-md-3  text-black  lh-xs">mBanking</h1>
+			<h2 class="display-3 h1-mb  mb-3  text-black fw-bold">Connect the world with this user-friendly, secure and stylish App!</h2>
+			<p class="mb-3  text-left">
+				Enjoy the hassle-free experience of opening a CUBC Bank digital account, without the need to visit the Bank. It's simple yet highly secure, as we embed the latest technologies such as FIDO, two-factors authentication, device binding and many more mechanisms in the App, to ensure your account security at all cost.
+			</p>
+			<p class="text-left">
+				We've just launched the fresh design of our mbanking app, offering you an entire new digital banking experience. Give it a try now.
+			</p>
+		</header>
+		
+		
+		<!-- Features -->
+		<section class="compact-sm">
+			
+			<!-- Section heading -->
+			<h3 class="h1 h2-mb  mb-4  text-black fw-bold text-center lh-sm">Features of mBanking App</h3>
+			
+			<div class="d-block d-lg-flex flex-row-reverse">
+				<div class="w-100 pt-lg-3">
+					<!-- Graph icon list #2  (3 in a row)-->
+					<ul class="row  mb-n4  ">
+	
+						<!-- Graph item  (one column on mobile)-->
+						<li class="col-12 col-md-4  mb-4  px-md-1 px-xl-4">
+							<div class="d-flex align-items-center  mb-3">
+								<figure class="graph  mr-3">
+									<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/view.svg">
+								</figure>
+								<h4 class="h3 text-dark fw-bolder lh-sm">View</h4>
+							</div>
+							<div>
+								<ul class="list-disc list--item-mb-xs">
+									<li>Account balances</li>
+									<li>Fixed Deposit Details</li>
+									<li>Transaction Details Up To 6 Months</li>
+									<li>Scheduled future payment and transfer</li>
+									<li>Loan Statement</li>
+									<li>Credit Card Statement</li>
+								</ul>
+							</div>
+						</li>
+	
+						<!-- Graph item  (one column on mobile)-->
+						<li class="col-12 col-md-4  mb-4  px-md-1 px-xl-4">
+							<div class="d-flex align-items-center  mb-3">
+								<figure class="graph  mr-3">
+									<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/transfer.svg">
+								</figure>
+								<h4 class="h3 text-dark fw-bolder lh-sm">Transfer</h4>
+							</div>
+							<div>
+								<ul class="list-disc list--item-mb-xs">
+									<li>Between Your Account</li>
+									<li>To Other Account Holder Within CUBC</li>
+									<li>To Other Local Bank Account or Bakong wallet</li>
+									<li>To Other Oversea Account</li>
+								</ul>
+							</div>
+						</li>
+						<!-- Graph item -->
+						<li class="col-6 col-md-4  mb-4  px-1 px-xl-4">
+							<div class="d-flex align-items-center  mb-3">
+								<figure class="graph  mr-3">
+									<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/Fix-deposit.png">
+								</figure>
+								<h4 class="h3 text-dark fw-bolder lh-sm">Fixed Deposit</h4>
+							</div>
+							<div>
+								<ul class="list-disc list--item-mb-xs">
+									<li>Open Fixed Deposit</li>
+								</ul>
+							</div>
+						</li>
+						<!-- Graph item -->
+						<li class="col-6 col-md-4  mb-4  px-1 px-xl-4">
+							<div class="d-flex align-items-center  mb-3">
+								<figure class="graph  mr-3">
+									<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/pay.svg">
+								</figure>
+								<h4 class="h3 text-dark fw-bolder lh-sm">Pay</h4>
+							</div>
+							<div>
+								<ul class="list-disc list--item-mb-xs">
+									<li>Credit card bill</li>
+									<li>Mobile top up</li>
+								</ul>
+							</div>
+						</li>
+	
+						<!-- Graph item -->
+						<li class="col-6 col-md-4  mb-4  px-1 px-xl-4">
+							<div class="d-flex align-items-center  mb-3">
+								<figure class="graph  mr-3">
+									<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/card-insert.svg">
+								</figure>
+								<h4 class="h3 text-dark fw-bolder">Others</h4>
+							</div>
+							<div>
+								<ul class="list-disc list--item-mb-xs">
+									<li>Open Digital Accounts in both USD and KHR</li>
+									<li>Get instant notifications</li>
+									<li>Find an ATM/Branch on the Map</li>
+									<li>Name Your Accounts</li>
+								</ul>
+							</div>
+						</li>
+						<!-- Graph item -->
+						<li class="col-6 col-md-4  mb-4  px-1 px-xl-4">
+							<div class="d-flex align-items-center  mb-3">
+								<figure class="graph  mr-3">
+									<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/QR-Pay.png">
+								</figure>
+								<h4 class="h3 text-dark fw-bolder">QR Scan</h4>
+							</div>
+							<div>
+								<ul class="list-disc list--item-mb-xs">
+									<li>Receive money seamlessly with Widget.</li>
+									<li>Set your KHQR payment amount freely.</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+					<div class="py-30"></div>
+			
+					<!-- Download -->
+					<h4 class="h3 h2-mb  mb-3 ml-xl-3  text-black fw-bolder  text-center text-md-left">Download APP</h4>
+					
+					<div class="d-block d-md-flex ml-xl-3">
+						<nav class="appbadge flex-grow-1 flex-shrink-0">
+							<div class="appbadge-qrocde"><img class="lazy" data-src="/assets/img/content/app-qrcode.svg"></div> 
+							<div class="appbadge-store">
+								<a class="appbadge-ios hover-text" target="_blank" rel="noopener noreferrer" href="https://apps.apple.com/kh/app/cubc-mbanking/id489736801"><img class="lazy" data-src="/assets/img/content/app-ios.png"></a>
+								<a class="appbadge-android hover-text" target="_blank" rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.mbanking.cubc"><img class="lazy" data-src="/assets/img/content/app-android.png"></a>
+							</div>
+						</nav>
+						<p class="w-100 mt-3 mt-md-0  pl-md-4">The CUBC mBanking App is optimized to work on your Android smartphones and tablets, Apple iPhone, iPod Touch and iPad, and BlackBerry. Best of all, it's free!</p>
+					</div>
+				</div>
+				
+				<!-- Screenshot -->
+				<div class="flex-grow-1 flex-shrink-0 pr-lg-4  mt-4 mt-lg-0">
+					<figure class="mx-auto px-4 px-lg-0" style="max-width:320px">
+						<img class="ofi-contain lazy" data-src="/assets/img/content/app-screenshot.png" alt="App screenshot">
+					</figure>
+				</div>
+			</div>
+		</section>
+		
+		<div class="py-page"></div>
+		
+		
+		<!-- FAQ -->
+		<section class="compact">
+			<!-- Section heading -->
+			<h3 class="h1 h2-mb  mb-4  text-black fw-bold text-center lh-sm">Frequently Asked Questions</h3>
+			
+			<!-- FAQ list -->
+
+			<!-- QA item -->
+			<section class="qaitem" js-foldable-group="internet">
+				<div class="qaitem-title" role="button" tabindex="0" js-foldable-head>
+					<h5 class="qaitem-title-txt  h3 h3-mb text-dark fw-bold">
+						Q1: Why should I choose CUBC mBanking?
+					</h5>
+				</div>
+				<div class="qaitem-detail" js-foldable-body>
+					<div class="qaitem-detail-content">
+						<div class="badge badge-green h5 h5-mb mb-3">Answer</div>
+						<p>There are so many benefits to using our mBanking service. With mBanking, you can have instant access to the latest information on you Cathay United bank accounts, debit and credit transactions, pay bills, make transfers, top up your prepaid mobile and much more. You can access your Cathay United Bank Account anytime, anywhere at your convenience, allowing you to do your banking online without the hassle standing in line at the bank branch. Furthermore, it's safe and easy to use.</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- QA item -->
+			<section class="qaitem" js-foldable-group="internet">
+				<div class="qaitem-title" role="button" tabindex="0" js-foldable-head>
+					<h5 class="qaitem-title-txt  h3 h3-mb text-dark fw-bold">
+						Q2: Do I have to pay to use CUBC mBanking?
+					</h5>
+				</div>
+				<div class="qaitem-detail" js-foldable-body>
+					<div class="qaitem-detail-content">
+						<div class="badge badge-green h5 h5-mb mb-3">Answer</div>
+						<p>There is no fee to sign up and the mBanking service is free. Standard transaction fees will still apply for services such as purchases of bank draft, cashier's orders, bank transfers, etc.</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- QA item -->
+			<section class="qaitem" js-foldable-group="internet">
+				<div class="qaitem-title" role="button" tabindex="0" js-foldable-head>
+					<h5 class="qaitem-title-txt  h3 h3-mb text-dark fw-bold">
+						Q3: What type of fund transfers can I perform?
+					</h5>
+				</div>
+				<div class="qaitem-detail" js-foldable-body>
+					<div class="qaitem-detail-content">
+						<div class="badge badge-green h5 h5-mb mb-3">Answer</div>
+						<p class="mb-2">You can perform the following fund transfers:</p>
+						<ul class="list-disc">
+							<li>Fund transfers to your own Cathay United Bank Accounts</li>
+							<li>Fund transfers to another Cathay United Bank Account Holder</li>
+							<li>Fund transfers to an account of another bank in Cambodia</li>
+							<li>Fund transfer to an account of another bank overseas</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			
+		</section>
+		
+		<div class="py-page"></div>
+		
+		
+		<!-- CUBC Safe and Secure -->
+		<section class="compact">
+			<!-- Section heading -->
+			<h3 class="h1 h2-mb  mb-4  text-black fw-bold text-center lh-sm">CUBC Safe and Secure</h3>
+			
+			<p class="mb-3">The CUBC mBanking App uses security protocols to provide you with a secure environment for managing your finances from your smartphone and tablet. No account or login information is stored on your mobile device and an inactivity logout is in place, adding an extra layer of security. To protect your account information, you are required to authenticate yourself on each mobile device using the same information that you use to log into the CUBC iBanking from your web browser. All communication between your mobile device and the mBanking server is encrypted, and your password and account information are never stored on the mobile device.</p>
+		</section>
+		
+		<div class="py-page"></div>
+		
+		@Html.Partial("~/Views/Shared/"+@ViewData["viewUrl"]+"PersonalMobileBankingTC.cshtml")
+		
+		<div class="py-page"></div>
+	</section>
+	
+	
+</main>
+<!-- Page END -->

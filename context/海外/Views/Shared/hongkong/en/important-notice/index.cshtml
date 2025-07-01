@@ -1,0 +1,134 @@
+﻿@model IndexViewModel
+
+@if (ViewBag.lang == "zh-hant")
+{
+}
+else
+{
+    ViewBag.PageTitle = "Important Notice";
+    ViewBag.PageDescription = "";
+}
+
+
+@section Scripts {}
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/financial-disclosure-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/financial-disclosure.jpg")' alt='@ViewBag.nav_important_notice'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_important_notice</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_important_notice</h1>
+        </div>
+    </div>
+</div>
+
+<div class='component-oversea-info'>
+    <div class="coi-inner">
+        <h1 class="coi-title">Important Notice</h1>
+        <div class="coi-content">
+            <p class="coi-p">
+                By accessing this website and any of its pages, you agree to be bound by the terms set out
+                below and by continuing to use this website following the posting of any changes to these
+                terms will signify your consent to the changes made.
+            </p>
+
+            <p class="coi-p">
+                <span class='coi-subtitle'>Legal Restriction</span><br />
+                Products and services referred to in this website are offered only in jurisdictions where
+                and when they may be lawfully offered by Cathay United Bank Company, Limited, Hong Kong Branch
+                ("the Branch").The materials on these web pages are not intended for use by persons located
+                or resident in jurisdictions in our distribution of these materials is restricted. Persons
+                viewing these web pages are required to be fully aware of and observe any such relevant
+                restrictions.
+            </p>
+
+            <p class='coi-p'>
+                <span class='coi-subtitle'>Use of Website Information</span><br />
+                These pages should not be regarded as an offer of or a solicitation to purchase any products
+                or services described therein in any jurisdiction to any person to whom it is unlawful to
+                make such offer or solicitation in such jurisdictions.<br /><br />
+                The information contained in these web pages is not intended to be provided as professional
+                advice and should not be relied upon for that purpose. <br /><br />
+                Persons viewing these web pages are advised to obtain appropriate professional advice where
+                necessary. <br /><br />
+                Any materials, information about products or services supplied in this website may be
+                withdrawn or amended at any time at the discretion of the Branch without advance notice.
+                Your eligibility for using particular materials and information about products or services
+                is subject to the final and absolute discretion of the Branch. <br />
+
+                You are responsible to prevent, safeguard and ensure that no computer virus enters your system
+                and this website.
+
+            </p>
+
+            <p class="coi-p">
+                <span class='coi-subtitle'>Reminders on Internet Communication</span><br />
+                Messages sent via the Internet (including email messages) cannot be guaranteed to be
+                completely secure. The Branch will not be responsible for any damages incurred by users as
+                a result of any delay, loss, diversion, alteration or corruption of any message either sent
+                to or received from the Branch at the users' request, over the Internet.<span class='coi-b'>
+                    The Branch shall
+                    not be responsible in any manner for direct, indirect, special or consequential damages
+                    arising out of the use of this website.
+                </span><br /><br />
+                Communication via the Internet may be subject to interruption, transmission blackout,
+                delayed transmission due to Internet traffic or incorrect data transmission due to the public
+                nature of the Internet or otherwise.
+
+            </p>
+
+            <p class="coi-p">
+                <span class='coi-subtitle'>Security Warning in Using Hyperlink</span><br />
+                Use of hyperlinks to link with other internet sites or resources is at your own risk. The contents, accuracy, opinion expressed, and other links provided at these sites are not investigated, verified, monitored, or endorsed by the Branch. The Branch expressly disclaims any responsibility for the accuracy, contents, availability or omission of information found on the websites that link to or from this website. You are solely responsible for making all necessary enquiries and investigation before proceeding with any online or offline access or transaction with any of these third parties. The Branch emphasizes that all activities conducted by you via or at this website are at your own risk. <span class='coi-b'>
+                    The Branch does not warrant the security of any information users may forward or be requested to provide to any third parties. Users are deemed to have irrevocably waived any claims against the Branch for any
+                    loss or damage suffered as a result of any access to or interaction with any other websites via this site.
+                </span>                
+            </p>
+
+            <p class="coi-p">
+                <span class='coi-subtitle'>The Branch shall not be responsible for any consequences from your downloading any software from any hyperlinks on our website</span><br />
+                <span class='coi-b'>The Branch may include hyperlinks to the websites of the Head Office of Cathay United Bank Company, Limited and its other branches for your convenience. The products and services offered on these websites may be limited to persons located or resident only in that particular jurisdiction. In addition, the content on these linked websites may not be intended for persons located or resident in jurisdictions in which distribution of such content is restricted.</span>
+            </p>
+
+
+            <p class="coi-p">
+                <span class='coi-subtitle'>No Warranty</span><br />
+                <span class='coi-b'>
+                    The information and materials contained in this website are provided on "as is" and "as
+                    available" bases without warranty or representation of any kind, express or implied. In
+                    particular, no warranty or representation regarding non-infringement, security, accuracy,
+                    fitness, completeness, sufficiency, usefulness or reliability, for a particular purpose
+                    or freedom from computer virus is given in conjunction with such information and materials.
+                </span>
+            </p>
+
+            <p class="coi-p">
+                <span class='coi-subtitle'>Investment Products</span><br />
+                Investment involves risk. The price of investment products can and does fluctuate, and price
+                of any individual investment product may experience upward or downward movements, and may
+                even become valueless. There is an inherent risk that losses may be incurred rather than
+                profit made as a result of buying and selling investment products.
+            </p>
+
+            <p class="coi-p">
+                <span class='coi-subtitle'>Ownership of Trade Marks</span><br />
+                Cathay Financial Holding Co., Ltd. and other parties own the trade marks, logos and service
+                marks displayed on this website and users are prohibited from using the same without written
+                permission of the Branch or such other parties.
+                <br /><br />
+                All contents on this website including but not limited to the text, graphics, links and sounds
+                are protected by copyright and no part of such materials may be modified, reproduced, stored
+                in a retrieval system, transmitted (in any form or by any means), copied, distributed, reused,
+                reposted, reverse engineered, decompiled, used for creating derivative works or used in any
+                other way for commercial or public purposes without Cathay Financial Holding Co., Ltd.'s
+                prior written consent.
+            </p>
+        </div>
+
+    </div>
+</div><!--/.component-oversea-info-->

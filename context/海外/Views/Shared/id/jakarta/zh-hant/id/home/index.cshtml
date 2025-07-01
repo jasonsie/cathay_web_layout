@@ -1,0 +1,132 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "";
+    ViewBag.PageDescription = "";
+}
+
+@section Scripts {
+
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/jquery.scrollbar.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/slick.min.js")"></script>
+
+
+    <script>
+        var homeCard = homeCard || {};
+        homeCard.prototype = {
+            sameHeight: function () {
+
+                let window_w = $(window).width();
+                let max_h = 0;
+                let scope = $('.component-oversea-services');
+                $('.cos-item-description', scope).css('min-height', 0);
+                if (window_w >= 768) {
+                    $('.cos-item', scope).each(function () {
+                        let h = $('.cos-item-description', $(this)).height();
+                        if (h > max_h) {
+                            max_h = h;
+                        }
+                    })
+                    $('.cos-item-description', scope).height(max_h);
+                } else {
+                    $('.cos-item-description', scope).css('height', 'auto');
+                }
+            },
+            addEventListener: function () {
+                let o = this;
+                $(window).on('resize.homeCard', function () {
+                    o.sameHeight();
+                }).trigger('resize.homeCard');
+            },
+            init: function () {
+                this.addEventListener();
+            }
+        }
+    </script>
+
+    <script>
+        $(function () {
+
+            var myHomeCard = homeCard.prototype;
+           myHomeCard.init();
+
+
+            //
+            $(window).resize(function () {
+
+                let window_w = $(window).width();
+                let offset_x;
+                let content_w;
+                if (window_w > 991) {
+                    offset_x = $('.cok-inner').offset().left;
+                    content_w = $('.cok-content').width();
+                    max_w = window_w - content_w - offset_x;
+                } else {
+                    offset_x = 0;
+                    content_w = 0;
+                    max_w = window_w;
+                }
+                $('.cok-figure-wrap').css('width', max_w);
+                $('.cok-figure-wrap').css('flex-basis', max_w);
+                $('.cok-figure-wrap').css('max-width', max_w);
+                $('.cok-figure-wrap').css('left', content_w + offset_x);
+
+            }).trigger('resize');
+
+            $(".cok-figure-slider").slick({
+                infinite: false,
+                slidesToShow: 1,
+                dots: false
+            });
+
+            ////////////////////////////
+
+            //$('.con-list', $(this)).scrollbar();
+        })
+    </script>
+
+    <script>
+        //fraud modal
+        $(function () {
+            let myFraudModal = fraudModal.prototype;
+            myFraudModal.init($('.component-oversea-modal--fraud'));
+            myFraudModal.show();
+        })
+    </script>
+}
+
+<div class='component-oversea-kv'>
+    <div class="cok-figure-wrap">
+        <div class="cok-figure-slider">
+            <div class="cok-figure-item">
+                <figure class='cok-figure'>
+                    <picture>
+                        <source media='(min-width: 992px)'
+                                srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv/bg-lg.jpg")' />
+                        <img class='cok-img' src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv/bg.jpg")' alt='@ViewBag.site_name'>
+                    </picture>
+                    <figcaption hidden>@ViewBag.site_name</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+
+    <div class="cok-inner">
+        <div class="cok-content">
+                <h1 class='cok-title'>
+                    <span class='cok-title--company cok-title--company--bold'>Cathay United Bank</span>
+                    <span class='cok-title--slogan'>Mitra Terpecaya Anda</span>
+                </h1>
+
+        </div>
+    </div>
+</div>
+<div class='component-oversea-services component-oversea-services--33  component-oversea-services--home'>
+    <div class="cos-inner">
+       
+            <h2 class='cos-title'>Pelayanan kami</h2>
+            <p class='cos-description'>Cathay United Bank mendirikan Kantor Perwakilan di Jakarta pada bulan Mei 2015, dengan misi untuk tumbuh bersama perekonomian Indonesia.</p>
+            <p class='cos-description'>Fungsi utama dari Kantor Perwakilan Jakarta adalah sebagai sarana informasi dan penghubung untuk penyebaran informasi yang mempromosikan perdagangan dan peluang bisnis bagi klien antara Indonesia dan Taiwan.</p>
+        
+    </div>
+</div>

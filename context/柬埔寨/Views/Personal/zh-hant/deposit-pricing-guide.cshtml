@@ -1,0 +1,422 @@
+@{
+   ViewData["PageTitle"] = "存款收費標準";
+   ViewData["PageDescription"] = "";
+}
+
+
+<!-- Page START -->
+<main class="mastbody">
+	
+	<!--
+		存款收費標準
+	-->
+	<div class="topkv kv  kv--txt-left">
+		<div class="kv-bg">
+			<div class="kv-bg-inner">
+				<figure class="kv-bg-img">
+					<picture>
+						<source media="(min-width:769px)" srcset="/assets/img/topkv/personal-deposit.jpg" />
+						<img srcset="/assets/img/topkv/personal-deposit-mb.jpg">
+					</picture>
+				</figure>
+			</div>
+		</div>
+		<div class="kv-cont">
+			<div class="kv-cont-inner">
+				<h2 class="display-1-sm  fw-bold lh-xs">存款帳戶</h2>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Breadcrumb  (lays on top of .topkv if places right after it) -->
+	<nav class="breadcrumb-nav text-white" aria-label="breadcrumb">
+		<div class="fluid">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]"><span>首頁</span><i class="ico-ui-home"></i></a></li>
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]personal/">個人金融</a></li>
+				<li class="breadcrumb-item active" aria-current="page">存款收費標準</li>
+			</ol>
+		</div>
+	</nav>
+	
+	<!-- Menu -->
+	<nav class="tabmenu    d-none d-sm-block">
+		<div class="tabmenu-inner">
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/current-account/">
+				<span class="tabmenu-btn-txt">支票存款帳戶</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/savings-account/">
+				<span class="tabmenu-btn-txt">活期存款帳戶</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/fixed-deposit/">
+				<span class="tabmenu-btn-txt">定期存款</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn active" href="@ViewData["siteLangUrl"]personal/deposit-pricing-guide/">
+				<span class="tabmenu-btn-txt">存款收費標準</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+		</div>
+	</nav>
+	<!-- Mobile dropdown -->
+	<div class="tabmenu-dropdown dropdown    d-block d-sm-none">
+		<a href="javascript:;" class="btn btn-sm btn-block  dropdown-toggle" data-toggle="dropdown">
+			<span class="text-truncate d-inline-block">存款收費標準</span>
+		</a>
+		<div class="dropdown-menu">
+			<span class="dropdown-item disabled">-- 前往頁面 --</span>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/current-account/">支票存款帳戶</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/savings-account/">活期存款帳戶</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/fixed-deposit/">定期存款</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/deposit-pricing-guide/">存款收費標準</a>
+		</div>
+	</div>
+	
+	
+	
+	<!--
+		存款收費標準 - Detail
+	-->
+	<section class="fluid overflow-hidden">
+		<div class="py-page"></div>
+		
+		<!-- Page heading -->
+		<header class="compact  mb-5  text-center">
+			<h1 class="display-3 h1-mb  mb-3  text-black fw-bold">存款收費標準</h1>
+		</header>
+		
+		
+		<!-- Section heading -->
+		<h3 class="h1 h2-mb  mb-4  text-black fw-bold lh-sm">支票存款帳戶</h3>
+			
+		<!-- Two-columns -->
+		<section class="row mx-lg-n2 mx-xl-n3">
+			
+			<!-- Left column -->
+			<div class="col-12 col-lg-6 d-flex">
+				<div class="w-100 bg-light mx-lg-2 mx-xl-3">
+					<!-- Tabular data -->
+					<div class="tabular">
+	
+						<!-- Block heading -->
+						<h3 class="h3 h3-mb  mb-3  text-black fw-bolder">個人</h3>
+	
+						<div class="table-responsive-lg">
+							<table class="table h5-mb text-center">
+								<colgroup>
+									<col>
+									<col width="35%">
+									<col width="35%">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col" class="h4 h4-mb">幣別</th> 
+										<th scope="col" class="h4 h4-mb">
+											<img class="flag-sm mr-sm-2" src="/assets/img/ui/flag-kh.png"><br class="d-block d-sm-none">柬幣
+										</th>
+										<th scope="col" class="h4 h4-mb">
+											<img class="flag-sm mr-sm-2" src="/assets/img/ui/flag-us.png"><br class="d-block d-sm-none">美元
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row">起存金額</th>
+										<td>KHR 2,000,000.00</td>
+										<td>USD 500.00</td>
+									</tr>
+									<tr>
+										<th scope="row">最低餘額</th>
+										<td>KHR 400,000.00</td>
+										<td>USD 100.00</td>
+									</tr>
+									<tr>
+										<th scope="row">利率</th>
+										<td>0% p.a.</td>
+										<td>0% p.a.</td>
+									</tr>
+									<tr>
+										<th scope="row">支票簿</th>
+										<td>KHR 20,000.00<br><small class="d-inline-block lh-md text-gray-700">*每本</small></td>
+										<td>USD 5.00<br><small class="d-inline-block lh-md text-gray-700">*每本</small></td>
+									</tr>
+									<tr>
+										<th scope="row" rowspan="2">退票手續費</th>
+										<td>KHR 120,000.00<br><small class="d-inline-block lh-md text-gray-700">*存款不足/每張</small></td>
+										<td>USD 30.00<br><small class="d-inline-block lh-md text-gray-700">*存款不足/每張</small></td>
+									</tr>
+									<tr>
+					
+										<td>KHR 40,000.00<br><small class="d-inline-block lh-md text-gray-700">*其他原因/每張</small></td>
+										<td>USD 10.00<br><small class="d-inline-block lh-md text-gray-700">*其他原因/每張</small></td>
+									</tr>
+									<tr>
+										<th scope="row" rowspan="2">支票止付</th>
+										<td>KHR 80,000.00<br><small class="d-inline-block lh-md text-gray-700">*每張支票</small></td>
+										<td>USD 20.00<br><small class="d-inline-block lh-md text-gray-700">*每張支票</small></td>
+									</tr>
+									<tr>
+					
+										<td>KHR 200,000.00<br><small class="d-inline-block lh-md text-gray-700">*每本</small></td>
+										<td>USD 50.00<br><small class="d-inline-block lh-md text-gray-700">*每本</small></td>
+									</tr>
+									<tr>
+										<th scope="row">開戶後6個月內銷戶</th>
+										<td>KHR 80,000.00</td>
+										<td>USD 20.00</td>
+									</tr>
+									<tr>
+										<th scope="row">靜止戶(達6個月未使用)</th>
+										<td>KHR 60,000.00</td>
+										<td>USD 15.00</td>
+									</tr>
+									<tr>
+										<th scope="row">最低透支費</th>
+										<td>KHR 80,000.00</td>
+										<td>USD 20.00</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div><!--/.tabular-->
+				</div>
+			</div>
+			
+			<!-- Right column -->
+			<div class="col-12 col-lg-6 d-flex   mt-3 mt-lg-0">
+				<div class="w-100 bg-light mx-lg-2 mx-xl-3">
+					<!-- Tabular data -->
+					<div class="tabular">
+	
+						<!-- Block heading -->
+						<h3 class="h3 h3-mb  mb-3  text-black fw-bolder">法人（企業、社會與社團）</h3>
+	
+						<div class="table-responsive-lg">
+							<table class="table h5-mb text-center">
+								<colgroup>
+									<col>
+									<col width="35%">
+									<col width="35%">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col" class="h4 h4-mb">幣別</th> 
+										<th scope="col" class="h4 h4-mb">
+											<img class="flag-sm mr-sm-2" src="/assets/img/ui/flag-kh.png"><br class="d-block d-sm-none">柬幣
+										</th>
+										<th scope="col" class="h4 h4-mb">
+											<img class="flag-sm mr-sm-2" src="/assets/img/ui/flag-us.png"><br class="d-block d-sm-none">美元
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row">起存金額</th>
+										<td>KHR 4,000,000.00</td>
+										<td>USD 1,000.00</td>
+									</tr>
+									<tr>
+										<th scope="row">最低餘額</th>
+										<td>KHR 400,000.00</td>
+										<td>USD 100.00</td>
+									</tr>
+									<tr>
+										<th scope="row">利率</th>
+										<td>0% p.a.</td>
+										<td>0% p.a.</td>
+									</tr>
+									<tr>
+										<th scope="row">支票簿</th>
+										<td>KHR 20,000.00<br><small class="d-inline-block lh-md text-gray-700">*每本</small></td>
+										<td>USD 5.00<br><small class="d-inline-block lh-md text-gray-700">*每本</small></td>
+									</tr>
+									<tr>
+										<th scope="row" rowspan="2">退票手續費</th>
+										<td>KHR 120,000.00<br><small class="d-inline-block lh-md text-gray-700">*存款不足/每張</small></td>
+										<td>USD 30.00<br><small class="d-inline-block lh-md text-gray-700">*存款不足/每張</small></td>
+									</tr>
+									<tr>
+					
+										<td>KHR 40,000.00<br><small class="d-inline-block lh-md text-gray-700">*其他原因/每張</small></td>
+										<td>USD 10.00<br><small class="d-inline-block lh-md text-gray-700">*其他原因/每張</small></td>
+									</tr>
+									<tr>
+										<th scope="row" rowspan="2">支票止付</th>
+										<td>KHR 80,000.00<br><small class="d-inline-block lh-md text-gray-700">*每張支票</small></td>
+										<td>USD 20.00<br><small class="d-inline-block lh-md text-gray-700">*每張支票</small></td>
+									</tr>
+									<tr>
+					
+										<td>KHR 200,000.00<br><small class="d-inline-block lh-md text-gray-700">*每本</small></td>
+										<td>USD 50.00<br><small class="d-inline-block lh-md text-gray-700">*每本</small></td>
+									</tr>
+									<tr>
+										<th scope="row">開戶後6個月內銷戶</th>
+										<td>KHR 80,000.00</td>
+										<td>USD 20.00</td>
+									</tr>
+									<tr>
+										<th scope="row">靜止戶(達6個月未使用)</th>
+										<td>KHR 60,000.00</td>
+										<td>USD 15.00</td>
+									</tr>
+									<tr>
+										<th scope="row">最低透支費</th>
+										<td>KHR 80,000.00</td>
+										<td>USD 20.00</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div><!--/.tabular-->
+				</div>
+			</div>
+		</section>
+		
+		<div class="py-section"></div>
+		
+		
+		<!-- Section heading -->
+		<h3 class="h1 h2-mb  mb-4  text-black fw-bold lh-sm">活期存款帳戶</h3>
+		
+		<!-- Tabular data -->
+		<div class="tabular">
+	
+			<!-- Block heading -->
+			<h3 class="h3 h3-mb  mb-3  text-black fw-bolder">個人</h3>
+	
+			<div class="table-responsive-lg">
+				<table class="table h5-mb text-center">
+					<colgroup>
+						<col>
+						<col width="35%">
+						<col width="35%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col" class="h4 h4-mb">幣別</th> 
+							<th scope="col" class="h4 h4-mb">
+								<img class="flag-sm mr-sm-2" src="/assets/img/ui/flag-kh.png"><br class="d-block d-sm-none">柬幣
+							</th>
+							<th scope="col" class="h4 h4-mb">
+								<img class="flag-sm mr-sm-2" src="/assets/img/ui/flag-us.png"><br class="d-block d-sm-none">美元
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">起存金額</th>
+							<td>KHR 0.00</td>
+							<td>USD 0.00</td>
+						</tr>
+						<tr>
+							<th scope="row">利率</th>
+							<td>1% p.a.</td>
+							<td>0.5% p.a.</td>
+						</tr>
+						<tr>
+							<th scope="row">存摺遺失補發</th>
+							<td>KHR 20,000.00<br><small class="d-inline-block lh-md text-gray-700">*每本</small></td>
+							<td>USD 5.00<br><small class="d-inline-block lh-md text-gray-700">*每本</small></td>
+						</tr>
+						<tr>
+							<th scope="row">開戶後6個月內銷戶</th>
+							<td>KHR 80,000.00</td>
+							<td>USD 20.00</td>
+						</tr>
+						<tr>
+							<th scope="row">靜止戶(達12個月未使用)</th>
+							<td>KHR 40,000.00</td>
+							<td>USD 10.00</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div><!--/.tabular-->
+
+		<ul class="list-disc  mt-4  h6 h6-mb">
+			<li>活期存款帳戶的利息按日計算，每半年入帳一次。</li>
+			<li>利息需繳納所得稅。</li>
+		</ul>
+		
+		<div class="py-section"></div>
+		
+		<!-- Section heading -->
+		<h3 class="h1 h2-mb  mb-4  text-black fw-bold lh-sm">其他費用</h3>
+		
+		<!-- Tabular data -->
+		<div class="tabular">
+			<div class="table-responsive-lg">
+				<table class="table h5-mb text-center">
+					<colgroup>
+						<col>
+						<col width="35%">
+						<col width="35%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col" class="h4 h4-mb">幣別</th> 
+							<th scope="col" class="h4 h4-mb">
+								<img class="flag-sm mr-sm-2" src="/assets/img/ui/flag-kh.png"><br class="d-block d-sm-none">柬幣
+							</th>
+							<th scope="col" class="h4 h4-mb">
+								<img class="flag-sm mr-sm-2" src="/assets/img/ui/flag-us.png"><br class="d-block d-sm-none">美元
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row" rowspan="2">歷史對帳單申請</th>
+							<td>KHR 4,000.00<br><small class="d-inline-block lh-md text-gray-700">*每月</small></td>
+							<td>USD 1.00<br><small class="d-inline-block lh-md text-gray-700">*每月</small></td>
+						</tr>
+						<tr>
+					
+							<td>KHR 40,000.00<br><small class="d-inline-block lh-md text-gray-700">*每年</small></td>
+							<td>USD 10.00<br><small class="d-inline-block lh-md text-gray-700">*每年</small></td>
+						</tr>
+						<tr>
+							<th scope="row">餘額證明</th>
+							<td>KHR 20,000.00<br><small class="d-inline-block lh-md text-gray-700">*每次</small></td>
+							<td>USD 5.00<br><small class="d-inline-block lh-md text-gray-700">*每次</small></td>
+						</tr>
+						<tr>
+							<th scope="row">函證查詢</th>
+							<td>KHR 80,000.00<br><small class="d-inline-block lh-md text-gray-700">*每次(郵資另計)</small></td>
+							<td>USD 20.00<br><small class="d-inline-block lh-md text-gray-700">*每次(郵資另計)</small></td>
+						</tr>
+						<tr>
+							<th scope="row">資信證明</th>
+							<td>KHR 40,000.00<br><small class="d-inline-block lh-md text-gray-700">*每次</small></td>
+							<td>USD 10.00<br><small class="d-inline-block lh-md text-gray-700">*每次</small></td>
+						</tr>
+						<tr>
+							<th scope="row">指示交易</th>
+							<td>KHR 20,000.00<br><small class="d-inline-block lh-md text-gray-700">*每一收款人</small></td>
+							<td>USD 5.00<br><small class="d-inline-block lh-md text-gray-700">*每一收款人</small></td>
+						</tr>
+						<tr>
+							<th scope="row">薪資支付證明</th>
+							<td>免費</td>
+							<td>免費</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div><!--/.tabular-->
+
+		<ul class="list-disc  mt-4  h6 h6-mb">
+			<li>本行有權隨時變更收費標準。</li>
+			<li>如涉及第三方和其他可能發生之費用，本行將另行酌收。</li>
+			<li>本行有權決定是否接受外幣支票和他行支票。</li>
+			<li>適用其他約定條款。</li>
+		</ul>
+		
+		
+		<div class="py-page"></div>
+	</section>
+	
+</main>
+<!-- Page END -->

@@ -1,0 +1,428 @@
+@{
+   ViewData["PageTitle"] = "Deposit Pricing Guide";
+   ViewData["PageDescription"] = "";
+}
+
+
+<!-- Page START -->
+<main class="mastbody">
+	
+	<!--
+		ការណែនាំអំពីតម្លៃដាក់ប្រាក់
+	-->
+	<div class="topkv kv  kv--txt-left">
+		<div class="kv-bg">
+			<div class="kv-bg-inner">
+				<figure class="kv-bg-img">
+					<picture>
+						<source media="(min-width:769px)" srcset="/assets/img/topkv/personal-deposit.jpg" />
+						<img srcset="/assets/img/topkv/personal-deposit-mb.jpg">
+					</picture>
+				</figure>
+			</div>
+		</div>
+		<div class="kv-cont">
+			<div class="kv-cont-inner">
+				<h2 class="display-1  fw-bold lh-xs">គណនីប្រាក់បញ្ញើ</h2>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Breadcrumb  (lays on top of .topkv if places right after it) -->
+	<nav class="breadcrumb-nav text-white" aria-label="breadcrumb">
+		<div class="fluid">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]"><span>ទំព័រដើម</span><i class="ico-ui-home"></i></a></li>
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]personal/">សេវាកម្មធនាគារផ្ទាល់ខ្លួន</a></li>
+				<li class="breadcrumb-item active" aria-current="page">ការណែនាំអំពីតម្លៃដាក់ប្រាក់</li>
+			</ol>
+		</div>
+	</nav>
+	
+	<!-- Menu -->
+	<nav class="tabmenu    d-none d-sm-block">
+		<div class="tabmenu-inner">
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/current-account/">
+				<span class="tabmenu-btn-txt">គណនីចរន្ត</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/savings-account/">
+				<span class="tabmenu-btn-txt">គណនីសន្សំ</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/fixed-deposit/">
+				<span class="tabmenu-btn-txt">គណនីបញ្ញើសន្សំមានកាលកំណត់់</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn active" href="@ViewData["siteLangUrl"]personal/deposit-pricing-guide/">
+				<span class="tabmenu-btn-txt">ការណែនាំអំពីតម្លៃដាក់ប្រាក់</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+		</div>
+	</nav>
+	<!-- Mobile dropdown -->
+	<div class="tabmenu-dropdown dropdown    d-block d-sm-none">
+		<a href="javascript:;" class="btn btn-sm btn-block  dropdown-toggle" data-toggle="dropdown">
+			<span class="text-truncate d-inline-block">ការណែនាំអំពីតម្លៃដាក់ប្រាក់</span>
+		</a>
+		<div class="dropdown-menu">
+			<span class="dropdown-item disabled">-- Select page --</span>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/current-account/">គណនីចរន្ត</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/savings-account/">គណនីសន្សំ</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/fixed-deposit/">គណនីបញ្ញើសន្សំមានកាលកំណត់់</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/deposit-pricing-guide/">ការណែនាំអំពីតម្លៃដាក់ប្រាក់</a>
+		</div>
+	</div>
+
+	
+	
+	
+	<!--
+		ការណែនាំអំពីតម្លៃដាក់ប្រាក់ - Detail
+	-->
+	<section class="fluid overflow-hidden">
+		<div class="py-page"></div>
+		
+		<!-- Page heading -->
+		<header class="compact  mb-5  text-center">
+			<h1 class="display-3 h1-mb  mb-3  text-black fw-bold">ការណែនាំអំពីតម្លៃដាក់ប្រាក់</h1>
+		</header>
+		
+		
+		<!-- Section heading -->
+		<h3 class="h1 h2-mb  mb-4  text-black fw-bold lh-sm">គណនីចរន្ត</h3>
+			
+		<!-- Two-columns -->
+		<section class="row mx-lg-n2 mx-xl-n3">
+			
+			<!-- Left column -->
+			<div class="col-12 col-lg-6 d-flex">
+				<div class="w-100 bg-light mx-lg-2 mx-xl-3">
+					<!-- Tabular data -->
+					<div class="tabular">
+	
+						<!-- Block heading -->
+						<h3 class="h3 h3-mb  mb-3  text-black fw-bolder">សម្រាប់បុគ្គល</h3>
+	
+						<div class="table-responsive-lg">
+							<table class="table h5-mb text-center">
+								<colgroup>
+									<col>
+									<col width="35%">
+									<col width="35%">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col" class="h4 h4-mb">រូបិយបណ្ណ</th> 
+										<th scope="col" class="h4 h4-mb">
+											<img class="flag-sm mr-sm-2" src="/assets/img/ui/flag-kh.png"><br class="d-block d-sm-none">រៀល
+										</th>
+										<th scope="col" class="h4 h4-mb">
+											<img class="flag-sm mr-sm-2" src="/assets/img/ui/flag-us.png"><br class="d-block d-sm-none">ដុល្លារ
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row">ប្រាក់តម្កល់ដំបូង</th>
+                                        <td>KHR ២,០០០,០០០.០០</td>
+                                        <td>USD ៥០០.០០</td>
+									</tr>
+									<tr>
+										<th scope="row">សមតុល្យអប្បបរមា</th>
+                                        <td>KHR ៤០០,០០០.០០</td>
+                                        <td>USD ១០០.០០</td>
+									</tr>
+									<tr>
+										<th scope="row">អត្រាការប្រាក់ </th>
+                                        <td>០% ក្នុង១ឆ្នាំ</td>
+                                        <td>០% ក្នុង១ឆ្នាំ</td>
+									</tr>
+									<tr>
+										<th scope="row">សៀវភៅមូលប្បទានប័ត្រ</th>
+                                        <td>KHR ២០,០០០.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុងសៀវភៅមូលប្បទានប័ត្រ ១ក្បាល</small></td>
+                                        <td>USD ៥.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុងសៀវភៅមូលប្បទានប័ត្រ ១ក្បាល</small></td>
+									</tr>
+									<tr>
+										<th scope="row" rowspan="2">មូលប្បទានប័ត្របញ្ជូនត្រឡប់</th>
+                                        <td>KHR ១២០,០០០.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១សន្លឹកមូលប្បទានប័ត្របញ្ជូនត្រឡប់ដោយមូលហេតុ ទឹកប្រាក់មិនគ្រប់ចំនួន</small></td>
+                                        <td>USD ៣០.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១សន្លឹកមូលប្បទានប័ត្របញ្ជូនត្រឡប់ដោយមូលហេតុ ទឹកប្រាក់មិនគ្រប់ចំនួន</small></td>
+									</tr>
+									<tr>
+					
+                                        <td>KHR ៤០,០០០.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១សន្លឹកមូលប្បទានប័ត្របញ្ជូនត្រឡប់ដោយមូលហេតុផ្សេងៗ</small></td>
+                                        <td>USD ១០.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១សន្លឹកមូលប្បទានប័ត្របញ្ជូនត្រឡប់ដោយមូលហេតុផ្សេងៗ</small></td>
+									</tr>
+									<tr>
+										<th scope="row" rowspan="2">ការបញ្ឈប់មូលប្បទានប័ត្រ</th>
+                                        <td>KHR ៨០,០០០.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១សន្លឹក</small></td>
+                                        <td>USD ២០.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១សន្លឹក</small></td>
+									</tr>
+									<tr>
+					
+                                        <td>KHR ២០០,០០០.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុងសៀវភៅមូលប្បទានប័ត្រ ១ក្បាល</small></td>
+                                        <td>USD ៥០.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុងសៀវភៅមូលប្បទានប័ត្រ ១ក្បាល</small></td>
+									</tr>
+									<tr>
+										<th scope="row">ការបិទគណនីក្នុងអំឡុងពេល៦ខែ</th>
+                                        <td>KHR ៨០,០០០.០០</td>
+                                        <td>USD ២០.០០</td>
+									</tr>
+									<tr>
+										<th scope="row">គណនីគ្មានសកម្មភាពរយះពេល៦ខែ</th>
+                                        <td>KHR ៦០,០០០.០០</td>
+                                        <td>USD ១៥.០០</td>
+									</tr>
+									<tr>
+										<th scope="row">សេវាឥណទានវិបារូបន៍</th>
+                                        <td>KHR ៨០,០០០.០០</td>
+                                        <td>USD ២០.០០</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div><!--/.tabular-->
+				</div>
+			</div>
+			
+			<!-- Right column -->
+			<div class="col-12 col-lg-6 d-flex   mt-3 mt-lg-0">
+				<div class="w-100 bg-light mx-lg-2 mx-xl-3">
+					<!-- Tabular data -->
+					<div class="tabular">
+	
+						<!-- Block heading -->
+						<h3 class="h3 h3-mb  mb-3  text-black fw-bolder">សម្រាប់ក្រុមហ៊ុន (ជាប្រភេទក្រុមហ៊ុន-កត្តាសង្គម និងក្លឹប)</h3>
+	
+						<div class="table-responsive-lg">
+							<table class="table h5-mb text-center">
+								<colgroup>
+									<col>
+									<col width="35%">
+									<col width="35%">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col" class="h4 h4-mb">រូបិយបណ្ណ</th> 
+										<th scope="col" class="h4 h4-mb">
+											<img class="flag-sm mr-sm-2" src="/assets/img/ui/flag-kh.png"><br class="d-block d-sm-none">រៀល
+										</th>
+										<th scope="col" class="h4 h4-mb">
+											<img class="flag-sm mr-sm-2" src="/assets/img/ui/flag-us.png"><br class="d-block d-sm-none">ដុល្លារ
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<th scope="row">ប្រាក់តម្កល់ដំបូង</th>
+                                        <td>KHR ៤,០០០,០០០.០០</td>
+                                        <td>USD ១,០០០.០០</td>
+									</tr>
+									<tr>
+										<th scope="row">សមតុល្យអប្បបរមា</th>
+                                        <td>KHR ៤០០,០០០.០០</td>
+                                        <td>USD ១០០.០០</td>
+									</tr>
+									<tr>
+										<th scope="row">អត្រាការប្រាក់ </th>
+                                        <td>០% ក្នុង១ឆ្នាំ</td>
+                                        <td>០% ក្នុង១ឆ្នាំ</td>
+									</tr>
+									<tr>
+										<th scope="row">សៀវភៅមូលប្បទានប័ត្រ</th>
+                                        <td>KHR ២០,០០០.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុងសៀវភៅមូលប្បទានប័ត្រ ១ក្បាល</small></td>
+                                        <td>USD ៥.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុងសៀវភៅមូលប្បទានប័ត្រ ១ក្បាល</small></td>
+									</tr>
+									<tr>
+										<th scope="row" rowspan="2">មូលប្បទានប័ត្របញ្ជូនត្រឡប់</th>
+                                        <td>KHR ១២០,០០០.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១សន្លឹកមូលប្បទានប័ត្របញ្ជូនត្រឡប់ដោយមូលហេតុ ទឹកប្រាក់មិនគ្រប់ចំនួន</small></td>
+                                        <td>USD ៣០.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១សន្លឹកមូលប្បទានប័ត្របញ្ជូនត្រឡប់ដោយមូលហេតុ ទឹកប្រាក់មិនគ្រប់ចំនួន</small></td>
+									</tr>
+									<tr>
+					
+                                        <td>KHR ៤០,០០០.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១សន្លឹកមូលប្បទានប័ត្របញ្ជូនត្រឡប់ដោយមូលហេតុផ្សេងៗ</small></td>
+                                        <td>USD ១០.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១សន្លឹកមូលប្បទានប័ត្របញ្ជូនត្រឡប់ដោយមូលហេតុផ្សេងៗ</small></td>
+									</tr>
+									<tr>
+										<th scope="row" rowspan="2">ការបញ្ឈប់មូលប្បទានប័ត្រ</th>
+                                        <td>KHR ៨០,០០០.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១សន្លឹក</small></td>
+                                        <td>USD ២០.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១សន្លឹក</small></td>
+									</tr>
+									<tr>
+					
+                                        <td>KHR ២០០,០០០.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុងសៀវភៅមូលប្បទានប័ត្រ ១ក្បាល</small></td>
+                                        <td>USD ៥០.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុងសៀវភៅមូលប្បទានប័ត្រ ១ក្បាល</small></td>
+									</tr>
+									<tr>
+										<th scope="row">ការបិទគណនីក្នុងអំឡុងពេល៦ខែ</th>
+                                        <td>KHR ៨០,០០០.០០</td>
+                                        <td>USD ២០.០០</td>
+									</tr>
+									<tr>
+										<th scope="row">គណនីគ្មានសកម្មភាពរយះពេល៦ខែ</th>
+                                        <td>KHR ៦០,០០០.០០</td>
+                                        <td>USD ១៥.០០</td>
+									</tr>
+									<tr>
+										<th scope="row">សេវាឥណទានវិបារូបន៍</th>
+                                        <td>KHR ៨០,០០០.០០</td>
+                                        <td>USD ២០.០០</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div><!--/.tabular-->
+				</div>
+			</div>
+		</section>
+		
+		<div class="py-section"></div>
+		
+		
+		<!-- Section heading -->
+		<h3 class="h1 h2-mb  mb-4  text-black fw-bold lh-sm">គណនីសន្សំ</h3>
+		
+		<!-- Tabular data -->
+		<div class="tabular">
+	
+			<!-- Block heading -->
+			<h3 class="h3 h3-mb  mb-3  text-black fw-bolder">សម្រាប់បុគ្គល</h3>
+	
+			<div class="table-responsive-lg">
+				<table class="table h5-mb text-center">
+					<colgroup>
+						<col>
+						<col width="35%">
+						<col width="35%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col" class="h4 h4-mb">រូបិយបណ្ណ</th> 
+							<th scope="col" class="h4 h4-mb">
+								<img class="flag-sm mr-sm-2" src="/assets/img/ui/flag-kh.png"><br class="d-block d-sm-none">រៀល
+							</th>
+							<th scope="col" class="h4 h4-mb">
+								<img class="flag-sm mr-sm-2" src="/assets/img/ui/flag-us.png"><br class="d-block d-sm-none">ដុល្លារ
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">ប្រាក់តម្កល់ដំបូង</th>
+                            <td>KHR ០.០០</td>
+                            <td>USD ០.០០</td>
+						</tr>
+						<tr>
+							<th scope="row">អត្រាការប្រាក់ </th>
+							<td>១% ក្នុង១ឆ្នាំ</td>
+                            <td>០.៥% ក្នុង១ឆ្នាំ</td>
+						</tr>
+						<tr>
+							<th scope="row">ផ្លាស់ប្តូរសៀវភៅធនាគារដែលបានបាត់     </th>
+                            <td>KHR ២០,០០០.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១ក្បាល</small></td>
+                            <td>USD ៥.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១ក្បាល</small></td>
+						</tr>
+						<tr>
+							<th scope="row">ការបិទគណនីក្នុងអំឡុងពេល៦ខែ</th>
+                            <td>KHR ៨០,០០០.០០</td>
+                            <td>USD ២០.០០</td>
+						</tr>
+						<tr>
+							<th scope="row">គណនីគ្មានសកម្មភាពក្នុងកំឡុងពេល១២ខែ</th>
+                            <td>KHR ៤០,០០០.០០</td>
+                            <td>USD ១០.០០</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div><!--/.tabular-->
+
+		<ul class="list-disc  mt-4  h6 h6-mb">
+			<li>ការប្រាក់លើគណនីបញ្ញើសន្សំ ត្រូវបានបង្គរជារៀងរាល់ថ្ងៃនិងត្រូវទូទាត់រៀងរាល់កន្លះឆ្នាំម្តង។</li>
+			<li>អត្រាការប្រាក់ យោងតាមកម្មវត្ថុនៃពន្ធកាត់ទុក។</li>
+		</ul>
+		
+		<div class="py-section"></div>
+
+		<div class="py-section"></div>
+		
+		
+		<!-- Section heading -->
+		<h3 class="h1 h2-mb  mb-4  text-black fw-bold lh-sm">កម្រៃសេវាកម្មផ្សេងៗ</h3>
+		
+		<!-- Tabular data -->
+		<div class="tabular">
+			<div class="table-responsive-lg">
+				<table class="table h5-mb text-center">
+					<colgroup>
+						<col>
+						<col width="35%">
+						<col width="35%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col" class="h4 h4-mb">រូបិយបណ្ណ</th> 
+							<th scope="col" class="h4 h4-mb">
+								<img class="flag-sm mr-sm-2" src="/assets/img/ui/flag-kh.png"><br class="d-block d-sm-none">រៀល
+							</th>
+							<th scope="col" class="h4 h4-mb">
+								<img class="flag-sm mr-sm-2" src="/assets/img/ui/flag-us.png"><br class="d-block d-sm-none">ដុល្លារ
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row" rowspan="2">ការស្នើរសុំរបាយការណ៍គណនី</th>
+                            <td>KHR ៤,០០០.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១ខែ</small></td>
+                            <td>USD ១.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១ខែ</small></td>
+						</tr>
+						<tr>
+					
+                            <td>KHR ៤០,០០០.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១ឆ្នាំ</small></td>
+                            <td>USD ១០.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១ឆ្នាំ</small></td>
+						</tr>
+						<tr>
+							<th scope="row">ការបញ្ជាក់សមតុល្យទឹកប្រាក់</th>
+                            <td>KHR ២០,០០០.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១សំណើ</small></td>
+                            <td>USD ៥.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១សំណើ</small></td>
+						</tr>
+						<tr>
+							<th scope="row">ការបញ្ជាក់សវនកម្ម</th>
+                            <td>KHR ៨០,០០០.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១សំណើ+សេវាផ្ញើលិខិតចេញក្រៅប្រទេស (ប្រសិនបើមាន)</small></td>
+                            <td>USD ២០.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១សំណើ+សេវាផ្ញើលិខិតចេញក្រៅប្រទេស (ប្រសិនបើមាន)</small></td>
+						</tr>
+						<tr>
+							<th scope="row">លិខិតបញ្ជាក់ពត៌មាន</th>
+                            <td>KHR ៤០,០០០.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១សំណើ</small></td>
+                            <td>USD ១០.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១សំណើ</small></td>
+						</tr>
+						<tr>
+							<th scope="row">សេវាបញ្ជាក់អចិន្រ្តៃយ៍</th>
+                            <td>KHR ២០,០០០.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១ប្រតិបត្តិការ</small></td>
+                            <td>USD ១០.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១ប្រតិបត្តិការ</small></td>
+						</tr>
+						<tr>
+							<th scope="row">ការណែនាំអំពីការទូទាត់ប្រាក់បៀវត្សរ៍</th>
+							<td>ឥតគិតថ្លៃសេវា</td>
+							<td>ឥតគិតថ្លៃសេវា</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div><!--/.tabular-->
+
+        <ul class="list-disc  mt-4  h6 h6-mb">
+            <li>រាល់អត្រាការប្រាក់ និង កម្រៃសេវាកម្មអាចមានការផ្លាស់ប្តូរតាមបទប្បញ្ញាត្តិរបស់ធនាគារដោយពុំមានការជូនដំណឹងជាមុនឡើយ។</li>
+            <li>តតិយជន និងកម្រៃសេវាផ្សេងៗ នឹងត្រូវគិតថ្លៃសេវាកម្មបន្ថែមអាស្រ័យលើភាពជាក់ស្តែង(ប្រសិនបើមាន)។</li>
+            <li>ការទទួលយកមូលប្បទានបត្រនៃរូបិយបណ្ណបរទេស និង មូលប្បទានបត្រនៃធនាគារផ្សេងៗយោងតាមបទប្បញ្ញត្តិរបស់ធនាគារ។</li>
+            <li>រាល់លក្ខខណ្ឌផ្សេងៗនឹងត្រូវបានអនុម័ត។</li>
+        </ul>
+
+
+		
+		
+		<div class="py-page"></div>
+	</section>
+	
+</main>
+<!-- Page END -->

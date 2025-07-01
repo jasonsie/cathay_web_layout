@@ -1,0 +1,42 @@
+﻿@model IndexViewModel
+@if (ViewBag.lang == "zh-hant")
+{
+    ViewBag.PageTitle = "安全與私隱";
+    ViewBag.PageDescription = "網路安全停看聽、防範詐騙提醒事項、私隱保護政策、個人資料蒐集聲明、個人資料蒐集處理及利用告知事項";
+}
+else
+{
+    ViewBag.PageTitle = "Privacy Security";
+    ViewBag.PageDescription = "";
+}
+
+
+@section Scripts {}
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/financial-disclosure-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/financial-disclosure.jpg")' alt='@ViewBag.nav_privacy_security'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_privacy_security</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_privacy_security</h1>
+        </div>
+    </div>
+</div>
+
+
+    <div class='component-oversea-info'>
+        <div class='coi-inner'>
+            <div class="coi-list-wrap">
+                <a href='@Url.Content("~/hongkong/en/internet-banking-security")' class='coi-card'>Internet Security Alert</a>
+                <a href='@Url.Content("~/hongkong/en/fraud-prevention")' class='coi-card'>Notice about Fraud Prevention</a>
+                <a href='@Url.Content("~/hongkong/en/privacy-protection-policy")' class='coi-card'>Privacy Policy Statement</a>
+                @*<a href='@Url.Content("~/OVSWS/Content/pdf/hongkong/privacy-security/notification-of-the-collection-processing-and-use-of-personal-information_en.pdf")' target="_blank" rel="noopener" class='coi-card'>Notification of the Collection, Processing and Use of Personal Information</a>*@
+                <a href='@Url.Content("~/OVSWS/Content/pdf/hongkong/privacy-security/circular-on-the-personal-data-ordinanceand-the-code-of-practice-on-consumer-credit-data.pdf")' target="_blank" rel="noopener" class='coi-card'>Circular on the Personal Data (Privacy) Ordinance (Cap.486) (the "Ordinance") and the Code of Practice on Consumer Credit Data (the "Code of Practice")</a>
+            </div>
+        </div>
+    </div>

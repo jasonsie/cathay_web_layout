@@ -1,0 +1,76 @@
+﻿@model IndexViewModel
+
+@if (ViewBag.lang == "zh-hant-other")
+{
+    ViewBag.PageTitle = "人才招募";
+    ViewBag.PageDescription = "";
+}
+else
+{
+    ViewBag.PageTitle = "Careers - Vice President, Relationship Manager, International Corporates Coverage";
+    ViewBag.PageDescription = "";
+}
+
+
+@section Scripts {}
+@if (ViewBag.lang == "zh-hant-other")
+{
+}
+else
+{
+    <div class='component-oversea-kv-short'>
+        <div class="coks-inner">
+            <div class="coks-content">
+                <h1 class='coks-title'>Careers</h1>
+            </div>
+            <figure class='coks-figure'>
+                <picture>
+                    <source media='(min-width: 768px)'
+                            srcset='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/careers-lg.jpg")' />
+                    <img class='coks-img' src='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/careers.jpg")' alt='Careers'>
+                </picture>
+                <figcaption hidden>Careers</figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <div class='component-oversea-careers-detail'>
+        <div class="cocd-inner">
+            <h1 class='cocd-title'>
+                Vice President, Relationship Manager, International Corporates Coverage
+            </h1>
+            <div class='cocd-content-wrap'>
+                <h2 class='cocd-content-title'>Responsibilities:</h2>
+                <ul class='cocd-content-ul'>
+                    <li class='cocd-content-li'>Solicit and develop loan/deposit business from Taiwanese corporate clients and achieve assigned targets</li>
+                    <li class='cocd-content-li'>Develop and maintain client relationship with existing and prospective Taiwanese clients by providing professional financial solutions</li>
+                    <li class='cocd-content-li'>Support cross-selling opportunities within different teams in Corporate Banking</li>
+                    <li class='cocd-content-li'>Handle customer inquiries in an efficient and accurate manner</li>
+                    <li class='cocd-content-li'>Familiar with credit analysis and credit proposals</li>
+                </ul>
+            </div>
+            <div class='cocd-content-wrap'>
+                <h2 class='cocd-content-title'>Ideal candidates should possess:</h2>
+                <ul class='cocd-content-ul'>
+                    <li class='cocd-content-li'>Bachelor’s degree in Banking / Finance or related discipline</li>
+                    <li class='cocd-content-li'>Strong relationship management experiences with Taiwanese corporate clients is a must</li>
+                    <li class='cocd-content-li'>At least 5 years’ relevant experience in Corporate Banking</li>
+                    <li class='cocd-content-li'>Familiar with banking products, strong analytical skills to the financial industry and market trends</li>
+                    <li class='cocd-content-li'>Outgoing, strong motivation in establishing new client base</li>
+                    <li class='cocd-content-li'>Excellent communication and interpersonal skills</li>
+                    <li class='cocd-content-li'>Sophisticated in building client relationships</li>
+                    <li class='cocd-content-li'>Proficient in computer applications such as Microsoft Office</li>
+                    <li class='cocd-content-li'>Good command of written and spoken English and Chinese (Mandarin and Cantonese)</li>
+                </ul>
+            </div>
+            <div class='cocd-btn-wrap'>
+                <a href="@Url.Content("~/hongkong/en/careers/jobs")" class="cocd-btn">Back</a>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+}
+@RenderPage("../careers-support-card.cshtml")

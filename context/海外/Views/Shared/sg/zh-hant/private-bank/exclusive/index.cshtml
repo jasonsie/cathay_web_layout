@@ -1,0 +1,623 @@
+﻿@{
+    Layout = null;
+}
+
+<!doctype html>
+<html>
+
+<head>
+   <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>國泰世華銀行 私人銀行</title>
+
+<link href="@Url.Content("~/OVSWS/Content/pwm-sg/css/bootstrap.css")" rel="stylesheet">
+@*<link href="@Url.Content("~/OVSWS/Content/pwm-sg/css/bootstrap.css.map")" rel="stylesheet">*@
+
+
+<link href="@Url.Content("~/OVSWS/Content/pwm-sg/css/core.css")" rel="stylesheet">
+<link rel="stylesheet" media="(min-width:992px)" href="@Url.Content("~/OVSWS/Content/pwm-sg/css/coreD.css")" />
+
+
+
+
+<link href="@Url.Content("~/OVSWS/Content/pwm-sg/css/animate.css")" rel="stylesheet">
+
+
+<link href="@Url.Content("~/OVSWS/Content/pwm-sg/css/fontawesome/css/all.css")" rel="stylesheet">
+
+<link href="@Url.Content("~/OVSWS/Content/css/aos.css")" rel="stylesheet">
+
+
+
+    <link href="@Url.Content("~/OVSWS/Content/pwm-sg/css/exclusive.css")" rel="stylesheet">
+    <link media="(min-width:992px)" href="@Url.Content("~/OVSWS/Content/pwm-sg/css/exclusiveD.css")" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+<!-- Modal -->
+<div class="modal fade nav" tabindex="-1" role="dialog" aria-hidden="true">
+
+
+    <div class="modal-dialog" role="document">
+
+        <div class="modal-content">
+
+
+
+            <div class="navHeader">
+                <a href="@Url.Content("~/sg/private-bank/")">
+                    <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/logo.png")" class="logo img-fluid">
+                </a>
+
+                <div class="myclose" data-dismiss="modal" aria-label="Close">
+                    <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/myClose.png")" class="myClose">
+                </div>
+            </div>
+
+            <div class="navBody">
+                <a href="@Url.Content("~/sg/private-bank/about/")">
+                    <div class="oneNav">
+                        關於我們
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </a>
+                <a href="@Url.Content("~/sg/private-bank/custom/")">
+                    <div class="oneNav">
+                        方案訂製
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </a>
+
+                @*<a href="javascript:;" onclick="alert('敬請期待');">
+                    <div class="oneNav">
+                        專屬禮遇
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </a>*@
+                <a href="@Url.Content("~/sg/private-bank/award/")">
+                    <div class="oneNav">
+                        獎項榮譽
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </a>
+
+                <a href="@Url.Content("~/sg/private-bank/contact/")">
+                    <div class="oneNav">
+                        聯絡我們
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </a>
+                <a href="https://www.globalmyb2b.com/PBANK/Login.aspx?LOC=SG" target="_blank" rel="noopener">
+                    <div class="oneNav">
+                        網銀登入
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </a>
+
+
+
+
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+<!-- Modal -->
+<div class="modal fade m1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+
+    <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/myClose.png")" class="myClose" data-dismiss="modal" aria-label="Close">
+
+    <div class="modal-dialog" role="document">
+        <div class="modal-content text-left">
+
+            <div class="modal-body">
+                <h4 class="gold2">旅遊生活管家</h4>
+                <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/exclusive/section3Illu1.jpg")" class="img-fluid mb15">
+                <ul>
+                    <li>旅遊疫苗接種及簽證資訊協助</li>
+                    <li>海外遺失行李協尋</li>
+                    <li>海外遺失護照協助</li>
+                    <li>海外緊急安排簽證延期</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade m2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+
+    <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/myClose.png")" class="myClose" data-dismiss="modal" aria-label="Close">
+
+    <div class="modal-dialog" role="document">
+        <div class="modal-content text-left">
+
+            <div class="modal-body">
+                <h4 class="gold2">旅遊健康管家</h4>
+                <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/exclusive/section3Illu2.jpg")" class="img-fluid mb15">
+                <ul>
+                    <li>海外24小時緊急醫療諮詢</li>
+                    <li>海外專科專症醫療院所/醫師推薦服務</li>
+                    <li>海外門診/住院預約協助服務</li>
+                    <li>緊急醫療轉送/專機安排服務</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+   <!-- header -->
+<!-- header -->
+<!-- header -->
+
+<div class="d-lg-none">
+    <div class="header">
+        <div class="container text-left">
+            <div class="row">
+                <div class="col-9">
+                    <a href="@Url.Content("~/sg/private-bank/")">
+                        <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/logo.png")" class="logo">
+                    </a>
+                </div>
+                <div class="col-3 text-right">
+                    <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/trigger.png")" class="trigger" data-toggle="modal" data-target=".nav">
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="d-none d-lg-block">
+    <div class="headerD">
+        <div class="container text-left">
+            <div class="row area1">
+                <div class="col-4">
+                    <a href="@Url.Content("~/sg/private-bank/")">
+                        <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/logo.png")" class="logo">
+                    </a>
+                </div>
+                <div class="col-8 text-right">
+
+                    <ul class="rightTopNav">
+                        <li><a href="@Url.Content("~/sg/")">新加坡分行</a></li>
+                        <li><a href="@Url.Content("~/sg/private-bank/")" class="active">私人銀行</a></li>
+                        <li><a href="@Url.Content("~/sg/zh-cn/private-bank/")" target="_self" class="goldFrame">簡中</a></li>
+                        <li><a href="@Url.Content("~/sg/en/private-bank/")" target="_self" class="goldFrame">En</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="goldLineArea"></div>
+                </div>
+            </div>
+
+            <div class="row area2">
+                <div class="col-12">
+                    <ul class="mainNav">
+                        <li class="nav1">
+                            <a href="@Url.Content("~/sg/private-bank/about/")">關於我們</a>
+                        </li>
+                        <!--
+                            <li class="nav2">
+                                <a href="news.html">最新消息</a>
+                            </li>
+    -->
+
+                        <li class="nav4">
+                            <a href="@Url.Content("~/sg/private-bank/custom/")">方案訂製</a>
+                        </li>
+                        @*<li class="nav3">
+                            <a href="javascript:;" onclick="alert('敬請期待');">專屬禮遇</a>
+                        </li>*@
+                        <li class="nav100">
+                            <a href="@Url.Content("~/sg/private-bank/award/")">獎項榮譽</a>
+                        </li>
+                        <li class="nav5">
+                            <a href="@Url.Content("~/sg/private-bank/contact/")">聯絡我們</a>
+                        </li>
+                        <li class="nav6">
+                            <a href="https://www.globalmyb2b.com/PBANK/Login.aspx?LOC=SG" target="_blank" rel="noopener">網銀登入</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+    <!-- banner -->
+    <!-- banner -->
+    <!-- banner -->
+
+
+    <div class="banner">
+        <div class="titleSet">
+            <h2 class="gold1">專屬禮遇</h2>
+            <div class="siteMap">
+                <p><a href="@Url.Content("~/sg/private-bank/")">首頁</a> / 專屬禮遇</p>
+            </div>
+
+            <div class="myBtn outLine" onclick="slideTo('s1')">貴賓權益</div>
+
+
+            <div class="myBtn outLine" onclick="slideTo('s2')">尊榮活動</div>
+
+        </div>
+
+    </div>
+
+
+    <!-- section1 -->
+    <!-- section1 -->
+    <!-- section1 -->
+
+
+
+    <div class="marbleBg">
+
+
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12 secondTitleSet s1">
+                    <div class="h2Container data-aos=" fade-up"">
+                        <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/exclusive/leftFlower.png")" class="flower">
+                        <h2>貴賓權益</h2>
+                        <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/exclusive/rightFlower.png")" class="flower">
+                    </div>
+
+                    <h4 data-aos="fade-up">成為國泰世華私人銀行客戶，享尊榮專屬禮遇</h4>
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+        <div class="section1">
+
+            <!--
+            <div class="row no-gutters">
+                <div class="col-12">
+                    <h3 class="blue" data-aos="fade-up">金融服務禮遇</h3>
+                </div>
+            </div>
+-->
+            <div class="row no-gutters">
+                <div class="col-12 col-lg-10 offset-lg-2">
+                    <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/exclusive/section1Illu.jpg")" data-aos="fade-up">
+                </div>
+                <div class="col-12">
+                    <div class="text-box" data-aos="fade-up">
+                        <h5>國泰世華銀行 世界卡免年費<br>專屬禮遇</h5>
+
+                        <ul>
+                            <li>新卡刷卡禮</li>
+                            <li>美饌饗宴優惠</li>
+                            <li>免費機場接送禮遇</li>
+                            <li>頂級度假飯店住宿禮遇</li>
+                            <li>北中南國內頂級高球禮遇</li>
+                            <li>尊榮白金秘書服務</li>
+                        </ul>
+                        
+                        <p>世界卡各項禮遇以國泰世華官網信用卡介紹為主
+</p>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="text-box2" data-aos="fade-up">
+                        <p>以上貴賓權益請洽貴賓專屬服務人員了解詳細內容
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-12 secondTitleSet s2">
+                    <div class="h2Container" data-aos="fade-up">
+                        <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/exclusive/leftFlower.png")" class="flower">
+                        <h2>尊榮活動</h2>
+                        <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/exclusive/rightFlower.png")" class="flower">
+                    </div>
+
+
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+
+        <div class="section5">
+
+            <div class="row no-gutters">
+                <div class="col-12">
+<!--                    <h3 class="blue" style="margin-bottom:0px;" data-aos="fade-up">航行禮遇</h3>-->
+                    <p data-aos="fade-up">訂製質感活動，成就精采生活</p>
+                </div>
+            </div>
+            <div class="row no-gutters">
+                <div class="col-12 col-lg-10">
+                    <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/exclusive/section5Illu.jpg")" data-aos="fade-up">
+                </div>
+
+                <div class="col-12">
+                    <div class="text-box" data-aos="fade-up">
+                        <h5>品味藝術講座</h5>
+                        <p>為生活增添藝術色彩，帶您進入藝術殿堂陶冶性情感受藝術的薰陶</p>
+                        <h5>時尚潮流交誼</h5>
+                        <p>珠寶鑑賞、名錶賞析、香氛訂製、名廚烹飪，時尚潮流，唯您獨享</p>
+                        <h5>專業投資論壇</h5>
+                        <p>帶您了解經濟脈動與全球金融走勢，一手掌握投資對策</p>
+                        <h5>私人客戶專屬貴賓晚宴</h5>
+                        <p>年度專屬貴賓晚宴，為您呈現美食及精彩演出，豐富您視覺及味覺的精采饗宴</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+    </div><!-- .marbleBg -->
+
+
+
+
+
+       <!--<div class="d-none d-lg-block">-->
+    <a href="@Url.Content("~/sg/private-bank/contact/")">
+        <div class="followMe">
+            聯絡<br/>我們
+        </div>
+    </a>
+    <!--</div>-->
+
+
+
+<!-- footer -->
+<!-- footer -->
+<!-- footer -->
+
+
+
+<div class="d-lg-none">
+    <div class="footer">
+        <div class="container text-left">
+            <div class="row">
+                <div class="col-12">
+                    <ul>
+                        <li>手機請撥：02-2383-1000</li>
+                        <li>服務專線：0800-818-001</li>
+                        <li><a href="https://www.cathaybk.com.tw/cathaybk/about/about/customer-benefits/client-privacy/?l=f" target="_blank" rel="noopener">隱私權保護政策</a></li>
+                        <li><a href="https://www.cathaybk.com.tw/cathaybk/about/about/customer-benefits/client-secret/?l=f" target="_blank" rel="noopener">顧客資料保密措施</a></li>
+                        <li><a href="https://www.cathaybk.com.tw/cathaybk/personal/investment/announcement/comarketing/" target="_blank" rel="noopener">共同行銷</a></li>
+                        <li>©國泰世華商業銀行股份有限公司</li>
+                        <li><a href="https://www.cathaybk.com.tw/cathaybk/promo/private-bank/index.html" target="_blank" rel="noopener">國泰世華私人銀行 I 台灣</a></li>
+                        <li><a href="@Url.Content("~/HongKong/private-bank/")" target="_blank" rel="noopener">國泰世華私人銀行 I 香港</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="d-none d-lg-block">
+    <div class="footerD">
+        <div class="area1">
+            <div class="container text-left">
+                <div class="row">
+                    <div class="col-12">
+                        <a href="###">
+                            <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/logoOnlyTree.png")" class="logo">
+                        </a>
+                        <ul>
+                            <li><a href="https://www.cathaybk.com.tw/cathaybk/promo/private-bank/index.html" target="_blank" rel="noopener">國泰世華私人銀行 I 台灣</a></li>
+                            <li><a href="@Url.Content("~/HongKong/private-bank/")" target="_blank" rel="noopener">國泰世華私人銀行 I 香港</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="area2">
+            <div class="container text-left">
+                <div class="row">
+                    <div class="col-12">
+                        <ul>
+                            <li>
+                                <a href="https://www.facebook.com/cathayunitedbank/" target="_blank" rel="noopener"><img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/fb.png")"></a>
+                            </li>
+
+                            <li>
+                                <a href="https://line.me/R/ti/p/%40cathaybank" target="_blank" rel="noopener"><img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/line.png")"></a>
+                            </li>
+                            <li><a href="https://www.cathaybk.com.tw/cathaybk/personal/news/announcement/info/browsersetting/?l=f" target="_blank" rel="noopener">瀏覽器建議</a></li>
+                            <li><a href="https://www.cathaybk.com.tw/cathaybk/about/about/customer-benefits/client-privacy/?l=f" target="_blank" rel="noopener">隱私權保護政策</a></li>
+                            <li><a href="https://www.cathaybk.com.tw/cathaybk/about/about/customer-benefits/client-secret/?l=f" target="_blank" rel="noopener">顧客資料保密措施</a></li>
+                            <li><a href="https://www.cathaybk.com.tw/cathaybk/personal/investment/announcement/comarketing/" target="_blank" rel="noopener">共同行銷</a></li>
+                            <li>©國泰世華商業銀行股份有限公司</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+    <!-- footer_js -->
+    <!-- footer_js -->
+    <!-- footer_js -->
+
+   <!--  ******************************************* js *********************************************** -->
+
+<script src="@Url.Content("~/OVSWS/Content/pwm-sg/js/jquery.js")"></script>
+
+<script src="@Url.Content("~/OVSWS/Content/pwm-sg/js/bootstrap.min.js")"></script>
+
+<script src="@Url.Content("~/OVSWS/Content/js/vendor/aos/aos.js")"></script>
+
+
+<script>
+    $(document).ready(function() {
+
+
+
+        AOS.init({
+            offset: 180, // offset (in px) from the original trigger point
+            duration: 2000, // values from 0 to 3000, with step 50ms
+            easing: 'ease-out-quad' // default easing for AOS animations
+
+        });
+    });
+
+
+
+
+    // ↓↓↓↓↓↓↓↓ 滑動到指定位置 ↓↓↓↓↓↓↓↓
+    // ↓↓↓↓↓↓↓↓ 滑動到指定位置 ↓↓↓↓↓↓↓↓
+    // ↓↓↓↓↓↓↓↓ 滑動到指定位置 ↓↓↓↓↓↓↓↓
+    var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
+
+
+    function goToTop() {
+
+        $body.animate({
+            scrollTop: $("body").offset().top
+        }, 1000);
+    }
+
+
+    function slideTo(targetName) {
+
+        $body.animate({
+            scrollTop: $("." + targetName).offset().top
+        }, 1500);
+
+    }
+
+
+
+
+
+    // ↓↓↓↓↓↓↓↓ 選單收合 ↓↓↓↓↓↓↓↓
+    window.onscroll = function() {
+        scrollFunction()
+
+    };
+
+
+    function scrollFunction() {
+
+
+        //document.documentElement || document.documentElement.scrollTop || document.body.scrollTop
+
+        if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            $('.headerD .container .area1').hide();
+            $('.headerD .container .goldLineArea').hide();
+        } else {
+            $('.headerD .container .area1').show();
+            $('.headerD .container .goldLineArea').show();
+        }
+
+
+      
+
+    }
+
+</script>
+
+
+
+
+    <script>
+        $(".nav3").addClass("current");
+
+    </script>
+
+
+
+</body>
+
+
+</html>

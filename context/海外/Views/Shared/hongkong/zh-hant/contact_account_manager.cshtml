@@ -1,0 +1,44 @@
+﻿<div class='component-oversea-support'>
+    <figure class='cos-figure'>
+        <picture>
+            <source media='(min-width: 768px)'
+                    srcset='@Url.Content("~/OVSWS/Content/img/hongkong/support/bg-lg.jpg")' />
+@if(ViewBag.lang == "zh-hant"){
+
+    
+            <img class='cos-img' src='@Url.Content("~/OVSWS/Content/img/hongkong/support/bg.jpg")' alt='洽本行客戶關係經理'>
+}
+else{
+
+            <img class='cos-img' src='@Url.Content("~/OVSWS/Content/img/hongkong/support/bg.jpg")' alt='Contact the Branch's RMs'>
+
+}
+
+
+        </picture>
+@if(ViewBag.lang == "zh-hant"){
+
+        <figcaption hidden>洽本行客戶關係經理</figcaption>
+    
+}
+else{
+
+        <figcaption hidden>Contact the Branch's RMs</figcaption>
+
+}
+    </figure>
+    <div class="cos-inner">
+@if(ViewBag.lang == "zh-hant"){
+<div class="cos-content">
+    如欲進一步了解融資產品內容，<br />可洽本行<a href="@Url.Content("~/"+@ViewBag.country_url+"/contact/")" class='cos-link'>客戶關係經理</a>
+</div> 
+}
+else{
+<div class="cos-content">
+    If you want to know more about the content of financing products, <br/>please contact <a href="@Url.Content("~/"+@ViewBag.country_url+"/contact/")" class='cos-link'> our customer relations manager.</a>.
+</div> 
+}
+        
+    </div>
+</div>
+

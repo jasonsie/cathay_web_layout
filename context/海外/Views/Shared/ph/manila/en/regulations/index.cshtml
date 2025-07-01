@@ -1,0 +1,135 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "Terms and Conditions";
+    ViewBag.PageDescription = "";
+}
+@section Scripts {}
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/terms-condition-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/terms-condition.jpg")' alt='@ViewBag.nav_regulations'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_regulations</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_regulations</h1>
+        </div>
+    </div>
+</div>
+
+<div class='component-oversea-list'>
+    <div class="col-inner">
+        <div class="col-list-wrap">
+            <ul class='col-list'>
+                @*此消息需置頂=======================*@
+                <li class='col-item'>
+                    <span class='col-item-title'>Valid IDs Accepted</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/regulations/Valid IDs Accepted.pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                @*此消息需置頂=======================*@
+                <li class='col-item'>
+                    <span class='col-item-title'>PDIC 23rd Deporsitor Protection and Awareness Week 2025</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/regulations/PDIC 23rd Deporsitor Protection and Awareness Week 2025.pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-title'>NPC 2025 Privacy Awareness Week</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/regulations/NPC 2025 Privacy Awareness Week.pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-title'>Credit Consciousness Week 2025</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/regulations/Credit Consciousness Week 2025.pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-title'>First Philippine Polymer Banknote Series</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/regulations/First Philippine Polymer Banknote Series.pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-title'>National Banking Week 2025</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/regulations/National Banking Week 2025.pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-title'>OTC notice</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/regulations/OTC notice.pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-title'>Update for notice of Relocation</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/regulations/UPDATE FOR NOTICE OF RELOCATION.pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-title'>Savings Consciousness Week 2024</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/regulations/Tarpaulin Slogan (English).pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-title'>Notice of Relocation</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/regulations/Notice of Relocation.pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-title'>22nd Depositor Protection and Awareness Week (DPAW) on 16-22 June 2024</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/regulations/22nd DPAW 2024.pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-title'>Credit Consciousness Week 2024</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/regulations/Specimen_Credit Consciousness Week 2024.pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-title'>BSP Circular Letter No. CL-2024-017 - Acceptance of folded polymer banknotes</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/regulations/BSP Circular Letter No. CL-2024-017_Acceptance of folded polymer banknotes.pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-title'>BSP National Banking Week 2024</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/regulations/BSP_2024.jpg")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-title'>BSP Savings Consciousness Week 2023</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/regulations/SCWeek_2023.pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-title'>BSP Credit Consciousness Week 2023</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/regulations/BSP_CCW_2023.jpg")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-title'>BSP National Banking Week 2023</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/regulations/BSP_2023.jpg")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-title'>BSP Savings Consciousness Week 2022</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/regulations/SCWeek.pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-title'>PDIC 20th Depositor Protection and Awareness Week</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/regulations/PDIC.pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-title'>PesoNet Virtual launch of Multiple Batch Settlement （MBS）</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/regulations/PesoNetMBS.pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-title'>BSP CHATBOT</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/regulations/bsp-chatbot.pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-title'>BSP CIRCULAR NO.1052 TRUTH IN LENDING ACT_OCTOBER 2019</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/regulations/bsp-circular-no1052-truth-in-lending-actoctober-2019.pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-title'>PHILIPPINE BANKING TRADING, CLEARING AND SETTLEMENT TIMELINES (AS OF NOV 25)</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/regulations/philippine-banking-trading-clearing-and-settlement-timelines-as-of-nov-25.pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-title'>PROTECTION AGAINST SMS-BASED ATTACKS</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/regulations/protection-against-sms-based-attacks.pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-title'>SCAM AND FRAUD ALERT</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/regulations/scam-and-fraud-alert.pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>

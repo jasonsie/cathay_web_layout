@@ -1,0 +1,60 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "Updates to Transaction Correspondences and Password Encryption";
+    ViewBag.PageDescription = "Updates to Transaction Correspondences and Password Encryption";
+}
+
+@section Scripts {}
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news.jpg")' alt='@ViewBag.nav_news'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_news</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_news</h1>
+        </div>
+    </div>
+</div>
+
+<!-- newsview -->
+<article class="component-newsview">
+    <div class="component-newsview-inner">
+        <header class="component-newsview-header">
+            <div class="component-newsview-date"></div>
+            <h1 class="component-newsview-title">Updates to Transaction Correspondences and Password Encryption </h1>
+        </header>
+
+        <div class="component-newsview-body">
+            <p class='cosc-item-description'>
+                Beware of Phishing Scams<br />
+
+                Beware of phishing cases where scammers will send you fake SMSes ／ emails, claiming issues with your banking account and asking you to click on an URL link.
+                Please do NOT click on such phishing SMS ／ email link. The URL will lead you to a phishing website which is controlled by the scammers to trick you in providing your online banking login credentials or one－time passwords （“OTPs”） such as PIN number, User ID or passwords etc. Kindly be informed that Cathay United Bank will never ask you to provide such information to us. Hence, please be vigilant against such scams and do not disclose such information to anyone. When in doubt, kindly verify the validity of the content received by contacting Cathay United Bank. Our contact details can be found in our official website.
+                Do also stay vigilant against phishing threats which may come in other forms such as voice calls.
+                For more information on phishing, please refer to this weblink： <a class='coi-link' href='https://www.moneysense.gov.sg/articles/2018/11/phishing-scam' target="_blank" rel='noopener nofollow'>https://www.moneysense.gov.sg/articles/2018/11/phishing-scam</a>
+            </p>
+
+            <p class='cosc-item-description'>
+                Dear valued customer,<br />
+
+                Thank you for your continued support of Cathay United Bank (Singapore Branch) (“We” or “us").<br />
+                To improve customer service quality, we will adjust the layout of transaction advice for account statements, deposit settlement advice/ withdrawal settlement advice, outward remittance advice and inward remittance advice, and the transaction advice will be encrypted with a new default password from 2024/01/22. When you intend to open the e-mail attachment, please enter a password to view the content therein in the future.
+                If you have any questions about this notice, please contact your Relationship Manager or customer service hotline at +65 6593 9280.
+
+            </p>
+        </div>
+        <footer class="component-newsview-footer">
+            <div class="component-btn-row">
+                <a class="component-btn-main btn-green" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/")">Back</a>
+            </div>
+        </footer>
+    </div>
+</article><!--/.component-newsview-->

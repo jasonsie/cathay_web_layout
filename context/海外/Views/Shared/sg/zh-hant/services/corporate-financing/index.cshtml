@@ -1,0 +1,90 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = @ViewBag.nav_services_corporate_finance;
+}
+
+@if(ViewBag.lang == "zh-hant"){
+    ViewBag.PageDescription = "";
+}
+else{
+    ViewBag.PageDescription = "";
+}
+@section Scripts {
+
+}
+
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/sg/kv-short/coroperate-financing-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/sg/kv-short/coroperate-financing.jpg")' alt='@ViewBag.nav_services_corporate_finance'>
+
+        </picture>
+        <figcaption hidden>@ViewBag.nav_services_corporate_finance</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_services_corporate_finance</h1>
+        </div>
+    </div>
+</div>
+
+@if(ViewBag.lang == "zh-hant"){
+    <div class='component-oversea-services-list component-bg--white'>
+        <div class="cosl-inner">
+            <h2 class='cosl-title'>@ViewBag.services_title</h2>
+            <ul class='cosl-list'>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>營運周轉融資</h3>
+                </li>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>資本支出融資</h3>
+                </li>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>台商及僑資事業融資</h3>
+                </li>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>聯貸與結構性融資</h3>
+                </li>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>專案融資</h3>
+                </li>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>保證</h3>
+                </li>
+            </ul>
+        </div>
+    </div>
+}
+else{    
+    <div class='component-oversea-services-list component-bg--white'>
+        <div class="cosl-inner">
+            <h2 class='cosl-title'>@ViewBag.services_title</h2>
+            <ul class='cosl-list'>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>Working capital financing</h3>
+                </li>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>Capex finance</h3>
+                </li>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>Loans to Taiwanese and overseas Chinese invested companies</h3>
+                </li>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>Syndicated financing and structured financing</h3>
+                </li>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>Project financing</h3>
+                </li>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>Guarantee</h3>
+                </li>
+            </ul>
+        </div>
+    </div>
+}
+

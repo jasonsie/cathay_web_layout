@@ -1,0 +1,138 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "衍生性金融商品";
+    ViewBag.PageDescription = "拥有具丰富国际金融实务经验之专业团队，密切掌握市场及配合企业营运状况，提供专业、精准的避险策略，致力提供最佳服务。";
+}
+@section Scripts {
+    <script>
+        var serviceCard = serviceCard || {};
+        serviceCard.prototype = {
+            sameHeight: function () {
+                let window_w = $(window).width();
+                let max_h = 0;
+                let scope = $('.component-oversea-services-card');
+                $('.cosc-item-content', scope).css('min-height', 0);
+                $('.cosc-item-content', scope).css('height', 'auto');
+                if (window_w >= 768) {
+                    $('.cosc-item', scope).each(function () {
+                        let h = $('.cosc-item-content', $(this)).height();
+                        if (h > max_h) {
+                            max_h = h;
+                        }
+                    })
+                    $('.cosc-item-content', scope).height(max_h);
+                } else {
+                    $('.cosc-item-content', scope).css('height', 'auto');
+                }
+            },
+            addEventListener: function () {
+                let o = this;
+                $(window).on('resize.serviceCard', function () {
+                    o.sameHeight();
+                }).trigger('resize.serviceCard');
+            },
+            init: function () {
+                this.addEventListener();
+            }
+        }
+    </script>
+
+    <script>
+        $(function () {
+
+            var myServiceCard = serviceCard.prototype;
+            myServiceCard.init();
+        })
+    </script>
+}
+
+
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/sg/kv-short/financial-derivatives-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/sg/kv-short/financial-derivatives.jpg")' alt='@ViewBag.nav_services_financial_derivatives'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_services_financial_derivatives</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_services_financial_derivatives</h1>
+        </div>
+    </div>
+</div>
+
+ <div class="component-oversea-services-card">
+    <div class="cosc-inner">
+        <h2 class="cosc-title">@ViewBag.services_title</h2>
+        <h3 class="cosc-subtitle">外汇类产品</h3>
+        <ul class="cosc-list">
+            <li class="cosc-item">
+                <figure class="cosc-item-figure">
+                    <picture>
+                        <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/sg/services-card/financial-derivatives/fx-forward.jpg")" alt="远期外汇">
+
+                    </picture>
+                    <figcaption hidden="">远期外汇</figcaption>
+                </figure>
+                <div class="cosc-item-content">
+                    <h3 class="cosc-item-title">远期外汇</h3>
+                    <h4 class="cosc-item-subtitle">FORWARD</h4>
+                    <p class="cosc-item-description">
+                        指交割日超过两个营业日(T+2)的外汇交易。客户与国泰世华银行约定在未来某一指定日期或期间，依订约之金额、币别、汇率进行交割。远期外汇交易主要为了锁定汇率成本，以规避汇率上涨或下跌风险。
+                    </p>
+                </div>
+            </li>
+            <li class="cosc-item">
+                <figure class="cosc-item-figure">
+                    <picture>
+                        <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/sg/services-card/financial-derivatives/fx-swap.jpg")" alt="换汇交易">
+                    </picture>
+                    <figcaption hidden="">换汇交易</figcaption>
+                </figure>
+                <div class="cosc-item-content">
+                    <h3 class="cosc-item-title">换汇交易</h3>
+                    <h4 class="cosc-item-subtitle">SWAP</h4>
+                    <p class="cosc-item-description">换汇交易主要为资金调度所用，等于客户同时订约一笔即期外汇(或远期外汇)和一笔与前者交易方向相反但金额相同之远期外汇。</p>
+                </div>
+            </li>
+        </ul>
+
+
+        <h3 class="cosc-subtitle">利率类产品</h3>
+        <ul class="cosc-list">
+            <li class="cosc-item">
+                <figure class="cosc-item-figure">
+                    <picture>
+                        <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/sg/services-card/financial-derivatives/interest-rate-swap.jpg")" alt="利率交换">
+                    </picture>
+                    <figcaption hidden="">利率交换</figcaption>
+                </figure>
+                <div class="cosc-item-content">
+                    <h3 class="cosc-item-title">利率交换</h3>
+                    <h4 class="cosc-item-subtitle">IRS</h4>
+                    <p class="cosc-item-description">
+                        双方依订约之币别、金额及期限，进行期中利息交换。企业为公司的资产及负债规避利率风险，可运用利率交换(IRS)将固定利率换浮动利率或是浮动利率换固定利率。
+                    </p>
+                </div>
+            </li>
+            <li class="cosc-item">
+                <figure class="cosc-item-figure">
+                    <picture>
+                        <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/sg/services-card/financial-derivatives/cross-currency-swap.jpg")" alt="换汇换利交易">
+                    </picture>
+                    <figcaption hidden="">换汇换利交易</figcaption>
+                </figure>
+                <div class="cosc-item-content">
+                    <h3 class="cosc-item-title">换汇换利交易</h3>
+                    <h4 class="cosc-item-subtitle">CCS</h4>
+                    <p class="cosc-item-description">为交易双方约定期初交换两种不同货币，期中交换所持有货币之利息，期末时再换回期初所交换的两种货币之交易。此为企业规避汇率及利率风险之工具。</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

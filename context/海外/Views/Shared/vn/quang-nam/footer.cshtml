@@ -1,0 +1,83 @@
+﻿<footer class='component-footer'>
+    <div class="cf-inner">
+                
+                <div class='cf-list-wrap cf-list-wrap--lang'>
+                    <ul class='cf-list cf-list--border'>
+                         @if (ViewBag.lang == "zh-hant") {
+                            <li class='cf-item cf-item--no-border'><a href='@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.section+@ViewBag.subsection+"")' class='cf-item-link cf-item-link--active'>@ViewBag.nav_lang_zh_hant</a></li>
+                            <li class='cf-item'><a href='@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/vi-vn/"+@ViewBag.section+@ViewBag.subsection+"")' class='cf-item-link'>@ViewBag.nav_lang_local</a></li>
+                            <li class='cf-item'><a href='@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/en/"+@ViewBag.section+@ViewBag.subsection+"")' class='cf-item-link'>@ViewBag.nav_lang_en</a></li>
+                        }else if(ViewBag.lang == "en")
+                        {
+                            <li class='cf-item cf-item--no-border'><a href='@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.section+@ViewBag.subsection+"")' class='cf-item-link'>@ViewBag.nav_lang_zh_hant</a></li>
+                            <li class='cf-item'><a href='@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/vi-vn/"+@ViewBag.section+@ViewBag.subsection+"")' class='cf-item-link'>@ViewBag.nav_lang_local</a></li>
+                            <li class='cf-item'><a href='@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/en/"+@ViewBag.section+@ViewBag.subsection+"")' class='cf-item-link cf-item-link--active'>@ViewBag.nav_lang_en</a></li>
+                        }
+                        else
+                        {
+                            <li class='cf-item cf-item--no-border'><a href='@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.section+@ViewBag.subsection+"")' class='cf-item-link'>@ViewBag.nav_lang_zh_hant</a></li>
+                            <li class='cf-item'><a href='@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/vi-vn/"+@ViewBag.section+@ViewBag.subsection+"")' class='cf-item-link cf-item-link--active'>@ViewBag.nav_lang_local</a></li>
+                            <li class='cf-item'><a href='@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/en/"+@ViewBag.section+@ViewBag.subsection)' class='cf-item-link'>@ViewBag.nav_lang_en</a></li>
+                        }
+
+                    </ul>
+                </div>
+
+
+                <div class='cf-list-wrap cf-list-wrap--cathay-group'>
+                    <ul class='cf-list cf-list--border'>
+                        <ul class='cf-icon-list'>
+                            <li class='cf-item'>
+                                <a href='#' class='cf-item-link'>
+                                    <figure class='cf-item-figure'>
+                                        <picture>
+                                            <img class='cf-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/common/footer/logo.svg")' width="30" alt='@ViewBag.nav_cathay_united_bank'>
+                                        </picture>
+                                        <figcaption hidden>@ViewBag.nav_cathay_united_bank</figcaption>
+                                    </figure>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class='cf-list'>
+                            
+                            @if (ViewBag.lang == "zh-hant")
+                            {
+                                <li class='cf-item cf-item--no-border'><a href='https://www.cathayholdings.com/' target="_blank" rel='noopener' class='cf-item-link'>@ViewBag.nav_cathay_holdings</a></li>
+                                <li class='cf-item'><a href='https://www.cathaybk.com.tw/cathaybk' target="_blank" rel='noopener' class='cf-item-link'>@ViewBag.nav_cathay_united_bank</a></li>
+                                <li class='cf-item'><a href='@Url.Content("~/overseas/")' target="_blank" rel='noopener' class='cf-item-link'>@ViewBag.nav_oversea_branch</a></li>
+                            }
+                            else
+                            {
+                                <li class='cf-item cf-item--no-border'><a href='https://www.cathayholdings.com/en/holdings/intro/intro/about/' target="_blank" rel='noopener' class='cf-item-link'>@ViewBag.nav_cathay_holdings</a></li>
+                                <li class='cf-item'><a href='https://www.cathaybk.com.tw/en-us/cathaybk/english/about-us/about-us/company-history/' target="_blank" rel='noopener' class='cf-item-link'>@ViewBag.nav_cathay_united_bank</a></li>
+                                <li class='cf-item'><a href='@Url.Content("~/overseas/en/")' target="_blank" rel='noopener' class='cf-item-link'>@ViewBag.nav_oversea_branch</a></li>
+                            }
+                        </ul>
+                    </ul>
+                </div>
+                <div class='cf-list-wrap cf-list-wrap--link'>
+                    <ul class='cf-icon-list'>
+                        <li class='cf-item'><a href='https://www.facebook.com/cathayunitedbank' target="_blank" rel="noopener" class='cf-item-link cf-item-link--icon'><img class='cf-social-list-img lazy' width="35" data-src='@Url.Content("~/OVSWS/Content/img/common/footer/facebook.png")' alt='Facebook'></a></li>
+                        <li class='cf-item'><a href='https://www.youtube.com/user/cathayunitedbank' target="_blank" rel="noopener" class='cf-item-link cf-item-link--icon'><img class='cf-social-list-img lazy' width="35" data-src='@Url.Content("~/OVSWS/Content/img/common/footer/youtube.png")' alt='Youtube'></a></li>
+                        <li class='cf-item'><a href='https://tw.linkedin.com/company/cathay-united-bank-co-ltd-' target="_blank" rel='noopener nofollow' class='cf-item-link cf-item-link--icon'><img class='cf-social-list-img lazy' width="35" data-src='@Url.Content("~/OVSWS/Content/img/common/footer/linkedin.svg")' alt='Youtube'></a></li>
+                    </ul>
+                    <ul class='cf-list'>
+                        
+                        
+                        @if (ViewBag.lang == "zh-hant") {
+                            <li class='cf-item'><a href='https://www.cathaybk.com.tw/cathaybk/about/about/customer-benefits/client-privacy/?l=f' target="_blank" rel='noopener nofollow' class='cf-item-link'>@ViewBag.nav_privacy_security</a></li>
+                        }else if(ViewBag.lang == "en")
+                        {
+                            <li class='cf-item'><a href='https://www.cathaybk.com.tw/en-us/cathaybk/english/disclosures/disclosures/user-privacy-policy/' target="_blank" rel='noopener nofollow' class='cf-item-link'>@ViewBag.nav_privacy_security</a></li>
+                        }
+                        else
+                        {
+                            <li class='cf-item'><a href='https://www.cathaybk.com.tw/en-us/cathaybk/english/disclosures/disclosures/user-privacy-policy/' target="_blank" rel='noopener nofollow' class='cf-item-link'>@ViewBag.nav_privacy_security</a></li>
+                        }
+                        
+                        <li class='cf-item'><a href='@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"browser-setting")' class='cf-item-link'>@ViewBag.nav_browser_setting</a></li>
+                        <li class='cf-item cf-item--copyright cf-item--copyright-flex'><span class='cf-item-link'>&#169; @ViewBag.copyright</span></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>

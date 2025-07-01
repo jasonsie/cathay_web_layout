@@ -1,0 +1,140 @@
+﻿@model IndexViewModel
+@using System.Web.Configuration;
+@{
+    if (ViewBag.lang == "en")
+    {
+        ViewBag.PageTitle = "Cathay United Bank";
+        ViewBag.PageDescription = "";
+    }
+    else if (ViewBag.lang == "vi-vn")
+    {
+        ViewBag.PageTitle = "Ngân hàng Cathay United Bank";
+        ViewBag.PageDescription = "";
+    }
+    else
+    {
+        ViewBag.PageTitle = "國泰世華銀行";
+        ViewBag.PageDescription = "";
+    }
+}
+@section Scripts {
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/jquery.scrollbar.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/slick.min.js")"></script>
+
+    <script>
+        $(function () {
+            $(".cok-figure-slider").slick({
+                infinite: false,
+                slidesToShow: 1,
+                dots: false
+            });
+
+            function updateImageContainer() {
+                let window_w = $(window).width();
+                let offset_x;
+                let content_w;
+                let max_w;
+
+                if (window_w > 991) {
+                    offset_x = $('.cok-inner').offset().left;
+                    content_w = $('.cok-content').width();
+                    max_w = window_w - content_w - offset_x;
+
+                    $('.cok-figure-wrap').css({
+                        'width': max_w,
+                        'flex-basis': max_w,
+                        'max-width': max_w,
+                        'left': content_w + offset_x,
+                        'position': 'absolute'
+                    });
+                } else {
+                    $('.cok-figure-wrap').css({
+                        'width': '100%',
+                        'flex-basis': 'auto',
+                        'max-width': '100%',
+                        'left': 'auto',
+                        'position': 'relative'
+                    });
+                }
+            }
+
+            $(window).on('resize', updateImageContainer);
+            updateImageContainer();
+        });</script>
+}
+
+<div class='component-oversea-kv'>
+    <div class="cok-figure-wrap">
+        <div class="cok-figure-slider">
+            <div class="cok-figure-item">
+                <figure class='cok-figure'>
+                    <picture>
+                        <source media='(max-width: 767px)'
+                                srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/about-us/CathayUnitedBank828x400.jpg")' />
+                        <source media='(min-width: 768px) and (max-width: 1279px)'
+                                srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/about-us/CathayUnitedBank1536x400.jpg")' />
+                        <img class='cok-img'
+                             src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/about-us/CathayUnitedBank2000x800.jpg")'
+                             alt='@ViewBag.nav_about_us_cathay_united_bank'>
+                    </picture>
+                    <figcaption hidden>@ViewBag.nav_about_us_cathay_united_bank</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+    <div class="cok-inner">
+        <div class="cok-content">
+            <span class='cok-title--slogan'>@ViewBag.nav_about_us_cathay_united_bank</span>
+        </div>
+    </div>
+</div>
+
+<div class='component-oversea-services component-oversea-services--33  component-oversea-services--home'>
+    <div class="cos-inner">
+        <h2 class='cos-title'>
+            Giới thiệu
+        </h2>
+        <p class='cos-description' style="max-width:1200px">
+            Được thành lập vào năm 1975, Ngân hàng Cathay United Bank (CUB) là công ty con của Tập đoàn tài chính Cathay Financial Holdings (CFH). CUB sở hữu 232 chi nhánh và văn phòng tại nhiều quốc gia và vùng lãnh thổ như Trung Quốc, Việt Nam, Hồng Kông, Thái Lan, Singapore, Malaysia, Philippines, Lào, Campuchia, Myanmar, Indonesia… với số lượng nhân viên trên toàn mạng lưới hơn 10.000 người. Đứng trước nền kinh tế luôn biến đổi và đầy thách thức, cùng với tỷ lệ lạm phát gia tăng và lãi suất bị đẩy lên cao, CUB đã và đang theo đuổi mô hình hoạt động được xây dựng trên sự tin cậy nhưng vẫn đảm bảo tính linh hoạt. Đặc biệt, CUB cam kết thúc đẩy sự phát triển bền vững của doanh nghiệp và không ngừng phát huy sáu (06) trụ cột của sự phát triển bền vững, bao gồm: nền kinh tế carbon thấp, bảo vệ môi trường bền vững, nâng cao sức khỏe, bảo đảm sức khỏe tài chính, trao quyền trong công việc và trao quyền cho xã hội. Bằng việc liên tục đổi mới và áp dụng kỹ thuật số, CUB luôn nỗ lực trở thành một tổ chức tài chính hàng đầu tại khu vực Châu Á - Thái Bình Dương.
+        </p>
+
+        <p class='cos-description' style="max-width:1200px">
+            <strong>
+                Khuếch đại sức mạnh chuyển đổi số và định hình tài chính tương lai
+            </strong>
+        </p>
+        <p class='cos-description' style="max-width:1200px">
+            CUB là một trong những đơn vị tiên phong về lĩnh vực chuyển đổi số. Bằng việc triển khai chiến lược phát triển “Ưu tiên các thiết bị di động lên hàng đầu”, CUB đã áp dụng thành công các công nghệ tiên tiến vào sản phẩm và dịch vụ kỹ thuật số của mình. Luôn định hướng từ ba (03) trụ cột (chuyển đổi số, dữ liệu và công nghệ), CUB cũng đã tạo ra được văn hóa lấy dữ liệu làm trọng tâm, góp phần xây dựng một hệ sinh thái tài chính đa kênh liền mạch, nơi các sản phẩm và dịch vụ kỹ thuật số được cung cấp ở cả trực tuyến và trực tiếp. Những thành tựu của chúng tôi đã nhận được sự công nhận từ các tổ chức uy tín trên toàn thế giới, bao gồm Giải thưởng Doanh nghiệp Tương lai IDC, Giải thưởng Euromoney cho Ngân hàng Số tốt nhất và Giải thưởng Sáng kiến Fintech Châu Á - Đài Loan!
+        </p>
+        <p class='cos-description' style="max-width:1200px">
+            <strong>
+                Hiện thực hóa tài chính bền vững với chuyên môn tài chính
+            </strong>
+        </p>
+        <p class='cos-description' style="max-width:1200px">
+            CUB đã và đang cống hiến hết mình để thực hiện mục tiêu tài chính bền vững và không ngừng nỗ lực kêu gọi bảo vệ môi trường, xã hội và quản trị doanh nghiệp (ESG). Chúng tôi luôn hỗ trợ khách hàng để hướng đến một tương lai bền vững bằng cách cung cấp các sản phẩm toàn diện liên quan đến tính bền vững; kết hợp các nguồn lực cần thiết cho quá trình chuyển đổi không carbon và cung cấp các dịch vụ tư vấn đáng tin cậy và toàn diện. Ngoài việc thúc đẩy “Chuyển đổi hoạt động không carbon”, CUB cũng tham gia RE100, một sáng kiến năng lượng tái tạo toàn cầu trong việc giảm thiểu tiêu thụ carbon trong hoạt động kinh doanh hàng ngày. Với tầm nhìn tất cả chi nhánh của CUB tại Đài Loan sẽ hoạt động hoàn toàn dựa vào năng lượng tái tạo vào năm 2030, chúng tôi kỳ vọng trở thành một đơn vị điển hình về việc tiên phong trong phát triển bền vững.
+        </p>
+        <p class='cos-description' style="max-width:1200px">
+            CUB mong muốn cung cấp cho khách hàng trong và ngoài nước các dịch vụ tài chính toàn diện và chu đáo, đồng thời tận dụng những thế mạnh tài chính cốt lõi của mình để thúc đẩy sự phát triển bền vững của doanh nghiệp. Với tầm nhìn táo bạo, tự tin và kiên định, CUB phấn đấu trở thành đối tác tài chính tốt nhất của khách hàng.
+        </p>
+        <p class='cos-description' style="max-width:1200px">
+            <strong>
+                Hiện diện thương mại
+            </strong>
+        </p>
+        <p class='cos-description' style="max-width:1200px">
+            <strong>
+                Mở rộng hiện diện thương mại tại thị trường nước ngoài thông qua đầu tư để trở thành một ngân hàng mẫu mực trong khu vực
+            </strong>
+        </p>
+        <p class='cos-description' style="max-width:1200px">
+            Ngân hàng Cathay United Bank không ngừng nâng cao trong việc thiết lập vị trí vững chắc tại các thị trường nước ngoài. Chúng tôi cam kết đồng hành cùng ba (03) chi nhánh nước ngoài (Chi nhánh Hồng Kông, Chi nhánh Singapore và Chi nhánh TP. Hồ Chí Minh) và hai (02) công ty con nước ngoài (CUB Trung Quốc và CUB Campuchia) của mình. Ngoài việc hỗ trợ các nguồn lực cho các chi nhánh và công ty con nước ngoài, CUB còn tận dụng chính thế mạnh trong dịch vụ tư vấn tài chính cá nhân của Chi nhánh Hồng Kông và Chi nhánh Singapore để cung cấp cho khách hàng doanh nghiệp từ Đài Loan các dịch vụ toàn diện bao gồm quản lý tài chính cá nhân, tài chính doanh nghiệp và quản lý tài chính.
+        </p>
+        <p class='cos-description' style="max-width:1200px">
+            Trong số các ngân hàng Đài Loan, CUB đang sở hữu mạng lưới kinh doanh rộng lớn nhất tại khu vực ASEAN, với các hiện diện thương mại dưới hình thức công ty con, chi nhánh và văn phòng đại diện tại 9 trong 10 quốc gia thành viên ASEAN: Singapore, Việt Nam, Malaysia, Philippines, Myanmar, Lào, Campuchia, Thái Lan và Indonesia. Tận dụng mạng lưới kết nối chặt chẽ của 67 hiện diện thương mại tại nước ngoài, CUB cung cấp cho khách hàng các dịch vụ địa phương và các giải pháp toàn diện cho tài chính xuyên biên giới, từ đó đáp ứng nhu cầu của khách hàng về tài trợ, đầu tư và phòng ngừa rủi ro, giúp họ có được lợi thế cạnh tranh trên thị trường toàn cầu. CUB cũng nỗ lực mở rộng cơ sở khách hàng địa phương và kết nối với nhiều tập đoàn đa quốc gia của Đài Loan. Với mục tiêu này, chúng tôi tiếp tục tăng cường các nền tảng hợp tác xuyên biên giới, tham gia các khoản vay hợp vốn với tư cách là thành viên đầu mối dàn xếp hoặc thành viên tham gia cấp tín dụng hợp vốn, và thực hiện các khoản vay song phương.
+        </p>
+    </div>
+    <div class="about-us-back-button-container">
+        <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url)" class="about-us-back-button">@ViewBag.about_us_back_button</a>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+﻿@if (ViewBag.lang == "zh-hant")
+{
+
+
+    <div class='component-oversea-modal component-oversea-modal--fraud'>
+        <div class="modal" tabindex="-1">
+            <div class="modal-dialog  modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="com-body">
+                        <div class="com-title">提醒您切勿相信<br/>來路不明之簡訊訊息</div>
+                            <p class="com-p com-p--align-left">
+                                國泰世華提醒您：<br/>
+                                本行不會主動要求客戶登入網路銀行輸入賬戶及個人資料，包括用戶名稱及私人密碼。<br /><br />
+                                若收到假借本行名義或來路不明之簡訊訊息，切勿相信或點選連結，以維護您的權益。
+                                如您近日已於可疑網址輸入網路銀行的用戶代號及網銀密碼，建議您儘速進行更改。<br /><br />
+                                如有任何疑問，請致電本行客服專線：(852)2877 5488。
+                            </p>
+                            <p class="com-p com-p--align-left">
+
+                            <div class="com-btn-wrap">
+                                <a href="javascript:;" role='close-com-modal' class="com-btn">關閉視窗</a>
+                            </div>
+                    </div>
+                    <button type="button" role='close-com-modal' class="com-btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class='component-oversea-modal component-oversea-modal--fraud'>
+        <div class="modal" tabindex="-1">
+            <div class="modal-dialog  modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="com-body">
+                        <div class="com-title">Do not trust SMS<br/>from unknown sources</div>
+                            <p class="com-p com-p--align-left">
+                                Cathay United Bank reminds you:<br/>
+                                The Bank will not ask customers to log in Internet Banking and to enter account or personal information, including user name and password.<br /><br />
+
+                                If you receive a text message purported to be from the Bank or from an unknown source, you should not respond to them or click on any links. If you have entered your Internet Banking user name and password on a phishing website, you are strongly advised to change your password as soon as possible.<br /><br />
+
+                                Any questions, please call our Customer Service Hotline at (852) 2877 5488.
+                            </p>
+                            <div class="com-btn-wrap">
+                                <a href="javascript:;" role='close-com-modal' class="com-btn">Close</a>
+                            </div>
+                    </div>
+                    <button type="button" role='close-com-modal' class="com-btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}

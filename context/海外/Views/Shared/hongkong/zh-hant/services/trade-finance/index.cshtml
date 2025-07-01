@@ -1,0 +1,373 @@
+﻿@model IndexViewModel
+
+@if (ViewBag.lang == "zh-hant")
+{
+    ViewBag.PageTitle = "貿易融資";
+    ViewBag.PageDescription = "國泰世華商業銀行香港分行提供完整多元的國際貿易服務及融資，以滿足公司發展各時期的資金需求，量身訂做最適合您的產品。服務內容包含進口業務：信用狀開發、進口融資、進口託收、擔保提貸、副提單背書、背對背信用狀；出口業務：信用狀通知、信用狀保兌、信用狀轉讓/款項讓與、出口押匯、出口融資、出口託收、遠期信用狀買斷、承兌賣斷；保證業務：擔保信用狀、保證函；應收帳款承購業務；供應鏈融資業務。";
+}
+else
+{
+    ViewBag.PageTitle = "Trade Finance";
+    ViewBag.PageDescription = "";
+}
+
+@section Scripts {
+
+    <script>
+        var serviceCard = serviceCard || {};
+        serviceCard.prototype = {
+            sameHeight: function () {
+
+                let window_w = $(window).width();
+                let max_h = 0;
+                let scope = $('.component-oversea-services-card');
+                $('.cosc-item-content', scope).css('min-height', 0);
+                if (window_w >= 768) {
+                    $('.cosc-item.cosc-item--same-height', scope).each(function () {
+                        let h = $('.cosc-item-content', $(this)).height();
+                        if (h > max_h) {
+                            max_h = h;
+                        }
+                    })
+                    $('.cosc-item--same-height .cosc-item-content', scope).height(max_h);
+                } else {
+                    $('.cosc-item--same-height .cosc-item-content', scope).css('height', 'auto');
+                }
+            },
+            addEventListener: function () {
+                let o = this;
+                $(window).on('resize.homeCard', function () {
+                    o.sameHeight();
+                }).trigger('resize.homeCard');
+            },
+            init: function () {
+                this.addEventListener();
+            }
+        }
+    </script>
+
+    <script>
+        $(function () {
+
+            var myServiceCard = serviceCard.prototype;
+            myServiceCard.init();
+        })
+    </script>
+    }
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/trade-finance-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/trade-finance.jpg")' alt='@ViewBag.nav_services_trade_finance'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_services_trade_finance</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_services_trade_finance</h1>
+        </div>
+    </div>
+</div>
+
+@if (ViewBag.lang == "zh-hant")
+{
+    <div class="component-oversea-services-card component-oversea-services-card--33">
+        <div class="cosc-inner">
+            <h2 class="cosc-title">@ViewBag.services_title</h2>
+            <ul class="cosc-list">
+                    <li class="cosc-item cosc-item--same-height">
+                    <figure class="cosc-item-figure">
+                        <picture>
+                            <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/hongkong/services-card/trade-finance/import-business.jpg")" alt="進口業務">
+
+                        </picture>
+                        <figcaption hidden="">進口業務</figcaption>
+                    </figure>
+                    <div class="cosc-item-content">
+                        <h3 class="cosc-item-title">進口業務</h3>
+                        <ul class="cosc-item-list">
+                            <li class="cosc-item-list-item">
+                                <h3 class="cosc-item-list-item-title">信用狀開發</h3>
+                            </li>
+                            <li class="cosc-item-list-item">
+                                <h3 class="cosc-item-list-item-title">
+                                    進口融資
+                                </h3>
+                            </li>
+                            <li class="cosc-item-list-item">
+                                <h3 class="cosc-item-list-item-title">進口託收</h3>
+                            </li>
+                            <li class="cosc-item-list-item">
+                                <h3 class="cosc-item-list-item-title">擔保提貨</h3>
+                            </li>
+                            <li class="cosc-item-list-item">
+                                <h3 class="cosc-item-list-item-title">副提單背書</h3>
+                            </li>
+                            <li class="cosc-item-list-item">
+                                <h3 class="cosc-item-list-item-title">背對背信用狀</h3>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                    <li class="cosc-item cosc-item--same-height">
+                    <figure class="cosc-item-figure">
+                        <picture>
+                            <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/hongkong/services-card/trade-finance/export-business.jpg")" alt="出口業務">
+                        </picture>
+                        <figcaption hidden="">出口業務</figcaption>
+                    </figure>
+                    <div class="cosc-item-content">
+                        <h3 class="cosc-item-title">出口業務</h3>
+                        <ul class="cosc-item-list">
+                            <li class="cosc-item-list-item">
+                                <h3 class="cosc-item-list-item-title">信用狀通知</h3>
+                            </li>
+                            <li class="cosc-item-list-item">
+                                <h3 class="cosc-item-list-item-title">信用狀保兌</h3>
+                            </li>
+                            <li class="cosc-item-list-item">
+                                <h3 class="cosc-item-list-item-title">
+                                    信用狀轉讓/款項讓與
+                                </h3>
+                            </li>
+                            <li class="cosc-item-list-item">
+                                <h3 class="cosc-item-list-item-title">出口押匯</h3>
+                            </li>
+                            <li class="cosc-item-list-item">
+                                <h3 class="cosc-item-list-item-title">出口融資</h3>
+                            </li>
+                            <li class="cosc-item-list-item">
+                                <h3 class="cosc-item-list-item-title">出口託收</h3>
+                            </li>
+                            <li class="cosc-item-list-item">
+                                <h3 class="cosc-item-list-item-title">遠期信用狀買斷</h3>
+                            </li>
+                            <li class="cosc-item-list-item">
+                                <h3 class="cosc-item-list-item-title">承兌賣斷</h3>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                    <li class="cosc-item cosc-item--same-height">
+                    <figure class="cosc-item-figure">
+                        <picture>
+                            <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/hongkong/services-card/trade-finance/guarantee-business.jpg")" alt="保證業務">
+                        </picture>
+                        <figcaption hidden="">保證業務</figcaption>
+                    </figure>
+                    <div class="cosc-item-content">
+                        <h3 class="cosc-item-title">保證業務</h3>
+                        <ul class="cosc-item-list">
+                            <li class="cosc-item-list-item">
+                                <h3 class="cosc-item-list-item-title">備用信用狀</h3>
+                            </li>
+                            <li class="cosc-item-list-item">
+                                <h3 class="cosc-item-list-item-title">保證函</h3>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="cosc-item">
+                    <figure class="cosc-item-figure">
+                        <picture>
+                            <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/hongkong/services-card/trade-finance/factoring-business.jpg")" alt="應收帳款承購業務">
+                        </picture>
+                        <figcaption hidden="">應收帳款承購業務</figcaption>
+                    </figure>
+                    <div class="cosc-item-content cosc-item-content--single">
+                        <h3 class="cosc-item-title">應收帳款承購業務</h3>
+                    </div>
+                </li>
+                <li class="cosc-item">
+                    <figure class="cosc-item-figure">
+                        <picture>
+                            <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/hongkong/services-card/trade-finance/supply-chain-business.jpg")" alt="供應鏈融資業務">
+                        </picture>
+                        <figcaption hidden="">供應鏈融資業務</figcaption>
+                    </figure>
+                    <div class="cosc-item-content cosc-item-content--single">
+                        <h3 class="cosc-item-title">供應鏈融資業務</h3>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+}
+else
+{
+    <div class="component-oversea-services-card component-oversea-services-card--33 component-oversea-services-card--trade-finance">
+        <div class="cosc-inner">
+            <h2 class="cosc-title">@ViewBag.services_title</h2>
+            <ul class="cosc-list">
+                <li class="cosc-item">
+                    <figure class="cosc-item-figure">
+                        <picture>
+                            <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/hongkong/services-card/trade-finance/import-business.jpg")" alt="Import Business ">
+
+                        </picture>
+                        <figcaption hidden="">Import Business </figcaption>
+                    </figure>
+                    <div class="cosc-item-content">
+                        <h3 class="cosc-item-title">Import Business </h3>
+                        <ul class="cosc-item-list">
+                            <li class="cosc-item-list-item">
+                                <h3 class="cosc-item-list-item-title">Letter of credit issuance, amendment</h3>
+                            </li>
+                            <li class="cosc-item-list-item">
+                                <h3 class="cosc-item-list-item-title">Import financing</h3>
+                            </li>
+                            <li class="cosc-item-list-item">
+                                <h3 class="cosc-item-list-item-title">Import collection</h3>
+                            </li>
+                            <li class="cosc-item-list-item">
+                                <h3 class="cosc-item-list-item-title">Shipping guarantee</h3>
+                            </li>
+                            <li class="cosc-item-list-item">
+                                <h3 class="cosc-item-list-item-title">B/L endorsement</h3>
+                            </li>
+                            <li class="cosc-item-list-item">
+                                <h3 class="cosc-item-list-item-title">Back-to-back letter of credit</h3>
+                            </li>
+                            <li class="cosc-item-list-item">
+                                <h3 class="cosc-item-list-item-title">Import open account</h3>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="cosc-item">
+                    <figure class="cosc-item-figure">
+                        <picture>
+                            <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/hongkong/services-card/trade-finance/export-business.jpg")" alt="Export Business">
+                        </picture>
+                        <figcaption hidden="">Export Business</figcaption>
+                    </figure>
+                    <div class="cosc-item-content">
+                        <h3 class="cosc-item-title">Export Business</h3>
+                        <ul class="cosc-item-list">
+                            <li class="cosc-item-list-item">
+                                <h3 class="cosc-item-list-item-title">Letter of credit advising</h3>
+                            </li>
+                            <li class="cosc-item-list-item">
+                                <h3 class="cosc-item-list-item-title">Confirmation of letter of credit</h3>
+                            </li>
+                            <li class="cosc-item-list-item">
+                                <h3 class="cosc-item-list-item-title">Transferable leltter of credit, amendment </h3>
+                            </li>
+                            <li class="cosc-item-list-item">
+                                <h3 class="cosc-item-list-item-title">Export bills negotiation</h3>
+                            </li>
+                            <li class="cosc-item-list-item">
+                                <h3 class="cosc-item-list-item-title">Export open account</h3>
+                            </li>
+                            <li class="cosc-item-list-item">
+                                <h3 class="cosc-item-list-item-title">Export collection</h3>
+                            </li>
+                            <li class="cosc-item-list-item">
+                                <h3 class="cosc-item-list-item-title">Forfaiting</h3>
+                            </li>
+                            <li class="cosc-item-list-item">
+                                <h3 class="cosc-item-list-item-title">Document against acceptance forfaiting</h3>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="cosc-item">
+                    <figure class="cosc-item-figure">
+                        <picture>
+                            <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/hongkong/services-card/trade-finance/guarantee-business.jpg")" alt="Guarantee Business">
+                        </picture>
+                        <figcaption hidden="">Guaranteed Business</figcaption>
+                    </figure>
+                    <div class="cosc-item-content cosc-item-content--few">
+                        <h3 class="cosc-item-title">Guaranteed Business</h3>
+                        <ul class="cosc-item-list">
+                            <li class="cosc-item-list-item">
+                                <h3 class="cosc-item-list-item-title">Standby letter of credit</h3>
+                            </li>
+                            <li class="cosc-item-list-item">
+                                <h3 class="cosc-item-list-item-title">Letter of guarantee</h3>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="cosc-item">
+                    <figure class="cosc-item-figure">
+                        <picture>
+                            <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/hongkong/services-card/trade-finance/factoring-business.jpg")" alt="Factoring Business">
+                        </picture>
+                        <figcaption hidden="">Factoring</figcaption>
+                    </figure>
+                    <div class="cosc-item-content cosc-item-content--single">
+                        <h3 class="cosc-item-title">Factoring</h3>
+                    </div>
+                </li>
+                <li class="cosc-item">
+                    <figure class="cosc-item-figure">
+                        <picture>
+                            <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/hongkong/services-card/trade-finance/supply-chain-business.jpg")" alt="Supply Chain Business">
+                        </picture>
+                        <figcaption hidden="">Supply Chain Financing</figcaption>
+                    </figure>
+                    <div class="cosc-item-content cosc-item-content--single">
+                        <h3 class="cosc-item-title">Supply Chain Financing</h3>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+}
+
+
+
+<div class='component-oversea-support'>
+    <figure class='cos-figure'>
+        <picture>
+            <source media='(min-width: 768px)'
+                    srcset='@Url.Content("~/OVSWS/Content/img/hongkong/support/bg-lg.jpg")' />
+            @if (ViewBag.lang == "zh-hant")
+            {
+
+
+                <img class='cos-img' src='@Url.Content("~/OVSWS/Content/img/hongkong/support/bg.jpg")' alt='洽本行客戶關係經理'>
+            }
+            else
+            {
+
+                <img class='cos-img' src='@Url.Content("~/OVSWS/Content/img/hongkong/support/bg.jpg")' alt='Contact the Branch' s RMs'>
+
+            }
+
+
+        </picture>
+        @if (ViewBag.lang == "zh-hant")
+        {
+
+            <figcaption hidden>洽本行客戶關係經理</figcaption>
+
+        }
+        else
+        {
+
+            <figcaption hidden>Contact the Branch's RMs</figcaption>
+
+        }
+    </figure>
+    <div class="cos-inner">
+        @if (ViewBag.lang == "zh-hant")
+        {
+            <div class="cos-content">
+                如欲進一步了解貿易融資產品內容，<br />可洽本行<a href="@Url.Content("~/"+@ViewBag.country_url+"/contact/")" class='cos-link'>客戶關係經理</a>
+            </div>
+        }
+        else
+        {
+            <div class="cos-content">
+                If you would like to enquire about our trade services, <br />please contact <a href="@Url.Content("~/"+@ViewBag.country_url+"/contact/")" class='cos-link'> our customer relations manager</a>.
+            </div>
+        }
+
+    </div>
+</div>

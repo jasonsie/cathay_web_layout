@@ -1,0 +1,103 @@
+﻿@model IndexViewModel
+
+
+@{
+    ViewBag.PageTitle = "Derivative Products";
+    ViewBag.PageDescription = "We provide professional interest rate hedging derivative products for you to manage and mitigate the volatility of interest rate in market.";
+}
+@section Scripts {
+    <script>
+        var serviceCard = serviceCard || {};
+        serviceCard.prototype = {
+            sameHeight: function () {
+                console.log('sah');
+                let window_w = $(window).width();
+                let max_h = 0;
+                let scope = $('.component-oversea-services-card');
+                $('.cosc-item-content', scope).css('min-height', 0);
+                $('.cosc-item-content', scope).css('height', 'auto');
+                if (window_w >= 768) {
+                    $('.cosc-item', scope).each(function () {
+                        let h = $('.cosc-item-content', $(this)).height();
+                        if (h > max_h) {
+                            max_h = h;
+                        }
+                    })
+                    $('.cosc-item-content', scope).height(max_h);
+                } else {
+                    $('.cosc-item-content', scope).css('height', 'auto');
+                }
+            },
+            addEventListener: function () {
+                let o = this;
+                $(window).on('resize.serviceCard', function () {
+                    o.sameHeight();
+                }).trigger('resize.serviceCard');
+            },
+            init: function () {
+                this.addEventListener();
+            }
+        }
+    </script>
+    <script>
+        $(function () {
+
+            var myServiceCard = serviceCard.prototype;
+            myServiceCard.init();
+        })
+    </script>
+}
+
+
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/otc-derivatives-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/otc-derivatives.jpg")' alt='Derivative Products'>
+        </picture>
+        <figcaption hidden>Derivative Products </figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>Derivative Products </h1>
+        </div>
+    </div>
+</div>
+
+<div class="component-oversea-services-card component-oversea-services-card--33">
+    <div class="cosc-inner">
+        <h2 class="cosc-title">@ViewBag.services_title</h2>
+        <ul class="cosc-list">
+            <li class="cosc-item">
+                <figure class="cosc-item-figure">
+                    <picture>
+                        <img class='cosc-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services-card/otc-derivatives/fx-interest-rate-option.jpg")' alt='Interest Rate Swap'>
+                    </picture>
+                    <figcaption hidden="">Interest Rate Swap</figcaption>
+                </figure>
+                <div class="cosc-item-content">
+                    <h3 class="cosc-item-title">Interest Rate Swap</h3>
+                    <p class="cosc-item-description">
+                        A transaction for customers to avoid interest rate risks. The customers agree with the Bank to exchange their liabilities (or other transactions) with fixed interest rates into floating interest rates, or vice versa, based on a given notional amount, within a specific period to avoid the risk of rising or falling interest rates.
+                    </p>
+                </div>
+            </li>
+            <li class="cosc-item">
+                <figure class="cosc-item-figure">
+                    <picture>
+                        <img class='cosc-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services-card/otc-derivatives/fx-forward.jpg")' alt='Cross Currency Swap'>
+                    </picture>
+                    <figcaption hidden="">Cross Currency Swap</figcaption>
+                </figure>
+                <div class="cosc-item-content">
+                    <h3 class="cosc-item-title">Cross Currency Swap</h3>
+                    <p class="cosc-item-description">A transaction for customers to avoid exchange rate and interest rate risks. The customers agree with the Bank to exchange their liabilities (or other transactions) bearing interest at a fixed (or floating) interest rate in a specific currency into another currency bearing interest at a floating (or fixed) interest rate, based on a given notional amount, within a specific period to avoid the risk of rising/ falling interest rates in different currencies.</p>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</div>
+

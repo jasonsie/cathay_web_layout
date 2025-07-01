@@ -1,0 +1,362 @@
+@{
+   ViewData["PageTitle"] = "Merchant App";
+   ViewData["PageDescription"] = "";
+}
+
+
+<!-- Page START -->
+<main class="mastbody">
+	
+	<!--
+		mBanking
+	-->
+	<div class="topkv kv  kv--txt-left">
+		<div class="kv-bg">
+			<div class="kv-bg-inner">
+				<figure class="kv-bg-img">
+					<picture>
+						<source media="(min-width:769px)" srcset="/assets/img/topkv/personal-online.jpg" />
+						<img srcset="/assets/img/topkv/personal-online-mb.jpg">
+					</picture>
+				</figure>
+			</div>
+		</div>
+		<div class="kv-cont">
+			<div class="kv-cont-inner">
+				<h2 class="display-1  fw-bold lh-xs">Online Banking</h2>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Breadcrumb  (lays on top of .topkv if places right after it) -->
+	<nav class="breadcrumb-nav text-white" aria-label="breadcrumb">
+		<div class="fluid">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]"><span>Home</span><i class="ico-ui-home"></i></a></li>
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]personal/">Personal Banking</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Merchant App</li>
+			</ol>
+		</div>
+	</nav>
+	
+	<!-- Menu -->
+	<nav class="tabmenu    d-none d-sm-block">
+		<div class="tabmenu-inner">
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/internet-banking/">
+				<span class="tabmenu-btn-txt">iBanking</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/mobile-banking/">
+				<span class="tabmenu-btn-txt">mBanking</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn active" href="@ViewData["siteLangUrl"]personal/merchant-app/">
+				<span class="tabmenu-btn-txt">Merchant App</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/alert-services/">
+				<span class="tabmenu-btn-txt">Alert Services</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/user-guide/">
+				<span class="tabmenu-btn-txt">User Guide</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+		</div>
+	</nav>
+	<!-- Mobile dropdown -->
+	<div class="tabmenu-dropdown dropdown    d-block d-sm-none">
+		<a href="javascript:;" class="btn btn-sm btn-block  dropdown-toggle" data-toggle="dropdown">
+			<span class="text-truncate d-inline-block">Merchant App</span>
+		</a>
+		<div class="dropdown-menu">
+			<span class="dropdown-item disabled">-- Select page --</span>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/internet-banking/">iBanking</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/mobile-banking/">mBanking</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/merchant-app/">Merchant App</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/alert-services/">Alert Services</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/user-guide/">User Guide</a>
+		</div>
+	</div>
+
+	
+	
+	<!--
+		mBanking - Detail
+	-->
+	<section class="fluid overflow-hidden">
+		
+		<div class="py-page"></div>
+		
+		<!-- Page heading -->
+		<header class="compact  mb-5  text-center">
+			@* <h1 class="h3 h4-mb  mb-2 mb-md-3  text-black  lh-xs">Merchant App</h1> *@
+			<h2 class="display-3 h1-mb  mb-3  text-black fw-bold">
+				Empower your business with CUBC Merchant App!
+			</h2>
+			<p class="mb-3  text-left">
+				Effortlessly accept digital payments, manage staff, and track sales-all in one app. Instantly generate QR codes for secure transactions, receive real-time payment alerts, and seamlessly designate staff to business branches. Stay in control with detailed transaction history to monitor sales across different venues.
+			</p>
+			<p class="text-left">
+				Secure, efficient, and hassle-free&mdash;experience the future of digital payments today!
+			</p>
+		</header>
+		
+		
+		<!-- Features -->
+		<section class="compact-sm">
+			
+			<!-- Section heading -->
+			<h3 class="h1 h2-mb  mb-4  text-black fw-bold text-center lh-sm">
+				Features of CUBC Merchant App
+			</h3>
+			
+			<div class="d-block d-lg-flex flex-row-reverse">
+				@* <div class="w-100 pt-lg-3"> *@
+				<div class="w-100">
+					<!-- Graph icon list #2  (3 in a row)-->
+					<ul class="row  mb-n4  ">
+	
+						<!-- Graph item  (one column on mobile)-->
+						<li class="col-12 col-md-4  mb-4  px-md-1 px-xl-4">
+							<div class="d-flex align-items-center  mb-3">
+								<figure class="graph  mr-3">
+									<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/view.svg">
+								</figure>
+								<h4 class="h3 text-dark fw-bolder lh-sm">
+									Business Management
+								</h4>
+							</div>
+							<div>
+								<ul class="list-disc list--item-mb-xs">
+									<li>
+										Filtering view of branch detail
+									</li>
+									<li>
+										Manage cashiers
+									</li>
+									<li>
+										Enable branch notifications
+									</li>
+									<li>
+										View transaction history
+									</li>
+								</ul>
+							</div>
+						</li>
+	
+						<!-- Graph item  (one column on mobile)-->
+						<li class="col-12 col-md-4  mb-4  px-md-1 px-xl-4">
+							<div class="d-flex align-items-center  mb-3">
+								<figure class="graph  mr-3">
+									<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/clerk.svg">
+								</figure>
+								<h4 class="h3 text-dark fw-bolder lh-sm">
+									Cashier Management
+								</h4>
+							</div>
+							<div>
+								<ul class="list-disc list--item-mb-xs">
+									<li>
+										Register / link cashier to selected branch(s)
+									</li>
+									<li>
+										Reset / Unlock cashier
+									</li>
+								</ul>
+							</div>
+						</li>
+
+						<!-- Graph item -->
+						<li class="col-6 col-md-4  mb-4  px-1 px-xl-4">
+							<div class="d-flex align-items-center  mb-3">
+								<figure class="graph  mr-3">
+									<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/QR-Pay.png">
+								</figure>
+								<h4 class="h3 text-dark fw-bolder">Show QR</h4>
+							</div>
+							<div>
+								<ul class="list-disc list--item-mb-xs">
+									<li>Generate QR code to display or download for payment acceptance</li>
+								</ul>
+							</div>
+						</li>
+
+						<!-- Graph item  (one column on mobile)-->
+						<li class="col-12 col-md-4  mb-4  px-md-1 px-xl-4">
+							<div class="d-flex align-items-center  mb-3">
+								<figure class="graph  mr-3">
+									<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/transfer.svg">
+								</figure>
+								<h4 class="h3 text-dark fw-bolder lh-sm">
+									Transaction History
+								</h4>
+							</div>
+							<div>
+								<ul class="list-disc list--item-mb-xs">
+									<li>
+										View instant payment notification
+									</li>
+									<li>Monitor sales performance</li>
+									<li>
+										Review detail transaction statement
+									</li>
+								</ul>
+							</div>
+						</li>
+						
+					</ul>
+					<div class="py-30"></div>
+			
+					<!-- Download -->
+					@* <h4 class="h3 h2-mb  mb-3 ml-xl-3  text-black fw-bolder  text-center text-md-left">Download APP</h4> *@
+					
+					@* <div class="d-block d-md-flex ml-xl-3"> *@
+					@* 	<nav class="appbadge flex-grow-1 flex-shrink-0"> *@
+					@* 		<div class="appbadge-qrocde"><img class="lazy" data-src="/assets/img/content/app-qrcode.svg"></div>  *@
+					@* 		<div class="appbadge-store"> *@
+					@* 			<a class="appbadge-ios hover-text" target="_blank" rel="noopener noreferrer" href="https://apps.apple.com/kh/app/cubc-mbanking/id489736801"><img class="lazy" data-src="/assets/img/content/app-ios.png"></a> *@
+					@* 			<a class="appbadge-android hover-text" target="_blank" rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.mbanking.cubc"><img class="lazy" data-src="/assets/img/content/app-android.png"></a> *@
+					@* 		</div> *@
+					@* 	</nav> *@
+					@* 	<p class="w-100 mt-3 mt-md-0  pl-md-4">The CUBC mBanking App is optimized to work on your Android smartphones and tablets, Apple iPhone, iPod Touch and iPad, and BlackBerry. Best of all, it's free!</p> *@
+					@* </div> *@
+				</div>
+				
+				<!-- Screenshot -->
+				<div class="flex-grow-1 flex-shrink-0 pr-lg-4  mt-4 mt-lg-0">
+					<figure class="mx-auto px-4 px-lg-0" style="max-width:225px">
+						<img class="ofi-contain lazy" data-src="/assets/img/content/merchant-app.png" alt="Merchant App">
+					</figure>
+				</div>
+			</div>
+		</section>
+		
+		<div class="py-page"></div>
+		
+		
+		<!-- FAQ -->
+		<section class="compact">
+			<!-- Section heading -->
+			<h3 class="h1 h2-mb  mb-4  text-black fw-bold text-center lh-sm">Frequently Asked Questions</h3>
+			
+			<!-- FAQ list -->
+
+			<!-- QA item -->
+			<section class="qaitem" js-foldable-group="internet">
+				<div class="qaitem-title" role="button" tabindex="0" js-foldable-head>
+					<h5 class="qaitem-title-txt  h3 h3-mb text-dark fw-bold">
+						Q1: What is CUBC Merchant app, and how can it benefit my business?
+					</h5>
+				</div>
+				<div class="qaitem-detail" js-foldable-body>
+					<div class="qaitem-detail-content">
+						<div class="badge badge-green h5 h5-mb mb-3">Answer</div>
+						<p>
+							The CUBC Merchant App simplifies business management by enabling secure digital payment acceptances, cashier control, and sales tracking. You can generate QR codes, manage cashier across branches, receive instant payment notifications, and monitor transactions effortlessly &mdash; all in one app.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- QA item -->
+			<section class="qaitem" js-foldable-group="internet">
+				<div class="qaitem-title" role="button" tabindex="0" js-foldable-head>
+					<h5 class="qaitem-title-txt  h3 h3-mb text-dark fw-bold">
+						Q2: How do I register for CUBC Merchant App?
+					</h5>
+				</div>
+				<div class="qaitem-detail" js-foldable-body>
+					<div class="qaitem-detail-content">
+						<div class="badge badge-green h5 h5-mb mb-3">Answer</div>
+						<p>
+							To use the CUBC Merchant App, you must have active CUBC accounts and complete your merchant registration at our bank counter. After registration, you can go to the CUBC Merchant app and apply for your username and password to login. 
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- QA item -->
+			<section class="qaitem" js-foldable-group="internet">
+				<div class="qaitem-title" role="button" tabindex="0" js-foldable-head>
+					<h5 class="qaitem-title-txt  h3 h3-mb text-dark fw-bold">
+						Q3: What are the different way I can accept digital payments?
+					</h5>
+				</div>
+				<div class="qaitem-detail" js-foldable-body>
+					<div class="qaitem-detail-content">
+						<div class="badge badge-green h5 h5-mb mb-3">Answer</div>
+						<p class="mb-2">You can download to display or generate a QR code directly from the app for customers to scan and complete their payment. The app offers two types of QR codes: </p>
+						<ul class="list-disc">
+							<li>Static QR &mdash; Customers manually enter the payment amount after scanning</li>
+							<li>Dynamic QR &mdash; The payment amount is pre-entered in the QR code, so customers only need to scan and confirm.</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+
+			<!-- QA item -->
+			<section class="qaitem" js-foldable-group="internet">
+				<div class="qaitem-title" role="button" tabindex="0" js-foldable-head>
+					<h5 class="qaitem-title-txt  h3 h3-mb text-dark fw-bold">
+						Q4: How can I track and manage transactions?
+					</h5>
+				</div>
+				<div class="qaitem-detail" js-foldable-body>
+					<div class="qaitem-detail-content">
+						<div class="badge badge-green h5 h5-mb mb-3">Answer</div>
+						<p>
+							The CUBC Merchant App provides instant payment notifications, allowing you to verify complete transactions, monitor sales performance, view detail transaction statements, and track payment across different branches to maintain full financial oversight.
+						</p>
+					</div>
+				</div>
+			</section>
+			
+			<!-- QA item -->
+			<section class="qaitem" js-foldable-group="internet">
+				<div class="qaitem-title" role="button" tabindex="0" js-foldable-head>
+					<h5 class="qaitem-title-txt  h3 h3-mb text-dark fw-bold">
+						Q5: How do I add or manage cashier in CUBC Merchant App?
+					</h5>
+				</div>
+				<div class="qaitem-detail" js-foldable-body>
+					<div class="qaitem-detail-content">
+						<div class="badge badge-green h5 h5-mb mb-3">Answer</div>
+						<p>
+							Cashier can be added by navigating to the Cashier Management section in the app. Simply register the required details and link each cashier to one or more branches. You can also reset or unlock cashier's access to ensure smooth operations.
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- QA item -->
+			<section class="qaitem" js-foldable-group="internet">
+				<div class="qaitem-title" role="button" tabindex="0" js-foldable-head>
+					<h5 class="qaitem-title-txt  h3 h3-mb text-dark fw-bold">
+						Q6: Can cashier handle payment acceptance on my behalf?
+					</h5>
+				</div>
+				<div class="qaitem-detail" js-foldable-body>
+					<div class="qaitem-detail-content">
+						<div class="badge badge-green h5 h5-mb mb-3">Answer</div>
+						<p>
+							Yes, you can assign cashier to accept payment in specific branches, while keeping you full control over transaction monitoring and clear overview of performance across all business branches. Additionally, you can enable branch notifications to stay updated on all payment activities.
+						</p>
+					</div>
+				</div>
+			</section>
+		</section>
+		
+		<div class="py-page"></div>
+
+		<div class="py-page"></div>
+		
+		@Html.Partial("~/Views/Shared/" + @ViewData["viewUrl"] + "PersonalMerchantApp.cshtml")
+		
+		<div class="py-page"></div>
+	</section>
+	
+	
+</main>
+<!-- Page END -->

@@ -1,0 +1,82 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "Page Title";
+    ViewBag.PageDescription = "Page Desctiption";
+}
+
+@section Scripts {}
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/contact-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img"+"/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/contact.jpg")' alt='@ViewBag.nav_contact'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_contact</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_contact</h1>
+        </div>
+    </div>
+</div>
+
+
+@if (ViewBag.lang == "zh-hant")
+{
+    <div class='component-oversea-info'>
+        <div class='coi-inner'>
+            <h2 class='coi-title'>服務地址</h2>
+
+            <div class='coi-content'>
+                <ul class="coi-list">
+                    <li class="coi-item">
+                        <span class='coi-item-label'>電話:</span>
+                        <span class="coi-item-content">(+632) 7751-1161(一般線 / 傳真電話)</span>
+                    </li>
+                    <li class="coi-item">
+                        <span class='coi-item-label'>地址:</span>
+                        <span class="coi-item-content">31st F, Zuellig Building Makati Avenue corner Paseo de Roxas Makati City 1225 Philippines</span>
+                    </li>
+                    <li class="coi-item">
+                        <span class='coi-item-label'>有任何詢問或建議，請隨時透過下列管道聯繫我們:</span>
+                        <span class='coi-item-label'>申訴專線:</span>
+                        <span class="coi-item-content">(+632) 7751-1161 ext 1100</span>
+                    </li>
+                    <li class="coi-item">
+                        <span class='coi-item-label'>電子郵件:</span>
+                        <span class="coi-item-content">61400@cathaybk.com.tw</span>
+                    </li>
+                    <li class="coi-item">
+                        <span class='coi-item-label'>親洽分行:</span>
+                        <span class="coi-item-content">31st F, Zuellig Building Makati Avenue corner Paseo de Roxas Makati City 1225 Philippines</span>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class='component-oversea-info'>
+        <div class='coi-inner'>
+            <h2 class='coi-title'>Service Address</h2>
+
+            <div class='coi-content'>
+                <ul class="coi-list">
+                    <li class="coi-item">
+                        <span class='coi-item-label'>Address:</span>
+                        <span class="coi-item-content">4F., Viettel Quang Nam Building, No.121 Hung Vuong Street, Tam Ky City, Quang Nam Province, Vietnam</span>
+                    </li>
+                    <li class="coi-item">
+                        <span class='coi-item-label'>Phone Number:</span>
+                        <span class="coi-item-content">+84 0235 3813035~38</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+}
+

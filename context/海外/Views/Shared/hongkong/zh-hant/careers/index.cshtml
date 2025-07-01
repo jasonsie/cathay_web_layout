@@ -1,0 +1,114 @@
+﻿@model IndexViewModel
+
+
+
+@if (ViewBag.lang == "zh-hant")
+{
+    ViewBag.PageTitle = "人才招募";
+    ViewBag.PageDescription = "國泰世華商業銀行香港分行人才招募，歡迎嚮往金融領域發展的您的加入。";
+}
+else
+{
+}
+
+
+@section Scripts {
+    <script>
+        $(function () {
+            const img_ori_w = 990;
+            const img_ori_h = 770;
+            const break_w = 992;
+            const laptop_min_h = 300;
+            const mobile_min_h = 500;
+            let window_w;
+            let window_h;
+            let interval_int;
+            let elm_header = $('.component-header');
+            let elm_footer = $('.component-footer');
+            let elm_figure = $('.component-oversea-careers .coc-figure');
+            let elm_content = $('.component-oversea-careers');
+            var resizeCareer = function () {
+                window_w = $(window).width();
+                window_h = $(window).height();
+                let header_h = Math.round(elm_header.height());
+                let footer_h = Math.round(elm_footer.height());
+                let content_h;
+                if (window_w < break_w) {
+                    content_h = window_h - footer_h;
+                    if (content_h < mobile_min_h) {
+                        content_h = mobile_min_h;
+                    } else {
+                        $('body').css('overflow-y', 'hidden');
+                    }
+                }
+                else {
+                    content_h = window_h - header_h - footer_h;
+                    if (content_h < laptop_min_h) {
+                        content_h = laptop_min_h;
+                    } else {
+                        $('body').css('overflow-y', 'hidden');
+                    }
+                }
+                let content_w = window_w;
+                let img_new_h;
+                let img_ratio;
+                let img_new_w;
+                if (window_w > window_h) {
+                    img_new_h = content_h;
+                    img_ratio = content_h / img_ori_h;
+                    img_new_w = img_ori_w * img_ratio;
+                } else {
+                    img_new_w = window_w;
+                    img_ratio = img_new_w / img_ori_w;
+                    img_new_h = img_ori_h * img_ratio;
+                }
+                elm_figure.width(img_new_w);
+                elm_figure.height(img_new_h);
+                elm_content.height(content_h);
+
+                if (window_w < break_w) {
+                    elm_figure.css('left', 'auto');
+                    elm_figure.css('bottom', 0);
+                    $('.coc-content').removeAttr('style');
+
+                } else {
+                    elm_figure.css('left', window_w * 3 / 10);
+                    elm_figure.css('bottom', 'auto');
+                    $('.coc-content').css('position', 'absolute');
+                    $('.coc-content').css('padding-top', 0);
+                    $('.coc-content').css('top', (content_h - $('.coc-content').height()) / 2);
+                    $('.coc-content').css('left', 0);
+                }
+            }
+            $(window).resize(function () {
+                clearTimeout(interval_int);
+                interval_int = setTimeout(resizeCareer, 50);
+            });
+
+            $(window).trigger('resize');
+
+            setTimeout(function () {
+                $(window).trigger('resize');
+            }, 100);
+        })
+    </script>
+   
+}
+
+
+
+    <div class='component-oversea-careers'>
+        <figure class='coc-figure'>
+            <picture>
+                <img class='coc-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/hongkong/careers/kv.png")' alt='人才招募'>
+            </picture>
+            <figcaption hidden>人才招募</figcaption>
+        </figure>
+        <div class="coc-inner">
+            <div class="coc-content">
+                <h1 class='coc-title'>人才招募</h1>
+                <p class='coc-description'>請參閱英文版本</p>
+                <a href="@Url.Content("~/hongkong/en/careers/")" class='coc-btn'>Careers</a>
+            </div>
+        </div>
+    </div>

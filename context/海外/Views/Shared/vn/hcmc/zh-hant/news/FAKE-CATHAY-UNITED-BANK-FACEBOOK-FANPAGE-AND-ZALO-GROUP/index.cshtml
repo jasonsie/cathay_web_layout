@@ -1,0 +1,61 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "Notice for the new Treasury products launching – Foreign Exchange Forward and Foreign Exchange Swap";
+    ViewBag.PageDescription = "Notice for the new Treasury products launching – Foreign Exchange Forward and Foreign Exchange Swap";
+}
+
+@section Scripts {}
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news.jpg")' alt='@ViewBag.nav_news'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_news</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_news</h1>
+        </div>
+    </div>
+</div>
+
+<!-- newsview -->
+<article class="component-newsview">
+    <div class="component-newsview-inner">
+        <header class="component-newsview-header">
+            <div class="component-newsview-date"></div>
+            <h1 class="component-newsview-title">[WARNING] FAKE CATHAY UNITED BANK FACEBOOK FANPAGE AND ZALO GROUP </h1>
+        </header>
+
+        <div class="component-newsview-body">
+            <p>
+                Cathay United Bank (CUB) has been detected that the Tuyển dụng Cathay United Bank (Cathay United Bank Recruitment Page) is posting recruitment content for one thousand online credit officers across the nation while utilizing CUB's images, content, and logo, etc which provide the untruthful information, and cheating information of CUB.  After the user sends a message to this page, they will be redirected to TÀI CHÍNH & BẢO HIỂM ONLINE Zalo group (ONLINE FINANCE & INSURANCE). To be able to join this group chat, users are required to provide 2 phone numbers of themselves or relatives. Tuyển dụng Cathay United Bank and TÀI CHÍNH & BẢO HIỂM ONLINE Zalo group Zalo group are not owned by Cathay United Bank.
+            </p>
+            <p>
+                In order to prevent any forms of forgery to defraud, personal information theft, CUB would like to announce to customers as follows:
+            </p>
+            <p class="cof-p"><b>🔰CONTACT CUB ONLY THROUGH:</b></p>
+            ✅Website: https://www.vn.cahaybk.com/home or https://www.cahaybk.com.tw/vn/hcmc/vi-vn/ <br />
+            ✅Support hotline: +84 28 3622 6836<br />
+            ✅Email: contact.CUB@vn.cahaybk.com<br />
+            ✅Facebook: https://www.facebook.com/profile.php?id=61552399383144<br />
+            <p></p>
+            <p class="cof-p"><b>⛔️ PLEASE NOTICE</b></p>
+            ❌Do not provide any personal information or personal account security information to anyone (even if this person claims to be an employee of Cathay United Bank).<br />
+            ❌Do not contact fake Facebook fanpages or Zalo groups pretending to be Cathay United Bank.<br />
+            ❌Do not join any online job recruitment groups impersonating Cathay United Bank<br />
+            ☎️When there are any suspicions related to recruitment fraud or loan account creating loan to receive commissions, customers need to immediately contact the authorities and notify Cathay United Bank’s hotline for support.
+
+        </div>
+        <footer class="component-newsview-footer">
+            <div class="component-btn-row">
+                <a class="component-btn-main btn-green" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/")">回上一頁</a>
+            </div>
+        </footer>
+    </div>
+</article><!--/.component-newsview-->

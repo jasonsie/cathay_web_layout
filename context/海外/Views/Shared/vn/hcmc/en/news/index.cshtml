@@ -1,0 +1,245 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "Latest News";
+    ViewBag.PageDescription = "";
+}
+
+@section Scripts { <script>
+    var country = "@ViewBag.country_url";
+    var city = "@ViewBag.city_url";
+    var id = "@ViewBag.id";
+    var lang = "@ViewBag.lang_url" || "en";
+    var branchId = "604";
+</script> <script src="~/OVSWS/Content/js/backendSystem/LatestNews.js"></script>}
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news.jpg")' alt='@ViewBag.nav_news'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_news</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_news</h1>
+        </div>
+    </div>
+</div>
+
+
+<!-- newslist -->
+<div class="component-newslist">
+    <div class="component-newslist-inner">
+        <div class="component-newslist-row">
+            <div class="component-newslist-col">
+                <a class="component-newsitem" href="@Url.Content("~/OVSWS/Content/pdf/" +@ViewBag.country_url+"/" +@ViewBag.city_url+"/announcements/Notification of biometric collection_en.pdf")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2025-05-14 </div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">OFFICIAL ANNOUNCEMENT REGARDING THE COLLECTION OF IDENTIFICATION DOCUMENTS AND BIOMETRIC INFORMATION FOR LEGAL REPRESENTATIVES OF ORGANIZATIONAL CUSTOMERS</h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/OVSWS/Content/pdf/" +@ViewBag.country_url+"/" +@ViewBag.city_url+"/announcements/Announcement of holiday schedule for victory day_en.pdf")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2025-04-24 </div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">ANNOUNCEMENT OF HOLIDAY SCHEDULE FOR VICTORY DAY APRIL 30TH AND INTERNATIONAL LABOR DAY 1ST MAY OF 2025</h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/OVSWS/Content/pdf/" +@ViewBag.country_url+"/" +@ViewBag.city_url+"/announcements/2025 HUNG KINGS’ COMMEMORATION DAY HOLIDAY ANNOUCEMENT_EN.pdf")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2025-04-02 </div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">2025 HUNG KINGS’ COMMEMORATION DAY HOLIDAY ANNOUCEMENT</h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/e-Advice-Service/")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2025-03-27 </div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">e-Advice Service - New Transaction Type and Function Announcement</h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/Notice_of_system_maintenance20240721/")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2025-03-18 </div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">Tips to prevent fraud/ scam/ Phishing </h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/OVSWS/Content/pdf/" +@ViewBag.country_url+"/" +@ViewBag.city_url+"/announcements/ANNOUNCEMENT OF HOLIDAY SCHEDULE FOR LUNAR NEW YEAR OF 2025en.pdf")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2025-01-16 </div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">ANNOUNCEMENT OF HOLIDAY SCHEDULE FOR LUNAR NEW YEAR OF 2025</h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/OVSWS/Content/pdf/" +@ViewBag.country_url+"/" +@ViewBag.city_url+"/announcements/ANNOUNCEMENT-OF-HOLIDAY-SCHEDULE-FOR-NEW-YEAR-OF-2025.pdf")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2024-12-25 </div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">ANNOUNCEMENT OF HOLIDAY SCHEDULE FOR NEW YEAR OF 2025</h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/OVSWS/Content/pdf/" +@ViewBag.country_url+"/" +@ViewBag.city_url+"/announcements/ANNOUNCEM Notice – Change in the Method of the Bank sending Account statements and Transaction advices_en.pdf")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2024-11-21 </div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">Notice – Change in the Method of the Bank sending Account statements and Transaction advices</h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/OVSWS/Content/pdf/" +@ViewBag.country_url+"/" +@ViewBag.city_url+"/announcements/announcement_of_holiday_en.pdf")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2024-08-30 </div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">ANNOUNCEMENT OF HOLIDAY SCHEDULE FOR VIETNAM NATIONAL DAY 2024</h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/Notice_of_system_maintenance20240721/")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2024-07-19 </div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">Notice of system maintenance </h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/OVSWS/Content/pdf/" +@ViewBag.country_url+"/" +@ViewBag.city_url+"/announcements/Notice of Handling Dormant Account.pdf")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2024-06-21 </div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">Notification of Dormant Account and Closed Account </h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/FOLLOW-CATHAY-UNITED-BANK-OFFICIAL-FACEBOOK-CHANNEL/")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2024-06-07 </div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">FOLLOW CATHAY UNITED BANK'S OFFICIAL FACEBOOK CHANNEL</h4>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="component-newsitem" href="@Url.Content("~/OVSWS/Content/pdf/" +@ViewBag.country_url+"/" +@ViewBag.city_url+"/announcements/NOTICE ON THE IMPLEMENTATION OF LAW ON IDENTIFICATION 2023.pdf")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2024-06-04 </div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">NOTICE ON THE IMPLEMENTATION OF LAW ON IDENTIFICATION 2023</h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/FAKE-CATHAY-UNITED-BANK-FACEBOOK-FANPAGE-AND-ZALO-GROUP/")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2024-05-24 </div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">[WARNING] FAKE CATHAY UNITED BANK FACEBOOK FANPAGE AND ZALO GROUP</h4>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="component-newsitem" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/Notice-of-system-maintenance20250524/")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2024-05-24 </div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">Notice of system maintenance</h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/OVSWS/Content/pdf/" +@ViewBag.country_url+"/" +@ViewBag.city_url+"/announcements/Notice of launch announcement_STD_HCMC_eng.pdf")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2024-05-10</div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">Sustainable Time Deposit is officially launched</h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/OVSWS/Content/pdf/" +@ViewBag.country_url+"/" +@ViewBag.city_url+"/announcements/ANNOUNCEMENT OF HOLIDAY SCHEDULE FOR VICTORY DAY APRIL 30th AND INTERNATIONAL LABOUR DAY MAY 1st_Eng.pdf")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2024-04-26</div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">ANNOUNCEMENT OF HOLIDAY SCHEDULE FOR VICTORY DAY APRIL 30th AND INTERNATIONAL LABOUR DAY MAY 1st</h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/Notice-for-the-new-Treasury-products-launching-Interest-Rate-Swap-and-Cross-Currency-Swap/")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2024-04-09 </div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title"> Notice for the new Treasury products launching – Interest Rate Swap and Cross Currency Swap</h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/Notice-of-upgrading-online-transaction-system-on-CUB-Vietnam-Application/")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2024-03-20 </div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title"> Notice of upgrading online transaction system on CUB Vietnam Application</h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/Update-to-the-latest-CUB-Vietnam-app-version/")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2024-03-12</div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">[Important] Update to the latest CUB Vietnam app version!</h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/Notice-of-system-maintenance/")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2024-03-12</div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">Notice of system maintenance</h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/OVSWS/Content/pdf/" +@ViewBag.country_url+"/" +@ViewBag.city_url+"/announcements/Notice of launch announcement_en.pdf")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2023-12-25</div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">The new e-Advice service will be launched soon</h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/Notice-for-the-new-Treasury-products/")">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2022-08-01</div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">Notice for the new Treasury products launching – Foreign Exchange Forward and Foreign Exchange Swap</h4>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="component-newsitem" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/Notice-of-Relocation-and-New-Name/")">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2022-04-01</div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">Notice of Relocation and New Name</h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/chu-lai-branch-is-expected-to-relocate-to-ho-chi-minh-city/")">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2021-06-04</div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">Cathay United Bank - Chu Lai Branch is expected to relocate to Ho Chi Minh City</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div><!--/.component-newslist-->

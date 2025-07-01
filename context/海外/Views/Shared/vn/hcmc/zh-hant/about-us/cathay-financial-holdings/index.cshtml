@@ -1,0 +1,113 @@
+﻿@model IndexViewModel
+@using System.Web.Configuration;
+@{
+    if (ViewBag.lang == "en")
+    {
+        ViewBag.PageTitle = "Cathay Financial Holdings";
+        ViewBag.PageDescription = "";
+    }
+    else if (ViewBag.lang == "vi-vn")
+    {
+        ViewBag.PageTitle = "Tập đoàn Tài chính Cathay";
+        ViewBag.PageDescription = "";
+    }
+    else
+    {
+        ViewBag.PageTitle = "國泰金控";
+        ViewBag.PageDescription = "";
+    }
+}
+@section Scripts {
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/jquery.scrollbar.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/slick.min.js")"></script>
+
+    <script>
+        $(function () {
+            $(".cok-figure-slider").slick({
+                infinite: false,
+                slidesToShow: 1,
+                dots: false
+            });
+
+            function updateImageContainer() {
+                let window_w = $(window).width();
+                let offset_x;
+                let content_w;
+                let max_w;
+
+                if (window_w > 991) {
+                    offset_x = $('.cok-inner').offset().left;
+                    content_w = $('.cok-content').width();
+                    max_w = window_w - content_w - offset_x;
+
+                    $('.cok-figure-wrap').css({
+                        'width': max_w,
+                        'flex-basis': max_w,
+                        'max-width': max_w,
+                        'left': content_w + offset_x,
+                        'position': 'absolute'
+                    });
+                } else {
+                    $('.cok-figure-wrap').css({
+                        'width': '100%',
+                        'flex-basis': 'auto',
+                        'max-width': '100%',
+                        'left': 'auto',
+                        'position': 'relative'
+                    });
+                }
+            }
+
+            $(window).on('resize', updateImageContainer);
+            updateImageContainer();
+        });</script>
+}
+
+<div class='component-oversea-kv'>
+    <div class="cok-figure-wrap">
+        <div class="cok-figure-slider">
+            <div class="cok-figure-item">
+                <figure class='cok-figure'>
+                    <picture>
+                        <source media='(max-width: 767px)'
+                                srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/about-us/CathayFinancialHoldings828x400.png")' />
+                        <source media='(min-width: 768px) and (max-width: 1279px)'
+                                srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/about-us/CathayFinancialHoldings1536x400.png")' />
+                        <img class='cok-img'
+                             src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/about-us/CathayFinancialHoldings2000x800.png")'
+                             alt='@ViewBag.nav_about_us_cathay_financial_holdings'>
+                    </picture>
+                    <figcaption hidden>@ViewBag.nav_about_us_cathay_financial_holdings</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+    <div class="cok-inner">
+        <div class="cok-content ">
+            <span class='cok-title--slogan'>@ViewBag.nav_about_us_cathay_financial_holdings</span>
+        </div>
+    </div>
+</div>
+
+<div class='component-oversea-services component-oversea-services--33  component-oversea-services--home'>
+    <div class="cos-inner">
+        <h2 class='cos-title'>
+            公司簡介
+        </h2>
+        <p class='cos-description' style="max-width:1200px">
+            國泰金控為臺灣最大金融控股公司之一，總資產NT$ 12.8兆元 (US$ 4,183.9億元)，主要子公司包括國泰人壽、國泰世華銀行、國泰產險、國泰證券、國泰投信、國泰創投等成員，透過集團於亞洲966處的營業網點，服務約1,508萬名客戶。
+        </p>
+        <p class='cos-description' style="max-width:1200px">
+            國泰金控秉持「誠信、當責、創新」的核心價值，面對市場的快速變化，採取與時俱進的營運策略，發揮金融職能實踐永續金融、推動全面數位轉型及善用集團資源綜效，偕子公司一同致力提供客戶全方面、便捷、有溫度且更好的金融服務與體驗，同時逐步完善區域布局，朝「亞太地區最佳金融機構」的願景邁進。
+        </p>
+        <p class='cos-description' style="max-width:1200px">
+            <strong>國泰金控暨旗下子公司國泰人壽、國泰世華銀行、國泰產險、國泰證券、</strong>
+            國泰投信等，在台灣及世界各國提供全面性且多元化的金融服務與解決方案，與國泰航空有限公司暨其關係企業互不隷屬亦非關係企業。
+        </p>
+
+    </div>
+
+    <div class="about-us-back-button-container">
+        <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url)" class="about-us-back-button">@ViewBag.about_us_back_button</a>
+    </div>
+</div>

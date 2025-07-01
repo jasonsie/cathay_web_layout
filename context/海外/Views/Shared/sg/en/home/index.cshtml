@@ -1,0 +1,234 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "";
+    ViewBag.PageDescription = "";
+}
+
+@section Scripts {
+
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/jquery.scrollbar.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/slick.min.js")"></script>
+
+
+    <script>
+        var homeCard = homeCard || {};
+        homeCard.prototype = {
+            sameHeight: function () {
+
+                let window_w = $(window).width();
+                let max_h = 0;
+                let scope = $('.component-oversea-services');
+                $('.cos-item-description', scope).css('min-height', 0);
+                if (window_w >= 768) {
+                    $('.cos-item', scope).each(function () {
+                        let h = $('.cos-item-description', $(this)).height();
+                        if (h > max_h) {
+                            max_h = h;
+                        }
+                    })
+                    $('.cos-item-description', scope).height(max_h);
+                } else {
+                    $('.cos-item-description', scope).css('height', 'auto');
+                }
+            },
+            addEventListener: function () {
+                let o = this;
+                $(window).on('resize.homeCard', function () {
+                    o.sameHeight();
+                }).trigger('resize.homeCard');
+            },
+            init: function () {
+                this.addEventListener();
+            }
+        }
+    </script>
+
+    <script>
+        $(function () {
+
+            var myHomeCard = homeCard.prototype;
+            myHomeCard.init();
+
+
+            //
+            $(window).resize(function () {
+
+                let window_w = $(window).width();
+                let offset_x;
+                let content_w;
+                if (window_w > 991) {
+                    offset_x = $('.cok-inner').offset().left;
+                    content_w = $('.cok-content').width();
+                    max_w = window_w - content_w - offset_x;
+                } else {
+                    offset_x = 0;
+                    content_w = 0;
+                    max_w = window_w;
+                }
+                $('.cok-figure-wrap').css('width', max_w);
+                $('.cok-figure-wrap').css('flex-basis', max_w);
+                $('.cok-figure-wrap').css('max-width', max_w);
+                $('.cok-figure-wrap').css('left', content_w + offset_x);
+
+            }).trigger('resize');
+
+            $(".cok-figure-slider").slick({
+                infinite: false,
+                slidesToShow: 1,
+                dots: false
+            });
+
+            ////////////////////////////
+
+            $('.con-list', $(this)).scrollbar();
+        })
+    </script>
+
+    <script>
+        //fraud modal
+        $(function () {
+            let myFraudModal = fraudModal.prototype;
+            myFraudModal.init($('.component-oversea-modal--fraud'));
+            myFraudModal.show();
+        })
+    </script>
+}
+
+<div class='component-oversea-kv'>
+    <div class="cok-figure-wrap">
+        <div class="cok-figure-slider">
+            <span class="cok-figure-item">
+                <figure class='cok-figure'>
+                    <picture>
+                        <source media='(min-width: 992px)'
+                                srcset='@Url.Content("~/OVSWS/Content/img/sg/kv/bg-lg.jpg")' />
+                        <source media='(min-width: 7686px)'
+                                srcset='@Url.Content("~/OVSWS/Content/img/sg/kv/bg-md.jpg")' />
+                        <img class='cok-img' src='@Url.Content("~/OVSWS/Content/img/sg/kv/bg.jpg")' alt='@ViewBag.site_name'>
+                    </picture>
+                    <figcaption hidden>@ViewBag.site_name</figcaption>
+                </figure>
+            </span>
+        </div>
+    </div>
+
+    <div class="cok-inner">
+        <div class="cok-content">
+            <h1 class='cok-title'>
+                <span class='cok-title--company'>Cathay United Bank</span>
+                <span class='cok-title--slogan'>A partner worthy of your trust</span>
+            </h1>
+
+        </div>
+    </div>
+</div>
+@*<div class='component-oversea-services component-oversea-services--33  component-oversea-services--home'>*@
+<div class='component-oversea-services  component-oversea-services--home'>
+    <div class="cos-inner">
+
+        <h2 class='cos-title'>Our Services</h2>
+        <p class='cos-description'>
+            Cathay United Bank (CUB), Singapore Branch was first established in 2009. We are currently operating as a Wholesale Bank as well as an Exempt Capital Markets Services Entity and Exempt Financial Adviser under the purview of The Monetary Authority of Singapore (MAS).
+        </p>
+        <p class='cos-description'>
+            We provide an array of products & services which include corporate lending, trade financing, cash deposits/remittances alongside with hedging solutions to our clients with focus on General Corporates, Transportation (Aviation & Shipping) and Financial Institutions (FIs) sectors.
+        </p>
+
+        <p class='cos-description'>
+            <strong>Cathay Financial Holdings (Cathay FHC) and its subsidiaries including Cathay Life Insurance, Cathay United Bank, Cathay Century Insurance, Cathay Securities, and Cathay Securities Investment Trust </strong>
+            provide comprehensive and diversified financial services and solutions in Taiwan and around the world. We are independent from and not affiliated with Cathay Pacific Airways Limited and its subsidiaries.
+        </p>
+
+
+
+        <ul class='cos-list'>
+            <li class='cos-item'>
+                <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.lang_url+"services/cash-management/")" class='cos-item-link'>
+                    <figure class='cos-item-figure'>
+                        <picture>
+                            <img class='cos-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/sg/services/home/cash-management.jpg")' alt='@ViewBag.nav_services_cash_management'>
+                        </picture>
+                        <figcaption hidden>@ViewBag.nav_services_cash_management</figcaption>
+                    </figure>
+                    <div class='cos-item-content'>
+                        <h3 class='cos-item-title'>@ViewBag.nav_services_cash_management</h3>
+                        <p class='cos-item-description'>We provide you with convenient and comprehensive cash management products and all-rounded cash flow services for you to effectively manage your accounts payable and accounts receivable to enhance the fund utilization efficiency.</p>
+                        <div class='cos-item-btn'>@ViewBag.btn_learn_more</div>
+                    </div>
+                </a>
+            </li>
+
+            <li class='cos-item'>
+                <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.lang_url+"services/corporate-financing/")" class='cos-item-link'>
+                    <figure class='cos-item-figure'>
+                        <picture>
+                            <img class='cos-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/sg/services/home/corporate-financing.jpg")' alt='@ViewBag.nav_services_corporate_finance'>
+                        </picture>
+                        <figcaption hidden>@ViewBag.nav_services_corporate_finance</figcaption>
+                    </figure>
+                    <div class='cos-item-content'>
+                        <h3 class='cos-item-title'>@ViewBag.nav_services_corporate_finance</h3>
+
+                        <p class='cos-item-description'>Through our complete and diversified range of corporate finance services, we are able to offer you with customized financial services to suit your banking needs.</p>
+                        <div class='cos-item-btn'>@ViewBag.btn_learn_more</div>
+                    </div>
+                </a>
+            </li>
+
+
+            <li class='cos-item'>
+                <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.lang_url+"services/trade-finance/")" class='cos-item-link'>
+                    <figure class='cos-item-figure'>
+                        <picture>
+                            <img class='cos-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/sg/services/home/trade-finance.jpg")' alt='@ViewBag.nav_services_trade_finance'>
+                        </picture>
+                        <figcaption hidden>@ViewBag.nav_services_trade_finance</figcaption>
+                    </figure>
+                    <div class='cos-item-content'>
+                        <h3 class='cos-item-title'>@ViewBag.nav_services_trade_finance</h3>
+
+                        <p class='cos-item-description'>We provide comprehensive and diversified international trade and finance services to meet each company's fund needs in all development stages and offer the most suitable products that are especially tailor made for you.</p>
+
+                        <div class='cos-item-btn'>@ViewBag.btn_learn_more</div>
+                    </div>
+                </a>
+            </li>
+
+            <li class='cos-item'>
+                <a href='@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.lang_url+"services/financial-derivatives/")' class='cos-item-link'>
+                    <figure class='cos-item-figure'>
+                        <picture>
+                            <img class='cos-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/sg/services/home/financial-derivatives.jpg")' alt='@ViewBag.nav_services_financial_derivatives'>
+                        </picture>
+                        <figcaption hidden>@ViewBag.nav_services_financial_derivatives</figcaption>
+                    </figure>
+                    <div class='cos-item-content'>
+                        <h3 class='cos-item-title'>@ViewBag.nav_services_financial_derivatives</h3>
+
+                        <p class='cos-item-description'>We have a dedicated team of experienced professionals. The team closely monitors the market situation to offer customers professional and precise risk aversion strategies in line with the corporate business operations and is committed to provide the best services.</p>
+                        <div class='cos-item-btn'>@ViewBag.btn_learn_more</div>
+                    </div>
+                </a>
+            </li>
+            @*
+            <li class='cos-item'>
+                <a href="@Url.Content("~/sg/private-bank/")" target="_blank" rel="noopener"  class='cos-item-link'>
+                    <figure class='cos-item-figure'>
+                        <picture>
+                            <img class='cos-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/sg/services/home/private-banking.jpg")' alt='@ViewBag.nav_services_wealth_management'>
+                        </picture>
+                        <figcaption hidden>@ViewBag.nav_services_wealth_management</figcaption>
+                    </figure>
+                    <div class='cos-item-content'>
+                        <h3 class='cos-item-title'>@ViewBag.nav_services_wealth_management</h3>
+                        <p class='cos-item-description'>We focus on providing customized wealth management services to high-net-worth customers and their families and are committed to assisting each customer for his/her own tailor-made asset allocation program.</p>
+                        <div class='cos-item-btn'>@ViewBag.btn_learn_more</div>
+
+                    </div>
+                </a>
+            </li>*@
+
+        </ul>
+    </div>
+</div>

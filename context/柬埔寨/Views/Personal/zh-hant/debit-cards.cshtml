@@ -1,0 +1,203 @@
+@{
+   ViewData["PageTitle"] = "簽帳卡";
+   ViewData["PageDescription"] = "CUBC Visa 簽帳金融卡隨時讓您可從提款機領取現金，也能於實體或線上商店刷卡消費， 每筆交易都直接從您的存款帳戶中扣款，同時還能享有 CUBC 或 Visa 的刷卡禮遇。";
+}
+
+
+<!-- Page START -->
+<main class="mastbody">
+	<!--
+		簽帳卡
+	-->
+	<div class="topkv kv  kv--txt-left">
+		<div class="kv-bg">
+			<div class="kv-bg-inner">
+				<figure class="kv-bg-img">
+					<picture>
+						<source media="(min-width:769px)" srcset="/assets/img/topkv/personal-cards.jpg" />
+						<img srcset="/assets/img/topkv/personal-cards-mb.jpg">
+					</picture>
+				</figure>
+			</div>
+		</div>
+		<div class="kv-cont">
+			<div class="kv-cont-inner">
+				<h2 class="display-1-sm  fw-bold lh-xs">信用卡與簽帳卡</h2>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Breadcrumb  (lays on top of .topkv if places right after it) -->
+	<nav class="breadcrumb-nav text-white" aria-label="breadcrumb">
+		<div class="fluid">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]"><span>首頁</span><i class="ico-ui-home"></i></a></li>
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]personal/">個人金融</a></li>
+				<li class="breadcrumb-item active" aria-current="page">簽帳卡</li>
+			</ol>
+		</div>
+	</nav>
+	
+	<!-- Menu -->
+	<nav class="tabmenu    d-none d-sm-block">
+		<div class="tabmenu-inner">
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/credit-cards/">
+				<span class="tabmenu-btn-txt">信用卡</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn active" href="@ViewData["siteLangUrl"]personal/debit-cards/">
+				<span class="tabmenu-btn-txt">簽帳卡</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/card-promotions/">
+				<span class="tabmenu-btn-txt">用卡優惠</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/rewards-program/">
+				<span class="tabmenu-btn-txt">紅利回饋</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/cubc-exclusive/">
+				<span class="tabmenu-btn-txt">點數禮遇</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/apply-online?Channel=Website">
+				<span class="tabmenu-btn-txt">線上申請</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+		</div>
+	</nav>
+	<!-- Mobile dropdown -->
+	<div class="tabmenu-dropdown dropdown    d-block d-sm-none">
+		<a href="javascript:;" class="btn btn-sm btn-block  dropdown-toggle" data-toggle="dropdown">
+			<span class="text-truncate d-inline-block">簽帳卡</span>
+		</a>
+		<div class="dropdown-menu">
+			<span class="dropdown-item disabled">-- 前往頁面 --</span>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/credit-cards/">信用卡</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/debit-cards/">簽帳卡</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/card-promotions/">用卡優惠</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/rewards-program/">紅利回饋</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/cubc-exclusive/">點數禮遇</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/apply-online?Channel=Website">線上申請</a>
+		</div>
+	</div>
+
+	
+	
+	<!--
+		簽帳卡 - Detail
+	-->
+	<section class="fluid overflow-hidden">
+		
+		<div class="py-page"></div>
+		
+		<!-- Page heading -->
+		<header class="compact  mb-5  text-center">
+			<h1 class="h3 h4-mb  mb-2 mb-md-3  text-black  lh-xs">簽帳卡</h1>
+			<h2 class="display-3 h1-mb  mb-3  text-black fw-bold">簽帳金融卡讓消費更方便、更安全</h2>
+			<p>CUBC Visa 簽帳金融卡隨時讓您可從提款機領取現金，也能於實體或線上商店刷卡消費， 每筆交易都直接從您的存款帳戶中扣款，同時還能享有 CUBC 或 Visa 的刷卡禮遇。</p>
+		</header>
+		
+		
+		<!-- Features -->
+		<section class="compact-sm">
+			<!-- Graph icon list #4  (N in a row) -->
+			<ul class="row  justify-content-center  mb-n4">
+	
+				<!-- Graph item -->
+				<li class="col-12 col-md-4  mb-4  px-md-1 px-xl-4   d-flex flex-md-column align-items-md-center ie11fix">
+					<figure class="graph  mx-3 mx-md-0  flex-shrink-0  mb-md-3">
+						<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/manage.svg">
+					</figure>
+					<div class="">
+						<h5 class="h3 h3-mb  mb-2 mb-md-3  text-dark fw-bolder lh-sm text-md-center">Manage Your $</h5>
+						<ul class="list-disc">
+							<li>免費連結CUBC 網路/行動銀行</li>
+							<li>透過網路/行動銀行檢查最新的帳戶餘額和交易紀錄</li>
+							<li>消費不透支，不用擔心產生循環利息/罰款</li>
+						</ul>
+					</div>
+				</li>
+	
+				<!-- Graph item -->
+				<li class="col-12 col-md-4  mb-4  px-md-1 px-xl-4   d-flex flex-md-column align-items-md-center ie11fix">
+					<figure class="graph  mx-3 mx-md-0  flex-shrink-0  mb-md-3">
+						<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/card-insert.svg">
+					</figure>
+					<div class="">
+						<h5 class="h3 h3-mb  mb-2 mb-md-3  text-dark fw-bolder lh-sm text-md-center">Convenient to Your $</h5>
+						<ul class="list-disc">
+							<li>不須攜帶現金，刷卡即可購物</li>
+							<li>感應式交易, 結帳支付免接觸</li>
+							<li>能從支援Visa 的提款機提領現金</li>
+						</ul>	
+					</div>
+				</li>
+	
+				<!-- Graph item -->
+				<li class="col-12 col-md-4  mb-4  px-md-1 px-xl-4   d-flex flex-md-column align-items-md-center ie11fix">
+					<figure class="graph  mx-3 mx-md-0  flex-shrink-0  mb-md-3">
+						<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/card-hold.svg">
+					</figure>
+					<div class="">
+						<h5 class="h3 h3-mb  mb-2 mb-md-3  text-dark fw-bolder lh-sm text-md-center">Save Your $</h5>
+						<ul class="list-disc">
+							<li>依自身需求，設定每日消費/提款金額上限</li>
+							<li>OTP 簡訊- 3D驗證, 網路購物更安全</li>
+							<li>透過行動銀行享有交易免費推播通知</li>
+						</ul>
+					</div>
+				</li>
+	
+			</ul>
+		
+			<div class="text-center mt-4">
+				<p>了解更多 <a class="text-green text-underline" target="_blank" rel="noopener noreferrer" href="https://www.visa.com.kh/en_kh/visa-offers-and-perks/">Visa柬埔寨 & 全球優惠</a></p>
+			</div>
+		</section>
+		
+		<div class="py-section"></div>
+		
+		
+		<!--  Banking card columns
+			  (Multiple cards available; 1~3 columns a row; column auto wrap when row is not wide enough) -->
+		
+		<section class="compact-sm">
+			<div class="row justify-content-center  mx-sm-n2 mx-xl-n3   mb-n4">
+				
+				<!-- column 1 -->
+				<div class="col-12 col-md-4 d-flex   mb-4">
+					<div class="w-100 bg-gray-100  mx-md-2 mx-xl-3  px-3 py-4 p-lg-5">
+						<figure class="card-w320  mx-auto mb-3 mb-md-4">
+							<div class="embed-responsive embed-responsive-1by1">
+								<img class="embed-responsive-item ofi-contain lazy" data-src="/assets/img/card/debitcard-classic-visa.png" alt="Classic Card">
+							</div>
+						</figure>
+						<h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">普卡</h3>
+						<ul class="list-disc">
+							<li>每日刷卡消費上限金額共 $5,000（最多 10 筆）</li>
+							<li>每日ATM提款金額上限共 $5,000（最多 10 筆）</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<div class="py-section"></div>
+		
+		
+		<!-- Downloads -->
+		<p class="d-sm-flex flex-wrap align-items-center justify-content-center   px-4 px-sm-0">
+			<a class="btn btn-outline-green-dark rounded-pill  d-block d-sm-inline-block h4-mb mx-sm-1 mx-md-2 mb-2" target="_blank" rel="noopener noreferrer" href="/file/CUBC Debit Card Fee Charge.pdf">相關手續費<i class="ico-ui-download ml-2"></i></a>
+			<a class="btn btn-outline-green-dark rounded-pill  d-block d-sm-inline-block h4-mb mx-sm-1 mx-md-2 mb-2" target="_blank" rel="noopener noreferrer" href="/file/debit agreement.pdf">簽帳卡約定條款<i class="ico-ui-download ml-2"></i></a>
+			<a class="btn btn-outline-green-dark rounded-pill  d-block d-sm-inline-block h4-mb mx-sm-1 mx-md-2 mb-2" target="_blank" rel="noopener noreferrer" href="/file/DEBIT Request Form EN.PDF">簽帳卡申請表<i class="ico-ui-download ml-2"></i></a>
+			<a class="btn btn-outline-green-dark rounded-pill  d-block d-sm-inline-block h4-mb mx-sm-1 mx-md-2 mb-2" target="_blank" rel="noopener noreferrer" href="/file/Debit Request Form KH.PDF">簽帳卡申請表-柬埔寨語<i class="ico-ui-download ml-2"></i></a>
+		</p>
+		
+		
+		<div class="py-page"></div>
+	</section>
+
+</main>
+<!-- Page END -->

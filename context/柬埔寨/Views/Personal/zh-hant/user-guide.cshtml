@@ -1,0 +1,117 @@
+@{
+	ViewData["PageTitle"] = "使用手冊";
+   ViewData["PageDescription"] = "";
+}
+
+
+<!-- Page START -->
+<main class="mastbody">
+
+	<div class="topkv kv  kv--txt-left">
+		<div class="kv-bg">
+			<div class="kv-bg-inner">
+				<figure class="kv-bg-img">
+					<picture>
+						<source media="(min-width:769px)" srcset="/assets/img/topkv/personal-online.jpg" />
+						<img srcset="/assets/img/topkv/personal-online-mb.jpg">
+					</picture>
+				</figure>
+			</div>
+		</div>
+		<div class="kv-cont">
+			<div class="kv-cont-inner">
+				<h2 class="display-1-sm  fw-bold lh-xs">數位銀行服務</h2>
+			</div>
+		</div>
+	</div>
+
+	<nav class="breadcrumb-nav text-white" aria-label="breadcrumb">
+		<div class="fluid">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]"><span>首頁</span><i class="ico-ui-home"></i></a></li>
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]personal/">個人金融</a></li>
+				<li class="breadcrumb-item" aria-current="page">使用手冊</li>
+			</ol>
+		</div>
+	</nav>
+
+	<!-- Menu -->
+	<nav class="tabmenu    d-none d-sm-block">
+		<div class="tabmenu-inner">
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/internet-banking/">
+				<span class="tabmenu-btn-txt">網路銀行</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/mobile-banking/">
+				<span class="tabmenu-btn-txt">行動銀行</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/merchant-app/">
+				<span class="tabmenu-btn-txt">Merchant App</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/alert-services/">
+				<span class="tabmenu-btn-txt">推播/提醒服務</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn active" href="@ViewData["siteLangUrl"]personal/user-guide/">
+				<span class="tabmenu-btn-txt">使用手冊</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+		</div>
+	</nav>
+
+	<!-- Mobile dropdown -->
+	<div class="tabmenu-dropdown dropdown    d-block d-sm-none">
+		<a href="javascript:;" class="btn btn-sm btn-block  dropdown-toggle" data-toggle="dropdown">
+			<span class="text-truncate d-inline-block">使用手冊</span>
+		</a>
+		<div class="dropdown-menu">
+			<span class="dropdown-item disabled">-- 前往頁面 --</span>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/internet-banking/">網路銀行</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/mobile-banking/">行動銀行</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/merchant-app/">Merchant App</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/alert-services/">推播/提醒服務</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/user-guide/">使用手冊</a>
+		</div>
+	</div>
+
+	
+		<div class="py-page"></div>
+	
+		<!-- -->
+	<section class="compact">
+		<!-- Section heading -->
+		<h3 class="h1 h2-mb mb-4 text-black fw-bold text-center lh-sm">CUBC 使用手冊</h3>
+		<!-- item -->
+		<section class="static-qaitem">
+			<a href="/file/user-guide/User Guide Open Digital Account (ENG).pdf">
+				<div class="static-title">
+					<h5 class="qaitem-title-txt h3 h3-mb text-dark fw-bold">
+						Register CUBC Digital Account
+					</h5>
+				</div>
+			</a>
+		</section>
+		<section class="static-qaitem">
+			<a href="/file/user-guide/User Guide Apply for mBanking (ENG).pdf">
+				<div class="static-title">
+					<h5 class="qaitem-title-txt h3 h3-mb text-dark fw-bold">
+						Apply for mBanking
+					</h5>
+				</div>
+			</a>
+		</section>
+		<section class="static-qaitem">
+			<a href="/file/user-guide/User Guide First Time Login (ENG).pdf">
+				<div class="static-title">
+					<h5 class="qaitem-title-txt h3 h3-mb text-dark fw-bold">
+						First Time Login
+					</h5>
+				</div>
+			</a>
+		</section>
+	</section>
+
+</main>
+<!-- Page END -->

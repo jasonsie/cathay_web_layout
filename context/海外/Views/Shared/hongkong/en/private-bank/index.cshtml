@@ -1,0 +1,629 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cathay United Bank Private Banking Hong Kong </title>
+
+    <link href="@Url.Content("~/OVSWS/Content/pwm")/css/bootstrap.css" rel="stylesheet">
+
+
+    <link href="@Url.Content("~/OVSWS/Content/pwm")/css/core.css" rel="stylesheet">
+    <link rel="stylesheet" media="(min-width:992px)" href="@Url.Content("~/OVSWS/Content/pwm")/css/coreD.css" />
+    <link href="@Url.Content("~/OVSWS/Content/pwm")/css/animate.css" rel="stylesheet">
+    <link href="@Url.Content("~/OVSWS/Content/pwm")/css/fontawesome/css/all.css" rel="stylesheet">
+    <link href="@Url.Content("~/OVSWS/Content/css/aos.css")" rel="stylesheet">
+    <link href="@Url.Content("~/OVSWS/Content/pwm")/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" media="(min-width:992px)" href="@Url.Content("~/OVSWS/Content/pwm")/css/indexD.css" />
+
+</head>
+
+<body>
+
+
+    <!-- Modal -->
+    <div class="modal fade nav" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="navHeader">
+                    <a href="@Url.Content("~/hongkong/en/private-bank/")">
+                        <img src="@Url.Content("~/OVSWS/Content/pwm")/img/enlogo.png" class="logo img-fluid">
+                    </a>
+
+                    <div class="myclose" data-dismiss="modal" aria-label="Close">
+                        <img src="@Url.Content("~/OVSWS/Content/pwm")/img/myClose.png" class="myClose">
+                    </div>
+                </div>
+
+                <div class="navBody">
+                    <a href="@Url.Content("~/hongkong/en/private-bank/about/")">
+                        <div class="oneNav">
+                            About Us
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </a>
+
+                    <a href="@Url.Content("~/hongkong/en/private-bank/custom/")">
+                        <div class="oneNav">
+                            Customized Planning
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </a>
+
+                    <a href="@Url.Content("~/hongkong/en/private-bank/award/")">
+                        <div class="oneNav">
+                            Awards and Honors
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </a>
+
+                    <a href="https://www.globalmyb2b.com/PBANK/login.aspx?LOC=HK" target="_blank" rel="noopener">
+                        <div class="oneNav">
+                            Internet Banking
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </a>
+
+                    <div class="oneNav text-center">
+                        <a href="@Url.Content("~/hongkong/private-bank/")" class="goldFrame">Chinese</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- header -->
+    <!-- header -->
+    <!-- header -->
+
+    <div class="d-lg-none">
+        <div class="header">
+            <div class="container text-left">
+                <div class="row">
+                    <div class="col-9">
+                        <a href="@Url.Content("~/hongkong/en/private-bank/")">
+                            <img src="@Url.Content("~/OVSWS/Content/pwm")/img/enlogo.png" class="logo">
+                        </a>
+                    </div>
+                    <div class="col-3 text-right">
+                        <img src="@Url.Content("~/OVSWS/Content/pwm")/img/trigger.png" class="trigger" data-toggle="modal" data-target=".nav">
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="d-none d-lg-block">
+        <div class="headerD">
+            <div class="container text-left">
+                <div class="row area1">
+                    <div class="col-4">
+                        <a href="@Url.Content("~/hongkong/en/private-bank/")">
+                            <img src="@Url.Content("~/OVSWS/Content/pwm")/img/enlogo.png" class="logo">
+                        </a>
+                    </div>
+                    <div class="col-8 text-right">
+                        <ul class="rightTopNav">
+                            <li><a href="@Url.Content("~/hongkong/private-bank/")" class="goldFrame">Chinese</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="goldLineArea"></div>
+                    </div>
+                </div>
+
+                <div class="row area2">
+                    <div class="col-12">
+                        <ul class="mainNav">
+                            <li class="nav1">
+                                <a href="@Url.Content("~/hongkong/en/private-bank/about/")">About Us</a>
+                            </li>
+
+                            <li class="nav4">
+                                <a href="@Url.Content("~/hongkong/en/private-bank/custom/")">Customized Planning</a>
+                            </li>
+                            <li class="nav5">
+                                <a href="@Url.Content("~/hongkong/en/private-bank/award/")">Awards and Honors</a>
+                            </li>
+                            <li class="nav6">
+                                <a href="https://www.globalmyb2b.com/PBANK/login.aspx?LOC=HK" target="_blank" rel="noopener">Internet Banking</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!-- banner -->
+    <!-- banner -->
+    <!-- banner -->
+
+    @*<div class="d-lg-none">
+        <div id="banner" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href="@Url.Content("~/hongkong/en/private-bank/about/")">
+                        <img class="d-block w-100" src="@Url.Content("~/OVSWS/Content/pwm")/img/index/enbanner2D.jpg" alt="First slide">
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="@Url.Content("~/hongkong/en/private-bank/about/")">
+                        <img class="d-block w-100" src="@Url.Content("~/OVSWS/Content/pwm")/img/index/enbanner3D.jpg" alt="Second slide">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+
+
+    <div class="d-none d-lg-block">
+        <div id="bannerD" class="carousel slide" data-ride="carousel">
+
+            <ol class="carousel-indicators">
+                <li data-target="#bannerD" data-slide-to="0" class="active"></li>
+                <li data-target="#bannerD" data-slide-to="1"></li>
+            </ol>
+
+
+            <div class="carousel-inner">
+
+
+                <div class="carousel-item active" style="background-image: url(@Url.Content("~/OVSWS/Content/pwm")/img/index/enbanner2D.jpg);" onclick="javascript:location.href='@Url.Content("~/hongkong/en/private-bank/about/")'">
+                </div>
+
+
+                <div class="carousel-item" style="background-image: url(@Url.Content("~/OVSWS/Content/pwm")/img/index/enbanner3D.jpg);" onclick="javascript:location.href='@Url.Content("~/hongkong/en/private-bank/about/")'">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#bannerD" role="button" data-slide="prev">
+                <img src="@Url.Content("~/OVSWS/Content/pwm")/img/leftArrow.png" class="leftArrow">
+            </a>
+            <a class="carousel-control-next" href="#bannerD" role="button" data-slide="next">
+                <img src="@Url.Content("~/OVSWS/Content/pwm")/img/rightArrow.png" class="rightArrow">
+            </a>
+        </div>
+    </div>
+
+
+
+    <!-- section1 -->
+    <!-- section1 -->
+    <!-- section1 -->
+
+    <div class="d-lg-none">
+        <div class="section1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <img src="@Url.Content("~/OVSWS/Content/pwm")/img/index/section1Illu.png" class="img-fluid illu" data-aos="fade-up">
+                        <h3 class="gold2" data-aos="fade-up">About Us</h3>
+                        <div class="titleLine" data-aos="fade-up"></div>
+                        <div class="clearfix"></div>
+
+                        <div data-aos="fade-up">
+                            <p>
+                                At our Hong Kong-based Cathay United Bank Private Banking, <br>
+                                we are devoted to serve our High-Net-Worth customers with customized wealth management, <br>
+                                trust planning, succession arrangement and professional consultancy on corporate transformation and corporate sustainable operation. <br>
+                                We are also dedicated to support our customers in planning personalized asset allocation and be with them every step of the way toward their financial milestones.
+                            </p>
+                            <a href="@Url.Content("~/hongkong/en/private-bank/about/")">
+                                <div class="myBtn mr15">Why Bank With Us?</div>
+                            </a>
+                            <a href="@Url.Content("~/hongkong/en/private-bank/about/")">
+                                <div class="myBtn">Our Team</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="d-none d-lg-block">
+        <div class="section1D">
+            <div class="container">
+                <div class="row">
+                    <div class="col-5 illuContainer" data-aos="fade-up">
+                        <img src="@Url.Content("~/OVSWS/Content/pwm")/img/index/section1IlluD.png" class="img-fluid illu">
+                    </div>
+                    <div class="col-10 offset-2">
+                        <div class="paper" data-aos="fade-up">
+                            <h3 class="gold2" data-aos="fade-up">About Us</h3>
+                            <div class="titleLine" data-aos="fade-up"></div>
+                            <div class="clearfix"></div>
+
+
+                            <div data-aos="fade-up">
+                                <p class="textJustifyRight">
+                                    At our Hong Kong-based Cathay United Bank Private Banking, we are devoted to serve our High-Net-Worth customers with customized wealth management, trust planning, succession arrangement and professional consultancy on corporate transformation and corporate sustainable operation.We are also dedicated to support our customers in planning personalized asset allocation and be with them every step of the way toward their financial milestones.
+                                </p>
+                                <a href="@Url.Content("~/hongkong/en/private-bank/about/")">
+                                    <div class="myBtn mr15">Why Bank With Us?</div>
+                                </a>
+                                <a href="@Url.Content("~/hongkong/en/private-bank/about/")">
+                                    <div class="myBtn">Our Team</div>
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- section2 -->
+    <!-- section2 -->
+    <!-- section2 -->
+
+
+    <div class="section2">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="gold1" data-aos="fade-up">Customized Planning</h3>
+                    <div class="titleLine" data-aos="fade-up"></div>
+                    <div class="clearfix"></div>
+                    <p data-aos="fade-up">
+                        Cathay United Bank Private Banking helps you <br>
+                        design personalized wealth plan and investment portfolio, <br>
+                        satisfying your demands with tailor-made asset allocation. <br>
+                        Together, we can create value and enrich your life.
+                    </p>
+
+                    <div data-aos="fade-up">
+                        <a href="@Url.Content("~/hongkong/en/private-bank/custom/")">
+                            <div class="myBtn outLine">See more</div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <!-- footer -->
+    <!-- footer -->
+    <!-- footer -->
+    @*<div class="d-lg-none">
+            <div class="footer">
+                <div class="container text-left">
+                    <div class="row">
+                        <div class="col-12">
+                            <ul>
+                                <li>
+                                    <a href="@Url.Content("~/hongkong/en/")" target="_blank" rel="noopener">
+                                        Cathay United Bank, Hong Kong
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="d-none d-lg-block">
+            <div class="footerD">
+                <div class="area1">
+                    <div class="container text-left">
+                        <div class="row">
+                            <div class="col-12">
+                                <a href="###">
+                                    <img src="@Url.Content("~/OVSWS/Content/pwm")/img/logoOnlyTree.png" class="logo">
+                                </a>
+                                <ul>
+                                    <li>
+                                        <a href="@Url.Content("~/hongkong/en/")" target="_blank" rel="noopener">Cathay United Bank, Hong Kong </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+
+
+
+    <!-- section3 -->
+    <!-- section3 -->
+    <!-- section3 -->
+
+    <div class="d-lg-none">
+        <div class="section3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/index/section3IlluD.png")" class="img-fluid illu" data-aos="fade-up">
+                        <h3 class="blue" data-aos="fade-up">Dedicated Services</h3>
+                        <div class="titleLine blue" data-aos="fade-up"></div>
+                        <div class="clearfix"></div>
+                        <p data-aos="fade-up">
+                            Premium Experiences <br>
+                            Red-carpet Treatment Designed for You <br>
+                            Exclusive Offers Only at Cathay Group
+
+                        </p>
+                        @*<a href="javascript:;" onclick="alert('coming soon');">
+                            <div class="myBtn blue" data-aos="fade-up">See more</div>
+                        </a>*@
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="d-none d-lg-block">
+        <div class="section3D">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-5">
+                        <div class="paper" data-aos="fade-up">
+                            <h3 class="blue" data-aos="fade-up">Dedicated Services</h3>
+                            <div class="titleLine blue" data-aos="fade-up"></div>
+                            <div class="clearfix"></div>
+                            <p data-aos="fade-up">
+                                     Premium Experiences
+                                <br> Red-carpet Treatment Designed for You
+                                <br> Exclusive Offers Only at Cathay Group
+                            </p>
+                            @*<a href="javascript:;" onclick="alert('coming soon');">
+                                <div class="myBtn blue" data-aos="fade-up">See more</div>
+                            </a>*@
+                        </div>
+                    </div>
+                    <div class="col-7">
+                        <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/index/section3IlluD.png")" class="img-fluid illu" data-aos="fade-up">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- section4 -->
+    <!-- section4 -->
+    <!-- section4 -->
+
+    <a name="section4"></a>
+
+    <div class="section4">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="blue" data-aos="fade-up">Awards and Honors</h3>
+                    <div class="titleLine blue" data-aos="fade-up"></div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="col-12 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/index/section4Award2_2023.png")" class="img-fluid">
+                    <p>
+                        2023<br>
+                        Asian Private Banker<br>
+                        Best Private Bank<br>
+                        Taiwan Domestic
+
+                    </p>
+                </div>
+                <div class="col-12 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/index/section4Award2_2022.png")" class="img-fluid">
+                    <p>
+                        2022<br>
+                        Asian Private Banker<br>
+                        Best Private Bank<br>
+                        Taiwan Domestic
+
+                    </p>
+                </div>
+
+                <div class="col-12 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/index/section4Award2_2021.png")" class="img-fluid">
+                    <p>
+                        2021<br>
+                        Asian Private Banker<br>
+                        Best Private Bank<br>
+                        Taiwan Domestic
+
+                    </p>
+                </div>
+                @*<div class="col-12 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/index/section4Award2_2020.png")" class="img-fluid">
+                    <p>
+                        2020<br>
+                        Asian Private Banker<br>
+                        Best Private Bank<br>
+                        Taiwan Domestic
+
+                    </p>
+                </div>*@
+
+
+                <div class="col-12" data-aos="fade-up">
+                    <a href="@Url.Content("~/hongkong/en/private-bank/award/")">
+                        <div class="myBtn">See more</div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- footer -->
+    <!-- footer -->
+    <!-- footer -->
+
+
+
+    <div class="d-lg-none">
+        <div class="footer">
+            <div class="container text-left">
+                <div class="row">
+                    <div class="col-12">
+                        <ul>
+
+                            <li><a href="https://www.cathaybk.com.tw/en-us/cathaybk/english/disclosures/disclosures/user-privacy-policy/" target="_blank" rel="noopener">Privacy policy</a></li>
+                            <li><a href="https://www.cathaybk.com.tw/sg/en/financial-disclosure " target="_blank" rel="noopener">Financial disclosure</a></li>
+                            <li><a href="https://www.cathaybk.com.tw/sg/en/browser-setting " target="_blank" rel="noopener">Browser suggestions</a></li>
+                            <li>©Cathay United Bank All rights reserved.</li>
+                            <li><a href="https://www.cathaybk.com.tw/cathaybk/promo/private-bank/index.html" target="_blank" rel="noopener">Cathay United Bank Private Banking, Taiwan</a></li>
+                            <li><a href="@Url.Content("~/sg/en/private-bank/")" target="_blank" rel="noopener">Cathay United Bank Private Banking, Singapore</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-none d-lg-block">
+        <div class="footerD">
+            <div class="area1">
+                <div class="container text-left">
+                    <div class="row">
+                        <div class="col-12">
+                            <a href="###">
+                                <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/logoOnlyTree.png")" class="logo">
+                            </a>
+                            <ul>
+                                <li><a href="https://www.cathaybk.com.tw/cathaybk/promo/private-bank/index.html" target="_blank" rel="noopener">Cathay United Bank Private Banking, Taiwan</a></li>
+                                <li><a href="@Url.Content("~/sg/en/private-bank/")" target="_blank" rel="noopener">Cathay United Bank Private Banking, Singapore</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="area2">
+                <div class="container text-left">
+                    <div class="row">
+                        <div class="col-12">
+                            <ul>
+                                <li>
+                                    <a href="https://www.facebook.com/cathayunitedbank/" target="_blank" rel="noopener"><img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/fb.png")"></a>
+                                </li>
+
+                                <li>
+                                    <a href="https://line.me/R/ti/p/%40cathaybank" target="_blank" rel="noopener"><img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/line.png")"></a>
+                                </li>
+                                <li><a href="https://www.cathaybk.com.tw/en-us/cathaybk/english/disclosures/disclosures/user-privacy-policy/" target="_blank" rel="noopener">Privacy policy</a></li>
+                                <li><a href="https://www.cathaybk.com.tw/sg/en/financial-disclosure " target="_blank" rel="noopener">Financial disclosure</a></li>
+                                <li><a href="https://www.cathaybk.com.tw/sg/en/browser-setting " target="_blank" rel="noopener">Browser suggestions</a></li>
+                                <li>©Cathay United Bank All rights reserved.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- footer_js -->
+    <!-- footer_js -->
+    <!-- footer_js -->
+    <!--  ******************************************* js *********************************************** -->
+
+    <script src="@Url.Content("~/OVSWS/Content/pwm")/js/jquery.js"></script>
+
+    <script src="@Url.Content("~/OVSWS/Content/pwm")/js/bootstrap.min.js"></script>
+
+    <script src="@Url.Content("~/OVSWS/Content/js/vendor/aos/aos.js")" integrity="sha384-wziAfh6b/qT+3LrqebF9WeK4+J5sehS6FA10J1t3a866kJ/fvU5UwofWnQyzLtwu" crossorigin="anonymous"></script>
+
+
+
+    <script>
+        $(document).ready(function () {
+
+
+
+            AOS.init({
+                offset: 180, // offset (in px) from the original trigger point
+                duration: 2000, // values from 0 to 3000, with step 50ms
+                easing: 'ease-out-quad' // default easing for AOS animations
+
+            });
+        });
+
+
+
+
+
+        // ↓↓↓↓↓↓↓↓ 滑動到指定位置 ↓↓↓↓↓↓↓↓
+        // ↓↓↓↓↓↓↓↓ 滑動到指定位置 ↓↓↓↓↓↓↓↓
+        // ↓↓↓↓↓↓↓↓ 滑動到指定位置 ↓↓↓↓↓↓↓↓
+        var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
+
+
+        function goToTop() {
+
+            $body.animate({
+                scrollTop: $("body").offset().top
+            }, 1000);
+        }
+
+
+        function slideTo(targetName) {
+
+            $body.animate({
+                scrollTop: $("." + targetName).offset().top
+            }, 1500);
+
+        }
+
+        // ↓↓↓↓↓↓↓↓ nav展開的時候不用背後的陰影 ↓↓↓↓↓↓↓↓
+
+        $('.nav').on('show.bs.modal', function (e) {
+            $('body').addClass("modalNoShadow");
+            $('.nav').slideDown(1000);
+        }).on('hide.bs.modal', function (e) {
+            $('body').removeClass("modalNoShadow");
+        })
+
+    </script>
+
+
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,73 @@
+﻿@model IndexViewModel
+@if (ViewBag.lang == "zh-hant")
+{
+    ViewBag.PageTitle = "常用表單";
+    ViewBag.PageDescription = "歡迎自行下載存匯服務、網上銀行、FATCA IRS Forms、CRS自我證明表格等常用表單";
+}
+else
+{
+    ViewBag.PageTitle = "Forms";
+    ViewBag.PageDescription = "";
+}
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/download-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/download.jpg")' alt='@ViewBag.nav_download'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_download</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_download</h1>
+        </div>
+    </div>
+</div>
+<!-- 表單容器 -->
+<div class="forms-container" data-branch="hongkong"></div>
+
+<!-- 固定放在底部的 FATCA 表單 -->
+<div section='fatca' class='component-oversea-downloads'>
+    <div class="cod-inner">
+        <h2 class='cod-title'>FATCA IRS Forms</h2>
+        <h3 class="cod-subtitle">@(ViewBag.lang == "zh-hant" ? "個人" : "Individual")</h3>
+        <div class="cod-list-wrap">
+            <ul class='cod-list'>
+                <li class='cod-item'>
+                    <a href="https://www.irs.gov/forms-pubs/about-form-w-8-ben" target="_blank" rel="noopener" rel="noreferrer" class='cod-item-btn cod-item-btn--large'>
+                        <span class='cod-item-btn-text'>W-8BEN</span>
+                    </a>
+                </li>
+                <li class='cod-item'>
+                    <a href="https://www.irs.gov/forms-pubs/about-form-w-9" target="_blank" rel="noopener" rel="noreferrer" class='cod-item-btn cod-item-btn--large'>
+                        <span class='cod-item-btn-text'>W-9</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <h3 class="cod-subtitle">@(ViewBag.lang == "zh-hant" ? "法人實體" : "Entity")</h3>
+        <div class="cod-list-wrap">
+            <ul class='cod-list'>
+                <li class='cod-item'>
+                    <a href="https://www.irs.gov/forms-pubs/about-form-w-8-ben-e" target="_blank" rel="noopener" rel="noreferrer" class='cod-item-btn cod-item-btn--large'>
+                        <span class='cod-item-btn-text'>W-8BEN-E</span>
+                    </a>
+                </li>
+                <li class='cod-item'>
+                    <a href="https://www.irs.gov/forms-pubs/about-form-w-8-imy" target="_blank" rel="noopener" rel="noreferrer" class='cod-item-btn cod-item-btn--large'>
+                        <span class='cod-item-btn-text'>W-8IMY</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        var lang = "@ViewBag.lang";  // 使用 ViewBag 中的語言設定
+        var branchId = "603";  // 香港分行的 ID
+    </script>
+    <script src="@Url.Content("~/OVSWS/Content/js/backendSystem/FormLoader.js")" type="application/javascript"></script>
+}

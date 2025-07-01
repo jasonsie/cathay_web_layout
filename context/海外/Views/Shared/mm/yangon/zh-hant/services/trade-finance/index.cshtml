@@ -1,0 +1,263 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = @ViewBag.nav_services_depository_remittance;
+}
+
+@if (ViewBag.lang == "zh-hant")
+{
+    ViewBag.PageDescription = "";
+}
+else
+{
+    ViewBag.PageDescription = "";
+}
+
+
+@section Scripts {
+    <script>
+        var serviceCard = serviceCard || {};
+        serviceCard.prototype = {
+            sameHeight: function () {
+
+                let window_w = $(window).width();
+                let max_h = 0;
+                let scope = $('.component-oversea-services-card');
+                $('.cosc-item-content', scope).css('min-height', 0);
+                if (window_w >= 768) {
+                    $('.cosc-item', scope).each(function () {
+                        let h = $('.cosc-item-content', $(this)).height();
+                        if (h > max_h) {
+                            max_h = h;
+                        }
+                    })
+                    $('.cosc-item-content', scope).height(max_h);
+                } else {
+                    $('.cosc-item-content', scope).css('height', 'auto');
+                }
+            },
+            addEventListener: function () {
+                let o = this;
+                $(window).on('resize.homeCard', function () {
+                    o.sameHeight();
+                }).trigger('resize.homeCard');
+            },
+            init: function () {
+                this.addEventListener();
+            }
+        }
+    </script>
+
+    <script>
+        $(function () {
+
+            var myServiceCard = serviceCard.prototype;
+            myServiceCard.init();
+        })
+    </script>
+    }
+    <div class='component-oversea-kv-short'>
+        <figure class='coks-figure'>
+            <picture>
+
+                <source media='(min-width: 768px)'
+                        data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/trade-finance-lg.jpg")' />
+                <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/trade-finance.jpg")' alt='@ViewBag.nav_services_trade_finance'>
+            </picture>
+            <figcaption hidden>@ViewBag.nav_services_trade_finance</figcaption>
+        </figure>
+        <div class="coks-inner">
+            <div class="coks-content">
+                <h1 class='coks-title'>@ViewBag.nav_services_trade_finance</h1>
+            </div>
+        </div>
+    </div>
+
+    @if (ViewBag.lang == "zh-hant")
+    {
+        <div class="component-oversea-services-card component-oversea-services-card--33">
+            <div class="cosc-inner">
+                <h2 class="cosc-title">@ViewBag.services_title</h2>
+                <ul class="cosc-list">
+                    <li class="cosc-item">
+                        <figure class="cosc-item-figure">
+                            <picture>
+                                <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services-card/trade-finance/import-business.jpg")" alt="進口業務">
+
+                            </picture>
+                            <figcaption hidden="">進口業務</figcaption>
+                        </figure>
+                        <div class="cosc-item-content">
+                            <h3 class="cosc-item-title">進口業務</h3>
+                            <ul class="cosc-item-list">
+                                <li class="cosc-item-list-item">
+                                    <h3 class="cosc-item-list-item-title">信用狀開發</h3>
+                                </li>
+                                <li class="cosc-item-list-item">
+                                    <h3 class="cosc-item-list-item-title">進口融資</h3>
+                                </li>
+                                <li class="cosc-item-list-item">
+                                    <h3 class="cosc-item-list-item-title">進口託收(D/A，D/P)</h3>
+                                </li>
+                                <li class="cosc-item-list-item">
+                                    <h3 class="cosc-item-list-item-title">擔保提貸(S/G)</h3>
+                                </li>
+                                <li class="cosc-item-list-item">
+                                    <h3 class="cosc-item-list-item-title">副提單背書申請書 (B/L endorsement)</h3>
+                                </li>
+                                <li class="cosc-item-list-item">
+                                    <h3 class="cosc-item-list-item-title">背對背信用狀</h3>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="cosc-item">
+                        <figure class="cosc-item-figure">
+                            <picture>
+                                <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services-card/trade-finance/export-business.jpg")" alt="出口業務">
+                            </picture>
+                            <figcaption hidden="">出口業務</figcaption>
+                        </figure>
+                        <div class="cosc-item-content">
+                            <h3 class="cosc-item-title">出口業務</h3>
+                            <ul class="cosc-item-list">
+                                <li class="cosc-item-list-item">
+                                    <h3 class="cosc-item-list-item-title">信用狀通知</h3>
+                                </li>
+                                <li class="cosc-item-list-item">
+                                    <h3 class="cosc-item-list-item-title">信用狀轉讓</h3>
+                                </li>
+                                <li class="cosc-item-list-item">
+                                    <h3 class="cosc-item-list-item-title">款項讓與</h3>
+                                </li>
+                                <li class="cosc-item-list-item">
+                                    <h3 class="cosc-item-list-item-title">出口押匯</h3>
+                                </li>
+                                <li class="cosc-item-list-item">
+                                    <h3 class="cosc-item-list-item-title">出口融資</h3>
+                                </li>
+                                <li class="cosc-item-list-item">
+                                    <h3 class="cosc-item-list-item-title">出口託收 (D/A、D/P)</h3>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="cosc-item">
+                        <figure class="cosc-item-figure">
+                            <picture>
+                                <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services-card/trade-finance/guarantee-business.jpg")" alt="保證業務">
+                            </picture>
+                            <figcaption hidden="">保證業務</figcaption>
+                        </figure>
+                        <div class="cosc-item-content">
+                            <h3 class="cosc-item-title">保證業務</h3>
+                            <ul class="cosc-item-list">
+                                <li class="cosc-item-list-item">
+                                    <h3 class="cosc-item-list-item-title">擔保信用狀(Standby LC)</h3>
+                                </li>
+                                <li class="cosc-item-list-item">
+                                    <h3 class="cosc-item-list-item-title">保證函(L/G)</h3>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="component-oversea-services-card component-oversea-services-card--33 component-oversea-services-card--trade-finance">
+            <div class="cosc-inner">
+                <h2 class="cosc-title">@ViewBag.services_title</h2>
+                <ul class="cosc-list">
+                    <li class="cosc-item">
+                        <figure class="cosc-item-figure">
+                            <picture>
+                                <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services-card/trade-finance/import-business.jpg")" alt="Import Business ">
+
+                            </picture>
+                            <figcaption hidden="">Import Business </figcaption>
+                        </figure>
+                        <div class="cosc-item-content">
+                            <h3 class="cosc-item-title">Import Business </h3>
+                            <ul class="cosc-item-list">
+                                <li class="cosc-item-list-item">
+                                    <h3 class="cosc-item-list-item-title">Letter of credit issuance</h3>
+                                </li>
+                                <li class="cosc-item-list-item">
+                                    <h3 class="cosc-item-list-item-title">Import finance</h3>
+                                </li>
+                                <li class="cosc-item-list-item">
+                                    <h3 class="cosc-item-list-item-title">Import collection (D/A, D/P) </h3>
+                                </li>
+                                <li class="cosc-item-list-item">
+                                    <h3 class="cosc-item-list-item-title">Shipping guarantee (S/G) </h3>
+                                </li>
+                                <li class="cosc-item-list-item">
+                                    <h3 class="cosc-item-list-item-title">Bill of lading endorsement (B/L endorsement) </h3>
+                                </li>
+                                <li class="cosc-item-list-item">
+                                    <h3 class="cosc-item-list-item-title">Back-to-back letter of credit</h3>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="cosc-item">
+                        <figure class="cosc-item-figure">
+                            <picture>
+                                <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services-card/trade-finance/export-business.jpg")" alt="Export Business">
+                            </picture>
+                            <figcaption hidden="">Export Business</figcaption>
+                        </figure>
+                        <div class="cosc-item-content">
+                            <h3 class="cosc-item-title">Export Business</h3>
+                            <ul class="cosc-item-list">
+                                <li class="cosc-item-list-item">
+                                    <h3 class="cosc-item-list-item-title">L/C advising </h3>
+                                </li>
+                                <li class="cosc-item-list-item">
+                                    <h3 class="cosc-item-list-item-title">L/C assignment</h3>
+                                </li>
+                                <li class="cosc-item-list-item">
+                                    <h3 class="cosc-item-list-item-title">Assignment of proceeds</h3>
+                                </li>
+                                <li class="cosc-item-list-item">
+                                    <h3 class="cosc-item-list-item-title">Export bills negotiation</h3>
+                                </li>
+                                <li class="cosc-item-list-item">
+                                    <h3 class="cosc-item-list-item-title">Export finance</h3>
+                                </li>
+                                <li class="cosc-item-list-item">
+                                    <h3 class="cosc-item-list-item-title">Export collection</h3>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="cosc-item">
+                        <figure class="cosc-item-figure">
+                            <picture>
+                                <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services-card/trade-finance/guarantee-business.jpg")" alt="Guarantee Business">
+                            </picture>
+                            <figcaption hidden="">Guaranteed Business</figcaption>
+                        </figure>
+                        <div class="cosc-item-content cosc-item-content--few">
+                            <h3 class="cosc-item-title">Guaranteed Business</h3>
+                            <ul class="cosc-item-list">
+                                <li class="cosc-item-list-item">
+                                    <h3 class="cosc-item-list-item-title">Standby L/C </h3>
+                                </li>
+                                <li class="cosc-item-list-item">
+                                    <h3 class="cosc-item-list-item-title">Letters of Guarantee (L/G) </h3>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    }

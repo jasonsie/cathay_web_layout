@@ -1,0 +1,251 @@
+﻿@model IndexViewModel
+
+@if (ViewBag.lang == "zh-hant")
+{
+    ViewBag.PageTitle = "匯/利率查詢";
+    ViewBag.PageDescription = "";
+}
+else
+{
+    ViewBag.PageTitle = "Foreign Exchange / Interest Rate";
+    ViewBag.PageDescription = "";
+}
+
+
+@section Scripts {
+    <script>
+        $(function () {
+            $('[role="currency-select"]').on('change', function () {
+                let val = $(this).val();
+                location.href = val;
+            })
+            $('[role="currency-select"]').val('@ViewBag.currency');
+        })
+    </script>
+}
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/interest-rate-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/interest-rate.jpg")' alt='@ViewBag.nav_interest_rate'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_interest_rate</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_interest_rate</h1>
+        </div>
+    </div>
+</div>
+
+
+@if (ViewBag.lang == "en")
+{
+    <div class='component-oversea-interest-rate'>
+
+        <div class="coir-inner">
+            <h2 class='coir-title'>
+                Exchange Rate
+            </h2>
+
+
+
+            <div class='component-oversea-interest-table coit--zebra coit--time-deposit'>
+                <p class="cos-description">@("Date："+ ViewBag.exchangeRate[0].UpdateTime.ToString("yyyy-MM-dd-HH-mm-ss")+ "　Foreign Currency/VND")</p>
+                <div class='coit-form '>
+                    <div class='coit-tr coit-tr--head' style="display: grid; grid-template-columns: repeat(4, 1fr)">
+                        <div class='coit-td'></div>
+                        <div class='coit-td' style="grid-column-start:2; grid-column-end: 4">Buying</div>
+                        <div class='coit-td' style="grid-column-start:4; grid-column-end: 5">Selling</div>
+                    </div>
+                    <div class='coit-tr'>
+                        <div class='coit-td coit-td--light-green'>Currency</div>
+                        <div class='coit-td coit-td--light-green'>Cash</div>
+                        <div class='coit-td coit-td--light-green'>Transfer</div>
+                        <div class='coit-td coit-td--light-green'>Transfer</div>
+                    </div>
+                    @foreach (var item in ViewBag.exchangeRate)
+                    {
+                        <div class='coit-tr'>
+                            <div class='coit-td coit-td--white'>@item.Ccy</div>
+                            <div class='coit-td coit-td--white'>@(String.IsNullOrWhiteSpace(item.C_ExrateB)?0:Decimal.Parse(item.C_ExrateB)/ 10000000000)</div>
+                            <div class='coit-td coit-td--white'>@(String.IsNullOrWhiteSpace(item.T_ExrateB) ?0:Decimal.Parse(item.T_ExrateB)/ 10000000000)</div>
+                            <div class='coit-td coit-td--white'>@(String.IsNullOrWhiteSpace(item.T_ExrateS) ?0:Decimal.Parse(item.T_ExrateS)/ 10000000000)</div>
+                        </div>
+                    }
+                    <div class='coit-tr'>
+
+                    </div>
+
+
+
+
+
+
+                </div>
+            </div>
+            <div class="coir-highlight">
+                The information is for reference only and subject to change from time to time. Please contact the Bank for the latest update.
+            </div>
+            <br />
+
+            <h2 class='coir-title'>
+                Deposit rates
+            </h2>
+
+            <div class='coir-form-wrap'>
+                <div class='coir-form-label'>
+                    Currency
+                </div>
+                <div class='component-oversea-form'>
+                    <select role="currency-select" class='form-select'>
+                        <option value="usd">USD(Individual)</option>
+                        <option value="usd_c">USD(Corporate)</option>
+                        <option value="vnd">VND(Individual)</option>
+                        <option value="vnd_c">VND(Corporate)</option>
+                    </select>
+                </div>
+            </div>
+
+
+
+            <div class='component-oversea-interest-table coit-table--zebra coit--zebra coit--time-deposit'>
+                <p class="cos-description">@("Date：" + ViewBag.interestRateUpdateTime)</p>
+                <div class='coit-form coit-form--show-lg'>
+                    <div class='coit-tr coit-tr--head'>
+                        <div class='coit-td'>Deposit interest rates</div>
+                    </div>
+                    <div class='coit-tr'>
+                        @*<div class='coit-td coit-td--light-green'>存款金額級距</div>*@
+                        <div class='coit-td coit-td--light-green'>
+                            Demand
+                        </div>
+                        @foreach (var item in ViewBag.interestRateDictionary["TD"])
+                        {
+                            if (item["1M"] != null)
+                            {<div class='coit-td coit-td--light-green'>1Month</div>}
+
+                            if (item["2M"] != null)
+                            {<div class='coit-td coit-td--light-green'>2Months</div>}
+
+                            if (item["3M"] != null)
+                            {<div class='coit-td coit-td--light-green'>3Months</div>}
+
+                            if (item["6M"] != null)
+                            {<div class='coit-td coit-td--light-green'>6Months</div>}
+
+                            if (item["12M"] != null)
+                            {<div class='coit-td coit-td--light-green'>12Months</div>}
+                        }
+                    </div>
+                    <div class='coit-tr'>
+                        @if (ViewBag.interestRateDictionary["CS"] != null)
+                        {
+                            <div class='coit-td'>
+                                <span>@ViewBag.interestRateDictionary["CS"][0]["0 "]%</span>
+                            </div>
+                        }
+                        @foreach (var item in ViewBag.interestRateDictionary["TD"])
+                        {
+                            <div class='coit-td'>
+                                @if (item["1M"] != null)
+                                {<span>@item["1M"]%</span>}
+                            </div>
+                            <div class='coit-td'>
+                                @if (item["2M"] != null)
+                                {<span>@item["2M"]%</span>}
+                            </div>
+                            <div class='coit-td'>
+                                @if (item["3M"] != null)
+                                {<span>@item["3M"]%</span>}
+                            </div>
+                            <div class='coit-td'>
+                                @if (item["6M"] != null)
+                                {<span>@item["6M"]%</span>}
+                            </div>
+                            <div class='coit-td'>
+                                @if (item["12M"] != null)
+                                {<span>@item["12M"]%</span>}
+                            </div>
+
+                        }
+
+                    </div>
+
+
+
+                </div>
+
+
+
+                <div class='coit-form coit-form--hide-lg'>
+                    <div class='coit-tr coit-tr--head'>
+                        <div class='coit-td'>Deposit interest rates</div>
+                    </div>
+
+                    <div class='coit-wrap'>
+                        @if (ViewBag.interestRateDictionary["CS"] != null)
+                        {
+                            <div class='coit-tr'>
+                                <div class='coit-td coit-td--light-green'>Demand</div>
+                                <div class='coit-td'>
+                                    <span>@ViewBag.interestRateDictionary["CS"][0]["0 "]%</span>
+                                </div>
+                            </div>
+                        }
+                        @foreach (var item in ViewBag.interestRateDictionary["TD"])
+                        {
+
+
+                            <div class='coit-tr'>
+                                <div class='coit-td coit-td--light-green'>1Month</div>
+                                <div class='coit-td'>
+                                    @if (item["1M"] != null)
+                                    {<span>@item["1M"]%</span>}
+                                </div>
+                            </div>
+                            <div class='coit-tr'>
+                                <div class='coit-td coit-td--light-green'>2Months</div>
+                                <div class='coit-td'>
+                                    @if (item["2M"] != null)
+                                    {<span>@item["2M"]%</span>}
+                                </div>
+                            </div>
+                            <div class='coit-tr'>
+                                <div class='coit-td coit-td--light-green'>3Months</div>
+                                <div class='coit-td'>
+                                    @if (item["3M"] != null)
+                                    {<span>@item["3M"]%</span>}
+                                </div>
+                            </div>
+                            <div class='coit-tr'>
+                                <div class='coit-td coit-td--light-green'>6Months</div>
+                                <div class='coit-td'>
+                                    @if (item["6M"] != null)
+                                    {<span>@item["6M"]%</span>}
+                                </div>
+                            </div>
+                            <div class='coit-tr'>
+                                <div class='coit-td coit-td--light-green'>12Months</div>
+                                <div class='coit-td'>
+                                    @if (item["12M"] != null)
+                                    {<span>@item["12M"]%</span>}
+                                </div>
+                            </div>
+
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <div class="coir-highlight">
+                The information is for reference only and subject to change from time to time. The applicable deposit rates shall be based on the deposit rates as listed at the Bank.
+            </div>
+
+        </div>
+    </div>
+}
+

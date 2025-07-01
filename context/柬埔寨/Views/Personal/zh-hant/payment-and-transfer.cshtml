@@ -1,0 +1,135 @@
+@{
+   ViewData["PageTitle"] = "付款與轉帳";
+   ViewData["PageDescription"] = "";
+}
+
+
+<!-- Page START -->
+<main class="mastbody">
+	
+	<!--
+		付款與轉帳
+	-->
+	<div class="topkv kv  kv--txt-left">
+		<div class="kv-bg">
+			<div class="kv-bg-inner">
+				<figure class="kv-bg-img">
+					<picture>
+						<source media="(min-width:769px)" srcset="/assets/img/topkv/personal-remittance.jpg" />
+						<img srcset="/assets/img/topkv/personal-remittance-mb.jpg">
+					</picture>
+				</figure>
+			</div>
+		</div>
+		<div class="kv-cont">
+			<div class="kv-cont-inner">
+				<h2 class="display-1-sm  fw-bold lh-xs">匯款服務</h2>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Breadcrumb  (lays on top of .topkv if places right after it) -->
+	<nav class="breadcrumb-nav text-white" aria-label="breadcrumb">
+		<div class="fluid">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]"><span>首頁</span><i class="ico-ui-home"></i></a></li>
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]personal/">個人金融</a></li>
+				<li class="breadcrumb-item active" aria-current="page">付款與轉帳</li>
+			</ol>
+		</div>
+	</nav>
+	
+	<!-- Menu -->
+	<nav class="tabmenu    d-none d-sm-block">
+		<div class="tabmenu-inner">
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/inward-and-outward-remittance/">
+				<span class="tabmenu-btn-txt">匯入＆匯出款項</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn active" href="@ViewData["siteLangUrl"]personal/payment-and-transfer/">
+				<span class="tabmenu-btn-txt">付款與轉帳</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+		</div>
+	</nav>
+	<!-- Mobile dropdown -->
+	<div class="tabmenu-dropdown dropdown    d-block d-sm-none">
+		<a href="javascript:;" class="btn btn-sm btn-block  dropdown-toggle" data-toggle="dropdown">
+			<span class="text-truncate d-inline-block">付款與轉帳</span>
+		</a>
+		<div class="dropdown-menu">
+			<span class="dropdown-item disabled">-- 前往頁面 --</span>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/inward-and-outward-remittance/">匯入＆匯出款</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/payment-and-transfer/">付款與轉帳</a>
+		</div>
+	</div>
+
+	
+	
+	<!--
+		付款與轉帳 - Detail
+	-->
+	<section class="fluid overflow-hidden">
+		
+		<div class="py-page"></div>
+		
+		<!-- Page heading -->
+		<header class="compact  mb-5  text-center">
+			<h1 class="display-3 h1-mb  text-dark fw-bold">付款與轉帳</h1>
+		</header>
+		
+		<!-- Card grids  (3 in a row) -->
+		<div class="mx-n3">
+			<ul class="compact-md  row justify-content-center justify-content-md-start">
+		
+				<!-- Card grid -->
+				<li class="col-12 col-md-6 col-lg-4  mb-5  px-3">
+					<figure class="mb-3 mb-xl-4"><!-- 720x482 PNG or JPG -->
+						<img class="w-100 lazy" data-src="/assets/img/content/remittance-pic-1.jpg" alt="銀行本票">
+					</figure>
+					<div class="px-xl-3">
+						<h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">銀行本票</h3>
+						<p>在受益人不接受現金或個人支票的情況下，帳戶持有人可向銀行購買銀行本票，這是一張由本行簽發的支票，帳戶持有人可購買本票，並指定收款人。</p>
+						<br>
+						<br>
+						<p class="small">*銀行本票收費標準：每張銀行本票手續費10.00美元</p>
+					</div>
+				</li>
+		
+		
+
+
+
+				<!-- Card grid -->
+				<li class="col-12 col-md-6 col-lg-4  mb-5  px-3">
+					<figure class="mb-3 mb-xl-4">
+						<img class="w-100 lazy" data-src="/assets/img/content/remittance-pic-2.jpg" alt="即期匯票">
+					</figure>
+					<div class="px-xl-3">
+						<h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">即期匯票</h3>
+						<p>即期匯票可用於在新加坡以新幣或美元向指定受益人支付規定金額的非緊急付款。 我們的海外合作銀行將在即期匯票存入受益人的銀行並清算後，向您的受益人付款。</p>
+						<br>
+						<h4 class="mb-1 text-dark fw-bold">簽帳</h4>
+                        <p>匯票本金之0.22%最低20.00美元 + 郵電費20.00美元</p>
+					</div>
+				</li>
+		
+				<!-- Card grid -->
+				<li class="col-12 col-md-6 col-lg-4  mb-5  px-3">
+					<figure class="mb-3 mb-xl-4">
+						<img class="w-100 lazy" data-src="/assets/img/content/remittance-pic-3.jpg" alt="Fast Payment">
+					</figure>
+					<div class="px-xl-3">
+						<h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">快速付款</h3>
+						<p>FAST是指僅專屬 KHR（柬幣）的本地匯款服務。交易時間：全年無休。款項將同時處理並存入收款人帳戶，每筆交易的最大轉帳金額為柬幣40,000,000.00。</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+		
+		<div class="py-page"></div>
+	</section>
+	
+	
+</main>
+<!-- Page END -->

@@ -1,0 +1,80 @@
+﻿@if (ViewBag.lang == "zh-hant")
+{
+
+
+    <div class='component-oversea-modal component-oversea-modal--fraud'>
+        <div class="modal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="com-body">
+                        <div class="com-title">提醒您切勿相信<br/>來路不明之簡訊訊息</div>
+                        <p class="com-p com-p--align-left">
+                            國泰世華提醒您：<br/>
+                            本行不會主動請您登入網路銀行綁定用戶資料。<br /><br />
+                            若收到假借本行名義或來路不明之簡訊訊息，切勿相信或點選連結，以維護您的權益。
+                            如您近日已於可疑網址輸入網路銀行的用戶代號及網銀密碼，建議您儘速進行更改。<br /><br />
+                            如有任何疑問，<br/>請致電本行客服專線：+62-21-2951-8572。
+                        </p>
+                        <div class="com-btn-wrap">
+                            <a href="javascript:;" role='close-com-modal' class="com-btn">關閉視窗</a>
+                        </div>
+                    </div>
+                    <button type="button" role='close-com-modal' class="com-btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else if(ViewBag.lang == "en")
+{
+    
+    <div class='component-oversea-modal component-oversea-modal--fraud'>
+        <div class="modal" tabindex="-1">
+            <div class="modal-dialog  modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="com-body">
+                        <div class="com-title">Don't trust SMS<br/>from unknown sources</div>
+                        <p class="com-p com-p--align-left">
+                            Cathay United Bank reminds you:<br/>
+                            The Bank will not ask you to log in to Internet Banking to bind your user information.<br /><br />
+                            If you receive a text message in the name of the Bank or from an unknown source, to protect your rights and interests, do not believe it or click on the link. If you have recently entered your Internet Banking User ID and Password on a suspicious website, it is advised to change them as soon as possible.<br /><br />
+                            If you have any questions, please call our Customer Service Hotline at +62-21-2951-8572
+                        </p>
+                        <div class="com-btn-wrap">
+                            <a href="javascript:;" role='close-com-modal' class="com-btn">Close</a>
+                        </div>
+                    </div>
+                    <button type="button" role='close-com-modal' class="com-btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    
+    <div class='component-oversea-modal component-oversea-modal--fraud'>
+        <div class="modal" tabindex="-1">
+            <div class="modal-dialog  modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="com-body">
+                        <div class="com-title">Ingatkan Anda untuk tidak percaya<br/>Pesan SMS yang asalnya tidak diketahui</div>
+                        <p class="com-p com-p--align-left">
+                            Cathay United Bank mengingatkan anda:<br/>
+                            Kami tidak akan secara aktif meminta Anda untuk masuk ke perbankan online untuk mengikat informasi pengguna.<br /><br />
+
+                            Jika Anda menerima pesan teks dengan kedok bank kami atau dari sumber yang tidak dikenal, jangan percaya atau klik pada link untuk melindungi hak-hak Anda.
+Jika Anda baru-baru ini memasukkan kode pengguna perbankan online dan sandi perbankan online pada link yang mencurigakan, sebaiknya Anda mengubahnya secepat mungkin.<br /><br />
+
+                            Jika Anda memiliki pertanyaan, silakan hubungi hotline layanan pelanggan kami: +62-21-2951-8572
+                        </p>
+                        <div class="com-btn-wrap ">
+                            <a href="javascript:;" role='close-com-modal' class="com-btn">Tutup Beranda</a>
+                        </div>
+                    </div>
+                    <button type="button" role='close-com-modal' class="com-btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+}

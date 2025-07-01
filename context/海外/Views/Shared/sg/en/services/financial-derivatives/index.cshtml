@@ -1,0 +1,133 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "Financial Derivatives";
+    ViewBag.PageDescription = "We have a dedicated team of experienced professionals. The team closely monitors the market situation to offer customers professional and precise risk aversion strategies in line with the corporate business operations and is committed to provide the best services.";
+}
+@section Scripts {
+    <script>
+        var serviceCard = serviceCard || {};
+        serviceCard.prototype = {
+            sameHeight: function () {
+                let window_w = $(window).width();
+                let max_h = 0;
+                let scope = $('.component-oversea-services-card');
+                $('.cosc-item-content', scope).css('min-height', 0);
+                $('.cosc-item-content', scope).css('height', 'auto');
+                if (window_w >= 768) {
+                    $('.cosc-item', scope).each(function () {
+                        let h = $('.cosc-item-content', $(this)).height();
+                        if (h > max_h) {
+                            max_h = h;
+                        }
+                    })
+                    $('.cosc-item-content', scope).height(max_h);
+                } else {
+                    $('.cosc-item-content', scope).css('height', 'auto');
+                }
+            },
+            addEventListener: function () {
+                let o = this;
+                $(window).on('resize.serviceCard', function () {
+                    o.sameHeight();
+                }).trigger('resize.serviceCard');
+            },
+            init: function () {
+                this.addEventListener();
+            }
+        }
+    </script>
+
+    <script>
+        $(function () {
+
+            var myServiceCard = serviceCard.prototype;
+            myServiceCard.init();
+        })
+    </script>
+}
+
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/sg/kv-short/financial-derivatives-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/sg/kv-short/financial-derivatives.jpg")' alt='@ViewBag.nav_services_financial_derivatives'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_services_financial_derivatives</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_services_financial_derivatives</h1>
+        </div>
+    </div>
+</div>
+
+<div class="component-oversea-services-card">
+    <div class="cosc-inner">
+        <h2 class="cosc-title">@ViewBag.services_title</h2>
+        <h3 class="cosc-subtitle">FX products</h3>
+        <ul class="cosc-list">
+            <li class="cosc-item">
+                <figure class="cosc-item-figure">
+                    <picture>
+                        <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/sg/services-card/financial-derivatives/fx-forward.jpg")" alt="FX Forward">
+
+                    </picture>
+                    <figcaption hidden="">FX Forward</figcaption>
+                </figure>
+                <div class="cosc-item-content">
+                    <h3 class="cosc-item-title">FX Forward</h3>
+                    <p class="cosc-item-description">
+                        Refers to FX transactions whose settlement date exceeds two business days (T+2). Customers and CUB agree to settle with the agreed amount, currency and exchange rate on a specified date or period in the future. FX forward transactions are mainly used to lock in costs of exchange rate to avoid the risk of exchange rate fluctuation.
+                    </p>
+                </div>
+            </li>
+            <li class="cosc-item">
+                <figure class="cosc-item-figure">
+                    <picture>
+                        <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/sg/services-card/financial-derivatives/fx-swap.jpg")" alt="FX Swap">
+                    </picture>
+                    <figcaption hidden="">FX Swap</figcaption>
+                </figure>
+                <div class="cosc-item-content">
+                    <h3 class="cosc-item-title">FX Swap</h3>
+                    <p class="cosc-item-description">FX swap transaction is primarily for funding allocation, where a customer simultaneously books a FX spot (or FX forward) transaction and a FX forward transaction of the same amount but in the reverse direction.</p>
+                </div>
+            </li>
+        </ul>
+        <h3 class="cosc-subtitle">Interest rate products</h3>
+        <ul class="cosc-list">
+            <li class="cosc-item">
+                <figure class="cosc-item-figure">
+                    <picture>
+                        <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/sg/services-card/financial-derivatives/interest-rate-swap.jpg")" alt="Interest Rate Swap (" IRS")">
+                    </picture>
+                    <figcaption hidden="">Interest Rate Swap ("IRS")</figcaption>
+                </figure>
+                <div class="cosc-item-content">
+                    <h3 class="cosc-item-title">Interest Rate Swap ("IRS")</h3>
+                    <p class="cosc-item-description">
+                        Both parties swap interest rates during the term of the swap agreement based on the agreed currency, amount, and time period.  
+                        A company may use IRS to exchange a fixed interest rate for a floating interest rate or exchange a floating interest rate for a fixed interest rate. 
+                    </p>
+                </div>
+            </li>
+            <li class="cosc-item">
+                <figure class="cosc-item-figure">
+                    <picture>
+                        <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/sg/services-card/financial-derivatives/cross-currency-swap.jpg")" alt="Cross Currency Swap (" CCS")">
+                    </picture>
+                    <figcaption hidden="">Cross Currency Swap ("CCS")</figcaption>
+                </figure>
+                <div class="cosc-item-content">
+                    <h3 class="cosc-item-title">Cross Currency Swap ("CCS")</h3>
+                    <p class="cosc-item-description">Refers to a transaction that both trading parties agree to exchange two different  currencies at the beginning of the agreement, exchange the interests of the currencies during the term of the agreement, and then exchange the currencies back at the end of the agreement. This is an instrument for companies to hedge the foreign exchange rate and interest rate risks.</p>
+                </div>
+            </li>
+        </ul>
+
+    </div>
+</div>

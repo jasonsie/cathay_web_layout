@@ -1,0 +1,56 @@
+﻿@{
+    var controller_name = this.ViewContext.RouteData.Values["controller"].ToString();
+    if (controller_name == "Home")
+    {
+        controller_name = "";
+    }
+    if (ViewBag.section == "home/")
+    {
+        ViewBag.section = "";
+    }
+}
+<!-- component-header -->
+<header class="component-header">
+    <nav class="ch-navbar">
+        <div class="ch-brand-wrap">
+            <a href="https://www.cathaybk.com.tw/" class="ch-brand" title='@ViewBag.site_name'>
+                <figure class='ch-figure'>
+                    <picture>
+                        <img class='ch-img-lite' normal-src='@Url.Content("~/OVSWS/Content/img/common/header/logo.svg")' active-src='@Url.Content("~/OVSWS/Content/img/common/header/logo-white.svg")' src='@Url.Content("~/OVSWS/Content/img/common/header/logo.svg")' alt='國泰世華銀行'>
+                    </picture>
+                    <figcaption hidden>@ViewBag.site_name</figcaption>
+                </figure>
+            </a>
+            <ul class='ch-subnav-list'>
+                <li class='ch-subnav-item'>
+                    <a href="@Url.Content("~/"+@ViewBag.city_url+@ViewBag.lang_url+"contact/")" class='ch-subnav-link'>@ViewBag.nav_contact</a>
+                </li>
+                <li class='ch-subnav-item'>
+                    <a href="@Url.Content("~/"+@ViewBag.city_url+@ViewBag.lang_url+"careers/")" class='ch-subnav-link'>@ViewBag.nav_careers</a>
+                </li>
+                <li class='ch-subnav-item'>
+                    <div class="language-form">
+                        <select role="language-select" class='form-select'>
+                        @if (ViewBag.lang == "en")
+                        {
+                            <option value="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/en/"+@ViewBag.section+@ViewBag.subsection+"")">@ViewBag.nav_lang_en</option>
+                            <option value="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.section+@ViewBag.subsection+"")">@ViewBag.nav_lang_zh_hant</option>
+
+                        }
+                        else if(ViewBag.lang == "zh-hant")
+                        {
+                            <option value="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.section+@ViewBag.subsection+"")">@ViewBag.nav_lang_zh_hant</option>
+                            <option value="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/en/"+@ViewBag.section+@ViewBag.subsection+"")">@ViewBag.nav_lang_en</option>
+                        }
+                        else
+                        {
+                        }
+                        </select>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+</header>
+<!-- component-header end -->

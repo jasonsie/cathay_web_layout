@@ -1,0 +1,130 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = @ViewBag.nav_services_foreign_exchange;
+    ViewBag.PageDescription = "";
+}
+
+@section Scripts {
+    <script>
+        var serviceCard = serviceCard || {};
+        serviceCard.prototype = {
+            sameHeight: function () {
+
+                let window_w = $(window).width();
+                let max_h = 0;
+                let scope = $('.component-oversea-services-card');
+                $('.cosc-item-content', scope).css('min-height', 0);
+                if (window_w >= 768) {
+                    $('.cosc-item.cosc-item--same-height', scope).each(function () {
+                        let h = $('.cosc-item-content', $(this)).height();
+                        if (h > max_h) {
+                            max_h = h;
+                        }
+                    })
+                    $('.cosc-item--same-height .cosc-item-content', scope).height(max_h);
+                } else {
+                    $('.cosc-item--same-height .cosc-item-content', scope).css('height', 'auto');
+                }
+            },
+            addEventListener: function () {
+                let o = this;
+                $(window).on('resize.homeCard', function () {
+                    o.sameHeight();
+                }).trigger('resize.homeCard');
+            },
+            init: function () {
+                this.addEventListener();
+            }
+        }
+    </script>
+
+    <script>
+        $(function () {
+
+            var myServiceCard = serviceCard.prototype;
+            myServiceCard.init();
+        })
+    </script>
+    }
+    <div class='component-oversea-kv-short'>
+        <figure class='coks-figure'>
+            <picture>
+
+                <source media='(min-width: 768px)'
+                        data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/otc-derivatives-lg.jpg")' />
+                <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/otc-derivatives.jpg")' alt='@ViewBag.nav_services_foreign_exchange'>
+            </picture>
+            <figcaption hidden>@ViewBag.nav_services_foreign_exchange</figcaption>
+        </figure>
+        <div class="coks-inner">
+            <div class="coks-content">
+                <h1 class='coks-title'>@ViewBag.nav_services_foreign_exchange</h1>
+            </div>
+        </div>
+    </div>
+
+
+        <div class="component-oversea-services-card component-oversea-services-card--33 component-oversea-services-card--foreign-exchange">
+            <div class="cosc-inner">
+                <h2 class="cosc-title">@ViewBag.services_title</h2>
+                <ul class="cosc-list">
+                    <li class="cosc-item">
+                        <figure class="cosc-item-figure">
+                            <picture>
+                                <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services-card/foreign-exchange/fx-interest-rate-option.jpg")" alt="Foreign Exchange">
+
+                            </picture>
+                            <figcaption hidden="">
+                                即期外匯交易
+                            </figcaption>
+                        </figure>
+                        <div class="cosc-item-content">
+                            <h3 class="cosc-item-title">
+                                即期外匯交易
+                            </h3>
+                            <p class='cosc-item-description'>
+                                即期外匯交易指在外匯買賣成交後，客戶與本行於自交易日當天或兩個營業日內辦理交割手續的一種交易行為。
+                            </p>
+                        </div>
+                    </li>
+                    <li class="cosc-item">
+                        <figure class="cosc-item-figure">
+                            <picture>
+                                <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services-card/foreign-exchange/fx-forward.jpg")" alt="Export Business">
+                            </picture>
+                            <figcaption hidden="">
+                                遠期外匯交易
+                            </figcaption>
+                        </figure>
+                        <div class="cosc-item-content">
+                            <h3 class="cosc-item-title">
+                                遠期外匯交易
+                            </h3>
+                            <p class='cosc-item-description'>
+                                遠期外匯交易為客戶規避匯率風險之工具。客戶與本行在約定日期，以特定價格，購買或賣出一定金額之外匯合約。遠期匯率是以即期匯率做基礎，透過利率差額調整所得到的未來天期匯率。
+                            </p>
+                        </div>
+                    </li>
+                    <li class="cosc-item">
+                        <figure class="cosc-item-figure">
+                            <picture>
+                                <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services-card/foreign-exchange/fx-swap.jpg")" alt="Guarantee Business">
+                            </picture>
+                            <figcaption hidden="">
+                                外匯交換交易
+                            </figcaption>
+                        </figure>
+                        <div class="cosc-item-content cosc-item-content--few">
+                            <h3 class="cosc-item-title">
+                                外匯交換交易
+                            </h3>
+                            <p class='cosc-item-description'>
+                                外匯交換交易為結合即期(遠期)外匯交易及遠期外匯交易的一種合約，為客戶規避匯率及利率風險之工具。客戶與本行約定於某一交易日按約定匯率進行一定金額的兩貨幣互換，並在未來特定交易日，再依另外之約定匯率交換回來。
+                            </p>
+                        </div>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>

@@ -1,0 +1,75 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "Ngân hàng Cathay United Bank - Chi nhánh Chu Lai dự kiến chuyển địa điểm đến Thành phố Hồ Chí Minh";
+    ViewBag.PageDescription = "Ngân hàng Cathay United Bank - Chi nhánh Chu Lai đã nhận được Quyết định chấp thuận nguyên tắc của NHNH về việc chuyển địa điểm đến Thành phố Hồ Chí Minh vào ngày 23 tháng 04 năm 2021. Chi tiết về việc chuyển địa điểm này sẽ được thông báo sau.";
+}
+
+@section Scripts {}
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news.jpg")' alt='@ViewBag.nav_news'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_news</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_news</h1>
+        </div>
+    </div>
+</div>
+
+<!-- newsview -->
+<article class="component-newsview">
+    <div class="component-newsview-inner">
+        <header class="component-newsview-header">
+            <div class="component-newsview-date"></div>
+            <h1 class="component-newsview-title">Thông báo thay đổi địa điểm trụ sở và đổi tên</h1>
+        </header>
+
+        <div class="component-newsview-body">
+            Ngân Hàng Cathay United Bank – Chi nhánh Chu Lai (“Ngân Hàng”) xin trân trọng thông báo rằng Ngân Hàng sẽ chính thức thay đổi địa điểm trụ sở sang địa điểm mới và đổi tên mới kể từ ngày 22 tháng 04 năm 2022 (“Ngày Hiệu Lực”). Tên gọi, địa điểm, số điện thoại và số fax của Ngân Hàng sẽ được thay đổi như sau:
+            <br />
+            <p>
+                Thông tin cũ:
+                <ul>
+                    <li>Tên gọi cũ: Ngân hàng Cathay United Bank – Chi nhánh Chu Lai</li>
+                    <li>Địa điểm trụ sở cũ: Tầng 4, Tòa nhà Viettel Quảng Nam, Số 121 đường Hùng Vương, Phường An Mỹ, Thành phố Tam Kỳ, Tỉnh Quảng Nam, Việt Nam</li>
+                    <li>Số điện thoại cũ: +84 235 38 13035~38</li>
+                    <li>Số fax cũ: +84 235 38 13043~44</li>
+
+                </ul>
+<p>
+
+                Thông tin mới:
+                <ul>
+                    <li>Tên gọi mới: Ngân hàng Cathay United Bank – Chi nhánh Thành phố Hồ Chí Minh</li>
+                    <li>Địa điểm trụ sở mới: Tầng 19, Lim Tower 3, Số 29A đường Nguyễn Đình Chiểu, Phường Đa Kao, Quận 1, Thành phố Hồ Chí Minh, Việt Na</li>
+                    <li>Số điện thoại mới: +84 28-3825-8768 </li>
+                    <li>Số fax mới: +84 28-3825-8700</li>
+                </ul>
+
+<p>
+    Bằng văn bản này, Ngân Hàng xin thông báo rằng kể từ Ngày Hiệu Lực, (i) tất cả các quyền, nghĩa vụ và lợi ích của Quý Khách hàng tại Ngân Hàng vẫn giữ nguyên không thay đổi; và (ii) các thông tin liên quan của Ngân Hàng trên tất cả các hợp đồng, thỏa thuận, đơn đăng ký và các tài liệu khác sẽ được tự động cập nhật.
+    Quý Khách hàng sẽ không phải thực hiện bất kỳ hành động hoặc thủ tục nào do việc đổi tên và chuyển địa điểm của Ngân Hàng.
+
+<p>
+    Ngoài ra, kể từ Ngày Hiệu Lực, địa điểm trụ sở cũ của Ngân Hàng sẽ trở thành địa điểm trụ sở mới của Văn phòng đại diện Ngân hàng Cathay United Bank – Tỉnh Quảng Nam. Quý Khách hàng vui lòng đến địa điểm trụ sở mới của Ngân Hàng để liên hệ dịch vụ.
+<p>
+    Ngân Hàng chúng tôi xin chân thành cáo lỗi vì sự bất tiện này. Để biết thêm thông tin chi tiết, Quý Khách hàng vui lòng liên hệ với Ngân Hàng.
+<p>
+    Ngân Hàng mong muốn được tiếp tục phục vụ Quý Khách hàng tại địa điểm trụ sở mới.
+</div>
+
+        <footer class="component-newsview-footer">
+            <div class="component-btn-row">
+                <a class="component-btn-main btn-green" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/")">Trở lại</a>
+            </div>
+        </footer>
+    </div>
+</article><!--/.component-newsview-->

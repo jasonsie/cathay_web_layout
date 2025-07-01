@@ -1,0 +1,50 @@
+﻿@model IndexViewModel
+
+@if (ViewBag.lang == "zh-hant")
+{
+    ViewBag.PageTitle = "財務揭露";
+    ViewBag.PageDescription = "財務揭露、流動性維持比率、財務披露聲明書";
+}
+else
+{
+    ViewBag.PageTitle = "Financial Disclosure";
+    ViewBag.PageDescription = "";
+}
+@section Scripts {
+    <script>
+    var country = "@ViewBag.country_url";
+    var city = "@ViewBag.city_url";
+    var lang = "zh-hant";
+    var branchId = "604";
+    </script>
+    <script src="@Url.Content("~/OVSWS/Content/js/backendSystem/Financial.js")"></script>
+}
+
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/financial-disclosure-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/financial-disclosure.jpg")' alt='@ViewBag.nav_financial_disclosure'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_financial_disclosure</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_financial_disclosure</h1>
+        </div>
+    </div>
+</div>
+
+<div class='component-oversea-list'>
+    <div class="col-inner">
+
+        <div class="col-list-wrap">
+            <ul class='col-list'>
+            </ul>
+        </div>
+
+    </div>
+</div>

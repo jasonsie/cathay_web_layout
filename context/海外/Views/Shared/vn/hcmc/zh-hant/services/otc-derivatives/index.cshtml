@@ -1,0 +1,104 @@
+﻿@model IndexViewModel
+
+
+@{
+    ViewBag.PageTitle = "衍生產品";
+    ViewBag.PageDescription = "提供您金融避險專業服務，幫助企業完善利率風險管理";
+}
+@section Scripts {
+    <script>
+        var serviceCard = serviceCard || {};
+        serviceCard.prototype = {
+            sameHeight: function () {
+                console.log('sah');
+                let window_w = $(window).width();
+                let max_h = 0;
+                let scope = $('.component-oversea-services-card');
+                $('.cosc-item-content', scope).css('min-height', 0);
+                $('.cosc-item-content', scope).css('height', 'auto');
+                if (window_w >= 768) {
+                    $('.cosc-item', scope).each(function () {
+                        let h = $('.cosc-item-content', $(this)).height();
+                        if (h > max_h) {
+                            max_h = h;
+                        }
+                    })
+                    $('.cosc-item-content', scope).height(max_h);
+                } else {
+                    $('.cosc-item-content', scope).css('height', 'auto');
+                }
+            },
+            addEventListener: function () {
+                let o = this;
+                $(window).on('resize.serviceCard', function () {
+                    o.sameHeight();
+                }).trigger('resize.serviceCard');
+            },
+            init: function () {
+                this.addEventListener();
+            }
+        }
+    </script>
+    <script>
+        $(function () {
+
+            var myServiceCard = serviceCard.prototype;
+            myServiceCard.init();
+        })
+    </script>
+}
+
+
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/otc-derivatives-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/otc-derivatives.jpg")' alt='衍生產品'>
+        </picture>
+        <figcaption hidden>衍生產品 </figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>衍生產品 </h1>
+        </div>
+    </div>
+</div>
+
+<div class="component-oversea-services-card component-oversea-services-card--33">
+    <div class="cosc-inner">
+        <h2 class="cosc-title">@ViewBag.services_title</h2>
+        <ul class="cosc-list">
+            <li class="cosc-item">
+                <figure class="cosc-item-figure">
+                    <picture>
+                        <img class="cosc-item-img lazy" data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services-card/otc-derivatives/fx-interest-rate-option.jpg")'  alt='利率交換'>
+
+                    </picture>
+                    <figcaption hidden="">利率交換</figcaption>
+                </figure>
+                <div class="cosc-item-content">
+                    <h3 class="cosc-item-title">利率交換</h3>
+                    <p class="cosc-item-description">
+                        為客戶規避利率風險之工具。客戶與本行約定特定期間內，將其本身固定(或浮動)利率計息之負債（或資產）換成浮動（或固定）利率計息之方式，以規避利率上漲或下跌的風險。
+                    </p>
+                </div>
+            </li>
+            <li class="cosc-item">
+                <figure class="cosc-item-figure">
+                    <picture>
+                        <img class="cosc-item-img lazy" data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services-card/otc-derivatives/fx-forward.jpg")' alt='換匯換利'>
+                    </picture>
+                    <figcaption hidden="">換匯換利</figcaption>
+                </figure>
+                <div class="cosc-item-content">
+                    <h3 class="cosc-item-title">換匯換利</h3>
+                    <p class="cosc-item-description">為客戶規避匯率及利率風險之工具。客戶與本行約定特定期間內，將其本身特定貨幣固定(或浮動)利率計息之負債（或資產）換成另一貨幣浮動（或固定）利率計息之方式，以規避不同貨幣利率上漲或下跌的風險。</p>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</div>
+

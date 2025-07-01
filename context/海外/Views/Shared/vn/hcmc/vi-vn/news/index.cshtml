@@ -1,0 +1,248 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "Tin tức mới nhất";
+    ViewBag.PageDescription = "";
+}
+
+@section Scripts {
+    <script>
+    var country = "@ViewBag.country_url";
+    var city = "@ViewBag.city_url";
+    var id = "@ViewBag.id";
+    var lang = "vi-vn";
+    var branchId = "604";
+    </script>
+    <script src="~/OVSWS/Content/js/backendSystem/LatestNews.js"></script>
+}
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news.jpg")' alt='@ViewBag.nav_news'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_news</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_news</h1>
+        </div>
+    </div>
+</div>
+
+
+<!-- newslist -->
+<div class="component-newslist">
+    <div class="component-newslist-inner">
+        <div class="component-newslist-row">
+            <div class="component-newslist-col">
+                <a class="component-newsitem" href="@Url.Content("~/OVSWS/Content/pdf/" +@ViewBag.country_url+"/" +@ViewBag.city_url+"/announcements/Notification of biometric collection_vn.pdf")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2025-05-14 </div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">THÔNG BÁO VỀ VIỆC THU THẬP GIẤY TỜ TÙY THÂN VÀ THÔNG TIN SINH TRẮC HỌC CỦA NGƯỜI ĐẠI DIỆN HỢP PHÁP ĐỐI VỚI KHÁCH HÀNG TỔ CHỨC</h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/OVSWS/Content/pdf/" +@ViewBag.country_url+"/" +@ViewBag.city_url+"/announcements/Announcement of holiday schedule for victory day_vn.pdf")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2025-04-24 </div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">THÔNG BÁO LỊCH NGHỈ LỄ NGÀY CHIẾN THẮNG 30/04 VÀ NGÀY QUỐC TẾ LAO ĐỘNG 01/05 NĂM 2025</h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/OVSWS/Content/pdf/" +@ViewBag.country_url+"/" +@ViewBag.city_url+"/announcements/2025 HUNG KINGS’ COMMEMORATION DAY HOLIDAY ANNOUCEMENT_VN.pdf")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2025-04-02 </div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">THÔNG BÁO LỊCH NGHỈ LỄ GIỖ TỔ HÙNG VƯƠNG NĂM 2025</h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/e-Advice-Service/")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2025-03-27 </div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">Dịch vụ e-Advice - Thông báo về Loại Giao dịch và Chức năng mới</h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/Tips-to-prevent-fraud-scam-Phishing/")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2025-03-18 </div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">Các biện pháp phòng chống gian lận/ lừa đảo/ giả mạo khi giao dịch trực tuyến (GMB)</h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/OVSWS/Content/pdf/" +@ViewBag.country_url+"/" +@ViewBag.city_url+"/announcements/ANNOUNCEMENT OF HOLIDAY SCHEDULE FOR LUNAR NEW YEAR OF 2025vn.pdf")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2025-01-16 </div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">THÔNG BÁO LỊCH NGHỈ TẾT ÂM LỊCH 2025</h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/OVSWS/Content/pdf/" +@ViewBag.country_url+"/" +@ViewBag.city_url+"/announcements/ANNOUNCEMENT-OF-HOLIDAY-SCHEDULE-FOR-NEW-YEAR-OF-2025-VN.pdf")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2024-12-25 </div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">THÔNG BÁO LỊCH NGHỈ TẾT DƯƠNG LỊCH 2025</h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/OVSWS/Content/pdf/" +@ViewBag.country_url+"/" +@ViewBag.city_url+"/announcements/ANNOUNCEM Notice – Change in the Method of the Bank sending Account statements and Transaction advices_vn.pdf")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2024-11-21 </div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">Thông báo – Thay đổi Phương thức Ngân hàng gửi Sao kê tài khoản và Thông báo giao dịch</h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/OVSWS/Content/pdf/" +@ViewBag.country_url+"/" +@ViewBag.city_url+"/announcements/announcement_of_holiday_vn.pdf")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2024-08-30 </div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">THÔNG BÁO LỊCH NGHỈ LỄ QUỐC KHÁNH 2024</h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/Notice_of_system_maintenance20240721/")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2024-07-19 </div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">Thông báo bảo trì hệ thống </h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/OVSWS/Content/pdf/" +@ViewBag.country_url+"/" +@ViewBag.city_url+"/announcements/Notice of Handling Dormant Account.pdf")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2024-06-21 </div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">Thông báo về việc tài khoản không hoạt động và tài khoản bị đóng</h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/FOLLOW-CATHAY-UNITED-BANK-OFFICIAL-FACEBOOK-CHANNEL/")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2024-06-07 </div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">THEO DÕI KÊNH FACEBOOK CHÍNH THỨC CỦA CATHAY UNITED BANK</h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/OVSWS/Content/pdf/" +@ViewBag.country_url+"/" +@ViewBag.city_url+"/announcements/NOTICE ON THE IMPLEMENTATION OF LAW ON IDENTIFICATION 2023.pdf")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2024-06-04 </div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">THÔNG BÁO VỀ VIỆC THỰC HIỆN LUẬT CĂN CƯỚC 2023</h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/FAKE-CATHAY-UNITED-BANK-FACEBOOK-FANPAGE-AND-ZALO-GROUP/")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2024-05-24 </div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">[CẢNH BÁO] GIẢ MẠO FACEBOOK FANPAGE VÀ ZALO GROUP TUYỂN DỤNG CATHAY UNITED BANK</h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/Notice-of-system-maintenance20250524/")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2024-05-24 </div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">Thông báo bảo trì hệ thống</h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/OVSWS/Content/pdf/" +@ViewBag.country_url+"/" +@ViewBag.city_url+"/announcements/Notice of launch announcement_STD_HCMC_viet.pdf")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2024-05-10</div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">Tiền gửi có kỳ hạn bền vững</h4>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="component-newsitem" href="@Url.Content("~/OVSWS/Content/pdf/" +@ViewBag.country_url+"/" +@ViewBag.city_url+"/announcements/THONG BAO LICH NGHI LE NGAY CHIEN THANG 30.04 VA NGAY QUOC TE LAO DONG 01.05_Viet.pdf")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2024-04-26</div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">THÔNG BÁO LỊCH NGHỈ LỄ NGÀY CHIẾN THẮNG 30/04 VÀ NGÀY QUỐC TẾ LAO ĐỘNG 01/05</h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/Notice-for-the-new-Treasury-products-launching-Interest-Rate-Swap-and-Cross-Currency-Swap/")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2024-04-09 </div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title"> Thông báo về việc triển khai sản phẩm mới - Giao dịch Hoán đổi Lãi suất Một Đồng tiền và Giao dịch Hoán đổi Lãi suất Hai Đồng tiền </h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/Notice-of-upgrading-online-transaction-system-on-CUB-Vietnam-Application/")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2024-03-20</div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title"> Thông báo nâng cấp hệ thống giao dịch trực tuyến trên ứng dụng CUB Vietnam</h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/Update-to-the-latest-CUB-Vietnam-app-version/")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2024-03-12</div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title"> [Quan trọng] Cập nhật phiên bản ứng dụng CUB Vietnam mới nhất!</h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/Notice-of-system-maintenance/")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2024-3-12</div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">Thông báo bảo trì hệ thống</h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/OVSWS/Content/pdf/" +@ViewBag.country_url+"/" +@ViewBag.city_url+"/announcements/Notice of launch announcement_vn.pdf")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2023-12-25</div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">Dịch vụ “Thông báo điện tử” (e-Advice) mới sẽ sớm được triển khai</h4>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="component-newsitem" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/Notice-for-the-new-Treasury-products/")">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2022-08-01</div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">Thông báo về việc triển khai sản phẩm mới - Giao dịch Ngoại tệ Kỳ hạn và Giao dịch Hoán đổi Ngoại tệ </h4>
+                        </div>
+                    </div>
+                </a>
+
+                <a class="component-newsitem" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/Notice-of-Relocation-and-New-Name/")">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2022-04-01</div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">Thông báo thay đổi địa điểm trụ sở và đổi tên</h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/chu-lai-branch-is-expected-to-relocate-to-ho-chi-minh-city/")">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2021-06-04</div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">Ngân hàng Cathay United Bank - Chi nhánh Chu Lai dự kiến chuyển địa điểm đến Thành phố Hồ Chí Minh</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div><!--/.component-newslist-->

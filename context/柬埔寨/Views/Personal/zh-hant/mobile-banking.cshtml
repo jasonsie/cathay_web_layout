@@ -1,0 +1,324 @@
+@{
+   ViewData["PageTitle"] = "行動銀行";
+   ViewData["PageDescription"] = "";
+}
+
+
+<!-- Page START -->
+<main class="mastbody">
+	
+	<!--
+		行動銀行
+	-->
+	<div class="topkv kv  kv--txt-left">
+		<div class="kv-bg">
+			<div class="kv-bg-inner">
+				<figure class="kv-bg-img">
+					<picture>
+						<source media="(min-width:769px)" srcset="/assets/img/topkv/personal-online.jpg" />
+						<img srcset="/assets/img/topkv/personal-online-mb.jpg">
+					</picture>
+				</figure>
+			</div>
+		</div>
+		<div class="kv-cont">
+			<div class="kv-cont-inner">
+				<h2 class="display-1-sm  fw-bold lh-xs">數位銀行服務</h2>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Breadcrumb  (lays on top of .topkv if places right after it) -->
+	<nav class="breadcrumb-nav text-white" aria-label="breadcrumb">
+		<div class="fluid">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]"><span>首頁</span><i class="ico-ui-home"></i></a></li>
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]personal/">個人金融</a></li>
+				<li class="breadcrumb-item active" aria-current="page">行動銀行</li>
+			</ol>
+		</div>
+	</nav>
+	
+	<!-- Menu -->
+	<nav class="tabmenu    d-none d-sm-block">
+		<div class="tabmenu-inner">
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/internet-banking/">
+				<span class="tabmenu-btn-txt">網路銀行</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn active" href="@ViewData["siteLangUrl"]personal/mobile-banking/">
+				<span class="tabmenu-btn-txt">行動銀行</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/merchant-app/">
+				<span class="tabmenu-btn-txt">Merchant App</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/alert-services/">
+				<span class="tabmenu-btn-txt">推播/提醒服務</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/user-guide/">
+				<span class="tabmenu-btn-txt">使用手冊</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+		</div>
+	</nav>
+	<!-- Mobile dropdown -->
+	<div class="tabmenu-dropdown dropdown    d-block d-sm-none">
+		<a href="javascript:;" class="btn btn-sm btn-block  dropdown-toggle" data-toggle="dropdown">
+			<span class="text-truncate d-inline-block">行動銀行</span>
+		</a>
+		<div class="dropdown-menu">
+			<span class="dropdown-item disabled">-- 前往頁面 --</span>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/internet-banking/">網路銀行</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/mobile-banking/">行動銀行</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/merchant-app/">Merchant App</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/alert-services/">推播/提醒服務</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/user-guide/">使用手冊</a>
+		</div>
+	</div>
+
+	
+	
+	<!--
+		行動銀行 - Detail
+	-->
+	<section class="fluid overflow-hidden">
+		
+		<div class="py-page"></div>
+		
+		<!-- Page heading -->
+		<header class="compact  mb-5  text-center">
+			<h1 class="h3 h4-mb  mb-2 mb-md-3  text-black  lh-xs">行動銀行</h1>
+			<h2 class="display-3 h1-mb  mb-3  text-black fw-bold">
+				金融服務隨手掌握，讓您與親朋好友間的互動更緊密！
+			</h2>
+			<p class="mb-3  text-left">CUBC App 可以讓您輕鬆自主線上開立 CUBC 銀行數位帳戶，而不需要親自到銀行辦理。我們在 App 中嵌入了最新的技術，例如 FIDO、雙因素驗證、設備綁定等機制，以確保您的帳戶安全。</p>
+			<p class="text-left">嶄新風格的mbanking設計上線，為您提供更流暢的數位服務，立即來體驗!</p>
+		</header>
+		
+		
+		<!-- Features -->
+		<section class="compact-sm">
+			
+			<!-- Section heading -->
+			<h3 class="h1 h2-mb  mb-4  text-black fw-bold text-center lh-sm">特色</h3>
+			
+			<div class="d-block d-lg-flex flex-row-reverse">
+				<div class="w-100 pt-lg-3">
+					<!-- Graph icon list #2  (3 in a row)-->
+					<ul class="row  mb-n4 mx-n1  ">
+	
+						<!-- Graph item -->
+						<li class="col-6 col-md-4  mb-4  px-1 px-xl-4">
+							<div class="d-flex align-items-center  mb-3">
+								<figure class="graph  mr-3">
+									<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/view.svg">
+								</figure>
+								<h4 class="h3 text-dark fw-bolder lh-sm">總覽</h4>
+							</div>
+							<div>
+								<ul class="list-disc list--item-mb-xs">
+									<li>帳戶一覽</li>
+									<li>定存帳戶資訊</li>
+									<li>近六個月交易明細</li>
+									<li>預約轉帳/繳費</li>
+									<li>貸款帳戶資訊</li>
+									<li>信用卡交易</li>
+								</ul>
+							</div>
+						</li>
+	
+						<!-- Graph item -->
+						<li class="col-6 col-md-4  mb-4  px-1 px-xl-4">
+							<div class="d-flex align-items-center  mb-3">
+								<figure class="graph  mr-3">
+									<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/transfer.svg">
+								</figure>
+								<h4 class="h3 text-dark fw-bolder lh-sm">轉帳/匯款</h4>
+							</div>
+							<div>
+								<ul class="list-disc list--item-mb-xs">
+									<li>本人帳戶間轉帳</li>
+									<li>轉帳至本行他人帳戶</li>
+									<li>轉帳/匯款至國內他行帳戶或Bakong錢包</li>
+									<li>匯款至國外</li>
+								</ul>
+							</div>
+						</li>
+						<!-- Graph item -->
+						<li class="col-6 col-md-4  mb-4  px-1 px-xl-4">
+							<div class="d-flex align-items-center  mb-3">
+								<figure class="graph  mr-3">
+									<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/Fix-deposit.png">
+								</figure>
+								<h4 class="h3 text-dark fw-bolder lh-sm">定期存款</h4>
+							</div>
+							<div>
+								<ul class="list-disc list--item-mb-xs">
+									<li>開立定期存款</li>
+								</ul>
+							</div>
+						</li>
+						<!-- Graph item -->
+						<li class="col-6 col-md-4  mb-4  px-1 px-xl-4">
+							<div class="d-flex align-items-center  mb-3">
+								<figure class="graph  mr-3">
+									<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/pay.svg">
+								</figure>
+								<h4 class="h3 text-dark fw-bolder lh-sm">繳費</h4>
+							</div>
+							<div>
+								<ul class="list-disc list--item-mb-xs">
+									<li>信用卡帳單</li>
+									<li>手機預付卡加值</li>
+								</ul>
+							</div>
+						</li>
+	
+						<!-- Graph item -->
+						<li class="col-6 col-md-4  mb-4  px-1 px-xl-4">
+							<div class="d-flex align-items-center  mb-3">
+								<figure class="graph  mr-3">
+									<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/card-insert.svg">
+								</figure>
+								<h4 class="h3 text-dark fw-bolder">其他功能</h4>
+							</div>
+							<div>
+								<ul class="list-disc list--item-mb-xs">
+									<li>線上開立美金及柬幣數位帳戶</li>
+									<li>即時推播通知</li>
+									<li>尋找附近的ATM或分行</li>
+									<li>尋找附近的ATM或分行</li>
+								</ul>
+							</div>
+						</li>
+						<!-- Graph item -->
+						<li class="col-6 col-md-4  mb-4  px-1 px-xl-4">
+							<div class="d-flex align-items-center  mb-3">
+								<figure class="graph  mr-3">
+									<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/QR-Pay.png">
+								</figure>
+								<h4 class="h3 text-dark fw-bolder">QR 交易</h4>
+							</div>
+							<div>
+								<ul class="list-disc list--item-mb-xs">
+									<li>使用Widget輕鬆收款</li>
+									<li>隨心設定KHQR付款金額</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+					</ul>
+					<div class="py-30"></div>
+			
+					<!-- Download -->
+					<h4 class="h3 h2-mb  mb-3 ml-xl-3  text-black fw-bolder  text-center text-md-left">下載App</h4>
+					
+					<div class="d-block d-md-flex ml-xl-3">
+						<nav class="appbadge flex-grow-1 flex-shrink-0">
+							<div class="appbadge-qrocde"><img class="lazy" data-src="/assets/img/content/app-qrcode.svg"></div> 
+							<div class="appbadge-store">
+								<a class="appbadge-ios hover-text" target="_blank" rel="noopener noreferrer" href="https://apps.apple.com/kh/app/cubc-mbanking/id489736801"><img class="lazy" data-src="/assets/img/content/app-ios.png"></a>
+								<a class="appbadge-android hover-text" target="_blank" rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.mbanking.cubc"><img class="lazy" data-src="/assets/img/content/app-android.png"></a>
+							</div>
+						</nav>
+						<p class="w-100 mt-3 mt-md-0  pl-md-4">國泰世華銀行行動銀行App支援您的 Android 智慧型手機和平板、Apple iPhone、iPod Touch 和 iPad 以及 BlackBerry 智慧型手機。 最棒的是，這項服務免費！</p>
+					</div>
+				</div>
+				
+				<!-- Screenshot -->
+				<div class="flex-grow-1 flex-shrink-0 pr-lg-4  mt-4 mt-lg-0">
+					<figure class="mx-auto px-4 px-lg-0" style="max-width:320px">
+						<img class="ofi-contain lazy" data-src="/assets/img/content/app-screenshot.png" alt="App screenshot">
+					</figure>
+				</div>
+			</div>
+		</section>
+		
+		<div class="py-page"></div>
+		
+		
+		<!-- FAQ -->
+		<section class="compact">
+			<!-- Section heading -->
+			<h3 class="h1 h2-mb  mb-4  text-black fw-bold text-center lh-sm">常見問題</h3>
+			
+			<!-- FAQ list -->
+
+			<!-- QA item -->
+			<section class="qaitem" js-foldable-group="internet">
+				<div class="qaitem-title" role="button" tabindex="0" js-foldable-head>
+					<h5 class="qaitem-title-txt  h3 h3-mb text-dark fw-bold">
+						Q1: 為什麼我該選擇國泰世華銀行柬埔寨子行行動銀行？
+					</h5>
+				</div>
+				<div class="qaitem-detail" js-foldable-body>
+					<div class="qaitem-detail-content">
+						<div class="badge badge-green h5 h5-mb mb-3">回答</div>
+						<p>使用我們的網路銀行服務將為您帶來許多好處。 透過網路銀行，您可以即時獲得國泰世華銀行帳戶的最新資訊、簽帳和信用卡交易、支付帳單、轉帳、為您的手機預付卡加值等。您可以隨時隨地使用您的本行帳戶，除了為您節省前往分行排隊的時間並且體驗安全又簡單的網銀服務。</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- QA item -->
+			<section class="qaitem" js-foldable-group="internet">
+				<div class="qaitem-title" role="button" tabindex="0" js-foldable-head>
+					<h5 class="qaitem-title-txt  h3 h3-mb text-dark fw-bold">
+						Q2: 使用國泰世華銀行柬埔寨子行行動銀行需要付費嗎？
+					</h5>
+				</div>
+				<div class="qaitem-detail" js-foldable-body>
+					<div class="qaitem-detail-content">
+						<div class="badge badge-green h5 h5-mb mb-3">回答</div>
+						<p>無須任何費用；交易執行費用將依據收費標準另計。</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- QA item -->
+			<section class="qaitem" js-foldable-group="internet">
+				<div class="qaitem-title" role="button" tabindex="0" js-foldable-head>
+					<h5 class="qaitem-title-txt  h3 h3-mb text-dark fw-bold">
+						Q3: 我可以進行什麼類型的轉帳？
+					</h5>
+				</div>
+				<div class="qaitem-detail" js-foldable-body>
+					<div class="qaitem-detail-content">
+						<div class="badge badge-green h5 h5-mb mb-3">回答</div>
+						<p class="mb-2">您可以進行下列轉帳：</p>
+						<ul class="list-disc">
+							<li>本人帳戶間轉帳</li>
+							<li>轉帳至本行他人帳戶</li>
+							<li>轉帳/匯款至國內他行帳戶</li>
+							<li>匯款至國外</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			
+		</section>
+		
+		<div class="py-page"></div>
+		
+		
+		<!-- CUBC Safe and Secure -->
+		<section class="compact">
+			<!-- Section heading -->
+			<h3 class="h1 h2-mb  mb-4  text-black fw-bold text-center lh-sm">安全與保障</h3>
+			
+			<p class="mb-3">國泰世華銀行柬埔寨子行行動銀行App透過安全協定為您打造一個安全的環境，提供您使用智慧型手機和平板電腦管理您的財務。 您的行動裝置上將不會儲存任何帳戶或登錄資訊，並設有閒置時間過長自動登出功能，為您增加了多道安全措施。 為保護您的帳號資訊，即便您使用瀏覽器登錄國泰世華銀行網路銀行，仍需要以您的行動裝置進行身份驗證。 您的行動裝置和行動銀行伺服器之間的所有通訊都是加密的，您的密碼和帳戶資訊絕不會儲存在您的行動裝置上。</p>
+		</section>
+		
+		<div class="py-page"></div>
+		
+		
+    	@Html.Partial("~/Views/Shared/"+@ViewData["viewUrl"]+"PersonalMobileBankingTC.cshtml")
+		
+		<div class="py-page"></div>
+	</section>
+	
+	
+</main>
+<!-- Page END -->

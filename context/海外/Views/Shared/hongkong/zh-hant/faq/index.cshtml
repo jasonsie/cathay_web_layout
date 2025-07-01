@@ -1,0 +1,42 @@
+﻿@model IndexViewModel
+
+@if (ViewBag.lang == "zh-hant")
+{
+    ViewBag.PageTitle = "常見問題";
+    ViewBag.PageDescription = "共分為開戶問題、存匯問題、企業融資問題、網上銀行問題、認識衍生工具、共同匯報標準簡介(CRS)等問題與資訊介紹";
+}
+else
+{
+    ViewBag.PageTitle = "FAQ";
+    ViewBag.PageDescription = "";
+}
+
+
+@section Scripts {
+    <script>
+        $(function () {
+            var myFaq = faq.prototype;
+            myFaq.init();
+            myFaq.getData('all');
+        })
+    </script>
+}
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/faq-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/faq.jpg")' alt='@ViewBag.nav_faq'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_faq</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_faq</h1>
+        </div>
+    </div>
+</div>
+
+
+@RenderPage("../faq.cshtml")

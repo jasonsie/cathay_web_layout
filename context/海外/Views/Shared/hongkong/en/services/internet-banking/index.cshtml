@@ -1,0 +1,319 @@
+﻿@model IndexViewModel
+
+@if (ViewBag.lang == "zh-hant")
+{
+}
+else
+{
+    ViewBag.PageTitle = "Internet Banking";
+    ViewBag.PageDescription = "Cathay United Bank (CUB), Hong Kong Branch currently provides 2 types of internet banking services";
+}
+@section Scripts {
+    <script>
+        var serviceCard = serviceCard || {};
+        serviceCard.prototype = {
+            sameHeight: function () {
+
+                let window_w = $(window).width();
+                let max_h = 0;
+                let scope = $('.component-oversea-services');
+                $('.cos-item-description', scope).css('min-height', 0);
+                if (window_w >= 768) {
+                    $('.cos-item', scope).each(function () {
+                        let h = $('.cos-item-description', $(this)).height();
+                        if (h > max_h) {
+                            max_h = h;
+                        }
+                    })
+                    $('.cos-item-description', scope).height(max_h);
+                } else {
+                    $('.cos-item-description', scope).css('height', 'auto');
+                }
+            },
+            addEventListener: function () {
+                let o = this;
+                $(window).on('resize.serviceCard', function () {
+                    o.sameHeight();
+                }).trigger('resize.serviceCard');
+            },
+            init: function () {
+                this.addEventListener();
+            }
+        }
+    </script>
+    <script>
+        $(function () {
+            var myServiceCard = serviceCard.prototype;
+            myServiceCard.init();
+
+            var myFaq = faq.prototype;
+            myFaq.init();
+            // myFaq.getData('depository-remittance');
+            // myFaq.getData('account-opening');
+            // myFaq.getData('depository-remittance');
+            // myFaq.getData('corporate-financing');
+            myFaq.getData('online-banking');
+            // myFaq.getData('information-security');
+            // myFaq.getData('derivatives');
+
+
+            var myDownload = download.prototype;
+            myDownload.init();
+            myDownload.getData('online-banking');
+            $('.component-oversea-downloads').addClass('component-bg--white')
+            $('.component-oversea-faq').removeClass('component-bg--white')
+        })
+    </script>
+}
+
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/internet-banking-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/internet-banking.jpg")' alt='@ViewBag.nav_services_online_banking'>
+
+
+
+        </picture>
+        <figcaption hidden>@ViewBag.nav_services_online_banking</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_services_online_banking</h1>
+        </div>
+    </div>
+</div>
+
+
+<div class='component-oversea-services component-bg--white component-oversea-services--large'>
+    <div class="cos-inner">
+        <p class='cos-item-description'>
+            Protect your Personal Digital Keys; Beware of Fraudulent Links!<br />
+            Visit the HKMA website to learn more about Personal Digital Keys <a class='coi-link' href='https://www.hkma.gov.hk/eng/smart-consumers/personal-digital-keys/' target="_blank" rel='noopener nofollow'>(https://www.hkma.gov.hk/eng/smart-consumers/personal-digital-keys/)</a>
+            and security tips <a class='coi-link' href='https://www.hkma.gov.hk/eng/smart-consumers/beware-of-fraudsters/' target="_blank" rel='noopener nofollow'>(https://www.hkma.gov.hk/eng/smart-consumers/beware-of-fraudsters/)</a>,
+            and watch their educational video (Chinese only) <a class='coi-link' href='https://www.youtube.com/watch?v=bgcEpqY_LsI' target="_blank" rel='noopener nofollow'>(https://www.youtube.com/watch?v=bgcEpqY_LsI).</a>
+        </p>
+        <br />
+        <ul class='cos-list'>
+            @*<li class='cos-item'>
+                <a href='@Url.Content("/EBANK/Auth/login.aspx?ReturnUrl=%2febank%2fdefault.aspx")' target="_blank" rel='noopener' class="cos-item-link">
+                    <figure class='cos-item-figure'>
+                        <picture>
+                            <img class='cos-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/hongkong/services/internet-banking/hong-kong-e-banking.jpg")' alt='Hong Kong E-Banking (HKEB)'>
+                        </picture>
+                        <figcaption hidden>Hong Kong E-Banking (HKEB)</figcaption>
+                    </figure>
+                    <div class='cos-item-content'>
+                        <h3 class='cos-item-title'>Hong Kong E-Banking (HKEB)</h3>
+                        <p class='cos-item-description'>
+                            offers internet banking services including real-time account enquiry, interest rate enquiry, transfers to designated accounts, remittance to designated accounts, place time deposits, etc. allowing you to easily manage your account no matter where you are.
+                        </p>
+                    </div>
+                    <div class='cos-item-btn'>Login E-Banking</div>
+                </a>
+            </li>*@
+
+            <li class='cos-item'>
+                <a href='https://www.globalmyb2b.com/GEBANK/Login.aspx' target="_blank" rel='noopener' class="cos-item-link">
+                    <figure class='cos-item-figure'>
+                        <picture>
+                            <img class='cos-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/hongkong/services/internet-banking/global-myb2b.jpg")' alt='Global MyB2B'>
+                        </picture>
+                        <figcaption hidden>Global MyB2B</figcaption>
+                    </figure>
+                    <div class='cos-item-content'>
+                        <h3 class='cos-item-title'>Global MyB2B (GMB)</h3>
+                        <p class='cos-item-description'>
+                            offers internet banking services to corporate clients, including real-time account enquiry, transfers or remittances, account integration, etc.
+                        </p>
+                    </div>
+                    <div class='cos-item-btn'>Login Global MyB2B</div>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+<div class='component-oversea-table' id='daily-limit-transactions'>
+    <div class='cot-inner'>
+        <!--<h2 class='cot-title'>Daily Limit of transactions on Internet Banking</h2>
+        <div class="cot-table-wrap">-->
+
+            <!--Hong Kong E-Banking-->
+            <!--<div class="cot-table cot-table--zebra cot--online-banking">
+                <div class="cot-tr cot-tr--head">
+                    <div class="cot-td"><span>Hong Kong E-Banking (HKEB)</span></div>
+                </div>
+                <div class='cot-tr'>
+                    <div class='cot-td'>Type</div>
+                    <div class='cot-td cot-td--33'>In the same currency</div>
+                    <div class='cot-td cot-td--33'>In different currencies</div>
+                </div>
+
+                <div class='cot-tr'>
+                    <div class='cot-td'>Transfer (daily limit)</div>
+                    <div class='cot-td cot-td--33'><span class='cot-td-currency'>USD</span> 500,000</div>
+                    <div class='cot-td cot-td--33'><span class='cot-td-currency'>USD</span> 100,000</div>
+                </div>
+
+                <div class='cot-tr'>
+                    <div class='cot-td'>Remittance (daily limit)</div>
+                    <div class='cot-td cot-td--33'><span class='cot-td-currency'>USD</span> 500,000</div>
+                    <div class='cot-td cot-td--33'><span class='cot-td-currency'>USD</span> 50,000</div>
+                </div>
+
+                <div class='cot-tr'>
+                    <div class='cot-td'>Currency exchange (per transaction limit)</div>
+                    <div class='cot-td cot-td--33'>N.A</div>
+                    <div class='cot-td cot-td--33'><span class='cot-td-currency'>USD</span> 50,000</div>
+                </div>
+            </div>-->
+
+            <!--online-banking-small-->
+            <!--<div class="cot-table cot--online-banking-small">
+                <div class="cot-tr cot-tr--head">
+                    <div class="cot-td"><span>Hong Kong E-Banking (HKEB)</span></div>
+                </div>
+
+                <div class='cot-tr'>
+                    <div class='cot-td cot-td--full'><span class='cot-td-value'>In the same currency</span></div>
+                    <div class='cot-td cot-td--60'>Transfer (daily limit)</div>
+                    <div class='cot-td cot-td--40'><span class='cot-td-currency'>USD</span> 500,000</div>
+                    <div class='cot-td cot-td--60'>Remittance (daily limit)</div>
+                    <div class='cot-td cot-td--40'><span class='cot-td-currency'>USD</span> 500,000</div>
+                    <div class='cot-td cot-td--60'>Currency exchange (per transaction limit)</div>
+                    <div class='cot-td cot-td--40'>N.A</div>
+                </div>
+
+                <div class='cot-tr'>
+                    <div class='cot-td cot-td--full'><span class='cot-td-value'>In different currencies</span></div>
+                    <div class='cot-td cot-td--60'>Transfer (daily limit)</div>
+                    <div class='cot-td cot-td--40'><span class='cot-td-currency'>USD</span> 50,000</div>
+                    <div class='cot-td cot-td--60'>Remittance (daily limit)</div>
+                    <div class='cot-td cot-td--40'><span class='cot-td-currency'>USD</span> 50,000</div>
+                    <div class='cot-td cot-td--60'>Currency exchange (limit per transaction)</div>
+                    <div class='cot-td cot-td--40'>N.A</div>
+                </div>
+            </div>
+
+            <ul class='cot-list'>
+                <li class='cot-item'>The daily limit of all transactions is USD1,150,000 (equivalent).</li>
+                <li class='cot-item'>The daily/per transaction limit of time deposits is USD500,000.</li>
+                <li class='cot-item'>The daily limit on early termination of time deposit is USD100,000 (or equivalent). For amount exceeding the limit, please go to the bank counter or send the instruction by fax.</li>
+            </ul>
+        </div>-->
+
+
+
+        <div class="cot-table-wrap">
+            <!-- <div class="cot-table cot--online-banking"> -->
+            <div class="cot-table cot-table--zebra cot--online-banking-myb2b">
+                <div class="cot-tr cot-tr--head">
+                    <div class="cot-td"><span>Global MyB2B (GMB)</span></div>
+                </div>
+                <div class='cot-tr'>
+                    <div class="cot-td cot-td--15">Types</div>
+                    <div class="cot-td">Daily limit of transactions in the same currency</div>
+                    <div class="cot-td">Daily limit of transactions in different currency</div>
+                    <div class="cot-td">Per/daily transaction limit</div>
+                </div>
+
+                <div class='cot-tr'>
+                    <div class="cot-td cot-td--15">Transfer (daily limit)</div>
+                    <div class="cot-td cot-td--10">A1</div>
+                    <div class="cot-td"><span class='cot-td-currency'>USD</span>10,000,000</div>
+
+                    <div class="cot-td cot-td--10">A2</div>
+                    <div class="cot-td"><span class='cot-td-currency'>USD</span>10,000,000</div>
+
+                    <div class="cot-td cot-td--10">A1+A2</div>
+                    <div class="cot-td"><span class='cot-td-currency'>USD</span>10,000,000</div>
+                </div>
+
+                <div class='cot-tr'>
+                    <div class="cot-td cot-td--15">Remittance (daily limit)</div>
+                    <div class="cot-td cot-td--10">B1</div>
+                    <div class="cot-td"><span class='cot-td-currency'>USD</span>10,000,000</div>
+
+                    <div class="cot-td cot-td--10">B2</div>
+                    <div class="cot-td"><span class='cot-td-currency'>USD</span>10,000,000</div>
+
+                    <div class="cot-td cot-td--10">B1+B2</div>
+                    <div class="cot-td"><span class='cot-td-currency'>USD</span>10,000,000</div>
+                </div>
+            </div>
+
+
+
+            <div class="cot-table cot--online-banking-myb2b-small">
+                <div class="cot-tr cot-tr--head">
+                    <div class="cot-td"><span>Global MyB2B (GMB)</span></div>
+                </div>
+
+                <div class='cot-tr'>
+                    <div class='cot-td'>
+                        <div>Type:</div>
+                        <div>limit on transactions in the same currency</div>
+                    </div>
+                    <div class='cot-td'>
+                        <div>Funds Transfer (daily limit):</div>
+                        <div><span class='cot-td-type'>A1</span><span class='cot-td-currency'>USD</span> 10,000,000</div>
+                    </div>
+
+                    <div class='cot-td'>
+                        <div>Remittance (daily limit):</div>
+                        <div><span class='cot-td-type'>B1</span><span class='cot-td-currency'>USD</span> 10,000,000</div>
+                    </div>
+                </div>
+
+                <div class='cot-tr'>
+                    <div class='cot-td'>
+                        <div>Type:</div>
+                        <div>Daily limit on transactions in different currencies</div>
+                    </div>
+
+                    <div class='cot-td'>
+                        <div>Funds Transfer (daily limit):</div>
+                        <div><span class='cot-td-type'>A2</span><span class='cot-td-currency'>USD</span> 10,000,000</div>
+                    </div>
+
+                    <div class='cot-td'>
+                        <div>Remittance (daily limit):</div>
+                        <div><span class='cot-td-type'>B2</span><span class='cot-td-currency'>USD</span> 10,000,000</div>
+                    </div>
+                </div>
+
+                <div class='cot-tr'>
+                    <div class='cot-td'>
+                        <div>Type:</div>
+                        <div>Per-transaction/daily limit</div>
+                    </div>
+
+                    <div class='cot-td'>
+                        <div>Funds Transfer (daily limit):</div>
+                        <div><span class='cot-td-type'>A1+A2</span><span class='cot-td-currency'>USD</span> 10,000,000</div>
+                    </div>
+
+                    <div class='cot-td'>
+                        <div>Remittance (daily limit):</div>
+                        <div><span class='cot-td-type'>B1+B2</span><span class='cot-td-currency'>USD</span> 10,000,000</div>
+                    </div>
+                </div>
+            </div>
+
+            <ul class='cot-list'>
+                <li class='cot-item'>For more details, please refer to <a class="cot-text-link" href="https://www.globalmyb2b.com/GEBANK/html/qa_04_taiwan_zh-tw.html" target="_blank" rel='noopener nofollow'>Global MyB2B FAQ</a>.</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+@RenderPage("../../download.cshtml")
+@RenderPage("../../faq.cshtml")

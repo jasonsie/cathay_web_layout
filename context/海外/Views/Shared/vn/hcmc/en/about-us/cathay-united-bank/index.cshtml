@@ -1,0 +1,140 @@
+﻿@model IndexViewModel
+@using System.Web.Configuration;
+@{
+    if (ViewBag.lang == "en")
+    {
+        ViewBag.PageTitle = "Cathay United Bank";
+        ViewBag.PageDescription = "";
+    }
+    else if (ViewBag.lang == "vi-vn")
+    {
+        ViewBag.PageTitle = "Ngân hàng Cathay United Bank";
+        ViewBag.PageDescription = "";
+    }
+    else
+    {
+        ViewBag.PageTitle = "國泰世華銀行";
+        ViewBag.PageDescription = "";
+    }
+}
+@section Scripts {
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/jquery.scrollbar.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/slick.min.js")"></script>
+
+    <script>
+        $(function () {
+            $(".cok-figure-slider").slick({
+                infinite: false,
+                slidesToShow: 1,
+                dots: false
+            });
+
+            function updateImageContainer() {
+                let window_w = $(window).width();
+                let offset_x;
+                let content_w;
+                let max_w;
+
+                if (window_w > 991) {
+                    offset_x = $('.cok-inner').offset().left;
+                    content_w = $('.cok-content').width();
+                    max_w = window_w - content_w - offset_x;
+
+                    $('.cok-figure-wrap').css({
+                        'width': max_w,
+                        'flex-basis': max_w,
+                        'max-width': max_w,
+                        'left': content_w + offset_x,
+                        'position': 'absolute'
+                    });
+                } else {
+                    $('.cok-figure-wrap').css({
+                        'width': '100%',
+                        'flex-basis': 'auto',
+                        'max-width': '100%',
+                        'left': 'auto',
+                        'position': 'relative'
+                    });
+                }
+            }
+
+            $(window).on('resize', updateImageContainer);
+            updateImageContainer();
+        });</script>
+}
+
+<div class='component-oversea-kv'>
+    <div class="cok-figure-wrap">
+        <div class="cok-figure-slider">
+            <div class="cok-figure-item">
+                <figure class='cok-figure'>
+                    <picture>
+                        <source media='(max-width: 767px)'
+                                srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/about-us/CathayUnitedBank828x400.jpg")' />
+                        <source media='(min-width: 768px) and (max-width: 1279px)'
+                                srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/about-us/CathayUnitedBank1536x400.jpg")' />
+                        <img class='cok-img'
+                             src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/about-us/CathayUnitedBank2000x800.jpg")'
+                             alt='@ViewBag.nav_about_us_cathay_united_bank'>
+                    </picture>
+                    <figcaption hidden>@ViewBag.nav_about_us_cathay_united_bank</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+    <div class="cok-inner">
+        <div class="cok-content">
+            <span class='cok-title--slogan'>@ViewBag.nav_about_us_cathay_united_bank</span>
+        </div>
+    </div>
+</div>
+
+<div class='component-oversea-services component-oversea-services--33  component-oversea-services--home'>
+    <div class="cos-inner">
+        <h2 class='cos-title'>
+            Introduction
+        </h2>
+        <p class='cos-description' style="max-width:1200px">
+            Established in 1975, Cathay United Bank is one of Cathay FHC's subsidiaries and currently operates 232 business locations in the Asia-Pacific region, spanning across Taiwan, China, Vietnam, Hong Kong, Thailand, Singapore, Malaysia, the Philippines, Laos, Cambodia, Myanmar, and Indonesia, employing over 10,000 people in Taiwan and overseas. Facing an ever-changing, challenging economic environment overshadowed by rising inflation and high interest rates, CUB has managed to establish a reliable yet flexible operation. Moreover, the Bank is dedicated to advancing corporate sustainability, and continuously developing six dimensions of sustainable development, namely, low-carbon economy, sustainable environment, health promotion, financial health, workplace empowerment and social empowerment. By utilizing innovation and digital means, CUB endeavors to become a leading financial institution in the Asia-Pacific region.
+        </p>
+
+        <p class='cos-description' style="max-width:1200px">
+            <strong>
+                Advancing digital transformation and forging the finance of tomorrow
+            </strong>
+        </p>
+        <p class='cos-description' style="max-width:1200px">
+            CUB is a pioneer in digital transformation. By employing a “Mobile-first” development strategy, CUB has applied innovative technologies to its wide array of digital products and services. Guided by the three pillars (digitalization, data, and technology), the Bank has created a data-driven culture that helps build a seamless omni-channel financial ecosystem where digital products and services are made available both online and offline. Our achievements have won accolades from renowned institutions worldwide, including the IDC Future Enterprise Award, Euromoney Best Digital Bank Award, and Asian Banking & Finance Fintech Initiative Award - Taiwan!
+        </p>
+        <p class='cos-description' style="max-width:1200px">
+            <strong>
+                Realizing sustainable finance through financial expertise
+            </strong>
+        </p>
+        <p class='cos-description' style="max-width:1200px">
+            CUB is dedicated to sustainable finance and spares no effort in promoting environmental, social, and corporate governance (ESG). The Bank supports clients to achieve a sustainable future by providing comprehensive sustainability-related products, coordinating resources necessary for net-zero transformation, and offering reliable, all-round advisory services. Apart from prompting its “Zero-carbon Operation Transformation”, CUB also joins RE100, a global renewable energy initiative, and has gone to great lengths to achieve low-carbon operations in daily businesses. With its sights set on having all of its branches in Taiwan being fully reliant on renewable energy by 2030, CUB intends to exemplify what it means to be a pioneer of sustainable development.
+        </p>
+        <p class='cos-description' style="max-width:1200px">
+            CUB aspires to provide customers at home and abroad with comprehensive and thoughtful financial services, while utilizing its core financial strengths to advance corporate sustainability. Looking boldly yet confidently and steadily ahead, the Bank endeavors to become customers' best financial partner.
+        </p>
+        <p class='cos-description' style="max-width:1200px">
+            <strong>
+                Service Locations
+            </strong>
+        </p>
+        <p class='cos-description' style="max-width:1200px">
+            <strong>
+                Strengthening presence in overseas markets through investments to become a model regional bank
+            </strong>
+        </p>
+        <p class='cos-description' style="max-width:1200px">
+            Cathay United Bank never falls behind when it comes to establishing a foothold in overseas markets. It remains committed to supporting its three overseas branches (Hong Kong Branch, Singapore Branch, and HCMC Branch) and two overseas subsidiaries (CUB China and CUB Cambodia). In addition to injecting resources to its overseas branches and subsidiaries, the Bank leverages the strengths in private banking services offered by its Hong Kong Branch and Singapore Branch, providing corporate customers from Taiwan with all-round services covering personal finance management, corporate finance, and financial management.
+        </p>
+        <p class='cos-description' style="max-width:1200px">
+            Amongst Taiwanese banks, CUB has the most extensive business network in the ASEAN region, with business locations in the form of subsidiaries, branches, or representative offices across 9 out of 10 ASEAN member states: Singapore, Vietnam, Malaysia, the Philippines, Myanmar, Laos, Cambodia, Thailand, and Indonesia. Leveraging its closely-knit network of 67 overseas locations, CUB is able to provide clients with local services and holistic solutions for cross-border financing, thereby meeting clients' needs for funding, investments, and hedging and helping them gain a competitive edge in global markets. CUB also strives to expand its local customer base and connects with more Taiwanese multinationals. To this end, the Bank continues to strengthen its cross-border collaboration platforms, engage in syndicated loans as a lead arranger or participating bank, and undertake bilateral loans. Furthermore, the Bank promotes project finance in green energy, which further reinforces corporate finance solutions that support clients to succeed in and outside of Taiwan.
+        </p>
+    </div>
+    <div class="about-us-back-button-container">
+        <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url)" class="about-us-back-button">@ViewBag.about_us_back_button</a>
+    </div>
+</div>

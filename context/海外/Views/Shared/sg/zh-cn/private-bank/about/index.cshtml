@@ -1,0 +1,595 @@
+﻿@{
+    Layout = null;
+}
+
+<!doctype html>
+<html>
+
+<head>
+   <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>国泰世华银行 私人银行</title>
+
+
+<link href="@Url.Content("~/OVSWS/Content/pwm-sg/css/bootstrap.css")" rel="stylesheet">
+@*<link href="@Url.Content("~/OVSWS/Content/pwm-sg/css/bootstrap.css.map")" rel="stylesheet">*@
+
+
+<link href="@Url.Content("~/OVSWS/Content/pwm-sg/css/core.css")" rel="stylesheet">
+<link rel="stylesheet" media="(min-width:992px)" href="@Url.Content("~/OVSWS/Content/pwm-sg/css/coreD.css")" />
+
+
+
+
+<link href="@Url.Content("~/OVSWS/Content/pwm-sg/css/animate.css")" rel="stylesheet">
+
+
+<link href="@Url.Content("~/OVSWS/Content/pwm-sg/css/fontawesome/css/all.css")" rel="stylesheet">
+
+<link href="@Url.Content("~/OVSWS/Content/css/aos.css")" rel="stylesheet">
+
+    
+
+        <link href="@Url.Content("~/OVSWS/Content/pwm-sg/css/about.css")" rel="stylesheet">
+        <link rel="stylesheet" media="(min-width:992px)" href="@Url.Content("~/OVSWS/Content/pwm-sg/css/aboutD.css")" />
+
+</head>
+
+<body>
+
+
+
+    <!-- Modal -->
+    <div class="modal fade nav" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="navHeader">
+                    <a href="@Url.Content("~/sg/zh-cn/private-bank")">
+                        <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/cnlogo.png")" class="logo img-fluid">
+                    </a>
+                    <div class="myclose" data-dismiss="modal" aria-label="Close">
+                        <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/myClose.png")" class="myClose">
+                    </div>
+                </div>
+                <div class="navBody">
+                    <a href="@Url.Content("~/sg/zh-cn/private-bank/about/")">
+                        <div class="oneNav">
+                            关于我们
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </a>
+                    <a href="@Url.Content("~/sg/zh-cn/private-bank/custom/")">
+                        <div class="oneNav">
+                            方案订制
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </a>
+                    @*<a href="javascript:;" onclick="alert('敬请期待');">
+                        <div class="oneNav">
+                            专属礼遇
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </a>*@
+                    <a href="@Url.Content("~/sg/zh-cn/private-bank/award/")">
+                        <div class="oneNav">
+                            奖项荣誉
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </a>
+                    <a href="@Url.Content("~/sg/zh-cn/private-bank/contact/")">
+                        <div class="oneNav">
+                            联络我们
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </a>
+                    <a href="https://www.globalmyb2b.com/PBANK/Login.aspx?LOC=SG" target="_blank" rel="noopener">
+                        <div class="oneNav">
+                            网银登入
+                            <i class="fas fa-chevron-right"></i>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- header -->
+    <!-- header -->
+    <!-- header -->
+
+    <div class="d-lg-none">
+        <div class="header">
+            <div class="container text-left">
+                <div class="row">
+                    <div class="col-9">
+                        <a href="@Url.Content("~/sg/zh-cn/private-bank/")">
+                            <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/cnlogo.png")" class="logo">
+                        </a>
+                    </div>
+                    <div class="col-3 text-right">
+                        <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/trigger.png")" class="trigger" data-toggle="modal" data-target=".nav">
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="d-none d-lg-block">
+        <div class="headerD">
+            <div class="container text-left">
+                <div class="row area1">
+                    <div class="col-4">
+                        <a href="@Url.Content("~/sg/zh-cn/private-bank/")">
+                            <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/cnlogo.png")" class="logo">
+                        </a>
+                    </div>
+                    <div class="col-8 text-right">
+
+                        <ul class="rightTopNav">
+                            <li><a href="@Url.Content("~/sg/zh-cn/")">新加坡分行</a></li>
+                            <li><a href="@Url.Content("~/sg/zh-cn/private-bank/")" class="active">私人银行</a></li>
+                            <li><a href="@Url.Content("~/sg/private-bank/")" target="_self" class="goldFrame">繁中</a></li>
+                            <li><a href="@Url.Content("~/sg/en/private-bank/")" target="_self" class="goldFrame">En</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="goldLineArea"></div>
+                    </div>
+                </div>
+
+                <div class="row area2">
+                    <div class="col-12">
+                        <ul class="mainNav">
+                            <li class="nav1">
+                                <a href="@Url.Content("~/sg/zh-cn/private-bank/about/")">关于我们</a>
+                            </li>
+                            <li class="nav4">
+                                <a href="@Url.Content("~/sg/zh-cn/private-bank/custom/")">方案订制</a>
+                            </li>
+                            @*<li class="nav3">
+                                <a href="javascript:;" onclick="alert('敬请期待');">专属礼遇</a>
+                            </li>*@
+                            <li class="nav100">
+                                <a href="@Url.Content("~/sg/zh-cn/private-bank/award/")">奖项荣誉</a>
+                            </li>
+                            <li class="nav5">
+                                <a href="@Url.Content("~/sg/zh-cn/private-bank/contact/")">联络我们</a>
+                            </li>
+                            <li class="nav5">
+                                <a href="https://www.globalmyb2b.com/PBANK/Login.aspx?LOC=SG" target="_blank" rel="noopener">网银登入</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- banner -->
+    <!-- banner -->
+    <!-- banner -->
+
+
+    <div class="banner">
+        <div class="titleSet">
+            <h2 class="gold1">关于我们</h2>
+            <div class="siteMap">
+                <p><a href="@Url.Content("~/sg/zh-cn/private-bank/")">首页</a> / 关于我们</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- section1 -->
+    <!-- section1 -->
+    <!-- section1 -->
+
+    <div class="section1">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="paper" data-aos="fade-up">
+
+
+
+                        <h3 class="blue" data-aos="fade-up">国泰世华私人银行<br>
+                            一站式专业金融服务<br class="d-md-none"> 即刻享有</h3>
+                        <div class="titleLine blue" data-aos="fade-up"></div>
+                        <div class="clearfix"></div>
+
+
+                        <div class="row align-items-center oneIssue" style="margin-top:30px;">
+                            <div class="col-12 col-lg-6">
+                                <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/about/section1i1.png")" class="img-fluid" data-aos="fade-up">
+                            </div>
+                            <div class="col-12 col-lg-6 text-left">
+                                <h5 class="gold2" data-aos="fade-up">丰富集团资源</h5>
+                                <p data-aos="fade-up">国泰金控集团为台湾第一大金融控股公司，结合保险、证券、银行等多样化的金融机构，架构出功能完整的经营平台。 国泰世华私人银行整合集团资源与专业团队，提供您一站购足的全方位服务。
+
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="row align-items-center oneIssue">
+                            <div class="col-12 col-lg-6 order-lg-2">
+                                <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/about/section1i2.png")" class="img-fluid" data-aos="fade-up">
+                            </div>
+                            <div class="col-12 col-lg-6 order-lg-1 text-left">
+                                <h5 class="gold2" data-aos="fade-up">跨领域集团服务</h5>
+                                <p data-aos="fade-up">国泰集团拥有地产建设、健康医疗、观光旅馆、以及信息和物流仓储等业务，除金融专业资源外，更整合集团资源，提供您多元的附加服务，在照顾您的有形资产外，同时更能提供其无形资产服务及咨询，让国泰世华私人银行团队成为您信赖的全方位家族顾问。
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="row align-items-center oneIssue">
+                            <div class="col-12 col-lg-6">
+                                <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/about/section1i3.png")" class="img-fluid" data-aos="fade-up">
+                            </div>
+                            <div class="col-12 col-lg-6 text-left">
+                                <h5 class="gold2" data-aos="fade-up">全球资产配置方案</h5>
+                                <p data-aos="fade-up">营业据点分布跨足海内外，提供灵活且弹性的资金运用方案，并拥有专业金融服务团队，为您拟定财务与投资对策，量身打造客制投资商品，为您打造全球资产配置方案!
+
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="row align-items-center oneIssue">
+                            <div class="col-12 col-lg-6  order-lg-2">
+                                <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/about/section1i4.png")" class="img-fluid" data-aos="fade-up">
+                            </div>
+                            <div class="col-12 col-lg-6 text-left order-lg-1">
+                                <h5 class="gold2" data-aos="fade-up">领先业界，布局东南亚</h5>
+                                <p data-aos="fade-up">国泰世华银行领先同业布局东南亚，包括世越银行及设于新加坡、马来西亚、菲律宾、柬埔寨等地的分行、子行或办事处，共超过30个据点，更能实时为您提供有效的支持及服务 。
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div class="row align-items-center oneIssue">
+                            <div class="col-12 col-lg-6">
+                                <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/about/section1i5.png")" class="img-fluid" data-aos="fade-up">
+                            </div>
+                            <div class="col-12 col-lg-6 text-left">
+                                <h5 class="gold2" data-aos="fade-up">台币资产，灵活运用</h5>
+                                <p data-aos="fade-up">国泰世华银行分布全台，拥有完整的消费金融网络。成为台湾投资海外金融资产的优势投资者，提供您全球化的资产布局、台币资产投资建议及资产活化。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- .paper -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- section2 -->
+    <!-- section2 -->
+    <!-- section2 -->
+
+    <div class="section2">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+
+
+                    <h3 class="gold1" data-aos="fade-up">一站式资产配置解决方案</h3>
+                    <div class="titleLine gold1" data-aos="fade-up"></div>
+                    <div class="clearfix"></div>
+
+
+                    <div class="row align-items-center oneIssue" style="margin-top:30px;">
+                        <div class="col-12 col-lg-6">
+                            <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/about/section2i1.jpg")" class="img-fluid" data-aos="fade-up">
+                        </div>
+                        <div class="col-12 col-lg-6 text-left">
+                            <div class="paper" data-aos="fade-up">
+                                <p data-aos="fade-up">我们拥有多领域专才，熟知全球投资商品及整合金融规划能力，为您订制财务与投资对策，量身打造属于您的投资商品组合。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row align-items-center oneIssue">
+                        <div class="col-12 col-lg-6 order-lg-2">
+                            <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/about/section2i2.jpg")" class="img-fluid" data-aos="fade-up">
+                        </div>
+                        <div class="col-12 col-lg-6 text-left order-lg-1">
+                            <div class="paper" data-aos="fade-up">
+                                <p data-aos="fade-up">境内及境外资金需求，提供灵活且弹性的资金运用方案。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- section3 -->
+    <!-- section3 -->
+    <!-- section3 -->
+
+    <div class="section3">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+
+
+                    <h3 class="blue" data-aos="fade-up">专属礼遇<br>唯您尊荣独享</h3>
+                    <div class="titleLine blue" data-aos="fade-up"></div>
+                    <div class="clearfix"></div>
+
+
+                    <div class="row" style="margin-top:30px;">
+
+                        <div class="col-12 col-lg-6 text-left oneIssue">
+                            <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/about/section3i1.jpg")" class="img-fluid" data-aos="fade-up">
+                             <h5 class="blue" data-aos="fade-up">贵宾权益</h5>
+                            <p data-aos="fade-up">成为国泰世华私人银行客户，您可享有国泰集团旗下金融服务、优先赏屋、健康医疗及酒店住宿餐饮优惠，提供您尊荣的专属礼遇。 </p>
+                            @*<a href="javascript:;" onclick="alert('敬请期待');">
+                                <div class="myBtn blue mr15" data-aos="fade-up">了解更多</div>
+                            </a>*@
+                        </div>
+
+                        <div class="col-12 col-lg-6 text-left oneIssue">
+                            <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/about/section3i2.jpg")" class="img-fluid" data-aos="fade-up" data-aos-delay="300">
+                            <h5 class="blue" data-aos="fade-up" data-aos-delay="300">尊荣活动</h5>
+                            <p data-aos="fade-up" data-aos-delay="300">国泰世华私人银行为您细心规划专属于您的惬意时光，不定期举办贵宾交流、品味艺术、时尚潮流、美食飨宴，另规画专业投资论坛，掌握金融脉动。
+                            </p>
+                            @*<a href="###" onclick="alert('敬请期待');">
+                                <div class="myBtn blue mr15" data-aos="fade-up" data-aos-delay="300">了解更多</div>
+                            </a>*@
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- section4 -->
+    <!-- section4 -->
+    <!-- section4 -->
+
+    <div class="d-lg-none">
+        <div class="section4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/about/section4i1.png")" class="img-fluid illu" data-aos="fade-up">
+                        <h3 class="gold2" data-aos="fade-up">成为国泰世华<br>私人银行客户<br>尽享尊贵 不同凡响</h3>
+
+                        <div class="titleLine" data-aos="fade-up"></div>
+                        <div class="clearfix"></div>
+                        <p data-aos="fade-up">
+                            与国泰世华银行往来资产达等值新加坡币两百万，经专人了解并且符合门坎，即可成为私人银行贵宾
+                        </p>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="d-none d-lg-block">
+        <div class="section4D">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-6">
+                        <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/about/section4i1D.png")" class="img-fluid" data-aos="fade-up">
+                    </div>
+                    <div class="col-6">
+                        <div class="paper" data-aos="fade-up">
+
+                            <h3 class="gold2" data-aos="fade-up">成为国泰世华私人银行客户<br>尽享尊贵 不同凡响
+                            </h3>
+                            <div class="titleLine" data-aos="fade-up"></div>
+                            <div class="clearfix"></div>
+                            <p data-aos="fade-up">与国泰世华银行往来资产达等值新加坡币两百万，经专人了解并且符合门坎，即可成为私人银行贵宾
+
+                            </p>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer -->
+    <!-- footer -->
+    <!-- footer -->
+
+
+
+    <div class="d-lg-none">
+        <div class="footer">
+            <div class="container text-left">
+                <div class="row">
+                    <div class="col-12">
+                        <ul>
+                            <li>手机请拨：02-2383-1000</li>
+                            <li>服务专线：0800-818-001</li>
+                            <li><a href="https://www.cathaybk.com.tw/cathaybk/about/about/customer-benefits/client-privacy/?l=f" target="_blank" rel="noopener">隐私权保护政策</a></li>
+                            <li><a href="https://www.cathaybk.com.tw/cathaybk/about/about/customer-benefits/client-secret/?l=f" target="_blank" rel="noopener">顾客资料保密措施</a></li>
+                            <li><a href="https://www.cathaybk.com.tw/cathaybk/personal/investment/announcement/comarketing/" target="_blank" rel="noopener">共同行销</a></li>
+                            <li>©国泰世华商业银行股份有限公司</li>
+                            <li><a href="https://www.cathaybk.com.tw/cathaybk/promo/private-bank/index.html" target="_blank" rel="noopener">国泰世华私人银行 I 台湾</a></li>
+                            <li><a href="@Url.Content("~/HongKong/private-bank/")" target="_blank" rel="noopener">国泰世华私人银行 I 香港</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-none d-lg-block">
+        <div class="footerD">
+            <div class="area1">
+                <div class="container text-left">
+                    <div class="row">
+                        <div class="col-12">
+                            <a href="###">
+                                <img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/logoOnlyTree.png")" class="logo">
+                            </a>
+                            <ul>
+                                <li><a href="https://www.cathaybk.com.tw/cathaybk/promo/private-bank/index.html" target="_blank" rel="noopener">国泰世华私人银行 I 台湾</a></li>
+                                <li><a href="@Url.Content("~/HongKong/private-bank/")" target="_blank" rel="noopener">国泰世华私人银行 I 香港</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="area2">
+                <div class="container text-left">
+                    <div class="row">
+                        <div class="col-12">
+                            <ul>
+                                <li>
+                                    <a href="https://www.facebook.com/cathayunitedbank/" target="_blank" rel="noopener"><img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/fb.png")"></a>
+                                </li>
+
+                                <li>
+                                    <a href="https://line.me/R/ti/p/%40cathaybank" target="_blank" rel="noopener"><img src="@Url.Content("~/OVSWS/Content/pwm-sg/img/line.png")"></a>
+                                </li>
+                                <li><a href="https://www.cathaybk.com.tw/cathaybk/personal/news/announcement/info/browsersetting/?l=f" target="_blank" rel="noopener">浏览器建议</a> </li>
+                                <li><a href="https://www.cathaybk.com.tw/cathaybk/about/about/customer-benefits/client-privacy/?l=f" target="_blank" rel="noopener">隐私权保护政策</a></li>
+                                <li><a href="https://www.cathaybk.com.tw/cathaybk/about/about/customer-benefits/client-secret/?l=f" target="_blank" rel="noopener">顾客资料保密措施</a></li>
+                                <li><a href="https://www.cathaybk.com.tw/cathaybk/personal/investment/announcement/comarketing/" target="_blank" rel="noopener">共同行销</a></li>
+                                <li>©国泰世华商业银行股份有限公司</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- footer_js -->
+    <!-- footer_js -->
+    <!-- footer_js -->
+    <!--  ******************************************* js *********************************************** -->
+
+    <script src="@Url.Content("~/OVSWS/Content/pwm-sg/js/jquery.js")"></script>
+
+    <script src="@Url.Content("~/OVSWS/Content/pwm-sg/js/bootstrap.min.js")"></script>
+
+    <script src="@Url.Content("~/OVSWS/Content/js/vendor/aos/aos.js")"></script>
+
+
+
+    <script>
+        $(document).ready(function () {
+
+
+
+            AOS.init({
+                offset: 180, // offset (in px) from the original trigger point
+                duration: 2000, // values from 0 to 3000, with step 50ms
+                easing: 'ease-out-quad' // default easing for AOS animations
+
+            });
+        });
+
+
+
+
+        // ↓↓↓↓↓↓↓↓ 滑動到指定位置 ↓↓↓↓↓↓↓↓
+        // ↓↓↓↓↓↓↓↓ 滑動到指定位置 ↓↓↓↓↓↓↓↓
+        // ↓↓↓↓↓↓↓↓ 滑動到指定位置 ↓↓↓↓↓↓↓↓
+        var $body = (window.opera) ? (document.compatMode == "CSS1Compat" ? $('html') : $('body')) : $('html,body');
+
+
+        function goToTop() {
+
+            $body.animate({
+                scrollTop: $("body").offset().top
+            }, 1000);
+        }
+
+
+        function slideTo(targetName) {
+
+            $body.animate({
+                scrollTop: $("." + targetName).offset().top
+            }, 1500);
+
+        }
+
+
+
+
+
+        // ↓↓↓↓↓↓↓↓ 選單收合 ↓↓↓↓↓↓↓↓
+        window.onscroll = function () {
+            scrollFunction()
+
+        };
+
+
+        function scrollFunction() {
+
+
+            //document.documentElement || document.documentElement.scrollTop || document.body.scrollTop
+
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                $('.headerD .container .area1').hide();
+                $('.headerD .container .goldLineArea').hide();
+            } else {
+                $('.headerD .container .area1').show();
+                $('.headerD .container .goldLineArea').show();
+            }
+
+
+
+
+        }
+
+    </script>
+
+
+
+
+
+    <script>
+
+
+        $(".nav1").addClass("current");
+
+
+    </script>
+
+
+
+
+
+</body>
+
+
+</html>

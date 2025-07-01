@@ -1,0 +1,150 @@
+@{
+   ViewData["PageTitle"] = "Alert Services";
+   ViewData["PageDescription"] = "To help you keep in control of your finances, Cathay United Bank (Cambodia) Plc. offers you a wide range of Alerts via SMS to keep your account safe. Our Alerts Service are more than just a handy way to stay on top of your money but are also useful to warn you of any unusual activity on your account. The sooner you know, the sooner you can get in touch with us and put things right.";
+}
+
+<!-- Page START -->
+<main class="mastbody">
+	
+	<!--
+		Alert Services
+	-->
+	<div class="topkv kv  kv--txt-left">
+		<div class="kv-bg">
+			<div class="kv-bg-inner">
+				<figure class="kv-bg-img">
+					<picture>
+						<source media="(min-width:769px)" srcset="/assets/img/topkv/personal-online.jpg" />
+						<img srcset="/assets/img/topkv/personal-online-mb.jpg">
+					</picture>
+				</figure>
+			</div>
+		</div>
+		<div class="kv-cont">
+			<div class="kv-cont-inner">
+				<h2 class="display-1  fw-bold lh-xs">Online Banking</h2>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Breadcrumb  (lays on top of .topkv if places right after it) -->
+	<nav class="breadcrumb-nav text-white" aria-label="breadcrumb">
+		<div class="fluid">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]"><span>Home</span><i class="ico-ui-home"></i></a></li>
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]personal/">Personal Banking</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Alert Services</li>
+			</ol>
+		</div>
+	</nav>
+	
+	<!-- Menu -->
+	<nav class="tabmenu    d-none d-sm-block">
+		<div class="tabmenu-inner">
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/internet-banking/">
+				<span class="tabmenu-btn-txt">iBanking</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/mobile-banking/">
+				<span class="tabmenu-btn-txt">mBanking</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/merchant-app/">
+				<span class="tabmenu-btn-txt">Merchant App</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn active" href="@ViewData["siteLangUrl"]personal/alert-services/">
+				<span class="tabmenu-btn-txt">Alert Services</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/user-guide/">
+				<span class="tabmenu-btn-txt">User Guide</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+		</div>
+	</nav>
+	<!-- Mobile dropdown -->
+	<div class="tabmenu-dropdown dropdown    d-block d-sm-none">
+		<a href="javascript:;" class="btn btn-sm btn-block  dropdown-toggle" data-toggle="dropdown">
+			<span class="text-truncate d-inline-block">Alert Services</span>
+		</a>
+		<div class="dropdown-menu">
+			<span class="dropdown-item disabled">-- Select page --</span>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/internet-banking/">iBanking</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/mobile-banking/">mBanking</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/merchant-app/">Merchant App</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/alert-services/">Alert Services</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/user-guide/">User Guide</a>
+		</div>
+	</div>
+
+	
+	
+	<!--
+		Alert Services - Detail
+	-->
+	<section class="fluid overflow-hidden">
+		
+		<div class="py-page"></div>
+		
+		<!-- Page heading -->
+		<header class="compact  mb-5  text-center">
+			<h1 class="display-3 h1-mb  mb-3  text-black fw-bold">Alert Services</h1>
+			<p class="text-left">To help you keep in control of your finances, Cathay United Bank (Cambodia) Plc. offers you a wide range of Alerts via SMS to keep your account safe. Our Alerts Service are more than just a handy way to stay on top of your money but are also useful to warn you of any unusual activity on your account. The sooner you know, the sooner you can get in touch with us and put things right.</p>
+		</header>
+
+		<section class="compact" style="margin-bottom: 2rem;">
+			<section class="qaitem" js-foldable-group="internet">
+				<div class="qaitem-title" role="button" tabindex="0" js-foldable-head>
+					<h5 class="qaitem-title-txt  h3 h3-mb text-dark fw-bold">
+						About SMS Alert Service Fee Charge Information
+					</h5>
+				</div>
+				<div class="qaitem-detail" js-foldable-body>
+					<div class="qaitem-detail-content">
+						<picture>
+							<source media="(min-width:769px)" srcset="/assets/img/personal/alert-services/fee-charge-SMS-table.jpg" style="max-width: 100%; width: 100%;">
+							<img srcset="/assets/img/personal/alert-services/fee-charge-SMS-table.jpg" style="max-width: 100%; width: 100%;">
+						</picture>
+					</div>
+				</div>
+			</section>
+		</section>
+		
+		<section class="compact">
+			
+			<!-- Info box -->
+			<h3 class="h3 h3-mb  p-3  bg-green text-white text-center fw-bolder">Type of Alerts Service</h3>
+			
+			<div class="py-4 px-2 px-lg-4  border border-green">
+				<ul class="list-disc">
+					<li>Account alert whenever there are transactions credited to or debited from your account(s);</li>
+					<li>ATM withdrawal alert when cash being withdrawn via ATM;</li>
+					<li>Debit Card transaction alert when transaction being made via POS or online;</li>
+					<li>Stay up-to-date on our Credit Card Account status anytime anywhere; and</li>
+					<li>Marketing promotion/advertisement from the bank.</li>
+				</ul>
+			</div>
+		</section>
+	
+		<div class="py-section"></div>
+	
+	
+		<section class="compact">
+			<!-- Section heading -->
+			<h2 class="h1 h2-mb  mb-4  text-black fw-bold text-center lh-sm">How to Register and Manage Your Alerts</h2>
+			
+			<!-- Block heading -->
+			<h3 class="h3 h3-mb  mb-3  text-black fw-bold">iBanking - The Quickest and Easiest Way to Register</h3>
+			<p class="mb-3">If you're an iBanking customer, you can register and manage your Alerts online. Sign up today if you have yet to register for iBanking.</p>
+			
+			<!-- Block heading -->
+			<h3 class="h3 h3-mb  mb-3  text-black fw-bold">At Any of Our Branches</h3>
+			<p>Simply drop by any of our branches if you have a Cathay United Bank Current or Savings Account with Cathay United Bank (Cambodia) Plc..</p>
+		</section>
+		
+		<div class="py-page"></div>
+	</section>
+	
+</main>
+<!-- Page END -->

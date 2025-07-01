@@ -1,0 +1,176 @@
+﻿@model IndexViewModel
+@using System.Web.Configuration;
+@{
+    if (ViewBag.lang == "en")
+    {
+        ViewBag.PageTitle = "Cathay United Bank in Vietnam";
+        ViewBag.PageDescription = "";
+    }
+    else if (ViewBag.lang == "vi-vn")
+    {
+        ViewBag.PageTitle = "Ngân hàng Cathay United Bank tại Việt Nam";
+        ViewBag.PageDescription = "";
+    }
+    else
+    {
+        ViewBag.PageTitle = "國泰世華銀行越南據點";
+        ViewBag.PageDescription = "";
+    }
+}
+@section Scripts {
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/jquery.scrollbar.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/slick.min.js")"></script>
+
+    <script>
+        $(function () {
+            // 初始化 slick 輪播
+            $(".cok-figure-slider").slick({
+                infinite: false,
+                slidesToShow: 1,
+                dots: false
+            });
+
+            // 圖片容器調整
+            function updateImageContainer() {
+                let window_w = $(window).width();
+                let offset_x;
+                let content_w;
+                let max_w;
+
+                if (window_w > 991) {
+                    offset_x = $('.cok-inner').offset().left;
+                    content_w = $('.cok-content').width();
+                    max_w = window_w - content_w - offset_x;
+
+                    $('.cok-figure-wrap').css({
+                        'width': max_w,
+                        'flex-basis': max_w,
+                        'max-width': max_w,
+                        'left': content_w + offset_x,
+                        'position': 'absolute'
+                    });
+                } else {
+                    $('.cok-figure-wrap').css({
+                        'width': '100%',
+                        'flex-basis': 'auto',
+                        'max-width': '100%',
+                        'left': 'auto',
+                        'position': 'relative'
+                    });
+                }
+            }
+
+            $(window).on('resize', updateImageContainer);
+            updateImageContainer();
+        });
+    </script>
+}
+
+<div class='component-oversea-kv'>
+    <div class="cok-figure-wrap">
+        <div class="cok-figure-slider">
+            <div class="cok-figure-item">
+                <figure class='cok-figure'>
+                    <picture>
+                        <source media='(max-width: 767px)'
+                                srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/about-us/CathayUnitedBankinVietnam828x400.jpg")' />
+                        <source media='(min-width: 768px) and (max-width: 1279px)'
+                                srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/about-us/CathayUnitedBankinVietnam1536x400.jpg")' />
+                        <img class='cok-img'
+                             src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/about-us/CathayUnitedBankinVietnam2000x800.jpg")'
+                             alt='@ViewBag.nav_news'>
+                    </picture>
+                    <figcaption hidden>@ViewBag.site_name</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+    <div class="cok-inner">
+        <div class="cok-content">
+            <span class='cok-title--slogan'>@ViewBag.nav_about_us_cathay_united_bank_in_vietnam</span>
+        </div>
+    </div>
+</div>
+
+<div class='component-oversea-services component-oversea-services--33  component-oversea-services--home'>
+    <div class="cos-inner">
+        <h2 class='cos-title'>
+            公司簡介
+        </h2>
+        <p class='cos-description' style="max-width:1200px">
+            國泰世華銀行自2005年以來陸續在越南設立分行及代表人辦事處，於2022年以深化越南市場經營為旨，將分行遷址至胡志明市，代表人辦事處同步遷址至廣南省。目前本行在越南共有三個據點，分別為胡志明市分行、河內代表人辦事處及廣南代表人辦事處，提供橫跨北、中、南越之金融服務管道。
+        </p>
+        <p class='cos-description' style="max-width:1200px">
+            國泰世華銀行胡志明市分行提供越南境內與境外企業多元化的金融服務，並隨著越南經濟發展，本行於2024年3月進軍越南數位消金市場，成為越南台資銀行首家開辦全數位端到端消金業務。國泰世華銀行將持續以專業團隊積極服務客戶，創造客戶優質體驗。
+        </p>
+    </div>
+</div>
+
+<div class='about-us'>
+    <div class='component-oversea-list'>
+        <div class="col-inner">
+            <div class="col-list-wrap">
+                <h2 class='col-title' style="font-size:24px !important">國泰世華銀行越南據點</h2>
+                <ul class='col-list'>
+                    <li class='col-item'>
+                        <a href="@Url.Content("~/vn/hcmc/" + ViewBag.lang_url + "/")" target="_blank" rel="noopener">
+                            <figure class='col-item-figure'>
+                                <picture>
+                                    <img class='col-item-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/city")/chu-lai.png'
+                                         alt='胡志明市分行'>
+                                </picture>
+                                <figcaption hidden>
+                                    胡志明市分行
+                                </figcaption>
+                            </figure>
+                            <div class='col-item-title-wrap'>
+                                <div class='col-item-icon'>
+                                    <img class='col-item-icon-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/flag")/vietnam.png'>
+                                </div>
+                                <h3 class='col-item-title'><span>胡志明市分行</span></h3>
+                            </div>
+                        </a>
+                    </li>
+                    <li class='col-item'>
+                        <a href="@Url.Content("~/vn/hanoi/" + ViewBag.lang_url + "/")" target="_blank" rel="noopener">
+                            <figure class='col-item-figure'>
+                                <picture>
+                                    <img class='col-item-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/city")/hanoi.png'
+                                         alt='河內代表人辦事處'>
+                                </picture>
+                                <figcaption hidden>河內代表人辦事處</figcaption>
+                            </figure>
+                            <div class='col-item-title-wrap'>
+                                <div class='col-item-icon'>
+                                    <img class='col-item-icon-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/flag")/vietnam.png'>
+                                </div>
+                                <h3 class='col-item-title'><span>河內代表人辦事處</span></h3>
+                            </div>
+                        </a>
+                    </li>
+                    <li class='col-item'>
+                        <a href="@Url.Content("~/vn/quang-nam/" + ViewBag.lang_url + "/")" target="_blank" rel="noopener">
+                            <figure class='col-item-figure'>
+                                <picture>
+                                    <img class='col-item-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/city")/ho-chi-minh.png'
+                                         alt='廣南代表人辦事處'>
+                                </picture>
+                                <figcaption hidden>廣南代表人辦事處</figcaption>
+                            </figure>
+                            <div class='col-item-title-wrap'>
+                                <div class='col-item-icon'>
+                                    <img class='col-item-icon-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/flag")/vietnam.png'>
+                                </div>
+                                <h3 class='col-item-title'><span>廣南代表人辦事處</span></h3>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="about-us-back-button-container">
+                <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url)" class="about-us-back-button">@ViewBag.about_us_back_button</a>
+            </div>
+        </div>
+    </div>
+</div>
+

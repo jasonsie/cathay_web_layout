@@ -1,0 +1,113 @@
+﻿@model IndexViewModel
+
+
+
+
+@if (ViewBag.id != null)
+{
+    if (ViewBag.lang == "zh-hant")
+    {
+        ViewBag.PageTitle = @ViewBag.ItemOfNews.title;
+        ViewBag.PageDescription = "";
+    }
+    else
+    {
+        ViewBag.PageTitle = @ViewBag.ItemOfNews.title;
+        ViewBag.PageDescription = "";
+    }
+
+}
+else
+{
+    if (ViewBag.lang == "zh-hant")
+    {
+        ViewBag.PageTitle = "最新消息";
+        ViewBag.PageDescription = "";
+    }
+    else
+    {
+        ViewBag.PageTitle = "Latest News";
+        ViewBag.PageDescription = "";
+    }
+}
+@section Scripts {
+    <script>
+    var country = "@ViewBag.country_url";
+    var city = "@ViewBag.city_url";
+    var id = "@ViewBag.id";
+    var lang = "en";
+    var branchId = "603";
+    </script>
+    <script src="~/OVSWS/Content/js/backendSystem/LatestNews.js"></script>
+}
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/news-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/news.jpg")' alt='@ViewBag.nav_news'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_news</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_news</h1>
+        </div>
+    </div>
+</div>
+
+
+
+
+@if (ViewBag.id != null)
+{
+
+    <!-- 消息內頁 -->
+    <article class="component-newsview">
+        <div class="component-newsview-inner">
+            <header class="component-newsview-header">
+                <div class="component-newsview-date">@ViewBag.publishAt</div>
+                <h1 class="component-newsview-title">@ViewBag.ItemOfNews.title</h1>
+            </header>
+
+            <div class="component-newsview-body">
+                @Html.Raw(HttpUtility.HtmlDecode(ViewBag.ItemOfNews.content))
+            </div>
+
+            <footer class="component-newsview-footer">
+                <div class="component-btn-row">
+                    <a class="component-btn-main btn-green" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+@ViewBag.lang_url+"news/")">回上一頁</a>
+                </div>
+            </footer>
+        </div>
+    </article><!--/.component-newsview-->
+}
+
+@if (ViewBag.id == null)
+{
+
+    <!-- 消息列表 -->
+<div class="component-newslist">
+    <div class="component-newslist-inner" style="border-bottom: none;">
+        <div class="component-newslist-row">
+            <div class="component-newslist-col">
+                @foreach (News item in ViewBag.ListOfNews)
+                {
+                    <!-- item -->
+                    <a class="component-newsitem" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+@ViewBag.lang_url+"news/")@item.id">
+                        <div class="component-newsitem-inner">
+                            <div class="component-newsitem-date">@item.publishAt</div>
+                            <div class="component-newsitem-cont">
+                                <h4 class="component-newsitem-title">@item.title</h4>
+                            </div>
+                        </div>
+                    </a>
+                }
+             </div>
+         </div>
+    </div>
+</div><!--/.component-newslist-->
+
+
+}

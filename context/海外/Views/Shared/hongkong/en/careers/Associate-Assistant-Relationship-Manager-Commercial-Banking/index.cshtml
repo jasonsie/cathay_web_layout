@@ -1,0 +1,74 @@
+﻿@model IndexViewModel
+
+@if (ViewBag.lang == "zh-hant-other")
+{
+    ViewBag.PageTitle = "人才招募";
+    ViewBag.PageDescription = "";
+}
+else
+{
+    ViewBag.PageTitle = "Head of AML Compliance";
+    ViewBag.PageDescription = "";
+}
+
+
+@section Scripts {}
+@if (ViewBag.lang == "zh-hant-other")
+{
+}
+else
+{
+    <div class='component-oversea-kv-short'>
+        <div class="coks-inner">
+            <div class="coks-content">
+                <h1 class='coks-title'>Careers</h1>
+            </div>
+            <figure class='coks-figure'>
+                <picture>
+                    <source media='(min-width: 768px)'
+                            srcset='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/careers-lg.jpg")' />
+                    <img class='coks-img' src='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/careers.jpg")' alt='Careers'>
+                </picture>
+                <figcaption hidden>Careers</figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <div class='component-oversea-careers-detail'>
+        <div class="cocd-inner">
+            <h1 class='cocd-title'>
+                Associate, Assistant Relationship Manager, Commercial Banking
+            </h1>
+            <div class='cocd-content-wrap'>
+                <h2 class='cocd-content-title'>Responsibilities:</h2>
+                <ul class='cocd-content-ul'>
+                    <li class='cocd-content-li'>Handle day-to-day clients’ loan / credit applications including preparing credit analysis for loan origination</li>
+                    <li class='cocd-content-li'>Perform credit analysis and prepare credit proposals for Credit Risk Management Committee approval</li>
+                    <li class='cocd-content-li'>Responsible for client on-boarding, conduct customer due diligence and regular credit review</li>
+                    <li class='cocd-content-li'>Ensure that account opening processes are properly controlled to fulfill all local/overseas regulations</li>
+                    <li class='cocd-content-li'>Provide support to Relationship Managers on client management, transaction execution and key business initiatives</li>
+                </ul>
+            </div>
+            <div class='cocd-content-wrap'>
+                <h2 class='cocd-content-title'>Ideal candidates are expected to possess:</h2>
+                <ul class='cocd-content-ul'>
+                    <li class='cocd-content-li'>University degree in Banking / Finance or related discipline</li>
+                    <li class='cocd-content-li'>At least 3 years’ relevant experiences in Corporate Banking, with proven track record in handling syndicated loans / project finance / trade finance</li>
+                    <li class='cocd-content-li'>Sound knowledge in AML/KYC experience in banking environment</li>
+                    <li class='cocd-content-li'>Holder of HKSFC type 1 license, Associate Credit Risk Management Professional (ACRP) holder would be an added advantage</li>
+                    <li class='cocd-content-li'>Self-motivated and able to work independently with good organizational skills</li>
+                    <li class='cocd-content-li'>Good interpersonal and communication skills with strong customer-focused mindset</li>
+                    <li class='cocd-content-li'>Good command of English and Chinese, including Mandarin</li>
+                </ul>
+            </div>
+            <div class='cocd-btn-wrap'>
+                <a href="@Url.Content("~/hongkong/en/careers/jobs")" class="cocd-btn">Back</a>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+}
+@RenderPage("../careers-support-card.cshtml")

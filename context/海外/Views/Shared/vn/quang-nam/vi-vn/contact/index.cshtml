@@ -1,0 +1,43 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "Thông tin liên hệ";
+    ViewBag.PageDescription = "Tầng 5, 46-48 Phạm Hồng Thái, Quận 1, TP.Hồ Chí Minh, Việt Nam";
+}
+
+@section Scripts {}
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/contact-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img"+"/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/contact.jpg")' alt='@ViewBag.nav_contact'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_contact</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_contact</h1>
+        </div>
+    </div>
+</div>
+
+
+    <div class='component-oversea-info'>
+        <div class='coi-inner'>
+            <h2 class='coi-title'>Thông tin liên hệ</h2>
+
+            <div class='coi-content'>
+                <ul class="coi-list">
+                    <li class="coi-item">
+                        <span class='coi-item-label'>Địa chỉ:</span>
+                        <span class="coi-item-content">Tầng 4, Tòa nhà Viettel Quảng Nam, 121 Hùng Vương, Phường An Mỹ, TP. Tam Kỳ, Tỉnh Quảng Nam, Việt Nam</span>
+                    </li>
+                    <li class="coi-item">
+                        <span class='coi-item-label'>'Điện thoại:</span>
+                        <span class="coi-item-content">+84 235 3813035</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>

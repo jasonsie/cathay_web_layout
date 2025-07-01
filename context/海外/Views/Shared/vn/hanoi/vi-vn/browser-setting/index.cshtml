@@ -1,0 +1,66 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "Đề xuất trình duyệt";
+    ViewBag.PageDescription = "Nhằm cung cấp cho Quý khách hàng trải nghiệm tốt nhất dịch vụ trực tuyến, trang web của ngân hàng chúng tôi sẽ không còn hỗ trợ trên Internet Explorer 10 hoặc phiên bản thấp hơn. Một số trang hoặc chức năng có thể không được hiển thị chính xác nếu Quý khách hàng sử dụng Internet Explorer 10 hoặc phiên bản thấp hơn.";
+}
+
+
+
+@section Scripts {}
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/browser-setting-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/browser-setting.jpg")' alt='@ViewBag.nav_browser_setting'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_browser_setting</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_browser_setting</h1>
+        </div>
+    </div>
+</div>
+
+<div class='component-oversea-info'>
+    <div class="coi-inner">
+        <h1 class="coi-title">@ViewBag.nav_browser_setting</h1>
+        <div class="coi-content">
+            <p class="coi-p">
+                Kính gửi Quý khách hàng,<br />
+                Để cung cấp cho Quý khách hàng trải nghiệm trực tuyến tốt nhất có thể, trang web của chúng tôi không còn hỗ trợ trình duyệt Internet Explorer 11 hoặc thấp hơn.
+                <br />
+                ※ Lưu ý: Vào ngày 15 tháng 6 năm 2022, ứng dụng máy tính Internet Explorer 11 không còn được hỗ trợ trên một số phiên bản nhất định của Windows 10. Vui lòng tham khảo "<a class='coi-link' href='https://docs.microsoft.com/en-us/lifecycle/announcements/internet-explorer-11-end-of-support?rtc=1' target="_blank" rel='noopener nofollow'>Thông báo hỗ trợ ngừng hoạt động của Microsoft</a>" để biết thêm thông tin.
+
+            </p>
+
+            
+            <p class="coi-p">
+                Chúng tôi khuyên bạn nên cài đặt một trình duyệt khác ngay lập tức.
+                <br />
+                <ul class="coi-ul">
+                    <li class="coi-li">
+                        <a class='coi-link' href="https://www.google.com.tw/intl/en_us/chrome/" target="_blank" rel='noopener nofollow'>
+                            Nhấp vào đây để tải xuống Google Chrome
+                        </a>
+                    </li>
+                    <li class="coi-li">
+                        <a class='coi-link' href="https://www.microsoft.com/en-us/edge" target="_blank" rel='noopener nofollow'>
+                            Nhấp vào đây để tải xuống Edge
+                        </a>
+                    </li>
+                    <li class="coi-li">
+                        <a class='coi-link' href="https://www.mozilla.org/en-US/firefox/new/" target="_blank" rel='noopener nofollow'>
+                            Nhấp vào đây để tải xuống Firefox
+                        </a>
+                    </li>
+                </ul>
+            </p>
+
+
+        </div>
+
+    </div>
+</div><!--/.component-oversea-info-->

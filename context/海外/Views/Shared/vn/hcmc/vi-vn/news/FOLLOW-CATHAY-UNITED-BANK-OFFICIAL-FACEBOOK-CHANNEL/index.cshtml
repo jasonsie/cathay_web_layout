@@ -1,0 +1,54 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "Notice for the new Treasury products launching – Foreign Exchange Forward and Foreign Exchange Swap";
+    ViewBag.PageDescription = "Notice for the new Treasury products launching – Foreign Exchange Forward and Foreign Exchange Swap";
+}
+
+@section Scripts {}
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news.jpg")' alt='@ViewBag.nav_news'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_news</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_news</h1>
+        </div>
+    </div>
+</div>
+
+<!-- newsview -->
+<article class="component-newsview">
+    <div class="component-newsview-inner">
+        <header class="component-newsview-header">
+            <div class="component-newsview-date"></div>
+            <h1 class="component-newsview-title">THEO DÕI KÊNH FACEBOOK CHÍNH THỨC CỦA CATHAY UNITED BANK</h1>
+        </header>
+
+        <div class="component-newsview-body">
+            <p>
+                Với mục đích xây dựng cầu nối nhằm cập nhật các thông tin mới nhất đến Quý khách hàng, ngân hàng Cathay United Bank chi nhánh Thành phố Hồ Chí Minh đã xây dựng nên kênh Facebook fanpage chính thức mang tên Cathay United Bank (VN) tại http://www.facebook.com/cathayunitedbankvietnamofficial.
+            </p>
+            <p>
+                Hiện tại ngân hàng Cathay United Bank chỉ có duy nhất 1 kênh Facebook chính thức nêu trên. Nếu Quý khách phát hiện ra kênh mạo danh Cathay United Bank, xin vui lòng thông báo cho Cathay United Bank theo số hotline +84 28 3622 6836 để được hỗ trợ kịp thời.
+            </p>
+            <div align='center'>
+                <picture>
+                    <img class='cosc-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/cathayFB_VN.jpg")'>
+                </picture>
+            </div>
+        </div>
+        <footer class="component-newsview-footer">
+            <div class="component-btn-row">
+                <a class="component-btn-main btn-green" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/")">Trở lại</a>
+            </div>
+        </footer>
+    </div>
+</article><!--/.component-newsview-->

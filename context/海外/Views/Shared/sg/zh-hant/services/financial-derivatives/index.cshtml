@@ -1,0 +1,223 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = @ViewBag.nav_services_depository_remittance;
+}
+
+@if (ViewBag.lang == "zh-hant")
+{
+    ViewBag.PageDescription = "";
+}
+else
+{
+    ViewBag.PageDescription = "";
+}
+@section Scripts {
+    <script>
+        var serviceCard = serviceCard || {};
+        serviceCard.prototype = {
+            sameHeight: function () {
+                let window_w = $(window).width();
+                let max_h = 0;
+                let scope = $('.component-oversea-services-card');
+                $('.cosc-item-content', scope).css('min-height', 0);
+                $('.cosc-item-content', scope).css('height', 'auto');
+                if (window_w >= 768) {
+                    $('.cosc-item', scope).each(function () {
+                        let h = $('.cosc-item-content', $(this)).height();
+                        if (h > max_h) {
+                            max_h = h;
+                        }
+                    })
+                    $('.cosc-item-content', scope).height(max_h);
+                } else {
+                    $('.cosc-item-content', scope).css('height', 'auto');
+                }
+            },
+            addEventListener: function () {
+                let o = this;
+                $(window).on('resize.serviceCard', function () {
+                    o.sameHeight();
+                }).trigger('resize.serviceCard');
+            },
+            init: function () {
+                this.addEventListener();
+            }
+        }
+    </script>
+
+    <script>
+        $(function () {
+
+            var myServiceCard = serviceCard.prototype;
+            myServiceCard.init();
+        })
+    </script>
+}
+
+
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/sg/kv-short/financial-derivatives-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/sg/kv-short/financial-derivatives.jpg")' alt='@ViewBag.nav_services_financial_derivatives'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_services_financial_derivatives</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_services_financial_derivatives</h1>
+        </div>
+    </div>
+</div>
+
+
+@if (ViewBag.lang == "zh-hant")
+{
+    <div class="component-oversea-services-card">
+        <div class="cosc-inner">
+            <h2 class="cosc-title">@ViewBag.services_title</h2>
+            <h3 class="cosc-subtitle">外匯類產品</h3>
+            <ul class="cosc-list">
+                <li class="cosc-item">
+                    <figure class="cosc-item-figure">
+                        <picture>
+                            <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/sg/services-card/financial-derivatives/fx-forward.jpg")" alt="遠期外匯">
+
+                        </picture>
+                        <figcaption hidden="">遠期外匯</figcaption>
+                    </figure>
+                    <div class="cosc-item-content">
+                        <h3 class="cosc-item-title">遠期外匯</h3>
+                        @* <h4 class="cosc-item-subtitle">Forward</h4>*@
+                                <p class="cosc-item-description">
+                                    指交割日超過兩個營業日(T+2)的外匯交易。
+                                    客戶與國泰世華銀行約定在未來某一指定日期或期間，依訂約之金額、幣別、匯率進行交割。遠期外匯交易主要為了鎖定匯率成本，以規避匯率上漲或下跌風險。
+                                </p>
+                            </div>
+                        </li>
+                        <li class="cosc-item">
+                            <figure class="cosc-item-figure">
+                                <picture>
+                                    <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/sg/services-card/financial-derivatives/fx-swap.jpg")" alt="換匯交易">
+                                </picture>
+                                <figcaption hidden="">換匯交易</figcaption>
+                            </figure>
+                            <div class="cosc-item-content">
+                                <h3 class="cosc-item-title">換匯交易</h3>
+                                @*  <h4 class="cosc-item-subtitle">SWAP</h4>*@
+                                <p class="cosc-item-description">換匯交易主要為資金調度所用，等於客戶同時訂約一筆即期外匯(或遠期外匯)和一筆與前者交易方向相反但金額相同之遠期外匯。</p>
+                            </div>
+                        </li>
+                    </ul>
+
+
+                    <h3 class="cosc-subtitle">利率類產品</h3>
+                    <ul class="cosc-list">
+                        <li class="cosc-item">
+                            <figure class="cosc-item-figure">
+                                <picture>
+                                    <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/sg/services-card/financial-derivatives/interest-rate-swap.jpg")" alt="利率交換">
+                                </picture>
+                                <figcaption hidden="">利率交換</figcaption>
+                            </figure>
+                            <div class="cosc-item-content">
+                                <h3 class="cosc-item-title">利率交換</h3>
+                                @*    <h4 class="cosc-item-subtitle">IRS</h4>*@
+                                <p class="cosc-item-description">
+                                    雙方依訂約之幣別、金額及期限，進行期中利息交換。
+                                    企業為公司的資產及負債規避利率風險，可運用利率交換(IRS)將固定利率換浮動利率或是浮動利率換固定利率。
+                                </p>
+                            </div>
+                        </li>
+                        <li class="cosc-item">
+                            <figure class="cosc-item-figure">
+                                <picture>
+                                    <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/sg/services-card/financial-derivatives/cross-currency-swap.jpg")" alt="換匯換利交易">
+                                </picture>
+                                <figcaption hidden="">換匯換利交易</figcaption>
+                            </figure>
+                            <div class="cosc-item-content">
+                                <h3 class="cosc-item-title">換匯換利交易</h3>
+                                @*   <h4 class="cosc-item-subtitle">CCS</h4>*@
+                                <p class="cosc-item-description">為交易雙方約定期初交換兩種不同貨幣，期中交換所持有貨幣之利息，期末時再換回期初所交換的兩種貨幣之交易。此為企業規避匯率及利率風險之工具。</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="component-oversea-services-card component-oversea-services-card--33">
+                <div class="cosc-inner">
+                    <h2 class="cosc-title">@ViewBag.services_title</h2>
+                    <h3 class="cosc-subtitle">FX products</h3>
+                    <ul class="cosc-list">
+                        <li class="cosc-item">
+                            <figure class="cosc-item-figure">
+                                <picture>
+                                    <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/sg/services-card/financial-derivatives/fx-forward.jpg")" alt="FX Forward">
+
+                                </picture>
+                                <figcaption hidden="">FX Forward</figcaption>
+                            </figure>
+                            <div class="cosc-item-content">
+                                <h3 class="cosc-item-title">FX Forward</h3>
+                                <p class="cosc-item-description">
+                                    This shall refer to a FX transaction of which settlement date is beyond two business days after the transaction date (T+2) .
+                                    A customer may establish an agreement with CUB to settle in the agreed amount, currency and exchange rate on/during a designated date/period in the future. The purpose for a FX forward transaction is primarily for locking in the exchange rate cost for FX risk aversion.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="cosc-item">
+                            <figure class="cosc-item-figure">
+                                <picture>
+                                    <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/sg/services-card/financial-derivatives/fx-swap.jpg")" alt="FX Swap">
+                                </picture>
+                                <figcaption hidden="">FX Swap</figcaption>
+                            </figure>
+                            <div class="cosc-item-content">
+                                <h3 class="cosc-item-title">FX Swap</h3>
+                                <p class="cosc-item-description">The purpose for a FX swap transaction is primarily for fund allocation, which shall mean a customer simultaneously books a FX spot (or FX forward) transaction and a FX forward transaction of the same sum but in the reverse direction.</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <h3 class="cosc-subtitle">Interest rate products</h3>
+                    <ul class="cosc-list">
+                        <li class="cosc-item">
+                            <figure class="cosc-item-figure">
+                                <picture>
+                                    <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/sg/services-card/financial-derivatives/interest-rate-swap.jpg")" alt="Interest Rate Swap (" IRS")">
+                                </picture>
+                                <figcaption hidden="">Interest Rate Swap ("IRS")</figcaption>
+                            </figure>
+                            <div class="cosc-item-content">
+                                <h3 class="cosc-item-title">Interest Rate Swap ("IRS")</h3>
+                                <p class="cosc-item-description">
+                                    Both parties swap interest rates during the term of the swap agreement based on the agreed currency, amount, and time period.
+                                    A company may use IRS to exchange a fixed interest rate for a floating interest rate or exchange a floating interest rate for a fixed interest rate.
+                                </p>
+                            </div>
+                        </li>
+                        <li class="cosc-item">
+                            <figure class="cosc-item-figure">
+                                <picture>
+                                    <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/sg/services-card/financial-derivatives/cross-currency-swap.jpg")" alt="Cross Currency Swap (" CCS")">
+                                </picture>
+                                <figcaption hidden="">Cross Currency Swap ("CCS")</figcaption>
+                            </figure>
+                            <div class="cosc-item-content">
+                                <h3 class="cosc-item-title">Cross Currency Swap ("CCS")</h3>
+                                <p class="cosc-item-description">This shall refer to a transaction that both trading parties agree to exchange two different  currencies at the beginning of the agreement, exchange the interests of the currencies during the term of the agreement, and then exchange the currencies back at the end of the agreement. This is an instrument for companies to hedge the foreign exchange rate and interest rate risks.   </p>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        }
+

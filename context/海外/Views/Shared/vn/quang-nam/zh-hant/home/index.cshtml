@@ -1,0 +1,135 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "";
+    ViewBag.PageDescription = "";
+}
+
+@section Scripts {
+
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/jquery.scrollbar.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/slick.min.js")"></script>
+
+
+    <script>
+        var homeCard = homeCard || {};
+        homeCard.prototype = {
+            sameHeight: function () {
+
+                let window_w = $(window).width();
+                let max_h = 0;
+                let scope = $('.component-oversea-services');
+                $('.cos-item-description', scope).css('min-height', 0);
+                if (window_w >= 768) {
+                    $('.cos-item', scope).each(function () {
+                        let h = $('.cos-item-description', $(this)).height();
+                        if (h > max_h) {
+                            max_h = h;
+                        }
+                    })
+                    $('.cos-item-description', scope).height(max_h);
+                } else {
+                    $('.cos-item-description', scope).css('height', 'auto');
+                }
+            },
+            addEventListener: function () {
+                let o = this;
+                $(window).on('resize.homeCard', function () {
+                    o.sameHeight();
+                }).trigger('resize.homeCard');
+            },
+            init: function () {
+                this.addEventListener();
+            }
+        }
+    </script>
+
+    <script>
+        $(function () {
+
+            var myHomeCard = homeCard.prototype;
+           myHomeCard.init();
+
+
+            //
+            $(window).resize(function () {
+
+                let window_w = $(window).width();
+                let offset_x;
+                let content_w;
+                if (window_w > 991) {
+                    offset_x = $('.cok-inner').offset().left;
+                    content_w = $('.cok-content').width();
+                    max_w = window_w - content_w - offset_x;
+                } else {
+                    offset_x = 0;
+                    content_w = 0;
+                    max_w = window_w;
+                }
+                $('.cok-figure-wrap').css('width', max_w);
+                $('.cok-figure-wrap').css('flex-basis', max_w);
+                $('.cok-figure-wrap').css('max-width', max_w);
+                $('.cok-figure-wrap').css('left', content_w + offset_x);
+
+            }).trigger('resize');
+
+            $(".cok-figure-slider").slick({
+                infinite: false,
+                slidesToShow: 1,
+                dots: false
+            });
+
+            ////////////////////////////
+
+            //$('.con-list', $(this)).scrollbar();
+        })
+    </script>
+
+    <script>
+        //fraud modal
+        $(function () {
+            let myFraudModal = fraudModal.prototype;
+            myFraudModal.init($('.component-oversea-modal--fraud'));
+            myFraudModal.show();
+        })
+    </script>
+}
+
+<div class='component-oversea-kv'>
+    <div class="cok-figure-wrap">
+        <div class="cok-figure-slider">
+            <div class="cok-figure-item">
+                <figure class='cok-figure'>
+                    <picture>
+                        <source media='(min-width: 992px)'
+                                srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv/bg-lg.jpg")' />
+                        <img class='cok-img' src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv/bg.jpg")' alt='@ViewBag.site_name'>
+                    </picture>
+                    <figcaption hidden>@ViewBag.site_name</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+
+    <div class="cok-inner">
+        <div class="cok-content">
+           <h1 class='cok-title'>
+                    <span class='cok-title--company'>國泰世華銀行</span>
+                    <span class='cok-title--slogan'>值得您<br />信賴的夥伴</span>
+                </h1>
+
+        </div>
+    </div>
+</div>
+<div class='component-oversea-services component-oversea-services--33  component-oversea-services--home'>
+    <div class="cos-inner">
+
+        <h2 class='cos-title'>廣南代表人辦事處</h2>
+        <p class='cos-description'>國泰世華銀行自2005年以來陸續在越南設立分行及代表人辦事處，提供越南境內與境外企業多元化的金融服務。並於2022年以深化越南市場經營為旨，將分行遷址至胡志明市，代表人辦事處同部遷址至廣南省；目前本行在越南共有三個據點，分別為胡志明市分行、河內代表人辦事處及廣南代表人辦事處，提供橫跨北、中、南越之金融服務管道。</p>
+
+        <p class='cos-description'>
+            <strong>國泰金控暨旗下子公司國泰人壽、國泰世華銀行、國泰產險、國泰證券、</strong>
+            國泰投信等，在台灣及世界各國提供全面性且多元化的金融服務與解決方案，與國泰航空有限公司暨其關係企業互不隷屬亦非關係企業。
+        </p>
+    </div>
+</div>

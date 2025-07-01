@@ -1,0 +1,41 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "Career Opportunities";
+    ViewBag.PageDescription = "";
+}
+
+@section Scripts {}
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/careers-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img"+"/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/careers.jpg")' alt='@ViewBag.nav_contact'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_careers</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_careers</h1>
+        </div>
+    </div>
+</div>
+
+
+
+<div class='component-oversea-info'>
+    <div class='coi-inner'>
+        <h2 class='coi-title'>
+            Career Opportunities:
+        </h2>
+        <div class='coi-content'>
+            <p class="coi-p">
+                No job posting at the moment/See the list of job openings<br />
+
+                Our office is located at 31st F, Zuellig Building Makati Avenue corner Paseo de Roxas Makati City 1225 Philippines
+                For any recruitment related inquiries, please email NT61524@cathaybk.com.tw
+            </p>
+        </div>
+    </div>
+</div>

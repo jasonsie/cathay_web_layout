@@ -1,0 +1,294 @@
+@{
+   ViewData["PageTitle"] = "網路銀行";
+   ViewData["PageDescription"] = "";
+}
+
+
+<!-- Page START -->
+<main class="mastbody">
+	
+	<!--
+		網路銀行
+	-->
+	<div class="topkv kv  kv--txt-left">
+		<div class="kv-bg">
+			<div class="kv-bg-inner">
+				<figure class="kv-bg-img">
+					<picture>
+						<source media="(min-width:769px)" srcset="/assets/img/topkv/personal-online.jpg" />
+						<img srcset="/assets/img/topkv/personal-online-mb.jpg">
+					</picture>
+				</figure>
+			</div>
+		</div>
+		<div class="kv-cont">
+			<div class="kv-cont-inner">
+				<h2 class="display-1-sm  fw-bold lh-xs">數位銀行服務</h2>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Breadcrumb  (lays on top of .topkv if places right after it) -->
+	<nav class="breadcrumb-nav text-white" aria-label="breadcrumb">
+		<div class="fluid">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]"><span>首頁</span><i class="ico-ui-home"></i></a></li>
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]personal/">個人金融</a></li>
+				<li class="breadcrumb-item active" aria-current="page">網路銀行</li>
+			</ol>
+		</div>
+	</nav>
+	
+	<!-- Menu -->
+	<nav class="tabmenu    d-none d-sm-block">
+		<div class="tabmenu-inner">
+			<a class="tabmenu-btn active" href="@ViewData["siteLangUrl"]personal/internet-banking/">
+				<span class="tabmenu-btn-txt">網路銀行</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/mobile-banking/">
+				<span class="tabmenu-btn-txt">行動銀行</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/merchant-app/">
+				<span class="tabmenu-btn-txt">Merchant App</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/alert-services/">
+				<span class="tabmenu-btn-txt">推播/提醒服務</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/user-guide/">
+				<span class="tabmenu-btn-txt">使用手冊</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+		</div>
+	</nav>
+	<!-- Mobile dropdown -->
+	<div class="tabmenu-dropdown dropdown    d-block d-sm-none">
+		<a href="javascript:;" class="btn btn-sm btn-block  dropdown-toggle" data-toggle="dropdown">
+			<span class="text-truncate d-inline-block">網路銀行</span>
+		</a>
+		<div class="dropdown-menu">
+			<span class="dropdown-item disabled">-- 前往頁面 --</span>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/internet-banking/">網路銀行</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/mobile-banking/">行動銀行</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/merchant-app/">Merchant App</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/alert-services/">推播/提醒服務</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/user-guide/">使用手冊</a>
+		</div>
+	</div>
+
+	
+	
+	<!--
+		網路銀行 - Detail
+	-->
+	<section class="fluid overflow-hidden">
+		
+		<div class="py-page"></div>
+		
+		<!-- Page heading -->
+		<header class="compact  mb-5  text-center">
+			<h1 class="h3 h4-mb  mb-2 mb-md-3  text-black  lh-xs">網路銀行</h1>
+			<h2 class="display-3 h1-mb  mb-3  text-black fw-bold">快速又容易且全年無休的理財方式</h2>
+			<p class="text-left">不需排隊，即可在您舒適的家中或辦公室，隨時隨地使用銀行服務。我們的網路銀行為您提供便利的服務，讓您可以控制自己的時間，透過任何連接上網路的電腦來管理您的資金。 現在只需點擊幾下滑鼠，即可查閱您的帳戶資訊、信用卡資訊、使用轉帳、支付帳單、手機預付卡加值等服務！</p>
+		</header>
+		
+		
+		<!-- Features -->
+		<section class="compact-sm">
+			
+			<!-- Section heading -->
+			<h3 class="h1 h2-mb  mb-4  text-black fw-bold text-center lh-sm">網路銀行特色</h3>
+			
+			<!-- Graph icon list #2  (3 in a row)-->
+			<ul class="row  mb-n4 mx-n1  pl-xl-5 ml-xl-4">
+	
+				<!-- Graph item -->
+				<li class="col-6 col-md-3  mb-4  px-1 px-xl-4">
+					<div class="d-flex align-items-center  mb-3">
+						<figure class="graph  mr-3">
+							<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/view.svg">
+						</figure>
+						<h4 class="h3 text-dark fw-bolder lh-sm">總覽</h4>
+					</div>
+					<div>
+						<ul class="list-disc list--item-mb-xs">
+							<li>帳戶一覽</li>
+							<li>定存帳戶資訊</li>
+							<li>近六個月交易明細</li>
+							<li>預約轉帳/繳費</li>
+							<li>貸款帳戶資訊</li>
+							<li>信用卡交易</li>
+						</ul>
+					</div>
+				</li>
+	
+				<!-- Graph item -->
+				<li class="col-6 col-md-3  mb-4  px-1 px-xl-4">
+					<div class="d-flex align-items-center  mb-3">
+						<figure class="graph  mr-3">
+							<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/transfer.svg">
+						</figure>
+						<h4 class="h3 text-dark fw-bolder lh-sm">轉帳/匯款</h4>
+					</div>
+					<div>
+						<ul class="list-disc list--item-mb-xs">
+							<li>本人帳戶間轉帳</li>
+							<li>轉帳至本行他人帳戶</li>
+							<li>轉帳/匯款至國內他行帳戶或Bakong錢包</li>
+							<li>匯款至國外</li>
+						</ul>
+					</div>
+				</li>
+	
+				<!-- Graph item -->
+				<li class="col-6 col-md-3  mb-4  px-1 px-xl-4">
+					<div class="d-flex align-items-center  mb-3">
+						<figure class="graph  mr-3">
+							<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/pay.svg">
+						</figure>
+						<h4 class="h3 text-dark fw-bolder lh-sm">繳費</h4>
+					</div>
+					<div>
+						<ul class="list-disc list--item-mb-xs">
+							<li>信用卡帳單</li>
+							<li>手機預付卡加值</li>
+						</ul>
+					</div>
+				</li>
+	
+				<!-- Graph item -->
+				<li class="col-6 col-md-3  mb-4  px-1 px-xl-4">
+					<div class="d-flex align-items-center  mb-3">
+						<figure class="graph  mr-3">
+							<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/Fix-deposit.png">
+						</figure>
+						<h4 class="h3 text-dark fw-bolder">定期存款</h4>
+					</div>
+					<div>
+						<ul class="list-disc list--item-mb-xs">
+							<li>開立定期存款</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+			
+			<div class="text-center mt-4">
+				<a class="btn btn-green" target="_blank" rel="noopener noreferrer" href="/file/MIBankingApplicationForm.pdf">
+					<span class="px-2">立即申請<i class="ico-ui-right-v ml-2 big"></i></span>
+				</a>
+				<p class="mt-3">至<a class="text-green text-underline" href="@ViewData["siteLangUrl"]contact/#find-us">任一分行</a>臨櫃辦理</p> 
+			</div>
+		</section>
+		
+		<div class="py-page"></div>
+		
+		
+		<!-- FAQ -->
+		<section class="compact">
+			<!-- Section heading -->
+			<h3 class="h1 h2-mb  mb-4  text-black fw-bold text-center lh-sm">常見問題</h3>
+			
+			<!-- FAQ list -->
+
+			<!-- QA item -->
+			<section class="qaitem" js-foldable-group="internet">
+				<div class="qaitem-title" role="button" tabindex="0" js-foldable-head>
+					<h5 class="qaitem-title-txt  h3 h3-mb text-dark fw-bold">
+						Q1: 國泰世華銀行柬埔寨子行網路銀行有何特色？提供什麼服務？
+					</h5>
+				</div>
+				<div class="qaitem-detail" js-foldable-body>
+					<div class="qaitem-detail-content">
+						<div class="badge badge-green h5 h5-mb mb-3">回答</div>
+						<p>請<a class="text-green text-underline" href="@ViewData["siteLangUrl"]personal/internet-banking/">點擊此處</a>來查閱我們提供的服務。</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- QA item -->
+			<section class="qaitem" js-foldable-group="internet">
+				<div class="qaitem-title" role="button" tabindex="0" js-foldable-head>
+					<h5 class="qaitem-title-txt  h3 h3-mb text-dark fw-bold">
+						Q2: 為什麼我該選擇國泰世華銀行柬埔寨子行網路銀行？
+					</h5>
+				</div>
+				<div class="qaitem-detail" js-foldable-body>
+					<div class="qaitem-detail-content">
+						<div class="badge badge-green h5 h5-mb mb-3">回答</div>
+						<p>使用我們的網路銀行服務將為您帶來許多好處。 透過網路銀行，您可以即時獲得國泰世華銀行帳戶的最新資訊、簽帳和信用卡交易、支付帳單、轉帳、為您的手機預付卡加值等。您可以隨時隨地使用您的本行帳戶，除了為您節省前往分行排隊的時間並且體驗安全又簡單的網銀服務。</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- QA item -->
+			<section class="qaitem" js-foldable-group="internet">
+				<div class="qaitem-title" role="button" tabindex="0" js-foldable-head>
+					<h5 class="qaitem-title-txt  h3 h3-mb text-dark fw-bold">
+						Q3: 使用國泰世華銀行柬埔寨子行網路銀行需要付費嗎？
+					</h5>
+				</div>
+				<div class="qaitem-detail" js-foldable-body>
+					<div class="qaitem-detail-content">
+						<div class="badge badge-green h5 h5-mb mb-3">回答</div>
+						<p>無須任何費用；交易執行費用將依據收費標準另計。</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- QA item -->
+			<section class="qaitem" js-foldable-group="internet">
+				<div class="qaitem-title" role="button" tabindex="0" js-foldable-head>
+					<h5 class="qaitem-title-txt  h3 h3-mb text-dark fw-bold">
+						Q4:	我可以進行什麼類型的轉帳？
+					</h5>
+				</div>
+				<div class="qaitem-detail" js-foldable-body>
+					<div class="qaitem-detail-content">
+						<div class="badge badge-green h5 h5-mb mb-3">回答</div>
+						<p class="mb-2">您可以進行下列轉帳：</p>
+						<ul class="list-disc">
+							<li>本人帳戶間轉帳</li>
+							<li>轉帳至本行他人帳戶</li>
+							<li>轉帳/匯款至國內他行帳戶</li>
+							<li>匯款至國外</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			
+		</section>
+		
+		<div class="py-page"></div>
+		
+		
+		<!-- Safety Tips -->
+		<section class="compact">
+			<!-- Section heading -->
+			<h3 class="h1 h2-mb  mb-4  text-black fw-bold text-center lh-sm">使用網路銀行注意事項</h3>
+			
+			<p class="mb-3">我們致力於為您提供安全的銀行體驗，我們希望透過安全控管和保護措施，讓您免受可能危害您個人資訊的病毒和惡意攻擊。 作為重要角色 - 用戶 -  的您也務必提高警覺以確保網路交易的安全。</p>
+			<p class="mb-2">以下是在使用網路銀行時保護您的一些提示。</p>
+			<ul class="list-disc">
+				<li>務必確保您在的電腦上已經安裝防毒或反間諜軟體。</li>
+				<li>務必每日更新防毒或反間諜軟體。</li>
+				<li>務必調整您的作業系統確保電腦進行自動更新。</li>
+				<li>請勿將您的網路銀行密碼設定與其他網路服務（例如電子郵件或其他訂閱服務）的密碼相同。</li>
+				<li>請勿點擊電子郵件中的連結或安裝任何來源可疑的軟體。</li>
+				<li>請勿在疑似中毒的電腦上進行網路交易。</li>
+				<li>務必刪除垃圾郵件。</li>
+			</ul>
+		</section>
+		
+		<div class="py-page"></div>
+
+    	@Html.Partial("~/Views/Shared/"+@ViewData["viewUrl"]+"PersonalInternetBankingTC.cshtml")
+		
+		<div class="py-page"></div>
+	</section>
+	
+	
+</main>
+<!-- Page END -->

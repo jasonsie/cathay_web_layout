@@ -1,0 +1,131 @@
+@{
+   ViewData["PageTitle"] = "ការទូរទាត់និងការផ្ទេរប្រាក់";
+   ViewData["PageDescription"] = "";
+}
+
+
+<!-- Page START -->
+<main class="mastbody">
+	
+	<!--
+		ការទូរទាត់និងការផ្ទេរប្រាក់
+	-->
+	<div class="topkv kv  kv--txt-left">
+		<div class="kv-bg">
+			<div class="kv-bg-inner">
+				<figure class="kv-bg-img">
+					<picture>
+						<source media="(min-width:769px)" srcset="/assets/img/topkv/personal-remittance.jpg" />
+						<img srcset="/assets/img/topkv/personal-remittance-mb.jpg">
+					</picture>
+				</figure>
+			</div>
+		</div>
+		<div class="kv-cont">
+			<div class="kv-cont-inner">
+				<h2 class="display-1  fw-bold lh-xs">ការផ្ទេរប្រាក់</h2>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Breadcrumb  (lays on top of .topkv if places right after it) -->
+	<nav class="breadcrumb-nav text-white" aria-label="breadcrumb">
+		<div class="fluid">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]"><span>ទំព័រដើម</span><i class="ico-ui-home"></i></a></li>
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]personal/">សេវាកម្មធនាគារផ្ទាល់ខ្លួន</a></li>
+				<li class="breadcrumb-item active" aria-current="page">ការទូរទាត់និងការផ្ទេរប្រាក់</li>
+			</ol>
+		</div>
+	</nav>
+	
+	<!-- Menu -->
+	<nav class="tabmenu    d-none d-sm-block">
+		<div class="tabmenu-inner">
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/inward-and-outward-remittance/">
+				<span class="tabmenu-btn-txt">ការផ្ទេរប្រាក់ចូលនិងការផ្ទេរប្រាក់ចេញ</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn active" href="@ViewData["siteLangUrl"]personal/payment-and-transfer/">
+				<span class="tabmenu-btn-txt">ការទូរទាត់និងការផ្ទេរប្រាក់</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+		</div>
+	</nav>
+	<!-- Mobile dropdown -->
+	<div class="tabmenu-dropdown dropdown    d-block d-sm-none">
+		<a href="javascript:;" class="btn btn-sm btn-block  dropdown-toggle" data-toggle="dropdown">
+			<span class="text-truncate d-inline-block">ការទូរទាត់និងការផ្ទេរប្រាក់</span>
+		</a>
+		<div class="dropdown-menu">
+			<span class="dropdown-item disabled">-- Select page --</span>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/inward-and-outward-remittance/">ការផ្ទេរប្រាក់ចូលនិងការផ្ទេរប្រាក់ចេញ</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/payment-and-transfer/">ការទូរទាត់និងការផ្ទេរប្រាក់</a>
+		</div>
+	</div>
+
+	
+	
+	<!--
+		ការទូរទាត់និងការផ្ទេរប្រាក់ - Detail
+	-->
+	<section class="fluid overflow-hidden">
+		
+		<div class="py-page"></div>
+		
+		<!-- Page heading -->
+		<header class="compact  mb-5  text-center">
+			<h1 class="display-3 h1-mb  text-dark fw-bold">ការទូរទាត់និងការផ្ទេរប្រាក់</h1>
+		</header>
+		
+		<!-- Card grids  (3 in a row) -->
+		<div class="mx-n3">
+			<ul class="compact-md  row justify-content-center justify-content-md-start">
+		
+				<!-- Card grid -->
+				<li class="col-12 col-md-6 col-lg-4  mb-5  px-3">
+					<figure class="mb-3 mb-xl-4"><!-- 720x482 PNG or JPG -->
+						<img class="w-100 lazy" data-src="/assets/img/content/remittance-pic-1.jpg" alt="មូលប្បទានប័ត្រធនាគារ">
+					</figure>
+					<div class="px-xl-3">
+						<h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">មូលប្បទានប័ត្រធនាគារ</h3>
+						<p>ក្នុងស្ថានភាពដែលអ្នកទទួលផលមិនយល់ព្រមទទួលជាសាច់ប្រាក់ឬមូលប្បទានប័ត្រផ្ទាល់ខ្លួននោះអ្នកនឹងត្រូវការមូលប្បទានប័ត្រធនាគារ ដែលជាមូលប្បទានប័ត្រដែលចេញដោយធនាគារ សម្រាប់ទូរទាត់ជូនអ្នកទទួលប្រាក់ ដែលបានស្នើរអោយដាក់ឈ្មោះលើមូលប្បទានប័ត្រធនាគារ ។</p>
+						<br>
+						<br>
+                        <p class="small">*ការលក់ <br>មូលប្បទានប័ត្រធនាគារ 1 តំលៃ USD១០ ឬ KHR៤០,០០០ សំរាប់គណនីKHR </p>
+					</div>
+				</li>
+
+				<!-- Card grid -->
+				<li class="col-12 col-md-6 col-lg-4  mb-5  px-3">
+					<figure class="mb-3 mb-xl-4">
+						<img class="w-100 lazy" data-src="/assets/img/content/remittance-pic-2.jpg" alt="រូបិយាណត្តិ">
+					</figure>
+					<div class="px-xl-3">
+						<h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">រូបិយាណត្តិ</h3>
+						<p>រូបិយាណត្តិអាចត្រូវបានប្រើដើម្បីធ្វើការទូទាត់មិនបន្ទាន់នៅក្នុងប្រទេសសិង្ហបុរីជាមួយនឹងចំនួនទឹកប្រាក់ដែលបានបញ្ជាក់ជារូបិយប័ណ្ណ SGD ឬ USD ទៅកាន់ឈ្មោះអ្នកទទួលផល។ ធនាគារទំនាក់ទំនងក្រៅស្រុកនឹងទូរទាត់ឱ្យអ្នកទទួលផលរបស់លោកអ្នក នៅពេលដែលរូបិយាណត្តិត្រូវបានដាក់និងផាត់ទាត់ដោយធនាគាររបស់អ្នកទទួលផល។</p>
+						<br>
+						<h4 class="mb-1 text-dark fw-bold">ការទូទាត់ចេញពីគណនី៖</h4>
+                        <p>សោហ៊ុយជើងសារ ០.២២% (យ៉ាងតិច USD២០ ឬ KHR៨០,០០០ សំរាប់គណនីKHR) + USD២០ ឬ KHR៨០,០០០ សំរាប់គណនីKHR (សោហ៊ុយសារទូរលេខ)</p>
+					</div>
+				</li>
+		
+				<!-- Card grid -->
+				<li class="col-12 col-md-6 col-lg-4  mb-5  px-3">
+					<figure class="mb-3 mb-xl-4">
+						<img class="w-100 lazy" data-src="/assets/img/content/remittance-pic-3.jpg" alt="សេវាកម្មទូរទាត់រហ័ស">
+					</figure>
+					<div class="px-xl-3">
+						<h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">សេវាកម្មទូរទាត់រហ័ស</h3>
+                        <p>សេវាកម្មទូរទាត់រហ័ស សំដៅលើសេវាកម្មផ្ទេរប្រាក់ក្នុងស្រុក ផ្តោតលើរូបិយប័ណ្ណ KHR (ប្រាក់រៀល) តែប៉ុណ្ណោះ។ ពេលវេលាប្រតិបត្តិការ៖ ២៤/៧ (២៤ ម៉ោងក្នុង ៧ ថ្ងៃ) ។ ការទូរទាត់នឹងត្រូវបានដំណើរការ និងបញ្ចូលទៅក្នុងគណនីអ្នកទទួលផលក្នុងពេលតែមួយ។ ចំនួនទឹកប្រាក់ផ្ទេរអតិបរមាក្នុងមួយប្រតិបត្តិការ ៤០,០០០,០០០ រៀល។</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+		
+		<div class="py-page"></div>
+	</section>
+	
+	
+</main>
+<!-- Page END -->

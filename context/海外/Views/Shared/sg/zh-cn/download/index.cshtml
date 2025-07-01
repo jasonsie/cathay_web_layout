@@ -1,0 +1,40 @@
+﻿@model IndexViewModel
+@if (ViewBag.lang == "zh-hant")
+{
+    ViewBag.PageTitle = "常用表單";
+    ViewBag.PageDescription = "歡迎自行下載企業銀行、貿易融資、財資市場、一般協議等常用表單";
+}
+else if (ViewBag.lang == "zh-hans")
+{
+    ViewBag.PageTitle = "常用表单";
+    ViewBag.PageDescription = "欢迎自行下载企业金融、贸易融资、金融商品、常规协议等常用表单";
+}
+else
+{
+    ViewBag.PageTitle = "Forms";
+    ViewBag.PageDescription = "Download forms for Corporate Banking, Trade Finance, Treasury Marketing, General Agreement and more";
+}
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/sg/kv-short/download-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/sg/kv-short/download.jpg")' alt='@ViewBag.nav_download'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_download</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_download</h1>
+        </div>
+    </div>
+</div>
+<!-- 表單容器 -->
+<div class="forms-container" data-branch="singapore"></div>
+@section Scripts {
+    <script>
+        var lang = "@ViewBag.lang";  // 使用 ViewBag 中的語言設定
+        var branchId = "605";  // 新加坡分行的 ID
+    </script>
+    <script src="@Url.Content("~/OVSWS/Content/js/backendSystem/FormLoader.js")" type="application/javascript"></script>
+}

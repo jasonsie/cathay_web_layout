@@ -1,0 +1,46 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "ຊ່ອງທາງຕິດຕໍ່";
+    ViewBag.PageDescription = "";
+}
+
+@section Scripts {}
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/contact-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/contact.jpg")' alt='@ViewBag.nav_contact'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_contact</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_contact</h1>
+        </div>
+    </div>
+</div>
+
+    <div class='component-oversea-info'>
+        <div class='coi-inner'>
+            <h2 class='coi-title'>ທີ່ຢູ່ການໃຫ້ບໍລິການ	</h2>
+
+            <div class='coi-content'>
+                <ul class="coi-list">
+                    <li class="coi-item">
+                        <span class='coi-item-label'>ເບີໂທ:</span>
+                        <span class="coi-item-content">+856-21-255688</span>
+                    </li>
+                    <li class="coi-item">
+                        <span class='coi-item-label'>ທີ່ຢູ່:</span>
+                        <span class="coi-item-content">ຖະໜົນ ຂຸນບູລົມ, ບ້ານ ຫັດສະດີ, ເມືອງ ຈັນທະບູລີ, ນະຄອນຫຼວງວຽງຈັນ</span>
+                    </li>
+                    <li class="coi-item">
+                        <span class='coi-item-label'>ອີເມລ:</span>
+                        <span class="coi-item-content">61000@cathaybk.com.tw</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>

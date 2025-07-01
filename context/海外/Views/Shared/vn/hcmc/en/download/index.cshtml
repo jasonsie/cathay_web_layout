@@ -1,0 +1,43 @@
+﻿@model IndexViewModel
+
+
+@if (ViewBag.lang == "zh-hant")
+{
+    ViewBag.PageTitle = "常用表單";
+    ViewBag.PageDescription = "歡迎自行下載常用表單";
+}
+else if (ViewBag.lang == "en")
+{
+    ViewBag.PageTitle = "Forms";
+    ViewBag.PageDescription = "";
+}
+else
+{
+    ViewBag.PageTitle = "Biểu mẫu";
+    ViewBag.PageDescription = "";
+
+}
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/vn/hcmc/kv-short/download-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/vn/hcmc/kv-short/download.jpg")' alt='@ViewBag.nav_download'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_download</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_download</h1>
+        </div>
+    </div>
+</div>
+<!-- 表單容器 -->
+<div class="forms-container" data-branch="vn"></div>
+@section Scripts {
+    <script>
+        var lang = "@ViewBag.lang";  // 使用 ViewBag 中的語言設定
+        var branchId = "604";  // 越南分行的 ID
+    </script>
+    <script src="@Url.Content("~/OVSWS/Content/js/backendSystem/FormLoader.js")" type="application/javascript"></script>
+}

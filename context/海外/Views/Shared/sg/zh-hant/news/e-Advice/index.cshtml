@@ -1,0 +1,56 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "e-Advice Service - New Transaction and Function Announcement";
+    ViewBag.PageDescription = "e-Advice Service - New Transaction and Function Announcement";
+}
+
+@section Scripts {}
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news.jpg")' alt='@ViewBag.nav_news'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_news</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_news</h1>
+        </div>
+    </div>
+</div>
+
+<!-- newsview -->
+<article class="component-newsview">
+    <div class="component-newsview-inner">
+        <header class="component-newsview-header">
+            <div class="component-newsview-date"></div>
+            <h1 class="component-newsview-title">「電子通知書」(e-advice)服務 - 新交易單據類別及功能上線通知</h1>
+        </header>
+
+        <div class="component-newsview-body">
+            <p class='cosc-item-description'>
+                由2025年3月10日起，e-Advice「存匯交易」通知書類別將新增「定期存款」交易單據。<br>
+            </p>
+            <p class='cosc-item-description'>
+                另外，「全球企網銀Global MyB2B」新用戶現可透過系統自動化步驟指引，快速開通e-Advice服務並設定收件電郵地址，讓新用戶能夠在更即時、方便地查閱交易單據。<br>
+            </p>
+            <p class='cosc-item-description'>
+                國泰世華銀行致力於為您提供更高效的服務，期待您能享受到這些新功能所帶來的便利。<br>
+            </p>
+            <p class='cosc-item-description'>
+                如對「電子通知書」(e-Advice)服務有任何疑問，歡迎聯絡本行客戶關係經理或致電客服專線<br>
+                +65 6593 9280。<br>
+            </p>
+        </div>
+        <footer class="component-newsview-footer">
+            <div class="component-btn-row">
+                <a class="component-btn-main btn-green" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/")">回上一頁</a>
+            </div>
+        </footer>
+    </div>
+</article><!--/.component-newsview-->

@@ -1,0 +1,130 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = @ViewBag.nav_services_foreign_exchange;
+    ViewBag.PageDescription = "";
+}
+
+@section Scripts {
+    <script>
+        var serviceCard = serviceCard || {};
+        serviceCard.prototype = {
+            sameHeight: function () {
+
+                let window_w = $(window).width();
+                let max_h = 0;
+                let scope = $('.component-oversea-services-card');
+                $('.cosc-item-content', scope).css('min-height', 0);
+                if (window_w >= 768) {
+                    $('.cosc-item.cosc-item--same-height', scope).each(function () {
+                        let h = $('.cosc-item-content', $(this)).height();
+                        if (h > max_h) {
+                            max_h = h;
+                        }
+                    })
+                    $('.cosc-item--same-height .cosc-item-content', scope).height(max_h);
+                } else {
+                    $('.cosc-item--same-height .cosc-item-content', scope).css('height', 'auto');
+                }
+            },
+            addEventListener: function () {
+                let o = this;
+                $(window).on('resize.homeCard', function () {
+                    o.sameHeight();
+                }).trigger('resize.homeCard');
+            },
+            init: function () {
+                this.addEventListener();
+            }
+        }
+    </script>
+
+    <script>
+        $(function () {
+
+            var myServiceCard = serviceCard.prototype;
+            myServiceCard.init();
+        })
+    </script>
+    }
+    <div class='component-oversea-kv-short'>
+        <figure class='coks-figure'>
+            <picture>
+
+                <source media='(min-width: 768px)'
+                        data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/otc-derivatives-lg.jpg")' />
+                <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/otc-derivatives.jpg")' alt='@ViewBag.nav_services_foreign_exchange'>
+            </picture>
+            <figcaption hidden>@ViewBag.nav_services_foreign_exchange</figcaption>
+        </figure>
+        <div class="coks-inner">
+            <div class="coks-content">
+                <h1 class='coks-title'>@ViewBag.nav_services_foreign_exchange</h1>
+            </div>
+        </div>
+    </div>
+
+
+        <div class="component-oversea-services-card component-oversea-services-card--33 component-oversea-services-card--foreign-exchange">
+            <div class="cosc-inner">
+                <h2 class="cosc-title">@ViewBag.services_title</h2>
+                <ul class="cosc-list">
+                    <li class="cosc-item">
+                        <figure class="cosc-item-figure">
+                            <picture>
+                                <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services-card/foreign-exchange/fx-interest-rate-option.jpg")" alt="Foreign Exchange">
+
+                            </picture>
+                            <figcaption hidden="">
+                                Giao dịch ngoại tệ giao ngay
+                            </figcaption>
+                        </figure>
+                        <div class="cosc-item-content">
+                            <h3 class="cosc-item-title">
+                                Giao dịch ngoại tệ giao ngay
+                            </h3>
+                            <p class='cosc-item-description'>
+                                Giao dịch ngoại tệ giao ngay là giao dịch mà CUB và khách hàng cam kết mua hoặc bán một lượng ngoại tệ theo tỉ giá giao ngay tại thời điểm giao dịch và thanh toán ngay trong ngày hoặc trong vòng hai (02) ngày làm việc kể từ ngày giao dịch.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="cosc-item">
+                        <figure class="cosc-item-figure">
+                            <picture>
+                                <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services-card/foreign-exchange/fx-forward.jpg")" alt="Export Business">
+                            </picture>
+                            <figcaption hidden="">
+                                Giao dịch ngoại tệ kỳ hạn
+                            </figcaption>
+                        </figure>
+                        <div class="cosc-item-content">
+                            <h3 class="cosc-item-title">
+                                Giao dịch ngoại tệ kỳ hạn
+                            </h3>
+                            <p class='cosc-item-description'>
+                                Giao dịch Ngoại tệ Kỳ hạn là giao dịch mà CUB và khách hàng thỏa thuận việc mua hoặc bán một số lượng ngoại tệ nhất định, trong đó tỉ giá được xác định ngay tại thời điểm giao dịch và ngày thanh toán tối thiểu là ba (03) ngày làm việc (nhưng không quá 365 ngày) kể từ ngày giao dịch.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="cosc-item">
+                        <figure class="cosc-item-figure">
+                            <picture>
+                                <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services-card/foreign-exchange/fx-swap.jpg")" alt="Guarantee Business">
+                            </picture>
+                            <figcaption hidden="">
+                                Giao dịch hoán đổi ngoại tệ
+                            </figcaption>
+                        </figure>
+                        <div class="cosc-item-content cosc-item-content--few">
+                            <h3 class="cosc-item-title">
+                                Giao dịch hoán đổi ngoại tệ
+                            </h3>
+                            <p class='cosc-item-description'>
+                                Giao dịch Hoán đổi Ngoại tệ Là giao dịch giữa CUB và khách hàng, bao gồm đồng thời một giao dịch mua và một giao dịch bán cùng một số lượng đồng tiền này với đồng tiền khác, trong đó ngày thanh toán của hai giao dịch là khác nhau và tỷ giá của hai giao dịch được xác định tại ngày giao dịch.
+                            </p>
+                        </div>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>

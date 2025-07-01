@@ -1,0 +1,131 @@
+@{
+   ViewData["PageTitle"] = "Payment & Transfer";
+   ViewData["PageDescription"] = "";
+}
+
+
+<!-- Page START -->
+<main class="mastbody">
+	
+	<!--
+		Payment & Transfer
+	-->
+	<div class="topkv kv  kv--txt-left">
+		<div class="kv-bg">
+			<div class="kv-bg-inner">
+				<figure class="kv-bg-img">
+					<picture>
+						<source media="(min-width:769px)" srcset="/assets/img/topkv/personal-remittance.jpg" />
+						<img srcset="/assets/img/topkv/personal-remittance-mb.jpg">
+					</picture>
+				</figure>
+			</div>
+		</div>
+		<div class="kv-cont">
+			<div class="kv-cont-inner">
+				<h2 class="display-1  fw-bold lh-xs">Remittances</h2>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Breadcrumb  (lays on top of .topkv if places right after it) -->
+	<nav class="breadcrumb-nav text-white" aria-label="breadcrumb">
+		<div class="fluid">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]"><span>Home</span><i class="ico-ui-home"></i></a></li>
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]personal/">Personal Banking</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Payment & Transfer</li>
+			</ol>
+		</div>
+	</nav>
+	
+	<!-- Menu -->
+	<nav class="tabmenu    d-none d-sm-block">
+		<div class="tabmenu-inner">
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/inward-and-outward-remittance/">
+				<span class="tabmenu-btn-txt">Inward & Outward Remittances</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn active" href="@ViewData["siteLangUrl"]personal/payment-and-transfer/">
+				<span class="tabmenu-btn-txt">Payment & Transfer</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+		</div>
+	</nav>
+	<!-- Mobile dropdown -->
+	<div class="tabmenu-dropdown dropdown    d-block d-sm-none">
+		<a href="javascript:;" class="btn btn-sm btn-block  dropdown-toggle" data-toggle="dropdown">
+			<span class="text-truncate d-inline-block">Payment & Transfer</span>
+		</a>
+		<div class="dropdown-menu">
+			<span class="dropdown-item disabled">-- Select page --</span>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/inward-and-outward-remittance/">Inward & Outward Remittances</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/payment-and-transfer/">Payment & Transfer</a>
+		</div>
+	</div>
+
+	
+	
+	<!--
+		Payment & Transfer - Detail
+	-->
+	<section class="fluid overflow-hidden">
+		
+		<div class="py-page"></div>
+		
+		<!-- Page heading -->
+		<header class="compact  mb-5  text-center">
+			<h1 class="display-3 h1-mb  text-dark fw-bold">Payment & Transfer</h1>
+		</header>
+		
+		<!-- Card grids  (3 in a row) -->
+		<div class="mx-n3">
+			<ul class="compact-md  row justify-content-center justify-content-md-start">
+		
+				<!-- Card grid -->
+				<li class="col-12 col-md-6 col-lg-4  mb-5  px-3">
+					<figure class="mb-3 mb-xl-4"><!-- 720x482 PNG or JPG -->
+						<img class="w-100 lazy" data-src="/assets/img/content/remittance-pic-1.jpg" alt="Cashier\'s Order">
+					</figure>
+					<div class="px-xl-3">
+						<h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">Cashier's Order</h3>
+						<p>In situations whereby the beneficiary does not accept cash or personal cheques, you will then need a Cashier's Order which is a cheque issued by our Bank, payable to the payee as indicated by the person who buys the Cashier's Order.</p>
+						<br>
+						<br>
+						<p class="small">*Sale of Cashier's Orders USD10.00 per cashier's order</p>
+					</div>
+				</li>
+		
+				<!-- Card grid -->
+				<li class="col-12 col-md-6 col-lg-4  mb-5  px-3">
+					<figure class="mb-3 mb-xl-4">
+						<img class="w-100 lazy" data-src="/assets/img/content/remittance-pic-2.jpg" alt="Demand Draft">
+					</figure>
+					<div class="px-xl-3">
+						<h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">Demand Draft</h3>
+						<p>Demand draft can be used to make non-urgent payments in Singapore with stated amount in SGD currency or USD to a named beneficiary. Our overseas correspondents will pay your beneficiary when the demand draft is deposited and cleared by the beneficiary's bank.</p>
+						<br>
+						<h4 class="mb-1 text-dark fw-bold">Debit from Accounts</h4>
+                        <p>0.22% commission min USD20.00 + USD20.00 cable fee</p>
+					</div>
+				</li>
+		
+				<!-- Card grid -->
+				<li class="col-12 col-md-6 col-lg-4  mb-5  px-3">
+					<figure class="mb-3 mb-xl-4">
+						<img class="w-100 lazy" data-src="/assets/img/content/remittance-pic-3.jpg" alt="Fast Payment">
+					</figure>
+					<div class="px-xl-3">
+						<h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">Fast Payment</h3>
+						<p>FAST refers to local remittance service focus on currency KHR (Khmer Riel) only. Transaction Time: 24/7 (24 hours per 7 days). The payment will be processed and credited to the beneficiary account at the same time. Maximum transfer amount per transaction KHR 40,000,000.</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+		
+		<div class="py-page"></div>
+	</section>
+	
+	
+</main>
+<!-- Page END -->

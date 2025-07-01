@@ -1,0 +1,204 @@
+﻿@{ 
+  
+    if (ViewBag.section == "home/")
+    {
+        ViewBag.section = "";
+    }
+}
+<!-- component-header -->
+<header class="component-header">
+    <nav class="ch-navbar">
+        <div class="ch-brand-wrap">
+            <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.lang_url)" class="ch-brand" title='@ViewBag.site_name'>
+                <figure class='ch-figure'>
+                    <picture>
+                        <source media='(min-width: 992px)' srcset='@Url.Content("~/OVSWS/Content/img/hongkong/header/logo-lg.svg")' />
+                        <img class='ch-img' normal-src='@Url.Content("~/OVSWS/Content/img/hongkong/header/logo.svg")' active-src='@Url.Content("~/OVSWS/Content/img/hongkong/header/logo-white.svg")' src='@Url.Content("~/OVSWS/Content/img/hongkong/header/logo.svg")' alt='國泰世華銀行香港分行'>
+                    </picture>
+                    <figcaption hidden>@ViewBag.site_name</figcaption>
+                </figure>
+            </a>
+            <ul class='ch-subnav-list'>
+                <li class='ch-subnav-item'>
+                    <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.lang_url+"contact/")" class='ch-subnav-link'>@ViewBag.nav_contact</a>
+                </li>
+                <li class='ch-subnav-item'>
+                    <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.lang_url+"careers/")" class='ch-subnav-link'>@ViewBag.nav_careers</a>
+                </li>
+                <li class='ch-subnav-item'>
+                    <div class="language-form">
+                        <select role="language-select" class='form-select'>
+                        @if (ViewBag.lang == "en")
+                        {
+                            <option value="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/en/"+@ViewBag.section+@ViewBag.subsection+"")">English</option>
+
+                            if (ViewBag.section == "careers/")
+                            {
+                                <option value="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+@ViewBag.section+"")">繁體中文</option>
+                            }
+                            else
+                            {
+                            <option value="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+@ViewBag.section+@ViewBag.subsection+"")">繁體中文</option>
+                            }
+
+                        }
+                        else
+                        {
+                            <option value="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+@ViewBag.section+@ViewBag.subsection+"")">繁體中文</option>
+                            <option value="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/en/"+@ViewBag.section+@ViewBag.subsection+"")">English</option>
+                        }
+                        </select>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
+        <button class="ch-login-toggler" type="button">
+            <span class='ch-login-toggler-inner'>@ViewBag.nav_login</span>
+        </button>
+
+        <div class="ch-login-nav ch-login-nav--full">
+            <ul class="ch-login-nav-list">
+                <li class="ch-login-nav-item">
+                    <a href='https://www.globalmyb2b.com/GEBANK/Login.aspx' target="_blank" rel='noopener' class='ch-login-nav-item-link'>@ViewBag.nav_gebank</a>
+                </li>
+                @*<li class="ch-login-nav-item">
+                    <a href='@Url.Content("/EBANK/Auth/login.aspx?ReturnUrl=%2febank%2fdefault.aspx")' target="_blank" rel='noopener' class='ch-login-nav-item-link'>@ViewBag.nav_ebank</a>
+                </li>*@
+                <li class="ch-login-nav-item">
+                    <a href='https://www.globalmyb2b.com/PBANK/login.aspx?LOC=HK' target="_blank" rel='noopener' class='ch-login-nav-item-link'>@ViewBag.nav_pbank</a>
+                </li>
+            </ul>
+        </div>
+
+        <button class="ch-toggler" type="button">
+            <span class='ch-toggler-inner'></span>
+        </button>
+
+        <div class="ch-nav">
+            <ul class="ch-nav-list">
+                <li class="ch-nav-item">
+                    <div class="ch-nav-lv2">
+                        <div class="ch-nav-lv2-title" title='@ViewBag.nav_services'>@ViewBag.nav_services</div>
+                        <ul class="ch-nav-lv2-list">
+                            <li class="ch-nav-lv2-item">
+                                <ul class="ch-nav-lv3">
+                                    <li class='ch-nav-lv3-item'>
+                                        <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+@ViewBag.lang_url+"services/depository-remittance/")" class="ch-nav-lv3-link " title="@ViewBag.nav_services_depository_remittance">@ViewBag.nav_services_depository_remittance</a>
+                                    </li>
+                                    <li class='ch-nav-lv3-item'>
+                                        <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+@ViewBag.lang_url+"services/corporate-finance/")" class="ch-nav-lv3-link " title="@ViewBag.nav_services_corporate_finance">@ViewBag.nav_services_corporate_finance</a>
+                                    </li>
+                                    <li class='ch-nav-lv3-item'>
+                                        <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+@ViewBag.lang_url+"services/trade-finance/")" class="ch-nav-lv3-link" title="@ViewBag.nav_services_trade_finance">@ViewBag.nav_services_trade_finance</a>
+                                    </li>
+                                    <li class='ch-nav-lv3-item'>
+                                        <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+@ViewBag.lang_url+"private-bank/")" target="_blank" rel="noopener" class="ch-nav-lv3-link" title="@ViewBag.nav_services_wealth_management">@ViewBag.nav_services_wealth_management</a>
+                                    </li>
+                                    <li class='ch-nav-lv3-item'>
+                                        <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+@ViewBag.lang_url+"services/otc-derivatives/")" class="ch-nav-lv3-link " title="@ViewBag.nav_services_otc-derivatives">@ViewBag.nav_services_financial_derivatives</a>
+                                    </li>
+                                    <li class='ch-nav-lv3-item'>
+                                        <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+@ViewBag.lang_url+"services/internet-banking/")" class="ch-nav-lv3-link " title="@ViewBag.nav_services_online-banking">@ViewBag.nav_services_online_banking</a>
+                                    </li>
+                                    <li class='ch-nav-lv3-item'>
+                                        <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+@ViewBag.lang_url+"interest-rate/")" class="ch-nav-lv3-link " title="@ViewBag.nav_interest-rate ">@ViewBag.nav_interest_rate </a>
+                                    </li>
+                                    <li class='ch-nav-lv3-item'>
+                                        <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+@ViewBag.lang_url+"fee/")" class="ch-nav-lv3-link " title="@ViewBag.nav_fee">@ViewBag.nav_fee</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href='javascript:;' class="ch-nav-link" title='@ViewBag.nav_services'><span>@ViewBag.nav_services</span></a>
+                </li>
+                <li class="ch-nav-item">
+                    <div class="ch-nav-lv2">
+                        <div class="ch-nav-lv2-title" title='@ViewBag.nav_bulletin_board'>@ViewBag.nav_bulletin_board</div>
+                        <ul class="ch-nav-lv2-list">
+                            <li class="ch-nav-lv2-item">
+                                <ul class="ch-nav-lv3">
+                                    <li class='ch-nav-lv3-item'>
+                                        <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+@ViewBag.lang_url+"news/")" class="ch-nav-lv3-link " title="@ViewBag.nav_news">@ViewBag.nav_news</a>
+                                    </li>
+                                    <li class='ch-nav-lv3-item'>
+                                        <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+@ViewBag.lang_url+"financial-disclosure/")" class="ch-nav-lv3-link " title="@ViewBag.nav_financial_disclosure">@ViewBag.nav_financial_disclosure</a>
+                                    </li>
+                                    <li class='ch-nav-lv3-item'>
+                                        <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+@ViewBag.lang_url+"terms-condition/")" class="ch-nav-lv3-link " title="@ViewBag.nav_terms_condition">@ViewBag.nav_terms_condition</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href='javascript:;' class="ch-nav-link" title='@ViewBag.nav_bulletin_board'>
+                        <span>@ViewBag.nav_bulletin_board</span>
+                    </a>
+                </li>
+
+                <li class="ch-nav-item">
+                    <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+@ViewBag.lang_url+"download/")" class="ch-nav-link " title="@ViewBag.nav_download">
+                        <span>@ViewBag.nav_download</span>
+                    </a>
+                </li>
+
+                <li class="ch-nav-item">
+                    <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+@ViewBag.lang_url+"faq/")" class="ch-nav-link " title="@ViewBag.nav_faq">
+                        <span>@ViewBag.nav_faq</span>
+                    </a>
+                </li>
+
+                <li class="ch-nav-item ch-nav-item--align-right ch-nav-item--block" style="margin-left:auto;">
+                    <a href='https://www.globalmyb2b.com/GEBANK/Login.aspx' target="_blank" rel='noopener' class="ch-nav-link" title='@ViewBag.nav_gebank'>
+                        <span>@ViewBag.nav_gebank</span>
+                    </a>
+                </li>
+
+                @*<li class="ch-nav-item ch-nav-item--block">
+                    <a href='@Url.Content("/EBANK/Auth/login.aspx?ReturnUrl=%2febank%2fdefault.aspx")' target="_blank" rel='noopener' class="ch-nav-link" title='@ViewBag.nav_ebank'>
+                        <span>@ViewBag.nav_ebank</span>
+                    </a>
+                </li>*@
+                <li class="ch-nav-item ch-nav-item--block">
+                    <a href='https://www.globalmyb2b.com/PBANK/login.aspx?LOC=HK' target="_blank" rel='noopener' class="ch-nav-link" title='@ViewBag.nav_pbank'>
+                            <span>@ViewBag.nav_pbank</span>
+                        </a>
+                   </li>
+
+                <li class="ch-nav-item ch-nav-item--hide-lg">
+                    <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+@ViewBag.lang_url+"careers/")" class="ch-nav-link " title="@ViewBag.nav_careers">
+                        <span>@ViewBag.nav_careers</span>
+                    </a>
+                </li>
+
+                <li class="ch-nav-item ch-nav-item--hide-lg">
+                    <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+@ViewBag.lang_url+"contact/")" class="ch-nav-link " title="@ViewBag.nav_contact">
+                        <span>@ViewBag.nav_contact</span>
+                    </a>
+                </li>
+
+                <li class='ch-nav-item ch-nav-item--group ch-nav-item--hide-lg'>
+                    <a href='https://www.cathayholdings.com' rel='noopener nofollow' target="_blank" rel="noopener" class='ch-nav-link'>@ViewBag.nav_cathay_holdings</a>
+                    <a href='https://www.cathaybk.com.tw/cathaybk' rel='noopener nofollow' target="_blank" rel="noopener" class='ch-nav-link'>@ViewBag.nav_cathay_united_bank</a>
+                    @if (ViewBag.lang == "en" || ViewBag.lang == "zh-hant")
+                    {
+                        <a href='@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.lang_url)' target="_blank" rel='noopener' class='ch-nav-link'>@ViewBag.nav_oversea_branch</a>
+                    }
+                    else
+                    {
+                        <a href='@Url.Content("~/"+@ViewBag.country_url+"/en/")' target="_blank" rel='noopener' class='ch-nav-link'>@ViewBag.nav_oversea_branch</a>
+                    }
+                </li>
+                <li class='ch-nav-item ch-nav-item--social ch-nav-item--hide-lg'>
+                    <a href='https://www.facebook.com/cathayunitedbank' rel='noopener nofollow' target="_blank" rel="noopener" class='ch-nav-link'><img class='ch-nav-item-social-img' src='@Url.Content("~/OVSWS/Content/img/common/header/")facebook.svg' alt="Facebook icon"></a>
+                    <a href='https://www.youtube.com/user/cathayunitedbank' rel='noopener nofollow' target="_blank" rel="noopener" class='ch-nav-link'><img class='ch-nav-item-social-img' src='@Url.Content("~/OVSWS/Content/img/common/header/")youtube.svg' alt="Youtube icon"></a>
+                    <a href='https://tw.linkedin.com/company/cathay-united-bank-co-ltd-' rel='noopener nofollow' target="_blank" rel="noopener" class='ch-nav-link'><img class='ch-nav-item-social-img' src='@Url.Content("~/OVSWS/Content/img/common/header/")linkedin-hover.svg' alt="linkedin icon"></a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+</header>
+<!-- component-header end -->

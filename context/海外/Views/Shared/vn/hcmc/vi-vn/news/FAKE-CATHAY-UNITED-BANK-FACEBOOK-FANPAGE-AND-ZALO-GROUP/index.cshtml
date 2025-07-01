@@ -1,0 +1,61 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "Notice for the new Treasury products launching – Foreign Exchange Forward and Foreign Exchange Swap";
+    ViewBag.PageDescription = "Notice for the new Treasury products launching – Foreign Exchange Forward and Foreign Exchange Swap";
+}
+
+@section Scripts {}
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news.jpg")' alt='@ViewBag.nav_news'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_news</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_news</h1>
+        </div>
+    </div>
+</div>
+
+<!-- newsview -->
+<article class="component-newsview">
+    <div class="component-newsview-inner">
+        <header class="component-newsview-header">
+            <div class="component-newsview-date"></div>
+            <h1 class="component-newsview-title">[CẢNH BÁO] GIẢ MẠO FACEBOOK FANPAGE VÀ ZALO GROUP TUYỂN DỤNG CATHAY UNITED BANK </h1>
+        </header>
+
+        <div class="component-newsview-body">
+            <p>
+                Ngân hàng Cathay United Bank (CUB) phát hiện Trang Tuyển dụng Cathay United Bank đang sử dụng hình ảnh, nội dung, logo của CUB và đăng tải nội dung tuyển dụng 1000 nhân viên tín dụng online toàn quốc một cách sai sự thật, và giả mạo toàn bộ thông tin của CUB. Sau khi người dùng gửi tin nhắn đến page này sẽ được chuyển về Zalo group TÀI CHÍNH & BẢO HIỂM ONLINE. Để có thể tham gia group chat này, người dùng được yêu cầu cung cấp 2 số điện thoại của bản thân hoặc người thân. Facebook page Tuyển dụng Cathay United Bank và Zalo group TÀI CHÍNH & BẢO HIỂM ONLINE hoàn toàn không thuộc sở hữu của Ngân hàng Cathay United Bank.
+            </p>
+            <p>
+                Nhằm phòng tránh các hình thức giả mạo để lừa đảo, đánh cắp thông tin cá nhân nhằm chiếm đoạt tài sản, trục lợi từ các hình thức khác, CUB xin đặc biệt lưu ý đến Quý khách hàng như sau:
+            </p>
+            <p class="cof-p"><b>🔰CHỈ LIÊN LẠC VỚI CUB THÔNG QUA: </b></p>
+            ✅Website: https://www.vn.cathaybk.com/home hoặc https://www.cathaybk.com.tw/vn/hcmc/vi-vn/<br />
+            ✅Hotline hỗ trợ: +84 28 3622 6836<br />
+            ✅Email: contact.CUB@vn.cahaybk.com<br />
+            ✅Facebook: https://www.facebook.com/profile.php?id=61552399383144<br />
+            <p></p>
+            <p class="cof-p"><b>⛔️QUÝ KHÁCH HÀNG TUYỆT ĐỐI LƯU Ý:</b></p>
+            ❌Không cung cấp bất kỳ thông tin cá nhân cũng như các thông tin bảo mật tài khoản cá nhân nào cho bất kỳ ai (kể cả khi người này tự nhận là nhân viên của Cathay United Bank)<br />
+            ❌Không liên hệ đến các Facebook fanpage, Zalo group giả mạo Cathay United Bank.<br />
+            ❌Không tham gia bất kỳ hội nhóm tuyển dụng việc làm online mạo danh Cathay United Bank<br />
+            ☎️Khi có bất kỳ nghi vấn liên quan đến hành vi lừa đảo tuyển dụng, tạo tài khoản vay để nhận tiền hoa hồng, Quý khách hàng cần liên hệ ngay với cơ quan chức năng, đồng thời thông báo cho Cathay United Bank theo số hotline để được hỗ trợ kịp thời.
+
+        </div>
+        <footer class="component-newsview-footer">
+            <div class="component-btn-row">
+                <a class="component-btn-main btn-green" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/")">Trở lại</a>
+            </div>
+        </footer>
+    </div>
+</article><!--/.component-newsview-->

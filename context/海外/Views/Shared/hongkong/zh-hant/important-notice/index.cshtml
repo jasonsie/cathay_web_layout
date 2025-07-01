@@ -1,0 +1,94 @@
+﻿@model IndexViewModel
+
+@if (ViewBag.lang == "zh-hant")
+{
+    ViewBag.PageTitle = "重要聲明";
+    ViewBag.PageDescription = "重要聲明：閣下瀏覽本網站或當中任何頁面，即表示閣下同意以下所列之條款。如閣下於任何條款作出修訂後，仍繼續使用本網站，即視為閣下已接受有關修訂。包含法律限制網站資訊之使用互聯網通訊提示法律限制使用連結往其他網站的安全警告 本分行亦不會就閣下通過本分行網頁之超連結而下載的軟件之後果而負責免責聲明投資產品 商標擁有權。";
+}
+else
+{
+    ViewBag.PageTitle = "Important Notice";
+    ViewBag.PageDescription = "";
+}
+
+
+@section Scripts {}
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/financial-disclosure-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/financial-disclosure.jpg")' alt='@ViewBag.nav_important_notice'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_important_notice</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_important_notice</h1>
+        </div>
+    </div>
+</div>
+
+<div class='component-oversea-info'>
+    <div class="coi-inner">
+        <h1 class="coi-title">@ViewBag.nav_important_notice</h1>
+        <div class="coi-content">
+            <p class="coi-p">
+                閣下瀏覽本網站或當中任何頁面，即表示閣下同意以下所列出之條款。<br />如閣下於任何條款作出修訂後仍繼續使用本網站，即視為閣下已接受有關修訂。
+            </p>
+
+            <p class="coi-p">
+                <span class='coi-subtitle'>法律限制</span><br />
+                國泰世華商業銀行股份有限公司香港分行(「本分行」) 只會在於當時其可合法銷售的地區銷售網頁內提及的產品及服務。本分行不擬將此網頁的資料提供予置身或居住於本分行發佈此等資料會有所限制之司法管轄區的人士使用。瀏覽此網頁之人士必須充份了解及遵守任何有關此等限制。
+            </p>
+
+            <p class='coi-p'>
+                <span class='coi-subtitle'>網站資訊之使用</span><br />
+                若於任何司法管轄區對任何人士作出要約或遊說認購於此網頁提及的任何產品或服務屬於違法，，
+                則此網頁不應被視為向該等人士於該等地區作此等要約或遊說。<br />
+                載於此網頁的資料並不擬作為提供專業意見，亦不應被賴以作此用途。瀏覽此網頁之人士應在需
+                要時尋求適當之專業意見。<br />
+                本分行可酌情決定隨時撤回或修改本網站內所提供之任何資料、有關產品及服務的資訊，而毋須
+                事先作出通知。閣下使用個別資料及有關產品或服務的資訊之資格受限於本分行的最終及絕對酌情權。<br />
+                閣下須負責防止、保障及確保閣下之電腦系統及本網站不受電腦病毒入侵。
+            </p>
+
+            <p class="coi-p">
+                <span class='coi-subtitle'>互聯網通訊提示</span><br />
+                透過互聯網上傳遞之訊息（包括電子郵件訊息）並不保證絕對保密。用戶因透過互聯網向本分行傳送訊息，或要求本分行透過互聯網向其發出之訊息如有任何延誤、損失、變更、改動或訛誤，本分行對此而引致之任何損失概不負責。<span class='coi-b'>本分行對因使用此網站而招致之任何直接、間接、特別或連帶之損失不負任何形式的責任。</span><br />
+                法律限制互聯網通訊可能會因網上交通流量而中斷、消失或傳送延誤；或因其開放性質或其他原因而導致數據傳送失誤。
+            </p>
+
+            <p class="coi-p">
+                <span class='coi-subtitle'>法律限制使用連結往其他網站的安全警告</span><br />
+                使用超連結至其他網站或資料來源，當中之風險概由閣下負責。該等網站提供之內容、準確性、所表達的意見或與其他網站之連結並未經由本分行審查、核實、監察或認可。<span class='coi-b'>本分行明確聲明不會對與本網站結連之網站當中的資料之準確性、內容、效用或遺漏承擔任何責任。</span>閣下與此等第三方作任何聯線或離線瀏覽或進行交易前，應自行負責一切所需之諮詢或調查。本分行重申閣下透過或於本網站進行之所有活動，其風險概由閣下承擔。<span class='coi-b'>本分行並不對任何閣下可能透過此連結而傳遞或被要求提供予任何第三者之資料之安全性作出保證。閣下被視為已不可撤回地放棄對本分行因透過本網站瀏覽或與其他網站互動而蒙受之任何損失或損害所有的任何索償。</span>
+            </p>
+
+            <p class="coi-p">
+                <span class='coi-subtitle'>本分行亦不會就閣下通過本分行網頁之超連結而下載的軟件之後果而負責</span><br />
+                為方便閣下，本分行的網站可能會提供超連結至國泰世華商業銀行股份有限公司總行及其其他分
+                行的網站。該等網站內所提供的產品和服務可能只限於向身處或居於個別所屬司法管轄區的人士提供。
+                此外,該等連結網站的內容可能在某些司法管轄區受到限制而不可發佈,故此並不擬向身處或居於該
+                等地區的人士提供。
+            </p>
+
+            <p class="coi-p">
+                <span class='coi-subtitle'>免責聲明</span><br />
+                本網站所載的資訊及資料，均以其「現況」及「現狀」方式提供予閣下，且不會作任何明示或暗示之保證或陳述，尤其並無就該等資訊及資料對於個別用途沒有侵犯權利、保密、準確、合適、完正、充分、有用或可靠之程度或該等資訊及資料內不含電腦病毒作出保證或陳述。
+            </p>
+
+            <p class="coi-p">
+                <span class='coi-subtitle'>投資產品</span><br />
+                投資涉及風險。投資產品價格可以而且確實會有波動，任何個別投資產品的價格既可升亦可跌，甚至可以變成毫無價值。買賣投資產品的固有風險是可能會招致虧損而非獲得利潤。
+            </p>
+
+            <p class="coi-p">
+                <span class='coi-subtitle'>商標擁有權</span><br />
+                國泰金融控股股份有限公司及其他人士擁有本網站顯示之商標、標誌及服務標誌。未經該等人士
+                之書面批准，用戶概不得使用。
+                <br /><br />
+                本網站所載之內容包括但不限於文稿、圖像、連結及聲響均受版權保護。未經國泰金融控股股份有限公司事前書面批准，不得將該等資料之任何部份予以修改、複製、儲存於檢索系統、傳送（以任何形式或途徑）、製作副本、發佈、重複使用、重貼、還原、解構、作為創作材料或用於其他商業或公開用途。
+            </p>
+        </div>
+    </div>
+</div><!--/.component-oversea-info-->

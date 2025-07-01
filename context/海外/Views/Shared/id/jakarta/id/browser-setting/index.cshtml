@@ -1,0 +1,64 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "Browser Suggestions";
+    ViewBag.PageDescription = "In order to provide you with the best possible online experience, we recommend upgrading to the latest version of Internet Explorer or installing another browser immediately.";
+}
+
+
+@section Scripts {}
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/browser-setting-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/browser-setting.jpg")' alt='@ViewBag.nav_important_notice'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_browser_setting</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_browser_setting</h1>
+        </div>
+    </div>
+</div>
+
+<div class='component-oversea-info'>
+    <div class="coi-inner">
+        <h1 class="coi-title">@ViewBag.nav_browser_setting</h1>
+        <div class="coi-content">
+            <p class="coi-p">
+                Kepada pelanggan yang terhormat,
+                <br />
+                Untuk memberikan anda pengalaman online yang terbaik, situs website kami tidak akan lagi mendukung Internet Explorer 11 atau lebih rendah.
+                <br />
+                Catatan: Pada tanggal 15 Juni 2022, aplikasi desktop Internet Explorer 11 tidak dapat digunakan lagi.ເຮົາແນະນຳໃຫ້ຕິດຕັ້ງ browser ອື່ນໂດຍທັນທີ. Didukung pada versi Windows 10 tertentu. Silakan merujuk ke "<a class='coi-link' href='https://docs.microsoft.com/en-us/lifecycle/announcements/internet-explorer-11-end-of-support?rtc=1' target="_blank" rel='noopener nofollow'>Pemberitahuan Dukungan Microsoft Dihentikan</a>" untuk informasi lebih lanjut.
+
+            </p>
+
+            <p class="coi-p">
+                Kami menyarankan untuk segera menginstal Peramban atau browser lain.<br />
+                <ul class="coi-ul">
+                    <li class="coi-li">
+                        <a class='coi-link' href="https://www.google.com.tw/intl/en_us/chrome/" target="_blank" rel='noopener nofollow'>
+                            Klik di sini untuk mengunduh Google Chrome
+                        </a>
+                    </li>
+                    <li class="coi-li">
+                        <a class='coi-link' href="https://www.microsoft.com/en-us/edge" target="_blank" rel='noopener nofollow'>
+                            Klik di sini untuk mengunduh Edge
+                        </a>
+                    </li>
+                    <li class="coi-li">
+                        <a class='coi-link' href="https://www.mozilla.org/en-US/firefox/new/" target="_blank" rel='noopener nofollow'>
+                            Klik di sini untuk mengunduh Firefox
+                        </a>
+                    </li>
+                </ul>
+            </p>
+
+
+        </div>
+
+    </div>
+</div><!--/.component-oversea-info-->

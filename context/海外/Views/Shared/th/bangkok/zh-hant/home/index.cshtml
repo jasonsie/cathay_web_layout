@@ -1,0 +1,167 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "";
+    ViewBag.PageDescription = "";
+}
+
+@section Scripts {
+
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/jquery.scrollbar.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/slick.min.js")"></script>
+
+
+    <script>
+        var homeCard = homeCard || {};
+        homeCard.prototype = {
+            sameHeight: function () {
+
+                let window_w = $(window).width();
+                let max_h = 0;
+                let scope = $('.component-oversea-services');
+                $('.cos-item-description', scope).css('min-height', 0);
+                if (window_w >= 768) {
+                    $('.cos-item', scope).each(function () {
+                        let h = $('.cos-item-description', $(this)).height();
+                        if (h > max_h) {
+                            max_h = h;
+                        }
+                    })
+                    $('.cos-item-description', scope).height(max_h);
+                } else {
+                    $('.cos-item-description', scope).css('height', 'auto');
+                }
+            },
+            addEventListener: function () {
+                let o = this;
+                $(window).on('resize.homeCard', function () {
+                    o.sameHeight();
+                }).trigger('resize.homeCard');
+            },
+            init: function () {
+                this.addEventListener();
+            }
+        }
+    </script>
+
+    <script>
+        $(function () {
+
+            var myHomeCard = homeCard.prototype;
+           // myHomeCard.init();
+
+
+            //
+            $(window).resize(function () {
+
+                let window_w = $(window).width();
+                let offset_x;
+                let content_w;
+                if (window_w > 991) {
+                    offset_x = $('.cok-inner').offset().left;
+                    content_w = $('.cok-content').width();
+                    max_w = window_w - content_w - offset_x;
+                } else {
+                    offset_x = 0;
+                    content_w = 0;
+                    max_w = window_w;
+                }
+                $('.cok-figure-wrap').css('width', max_w);
+                $('.cok-figure-wrap').css('flex-basis', max_w);
+                $('.cok-figure-wrap').css('max-width', max_w);
+                $('.cok-figure-wrap').css('left', content_w + offset_x);
+
+            }).trigger('resize');
+
+            $(".cok-figure-slider").slick({
+                infinite: false,
+                slidesToShow: 1,
+                dots: false
+            });
+
+            ////////////////////////////
+
+            //$('.con-list', $(this)).scrollbar();
+        })
+    </script>
+
+    <script>
+        //fraud modal
+        $(function () {
+            let myFraudModal = fraudModal.prototype;
+            myFraudModal.init($('.component-oversea-modal--fraud'));
+            myFraudModal.show();
+        })
+    </script>
+}
+
+<div class='component-oversea-kv'>
+    <div class="cok-figure-wrap">
+        <div class="cok-figure-slider">
+            <div class="cok-figure-item">
+                <figure class='cok-figure'>
+                    <picture>
+                        <source media='(min-width: 992px)'
+                                srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv/bg-lg.jpg")' />
+                        <img class='cok-img' src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv/bg.jpg")' alt='@ViewBag.site_name'>
+                    </picture>
+                    <figcaption hidden>@ViewBag.site_name</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+
+    <div class="cok-inner">
+        <div class="cok-content">
+            @if (ViewBag.lang == "zh-hant")
+            {
+                <h1 class='cok-title'>
+                    <span class='cok-title--company'>國泰世華銀行</span>
+                    <span class='cok-title--slogan'>值得您<br />信賴的夥伴</span>
+                </h1>
+            }
+            else
+            {
+                <h1 class='cok-title'>
+                    <span class='cok-title--company'>Cathay United Bank</span>
+                    <span class='cok-title--slogan'>值得您<br />信賴的夥伴</span>
+                </h1>
+            }
+
+        </div>
+    </div>
+</div>
+<div class='component-oversea-services component-oversea-services--33  component-oversea-services--home'>
+    <div class="cos-inner">
+
+        @if (ViewBag.lang == "zh-hant")
+        {
+
+        }
+        else
+        {
+
+        }
+        @if (ViewBag.lang == "zh-hant")
+        {
+            <h2 class='cos-title'>我們的服務</h2>
+            <p class='cos-description'>曼谷代表人辦事處以市場研究、法規更新、同業拜訪及拓展台灣與泰國間投資管道為主，與泰國央行、泰國銀行協會、促進投資委員會、當地台商會與泰國國際商會均保持良好互動關係，以期能提升本行在泰國知名度。另外，辦事處亦多次與泰國四大銀行合作，協助本行拓展當地客群及潛在業務機會。</p>
+            <p class='cos-description'>
+                <strong>國泰金控暨旗下子公司國泰人壽、國泰世華銀行、國泰產險、國泰證券、</strong>
+                國泰投信等，在台灣及世界各國提供全面性且多元化的金融服務與解決方案，與國泰航空有限公司暨其關係企業互不隷屬亦非關係企業。
+            </p>
+
+        }
+        else
+        {
+            <h2 class='cos-title'>Our Services</h2>
+            <p class='cos-description'>
+                Cathay United Bank established our latest Representative Office in Jakarta in May 2015, with the mission of growing together with the Indonesia economy.
+            </p>
+            <p class='cos-description'>
+                <strong>Cathay Financial Holdings (Cathay FHC) and its subsidiaries including Cathay Life Insurance, Cathay United Bank, Cathay Century Insurance, Cathay Securities, and Cathay Securities Investment Trust </strong>
+                provide comprehensive and diversified financial services and solutions in Taiwan and around the world. We are independent from and not affiliated with Cathay Pacific Airways Limited and its subsidiaries.
+            </p>
+        }
+    </div>
+</div>

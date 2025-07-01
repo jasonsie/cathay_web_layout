@@ -1,0 +1,121 @@
+﻿@model IndexViewModel
+
+
+@if (ViewBag.lang == "en")
+{
+ViewBag.PageTitle = "Contact Us";
+ViewBag.PageDescription = "+852 2877 5488 (Please call during business hours, Monday to Friday 9:00 – 17:00 HKT)";
+}
+@section Scripts {}
+
+    <div class='component-oversea-kv-short'>
+        <figure class='coks-figure'>
+            <picture>
+                <source media='(min-width: 768px)'
+                        data-srcset='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/contact-lg.jpg")' />
+                <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/contact.jpg")' alt='@ViewBag.nav_contact'>
+            </picture>
+            <figcaption hidden>@ViewBag.nav_contact</figcaption>
+        </figure>
+        <div class="coks-inner">
+            <div class="coks-content">
+                <h1 class='coks-title'>@ViewBag.nav_contact</h1>
+            </div>
+        </div>
+    </div>
+
+
+    <div class='component-oversea-info'>
+        <div class='coi-inner'>
+            <h2 class='coi-title'>Service Address</h2>
+            <div class='coi-content'>
+                <ul class="coi-list">
+                    <li class="coi-item">
+                        <span class='coi-item-label'>TEL:</span>
+                        <span class="coi-item-content">+852 2877 5488 (Please call during business hours, Monday to Friday 9:00 – 17:00 HKT)</span>
+                    </li>
+                    <li class="coi-item">
+                        <span class='coi-item-label'>Address:</span>
+                        <span class="coi-item-content">10/F, Lee Garden Three, 1 Sunning Road, Causeway Bay, Hong Kong</span>
+                    </li>
+ 
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class='component-oversea-table component-bg--white'>
+        <div class='cot-inner'>
+            <h2 class='cot-title'>Contact List</h2>
+            
+            <div class="cot-table cot-table--zebra cot--contact">
+                <div class="cot-tr cot-tr--head">
+                    <div class="cot-td">Service</div>
+                    <div class="cot-td cot-td--full">Phone Number</div>
+                </div>
+                @*<div class="cot-tr">
+                    <div class="cot-td"><span class="ct-td-label">Service</span><span class="ct-td-content">Hong Kong E-Banking (HKEB)</span></div>
+                    <div class="cot-td"><span class="ct-td-label">Phone Number</span><span class="ct-td-content">+852 2877 5488 ext. 22</span></div>
+                    <div class="cot-td"><span class="ct-td-label"></span><span class="ct-td-content">All Matters related to HKEB</span></div>
+                </div>*@
+                <div class="cot-tr">
+                    <div class="cot-td"><span class="ct-td-label">Service</span><span class="ct-td-content">Global MyB2B (GMB)</span></div>
+                    <div class="cot-td"><span class="ct-td-label">Phone Number</span><span class="ct-td-content">+852 2877 5488 ext. 8</span></div>
+                    <div class="cot-td"><span class="ct-td-label"></span><span class="ct-td-content">All matters related to GMB</span></div>
+                </div>
+                <div class="cot-tr">
+                    <div class="cot-td"><span class="ct-td-label">Service</span><span class="ct-td-content">Remittance</span></div>
+                    <div class="cot-td"><span class="ct-td-label">Phone Number</span><span class="ct-td-content">+852 2877 5488 ext. 21</span></div>
+                    <div class="cot-td"><span class="ct-td-label"></span><span class="ct-td-content">Inward / outward remittance</span></div>
+                </div>
+                <div class="cot-tr">
+                    <div class="cot-td">
+                        <span class="ct-td-label">Service</span><span class="ct-td-content">
+                            Account Opening / Deposit/
+                            Consultation about deposits
+                        </span>
+                    </div>
+                    <div class="cot-td"><span class="ct-td-label">Phone Number</span><span class="ct-td-content">+852 2877 5488 ext. 22</span></div>
+                    <div class="cot-td"><span class="ct-td-label"></span><span class="ct-td-content">Account opening / Deposits / Consultation about deposits</span></div>
+                </div>
+                <div class="cot-tr">
+                    <div class="cot-td"><span class="ct-td-label">Service</span><span class="ct-td-content">Private Banking</span></div>
+                    <div class="cot-td"><span class="ct-td-label">Phone Number</span><span class="ct-td-content">+852 2877 5488 ext. 23</span></div>
+                    <div class="cot-td"><span class="ct-td-label"></span><span class="ct-td-content">Wealth management / Investment consultation</span></div>
+                </div>
+                <div class="cot-tr">
+                    <div class="cot-td"><span class="ct-td-label">Service</span><span class="ct-td-content">Corporate Banking<br />Customer Services</span></div>
+                    <div class="cot-td"><span class="ct-td-label">Phone Number</span><span class="ct-td-content">+852 2877 5488 ext. 24</span></div>
+                    <div class="cot-td"><span class="ct-td-label"></span><span class="ct-td-content">Corporate Banking Enquiry<br />corp.banking.services@hk.cathaybk.com</span></div>
+                </div>
+                <div class="cot-tr">
+                    <div class="cot-td"><span class="ct-td-label">Service</span><span class="ct-td-content">Financial Products</span></div>
+                    <div class="cot-td"><span class="ct-td-label">Phone Number</span><span class="ct-td-content">+852 2596 7094</span></div>
+                    <div class="cot-td"><span class="ct-td-label"></span><span class="ct-td-content">Financial product marketing</span></div>
+                </div>
+                <div class="cot-tr">
+                    <div class="cot-td"><span class="ct-td-label">Service</span><span class="ct-td-content">Trade Finance</span></div>
+                    <div class="cot-td"><span class="ct-td-label">Phone Number</span><span class="ct-td-content">+852 2596 7330</span></div>
+                    <div class="cot-td"><span class="ct-td-label"></span><span class="ct-td-content">Operations concerning trade finance</span></div>
+                </div>
+                <div class="cot-tr">
+                    <div class="cot-td"><span class="ct-td-label">Service</span><span class="ct-td-content">Settlement of Financial Products</span></div>
+                    <div class="cot-td"><span class="ct-td-label">Phone Number</span><span class="ct-td-content">+852 2596 7390</span></div>
+                    <div class="cot-td"><span class="ct-td-label"></span><span class="ct-td-content">Handling settlement of financial products</span></div>
+                </div>
+                <div class="cot-tr">
+                    <div class="cot-td"><span class="ct-td-label">Service</span><span class="ct-td-content">Complaint Handling Officer</span></div>
+                    <div class="cot-td"><span class="ct-td-label">Phone Number</span><span class="ct-td-content">+852 3921 7317</span></div>
+                    <div class="cot-td"><span class="ct-td-label"></span><span class="ct-td-content">complaint@hk.cathaybk.com</span></div>
+                </div>
+                <div class="cot-tr">
+                    <div class="cot-td"><span class="ct-td-label">Service</span><span class="ct-td-content">Data Protection Officer</span></div>
+                    <div class="cot-td"><span class="ct-td-label">Phone Number</span><span class="ct-td-content"></span></div>
+                    <div class="cot-td"><span class="ct-td-label"></span><span class="ct-td-content">Data enquiry request<br />dp.enquiry@hk.cathaybk.com</span></div>
+                </div>
+            </div>
+
+        </div>
+    </div>

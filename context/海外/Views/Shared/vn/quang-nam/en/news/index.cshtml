@@ -1,0 +1,64 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = @ViewBag.nav_news;
+}
+
+@if (ViewBag.lang == "zh-hant")
+{
+    ViewBag.PageDescription = "";
+}
+else
+{
+    ViewBag.PageDescription = "";
+}
+
+@section Scripts {}
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news.jpg")' alt='@ViewBag.nav_news'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_news</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_news</h1>
+        </div>
+    </div>
+</div>
+
+<!-- newslist -->
+<div class="component-newslist">
+    <div class="component-newslist-inner">
+        <div class="component-newslist-row">
+            <div class="component-newslist-col">
+                <a class="component-newsitem" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/Notice-of-Relocation-and-New-Name/")">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2022-04-01</div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">Notice of Relocation and New Name</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div><!--/.component-newslist-->
+
+
+@if (ViewBag.id != null)
+{
+
+
+}
+
+@if (ViewBag.id == null)
+{
+
+
+}

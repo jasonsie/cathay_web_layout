@@ -1,0 +1,82 @@
+﻿@model IndexViewModel
+
+@if (ViewBag.lang == "zh-hant")
+{
+    ViewBag.PageTitle = "財務揭露";
+    ViewBag.PageDescription = "";
+}
+else
+{
+    ViewBag.PageTitle = "Financial Disclosure";
+    ViewBag.PageDescription = "";
+}
+@section Scripts {
+    <script>
+    var country = "@ViewBag.country_url";
+    var city = "@ViewBag.city_url";
+    var lang = "zh-hant";
+    var branchId = "614";
+    </script>
+    <script src="@Url.Content("~/OVSWS/Content/js/backendSystem/Financial.js")"></script>
+}
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/financial-disclosure-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/financial-disclosure.jpg")' alt='@ViewBag.nav_financial_disclosure'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_financial_disclosure</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_financial_disclosure</h1>
+        </div>
+    </div>
+</div>
+
+<div class='component-oversea-list'>
+    <div class="col-inner">
+
+        <div class="col-list-wrap">
+            <ul class='col-list'>
+                @if (ViewBag.lang == "zh-hant")
+                {
+                    <li class='col-item'>
+                        <span class='col-item-date'>2024.09.30</span>
+                        <span class='col-item-title'>2024年度第三季資產負債表</span>
+                        <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/PBS 3Q 2024.pdf")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                    </li>
+                    <li class='col-item'>
+                        <span class='col-item-date'>2024.06.30</span>
+                        <span class='col-item-title'>2024年度第二季資產負債表</span>
+                        <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/PBS 2Q 2024.pdf")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                    </li>
+                    <li class='col-item'>
+                        <span class='col-item-date'>2024.03.31</span>
+                        <span class='col-item-title'>2024年度第一季資產負債表</span>
+                        <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/PBS 1Q 2024.pdf")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                    </li>
+
+                }
+                else
+                {
+                    <li class='col-item'>
+                        <span class='col-item-date'>2024.06.30</span>
+                        <span class='col-item-title'>Published Balance Sheet 2Q 2024</span>
+                        <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/PBS 2Q 2024.pdf")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                    </li>
+                    <li class='col-item'>
+                        <span class='col-item-date'>2024.03.31</span>
+                        <span class='col-item-title'>Published Balance Sheet 1Q 2024</span>
+                        <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/financial-disclosure/PBS 1Q 2024.pdf")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                    </li>
+
+                }
+            </ul>
+        </div>
+
+    </div>
+</div>

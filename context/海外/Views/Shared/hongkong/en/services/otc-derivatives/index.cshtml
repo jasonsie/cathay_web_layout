@@ -1,0 +1,168 @@
+﻿@model IndexViewModel
+
+
+@if (ViewBag.lang == "zh-hant")
+{
+    ViewBag.PageTitle = "場外交易衍生工具";
+    ViewBag.PageDescription = "國泰世華商業銀行香港分行擁有具備豐富國際金融實務經驗的專業團隊，密切掌握市場及配合企業營運狀況，致力提供專業、精準的避險策略，以及最優質服務。";
+}
+else
+{
+    ViewBag.PageTitle = "OTC Derivatives";
+    ViewBag.PageDescription = "We have a professional team with extensive experience in international financial practices. The team closely monitors the market situation to offer customers professional and accurate hedging strategies in line with the corporate business operations and is committed to provide the best services.";
+}
+@section Scripts {
+    <script>
+        var serviceCard = serviceCard || {};
+        serviceCard.prototype = {
+            sameHeight: function () {
+                console.log('sah');
+                let window_w = $(window).width();
+                let max_h = 0;
+                let scope = $('.component-oversea-services-card');
+                $('.cosc-item-content', scope).css('min-height', 0);
+                $('.cosc-item-content', scope).css('height', 'auto');
+                if (window_w >= 768) {
+                    $('.cosc-item', scope).each(function () {
+                        let h = $('.cosc-item-content', $(this)).height();
+                        if (h > max_h) {
+                            max_h = h;
+                        }
+                    })
+                    $('.cosc-item-content', scope).height(max_h);
+                } else {
+                    $('.cosc-item-content', scope).css('height', 'auto');
+                }
+            },
+            addEventListener: function () {
+                let o = this;
+                $(window).on('resize.serviceCard', function () {
+                    o.sameHeight();
+                }).trigger('resize.serviceCard');
+            },
+            init: function () {
+                this.addEventListener();
+            }
+        }
+    </script>
+    <script>
+        $(function () {
+            var myServiceCard = serviceCard.prototype;
+            myServiceCard.init();
+
+            var myFaq = faq.prototype;
+            myFaq.init();
+            //  myFaq.getData('depository-remittance');
+            // myFaq.getData('account-opening');
+            // myFaq.getData('depository-remittance');
+            // myFaq.getData('corporate-financing');
+            // myFaq.getData('online-banking');
+            // myFaq.getData('information-security');
+            myFaq.getData('derivatives');
+        })
+    </script>
+}
+
+
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/otc-derivatives-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/otc-derivatives.jpg")' alt='@ViewBag.nav_services_financial_derivatives'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_services_financial_derivatives</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_services_financial_derivatives</h1>
+        </div>
+    </div>
+</div>
+
+
+@if (ViewBag.lang == "zh-hant")
+{
+}
+else
+{
+    <div class="component-oversea-services-card component-oversea-services-card--33">
+        <div class="cosc-inner">
+            <h2 class="cosc-title">@ViewBag.services_title</h2>
+            <ul class="cosc-list">
+                <li class="cosc-item">
+                    <figure class="cosc-item-figure">
+                        <picture>
+                            <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/hongkong/services-card/otc-derivatives/fx-forward.jpg")" alt="FX Forward">
+
+                        </picture>
+                        <figcaption hidden="">FX Forward</figcaption>
+                    </figure>
+                    <div class="cosc-item-content">
+                        <h3 class="cosc-item-title">FX Forward</h3>
+                        <p class="cosc-item-description">
+                            This shall refer to a FX transaction of which settlement date is beyond two business days after the transaction date (T+2) .
+                            A customer may establish an agreement with CUB to settle in the agreed amount, currency and exchange rate on/during a designated date/period in the future. The purpose for a FX forward transaction is primarily for locking in the exchange rate cost for FX risk aversion.
+                        </p>
+                    </div>
+                </li>
+                <li class="cosc-item">
+                    <figure class="cosc-item-figure">
+                        <picture>
+                            <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/hongkong/services-card/otc-derivatives/fx-swap.jpg")" alt="FX Swap">
+                        </picture>
+                        <figcaption hidden="">FX Swap</figcaption>
+                    </figure>
+                    <div class="cosc-item-content">
+                        <h3 class="cosc-item-title">FX Swap</h3>
+                        <p class="cosc-item-description">The purpose for a FX swap transaction is primarily for fund allocation, which shall mean a customer simultaneously books a FX spot (or FX forward) transaction and a FX forward transaction of the same sum but in the reverse direction.</p>
+                    </div>
+                </li>
+                <li class="cosc-item">
+                    <figure class="cosc-item-figure">
+                        <picture>
+                            <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/hongkong/services-card/otc-derivatives/fx-interest-rate-option.jpg")" alt="FX Option">
+                        </picture>
+                        <figcaption hidden="">FX/Interest Rate Option</figcaption>
+                    </figure>
+                    <div class="cosc-item-content">
+                        <h3 class="cosc-item-title">FX/Interest Rate Option</h3>
+                        <p class="cosc-item-description">
+                            For an option contract, the buyer has the right to ask the option seller to buy/sell a specific amount of underlying assets based on the agreed strike price on a designated date in the future. Meanwhile, the buyer needs to pay the premium to the option seller upon signing the contract.
+                        </p>
+
+                    </div>
+                </li>
+                <li class="cosc-item">
+                    <figure class="cosc-item-figure">
+                        <picture>
+                            <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/hongkong/services-card/otc-derivatives/interest-rate-swap.jpg")" alt="Interest Rate Swap (" IRS")">
+                        </picture>
+                        <figcaption hidden="">Interest Rate Swap ("IRS")</figcaption>
+                    </figure>
+                    <div class="cosc-item-content">
+                        <h3 class="cosc-item-title">Interest Rate Swap ("IRS")</h3>
+                        <p class="cosc-item-description">
+                            Both parties swap interest rates during the term of the swap agreement based on the agreed currency, amount, and time period. A company may use IRS to exchange a fixed interest rate for a floating interest rate or exchange a floating interest rate for a fixed interest rate to hedge interest rate risks for the company’s assets and liabilities.
+                        </p>
+                    </div>
+                </li>
+                <li class="cosc-item">
+                    <figure class="cosc-item-figure">
+                        <picture>
+                            <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/hongkong/services-card/otc-derivatives/cross-currency-swap.jpg")" alt="Cross Currency Swap (" CCS")">
+                        </picture>
+                        <figcaption hidden="">Cross Currency Swap ("CCS")</figcaption>
+                    </figure>
+                    <div class="cosc-item-content">
+                        <h3 class="cosc-item-title">Cross Currency Swap ("CCS")</h3>
+                        <p class="cosc-item-description">This shall refer to a transaction that both trading parties agree to exchange two different  currencies at the beginning of the agreement, exchange the interests of the currencies during the term of the agreement, and then exchange the currencies back at the end of the agreement. This is an instrument for companies to hedge the foreign exchange rate and interest rate risks.   </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+}
+

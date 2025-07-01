@@ -1,0 +1,256 @@
+@{
+	ViewData["PageTitle"] = "កម្មវិធីប្ដូររង្វាន់";
+	ViewData["PageDescription"] = "ទទួលCUBC$បន្ថែម ជាមួយនឹងការទិញទំនិញនឹង ម៉ាស៊ីនឆូតកាត នៅ ភោជនីយដ្ឋាន ផ្សារទំនើប នឹង ស្ថានីយ៍ប្រេងឥណ្ធនៈ ក្នុងព្រះរាជាណាចក្រកម្ពុជា";
+}
+
+
+<!-- Page START -->
+<main class="mastbody">
+	<!--
+		កម្មវិធីប្ដូររង្វាន់
+	-->
+	<div class="topkv kv  kv--txt-left">
+		<div class="kv-bg">
+			<div class="kv-bg-inner">
+				<figure class="kv-bg-img">
+					<picture>
+						<source media="(min-width:769px)" srcset="/assets/img/topkv/personal-cards.jpg" />
+						<img srcset="/assets/img/topkv/personal-cards-mb.jpg">
+					</picture>
+				</figure>
+			</div>
+		</div>
+		<div class="kv-cont">
+			<div class="kv-cont-inner">
+				<h2 class="display-1  fw-bold lh-xs">ប័ណ្ណបុគ្គល</h2>
+			</div>
+		</div>
+	</div>
+
+	<!-- Breadcrumb  (lays on top of .topkv if places right after it) -->
+	<nav class="breadcrumb-nav text-white" aria-label="breadcrumb">
+		<div class="fluid">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]"><span>ទំព័រដើម</span><i class="ico-ui-home"></i></a></li>
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]personal/">សេវាកម្មធនាគារផ្ទាល់ខ្លួន</a></li>
+				<li class="breadcrumb-item active" aria-current="page">កម្មវិធីប្ដូររង្វាន់</li>
+			</ol>
+		</div>
+	</nav>
+
+	<!-- Menu -->
+	<nav class="tabmenu    d-none d-sm-block">
+		<div class="tabmenu-inner">
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/credit-cards/">
+				<span class="tabmenu-btn-txt">ប័ណ្ណឥណទាន</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/debit-cards/">
+				<span class="tabmenu-btn-txt">ប័ណ្ណឥណពន្ធ</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/card-promotions/">
+				<span class="tabmenu-btn-txt">ប័ណ្ណប្រូម៉្រូសិន</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn active" href="@ViewData["siteLangUrl"]personal/rewards-program/">
+				<span class="tabmenu-btn-txt">កម្មវិធីសន្សំពិន្ទុ</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/cubc-exclusive/">
+				<span class="tabmenu-btn-txt">
+					ទទួលយកបទពិសោធជាមួយ CashPoint
+				</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/apply-online?Channel=Website">
+				<span class="tabmenu-btn-txt">ស្នើសុំប័ណ្ណឥណទាន</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+		</div>
+	</nav>
+	<!-- Mobile dropdown -->
+	<div class="tabmenu-dropdown dropdown    d-block d-sm-none">
+		<a href="javascript:;" class="btn btn-sm btn-block  dropdown-toggle" data-toggle="dropdown">
+			<span class="text-truncate d-inline-block">កម្មវិធីប្ដូររង្វាន់</span>
+		</a>
+		<div class="dropdown-menu">
+			<span class="dropdown-item disabled">-- Select page --</span>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/credit-cards/">កាតឥណទាន</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/debit-cards/">កាតឥណពន្ធ</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/card-promotions/">កាតប្រូម៉ូសិន</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/rewards-program/">កម្មវិធីប្ដូររង្វាន់</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/cubc-exclusive/">ទទួលយកបទពិសោធជាមួយ CashPoint</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/apply-online?Channel=Website">ស្នើសុំប័ណ្ណឥណទាន</a>
+		</div>
+	</div>
+
+
+
+	<!--
+		កម្មវិធីប្ដូររង្វាន់ - Detail
+	-->
+	<section class="fluid overflow-hidden">
+
+		<div class="py-page"></div>
+
+		<!-- Page heading -->
+		<header class="compact  mb-5  text-center">
+			<h1 class="display-3 h1-mb  mb-3  text-black fw-bold">
+				កម្មវិធីសន្សំពិន្ទុ
+			</h1>
+		</header>
+
+
+		<!-- Section heading -->
+		<h2 class="h1 h2-mb  mb-4  text-black fw-bold text-center lh-sm">
+			របៀបនៃការសន្សំពិន្ទុ
+		</h2>
+
+
+		<!-- Features -->
+		<section class="compact px-xl-4">
+			<!-- Graph icon list #1  (3 in a row) -->
+			<ul class="row  justify-content-center  mb-n4">
+
+				<!-- Graph item -->
+				<li class="col-12 col-md-4  mb-4  px-md-1 px-xl-4   d-flex flex-md-column align-items-md-center ie11fix">
+					<figure class="graph  mx-3 mx-md-0  flex-shrink-0  mb-md-3">
+						<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/cubc-reward.svg">
+					</figure>
+					<div class="text-md-center">
+						<h5 class="h3 h3-mb  mb-2 mb-md-3  text-dark fw-bolder lh-sm">
+							CashPoint
+						</h5>
+						<p>
+							រាល់ការចំណាយទទួលបាន<br />
+							ការគុណពិន្ទុ ០,៥​%
+						</p>
+					</div>
+				</li>
+
+				<!-- Graph item -->
+				<li class="col-12 col-md-4  mb-4  px-md-1 px-xl-4   d-flex flex-md-column align-items-md-center ie11fix">
+					<figure class="graph  mx-3 mx-md-0  flex-shrink-0  mb-md-3">
+						<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/cubc-10x.svg">
+					</figure>
+					<div class="text-md-center">
+						<h5 class="h3 h3-mb  mb-2 mb-md-3  text-dark fw-bolder lh-sm">
+							Selected Merchant
+						</h5>
+						<p>
+							ទទួលបានការគុណពិន្ទុរហូតដល់ ១,៥%​​ ទៅលើប្រភេទហាងដែលបានកំណត់
+						</p>
+					</div>
+				</li>
+
+				<!-- Graph item -->
+				<li class="col-12 col-md-4  mb-4  px-md-1 px-xl-4   d-flex flex-md-column align-items-md-center ie11fix">
+					<figure class="graph  mx-3 mx-md-0  flex-shrink-0  mb-md-3">
+						<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/cubc-welcome.svg">
+					</figure>
+					<div class="text-md-center">
+						<h5 class="h3 h3-mb  mb-2 mb-md-3  text-dark fw-bolder lh-sm">Welcome Rewards</h5>
+						<p>
+							ទទួលបានរហូតដល់ ១០​ CashPoint ស្មើ ១០​ ដុល្លារ​ នៅពេលស្នើសុំប័ណ្ណឥណទាន Gold និង Platinum
+						</p>
+					</div>
+				</li>
+			</ul>
+
+			<div class="py-section"></div>
+
+			<!-- Info box -->
+			<h3 class="h3 h3-mb  p-3  bg-green text-white text-center fw-bolder">
+				ការគុណពិន្ទុ​​ CashPoint បន្ថែម
+			</h3>
+
+			<div class="py-4 px-2 px-lg-4  border border-green text-center">
+				<p class="mb-3">
+					បង្កើនការគុណ​ពិន្ទុ​​ CashPoint របស់អ្នកដោយធ្វើការទូទាត់ប្រាក់ នឹងម៉ាស៊ីនឆូតប័ណ្ណ នៅតាម​ភោជនីយដ្ឋាន ហាងកាហ្វេ ផ្សារទំនើប និងស្ថានីយ៍ប្រេងឥន្ធនៈដែលនៅក្នុងស្រុក។
+				</p>
+
+				<!-- Graph icon list #3  (3 in a row) -->
+				<ul class="row  justify-content-center  mb-n4">
+
+					<!-- Graph item -->
+					<li class="col-4  mb-4  px-1 px-xl-4   d-flex flex-column align-items-center ie11fix">
+						<figure class="graph-flat  mx-3 mx-0  flex-shrink-0  mb-3">
+							<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/cubc-boost-2x.svg">
+						</figure>
+						<div class="text-center">
+							<h5 class="h4 h4-mb  text-green-dark fw-bold lh-sm">Classic <nobr>& Gold</nobr></h5>
+						</div>
+					</li>
+
+					<!-- Graph item -->
+					<li class="col-4  mb-4  px-1 px-xl-4   d-flex flex-column align-items-center ie11fix">
+						<figure class="graph-flat  mx-3 mx-0  flex-shrink-0  mb-3">
+							<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/cubc-boost-3x.svg">
+						</figure>
+						<div class="text-center">
+							<h5 class="h4 h4-mb  text-green-dark fw-bold lh-sm">Platinum</h5>
+						</div>
+					</li>
+
+					<!-- Graph item -->
+					<li class="col-4  mb-4  px-1 px-xl-4   d-flex flex-column align-items-center ie11fix">
+						<figure class="graph-flat  mx-3 mx-0  flex-shrink-0  mb-3">
+							<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/cubc-boost-5x.svg">
+						</figure>
+						<div class="text-center">
+							<h5 class="h4 h4-mb  text-green-dark fw-bold lh-sm">World <nobr>& Infinite</nobr></h5>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</section>
+
+		<div class="py-page"></div>
+
+
+
+		<!-- Section heading -->
+		<h2 class="h1 h2-mb  mb-4  text-black fw-bold text-center lh-sm">Contact Us</h2>
+
+		<!-- Two-columns -->
+		<section class="row mx-sm-n2 mx-xl-n3">
+
+			<!-- Left column -->
+			<div class="col-12 col-sm-6 d-flex">
+				<div class="w-100 bg-gray-100  mx-sm-2 mx-xl-3  px-3 py-4 p-sm-4 p-lg-5">
+					<h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">
+						សម្រាប់ព័ត៌មានបន្ថែមទាក់ទងជាមួយ Rewards Program
+					</h3>
+					<p>
+						ទូរស័ព្ទទៅកាន់ផ្នែកបម្រើអតិថិជនរបស់ CUBC តាមរយៈ 023/ 069 88 55 00 ឬ ផ្ញើអ៊ីមែលទៅកាន់ <a class="text-green text-underline" href="mailto:rewards@cathaybk.com.kh">rewards@cathaybk.com.kh</a> តាមរយៈអ៊ីមែលដែលបានចុះឈ្មោះនៃប័ណ្ណ សម្រាប់ការប្តូរពិន្ទុជាសាច់ប្រាក់មកវិញ។
+					</p>
+				</div>
+			</div>
+
+			<!-- Right column -->
+			<div class="col-12 col-sm d-flex    mt-3 mt-sm-0">
+				<div class="w-100 bg-gray-100  mx-sm-2 mx-xl-3  px-3 py-4 p-sm-4 p-lg-5">
+					<h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">
+						ទទួលបានបទពិសោធថ្មីជាមួយ CashPoint
+					</h3>
+					<p>
+						ទទួលបានអត្ថប្រយោជន៍ផ្តាច់មុខច្រើនជាមួយនឹងដៃគូជាទីពេញចិត្តរបស់យើង សម្រាប់ប័ណ្ណរង្វាន់ និង CashPoint របស់អ្នក!
+					</p>
+				</div>
+			</div>
+		</section>
+
+
+
+		<div class="py-page"></div>
+
+
+		<p class="text-center"><a class="text-green text-underline" rel="noopener noreferrer" href="/file/card-promotions/[Terms and Conditions] Rewards Program 2025.pdf" target="_blank">លក្ខខណ្ឌផ្សេងៗត្រូវបានអនុវត្តន៍</a></p>
+
+
+		<div class="py-page"></div>
+	</section>
+
+</main>
+<!-- Page END -->

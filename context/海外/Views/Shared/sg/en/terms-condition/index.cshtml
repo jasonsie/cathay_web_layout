@@ -1,0 +1,137 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = @ViewBag.nav_terms_condition;
+}
+
+@if (ViewBag.lang == "zh-hant")
+{
+    ViewBag.PageDescription = "Page Desctiption";
+}
+else
+{
+    ViewBag.PageDescription = "Page Desctiption";
+}
+
+@section Scripts {}
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/sg/kv-short/terms-condition-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/sg/kv-short/terms-condition.jpg")' alt='@ViewBag.nav_terms_condition'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_terms_condition</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_terms_condition</h1>
+        </div>
+    </div>
+</div>
+
+@if (ViewBag.lang == "zh-hant")
+{
+    <div class='component-oversea-list'>
+        <div class="col-inner">
+            <div class="col-list-wrap">
+                <h2 class='col-list-title'>企業金融</h2>
+                <ul class='col-list'>
+                    <li class='col-item'>
+                        <span class='col-item-title'>一般銀行服務條款及細則</span>
+                        <a href="@Url.Content("~/OVSWS/Content/pdf/hongkong/terms-condition/corporate-financing/the-tc-general-banking-service.pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                    </li>
+                    <li class='col-item'>
+                        <span class='col-item-title'>投資服務條款及細則</span>
+                        <a href="@Url.Content("~/OVSWS/Content/pdf/hongkong/terms-condition/corporate-financing/the-tc-investment-service.pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                    </li>
+                    <li class='col-item'>
+                        <span class='col-item-title'>外匯交易條款及細則</span>
+                        <a href="@Url.Content("~/OVSWS/Content/pdf/hongkong/terms-condition/corporate-financing/the-tc-fx-transactions.pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                    </li>
+                    <li class='col-item'>
+                        <span class='col-item-title'>場外交易衍生工具交易條款及細則</span>
+                        <a href="@Url.Content("~/OVSWS/Content/pdf/hongkong/terms-condition/corporate-financing/the-tc-otc-derivatives.pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="col-list-wrap">
+                <h2 class='col-list-title'>私人銀行</h2>
+                <ul class='col-list'>
+                    <li class='col-item'>
+                        <span class='col-item-title'>一般銀行服務條款及細則</span>
+                        <a href="@Url.Content("~/OVSWS/Content/pdf/hongkong/terms-condition/private-wealth-management/the-tc-general-banking-service.pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                    </li>
+                    <li class='col-item'>
+                        <span class='col-item-title'>投資服務條款及細則</span>
+                        <a href="@Url.Content("~/OVSWS/Content/pdf/hongkong/terms-condition/private-wealth-management/the-tc-investment-service.pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                    </li>
+                    <li class='col-item'>
+                        <span class='col-item-title'>外匯交易條款及細則</span>
+                        <a href="@Url.Content("~/OVSWS/Content/pdf/hongkong/terms-condition/private-wealth-management/the-tc-fx-transactions.pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                    </li>
+                    <li class='col-item'>
+                        <span class='col-item-title'>場外交易衍生工具交易條款及細則 </span>
+                        <a href="@Url.Content("~/OVSWS/Content/pdf/hongkong/terms-condition/private-wealth-management/the-tc-otc-derivatives.pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+}
+else
+{
+    <div class='component-oversea-list'>
+        <div class="col-inner">
+            <div class="col-list-wrap">
+                <h2 class='col-list-title'>@ViewBag.nav_services_corporate_finance</h2>
+                <ul class='col-list'>
+                    <li class='col-item'>
+                        <span class='col-item-title'>T&Cs of General Banking Service</span>
+                        <a href="@Url.Content("~/OVSWS/Content/pdf/hongkong/terms-condition/corporate-financing/the-tc-general-banking-service.pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                    </li>
+                    <li class='col-item'>
+                        <span class='col-item-title'>T&Cs of Investment Service</span>
+                        <a href="@Url.Content("~/OVSWS/Content/pdf/hongkong/terms-condition/corporate-financing/the-tc-investment-service.pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                    </li>
+                    <li class='col-item'>
+                        <span class='col-item-title'>T&Cs for Fx Transactions</span>
+                        <a href="@Url.Content("~/OVSWS/Content/pdf/hongkong/terms-condition/corporate-financing/the-tc-fx-transactions.pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                    </li>
+                    <li class='col-item'>
+                        <span class='col-item-title'>T&Cs for OTC Derivatives</span>
+                        <a href="@Url.Content("~/OVSWS/Content/pdf/hongkong/terms-condition/corporate-financing/the-tc-otc-derivatives.pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="col-list-wrap">
+                <h2 class='col-list-title'>@ViewBag.nav_services_wealth_management</h2>
+                <ul class='col-list'>
+                    <li class='col-item'>
+                        <span class='col-item-title'>T&Cs of General Banking Service</span>
+                        <a href="@Url.Content("~/OVSWS/Content/pdf/hongkong/terms-condition/private-wealth-management/the-tc-general-banking-service.pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                    </li>
+                    <li class='col-item'>
+                        <span class='col-item-title'>T&Cs of Investment Service</span>
+                        <a href="@Url.Content("~/OVSWS/Content/pdf/hongkong/terms-condition/private-wealth-management/the-tc-investment-service.pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                    </li>
+                    <li class='col-item'>
+                        <span class='col-item-title'>T&Cs for Fx Transactions</span>
+                        <a href="@Url.Content("~/OVSWS/Content/pdf/hongkong/terms-condition/private-wealth-management/the-tc-fx-transactions.pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                    </li>
+                    <li class='col-item'>
+                        <span class='col-item-title'>T&Cs for OTC Derivatives</span>
+                        <a href="@Url.Content("~/OVSWS/Content/pdf/hongkong/terms-condition/private-wealth-management/the-tc-otc-derivatives.pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+}

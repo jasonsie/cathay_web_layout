@@ -1,0 +1,68 @@
+﻿<footer class='component-footer'>
+    <div class="cf-inner">
+        <div class='cf-list-wrap cf-list-wrap--cathay-group'>
+            <ul class='cf-list cf-list--border cf-list--has-bottom'>
+                <ul class='cf-icon-list'>
+                    <li class='cf-item'>
+                        <a href='#' class='cf-item-link'>
+                            <figure class='cf-item-figure'>
+                                <picture>
+                                    <img class='cf-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/common/footer/logo.svg")' width="30" alt='@ViewBag.nav_cathay_united_bank'>
+                                </picture>
+                                <figcaption hidden>@ViewBag.nav_cathay_united_bank</figcaption>
+                            </figure>
+                        </a>
+                    </li>
+                </ul>
+                @if (ViewBag.lang == "zh-hant")
+                {
+                    <ul class='cf-list'>
+                        <li class="cf-item"><a class='cf-item-link' href="https://www.cathayholdings.com/holdings/" target="_blank" rel="noopener">@ViewBag.cathay_holding_name</a></li>
+                        <li class="cf-item"><a class='cf-item-link' href="https://www.cathaybk.com.tw/cathaybk/" target="_blank" rel="noopener">@ViewBag.cathay_bank_name</a></li>
+                        <li class="cf-item"><a class='cf-item-link' href="https://www.cathaylife.com.tw/cathaylife/" target="_blank" rel="noopener">@ViewBag.cathay_life_name</a></li>
+                        <li class="cf-item"><a class='cf-item-link' href="https://www.cathay-ins.com.tw/insurance/" target="_blank" rel="noopener">@ViewBag.cathay_century_insurance_name</a></li>
+                        <li class="cf-item"><a class='cf-item-link' href="https://www.cathaysec.com.tw/" target="_blank" rel="noopener">@ViewBag.cathay_securities_corporation_name</a></li>
+                        <li class="cf-item"><a class='cf-item-link' href="https://www.cathaysite.com.tw/index.aspx" target="_blank" rel="noopener">@ViewBag.cathay_securities_investment_name</a></li>
+                        <li class="cf-item"><a class='cf-item-link' href="https://www.cathayconsult.com.tw/" target="_blank" rel="noopener">@ViewBag.cathay_securities_consulting_name</a></li>
+                    </ul>
+                }
+                else 
+                {
+                    <ul class='cf-list'>
+                        <li class="cf-item"><a class='cf-item-link' href="https://www.cathayholdings.com/en/holdings/intro/intro/about" target="_blank" rel="noopener">@ViewBag.cathay_holding_name</a></li>
+                        <li class="cf-item"><a class='cf-item-link' href="https://www.cathaybk.com.tw/en-us/cathaybk/english/about-us/about-us/company-history/" target="_blank" rel="noopener">@ViewBag.cathay_bank_name</a></li>
+                        <li class="cf-item"><a class='cf-item-link' href="https://www.cathaylife.com.tw/cathaylife/webStatics/official/english/index.html" target="_blank" rel="noopener">@ViewBag.cathay_life_name</a></li>
+                        <li class="cf-item"><a class='cf-item-link' href="https://www.cathay-ins.com.tw/INSPFWeb/english/index.html" target="_blank" rel="noopener">@ViewBag.cathay_century_insurance_name</a></li>
+                        <li class="cf-item cf-item--break"></li>
+                        <li class="cf-item cf-item--noborder"><a class='cf-item-link' href="https://www.cathaysec.com.tw/english/index.asp" target="_blank" rel="noopener">@ViewBag.cathay_securities_corporation_name</a></li>
+                        <li class="cf-item"><a class='cf-item-link' href="https://www.cathaysite.com.tw/en/company-overview.aspx" target="_blank" rel="noopener">@ViewBag.cathay_securities_investment_name</a></li>
+                        <li class="cf-item"><a class='cf-item-link' href="https://www.cathayconsult.com.tw/" target="_blank" rel="noopener">@ViewBag.cathay_securities_consulting_name</a></li>
+                    </ul>
+                }
+            </ul>
+        </div>
+        <div class='cf-list-wrap cf-list-wrap--link'>
+            <ul class='cf-icon-list'>
+                <li class='cf-item'><a href='https://www.facebook.com/cathayunitedbank' target="_blank" rel='noopener nofollow' class='cf-item-link cf-item-link--icon'><img class='cf-social-list-img lazy' width="35" data-src='@Url.Content("~/OVSWS/Content/img/common/footer/facebook.png")' alt='Facebook'></a></li>
+                <li class='cf-item'><a href='https://www.youtube.com/user/cathayunitedbank' target="_blank" rel='noopener nofollow' class='cf-item-link cf-item-link--icon'><img class='cf-social-list-img lazy' width="35" data-src='@Url.Content("~/OVSWS/Content/img/common/footer/youtube.png")' alt='Youtube'></a></li>
+                <li class='cf-item'><a href='https://tw.linkedin.com/company/cathay-united-bank-co-ltd-' target="_blank" rel='noopener nofollow' class='cf-item-link cf-item-link--icon'><img class='cf-social-list-img lazy' width="35" data-src='@Url.Content("~/OVSWS/Content/img/common/footer/linkedin.svg")' alt='Youtube'></a></li>
+
+            </ul>
+            <ul class='cf-list'>
+                        <li class='cf-item'><a href='@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"browser-setting")' target="_blank" rel="noopener" class='cf-item-link'>@ViewBag.nav_browser_setting</a></li>
+                @if (ViewBag.lang == "zh-hant") {
+                    <li class='cf-item'><a href='https://www.cathaybk.com.tw/cathaybk/about/about/customer-benefits/client-privacy/?l=f' target="_blank" rel='noopener nofollow' class='cf-item-link'>@ViewBag.nav_privacy_security</a></li>
+                }else if(ViewBag.lang == "en")
+                {
+                    <li class='cf-item'><a href='https://www.cathaybk.com.tw/en-us/cathaybk/english/disclosures/disclosures/user-privacy-policy/' target="_blank" rel='noopener nofollow' class='cf-item-link'>@ViewBag.nav_privacy_security</a></li>
+                }
+                else
+                {
+                    <li class='cf-item'><a href='https://www.cathaybk.com.tw/en-us/cathaybk/english/disclosures/disclosures/user-privacy-policy/' target="_blank" rel='noopener nofollow' class='cf-item-link'>@ViewBag.nav_privacy_security</a></li>
+                }
+
+                <li class='cf-item cf-item--copyright  cf-item--copyright-flex'><span class='cf-item-link'>&#169; @ViewBag.copyright</span></li>
+            </ul>
+        </div>
+    </div>
+</footer>

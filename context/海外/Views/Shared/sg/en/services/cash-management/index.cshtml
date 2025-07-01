@@ -1,0 +1,103 @@
+﻿@model IndexViewModel
+
+
+@{
+    ViewBag.PageTitle = "Cash Management";
+    ViewBag.PageDescription = "We provide you with convenient and comprehensive cash management products and all-rounded cash flow services for you to effectively manage your accounts payable and accounts receivable to enhance the fund utilization efficiency.";
+}
+
+@section Scripts {
+    <script>
+        var serviceCard = serviceCard || {};
+        serviceCard.prototype = {
+            sameHeight: function () {
+
+                let window_w = $(window).width();
+                let max_h = 0;
+                let scope = $('.component-oversea-services-card');
+                $('.cosc-item-content', scope).css('min-height', 0);
+                if (window_w >= 768) {
+                    $('.cosc-item', scope).each(function () {
+                        let h = $('.cosc-item-content', $(this)).height();
+                        if (h > max_h) {
+                            max_h = h;
+                        }
+                    })
+                    $('.cosc-item-content', scope).height(max_h);
+                } else {
+                    $('.cosc-item-content', scope).css('height', 'auto');
+                }
+            },
+            addEventListener: function () {
+                let o = this;
+                $(window).on('resize.homeCard', function () {
+                    o.sameHeight();
+                }).trigger('resize.homeCard');
+            },
+            init: function () {
+                this.addEventListener();
+            }
+        }
+    </script>
+
+    <script>
+        $(function () {
+
+            var myServiceCard = serviceCard.prototype;
+            myServiceCard.init();
+        })
+    </script>
+}
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/sg/kv-short/cash-management-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/sg/kv-short/cash-management.jpg")' alt='@ViewBag.nav_services_cash_management'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_services_cash_management</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_services_cash_management</h1>
+        </div>
+    </div>
+</div>
+
+
+    <div class='component-oversea-services-card'>
+        <div class="cosc-inner">
+            <h2 class='cosc-title'>@ViewBag.services_title</h2>
+
+            <ul class='cosc-list'>
+                <li class='cosc-item'>
+                    <figure class='cosc-item-figure'>
+                        <picture>
+                            <img class='cosc-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/sg/services-card/cash-management/current-account.jpg")' alt='Demand Deposit'>
+                        </picture>
+                        <figcaption hidden>Demand Deposit</figcaption>
+                    </figure>
+                    <div class='cosc-item-content'>
+                        <h3 class='cosc-item-title'>Demand Deposit</h3>
+                        <p class='cosc-item-description'>We offer demand deposits in SGD for non-Singapore residents and Singapore residents who engage in credit business with Cathay. The minimum amount for deposits is SGD 250,000, deposits in USD and other major currencies are also available.</p>
+                    </div>
+                </li>
+
+                <li class='cosc-item'>
+                    <figure class='cosc-item-figure'>
+                        <picture>
+                            <img class='cosc-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/sg/services-card/cash-management/time-deposit.jpg")' alt='Time Deposit'>
+                        </picture>
+                        <figcaption hidden>Time Deposit</figcaption>
+                    </figure>
+                    <div class='cosc-item-content'>
+                        <h3 class='cosc-item-title'>Time Deposit</h3>
+                        <p class='cosc-item-description'>Time deposit services in various currencies are subjected to different durations, amounts, and may be withdrawn with a deposit certificate at maturity.</p>
+                    </div>
+                </li>
+
+
+            </ul>
+        </div>
+    </div>

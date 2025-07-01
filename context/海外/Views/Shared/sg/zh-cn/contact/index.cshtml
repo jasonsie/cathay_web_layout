@@ -1,0 +1,48 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "联系我们";
+    ViewBag.PageDescription = "Page Desctiption";
+}
+
+@section Scripts {}
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/sg/kv-short/contact-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/sg/kv-short/contact.jpg")' alt='@ViewBag.nav_contact'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_contact</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_contact</h1>
+        </div>
+    </div>
+</div>
+
+    <div class='component-oversea-info'>
+        <div class='coi-inner'>
+            <h2 class='coi-title'>服务地址</h2>
+
+            <div class='coi-content'>
+                <ul class="coi-list">
+                    <li class="coi-item">
+                        <span class='coi-item-label'>电话：</span>
+                        <span class="coi-item-content">+65 6593 9280 (一般线)</span>
+                    </li>
+                    <li class="coi-item">
+                        <span class='coi-item-label'>地址：</span>
+                        <span class="coi-item-content">8 Marina Boulevard #13-01/03, Marina Bay Financial Centre, Singapore 018981</span>
+                    </li>
+                    <li class="coi-item">
+                        <span class='coi-item-label'>电邮：</span>
+                        <span class="coi-item-content">企业银行：sg.corporatebanking@sg.cathaybk.com</span>
+                        <span class="coi-item-content">私人银行：sg.privatebanking@sg.cathaybk.com</span>
+                        <span class="coi-item-content">一般询问：sg.enquiries@sg.cathaybk.com</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,196 @@
+﻿@model IndexViewModel
+
+
+
+@if (ViewBag.lang == "en")
+{
+    ViewBag.PageTitle = "Careers";
+    ViewBag.PageDescription = "";
+}
+else
+{
+}
+
+
+@section Scripts {
+        <script>
+            ; (function () {
+                var obs, container,
+                    events = 'scroll resize orientationchange touchmove touchstart '.replace(/\s/g, '.kv ');
+
+                function init() {
+                    container = $('.component-footer');
+                    target = $('.component-oversea-careers-info-float');
+                    if (!container[0] || typeof window.IntersectionObserver === 'undefined') { return; }
+                    obs = new IntersectionObserver(intersect);
+                    obs.observe(container[0]);
+                };
+
+                function intersect(e) {
+                    let window_w = $(window).width();
+                    if (window_w < 768) {
+
+                        if (e[0].isIntersecting) {
+                            $(window).on(events, inview);
+                            target.addClass('component-oversea-careers-info-float--static');
+                            $('.component-oversea-careers-info-corporate').removeAttr('style');
+                        } else {
+                            $(window).off(events, inview);
+                            target.removeClass('component-oversea-careers-info-float--static');
+                            $('.component-oversea-careers-info-corporate').css('padding-bottom', 47);
+                        }
+                    } else {
+                        $(window).off(events, inview);
+                        target.removeClass('component-oversea-careers-info-float--static');
+                        $('.component-oversea-careers-info-corporate').removeAttr('style');
+                    }
+                };
+
+                function inview() {
+                    var y = window.scrollY/* - container.offset().top*/;
+                    var value = Math.min(1, Math.max(0, y / container.outerHeight()));
+                };
+
+                $(init);
+            })();
+        </script>
+
+        <script>
+            var root = document.documentElement;
+            root.className += ' has-bottom-btn';
+        </script>
+}
+
+
+
+    <div class='component-oversea-kv-short component-oversea-kv-short--bg-white'>
+        <figure class='coks-figure'>
+            <picture>
+                <source media='(min-width: 768px)'
+                        srcset='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/careers-lg.jpg")' />
+                <img class='coks-img' src='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/careers.jpg")' alt='Careers'>
+            </picture>
+            <figcaption hidden>Careers</figcaption>
+        </figure>
+        <div class="coks-inner">
+            <div class="coks-content">
+                <h1 class='coks-title'>Careers</h1>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class='component-oversea-careers-info-vision component-bg--white'>
+        <div class="cociv-inner">
+            <h2 class='cociv-title'>Vision, Mission and Values</h2>
+            <figure class='cociv-figure'>
+                <picture>
+                    <img class='cociv-img' src='@Url.Content("~/OVSWS/Content/img/hongkong/careers-info-vision/vision.jpg")' width='100%' alt='Vision, Missionand Values'>
+                </picture>
+                <figcaption hidden>Vision, Missionand Values</figcaption>
+            </figure>
+            <a href='https://www.cathaybk.com.tw/cathaybk/about/about/intro/vision/' target="_blank" rel="noopener" class="cociv-btn">Learn more</a>
+        </div>
+    </div>
+
+    <div class='component-oversea-careers-info-benefit'>
+        <div class="cocib-inner">
+            <h2 class='cocib-title'>Benefits</h2>
+            <div class="cocib-card-wrap">
+                <div class="cocib-card">
+                    <figure class='cocib-card-figure'>
+                        <picture>
+                            <img class='cocib-card-img' src='@Url.Content("~/OVSWS/Content/img/hongkong/careers-info-benefit/remuneration.jpg")' alt='competitive remuneration package'>
+                        </picture>
+                        <figcaption hidden>competitive remuneration package</figcaption>
+                    </figure>
+                    <div class="cocib-card-description">
+                        We offer competitive remuneration package to attract and retain employees and reward their performances.
+                    </div>
+                </div>
+
+                <div class="cocib-card">
+                    <figure class='cocib-card-figure'>
+                        <picture>
+                            <img class='cocib-card-img' src='@Url.Content("~/OVSWS/Content/img/hongkong/careers-info-benefit/insurance.jpg")' alt='comprehensive range of group insurance coverage'>
+                        </picture>
+                        <figcaption hidden>comprehensive range of group insurance coverage</figcaption>
+                    </figure>
+                    <div class="cocib-card-description">
+                        We offer a comprehensive range of group insurance coverage including inpatient, outpatient, dental, Chinese medical benefits etc. to protect employees and their dependents; also term life insurance and personal accident insurance are offered to employees.
+                    </div>
+                </div>
+
+                <div class="cocib-card">
+                    <figure class='cocib-card-figure'>
+                        <picture>
+                            <img class='cocib-card-img' src='@Url.Content("~/OVSWS/Content/img/hongkong/careers-info-benefit/paid-leave.jpg")' alt='paid leaves'>
+                        </picture>
+                        <figcaption hidden>paid leaves</figcaption>
+                    </figure>
+                    <div class="cocib-card-description">
+                        We offer a wide variety of paid leaves including but not limited to annual leave, sick leave, birthday leave, marriage leave, maternity leave, paternity leave and volunteering leave.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='component-oversea-careers-info-learn component-bg--white'>
+        <div class="cocil-inner">
+            <h2 class='cocil-title'>Learning & Development</h2>
+            <ul class='cocil-progress'>
+                <li class='cocil-progress-li'>
+                    <div class='cocil-progress-title-wrap'>
+                        <img class='cocil-progress-img' src="@Url.Content("~/OVSWS/Content/img/hongkong/careers-info-learn/start.svg")" width='72' alt="start">
+                        <div class='cocil-progress-title'>
+                            START
+                        </div>
+                    </div>
+                    <div class="cocil-progress-description">
+                        We assist employees in acquiring required competencies and expertise with innovative learning methods and abundant learning resources.
+                    </div>
+                </li>
+
+
+                <li class='cocil-progress-li'>
+                    <div class='cocil-progress-title-wrap'>
+                        <img class='cocil-progress-img' style='padding-bottom:8px;' src="@Url.Content("~/OVSWS/Content/img/hongkong/careers-info-learn/growth.svg")" width='72' alt="growth">
+                        <div class='cocil-progress-title'>
+                            GROWTH
+                        </div>
+                    </div>
+                    <div class="cocil-progress-description">
+                        We encourage and facilitate our employees to acquire recognized professional qualifications, and will grant them an award.
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class='component-oversea-careers-info-corporate'>
+        <div class="cocic-inner">
+            <h2 class='cocic-title'>Corporate<br />Sustainability</h2>
+            <div class='cocic-description'>
+                The Bank adopts the “<a href="https://www.cathaybk.com.tw/en-us/cathaybk/english/about-us/about-us/equator-principles/" class='cocic-text-link' target="_blank" rel="noopener">Equator Principles</a>” to support environmental protection.
+            </div>
+
+            <div class='cocic-remark'>
+                <div class='cocic-figure'><img src="@Url.Content("~/OVSWS/Content/img/hongkong/careers-info-corporate/caringcompany.svg")" width='140'></div>
+                <small class='cocic-small'>
+                    The Bank was awarded as <b>Caring Company</b>, in recognition of our
+                    commitment in Caring for the Community, Caring for the Employees and Caring for the Environment over the past years.
+                </small>
+            </div>
+        </div>
+    </div>
+
+
+    <div class='component-oversea-careers-info-float'>
+        <a href='@Url.Content("~/"+@ViewBag.country_url+"/"+ViewBag.lang+"/careers/jobs/")' class='cocif-link'>
+            <img class='cocif-img' src="@Url.Content("~/OVSWS/Content/img/hongkong/careers-info-float/tools.png")" alt="">
+            <span class='cocif-text'>Job Opportunities</span>
+        </a>
+    </div>

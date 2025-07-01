@@ -1,0 +1,154 @@
+ @{
+   ViewData["PageTitle"] = "សេវាជូនដំណឹង";
+   ViewData["PageDescription"] = "ធនាគារ កាថេយូណៃធីត (ខេមបូឌា) ម.កផ្តល់ជូននូវការជូនដំណឹងតាមរយៈសារ (SMS) ដើម្បីរក្សាគណនីអោយមានសុវត្ថិភាព និងគ្រប់គ្រងហិរញ្ញវត្ថុរបស់លោកអ្នក។ សេវាកម្មជូនដំណឹងរបស់យើងខ្ញុំគឺមិនត្រឹមតែជាមធ្យោបាយងាយស្រួលមួយក្នុងការរក្សាប្រាក់របស់លោកអ្នកនោះទេ ប៉ុន្តែក៏មានប្រយោជន៍ផងដែរ ក្នុងការរម្លឹកលោកអ្នកអំពីសកម្មភាពមិនធម្មតាណាមួយនៅលើគណនីរបស់លោកអ្នក។ លោកអ្នកដឹងកាន់តែឆាប់រហ័ស នោះលោកអ្នកនឹងអាចទាក់ទងមកយើងខ្ញុំទាន់ពេលវេលាដើម្បីពិនិត្យប្រតិបត្តិការអោយបានត្រឹមត្រូវ។";
+}
+
+<!-- Page START -->
+<main class="mastbody">
+	
+	<!--
+		សេវាជូនដំណឹង
+	-->
+	<div class="topkv kv  kv--txt-left">
+		<div class="kv-bg">
+			<div class="kv-bg-inner">
+				<figure class="kv-bg-img">
+					<picture>
+						<source media="(min-width:769px)" srcset="/assets/img/topkv/personal-online.jpg" />
+						<img srcset="/assets/img/topkv/personal-online-mb.jpg">
+					</picture>
+				</figure>
+			</div>
+		</div>
+		<div class="kv-cont">
+			<div class="kv-cont-inner">
+				<h2 class="display-1  fw-bold lh-xs">ធនាគារអនឡាញ</h2>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Breadcrumb  (lays on top of .topkv if places right after it) -->
+	<nav class="breadcrumb-nav text-white" aria-label="breadcrumb">
+		<div class="fluid">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]"><span>ទំព័រដើម</span><i class="ico-ui-home"></i></a></li>
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]personal/">សេវាកម្មធនាគារផ្ទាល់ខ្លួន</a></li>
+				<li class="breadcrumb-item active" aria-current="page">សេវាជូនដំណឹង</li>
+			</ol>
+		</div>
+	</nav>
+	
+	<!-- Menu -->
+	<nav class="tabmenu    d-none d-sm-block">
+		<div class="tabmenu-inner">
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/internet-banking/">
+				<span class="tabmenu-btn-txt">ប្រពន្ធ័ធនាគារតាមអេឡិចត្រូនិក</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/mobile-banking/">
+				<span class="tabmenu-btn-txt">ធនាគារចល័ត</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/merchant-app/">
+				<span class="tabmenu-btn-txt">
+					កម្មវិធី CUBC Merchant
+				</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn active" href="@ViewData["siteLangUrl"]personal/alert-services/">
+				<span class="tabmenu-btn-txt">សេវាជូនដំណឹង</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/user-guide/">
+				<span class="tabmenu-btn-txt">របៀប​ប្រើប្រាស់​</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+		</div>
+	</nav>
+	<!-- Mobile dropdown -->
+	<div class="tabmenu-dropdown dropdown    d-block d-sm-none">
+		<a href="javascript:;" class="btn btn-sm btn-block  dropdown-toggle" data-toggle="dropdown">
+			<span class="text-truncate d-inline-block">សេវាជូនដំណឹង</span>
+		</a>
+		<div class="dropdown-menu">
+			<span class="dropdown-item disabled">-- Select page --</span>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/internet-banking/">ប្រពន្ធ័ធនាគារតាមអេឡិចត្រូនិក</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/mobile-banking/">ធនាគារចល័ត</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/merchant-app/">
+				កម្មវិធី CUBC Merchant
+			</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/alert-services/">សេវាជូនដំណឹង</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/user-guide/">របៀប​ប្រើប្រាស់​</a>
+		</div>
+	</div>
+
+	
+	
+	<!--
+		សេវាជូនដំណឹង - Detail
+	-->
+	<section class="fluid overflow-hidden">
+		
+		<div class="py-page"></div>
+
+		<!-- Page heading -->
+		<header class="compact  mb-5  text-center">
+			<h1 class="display-3 h1-mb  mb-3  text-black fw-bold">សេវាជូនដំណឹង</h1>
+			<p class="text-left">ធនាគារ កាថេយូណៃធីត (ខេមបូឌា) ម.កផ្តល់ជូននូវការជូនដំណឹងតាមរយៈសារ (SMS) ដើម្បីរក្សាគណនីអោយមានសុវត្ថិភាព និងគ្រប់គ្រងហិរញ្ញវត្ថុរបស់លោកអ្នក។ សេវាកម្មជូនដំណឹងរបស់យើងខ្ញុំគឺមិនត្រឹមតែជាមធ្យោបាយងាយស្រួលមួយក្នុងការរក្សាប្រាក់របស់លោកអ្នកនោះទេ ប៉ុន្តែក៏មានប្រយោជន៍ផងដែរ ក្នុងការរម្លឹកលោកអ្នកអំពីសកម្មភាពមិនធម្មតាណាមួយនៅលើគណនីរបស់លោកអ្នក។ លោកអ្នកដឹងកាន់តែឆាប់រហ័ស នោះលោកអ្នកនឹងអាចទាក់ទងមកយើងខ្ញុំទាន់ពេលវេលាដើម្បីពិនិត្យប្រតិបត្តិការអោយបានត្រឹមត្រូវ។</p>
+		</header>
+		
+		<section class="compact" style="margin-bottom: 2rem;">
+			<section class="qaitem" js-foldable-group="internet">
+				<div class="qaitem-title" role="button" tabindex="0" js-foldable-head>
+					<h5 class="qaitem-title-txt  h3 h3-mb text-dark fw-bold">
+						ព័ត៌មានអំពីថ្លៃសេវាជូនដំណឹងតាមសារ SMS
+					</h5>
+				</div>
+				<div class="qaitem-detail" js-foldable-body>
+					<div class="qaitem-detail-content">
+						<picture>
+							<source media="(min-width:769px)" srcset="/assets/img/personal/alert-services/fee-charge-SMS-table-KHR.jpg" style="max-width: 100%; width: 100%;">
+							<img srcset="/assets/img/personal/alert-services/fee-charge-SMS-table-KHR.jpg" style="max-width: 100%; width: 100%;">
+						</picture>
+					</div>
+				</div>
+			</section>
+		</section>
+		
+		<section class="compact">
+			
+			<!-- Info box -->
+			<h3 class="h3 h3-mb  p-3  bg-green text-white text-center fw-bolder">ប្រភេទនៃសេវាកម្មជូនដំណឹង</h3>
+			
+			<div class="py-4 px-2 px-lg-4  border border-green">
+				<ul class="list-disc">
+					<li>ការជូនដំណឹងអំពីគណនីនៅពេលដែលមានប្រតិបត្តិការដាក់ ឬដកប្រាក់ពីគណនីរបស់លោកអ្នក </li>
+					<li>ការជូនដំណឹងអំពីការដកប្រាក់តាមម៉ាស៊ីនអេធីអឹម (ATM)</li>
+					<li>ការជូនដំណឹងអំពីប្រតិបត្តិការកាតឥណពន្ធ នៅពេលដែលធ្វើប្រតិបត្តិការតាមរយៈ ម៉ាស៊ីន POS ឬតាមអនឡាញ</li>
+					<li>ការធ្វើបច្ចុប្បន្នភាពលើគណនីកាតឥណទានគ្រប់ពេលវេលាគ្រប់ទីកន្លែង</li>
+					<li>ការផ្សព្វផ្សាយទីផ្សារ/ការផ្សាយពាណិជ្ជកម្មពីធនាគារ។</li>
+				</ul>
+			</div>
+		</section>
+	
+		<div class="py-section"></div>
+	
+	
+		<section class="compact">
+			<!-- Section heading -->
+			<h2 class="h1 h2-mb  mb-4  text-black fw-bold text-center lh-sm">របៀបចុះឈ្មោះ និងគ្រប់គ្រងការជូនដំណឹងរបស់លោកអ្នក</h2>
+			
+			<!-- Block heading -->
+			<h3 class="h3 h3-mb  mb-3  text-black fw-bold">ធនាគារអនឡាញ - ប្រតិបត្តិការរហ័ស និងងាយស្រួលក្នុងការចុះឈ្មោះ</h3>
+			<p class="mb-3">លោកអ្នកអាចចុះឈ្មោះ និងកំណត់ការជូនដំណឹងតាមរយៈធនាគារអនឡាញបាន ប្រសិនបើលោកអ្នកជាអតិថិជនធនាគារអនឡាញ។ ចុះឈ្មោះថ្ងៃនេះ ប្រសិនបើលោកអ្នកមិនទាន់ចុះឈ្មោះសម្រាប់សេវាធនាគារអនឡាញ។</p>
+			
+			<!-- Block heading -->
+			<h3 class="h3 h3-mb  mb-3  text-black fw-bold">នៅគ្រប់សាខារបស់ធនាគារយើងខ្ញុំ</h3>
+			<p>ប្រសិនបើលោកអ្នកមានគណនីចរន្ត ឬគណនីសន្សំជាមួយធនាគារ កាថេយូណៃធីត (ខេមបូឌា) ម.ក លោកអ្នកអាចអញ្ជើញមកសាខាណាមួយរបស់ធនាគារយើងខ្ញុំ។</p>
+		</section>
+		
+		<div class="py-page"></div>
+	</section>
+	
+</main>
+<!-- Page END -->

@@ -1,0 +1,129 @@
+﻿@model IndexViewModel
+
+@if (ViewBag.lang == "zh-hant")
+{
+    ViewBag.PageTitle = "慎防詐騙手法";
+    ViewBag.PageDescription = "使用互聯網時所可能遭遇之詐騙種類：行騙電郵 /偽冒網站 / 特洛伊軟件 / 間諜程式。本分行不會透過電子郵件要求客戶輸入賬戶及個人資料，包括用戶名稱及私人密碼。若您收到以本行名義寄發之可疑郵件，而難以辨識真偽時，請勿回覆此封電子郵件，若有任何問題請，隨時與本分行專員聯繫。";
+}
+else
+{
+    ViewBag.PageTitle = "Notice about Fraud Prevention";
+    ViewBag.PageDescription = "";
+}
+@section Scripts {}
+@if (ViewBag.lang == "zh-hant")
+{
+    <div class='component-oversea-kv-short'>
+        <figure class='coks-figure'>
+            <picture>
+                <source media='(min-width: 768px)'
+                        data-srcset='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/financial-disclosure-lg.jpg")' />
+                <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/financial-disclosure.jpg")' alt='慎防詐騙手法'>
+            </picture>
+            <figcaption hidden>慎防詐騙手法</figcaption>
+        </figure>
+        <div class="coks-inner">
+            <div class="coks-content">
+                <h1 class='coks-title'>安全與私隱</h1>
+            </div>
+        </div>
+    </div>
+
+
+    <div class='component-oversea-info'>
+        <div class="coi-inner">
+            <h1 class="coi-title">防範詐騙提醒事項</h1>
+            <div class="coi-content">
+
+                <div class="coi-content-wrap">
+                    <p class="coi-p">使用互聯網時的詐騙種類：行騙電郵 /偽冒網站 / 特洛伊軟件 / 間諜程式</p>
+                    <p class="coi-p">詐騙集團時有利用銀行知名度及優良行譽，假冒銀行名義，以留有銀行電話服務代表號之語音，騙取客戶個人資料；提醒您，如有上述詐騙手法，請您不用理會，以免上當受騙！若您有任何疑慮，切勿按詐騙語音或簡訊指示操作或回電，請務必洽詢本行客服專員。</p>
+                    <p class="coi-p">另有很多不法之徒，以偽冒網站進行詐騙勾當。歹徒會利用偽造的電子郵件，向市民發出虛假電郵，虛假電郵內附的超連結，將客戶接駁至外貌跟原始網站甚為相似、甚至一模一樣的偽冒網站。要求收件人更新其個人及財務資料，包括出生日期、登入資料、戶口資料、信用卡號碼或密碼等。</p>
+                    <p class="coi-p">歹徒騙取使用者的個人私密資料(例如:身分證號碼、銀行帳號、信用卡號或密碼等)，並進行犯罪行為。另外，按下虛假電郵內的超連結，也可能會令用戶的個人電腦下載「間諜」程式，在未經授權下記錄您的上網詳情及按鍵資料，並將這些資料發送給不法之徒，藉以取得客戶的財務資料，並盜用客戶的銀行戶口、信用卡等等。</p>
+                    <p class="coi-p">本行不會透過電子郵件要求客戶輸入賬戶及個人資料，包括用戶名稱及私人密碼。若您收到以本行名義寄發的可疑郵件，難以辨識真偽時，請不要回覆此封電子郵件，若有任何問題請隨時與我們聯繫。</p>
+                    <ul class="coi-ul">
+                        <li class="coi-li">絕不依陌生人指示，設定「約定帳號」。</li>
+                        <li class="coi-li">聽到「安全監管帳戶」等類似說詞，就是詐騙手法，請勿匯款。</li>
+                        <li class="coi-li">接到自稱法院執行處或法官電話，立即掛斷。</li>
+                        <li class="coi-li">絕不依陌生人電話指示轉帳、匯款。</li>
+                        <li class="coi-li">接到任何「語音電話」，告知可轉接專人，請不要理會，立即掛斷。</li>
+                        <li class="coi-li">絕不與來電者透露或核對個人資料，以免遭歹徒利用。</li>
+                        <li class="coi-li">歹徒偽造「來電顯示」以博取民眾信任，請小心勿上當。</li>
+                        <li class="coi-li">請勿將存摺、印鑑或密碼交付他人，以防存款被盜領。</li>
+                        <li class="coi-li">冒稱親人生前於海外投資獲利，須辦理繼承或領回，切勿上當。</li>
+                        <li class="coi-li">在未能確定電郵來源或對其來源有所懷疑的情況下，請勿開啟/執行電子郵件上的附件及立即將有關郵件刪除。</li>
+                    </ul>
+
+                    <br />
+                    <p class="coi-p"><b>消費者保護相關資訊：</b></p>
+                    <ul class="coi-ul">
+                        <li class="coi-li"><a class="coi-link" target="_blank" rel="noopener" href="https://www.consumer.org.hk/">香港消費者委員會</a></li>
+                        <li class="coi-li"><a class="coi-link" target="_blank" rel="noopener" href="https://www.hkma.gov.hk/chi/">香港金融管理局</a></li>
+                        <li class="coi-li"><a class="coi-link" target="_blank" rel="noopener" href="https://www.cybersecurity.hk/tc/index.php">網絡安全資訊站</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div><!--/.component-oversea-info-->
+    </div>
+}
+else
+{
+    <div class='component-oversea-kv-short'>
+        <figure class='coks-figure'>
+            <picture>
+                <source media='(min-width: 768px)'
+                        data-srcset='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/financial-disclosure-lg.png")' />
+                <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/financial-disclosure.png")' alt='Security and Privacy'>
+            </picture>
+            <figcaption hidden>Security and Privacy</figcaption>
+        </figure>
+        <div class="coks-inner">
+            <div class="coks-content">
+                <h1 class='coks-title'>Security and Privacy</h1>
+            </div>
+        </div>
+    </div>
+
+
+    <div class='component-oversea-info'>
+        <div class="coi-inner">
+            <h1 class="coi-title">Notice about Fraud Prevention</h1>
+            <div class="coi-content">
+
+                <div class="coi-content-wrap">
+                    <p class="coi-p">Types of fraud when on the internet: Email phishing / Fraudulent websites /  Trojan software / spyware</p>
+
+                    <p class="coi-p">Scammers take advantage of Cathay United Bank's brand and reputation to swindle customers' personal information with voice system. We would like to remind you, any of the above circumstances is fraud, please do not act as instructed and be deceived.  If you have any doubts or concerns, please call the Bank's customer service hotline, and do not call back or operate as the fraudulent voice message or SMS instructed.</p>
+
+                    <p class="coi-p">Besides, a lot of online predators have engaged in frauds with fake website scams recently.  They generally forge and send fake emails that contain links to fake websites to trick people. The fake websites are very similar or even identical to the original ones. The email recipients will be asked to update their personal and financial data, including the dates of birth, login information, account data, credit card numbers or passwords, etc. </p>
+
+                    <p class="coi-p">The criminals trick users to get their personal information (e.g. ID card numbers, bank accounts, credit card numbers or passwords, etc.) to commit crimes. In addition, if a user hits the link(s) in the fake email, the “spyware” will be automatically downloaded to the user's personal computer. Then, the user's online details and keyboard history will be delivered to the criminals, who will obtain the user's financial data for unauthorized use of the user's bank account(s) and credit card(s), etc. </p>
+
+                    <p class="coi-p">Please be noted that the Bank will not request customers to enter account information or personal information in the form of email, including user name and password. If you receive a suspicious e-mail sent on our behalf, it is difficult to identify the authenticity, please do not reply to these e-mail, if you have any questions, please feel free to contact us.</p>
+
+                    <ul class="coi-ul">
+                        <li class="coi-li">Do not set “pre-designated account” as instructed by any stranger. </li>
+                        <li class="coi-li">When hearing phrases such as “security custodian account”, note that it is fraud, do not make any remittance. </li>
+                        <li class="coi-li">Hang up immediately when receiving calls claiming to be from the court enforcement agency or a judge. </li>
+                        <li class="coi-li">Do not make transfer or remittance as instructed by a stranger's phone call. </li>
+                        <li class="coi-li">When receiving any calls from voice system to connect you to a real service agent, please ignore and hang up the phone immediately. </li>
+                        <li class="coi-li">Do not reveal or verify your personal information with a caller, lest you are exploited by criminals. </li>
+                        <li class="coi-li">Criminals may forge the display of an incoming call to gain your trust, please do not be deceived. </li>
+                        <li class="coi-li">Do not give your passbook, seal or password to another person, lest your deposit is stolen. </li>
+                        <li class="coi-li">Please don't be deceived by any claim about inheritance or collection of return from overseas investments by your late relatives. </li>
+                        <li class="coi-li">Before you can confirm the source of a suspicious email or if you hold any concern about the source, please do not open the email or click on any attachment of the email and delete the email and its attachments altogether. </li>
+                    </ul>
+                    <p class="coi-p"><b>More information about consumer protection:</b></p>
+                    <ul class="coi-ul">
+                        <li class="coi-li"><a class="coi-link" target="_blank" rel="noopener" href="https://www.consumer.org.hk/">Hong Kong Consumer Council</a></li>
+                        <li class="coi-li"><a class="coi-link" target="_blank" rel="noopener" href="https://www.hkma.gov.hk/chi/">Hong Kong Monetary Authority</a></li>
+                        <li class="coi-li"><a class="coi-link" target="_blank" rel="noopener" href="https://www.cybersecurity.hk/tc/index.php">Cyber Security Information Portal</a></li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </div><!--/.component-oversea-info-->
+    </div>
+}

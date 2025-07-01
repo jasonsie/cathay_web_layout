@@ -1,0 +1,319 @@
+﻿@model IndexViewModel
+
+@if (ViewBag.lang == "zh-hant")
+{
+    ViewBag.PageTitle = "私隱保護政策";
+    ViewBag.PageDescription = "國泰世華銀行香港分行私隱保護政策：本分行在此聲明尊重並依法保護閣下的個人資料，為讓使閣下更安心的使用本分行所提供的各項服務(包括本網站)，並透明化如何蒐集、應用及保護閣下所提供的個人資料，特此向閣下說明私隱保護政策如下， 《個人資料(私穩)條例》(該「條例」)乃為保障個人之私隱而訂立。任何本分行透過以書面、磁碟、膠卷或電腦等方式收集及記錄的客戶資料均會受到該條例內的條款及保障資料原則及《個人信貸資料實務守則》所規範。( 註： 該「守則」 乃根據該條例由個人資料私隱專員所發出和執行 )。";
+}
+else
+{
+    ViewBag.PageTitle = "Privacy Security Policy";
+    ViewBag.PageDescription = "";
+}
+
+
+@section Scripts {}
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/financial-disclosure-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/financial-disclosure.jpg")' alt='@ViewBag.nav_privacy_security'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_privacy_security</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_privacy_security</h1>
+        </div>
+    </div>
+</div>
+
+
+<div class="component-oversea-info">
+    <div class="coi-inner">
+        <h1 class="coi-title">Privacy Policy Statement</h1>
+        <div class="coi-content">
+            <div class="coi-content-wrap">
+                <!-- 引言 -->
+                <p class="coi-p">
+                    Cathay United Bank Company Limited, Hong Kong Branch (the “Bank”) is committed to protecting the privacy, confidentiality and security of the personal data we hold by complying with the requirements of Personal Data (Privacy) Ordinance (the “Ordinance”) with respect to the management of personal data. We are equally committed to ensuring that all our employees and agents uphold these obligations. The purpose of this Privacy Policy Statement is to set out the policies and practices of the Bank's commitment to protecting personal data privacy in accordance with the provisions of the Ordinance.
+                </p>
+                <p class="coi-p">
+                    Any customer information collected and recorded by the Bank in writing, film, on mobile devices, Bank’s website or by computer, will be governed by the terms and data protection principles set out in the Ordinance and the Code of Practice on Consumer Credit Data. (Note: The Code is issued and enforced by the Privacy Commissioner for Personal Data in accordance with the Ordinance).
+                </p>
+
+                <!-- Collection and Use of Personal Data -->
+                <p class="coi-p">
+                    <span class="coi-subtitle">Collection and Use of Personal Data</span><br />
+                    There are two main categories of personal data held by the Bank. They consist of the personal data contained in the following:
+                </p>
+                <p class="coi-p">
+                    a) Personal data that customers and prospective Customers may from time to time provide to the Bank when applying for account opening, account maintenance and application, maintenance and maintenance of banking services and/or credit facilities provided by the Bank.
+                    <br /><br />
+                    b) Personal data collected by local staff or the Bank in the course of recruitment: including but not limited to name, identification document information, contact information, academic qualifications and curriculum vitae.
+                    <br /><br />
+                    Personal data relating to customers may be used for the following purposes:
+                </p>
+                <ul class="coi-ul">
+                    <li class="coi-li">
+                        <p class="coi-p">processing applications for banking, finance, and/or other services/facilities;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">day-to-day banking, finance, and/or other services/facilities provided by or provided to the Bank or its customers or the operation thereof (including, but not limited to, the provision of credit card, debit card services and services provided via the Internet);</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">provide the data subject's bank reference to other financial institutions or other persons;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">providing relevant information to credit reference agencies;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">conducting lending and other status checks (including but not limited to applying for or carrying out periodic or ad hoc reviews or renewals of credit facilities, which shall normally be conducted at least annually) and debt collection from credit reference agencies, credit reference agencies or other persons;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">assist other financial institutions in conducting credit checks and debt collection;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">ensure that the data subject is in good standing;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">establishing and maintaining scoring models in relation to the Bank's credit and risk;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">provide any other bank, financial institution, recognized credit reference agency or credit reference agency with a report on the status of the data subject or his account upon request;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">researching and designing the Bank's banking, finance, investment and insurance services or related products for use by data subjects;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">marketing services, products and other subjects, such as: (a) financial, insurance, credit card, banking and related services and products; (b) reward, customer or membership or privileges program and related services and products; (c) the services and products provided by the Bank's co-branding partners (the names of such co-branding partners will be specified in the application form for the relevant services and products); and (d) donations for charitable and/or non-profit-making purposes;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">determine the amount due to or receivable from the data subject;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">performing treasury management functions;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">compel the Data Subject to perform its obligations, including but not limited to collecting debts owed from the Data Subjects and collecting amounts owed from any person who provides collateral, guarantee or other credit support for the Data Subjects' debts (collectively, the Credit Support Providers);</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">to assist the actual or proposed successors of us or any of our holding companies, subsidiaries, affiliates and/or any of their branches, offices or units (whether or not located in Hong Kong S.A.R. ("Hong Kong”))(collectively, the "Group" and each a "Group Member) or an actual or proposed assignee, assignee, participant or sub-participant of the Bank's rights and/or obligations to the Data Subject (including, but not limited to, an actual or proposed chargee, actual or proposed assignee, or other security or collateral for the Bank's rights in respect of the Data Subject) or a person who has actually or proposed to purchase all or any part of the Bank's business or equity interest, in respect of such succession, assignment, transfer, participation in, ancillary participation in, or purchase (including, but not limited to, any guarantee or collateral arrangement) for the evaluation of transactions;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">the Bank's daily business purposes, including but not limited to providing administrative and data processing services to the Bank;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">
+                            complying with obligations, requirements or arrangements for disclosure and use of data under the following applicable to or expected of us or any other member of our Group:
+                            <ul class="coi-ul">
+                                <li class="coi-li">
+                                    <p class="coi-p">any law binding on or applicable to it within or outside the Hong Kong S.A.R. and whether existing now or in the future;</p>
+                                </li>
+                                <li class="coi-li">
+                                    <p class="coi-p">any guidelines or guidance given or issued by any legal, regulatory, governmental, tax, law enforcement or other authorities, or self-regulatory or industry bodies or associations of financial services providers, whether within or outside the Hong Kong S.A.R. and whether existing now or in the future;</p>
+                                </li>
+                                <li class="coi-li">
+                                    <p class="coi-p">any present or future contractual or other commitments undertaken by or imposed by the Bank or any other member of the Group to local or foreign legal, governmental, tax, law enforcement or other authorities, or to self-regulatory or industry bodies or associations of financial services providers by reason of their financial, commercial, business or other interests or activities in or in connection with the relevant local or foreign legal, regulatory, governmental, tax, law enforcement or other authorities, or self-regulatory or industry bodies or associations;</p>
+                                </li>
+                            </ul>
+                        </p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">complying with any obligations, requirements, policies, procedures, measures or arrangements specified by the Group in relation to the sharing of data and information within the Group and/or any other use of data and information for the purpose of complying with sanctions or any programmes for the prevention or detection of money laundering, terrorist financing or other unlawful activities;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">the Bank's purpose in providing any particular service or facility; and</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">the purposes relating to any of the above and the Bank's ability to conduct matching procedures (as defined in the Personal Data (Privacy) Ordinance) (whether or not any adverse action is taken against the data subject) or data comparison in respect of any or all of the above purposes.</p>
+                    </li>
+                </ul>
+
+                <!-- 用於員工／招聘的個人資料用途 -->
+                <p class="coi-p">
+                    Personal data collected by our staff or in the course of recruitment may be used for the following purposes:
+                </p>
+                <ul class="coi-ul">
+                    <li class="coi-li">
+                        <p class="coi-p">processing applications for employment;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">reviewing salaries, bonuses and other benefits;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">consider employee promotion, training, transfer and transfer;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">assessing eligibility for employee loans, provident fund and similar schemes; administrative processing and completion of documents relating to medical and other benefits or compensation;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">provide employee references;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">obtain legal advice;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">complying with the requirement to disclose information to court in the event of legal proceedings; or to any member of the Group for the purposes set out above in accordance with the relevant legal/regulatory requirements to which the Bank is subject;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">monitoring compliance with the Bank's internal and group codes; integrity check and review potential conflicts of interest;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">the suitability to determine whether an employee continues to be employed;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">purposes related to the above.</p>
+                    </li>
+                </ul>
+
+                <!-- Security of Personal Data -->
+                <p class="coi-p">
+                    <span class="coi-subtitle">Security of Personal Data</span><br />
+                    Customer data held by the Bank will not affect the Bank's obligation to keep such data confidential and the Bank will continue to keep it confidential and secure as far as possible in accordance with its internal policies and the guidelines issued by the Government of the Hong Kong S.A.R. ("Hong Kong) provided that the Bank may provide such data to the following parties (whether in Hong Kong or elsewhere) for the purposes stated:
+                </p>
+                <ul class="coi-ul">
+                    <li class="coi-li">
+                        <p class="coi-p">any other member of the Group;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">any guidelines or guidance given or issued by us or any other member of the Group in accordance with any law binding on or applicable to us or any other member of the Group, or under and for the purpose of complying with any legal, regulatory, governmental, tax, law enforcement or other authorities, or self-regulatory or industry bodies or associations of financial services providers with which the Bank or any other member of the Group is expected to comply, or under the legal, regulatory, governmental, tax, any person to whom any person under an obligation or otherwise required to disclose such information is obliged or otherwise required by law enforcement or other authorities, or the self-regulatory or industry bodies or associations of financial services providers (whether within or outside the Hong Kong S.A.R. and whether existing now or in the future);</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">the Bank's professional advisers (including but not limited to its auditors and legal advisers);</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">any agent, contractor or service provider (not a member of the Group) who provides administrative, data processing, telecommunications, computer, payment, securities clearing or (whether or not such services are provided in Hong Kong) to the Bank (including but not limited to credit reference agencies, rating agencies, insurers or insurance brokers) direct or indirect credit protection providers and (in the event of an event of default) any debt collection agency)</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">any other person, including a member of the Group, who has undertaken to keep such information confidential;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">any nominee, trustee, co-trustee, central securities depository, registrar, custodian, broker, dealer or other person involved in and for the purpose of providing banking services or products to the data subject;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">any financial institution with which the data subject has or will have dealings;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">any actual or proposed successor of us or any other member of the Group;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">third-party financial institutions, insurers, credit card companies, securities and investment service providers;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">third party reward, customer or member loyalty, co-branding and privileges programme providers;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">co-branding partners of the Bank and members of the Group (the names of such co-branding partners will be specified in the application forms for the relevant services and products);</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">charitable or non-profit-making organisations;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">
+                            third party service providers (including but not limited to mailing centres, telecommunications companies, telemarketing and direct sales agents, call centres, data processing companies and information technology companies) engaged by the Bank for the purposes set out above.
+                            <br>Such data may be transferred outside Hong Kong. Please refer to our website (www.cathaybk.com.tw/hongkong) for a list of countries in which the above parties are located.
+                        </p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">any actual or proposed assignee, participant, sub-participant or transferee of the Bank's rights in respect of the data subject, including but not limited to the actual or proposed holder of the guarantee/security referred above, The Hong Kong Mortgage Corporation Limited ("HKMC") or any other person who is necessary or necessary pursuant to a contractual arrangement with the Hong Kong Mortgage Corporation for the sale of the mortgage or other collateral by us, or any person in connection with the purchase of all or any part of our business or interest in shares referred above;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">any person required by the scope of litigation, arbitration, investigation, regulatory proceedings or proceedings in Hong Kong or elsewhere;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">the drawer's bank payable to the drawer of the data subject's cheque to confirm to the drawer that the cheque is payable to the data subject;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">any person who holds proof of the data subject's consent and requests us to provide information about the data subject</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">any other person with the written consent of the data subject.</p>
+                    </li>
+                </ul>
+
+                <!-- 依《個人資料（私隱）條例》之通知 -->
+                <p class="coi-p">
+                    In accordance with the requirements of the Personal Data (Privacy) Ordinance, at or before the collection of personal data, the Bank will provide the data subject and the staff with a notice relating to the Personal Data (Privacy) Ordinance or by such other means as the Bank considers appropriate, stating the purpose of collection, the classes of persons to whom the data may be transferred, the rights of access and correction and other relevant information.
+                </p>
+
+                <!-- 同意聲明 -->
+                <p class="coi-p">
+                    By accessing the Bank’s official website (“the Bank’s website”) and/or Internet Banking Services, you consent to the Bank's access to and use of your personal data in accordance with the Bank's Privacy Policy. Please note that other third party websites linked to the Bank’s website may collect your personal data, and these linked websites have their own privacy policies for the personal information you voluntarily provide to other websites, and the privacy protection policies of this website do not apply to their procedures and/or measures for processing data.
+                </p>
+
+                <!-- Policy on Sharing Personal Information with Third Parties -->
+                <p class="coi-p">
+                    <span class="coi-subtitle">Policy on sharing personal information with third parties</span><br />
+                    We are committed to ensuring the confidentiality of your personal data. Except as required by applicable laws, regulations or any court of competent jurisdiction and/or as permitted by this Privacy Policy, we will not disclose your personal data to anyone without your authorization. Personal data will not be disclosed to any other third parties unless permitted by the Bank's privacy policy and the use of such information is necessary for the provision of Internet Banking Services. The Bank’s website will never sell, exchange, lease or disclose your personal information to other groups or individuals in any other disguised way.
+                </p>
+                <p class="coi-p">
+                    The Branch will share your personal information with third parties only in the following three circumstances:
+                </p>
+                <ul class="coi-ul">
+                    <li class="coi-li">
+                        <p class="coi-p">with your prior consent or authorization;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">when required by a judicial unit or other competent authority through lawful and formal procedures;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">in order to provide you with other services or offers, if you need to share your information with a third party who provides such services or offers, we will provide you with a full explanation and inform you at the time of the event, and you can choose whether to accept such services or offers at your own discretion.</p>
+                    </li>
+                </ul>
+
+                <!-- Data Protection Measures to Be Taken by Customers -->
+                <p class="coi-p">
+                    <span class="coi-subtitle">Data protection measures to be taken by customers</span><br />
+                    To ensure the security and confidentiality of your information, you should:
+                </p>
+                <ul class="coi-ul">
+                    <li class="coi-li">
+                        <p class="coi-p">keep any of your personal data, credentials or passwords safe and do not provide any personal data (in particular) to any person or organisation. If you believe that your device has been lost, stolen or misappropriated, or if your username or password has been disclosed to a third party, please notify us immediately;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">after using the various service functions provided by this website, you will log out from or leave the website;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">avoid sharing your computer/installation with others or using public computers to log in to the Bank’s website, and if you need to use such computers, remember to log out of the website and close your browser window appropriately to prevent others from reading your personal information or correspondence;</p>
+                    </li>
+                    <li class="coi-li">
+                        <p class="coi-p">install up-to-date anti-virus and anti-spyware software on the computers or devices using the Bank’s website and update them from time to time.</p>
+                    </li>
+                </ul>
+
+                <p class="coi-p">
+                    Please contact our Data Protection Officer for any request for data access or correction or for information regarding our policies and practices or kinds of data held.<br /> 
+                    The contact details of the Data Protection Officer are:<br />
+                      Cathay United Bank Company Limited, Hong Kong Branch<br />
+                      10/F, Lee Garden Three, 1 Sunning Road, Causeway Bay, Hong kong<br /> 
+                      Email:dp.enquiry@hk.cathaybk.com<br />
+                      Fax: (852) 2527 0966
+                </p>
+                <!-- Disclaimer -->
+                <p class="coi-p">
+                    <span class="coi-subtitle">Disclaimer</span><br />
+                    If you fail to follow the data protection measures recommended by the Bank from time to time, or fail to properly ensure the security of your computer/device, account information or security information (i.e. credentials and passwords), resulting in unauthorized transactions in your account, you may have to be responsible for these transactions.
+                </p>
+                <p class="coi-p">
+                    The information, materials, products or services described or provided on this website may be altered, revised or withdrawn from time to time or at any time without prior notice. Eligibility for certain information or materials and/or each product or service, or its availability, is subject to the Bank’s final and absolute decision and is subject to acceptance by the Bank. Please note that Internet communications may experience interruptions, transmission pauses, delays or incorrect data transmission due to circumstances beyond the control of this website. Messages sent via the Internet cannot be guaranteed with absolute security. The Bank is not responsible in any way for any loss or damage incurred by yourself due to delay, loss, deviation, alteration or error in any messages sent to or from the Bank via the Internet.
+                </p>
+
+                <!-- Amendments -->
+                <p class="coi-p">
+                    <span class="coi-subtitle">Amendments to this Privacy Policy Statement</span><br />
+                    The Bank may, at its sole discretion, revise, amend or change this Privacy Policy Statement after sending relevant written notice to customers. The revision, amendments or changes will take effect thirty (30) days from the date of notification or a shorter period (if such changes are not within the reasonable control of the Bank).
+                </p>
+
+                <!-- Governing Laws and Jurisdictions -->
+                <p class="coi-p">
+                    <span class="coi-subtitle">Governing Laws and Jurisdictions</span><br />
+                    This website and the terms of use are governed by and construed in accordance with the laws of the Hong Kong Special Administrative Region. When you access, log in and continue to use this website, you agree to accept and abide by the jurisdiction of the courts of the Hong Kong Special Administrative Region with respect to any matters or disputes arising from use of this website.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--/.component-oversea-info-->

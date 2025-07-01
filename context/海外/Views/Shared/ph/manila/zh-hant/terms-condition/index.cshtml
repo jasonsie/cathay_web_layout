@@ -1,0 +1,54 @@
+﻿@model IndexViewModel
+
+@if (ViewBag.lang == "zh-hant")
+{
+    ViewBag.PageTitle = "條款與細則";
+    ViewBag.PageDescription = "";
+}
+else
+{
+    ViewBag.PageTitle = "Terms and Conditions";
+    ViewBag.PageDescription = "";
+}
+@section Scripts {}
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/terms-condition-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/terms-condition.jpg")' alt='@ViewBag.nav_terms_condition'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_terms_condition</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_terms_condition</h1>
+        </div>
+    </div>
+</div>
+
+@if (ViewBag.lang == "zh-hant")
+{
+    <div class='component-oversea-list'>
+        <div class="col-inner">
+            <div class="col-list-wrap">
+                @*<h2 class='col-list-title'>企業金融</h2>*@
+                <ul class='col-list'>
+                    <li class='col-item'>
+                        <span class='col-item-title'>存款帳戶</span>
+                        <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/terms-condition/tcs-saving-account-account.pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                    </li>
+                    <li class='col-item'>
+                        <span class='col-item-title'>支票帳戶</span>
+                        <a href="@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/terms-condition/tcs-checking-account.pdf")" class='col-item-btn' target="_blank" rel="noopener"><span class='col-item-btn-text'>PDF</span></a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+}
+else
+{
+}

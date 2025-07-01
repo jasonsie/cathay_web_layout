@@ -1,0 +1,68 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "Thông tin liên hệ";
+    ViewBag.PageDescription = "Địa chỉ: Tầng 4, Tòa nhà Viettel Quảng Nam, 121 Hùng Vương, TP. Tam Kỳ, Tỉnh Quảng Nam, Việt Nam";
+}
+
+@section Scripts {}
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/contact-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img"+"/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/contact.jpg")' alt='@ViewBag.nav_contact'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_contact</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_contact</h1>
+        </div>
+    </div>
+</div>
+
+<div class='component-oversea-info'>
+    <div class='coi-inner'>
+        <h2 class='coi-title'>Liên hệ với chúng tôi</h2>
+
+        <div class='coi-content'>
+            <ul class="coi-list">
+                <li class="coi-item">
+                    <span class='coi-item-label'>
+                        Khách hàng Tổ chức (Doanh nghiệp hoặc Định chế Tài chính) <br />
+                        Tại Chi Nhánh:
+                    </span>
+                    <span class="coi-item-content">
+                        Quý khách có thể đến Chi nhánh để trao đổi trực tiếp với nhân viên của chúng tôi tại địa chỉ:
+                        Tầng 19, Tòa nhà Lim Tower 3, số 29A đường Nguyễn Đình Chiểu, Phường Đa Kao, Quận 1, Tp. Hồ Chí Minh, Việt Nam.
+                    </span>
+                    <span class='coi-item-label'>
+                        Qua điện thoại:
+                    </span>
+                    <span class="coi-item-content">
+                        (+84) 28 38258768 (từ 8:30 đến 17:30 từ Thứ Hai – Thứ Sáu, không bao gồm các ngày nghỉ lễ, Tết theo quy định pháp luật)
+                    </span>
+                </li>
+                <li class="coi-item">
+                    <span class='coi-item-label'>
+                        Khách hàng cá nhân<br />
+                        Quý khách có thể gửi thư điện tử đến chúng tôi:contact.CUB@vn.cahaybk.com
+                    </span>
+
+                    <span class='coi-item-label'>
+                        Quý khách có thể gọi đến Phòng Dịch vụ khách hàng cá nhân của chúng tôi qua số điện thoại dưới đây:
+                    </span>
+                    <span class="coi-item-content">(028) 3622 6836 (từ 8:30 đến 17:30 từ Thứ Hai – Thứ Sáu, không bao gồm các ngày nghỉ lễ, Tết theo quy định pháp luật </span>
+                    <span class='coi-item-label'>
+                        Tại chi nhánh:
+                    </span>
+                    <span class="coi-item-content">
+                        Quý khách có thể đến Chi nhánh để trao đổi trực tiếp với nhân viên của chúng tôi tại địa chỉ:
+                        Tầng 19, Tòa nhà Lim Tower 3, số 29A đường Nguyễn Đình Chiểu, Phường Đa Kao, Quận 1, Tp. Hồ Chí Minh, Việt Nam.
+                    </span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

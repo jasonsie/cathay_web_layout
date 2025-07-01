@@ -1,0 +1,65 @@
+﻿@model IndexViewModel
+<link rel="stylesheet" type="text/css" href="@Url.Content("~/OVSWS/Content/css/reverse.css")">
+<meta http-equiv="refresh" content="15;url=@System.Configuration.ConfigurationManager.AppSettings["HKReverseURL"]">
+
+
+
+@if (ViewBag.id != null)
+{
+    if (ViewBag.lang == "zh-hant")
+    {
+        ViewBag.PageTitle = @ViewBag.ItemOfNews.title;
+        ViewBag.PageDescription = "";
+    }
+    else
+    {
+        ViewBag.PageTitle = @ViewBag.ItemOfNews.title;
+        ViewBag.PageDescription = "";
+    }
+
+}
+else
+{
+    if (ViewBag.lang == "zh-hant")
+    {
+        ViewBag.PageTitle = "最新消息";
+        ViewBag.PageDescription = "";
+    }
+    else
+    {
+        ViewBag.PageTitle = "Latest News";
+        ViewBag.PageDescription = "";
+    }
+}
+@section Scripts {}
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure' style="left:0px; margin-left:0px;">
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/news-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/news.jpg")' alt='@ViewBag.nav_news'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_news</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content reverse">
+            <div style="margin:7% 12% 7% 12%">
+                從2021年10月23日起，香港分行官方網址已變更為www.cathaybk.com.tw/hongkong。
+                請更新你的瀏覽器書籤。
+                我們將在 15 秒後助你自動轉至這新網址。
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- 消息列表 -->
+<div class="component-newslist">
+    <div class="component-newslist-inner">
+        <div class="component-newslist-row">
+
+        </div>
+    </div>
+</div><!--/.component-newslist-->

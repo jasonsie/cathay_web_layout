@@ -1,0 +1,54 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "Notice for the new Treasury products launching – Foreign Exchange Forward and Foreign Exchange Swap";
+    ViewBag.PageDescription = "Notice for the new Treasury products launching – Foreign Exchange Forward and Foreign Exchange Swap";
+}
+
+@section Scripts {}
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news.jpg")' alt='@ViewBag.nav_news'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_news</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_news</h1>
+        </div>
+    </div>
+</div>
+
+<!-- newsview -->
+<article class="component-newsview">
+    <div class="component-newsview-inner">
+        <header class="component-newsview-header">
+            <div class="component-newsview-date"></div>
+            <h1 class="component-newsview-title">FOLLOW CATHAY UNITED BANK'S OFFICIAL FACEBOOK CHANNEL </h1>
+        </header>
+
+        <div class="component-newsview-body">
+            <p>
+                With the purpose of building a source of most up to date information to customers, Cathay United Bank Ho Chi Minh City branch has built an official Facebook fanpage channel called Cathay United Bank (VN) in Ho Chi Minh City. http://www.facebook.com/cahayunitedbankvietnamofficial.
+            </p>
+            <p>
+                Currently, Cathay United Bank only has this one official Facebook channel mentioned above. If you discover a channel impersonating Cathay United Bank, please notify Cathay United Bank at hotline +84 28 3622 6836 for support.
+            </p>
+            <div align='center'>
+                <picture>
+                    <img class='cosc-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/cathayFB_VN.jpg")'>
+                </picture>
+            </div>
+        </div>
+        <footer class="component-newsview-footer">
+            <div class="component-btn-row">
+                <a class="component-btn-main btn-green" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/")">回上一頁</a>
+            </div>
+        </footer>
+    </div>
+</article><!--/.component-newsview-->

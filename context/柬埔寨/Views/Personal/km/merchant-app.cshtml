@@ -1,0 +1,370 @@
+﻿@{
+   ViewData["PageTitle"] = "Merchant App";
+   ViewData["PageDescription"] = "";
+}
+
+
+<!-- Page START -->
+<main class="mastbody">
+	
+	<!--
+	-->
+	<div class="topkv kv  kv--txt-left">
+		<div class="kv-bg">
+			<div class="kv-bg-inner">
+				<figure class="kv-bg-img">
+					<picture>
+						<source media="(min-width:769px)" srcset="/assets/img/topkv/personal-online.jpg" />
+						<img srcset="/assets/img/topkv/personal-online-mb.jpg">
+					</picture>
+				</figure>
+			</div>
+		</div>
+		<div class="kv-cont">
+			<div class="kv-cont-inner">
+				<h2 class="display-1  fw-bold lh-xs">ធនាគារអនឡាញ</h2>
+			</div>
+		</div>
+	</div>
+
+	<!-- Breadcrumb  (lays on top of .topkv if places right after it) -->
+	<nav class="breadcrumb-nav text-white" aria-label="breadcrumb">
+		<div class="fluid">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]"><span>ទំព័រដើម</span><i class="ico-ui-home"></i></a></li>
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]personal/">សេវាកម្មធនាគារផ្ទាល់ខ្លួន</a></li>
+				<li class="breadcrumb-item active" aria-current="page">កម្មវិធី CUBC Merchant</li>
+			</ol>
+		</div>
+	</nav>
+
+	<!-- Menu -->
+	<nav class="tabmenu    d-none d-sm-block">
+		<div class="tabmenu-inner">
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/internet-banking/">
+				<span class="tabmenu-btn-txt">ប្រពន្ធ័ធនាគារតាមអេឡិចត្រូនិក</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/mobile-banking/">
+				<span class="tabmenu-btn-txt">ធនាគារចល័ត</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn active" href="@ViewData["siteLangUrl"]personal/merchant-app/">
+				<span class="tabmenu-btn-txt">
+					កម្មវិធី CUBC Merchant
+				</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/alert-services/">
+				<span class="tabmenu-btn-txt">សេវាជូនដំណឹង</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/user-guide/">
+				<span class="tabmenu-btn-txt">របៀប​ប្រើប្រាស់​</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+		</div>
+	</nav>
+	<!-- Mobile dropdown -->
+	<div class="tabmenu-dropdown dropdown    d-block d-sm-none">
+		<a href="javascript:;" class="btn btn-sm btn-block  dropdown-toggle" data-toggle="dropdown">
+			<span class="text-truncate d-inline-block">ប្រព័ន្ធធនាគារតាមអេឡិចត្រូនិក</span>
+		</a>
+		<div class="dropdown-menu">
+			<span class="dropdown-item disabled">-- Select page --</span>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/internet-banking/">ប្រពន្ធ័ធនាគារតាមអេឡិចត្រូនិក</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/mobile-banking/">ធនាគារចល័ត</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/merchant-app/">
+				កម្មវិធី CUBC Merchant
+			</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/alert-services/">សេវាជូនដំណឹង</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/user-guide/">របៀប​ប្រើប្រាស់​</a>
+		</div>
+	</div>
+
+	
+	
+	<!--
+		mBanking - Detail
+	-->
+	<section class="fluid overflow-hidden">
+		
+		<div class="py-page"></div>
+		
+		<!-- Page heading -->
+		<header class="compact  mb-5  text-center">
+			@* <h1 class="h3 h4-mb  mb-2 mb-md-3  text-black  lh-xs">Merchant App</h1> *@
+			<h2 class="display-3 h1-mb  mb-3  text-black fw-bold">
+				ពង្រឹងអាជីវកម្មរបស់អ្នកជាមួយ កម្មវិធី CUBC Merchant!
+			</h2>
+			<p class="mb-3  text-left">
+				ទទួលយកការទូទាត់ គ្រប់គ្រងបុគ្គលិក និងតាមដានទិន្នន័យការលក់តាមឌីជីថល យ៉ាងងាយស្រួលនៅក្នុងកម្មវិធី CUBC Merchant។ បង្កើតកូដ QR សម្រាប់ប្រតិបត្តិការប្រកបដោយសុវត្ថិភាព ទទួលបានការជូនដំណឹងអំពីការទូទាត់ភ្លាមៗ និងកំណត់បុគ្គលិកនៅសាខាអាជីវកម្មយ៉ាងរលូន។ គ្រប់គ្រងរបាយការណ៍ការលក់របស់លោកអ្នក និងត្រួតពិនិត្យប្រតិបត្តិលម្អិតតាមសាខាផ្សេងៗគ្នាយ៉ាងងាយស្រួល។
+			</p>
+			<p class="text-left">
+				សុវត្ថិភាព ប្រសិទ្ធភាព និង អស់កង្វល់—ទទួលយកបទពិសោធន៍អនាគតនៃការទូទាត់ឌីជីថល!
+			</p>
+		</header>
+		
+		
+		<!-- Features -->
+		<section class="compact-sm">
+			
+			<!-- Section heading -->
+			<h3 class="h1 h2-mb  mb-4  text-black fw-bold text-center lh-sm">
+				មុខងាររបស់កម្មវិធី CUBC Merchant
+			</h3>
+			
+			<div class="d-block d-lg-flex flex-row-reverse">
+				@* <div class="w-100 pt-lg-3"> *@
+				<div class="w-100">
+					<!-- Graph icon list #2  (3 in a row)-->
+					<ul class="row  mb-n4  ">
+	
+						<!-- Graph item  (one column on mobile)-->
+						<li class="col-12 col-md-4  mb-4  px-md-1 px-xl-4">
+							<div class="d-flex align-items-center  mb-3">
+								<figure class="graph  mr-3">
+									<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/view.svg">
+								</figure>
+								<h4 class="h3 text-dark fw-bolder lh-sm">
+									ការគ្រប់គ្រងអាជីវកម្ម
+								</h4>
+							</div>
+							<div>
+								<ul class="list-disc list--item-mb-xs">
+									<li>
+										មើលព័ត៌មានលម្អិតនៃសាខានីមួយៗ
+									</li>
+									<li>
+										គ្រប់គ្រងអ្នកគិតលុយ
+									</li>
+									<li>
+										បើកការជូនដំណឹងសាខា
+									</li>
+									<li>
+										ត្រួតពិនិត្យប្រវត្តិប្រតិបត្តិការ
+									</li>
+								</ul>
+							</div>
+						</li>
+	
+						<!-- Graph item  (one column on mobile)-->
+						<li class="col-12 col-md-4  mb-4  px-md-1 px-xl-4">
+							<div class="d-flex align-items-center  mb-3">
+								<figure class="graph  mr-3">
+									<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/clerk.svg">
+								</figure>
+								<h4 class="h3 text-dark fw-bolder lh-sm">
+									ការគ្រប់គ្រងអ្នកគិតលុយ
+								</h4>
+							</div>
+							<div>
+								<ul class="list-disc list--item-mb-xs">
+									<li>
+										ចុះឈ្មោះ/ភ្ជាប់អ្នកគិតលុយទៅកាន់សាខាដែលបានជ្រើសរើស
+									</li>
+									<li>
+										កំណត់លេខសម្ងាត់អ្នកគិតលុយឡើងវិញ
+									</li>
+								</ul>
+							</div>
+						</li>
+
+						<!-- Graph item -->
+						<li class="col-6 col-md-4  mb-4  px-1 px-xl-4">
+							<div class="d-flex align-items-center  mb-3">
+								<figure class="graph  mr-3">
+									<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/QR-Pay.png">
+								</figure>
+								<h4 class="h3 text-dark fw-bolder">បង្ហាញ QR</h4>
+							</div>
+							<div>
+								<ul class="list-disc list--item-mb-xs">
+									<li>បង្កើតកូដ QR ដើម្បីបង្ហាញ ឬទាញយកសម្រាប់ទទួលយកការទូទាត់</li>
+
+								</ul>
+							</div>
+						</li>
+
+						<!-- Graph item  (one column on mobile)-->
+						<li class="col-12 col-md-4  mb-4  px-md-1 px-xl-4">
+							<div class="d-flex align-items-center  mb-3">
+								<figure class="graph  mr-3">
+									<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/transfer.svg">
+								</figure>
+								<h4 class="h3 text-dark fw-bolder lh-sm">
+									ប្រវត្តិប្រតិបត្តិការ
+								</h4>
+							</div>
+							<div>
+								<ul class="list-disc list--item-mb-xs">
+									<li>
+										ពិនិត្យមើលការជូនដំណឹងអំពីការទូទាត់ភ្លាមៗ
+									</li>
+									<li>
+										តាមដានបរិមាណការលក់
+									</li>
+									<li>
+										មើលរបាយការណ៍ប្រតិបត្តិការលម្អិត
+									</li>
+								</ul>
+							</div>
+						</li>
+						
+					</ul>
+					<div class="py-30"></div>
+			
+					<!-- Download -->
+					@* <h4 class="h3 h2-mb  mb-3 ml-xl-3  text-black fw-bolder  text-center text-md-left">Download APP</h4> *@
+					
+					@* <div class="d-block d-md-flex ml-xl-3"> *@
+					@* 	<nav class="appbadge flex-grow-1 flex-shrink-0"> *@
+					@* 		<div class="appbadge-qrocde"><img class="lazy" data-src="/assets/img/content/app-qrcode.svg"></div>  *@
+					@* 		<div class="appbadge-store"> *@
+					@* 			<a class="appbadge-ios hover-text" target="_blank" rel="noopener noreferrer" href="https://apps.apple.com/kh/app/cubc-mbanking/id489736801"><img class="lazy" data-src="/assets/img/content/app-ios.png"></a> *@
+					@* 			<a class="appbadge-android hover-text" target="_blank" rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.mbanking.cubc"><img class="lazy" data-src="/assets/img/content/app-android.png"></a> *@
+					@* 		</div> *@
+					@* 	</nav> *@
+					@* 	<p class="w-100 mt-3 mt-md-0  pl-md-4">The CUBC mBanking App is optimized to work on your Android smartphones and tablets, Apple iPhone, iPod Touch and iPad, and BlackBerry. Best of all, it's free!</p> *@
+					@* </div> *@
+				</div>
+				
+				<!-- Screenshot -->
+				<div class="flex-grow-1 flex-shrink-0 pr-lg-4  mt-4 mt-lg-0">
+					<figure class="mx-auto px-4 px-lg-0" style="max-width:225px">
+						<img class="ofi-contain lazy" data-src="/assets/img/content/merchant-app.png" alt="Merchant App">
+					</figure>
+				</div>
+			</div>
+		</section>
+		
+		<div class="py-page"></div>
+		
+		
+		<!-- FAQ -->
+		<section class="compact">
+			<!-- Section heading -->
+			<h3 class="h1 h2-mb  mb-4  text-black fw-bold text-center lh-sm">សំណួរដែលសួរញឹកញាប់</h3>
+			
+			<!-- FAQ list -->
+
+			<!-- QA1 item -->
+			<section class="qaitem" js-foldable-group="internet">
+				<div class="qaitem-title" role="button" tabindex="0" js-foldable-head>
+					<h5 class="qaitem-title-txt  h3 h3-mb text-dark fw-bold">
+						១. តើកម្មវិធី CUBC Merchant ជាអ្វី ហើយអាចផ្តល់អត្ថប្រយោជន៍ដល់អាជីវកម្មរបស់ខ្ញុំយ៉ាងដូចម្តេចខ្លះ?
+					</h5>
+				</div>
+				<div class="qaitem-detail" js-foldable-body>
+					<div class="qaitem-detail-content">
+						<div class="badge badge-green h5 h5-mb mb-3">ចម្លើយ៖</div>
+						<p>
+							កម្មវិធី CUBC Merchant ជួយសម្រួលដល់ការគ្រប់គ្រងអាជីវកម្មដោយការទទួលយកការទូទាត់តាមឌីជីថលប្រកបដោយសុវត្ថិភាព ការគ្រប់គ្រងអ្នកគិតលុយ និងការតាមដានបរិមាណការលក់ប្រចាំថ្ងៃ។ លោកអ្នកអាចបង្កើតកូដ QR គ្រប់គ្រងអ្នកគិតលុយទូទាំងសាខា ទទួលបានការជូនដំណឹងអំពីការទូទាត់ភ្លាមៗ និងតាមដានប្រតិបត្តិការយ៉ាងងាយស្រួល។
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- QA2 item -->
+			<section class="qaitem" js-foldable-group="internet">
+				<div class="qaitem-title" role="button" tabindex="0" js-foldable-head>
+					<h5 class="qaitem-title-txt  h3 h3-mb text-dark fw-bold">
+						២. តើខ្ញុំអាចចុះឈ្មោះដើម្បីប្រើប្រាស់កម្មវិធី CUBC Merchant ដោយរបៀបណា?
+					</h5>
+				</div>
+				<div class="qaitem-detail" js-foldable-body>
+					<div class="qaitem-detail-content">
+						<div class="badge badge-green h5 h5-mb mb-3">ចម្លើយ៖</div>
+						<p>
+							ដើម្បីប្រើកម្មវិធី CUBC Merchant អ្នកត្រូវមានគណនី CUBC សកម្ម និងបំពេញការចុះឈ្មោះពាណិជ្ជកររបស់អ្នកនៅបញ្ជរធនាគារ CUBC។ បន្ទាប់ពីការចុះឈ្មោះបានរួចរាល់ លោកអ្នកអាចចូលទៅកាន់កម្មវិធី CUBC Merchant ហើយបង្កើតឈ្មោះអ្នកប្រើប្រាស់ និងពាក្យសម្ងាត់របស់អ្នកសម្រាប់ចូលប្រើប្រាស់។
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- QA3 item -->
+			<section class="qaitem" js-foldable-group="internet">
+				<div class="qaitem-title" role="button" tabindex="0" js-foldable-head>
+					<h5 class="qaitem-title-txt  h3 h3-mb text-dark fw-bold">
+						៣. តើខ្ញុំអាចទទួលយកការទូទាត់តាមឌីជីថលដោយរបៀបណាខ្លះ?
+					</h5>
+				</div>
+				<div class="qaitem-detail" js-foldable-body>
+					<div class="qaitem-detail-content">
+						<div class="badge badge-green h5 h5-mb mb-3">ចម្លើយ៖</div>
+						<p class="mb-2">
+							លោកអ្នកអាចទាញយក ឬបង្កើតកូដ QR ដោយផ្ទាល់នៅក្នុងកម្មវិធី សម្រាប់ដាក់បង្ហាញទៅអតិថិជនដើម្បីស្កេន និងបំពេញការទូទាត់យ៉ាងងាយស្រួល។ លោកអ្នកអាចបង្កើតកូដ QR បានពីរប្រភេទ៖
+						</p>
+						<ul class="list-disc">
+							<li>QR ថេរ – អតិថិជនត្រូវតែបញ្ចូលចំនួនទឹកប្រាក់ទូទាត់ បន្ទាប់ពីការស្កេន។	</li>
+							<li> QR ចរន្ត – ចំនួនទឹកប្រាក់នៃការទូទាត់ត្រូវបានបញ្ចូលជាមុននៅក្នុងកូដ QR ដូច្នេះអតិថិជនគ្រាន់តែធ្វើការស្កេន និងបញ្ជាក់ការទូទាត់ប៉ុណ្ណោះ។</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+
+			<!-- QA4 item -->
+			<section class="qaitem" js-foldable-group="internet">
+				<div class="qaitem-title" role="button" tabindex="0" js-foldable-head>
+					<h5 class="qaitem-title-txt  h3 h3-mb text-dark fw-bold">
+						៤. តើខ្ញុំអាចតាមដាន និងគ្រប់គ្រងប្រតិបត្តិការដោយរបៀបណា?
+					</h5>
+				</div>
+				<div class="qaitem-detail" js-foldable-body>
+					<div class="qaitem-detail-content">
+						<div class="badge badge-green h5 h5-mb mb-3">ចម្លើយ៖</div>
+						<p>
+							កម្មវិធី CUBC Merchant ផ្តល់នូវការជូនដំណឹងអំពីការទូទាត់ភ្លាមៗ អនុញ្ញាតឱ្យលោកអ្នកអាចផ្ទៀងផ្ទាត់ប្រតិបត្តិការដែលទទួលបាន តាមដានបរិមាណការលក់ មើលរបាយការណ៍ប្រតិបត្តិការលម្អិត និងតាមដានការទូទាត់តាមសាខាផ្សេងៗ ដើម្បីធានាការត្រួតពិនិត្យហិរញ្ញវត្ថុយ៉ាងពេញលេញ។
+						</p>
+					</div>
+				</div>
+			</section>
+			
+			<!-- QA5 item -->
+			<section class="qaitem" js-foldable-group="internet">
+				<div class="qaitem-title" role="button" tabindex="0" js-foldable-head>
+					<h5 class="qaitem-title-txt  h3 h3-mb text-dark fw-bold">
+						៥. តើខ្ញុំអាចបន្ថែម ឬគ្រប់គ្រងអ្នកគិតលុយក្នុងកម្មវិធី CUBC Merchant ដោយរបៀបណា?
+					</h5>
+				</div>
+				<div class="qaitem-detail" js-foldable-body>
+					<div class="qaitem-detail-content">
+						<div class="badge badge-green h5 h5-mb mb-3">ចម្លើយ៖</div>
+						<p>
+							លោកអ្នកអាចបន្ថែមអ្នកគិតលុយភ្លាមៗ ក្នុងមុខងារគ្រប់គ្រងអ្នកគិតលុយនៅក្នុងកម្មវិធី។ គ្រាន់តែចុះឈ្មោះដោយបញ្ចូលព័ត៌មានលម្អិតអំពីអ្នកគិតលុយ រួចភ្ជាប់ព័ត៌មានទៅកាន់ទីតាំងសាខាណាមួយនៃអាជីវកម្ម។ លោកអ្នកក៏អាចកំណត់ការចូលប្រើកម្មវិធីរបស់អ្នកគិតលុយ ដើម្បីធានាបាននូវប្រតិបត្តិការគ្រប់គ្រងយ៉ាងរលូន។
+						</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- QA6 item -->
+			<section class="qaitem" js-foldable-group="internet">
+				<div class="qaitem-title" role="button" tabindex="0" js-foldable-head>
+					<h5 class="qaitem-title-txt  h3 h3-mb text-dark fw-bold">
+						៦. តើអ្នកគិតលុយអាចសម្រួលក្នុងការទទួលការទូទាត់ជំនួសខ្ញុំបានទេ?
+					</h5>
+				</div>
+				<div class="qaitem-detail" js-foldable-body>
+					<div class="qaitem-detail-content">
+						<div class="badge badge-green h5 h5-mb mb-3">ចម្លើយ៖</div>
+						<p>
+							បាទ/ចាស លោកអ្នកអាចចាត់តាំងអ្នកគិតលុយក្នុងការទទួលការទូទាត់នៅក្នុងសាខាណាមួយ ខណៈពេលដែលលោកអ្នកអាចរក្សាការគ្រប់គ្រង និងការត្រួតពិនិត្យពេញលេញទៅលើទិដ្ឋភាពនៃប្រតិបត្តិការទូទាំងសាខាអាជីវកម្មយ៉ាងច្បាស់លាស់។ លើសពីនេះទៅទៀត លោកអ្នកអាចបើកការជូនដំណឹងតាមសាខានីមួយៗ ដើម្បីទទួលបានបច្ចុប្បន្នភាពនៃការទូទាត់ពីអតិថិជន។
+						</p>
+					</div>
+				</div>
+			</section>
+		</section>
+		
+		<div class="py-page"></div>
+
+		<div class="py-page"></div>
+		
+		@Html.Partial("~/Views/Shared/" + @ViewData["viewUrl"] + "PersonalMerchantApp.cshtml")
+		
+		<div class="py-page"></div>
+	</section>
+	
+	
+</main>
+<!-- Page END -->

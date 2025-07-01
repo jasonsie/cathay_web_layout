@@ -1,0 +1,54 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "Tín dụng doanh nghiệp";
+    ViewBag.PageDescription = "Chúng tôi cung cấp các sản phẩm cho vay vốn kinh doanh hoàn thiện và đa dạng, sẵn sàng linh hoạt hỗ trợ Quý khách hàng với các dịch vụ tài chính toàn diện.";
+}
+
+@section Scripts {}
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/coroperate-financing-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/coroperate-financing.jpg")' alt='@ViewBag.nav_services_corporate_finance'>
+
+        </picture>
+        <figcaption hidden>@ViewBag.nav_services_corporate_finance</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_services_corporate_finance</h1>
+        </div>
+    </div>
+</div>
+
+
+    <div class='component-oversea-services-list component-bg--white'>
+        <div class="cosl-inner">
+            <h2 class='cosl-title'>@ViewBag.services_title</h2>
+            <ul class='cosl-list'>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>Tài trợ vốn lưu động</h3>
+                </li>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>Tài trợ chi phí đầu tư</h3>
+                </li>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>Cho vay đối với các công ty có vốn đầu tư của Đài Loan và Trung Quốc</h3>
+                </li>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>Đồng tài trợ và cho vay theo nhu cầu cụ thể</h3>
+                </li>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>Tài trợ dự án</h3>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+

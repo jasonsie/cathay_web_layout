@@ -1,0 +1,55 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "Browser Suggestions";
+    ViewBag.PageDescription = "In order to provide you with the best possible online experience, we recommend upgrading to the latest version of Internet Explorer or installing another browser immediately.";
+}
+
+
+@section Scripts {}
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/browser-setting-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/browser-setting.jpg")' alt='@ViewBag.nav_important_notice'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_browser_setting</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_browser_setting</h1>
+        </div>
+    </div>
+</div>
+
+<div class='component-oversea-info'>
+    <div class="coi-inner">
+        <h1 class="coi-title">@ViewBag.nav_browser_setting</h1>
+        <div class="coi-content">
+            <p class="coi-p">
+                Pelanggan yang terhormat:<br />
+                Untuk memberikan pengalaman browsing terbaik, Bank tidak lagi mendukung browser di bawah IE10 (inklusif). Jika Anda menggunakan browser di bawah IE10 (inklusif), beberapa halaman mungkin kehabisan versi atau tidak berfungsi dengan baik.<br />
+                ※ Mengingatkan anda: Microsoft telah berhenti menyediakan pembaruan keamanan untuk versi lama IE pada Januari 2016. Untuk detailnya, silahkan meliha "<a class='coi-link' href='https://www.microsoft.com/zh-tw/microsoft-365/windows/end-of-ie-support?rtc=1' target="_blank" rel='noopener nofollow'>Pengumuman Akhir dukungan Microsoft</a>".
+            </p>
+
+            <p class="coi-p">
+                Direkomendasikan agar anda segera meningkatkan browser IE anda atau memilih browser lain:<br />
+                                       <ul class="coi-ul">
+                                           <li class="coi-li">
+                                                <a class='coi-link' href="https://support.microsoft.com/zh-tw/help/17621/internet-explorer-downloads" target="_blank" rel='noopener nofollow'>Klik di sini untuk mengunduh dan memutakhirkan Internet Explorer</a>
+                                           </li>
+                                           <li class="coi-li">
+                                               <a class='coi-link' href="https://www.google.com.tw/chrome/" target="_blank" rel='noopener nofollow'>Klik di sini untuk mengunduh Google Chrome</a>
+                                           </li>
+                                           <li class="coi-li">
+                                               <a class='coi-link' href="https://www.mozilla.org/zh-TW/firefox/new/" target="_blank" rel='noopener nofollow'>Klik di sini untuk mengunduh Firefox</a>
+                                           </li>
+                                       </ul>
+            </p>
+
+
+        </div>
+
+    </div>
+</div><!--/.component-oversea-info-->

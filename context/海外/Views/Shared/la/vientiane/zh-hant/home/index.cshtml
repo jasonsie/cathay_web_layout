@@ -1,0 +1,269 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "";
+    ViewBag.PageDescription = "";
+}
+
+@section Scripts {
+
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/jquery.scrollbar.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/slick.min.js")"></script>
+
+
+    <script>
+        var homeCard = homeCard || {};
+        homeCard.prototype = {
+            sameHeight: function () {
+
+                let window_w = $(window).width();
+                let max_h = 0;
+                let scope = $('.component-oversea-services');
+                $('.cos-item-description', scope).css('min-height', 0);
+                if (window_w >= 768) {
+                    $('.cos-item', scope).each(function () {
+                        let h = $('.cos-item-description', $(this)).height();
+                        if (h > max_h) {
+                            max_h = h;
+                        }
+                    })
+                    $('.cos-item-description', scope).height(max_h);
+                } else {
+                    $('.cos-item-description', scope).css('height', 'auto');
+                }
+            },
+            addEventListener: function () {
+                let o = this;
+                $(window).on('resize.homeCard', function () {
+                    o.sameHeight();
+                }).trigger('resize.homeCard');
+            },
+            init: function () {
+                this.addEventListener();
+            }
+        }
+    </script>
+
+    <script>
+        $(function () {
+
+            var myHomeCard = homeCard.prototype;
+           // myHomeCard.init();
+
+
+            //
+            $(window).resize(function () {
+
+                let window_w = $(window).width();
+                let offset_x;
+                let content_w;
+                if (window_w > 991) {
+                    offset_x = $('.cok-inner').offset().left;
+                    content_w = $('.cok-content').width();
+                    max_w = window_w - content_w - offset_x;
+                } else {
+                    offset_x = 0;
+                    content_w = 0;
+                    max_w = window_w;
+                }
+                $('.cok-figure-wrap').css('width', max_w);
+                $('.cok-figure-wrap').css('flex-basis', max_w);
+                $('.cok-figure-wrap').css('max-width', max_w);
+                $('.cok-figure-wrap').css('left', content_w + offset_x);
+
+            }).trigger('resize');
+
+            $(".cok-figure-slider").slick({
+                infinite: false,
+                slidesToShow: 1,
+                dots: false
+            });
+
+            ////////////////////////////
+
+            //$('.con-list', $(this)).scrollbar();
+        })
+    </script>
+
+    <script>
+        //fraud modal
+        $(function () {
+            let myFraudModal = fraudModal.prototype;
+            myFraudModal.init($('.component-oversea-modal--fraud'));
+            myFraudModal.show();
+        })
+    </script>
+}
+
+<div class='component-oversea-kv'>
+    <div class="cok-figure-wrap">
+        <div class="cok-figure-slider">
+            <div class="cok-figure-item">
+                <figure class='cok-figure'>
+                    <picture>
+                        <source media='(min-width: 992px)'
+                                srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv/bg-lg.jpg")' />
+                        <img class='cok-img' src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv/bg.jpg")' alt='@ViewBag.site_name'>
+                    </picture>
+                    <figcaption hidden>@ViewBag.site_name</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+
+    <div class="cok-inner">
+        <div class="cok-content">
+            @if (ViewBag.lang == "zh-hant")
+            {
+                <h1 class='cok-title'>
+                    <span class='cok-title--company'>國泰世華銀行</span>
+                    <span class='cok-title--slogan'>值得您<br />信賴的夥伴</span>
+                </h1>
+            }
+            else
+            {
+                <h1 class='cok-title'>
+                    <span class='cok-title--company'>Cathay United Bank</span>
+                    <span class='cok-title--slogan'>值得您<br />信賴的夥伴</span>
+                </h1>
+            }
+
+        </div>
+    </div>
+</div>
+<div class='component-oversea-services component-oversea-services--home'>
+    <div class="cos-inner">
+
+        @if (ViewBag.lang == "zh-hant")
+        {
+            <h2 class='cos-title'>我們的服務</h2>
+            <p class='cos-description'>國泰世華銀行永珍分行設立於寮人民民主共和國，為台灣國泰金控集團轄下國泰世華銀行所創辦。</p>
+            <p class='cos-description'>
+                <strong>國泰金控暨旗下子公司國泰人壽、國泰世華銀行、國泰產險、國泰證券、</strong>
+                國泰投信等，在台灣及世界各國提供全面性且多元化的金融服務與解決方案，與國泰航空有限公司暨其關係企業互不隷屬亦非關係企業。
+            </p>
+        }
+        else
+        {
+            <h2 class='cos-title'>Our Services</h2>
+            <p class='cos-description'>
+                Cathay United Bank, Vientiane Capital Branch is a branch established in Lao People's Democratic Republic by Cathay United Bank, a financial holding group in Taiwan.
+            </p>
+            <p class='cos-description'>
+                <strong>Cathay Financial Holdings (Cathay FHC) and its subsidiaries including Cathay Life Insurance, Cathay United Bank, Cathay Century Insurance, Cathay Securities, and Cathay Securities Investment Trust </strong>
+                provide comprehensive and diversified financial services and solutions in Taiwan and around the world. We are independent from and not affiliated with Cathay Pacific Airways Limited and its subsidiaries.
+            </p>
+        }
+
+
+
+        <ul class='cos-list'>
+            <li class='cos-item'>
+                <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"services/cash-management/")" class='cos-item-link'>
+                    <figure class='cos-item-figure'>
+                        <picture>
+                            <img class='cos-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services/home/cash-management.jpg")' alt='@ViewBag.nav_services_cash_management'>
+                        </picture>
+                        <figcaption hidden>@ViewBag.nav_services_cash_management</figcaption>
+                    </figure>
+                    <div class='cos-item-content'>
+                        <h3 class='cos-item-title'>@ViewBag.nav_services_cash_management</h3>
+                        @if (ViewBag.lang == "zh-hant")
+                        {
+                            <p class='cos-item-description'>提供便利且整合的現金管理產品，打造全方位金流服務，讓您有效管理收付款，提升資金運用效率。</p>
+                        }
+                        else
+                        {
+                            <p class='cos-item-description'>We provide you with convenient and comprehensive cash management products and all-rounded cash flow services for you to effectively manage your accounts payable and accounts receivable to enhance the fund utilization efficiency</p>
+                        }
+                        <div class='cos-item-btn'>@ViewBag.btn_learn_more</div>
+                    </div>
+                </a>
+            </li>
+
+            <li class='cos-item'>
+                <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"services/corporate-financing/")" class='cos-item-link'>
+                    <figure class='cos-item-figure'>
+                        <picture>
+                            <img class='cos-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services/home/corporate-financing.jpg")' alt='@ViewBag.nav_services_corporate_finance'>
+                        </picture>
+                        <figcaption hidden>@ViewBag.nav_services_corporate_finance</figcaption>
+                    </figure>
+                    <div class='cos-item-content'>
+                        <h3 class='cos-item-title'>@ViewBag.nav_services_corporate_finance</h3>
+                        @if (ViewBag.lang == "zh-hant")
+                        {
+                            <p class='cos-item-description'>提供完整且多元化的企業融資，為您量身打造全面的金融服務。</p>
+                        }
+                        else
+                        {
+                            <p class='cos-item-description'>Through our complete and diversified range of corporate finance services, we are able to offer you with customized financial services to suit your banking needs.</p>
+                        }
+                        <div class='cos-item-btn'>@ViewBag.btn_learn_more</div>
+                    </div>
+                </a>
+            </li>
+
+        </ul>
+
+
+    </div>
+</div>
+
+
+<div class='component-awards component-awards--align-center'>
+    <div class="ca-inner">
+        <h2 class='ca-title'>得獎榮耀</h2>
+        <figure class='ca-figure'>
+            <picture>
+                <img class='ca-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/awards/awards-lg.jpg")' alt='得獎榮耀'>
+            </picture>
+            <figcaption hidden>得獎榮耀</figcaption>
+        </figure>
+        <a href='@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/awards/awards-for-laos.pdf")' target="_blank" rel="noopener" class='ca-btn'>@ViewBag.btn_learn_more</a>
+    </div>
+</div>
+
+
+<div class='component-credit-table'>
+    <div class="cct-inner">
+        <h2 class='cct-title'>信用評等</h2>
+        <table class="cct-table">
+            <thead>
+                <tr class='cct-tr cct-tr--head cct-tr--green'>
+                    <td class='cct-td cct-td--align-center' rowspan="2">評等</td>
+                    <td class='cct-td cct-td--align-center' colspan="2" >最近評等日期</td>
+                    <td class='cct-td cct-td--align-center' rowspan="2">其他評等資訊</td>
+                </tr>
+
+                <tr class='cct-tr cct-tr--head'>
+                    <td class='cct-td cct-td--align-center'>長期</td>
+                    <td class='cct-td cct-td--align-center'>短期</td>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr class='cct-tr cct-tr--grey'>
+                    <td class='cct-td cct-td--align-center'>中華信用評等</td>
+                    <td class='cct-td cct-td--align-center'>twAA+</td>
+                    <td class='cct-td cct-td--align-center'>twA-1+</td>
+                    <td class='cct-td cct-td--align-center'>評等展望:<br/>穩定</td>
+                </tr>
+                
+                <tr class='cct-tr'>
+                    <td class='cct-td cct-td--align-center'>標準普爾(Standard & Poor's)</td>
+                    <td class='cct-td cct-td--align-center'>A-</td>
+                    <td class='cct-td cct-td--align-center'>A-2</td>
+                    <td class='cct-td cct-td--align-center'>評等展望:<br/>穩定</td>
+                </tr>
+                
+                <tr class='cct-tr cct-tr--grey'>
+                    <td class='cct-td cct-td--align-center'>穆迪(Moody's)</td>
+                    <td class='cct-td cct-td--align-center'>A2</td>
+                    <td class='cct-td cct-td--align-center'>P-1</td>
+                    <td class='cct-td cct-td--align-center'>評等展望:<br/>穩定</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

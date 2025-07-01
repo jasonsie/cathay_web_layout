@@ -1,0 +1,45 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "Cathay United Bank - Chu Lai Branch is expected to relocate to Ho Chi Minh City";
+    ViewBag.PageDescription = "Chu Lai Branch received the Principle Approval Decision on April 23, 2021 from SBV to relocate to Ho Chi Minh City. The relocation details will be announced separately later.";
+}
+
+@section Scripts {}
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news.jpg")' alt='@ViewBag.nav_news'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_news</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_news</h1>
+        </div>
+    </div>
+</div>
+
+<!-- newsview -->
+<article class="component-newsview">
+    <div class="component-newsview-inner">
+        <header class="component-newsview-header">
+            <div class="component-newsview-date"></div>
+            <h1 class="component-newsview-title">Cathay United Bank - Chu Lai Branch is expected to relocate to Ho Chi Minh City</h1>
+        </header>
+
+        <div class="component-newsview-body">
+            Cathay United Bank - Chu Lai Branch received the Principle Approval Decision on April 23, 2021 from SBV to relocate to Ho Chi Minh City. The relocation details will be announced separately later.
+        </div>
+
+        <footer class="component-newsview-footer">
+            <div class="component-btn-row">
+                <a class="component-btn-main btn-green" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/")">Back</a>
+            </div>
+        </footer>
+    </div>
+</article><!--/.component-newsview-->

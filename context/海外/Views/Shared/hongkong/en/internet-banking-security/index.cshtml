@@ -1,0 +1,118 @@
+﻿@model IndexViewModel
+
+@if (ViewBag.lang == "zh-hant")
+{
+}
+else
+{
+    ViewBag.PageTitle = " E-Banking Security";
+    ViewBag.PageDescription = "";
+}
+
+
+@section Scripts {}
+
+    <div class='component-oversea-kv-short'>
+        <figure class='coks-figure'>
+            <picture>
+                <source media='(min-width: 768px)'
+                        data-srcset='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/financial-disclosure-lg.jpg")' />
+                <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/financial-disclosure.jpg")' alt='Security and Privacy'>
+            </picture>
+            <figcaption hidden>Security and Privacy</figcaption>
+        </figure>
+        <div class="coks-inner">
+            <div class="coks-content">
+                <h1 class='coks-title'>Security and Privacy</h1>
+            </div>
+        </div>
+    </div>
+    <div class='component-oversea-info'>
+        <div class="coi-inner">
+            <h1 class="coi-title">Internet Security Alert</h1>
+            <div class="coi-content">
+                <p class="coi-p"><b>E-Banking Security Recommendations</b></p>
+                <ul class="coi-ul">
+                    <li class='coi-li'>The Bank will not ask customers to log in E-Banking and to enter account or personal information, including user name and password.</li>
+                    <li class='coi-li'>If you receive a text message purported to be from the Bank or from an unknown source, you should not respond to them or click on any links.</li>
+                    <li class='coi-li'>Protect your personal digital keys and beware of fraudulent links. </li>
+                    <li class='coi-li'>Visit the HKMA website to learn more about Personal Digital Keys and security tips<br /><a class='coi-link' href='https://www.hkma.gov.hk/eng/smart-consumers/beware-of-fraudsters/' target="_blank" rel='noopener nofollow'>https://www.hkma.gov.hk/eng/smart-consumers/beware-of-fraudsters/</a>  </li>
+                    <li class='coi-li'>Please do not leave your computer after logging into the E-Banking.</li>
+                    <li class='coi-li'>Please check if there is any anomaly on the login page and when you are logging into the website.</li>
+                    <li class='coi-li'>After using the E-Banking services, please remember to logout the website and close the internet browser.</li>
+
+                    <li class='coi-li'>If you are connected to the E-Banking via a tag or search engine, please check whether the website is authentic.</li>
+
+
+                    <li class='coi-li'>When you apply for the E-Banking, please change the password shown in the E-Banking  password sheet issued by the bank immediately, and after you complete the password change by using the paper password slip, be sure to destroy the paper password slip.</li>
+
+                    <li class="coi-li">Change your password at regular intervals, such as at least every three months (especially if you suspect that your password is leaking, you should immediately change your E-Banking password).</li>
+
+                    <li class='coi-li'>Do not disclose your user name and password to anyone. (No one from Cathay United Bank will ask you for your password.) </li>
+
+                    <li class='coi-li'>Please do not keep any written record regarding your password in: (1) any device that can be accessed to the E-banking, (2) the object you often carry with you, and (3) somewhere near the device computer.</li>
+
+                    <li class='coi-li'>Do not write down or record your password without obscuring it.</li>
+
+                    <li class='coi-li'>Set password that is hard to guess. Do not use your date of birth, name, ID number, telephone number or similar numbers as your password.</li>
+
+
+                    <li class='coi-li'>Please make sure not to be peeped around when you input your user name, password, or any confidential personal information.</li>
+
+                    <li class='coi-li'>Use different user names and passwords to log into different websites. DO NOT use the password you registered on other websites.</li>
+
+                    <li class='coi-li'>Please do not access the E-Banking services via a public computer (e.g., computer of an internet cafe  or cybercafe) or do not use Internet services provided in public places to log in E-Banking and perform any transactions or check the account balances as these computers may have hacking programs installed (others may use it to obtain your personal or account information).</li>
+                    <li class='coi-li'>When using the E-Banking services, do not open other internet browsers and browse other websites at the same time.</li>
+                    <li class='coi-li'>When you have finished using the E-Banking services, please click “Log out” to exit, and make sure you have successfully logged out the system. </li>
+                    <li class='coi-li'>Please log out the E-Banking before browsing other websites. </li>
+                    <li class='coi-li'>When using the E-Banking services, do not leave the webpage idle for a long time.</li>
+                    <li class='coi-li'>In order to prevent your personal information from being used by others, please do not write down your personal E-Banking account information in a format familiar to others. If you use electronic tools to store personal information, please ensure that the information is kept confidential to prevent it from being stolen and used by others.</li>
+                    <li class='coi-li'>If you forget your password, please contact the Bank to re-apply.</li>
+                    <li class='coi-li'>As some data (such as password) could be stored in the cache (storage space reserved for temporary data which are used by internet browser), make sure to clean the cache and close the browser. </li>
+                    <li class='coi-li'>Cathay United Bank will not request customers to provide passwords and related personal information via email or phone calls.</li>
+                    <li class='coi-li'>The Bank does not send any email with hyperlink,barcode or QR code to customers. </li>
+                    <li class='coi-li'>DO NOT open e-mail messages with unknown origins and attachments. Remove the spam email whenever it is received. Never access E-Banking via the link in e-mail, unknown applications or internet search engines. Avoid installing or executing software or programs of unknown origin and sending personal information or passwords via email.</li>
+                    <li class='coi-li'>Please regularly update the version of anti-virus software and perform the virus scan on your computer. Install genuine and licensed edition of security defense software (e.g. firewall or anti-virus software) on your computer, and update the virus definition and scan engine at any time to reduce  the risk of intrusion by Trojans (backdoor programs), viruses, worms and other malicious codes on your computer and stealing your personal data.</li>
+                    <li class='coi-li'>Please use the genuine and licensed edition of operating system and software. Install the latest security fixes/patches of operating system and internet browser, and set the password on the computer which is used for accessing E-Banking.</li>
+                    <li class='coi-li'>If you access E-Banking with a laptop, please turn off unnecessary wireless connection functions (e.g., bluetooth and NFC). </li>
+                    <li class='coi-li'>To ensure you are granted more sufficient protection when making online transactions, if you wish to transfer to a third party's account, you are required to register the related accounts in advance, or make transfer to the said account through 2-step verification. No charges are required for account registration and 2-step verification. </li>
+                    <li class='coi-li'>If you access the E-Banking services as an entity / company, we suggest you adopting a dual control maker/checker (or above) security mechanism. </li>
+                    <li class='coi-li'>Please check your monthly statement regularly to make sure your online transactions are made correctly, and notify the branch if you fine any anomaly. </li>
+                    <li class='coi-li'>Please check and verify your transaction records timely. </li>
+                    <li class='coi-li'>Customers are responsible for installing the required software, hardware and other security related equipment. The fees and risks of installment shall be borne by the customers. </li>
+                    <li class='coi-li'>If you have any concerns about online security or account activities, please call +852 2877 5488 during working hours to contact our service staff and change your password as soon as possible.</li>
+                </ul>
+                <br />
+                <p class="coi-p"><b>Mobile Device Safety Recommendations</b></p>
+                <ul class="coi-ul">
+                    <li class='coi-li'>Mobile devices (such as smartphones and tablets) have become an important tool in our daily lives. When using the E-Banking services through mobile devices, you should pay attention to various information security measures to prevent unscrupulous people from invading your mobile device through security loopholes. </li>
+                    <li class='coi-li'>Cathay United Bank Hong Kong Branch does not provide any official mobile applications (mobile apps) on AppStore and GooglePlay™. Do not download any mobile apps that appear to be the counterfeit mobile apps . If in doubt, Please contact Cathay United Bank Hong Kong Branch.</li>
+                    <li class='coi-li'>Install reputable anti-virus software on the mobile device and keep the virus definitions updated at all time to ensure the latest security protection.</li>
+                    <li class='coi-li'>
+                        <p class="coi-p">If you use the web browser on your mobile device to log in the E-Banking, please pay attention to the following matters: </p>
+                        <ul class="coi-ul">
+                            <li class='coi-li'>Please keep updating the operating system (OS) and applications of your mobile device. </li>
+                            <li class='coi-li'>Please use Automatic Lock and/or Enable Password Lock functions to prevent others from using your mobile device without permission.</li>
+                            <li class='coi-li'>Do not log in to personal E-Banking accounts on the device which is not yours.</li>
+                            <li class='coi-li'>Please avoid storing any account numbers and passwords on mobile devices and web pages. </li>
+                            <li class='coi-li'>Please avoid using mobile devices that have been cracked or illegally hacked (such as jailbreaking or rooting the mobile device). </li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <br />
+                <p class="coi-p"><b>Relevant URL</b></p>
+                <ul class="coi-ul">
+                    <li class='coi-li'><a href="https://www.hkma.gov.hk/eng/" rel='noopener nofollow' class="coi-link" target="_blank" rel="noopener">Hong Kong Monetary Authority</a></li>
+                    <li class='coi-li'><a href="http://www.hkab.org.hk/index.jsp?lang=en" class="coi-link" target="_blank" rel="noopener">Hong Kong Association of Banks</a></li>
+                    <li class='coi-li'><a href="https://www.sfc.hk/" class="coi-link" target="_blank" rel="noopener">Hong Kong Securities and Futures Commission</a></li>
+                </ul>
+
+                <p class="coi-p">
+                    Notice: If you commit fraud or any losses incurred due to gross negligence or failure to comply with the above security measures, you shall bear all losses. The Bank always adopts strict security standards and procedures to prevent unauthorized persons from obtaining information about you. Cathay United Bank will never contact you and ask you to confirm your personal information, such as  E-Banking user ID, user password or user code, outside of the normal  E-Banking login process. If you receive such a request, please call +852 2877 5488 to notify us immediately.
+                </p>
+
+            </div>
+
+        </div>
+    </div><!--/.component-oversea-info-->

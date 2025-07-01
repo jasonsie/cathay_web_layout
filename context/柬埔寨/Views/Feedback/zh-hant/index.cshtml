@@ -1,0 +1,322 @@
+@{
+    ViewData["PageTitle"] = "意見反應表";
+    ViewData["PageDescription"] = "本行重視您的意見回饋，並致力於精進我們的服務。敬請您透過本行意見反應表給予您的回饋。您的寶貴意見將於您送出後立即進入本行內部處理程序，並於規定時間內替您處理完畢。謝謝！";
+}
+@section Scripts {
+    <script src="/assets/js/purify.js"></script>
+    <script nonce="NhOc3wZFJ7hZvX9oqCrl/g">
+        const urlImg = '@Url.Content("~/")' + 'Feedback/ReadCaptcha';//
+        const url = '@Url.Content("~/")' + 'Feedback/SummitData';
+        $(function () {
+            getCaptcha();
+        });
+        function getCaptcha() {
+            //alert(urlImg);
+            var obj = new Object();
+            $.ajax({
+                type: "GET",
+                async:false,
+                url: urlImg,
+                data: JSON.stringify(obj),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    //alert(JSON.stringify(textStatus));
+                    const imgStr = "data:image/jpeg;base64," + data.Data.PictureBase64;
+                    //alert(imgStr);
+                    $("#imgCaptcha").attr("src", imgStr);
+                    //ShowMsg(data.responseText);
+                },
+                error: function (xhr, textStatus) {
+                    ShowMsg(xhr.responseText);
+                }
+            });
+        }
+        function onSubmit() {
+            ClearMsg();
+            //alert('submit');
+            var obj = new Object();
+            obj.chkaccept = "Y";
+            if ($("#branch").val() === "") {
+                obj.chkaccept = "N";
+                if (!$("#branch").hasClass('is-invalid'))
+                    $("#branch").toggleClass('is-invalid');
+            } else {
+                obj.slBranch = $("#branch").val();
+                $("#branch").removeClass('is-invalid');
+            }
+
+            if ($("#name").val() === "") {
+                obj.chkaccept = "N";
+                if (!$("#name").hasClass('is-invalid'))
+                    $("#name").toggleClass('is-invalid');
+            } else {
+                obj.txtName = $("#name").val();
+                $("#name").removeClass('is-invalid');
+            }
+
+            if ($("#email").val() === "") {
+                obj.chkaccept = "N";
+                if (!$("#email").hasClass('is-invalid'))
+                    $("#email").toggleClass('is-invalid');
+            } else {
+                obj.txtEmail = $("#email").val();
+                $("#email").removeClass('is-invalid');
+            }
+
+            if ($("#acountNumber").val() === "") {
+                obj.chkaccept = "N";
+                if (!$("#acountNumber").hasClass('is-invalid'))
+                    $("#acountNumber").toggleClass('is-invalid');
+            } else {
+                obj.txtAccountNo = $("#acountNumber").val();
+                $("#acountNumber").removeClass('is-invalid');
+            }
+
+            if ($("#phone").val() === "") {
+                obj.chkaccept = "N";
+                if (!$("#phone").hasClass('is-invalid'))
+                    $("#phone").toggleClass('is-invalid');
+            } else {
+                obj.txtPhone = $("#phone").val();
+                $("#phone").removeClass('is-invalid');
+            }
+
+            if ($("#dateTime").val() === "") {
+                obj.chkaccept = "N";
+                if (!$("#dateTime").hasClass('is-invalid'))
+                    $("#dateTime").toggleClass('is-invalid');
+            } else {
+                obj.date = $("#dateTime").val();
+                $("#dateTime").removeClass('is-invalid');
+            }
+
+            if ($("#service").val() === "") {
+                obj.chkaccept = "N";
+                if (!$("#service").hasClass('is-invalid'))
+                    $("#service").toggleClass('is-invalid');
+            } else {
+                obj.slServices = $("#service").val();
+                $("#service").removeClass('is-invalid');
+            }
+
+            if ($("#comments").val() === "") {
+                obj.chkaccept = "N";
+                if (!$("#comments").hasClass('is-invalid'))
+                    $("#comments").toggleClass('is-invalid');
+            } else {
+                obj.txtAreaCom = $("#comments").val();
+                $("#comments").removeClass('is-invalid');
+            }
+
+            if ($("#txtCaptcha").val() === "") {
+                $("#errCaptcha").show();
+                obj.chkaccept = "N";
+            } else {
+                obj.txtCaptcha = $("#txtCaptcha").val();
+                $("#errCaptcha").hide();
+            }
+            //alert(url);
+            //obj.txtAreaCom = "txtAreaCom";
+            if (obj.chkaccept === "Y") {
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: JSON.stringify(obj),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (data, textStatus, xhr) {
+                        //alert(JSON.stringify(textStatus));
+                        //alert(JSON.stringify(data));
+                        ShowMsg(data.ReturnMessage);
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        //alert('failed');
+                        ShowMsg(xhr.responseText);
+                    }
+                });
+            }
+        }
+        function ShowMsg(str) {
+            $("#showmsg").html(DOMPurify.sanitize(str)).css({ "color": "red", "font-size": "200%" });
+        }
+        function ClearMsg() {
+            $("#showmsg").html("");
+        }
+    </script>
+}
+
+<!-- Page START -->
+<main class="mastbody">
+
+    <!--
+        意見反應表
+    -->
+    <div class="topkv kv  kv--txt-left">
+        <div class="kv-bg">
+            <div class="kv-bg-inner">
+                <figure class="kv-bg-img">
+                    <picture>
+                        <source media="(min-width:769px)" srcset="/assets/img/topkv/feedback.jpg" />
+                        <img srcset="/assets/img/topkv/feedback-mb.jpg">
+                    </picture>
+                </figure>
+            </div>
+        </div>
+        <div class="kv-cont">
+            <div class="kv-cont-inner">
+                <h1 class="display-1-sm  fw-bold lh-xs">意見反應表</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- Breadcrumb  (lays on top of .topkv if places right after it) -->
+    <nav class="breadcrumb-nav text-white" aria-label="breadcrumb">
+        <div class="fluid">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]"><span>首頁</span><i class="ico-ui-home"></i></a></li>
+                <li class="breadcrumb-item active" aria-current="page">意見反應表</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!--
+        意見反應表 - Detail
+    -->
+    <section class="fluid overflow-hidden">
+        <div class="py-page"></div>
+
+        <div class="compact">
+            <p>本行重視您的意見回饋，並致力於精進我們的服務。敬請您透過本行意見反應表給予您的回饋。您的寶貴意見將於您送出後立即進入本行內部處理程序，並於規定時間內替您處理完畢。謝謝！</p>
+
+            <div class="py-section"></div>
+
+            <!--
+                Form
+            -->
+            <!-- Gray container -->
+            <div class="bg-gray-100  px-3 py-4 px-sm-4 px-lg-5">
+
+                <!-- Form fields START -->
+                <div class="form-row">
+                    <div class="form-group col">
+                        <label for="branch">分行名稱</label>
+                        <select class="custom-select" id="branch" required>
+                            <option value="" selected>請選擇分行</option>
+                            <option value="headoffice">Head Office 總行</option>
+                            <option value="branch-nehru">Nehru Branch 尼赫魯分行</option>
+                            <option value="branch-maotsetoung">Mao Tse Toung Branch 毛澤東分行</option>
+                            <option value="branch-toultumpoung">Toul Tumpoung II Branch 朱德奔分行</option>
+                            <option value="branch-chaomchau">Chaom Chau Branch 中洲分行</option>
+                            <option value="branch-phsarhengly">Phsar Hengly Branch 興利分行</option>
+                            <option value="branch-chbarampov">Chbar Ampov Branch 鐵橋頭分行</option>
+                            <option value="branch-statchas">Stat Chas Branch 舊運動場分行</option>
+                            <option value="branch-stuengmeanchey">Stueng Meanchey Branch 宋仁芷分行</option>
+                            <option value="branch-saensokh">Saen Sokh Branch 森速分行</option>
+                            <option value="branch-siemreap">Siem Reap Branch 暹粒分行</option>
+                            <option value="branch-sihanoukville">Sihanouk Ville Branch 西哈努克分行</option>
+                            <option value="branch-battambang">Battambang Branch 馬德望分行</option>
+                            <option value="branch-kampongcham">Kampong Cham Branch 磅針分行</option>
+                            <option value="branch-bavet">Krong Bavet Branch 巴域分行</option>
+                            <option value="exchangeoffice-monivong">Monivong Exchange Office 莫尼旺收付處</option>
+                        </select>
+                        <div class="invalid-feedback">請檢查您輸入的資料</div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="name">姓名</label>
+                        <input type="text" class="form-control" id="name" placeholder="姓名" required>
+                        <div class="invalid-feedback">請檢查您輸入的資料</div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="email">電子郵件</label>
+                        <input type="email" class="form-control" id="email" placeholder="電子郵件" required>
+                        <div class="invalid-feedback">請檢查您輸入的資料</div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="acountNumber">銀行帳號</label>
+                        <input type="text" class="form-control" id="acountNumber" placeholder="銀行帳號" required>
+                        <div class="invalid-feedback">請檢查您輸入的資料</div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="phone">聯絡電話</label>
+                        <input type="text" class="form-control" id="phone" placeholder="聯絡電話" required>
+                        <div class="invalid-feedback">請檢查您輸入的資料</div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="dateTime">發生日期/時間</label>
+                        <input type="text" class="form-control" id="dateTime" placeholder="發生日期/時間" required>
+                        <div class="invalid-feedback">請檢查您輸入的資料</div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="service">反應產品別/服務</label>
+                        <select class="custom-select" id="service" required>
+                            <option value="" selected>請選舉產品別/服務</option>
+                            <option value="remittance">匯款</option>
+                            <option value="loan">貸款</option>
+                            <option value="atm">ATM自動櫃員機</option>
+                            <option value="debit-card">提款/簽帳卡</option>
+                            <option value="credit-card">信用卡</option>
+                            <option value="saving-account">活期存款帳戶</option>
+                            <option value="current-account">支票存款帳戶</option>
+                            <option value="mobile-banking">網銀服務/交易</option>
+                            <option value="other">其他</option>
+                        </select>
+                        <div class="invalid-feedback">請檢查您輸入的資料</div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group col-12">
+                        <label for="comments">反應內容</label>
+                        <textarea class="form-control" rows="5" id="comments" placeholder="反應內容" required></textarea>
+                        <div class="invalid-feedback">請檢查您輸入的資料</div>
+                    </div>
+                </div>
+                <!-- Form fields END -->
+
+                <div class="text-center">
+                    <div class="d-flex justify-content-center mb-3">
+                        <input id="txtCaptcha" name="txtCaptcha" class="txt" type="text" autocomplete="off" placeholder="please input captcha code">
+                        <img onclick="getCaptcha()" src="#" alt="" id="imgCaptcha" style="width: 110px; height: 48px; border-radius:5px;margin-left:5px;">
+                    </div>
+                    <div class="invalid-feedback" id="errCaptcha" style="margin-top:-10px;margin-bottom:10px;">請檢查您輸入的資料</div>
+                    <button type="button" class="btn btn-green" onclick="onSubmit(); return false;">
+                        <span class="px-2">送出<i class="ico-ui-right-v ml-2 big"></i></span>
+                    </button>
+
+                    <!-- 添加警告符號與描述文字 -->
+                    <div style="margin-top: 15px; display: flex; align-items: center; justify-content: center;">
+                        <!-- 警告符號圖片 -->
+                        <img src="/assets/img/topkv/Warning-icon.png" alt="警告符號" style="width: 16px; height: 16px; margin-right: 3px;">
+                        <!-- 描述文字 -->
+                        <span style="font-size: 14px; color: #333;">
+                            若未能正確提供姓名、地址和電話號碼/電子郵件，投訴將被作廢。
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="py-60"></div>
+
+
+            <!-- Downloads -->
+            <p class="text-center">
+                    <a class="btn btn-outline-green-dark rounded-pill  h4-mb" target="_blank" rel="noopener noreferrer" href="/file/Feedback Form.pdf">下載意見反應表<i class="ico-ui-download ml-2"></i></a>
+            </p>
+
+        </div>
+
+        <div class="py-page" id="showmsg"></div>
+    </section>
+
+</main>
+<!-- Page END -->

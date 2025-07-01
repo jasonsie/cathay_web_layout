@@ -1,0 +1,77 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = @ViewBag.nav_news;
+}
+
+@if (ViewBag.lang == "zh-hant")
+{
+    ViewBag.PageDescription = "";
+}
+else
+{
+    ViewBag.PageDescription = "";
+}
+
+@section Scripts {
+    <script>
+    var country = "@ViewBag.country_url";
+    var city = "@ViewBag.city_url";
+    var id = "@ViewBag.id";
+    var lang = "zh-hant";
+    var branchId = "615";
+    </script>
+    <script src="~/OVSWS/Content/js/backendSystem/LatestNews.js"></script>
+}
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news.jpg")' alt='@ViewBag.nav_news'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_news</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_news</h1>
+        </div>
+    </div>
+</div>
+
+
+
+
+@if (ViewBag.id != null)
+{
+
+
+}
+
+@if (ViewBag.id == null)
+{
+
+
+}
+
+
+<!-- newslist -->
+<div class="component-newslist">
+    <div class="component-newslist-inner">
+        <div class="component-newslist-row">
+            <div class="component-newslist-col">
+
+                <a class="component-newsitem" href="@Url.Content("~/OVSWS/Content/pdf/" +@ViewBag.country_url+"/" +@ViewBag.city_url+"/announcements/永續定期存款發行公告_仰光分行.pdf")" target="_blank" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2024-5-10</div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">公告【永續定期存款】正式發行</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div><!--/.component-newslist-->

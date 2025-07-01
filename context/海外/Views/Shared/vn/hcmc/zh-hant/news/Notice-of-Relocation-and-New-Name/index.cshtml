@@ -1,0 +1,56 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "越南茱萊分行預計將遷移至胡志明市";
+    ViewBag.PageDescription = "越南茱萊分行於2021/04/23獲越南國家銀行核發搬遷至胡志明市原則性許可，開業細節及日期後續將另行公告。";
+}
+
+@section Scripts {}
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news.jpg")' alt='@ViewBag.nav_news'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_news</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_news</h1>
+        </div>
+    </div>
+</div>
+
+<!-- newsview -->
+<article class="component-newsview">
+    <div class="component-newsview-inner">
+        <header class="component-newsview-header">
+            <div class="component-newsview-date"></div>
+            <h1 class="component-newsview-title">遷址暨更名通知</h1>
+        </header>
+
+        <div class="component-newsview-body">
+            茱萊分行將於2022年04月22日(周五)起遷址營業並更改分行名稱，現時分行的所有帳戶將保持不變，客戶不必採取任何行動；另外，茱萊分行原址將變更為廣南代表人辦事處。日後各項業務之服務，請至新址辦理業務，如有不便之處，尚祈 見諒。
+            <br />
+            <p>
+            <p>
+                茱萊分行名稱、營業地址、連絡電話及傳真號碼變更如下：<br />
+                分行名稱: 國泰世華商業銀行胡志明市分行<br />
+                營業地址：19th Floor, Lim Tower 3, 29A Nguyen Dinh Chieu Street, Da Kao Ward, District 1, Ho Chi Minh City, Vietnam<br />
+                連絡電話：+84 28-3825-8768<br />
+                傳真號碼：+84 28-3825-8700<br />
+<p>
+                如您有任何疑問，請不吝與本行聯絡。<br />
+                我們期待在新址為您服務。
+
+        </div>
+        <footer class="component-newsview-footer">
+            <div class="component-btn-row">
+                <a class="component-btn-main btn-green" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/")">回上一頁</a>
+            </div>
+        </footer>
+    </div>
+</article><!--/.component-newsview-->

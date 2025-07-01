@@ -1,0 +1,227 @@
+﻿@model IndexViewModel
+
+@if (ViewBag.lang == "zh-hant")
+{
+    ViewBag.PageTitle = "存匯服務";
+    ViewBag.PageDescription = "國泰世華商業銀行香港分行於2002年2月1日 成立及註冊，提供一站式銀行服務，包括存匯、企業金融、貿易融資、私人銀行、埸外交易衍生工具等服務。此外，香港分行可透過網上銀行平台，提供優質的銀行服務。";
+}
+else
+{
+    ViewBag.PageTitle = "Deposits and Remittance";
+    ViewBag.PageDescription = "";
+}
+
+@section Scripts {
+    <script>
+        var serviceCard = serviceCard || {};
+        serviceCard.prototype = {
+            sameHeight: function () {
+
+                let window_w = $(window).width();
+                let max_h = 0;
+                let scope = $('.component-oversea-services-card');
+                $('.cosc-item-content', scope).css('min-height', 0);
+                if (window_w >= 768) {
+                    $('.cosc-item', scope).each(function () {
+                        let h = $('.cosc-item-content', $(this)).height();
+                        if (h > max_h) {
+                            max_h = h;
+                        }
+                    })
+                    $('.cosc-item-content', scope).height(max_h);
+                } else {
+                    $('.cosc-item-content', scope).css('height', 'auto');
+                }
+            },
+            addEventListener: function () {
+                let o = this;
+                $(window).on('resize.homeCard', function () {
+                    o.sameHeight();
+                }).trigger('resize.homeCard');
+            },
+            init: function () {
+                this.addEventListener();
+            }
+        }
+    </script>
+
+    <script>
+        $(function () {
+
+            var myServiceCard = serviceCard.prototype;
+            myServiceCard.init();
+
+            var myFaq = faq.prototype;
+            myFaq.init();
+            myFaq.hideAll();
+            myFaq.show('depository-remittance');
+            myFaq.show('account-opening');
+            $('.component-oversea-faq').eq(0).addClass('component--slim-top')
+
+            var myDownload = download.prototype;
+            myDownload.init();
+            myDownload.getData('depository-remittance');
+
+            $('.component-oversea-downloads').addClass('component-bg--white')
+        })
+    </script>
+}
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/depository-remittance-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/depository-remittance.jpg")' alt='@ViewBag.nav_services_depository_remittance'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_services_depository_remittance</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_services_depository_remittance</h1>
+        </div>
+    </div>
+</div>
+
+@if (ViewBag.lang == "zh-hant")
+{
+    <div class='component-oversea-services-card'>
+        <div class="cosc-inner">
+            <h2 class='cosc-title'>@ViewBag.services_title</h2>
+
+            <ul class='cosc-list'>
+                <li class='cosc-item'>
+                    <figure class='cosc-item-figure'>
+                        <picture>
+                            <img class='cosc-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/hongkong/services-card/depository-remittance/demand-deposit.jpg")' alt='活期性存款'>
+                        </picture>
+                        <figcaption hidden>活期性存款</figcaption>
+                    </figure>
+                    <div class='cosc-item-content'>
+                        <h3 class='cosc-item-title'>活期性存款</h3>
+                        <p class='cosc-item-description'>您的資金需要最妥善的照顧與最方便的運用，配合國泰世華銀行海內外廣佈的實體通路及完善的功能，給您最靈活運用、得心應手的金流服務。</p>
+                    </div>
+                </li>
+
+
+                <li class='cosc-item'>
+                    <figure class='cosc-item-figure'>
+                        <picture>
+                            <img class='cosc-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/hongkong/services-card/depository-remittance/time-deposit.jpg")' alt='定期性存款'>
+                        </picture>
+                        <figcaption hidden>定期性存款</figcaption>
+                    </figure>
+                    <div class='cosc-item-content'>
+                        <h3 class='cosc-item-title'>定期性存款</h3>
+                        <p class='cosc-item-description'>國泰世華銀行香港分行定期存款由一週至一年期，本息到期提領或到期本金續存，利息轉入活期存款帳戶，以傳真指示取代臨櫃辦理定存不必跑銀行，是您安置資金的好所在。</p>
+                    </div>
+                </li>
+
+                <li class='cosc-item'>
+                    <figure class='cosc-item-figure'>
+                        <picture>
+                            <img class='cosc-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/hongkong/services-card/depository-remittance/check-deposit.jpg")' alt='支票存款'>
+                        </picture>
+                        <figcaption hidden>支票存款</figcaption>
+                    </figure>
+                    <div class='cosc-item-content'>
+                        <h3 class='cosc-item-title'>支票存款</h3>
+                        <p class='cosc-item-description'>流通大筆金額，最需要的就是方便的週轉工具，使用支票不僅可靈活調度資金，更可降低攜帶大量現金的風險。  </p>
+                    </div>
+                </li>
+
+
+                <li class='cosc-item'>
+                    <figure class='cosc-item-figure'>
+                        <picture>
+                            <img class='cosc-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/hongkong/services-card/depository-remittance/direct-cross-strait-remittance-service.jpg")' alt='匯款服務'>
+                        </picture>
+                        <figcaption hidden>匯款服務</figcaption>
+                    </figure>
+                    <div class='cosc-item-content'>
+                        <h3 class='cosc-item-title'>匯款服務</h3>
+                        <p class='cosc-item-description'>多種幣別匯款服務，提供客戶迅速便捷的資金調度。</p>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+}
+else
+{
+    <div class='component-oversea-services-card'>
+        <div class="cosc-inner">
+            <h2 class='cosc-title'>@ViewBag.services_title</h2>
+
+            <ul class='cosc-list'>
+                <li class='cosc-item'>
+                    <figure class='cosc-item-figure'>
+                        <picture>
+                            <img class='cosc-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/hongkong/services-card/depository-remittance/demand-deposit.jpg")' alt='Saving Accounts'>
+                        </picture>
+                        <figcaption hidden>Saving Accounts</figcaption>
+                    </figure>
+                    <div class='cosc-item-content'>
+                        <h3 class='cosc-item-title'>Saving Accounts</h3>
+                        <p class='cosc-item-description'>Manage your savings flexibly with transactions and withdrawals, and earn interest on your balance. Provide cash management services by regional channels to meet your needs.</p>
+                    </div>
+                </li>
+
+                <li class='cosc-item'>
+                    <figure class='cosc-item-figure'>
+                        <picture>
+                            <img class='cosc-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/hongkong/services-card/depository-remittance/check-deposit.jpg")' alt='Current Accounts'>
+                        </picture>
+                        <figcaption hidden>Current Accounts</figcaption>
+                    </figure>
+                    <div class='cosc-item-content'>
+                        <h3 class='cosc-item-title'>Current Accounts</h3>
+                        <p class='cosc-item-description'>Manage your payment and transfer with cheques, thus reduce the risk of carrying a large amount of cash. </p>
+                    </div>
+                </li>
+
+
+                <li class='cosc-item'>
+                    <figure class='cosc-item-figure'>
+                        <picture>
+                            <img class='cosc-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/hongkong/services-card/depository-remittance/time-deposit.jpg")' alt='Time Deposits'>
+                        </picture>
+                        <figcaption hidden>Time Deposits</figcaption>
+                    </figure>
+                    <div class='cosc-item-content'>
+                        <h3 class='cosc-item-title'>Time Deposits</h3>
+                        <p class='cosc-item-description'>Earn higher interest rate with a choice of various deposit terms.  Send your instruction for transactions by fax to save your time</p>
+                    </div>
+                </li>
+
+
+                <li class='cosc-item'>
+                    <figure class='cosc-item-figure'>
+                        <picture>
+                            <img class='cosc-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/hongkong/services-card/depository-remittance/direct-cross-strait-remittance-service.jpg")' alt='Cross- border Outward/Inward Remittance'>
+                        </picture>
+                        <figcaption hidden>Cross- border Outward/Inward Remittance</figcaption>
+                    </figure>
+                    <div class='cosc-item-content'>
+                        <h3 class='cosc-item-title'>Cross- border Outward/Inward Remittance</h3>
+                        <p class='cosc-item-description'>Manage your fund transfer conveniently and promptly with our remittance services covering a wide range of currencies.</p>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+}
+
+
+@RenderPage("../../download.cshtml")
+
+<div class='component-oversea-info component-bg--white'>
+    <div class="coi-inner coi-inner--wider" style='padding-top:0;padding-bottom:0;'>
+        <h3 class='coi-title'>常見問題</h3>
+    </div>
+</div>
+@RenderPage("../../faq.cshtml")
+@RenderPage("../../dps.cshtml")

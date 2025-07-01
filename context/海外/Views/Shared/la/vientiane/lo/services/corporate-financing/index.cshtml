@@ -1,0 +1,69 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle ="ເນື້ອໃນການບໍລິການ	";
+    ViewBag.PageDescription = "We provide the complete and diversified corporate finance services, customize the comprehensive financial services for you.";
+}
+
+@section Scripts {
+    <script>
+        $(function () {
+            var myFaq = faq.prototype;
+            myFaq.init();
+            // myFaq.getData('depository-remittance');
+            // myFaq.getData('account-opening');
+            // myFaq.getData('depository-remittance');
+            myFaq.getData('corporate-financing');
+            // myFaq.getData('online-banking');
+            // myFaq.getData('information-security');
+            // myFaq.getData('derivatives');
+        })
+    </script>
+}
+
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/corporate-financing-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/corporate-financing.jpg")' alt='@ViewBag.nav_services_corporate_finance'>
+
+        </picture>
+        <figcaption hidden>@ViewBag.nav_services_corporate_finance</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_services_corporate_finance</h1>
+        </div>
+    </div>
+</div>
+
+  
+    <div class='component-oversea-services-list component-bg--white'>
+        <div class="cosl-inner">
+            <h2 class='cosl-title'>@ViewBag.services_title</h2>
+            <ul class='cosl-list'>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>ເງິນທຶນໝູນວຽນ</h3>
+                </li>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>ເງິນທຶນສຳລັບການລົງທຶນ</h3>
+                </li>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>ເງິນກູ້ສຳລັບນັກທຸລະກິດໄຕ້ຫວັນ ແລະ ບໍລິສັດລົງທຶນຊາວຈີນທີ່ຢູ່ນອກປະເທດ</h3>
+                </li>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>ເງິນກູ້ຮ່ວມ ແລະ ການຈັດຫາເງິນທຶນທີ່ມີໂຄງສ້າງ</h3>
+                </li>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>ເງິນກູ້ສຳລັບໂຄງການ</h3>
+                </li>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>ເງິນກູ້ຄ້ຳປະກັນ</h3>
+                </li>
+                
+            </ul>
+        </div>
+    </div>

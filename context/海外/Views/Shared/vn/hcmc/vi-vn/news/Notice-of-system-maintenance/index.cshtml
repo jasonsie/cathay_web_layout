@@ -1,0 +1,46 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "Notice for the new Treasury products launching – Foreign Exchange Forward and Foreign Exchange Swap";
+    ViewBag.PageDescription = "Notice for the new Treasury products launching – Foreign Exchange Forward and Foreign Exchange Swap";
+}
+
+@section Scripts {}
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news.jpg")' alt='@ViewBag.nav_news'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_news</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_news</h1>
+        </div>
+    </div>
+</div>
+
+<!-- newsview -->
+<article class="component-newsview">
+    <div class="component-newsview-inner">
+        <header class="component-newsview-header">
+            <div class="component-newsview-date"></div>
+            <h1 class="component-newsview-title">Thông báo bảo trì hệ thống</h1>
+        </header>
+
+        <div class="component-newsview-body">
+            <p>
+                CUBHCM cảm ơn quý khách đã lựa chọn và sử dụng dịch vụ của chúng tôi. Với mục tiêu nâng cao chất lượng dịch vụ, chúng tôi xin thông báo lịch bảo trì hệ thống Từ 21:00 Đến 21:10, Thứ 6 ngày 15/03/2024. Trong thời gian bảo trì hệ thống, CUBHCM sẽ tạm dừng cung cấp dịch vụ trên ứng dụng CUB Vietnam. Sau thời gian trên, hệ thống sẽ hoạt động bình thường trở lại để phục vụ Quý khách. CUBHCM rất mong nhận được sự thông cảm của Quý khách và rất xin lỗi về sự bất tiện xảy ra trong thời gian bảo trì. Mọi thắc mắc cần hỗ trợ thêm, Quý khách có thể liên hệ Hotline dịch vụ khách hàng trong giờ hành chính tại 028 3622 6836. Trân trọng!
+            </p>
+</div>
+        <footer class="component-newsview-footer">
+            <div class="component-btn-row">
+                <a class="component-btn-main btn-green" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/")">Trở lại</a>
+            </div>
+        </footer>
+    </div>
+</article><!--/.component-newsview-->

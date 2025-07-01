@@ -1,0 +1,46 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "Alamat Pelayanan";
+    ViewBag.PageDescription = "Mayapada Tower I Unit 18-03 Jl Jend Sudirman Kav 28 Jakarta 12920";
+}
+
+@section Scripts {}
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/contact-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img"+"/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/contact.jpg")' alt='@ViewBag.nav_contact'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_contact</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_contact</h1>
+        </div>
+    </div>
+</div>
+
+
+<div class='component-oversea-info'>
+    <div class='coi-inner'>
+        <h2 class='coi-title'>Alamat Pelayanan</h2>
+        <div class='coi-content'>
+            <ul class="coi-list">
+                <li class="coi-item">
+                    <span class='coi-item-label'>Alamat:</span>
+                    <span class="coi-item-content">Mayapada Tower I Unit 18-03 Jl Jend Sudirman Kav 28 Jakarta 12920</span>
+                </li>
+                <li class="coi-item">
+                    <span class='coi-item-label'>Phone Number:</span>
+                        <span class="coi-item-content">+62-21-2951-8572</span>
+                </li>
+                <li class="coi-item">
+                    <span class='coi-item-label'>Fax:</span>
+                        <span class="coi-item-content">+62-21-2951-8573</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

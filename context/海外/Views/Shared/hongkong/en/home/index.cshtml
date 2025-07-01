@@ -1,0 +1,321 @@
+﻿@model IndexViewModel
+
+@if (ViewBag.lang == "zh-hant")
+{
+}
+else
+{
+    ViewBag.PageTitle = "";
+    ViewBag.PageDescription = "";
+}
+
+@section Scripts {
+
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/jquery.scrollbar.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/slick.min.js")"></script>
+
+
+    <script>
+        var homeCard = homeCard || {};
+        homeCard.prototype = {
+            sameHeight: function () {
+
+                let window_w = $(window).width();
+                let max_h = 0;
+                let scope = $('.component-oversea-services');
+                $('.cos-item-content', scope).css('min-height', 0);
+                if (window_w >= 768) {
+                    $('.cos-item', scope).each(function () {
+                        let h = $('.cos-item-content', $(this)).height();
+                        if (h > max_h) {
+                            max_h = h;
+                        }
+                    })
+                    $('.cos-item-content', scope).height(max_h);
+                $('.cos-item-btn', scope).css('position', 'absolute');
+                $('.cos-item-btn', scope).css('bottom', 30);
+                } else {
+                    $('.cos-item-content', scope).css('height', 'auto');
+                }
+                
+            },
+            addEventListener: function () {
+                let o = this;
+                $(window).on('resize.homeCard', function () {
+                    o.sameHeight();
+                }).trigger('resize.homeCard');
+            },
+            init: function () {
+                this.addEventListener();
+            }
+        }
+    </script>
+
+    <script>
+        $(function () {
+
+            var myHomeCard = homeCard.prototype;
+            myHomeCard.init();
+
+
+            //
+            $(window).resize(function () {
+
+                let window_w = $(window).width();
+                let offset_x;
+                let content_w;
+                if (window_w > 991) {
+                    offset_x = $('.cok-inner').offset().left;
+                    content_w = $('.cok-content').width();
+                    max_w = window_w - content_w - offset_x;
+                } else {
+                    offset_x = 0;
+                    content_w = 0;
+                    max_w = window_w;
+                }
+                $('.cok-figure-wrap').css('width', max_w);
+                $('.cok-figure-wrap').css('flex-basis', max_w);
+                $('.cok-figure-wrap').css('max-width', max_w);
+                $('.cok-figure-wrap').css('left', content_w + offset_x);
+
+            }).trigger('resize');
+
+            $(".cok-figure-slider").slick({
+                infinite: false,
+                slidesToShow: 1,
+                dots: false
+            });
+
+            ////////////////////////////
+
+            $('.con-list', $(this)).scrollbar();
+        })
+    </script>
+
+    <script>
+
+        //fraud modal
+        $(function () {
+            let myFraudModal = fraudModal.prototype;
+            myFraudModal.init($('.component-oversea-modal--fraud'));
+            myFraudModal.show();
+        })
+    </script>
+}
+
+<div class='component-oversea-kv'>
+    <div class="cok-figure-wrap">
+        <div class="cok-figure-slider">
+            <span class="cok-figure-item">
+                <figure class='cok-figure'>
+                    <picture>
+                        <source media='(min-width: 992px)'
+                                srcset='@Url.Content("~/OVSWS/Content/img/hongkong/kv/bg-lg.jpg")' />
+                        <source media='(min-width: 7686px)'
+                                srcset='@Url.Content("~/OVSWS/Content/img/hongkong/kv/bg-md.jpg")' />
+                        <img class='cok-img' src='@Url.Content("~/OVSWS/Content/img/hongkong/kv/bg.jpg")' alt='Cathay United Bank Hong Kong Branch'>
+                    </picture>
+                    <figcaption hidden>Cathay United Bank Hong Kong Branch</figcaption>
+                </figure>
+            </span>
+        </div>
+    </div>
+
+    <div class="cok-inner">
+        <div class="cok-content">
+       
+            <h1 class='cok-title'>
+                <span class='cok-title--company'>Cathay United Bank</span>
+                <span class='cok-title--slogan'>A partner worthy of your trust</span>
+            </h1>
+
+
+            @if (ViewBag.id == null && ViewBag.ListOfNews != null)
+            {
+
+                <div class='component-oversea-news'>
+                    <h2 class='con-title'><a class='con-title-link' href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+@ViewBag.lang_url+"/news")">@ViewBag.home_latest_news</a></h2>
+                    <ul class='con-list scrollbar-inner'>
+                        @foreach (News item in ViewBag.ListOfNews)
+                        {
+                            <li class='con-item'>
+                                <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+@ViewBag.lang_url+"/news")/@item.id/" class='con-item-link'>
+                                    <span class='con-item-date'>@item.publishAt</span>
+                                    <span class='con-item-title'>@item.title</span>
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<div class='component-oversea-services component-oversea-services--33  component-oversea-services--home'>
+    <div class="cos-inner">
+
+
+        <h2 class='cos-title'>Our Services</h2>
+        <p class='cos-description'>
+            Cathay United Bank Company, Limited, Hong Kong Branch was founded and registered on February 1, 2002. The Branch offers one-stop banking services, including deposits and remittances, corporate banking, trade finance, Private Banking, OTC derivative instruments, etc.
+        </p>
+        <p class='cos-description'>
+            In addition, Hong Kong Branch also provides an internet banking platform for customers to enjoy high-quality banking services.
+        </p>
+        <p class='cos-description'>
+            <strong>Cathay Financial Holdings (Cathay FHC) and its subsidiaries including Cathay Life Insurance, Cathay United Bank, Cathay Century Insurance, Cathay Securities, and Cathay Securities Investment Trust </strong>
+            provide comprehensive and diversified financial services and solutions in Taiwan and around the world. We are independent from and not affiliated with Cathay Group.
+        </p>
+
+        <ul class='cos-list'>
+            <li class='cos-item'>
+                <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.lang_url+"services/depository-remittance/")" class='cos-item-link'>
+                    <figure class='cos-item-figure'>
+                        <picture>
+                            <img class='cos-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/hongkong/services/home/depository-remittance.jpg")' alt='@ViewBag.nav_services_depository_remittance'>
+                        </picture>
+                        <figcaption hidden>@ViewBag.nav_services_depository_remittance</figcaption>
+                    </figure>
+                    <div class='cos-item-content'>
+                        <h3 class='cos-item-title'>@ViewBag.nav_services_depository_remittance</h3>
+                        <p class='cos-item-description'>We provide convenient and integrated deposit and remittance products, and comprehensive cash flow services, allowing you to effectively manage receipts and payments, and improve the efficiency of capital utilization.</p>
+
+                        <div class='cos-item-btn'>@ViewBag.btn_learn_more</div>
+                    </div>
+                </a>
+            </li>
+
+            <li class='cos-item'>
+                <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.lang_url+"services/corporate-finance/")" class='cos-item-link'>
+                    <figure class='cos-item-figure'>
+                        <picture>
+                            <img class='cos-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/hongkong/services/home/corporate-finance.jpg")' alt='@ViewBag.nav_services_corporate_finance'>
+                        </picture>
+                        <figcaption hidden>@ViewBag.nav_services_corporate_finance</figcaption>
+                    </figure>
+                    <div class='cos-item-content'>
+                        <h3 class='cos-item-title'>@ViewBag.nav_services_corporate_finance</h3>
+                        <p class='cos-item-description'>We provide complete and diversified corporate finance services and customize comprehensive financial services for you.</p>
+
+                        <div class='cos-item-btn'>@ViewBag.btn_learn_more</div>
+                    </div>
+                </a>
+            </li>
+
+
+            <li class='cos-item'>
+                <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.lang_url+"services/trade-finance/")" class='cos-item-link'>
+                    <figure class='cos-item-figure'>
+                        <picture>
+                            <img class='cos-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/hongkong/services/home/trade-finance.jpg")' alt='@ViewBag.nav_services_trade_finance'>
+                        </picture>
+                        <figcaption hidden>@ViewBag.nav_services_trade_finance</figcaption>
+                    </figure>
+                    <div class='cos-item-content'>
+                        <h3 class='cos-item-title'>@ViewBag.nav_services_trade_finance</h3>
+                        <p class='cos-item-description'>We provide comprehensive and diversified international trade finance services to meet the needs of the development of your business and customize products that are most suitable for you.</p>
+                        <div class='cos-item-btn'>@ViewBag.btn_learn_more</div>
+                    </div>
+                </a>
+            </li>
+
+            <li class='cos-item'>
+                <a href='@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.lang_url+"services/otc-derivatives/")' class='cos-item-link'>
+                    <figure class='cos-item-figure'>
+                        <picture>
+                            <img class='cos-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/hongkong/services/home/otc-derivatives.jpg")' alt='@ViewBag.nav_services_financial_derivatives'>
+                        </picture>
+                        <figcaption hidden>@ViewBag.nav_services_financial_derivatives</figcaption>
+                    </figure>
+                    <div class='cos-item-content'>
+                        <h3 class='cos-item-title'>@ViewBag.nav_services_financial_derivatives</h3>
+                        <p class='cos-item-description'>We have a professional team with extensive experience in international financial practices. The team closely monitors the market situation to offer customers professional and accurate hedging strategies in line with the corporate business operations and is committed to provide the best services.</p>
+
+
+                        <div class='cos-item-btn'>@ViewBag.btn_learn_more</div>
+                    </div>
+                </a>
+            </li>
+
+            <li class='cos-item'>
+                <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+@ViewBag.lang_url+"private-bank/")" class='cos-item-link'>
+                    <figure class='cos-item-figure'>
+                        <picture>
+                            <img class='cos-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/hongkong/services/home/wealth-management.jpg")' alt='@ViewBag.nav_services_wealth_management'>
+                        </picture>
+                        <figcaption hidden>@ViewBag.nav_services_wealth_management</figcaption>
+                    </figure>
+                    <div class='cos-item-content'>
+                        <h3 class='cos-item-title'>@ViewBag.nav_services_wealth_management</h3>
+                        <p class='cos-item-description'>We are committed to the high-net-worth individuals and their families in their exclusively advised wealth planning and asset allocation needs.</p>
+
+                        <div class='cos-item-btn'>@ViewBag.btn_learn_more</div>
+                    </div>
+                </a>
+            </li>
+
+        </ul>
+    </div>
+</div>
+<div class='component-oversea-privacy component-bg--white'>
+    <div class="cop-inner">
+        <div class="cop-list-wrap cop-list-wrap--privacy">
+            <div class="cop-title">@ViewBag.nav_privacy_security</div>
+            <ul class="cop-list cop-list--half">
+                <li class='cop-item'><a href='@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.lang_url+"internet-banking-security/")' class='cop-link' title='Internet Banking Security'>Internet Security Alert</a></li>
+                <li class='cop-item'><a href='@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.lang_url+"fraud-prevention/")' class='cop-link' title='Fraud Prevention'>Notice about Fraud Prevention</a></li>
+                <li class='cop-item'><a href='@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.lang_url+"privacy-protection-policy/")' class='cop-link' title='Privacy Policy Statement'>Privacy Policy Statement</a></li>
+            </ul>
+            <ul class="cop-list cop-list--half">
+                @*<li class='cop-item'><a href='@Url.Content("~/OVSWS/Content/pdf/hongkong/privacy-security/notification-of-the-collection-processing-and-use-of-personal-information_en.pdf")' target="_blank" rel="noopener" class='cop-link' title='Personal Data Collection and Use'>Notification of the Collection, Processing and Use of Personal Information</a></li>*@
+                <li class='cop-item'><a href='@Url.Content("~/OVSWS/Content/pdf/hongkong/privacy-security/circular-on-the-personal-data-ordinanceand-the-code-of-practice-on-consumer-credit-data.pdf")' target="_blank" rel="noopener" class='cop-link' title='Circular on the Personal Data (Privacy) Ordinance (Cap.486) (the "Ordinance") and the Code of Practice on Consumer Credit Data (the "Code of Practice")'>Circular on the Personal Data (Privacy) Ordinance (Cap.486) (the "Ordinance") and the Code of Practice on Consumer Credit Data (the "Code of Practice")</a></li>
+            </ul>
+
+        </div>
+        <div class="cop-list-wrap">
+            <div class="cop-title">@ViewBag.nav_financial_disclosure</div>
+            <ul class="cop-list">
+                <li class='cop-item'><a href='@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.lang_url+"financial-disclosure/")' class='cop-link' title='@ViewBag.nav_financial_disclosure'>@ViewBag.nav_financial_disclosure</a></li>
+            </ul>
+             <div class="cop-list-wrap">
+                <div class="cop-title" style="margin-bottom:-0.8rem;margin-top:2rem">
+                    <a href="https://www.dps.org.hk/index.html" title="存款保障計畫成員">
+                        <img src="~/OVSWS/Content/img/hongkong/services/home/DPS_80.jpg" alt="存款保障計畫成員" />
+                    </a>
+                <p class='cos-item-description' style="font-size:10px;color:black">
+                    The deposit protection limit of HK$ 800,000 will take effect on 1 October 2024.
+
+                    For information of the Deposit Protection Scheme(DPS) by the Hong Kong
+
+                    Deposit Protection Board, please refer to  <a href="https://www.dps.org.hk" target="_blank" rel="noopener" style="color: #00994e; text-decoration: underline;">www.dps.org.hk</a> or press the sign
+
+                    above.
+                </p>
+                </div>
+        </div>
+        </div>
+        <div class="cop-list-wrap">
+            <div class="cop-title">@ViewBag.nav_important_notice</div>
+            <ul class="cop-list">
+                <li class='cop-item'><a href='@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.lang_url+"important-notice/")' class='cop-link' title='@ViewBag.nav_important_notice'>@ViewBag.nav_important_notice</a></li>
+            </ul>
+        </div>
+
+        <div class="cop-remark">
+            <ul class="cop-remark-list">
+                <li class="cop-remark-item">
+                    The information provided on this website is for your reference only. Investors are required to make their own judgement regarding the reference information. 
+                    It is hereby stated that this website is not accountable for the risks and losses incurred from transactions.
+                </li>
+                <li class="cop-remark-item"><br />
+                    The registered trademark is licensed by Cathay Financial Holding Co., Ltd.
+                </li>
+                <li class="cop-remark-item">CATHAY UNITED BANK COMPANY, LIMITED, HONG KONG BRANCH, a branch of a company with limited liability incorporated in Taiwan</li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+

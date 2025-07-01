@@ -1,0 +1,106 @@
+﻿@model IndexViewModel
+
+
+@{
+    ViewBag.PageTitle = "Sản phẩm phái sinh";
+    ViewBag.PageDescription = "Chúng tôi cung cấp đến Quý khách hàng các sản phẩm phái sinh phòng ngừa rủi ro lãi suất chuyên nghiệp, qua đó hỗ trợ Quý khách hàng trong việc quản lý và giảm thiểu rủi ro từ các biến động lãi suất trên thị trường.";
+}
+@section Scripts {
+    <script>
+        var serviceCard = serviceCard || {};
+        serviceCard.prototype = {
+            sameHeight: function () {
+                console.log('sah');
+                let window_w = $(window).width();
+                let max_h = 0;
+                let scope = $('.component-oversea-services-card');
+                $('.cosc-item-content', scope).css('min-height', 0);
+                $('.cosc-item-content', scope).css('height', 'auto');
+                if (window_w >= 768) {
+                    $('.cosc-item', scope).each(function () {
+                        let h = $('.cosc-item-content', $(this)).height();
+                        if (h > max_h) {
+                            max_h = h;
+                        }
+                    })
+                    $('.cosc-item-content', scope).height(max_h);
+                } else {
+                    $('.cosc-item-content', scope).css('height', 'auto');
+                }
+            },
+            addEventListener: function () {
+                let o = this;
+                $(window).on('resize.serviceCard', function () {
+                    o.sameHeight();
+                }).trigger('resize.serviceCard');
+            },
+            init: function () {
+                this.addEventListener();
+            }
+        }
+    </script>
+    <script>
+        $(function () {
+
+            var myServiceCard = serviceCard.prototype;
+            myServiceCard.init();
+        })
+    </script>
+}
+
+
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/otc-derivatives-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/otc-derivatives.jpg")' alt='Sản phẩm phái sinh '>
+        </picture>
+        <figcaption hidden>Sản phẩm phái sinh  </figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>Sản phẩm phái sinh </h1>
+        </div>
+    </div>
+</div>
+
+
+<div class="component-oversea-services-card component-oversea-services-card--33">
+    <div class="cosc-inner">
+        <h2 class="cosc-title">@ViewBag.services_title</h2>
+        <ul class="cosc-list">
+            <li class="cosc-item">
+                <figure class="cosc-item-figure">
+                    <picture>
+                        <img class="cosc-item-img lazy" data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services-card/otc-derivatives/fx-interest-rate-option.jpg")'  alt='Giao dịch hoán đổi lãi suất một đồng tiền'>
+
+                    </picture>
+                    <figcaption hidden="">Giao dịch hoán đổi lãi suất một đồng tiền</figcaption>
+                </figure>
+                <div class="cosc-item-content">
+                    <h3 class="cosc-item-title"> Giao dịch hoán đổi lãi suất một đồng tiền</h3>
+                    <p class="cosc-item-description">
+                        Là giao dịch giúp khách hàng tránh được rủi ro về lãi suất. Khách hàng và Ngân hàng thỏa thuận hoán đổi các khoản nợ (hoặc các giao dịch khác) có lãi suất cố định thành lãi suất thả nổi hoặc ngược lại, trên cùng giá trị khoản vốn danh nghĩa trong một khoảng thời gian cụ thể để tránh rủi ro lãi suất tăng hoặc giảm.
+                    </p>
+                </div>
+            </li>
+            <li class="cosc-item">
+                <figure class="cosc-item-figure">
+                    <picture>
+                        <img class="cosc-item-img lazy" data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services-card/otc-derivatives/fx-forward.jpg")' alt="Giao dịch hoán đổi lãi suất hai đồng tiền ">
+                    </picture>
+                    <figcaption hidden="">Giao dịch hoán đổi lãi suất hai đồng tiền</figcaption>
+                </figure>
+                <div class="cosc-item-content">
+                    <h3 class="cosc-item-title">Giao dịch hoán đổi lãi suất hai đồng tiền </h3>
+                    <p class="cosc-item-description">Là giao dịch giúp khách hàng tránh rủi ro về lãi suất và tỷ giá. Khách hàng và Ngân hàng thỏa thuận hoán đổi các khoản nợ (hoặc các giao dịch khác) chịu lãi theo lãi suất cố định (hoặc thả nổi) bằng một loại tiền tệ cụ thể sang một loại tiền tệ khác chịu lãi suất thả nổi (hoặc cố định) trên cơ sở cùng một khoản vốn danh nghĩa nhất định, trong một khoảng thời gian cụ thể để tránh rủi ro lãi suất tăng/ giảm theo các loại tiền tệ khác nhau.</p>
+                </div>
+            </li>
+
+        </ul>
+    </div>
+</div>
+
+

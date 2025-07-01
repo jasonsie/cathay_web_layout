@@ -1,0 +1,77 @@
+﻿@model IndexViewModel
+
+@if (ViewBag.lang == "zh-hant-other")
+{
+    ViewBag.PageTitle = "人才招募";
+    ViewBag.PageDescription = "";
+}
+else
+{
+    ViewBag.PageTitle = "Head of Sales, Private Banking";
+    ViewBag.PageDescription = "";
+}
+
+
+@section Scripts {}
+@if (ViewBag.lang == "zh-hant-other")
+{
+}
+else
+{
+    <div class='component-oversea-kv-short'>
+        <div class="coks-inner">
+            <div class="coks-content">
+                <h1 class='coks-title'>Careers</h1>
+            </div>
+            <figure class='coks-figure'>
+                <picture>
+                    <source media='(min-width: 768px)'
+                            srcset='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/careers-lg.jpg")' />
+                    <img class='coks-img' src='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/careers.jpg")' alt='Careers'>
+                </picture>
+                <figcaption hidden>Careers</figcaption>
+            </figure>
+        </div>
+    </div>
+
+    <div class='component-oversea-careers-detail'>
+        <div class="cocd-inner">
+            <h1 class='cocd-title'>
+                Head of Sales, Private Banking
+            </h1>
+            <div class='cocd-content-wrap'>
+                <h2 class='cocd-content-title'>Responsibilities:</h2>
+                <ul class='cocd-content-ul'>
+                    <li class='cocd-content-li'>Develop and implement sales strategies to achieve business objectives and enhance Private Banking business growth</li>
+                    <li class='cocd-content-li'>Lead and manage a group of Relationship Managers (RM) to achieve assigned KPIs and AUM revenue and to build and maintain clients’ portfolios </li>
+                    <li class='cocd-content-li'>Supervise and develop a team of Assistant Relationship Managers (ARM) to support client services</li>
+                    <li class='cocd-content-li'>Utilize the Bank’s internal resources and leverage the Bank’s products and services to provide tailor-made financial services to clients</li>
+                    <li class='cocd-content-li'>Make good use of personal’s network and professional knowledge of Private Banking industry practice to assist RM and ARM in maintaining client relationship</li>
+                    <li class='cocd-content-li'>Ensure compliance of local regulatory requirements and internal control and policies of the Bank</li>
+                </ul>
+            </div>
+            <div class='cocd-content-wrap'>
+                <h2 class='cocd-content-title'>Ideal candidates should possess:</h2>
+                <ul class='cocd-content-ul'>
+                    <li class='cocd-content-li'>Bachelor degree in Business Studies, Finance, Economics related discipline</li>
+                    <li class='cocd-content-li'>Minimum 8 to 10 years’ experience in Private Wealth Management or Private Banking in which at least 3 to 5 years in a management role</li>
+                    <li class='cocd-content-li'>Proven track records in leading and managing sales team </li>
+                    <li class='cocd-content-li'>Experience in covering and understanding Taiwanese clients is a plus</li>
+                    <li class='cocd-content-li'>Strong understanding of financial investment products and services</li>
+                    <li class='cocd-content-li'>Excellent communication and interpersonal skills</li>
+                    <li class='cocd-content-li'>Proficient in written and spoken English and Chinese (including Mandarin)</li>
+                    <li class='cocd-content-li'>Holder of Type 1 and 4 licenses </li>
+                    <li class='cocd-content-li'>Holder of CPWP (Certified Private Wealth Professional) or ECF-PWM (Enhanced Competency Framework on Private Wealth Management) certificate would be an advantage</li>
+                </ul>
+            </div>
+            <div class='cocd-btn-wrap'>
+                <a href="@Url.Content("~/hongkong/en/careers/jobs")" class="cocd-btn">Back</a>
+            </div>
+        </div>
+    </div>
+
+
+    
+
+}
+@RenderPage("../careers-support-card.cshtml")

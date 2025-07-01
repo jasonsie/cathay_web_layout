@@ -1,0 +1,36 @@
+﻿@using System.Web.Configuration;
+@{
+
+    
+}
+
+<footer class='component-footer'>
+    <div class="cf-inner">
+        <div class='cf-list-wrap cf-list-wrap--link' style="height:56px">
+        </div>
+        <div class='cf-list-wrap cf-list-wrap--lang'>
+            <ul class='cf-list cf-list--border'>
+
+                @if (ViewBag.lang == "zh-hant")
+                {
+
+                    <li class='cf-item cf-item--no-border'><a href='@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.section+@ViewBag.subsection+"")' class='cf-item-link cf-item-link--active'>@ViewBag.nav_lang_zh_hant</a></li>
+                    <li class='cf-item'><a href='@Url.Content("~/"+@ViewBag.country_url+"/en/"+@ViewBag.section+@ViewBag.subsection+"")' class='cf-item-link'>@ViewBag.nav_lang_en</a></li>
+                }
+                else
+                {
+                    if (ViewBag.section == "careers/")
+                    {
+                        <li class='cf-item cf-item--no-border'><a href='@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.section+"")' class='cf-item-link'>@ViewBag.nav_lang_zh_hant</a></li>
+                    }
+                    else
+                    {
+                        <li class='cf-item cf-item--no-border'><a href='@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.section+@ViewBag.subsection+"")' class='cf-item-link'>@ViewBag.nav_lang_zh_hant</a></li>
+                    }
+                    <li class='cf-item'><a href='@Url.Content("~/"+@ViewBag.country_url+"/en/"+@ViewBag.section+@ViewBag.subsection+"")' class='cf-item-link cf-item-link--active'>@ViewBag.nav_lang_en</a></li>
+
+                }
+            </ul>
+        </div>
+    </div>
+</footer>

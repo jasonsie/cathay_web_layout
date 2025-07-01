@@ -1,0 +1,45 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "Ngân hàng Cathay United Bank - Chi nhánh Chu Lai dự kiến chuyển địa điểm đến Thành phố Hồ Chí Minh";
+    ViewBag.PageDescription = "Ngân hàng Cathay United Bank - Chi nhánh Chu Lai đã nhận được Quyết định chấp thuận nguyên tắc của NHNH về việc chuyển địa điểm đến Thành phố Hồ Chí Minh vào ngày 23 tháng 04 năm 2021. Chi tiết về việc chuyển địa điểm này sẽ được thông báo sau.";
+}
+
+@section Scripts {}
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news.jpg")' alt='@ViewBag.nav_news'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_news</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_news</h1>
+        </div>
+    </div>
+</div>
+
+<!-- newsview -->
+<article class="component-newsview">
+    <div class="component-newsview-inner">
+        <header class="component-newsview-header">
+            <div class="component-newsview-date"></div>
+            <h1 class="component-newsview-title">Ngân hàng Cathay United Bank - Chi nhánh Chu Lai dự kiến chuyển địa điểm đến Thành phố Hồ Chí Minh</h1>
+        </header>
+
+        <div class="component-newsview-body">
+           Ngân hàng Cathay United Bank - Chi nhánh Chu Lai đã nhận được Quyết định chấp thuận nguyên tắc của NHNH về việc chuyển địa điểm đến Thành phố Hồ Chí Minh vào ngày 23 tháng 04 năm 2021. Chi tiết về việc chuyển địa điểm này sẽ được thông báo sau. 
+        </div>
+
+        <footer class="component-newsview-footer">
+            <div class="component-btn-row">
+                <a class="component-btn-main btn-green" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/")">Trở lại</a>
+            </div>
+        </footer>
+    </div>
+</article><!--/.component-newsview-->

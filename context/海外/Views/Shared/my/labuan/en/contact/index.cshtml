@@ -1,0 +1,48 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "Page Title";
+    ViewBag.PageDescription = "Page Desctiption";
+}
+
+@section Scripts {}
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/contact-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img"+"/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/contact.jpg")' alt='@ViewBag.nav_contact'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_contact</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_contact</h1>
+        </div>
+    </div>
+</div>
+
+    <div class='component-oversea-info'>
+        <div class='coi-inner'>
+            <h2 class='coi-title'>Service Address</h2>
+
+            <div class='coi-content'>
+                <ul class="coi-list">
+                    <li class="coi-item">
+                        <span class='coi-item-label'>Address:</span>
+                        <span class="coi-item-content">(Labuan Office) Level 13F(2), Main Office Tower, Financial Park Labuan Complex, Jalan Merdeka, 87000 Labuan F.T., Malaysia</span>
+                        <span class="coi-item-content">(KL Office) Unit 28-03, Level 28 Menara Public Bank 2 No. 78, Jalan Raja Chulan 50200 Kuala Lumpur, Malaysia</span>
+                    </li>
+                    <li class="coi-item">
+                        <span class='coi-item-label'>Phone Number:</span>
+                        <span class="coi-item-content">+6087-452168 (Labuan Office)</span>
+                        <span class="coi-item-content">+603-20706729 (KL office)</span>
+                    </li>
+                    <li class="coi-item">
+                        <span class='coi-item-label'>Email:</span>
+                        <span class="coi-item-content">60200@cathaybk.com.tw</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>

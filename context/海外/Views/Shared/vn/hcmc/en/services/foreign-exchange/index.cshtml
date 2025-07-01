@@ -1,0 +1,130 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "Foreign Exchange";
+    ViewBag.PageDescription = "We provide professional FX hedging service for you to manage and mitigate the volatility in the foreign exchange market.";
+}
+
+@section Scripts {
+    <script>
+        var serviceCard = serviceCard || {};
+        serviceCard.prototype = {
+            sameHeight: function () {
+
+                let window_w = $(window).width();
+                let max_h = 0;
+                let scope = $('.component-oversea-services-card');
+                $('.cosc-item-content', scope).css('min-height', 0);
+                if (window_w >= 768) {
+                    $('.cosc-item.cosc-item--same-height', scope).each(function () {
+                        let h = $('.cosc-item-content', $(this)).height();
+                        if (h > max_h) {
+                            max_h = h;
+                        }
+                    })
+                    $('.cosc-item--same-height .cosc-item-content', scope).height(max_h);
+                } else {
+                    $('.cosc-item--same-height .cosc-item-content', scope).css('height', 'auto');
+                }
+            },
+            addEventListener: function () {
+                let o = this;
+                $(window).on('resize.homeCard', function () {
+                    o.sameHeight();
+                }).trigger('resize.homeCard');
+            },
+            init: function () {
+                this.addEventListener();
+            }
+        }
+    </script>
+
+    <script>
+        $(function () {
+
+            var myServiceCard = serviceCard.prototype;
+            myServiceCard.init();
+        })
+    </script>
+    }
+    <div class='component-oversea-kv-short'>
+        <figure class='coks-figure'>
+            <picture>
+
+                <source media='(min-width: 768px)'
+                        data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/otc-derivatives-lg.jpg")' />
+                <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/otc-derivatives.jpg")' alt='@ViewBag.nav_services_foreign_exchange'>
+            </picture>
+            <figcaption hidden>@ViewBag.nav_services_foreign_exchange</figcaption>
+        </figure>
+        <div class="coks-inner">
+            <div class="coks-content">
+                <h1 class='coks-title'>@ViewBag.nav_services_foreign_exchange</h1>
+            </div>
+        </div>
+    </div>
+
+
+        <div class="component-oversea-services-card component-oversea-services-card--33 component-oversea-services-card--foreign-exchange">
+            <div class="cosc-inner">
+                <h2 class="cosc-title">@ViewBag.services_title</h2>
+                <ul class="cosc-list">
+                    <li class="cosc-item">
+                        <figure class="cosc-item-figure">
+                            <picture>
+                                <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services-card/foreign-exchange/fx-interest-rate-option.jpg")" alt="Foreign Exchange">
+
+                            </picture>
+                            <figcaption hidden="">
+                                Foreign Exchange Spot
+                            </figcaption>
+                        </figure>
+                        <div class="cosc-item-content">
+                            <h3 class="cosc-item-title">
+                                Foreign Exchange Spot
+                            </h3>
+                            <p class='cosc-item-description'>
+                                FX spot is a transaction in which CUB and customer agree to buy or sell an amount of foreign currency at spot FX rate at the time of the transaction and the transaction shall be settled on the same day or in the two (02) business days from the transaction date.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="cosc-item">
+                        <figure class="cosc-item-figure">
+                            <picture>
+                                <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services-card/foreign-exchange/fx-forward.jpg")" alt="Export Business">
+                            </picture>
+                            <figcaption hidden="">
+                                Foreign Exchange Forward
+                            </figcaption>
+                        </figure>
+                        <div class="cosc-item-content">
+                            <h3 class="cosc-item-title">
+                                Foreign Exchange Forward
+                            </h3>
+                            <p class='cosc-item-description'>
+                                Forward FX is the transaction in which CUB and customer agree to buy and sell an amount of foreign currency at a forward exchange rate determined on the transaction date and the transaction shall be settled at least three (03) business days (not longer than 365 days) from the transaction date.
+                            </p>
+                        </div>
+                    </li>
+                    <li class="cosc-item">
+                        <figure class="cosc-item-figure">
+                            <picture>
+                                <img class="cosc-item-img lazy" data-src="@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services-card/foreign-exchange/fx-swap.jpg")" alt="Guarantee Business">
+                            </picture>
+                            <figcaption hidden="">
+                                Foreign Exchange Swap
+                            </figcaption>
+                        </figure>
+                        <div class="cosc-item-content cosc-item-content--few">
+                            <h3 class="cosc-item-title">
+                                Foreign Exchange Swap
+                            </h3>
+                            <p class='cosc-item-description'>
+                                Foreign Exchange Swap is transaction between CUB and customer to simultaneous buy and sell of identical amounts of one currency for another with two different value dates, in which, different FX rates are specified at the time of the transaction date.
+                            </p>
+                        </div>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>

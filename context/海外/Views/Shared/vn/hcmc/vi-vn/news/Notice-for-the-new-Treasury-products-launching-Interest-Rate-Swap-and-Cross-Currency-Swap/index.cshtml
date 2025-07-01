@@ -1,0 +1,49 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "Thông báo về việc triển khai sản phẩm mới - Giao dịch Ngoại tệ Kỳ hạn và Giao dịch Hoán đổi Ngoại tệ ";
+    ViewBag.PageDescription = "Thông báo về việc triển khai sản phẩm mới - Giao dịch Ngoại tệ Kỳ hạn và Giao dịch Hoán đổi Ngoại tệ ";
+}
+
+@section Scripts {}
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news.jpg")' alt='@ViewBag.nav_news'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_news</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_news</h1>
+        </div>
+    </div>
+</div>
+
+<!-- newsview -->
+<article class="component-newsview">
+    <div class="component-newsview-inner">
+        <header class="component-newsview-header">
+            <div class="component-newsview-date"></div>
+            <h1 class="component-newsview-title">Thông báo về việc triển khai sản phẩm mới - Giao dịch Hoán đổi Lãi suất Một Đồng tiền và Giao dịch Hoán đổi Lãi suất Hai Đồng tiền  </h1>
+        </header>
+
+        <div class="component-newsview-body">
+            Quý khách hàng thân mến,
+            <p>
+                Ngân hàng Cathay United Bank – Chi nhánh Thành Phố Hồ Chí Minh (CUBHCM) xin gửi lời cảm ơn chân thành và sâu sắc nhất đến Quý khách hàng đã tin tưởng lựa chọn và sử dụng dịch vụ của chúng tôi trong thời gian vừa qua. CUBHCM thông báo chính thức triển khai sản phẩm Giao dịch Hoán đổi Lãi suất Một Đồng tiền và Giao dịch Hoán đổi Lãi suất Hai Đồng tiền áp dụng đối với các khách hàng doanh nghiệp. Sản phẩm là giải pháp hữu hiệu giúp doanh nghiệp phòng ngừa rủi ro biến động lãi suất trong các hoạt động kinh doanh và quản lý dòng tiền hiệu quả.
+            <p>
+                Để biết thêm thông tin chi tiết, vui lòng liên hệ Chuyên viên Quan hệ Khách hàng của chúng tôi qua số điện thoại: +84-28-3825-8768.
+
+         </div>
+        <footer class="component-newsview-footer">
+            <div class="component-btn-row">
+                <a class="component-btn-main btn-green" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/")">Trở lại</a>
+            </div>
+        </footer>
+    </div>
+</article><!--/.component-newsview-->

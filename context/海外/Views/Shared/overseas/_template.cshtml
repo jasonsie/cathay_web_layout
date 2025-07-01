@@ -1,0 +1,195 @@
+﻿@{ switch (ViewBag.lang)
+    {
+        case "zh-hant":
+
+            break;
+
+        case "en":
+
+
+            break;
+    }
+}
+
+
+@{ ViewBag.nav_lang_zh_hant = "繁體中文";
+    ViewBag.nav_lang_en = "English";
+
+    switch (ViewBag.lang)
+    {
+        case "zh-hant":
+            ViewBag.site_name = "國泰世華銀行";
+            ViewBag.html_lang = ViewBag.lang;
+            ViewBag.lang_url = "";
+            
+            ViewBag.nav_privacy_security = "安全與私隱";
+            ViewBag.nav_browser_setting = "瀏覽器建議";
+            ViewBag.nav_client_secret = "顧客資料保密措施";
+
+            //common
+            ViewBag.company_full_name = "國泰世華商業銀行股份有限公司";
+            ViewBag.copyright = "國泰世華商業銀行股份有限公司";
+
+                
+
+            ViewBag.cathay_holding_name = "國泰金控";
+            ViewBag.cathay_bank_name = "國泰世華銀行";
+            ViewBag.cathay_life_name = "國泰人壽";
+            ViewBag.cathay_century_insurance_name = "國泰產險";
+            ViewBag.cathay_securities_corporation_name = "國泰綜合證券";
+            ViewBag.cathay_securities_investment_name = "國泰投信";
+            ViewBag.cathay_securities_consulting_name = "國泰投顧";
+            break;
+
+        case "en":
+            
+            ViewBag.site_name = "Cathay United Bank";
+            ViewBag.html_lang = ViewBag.lang;
+            ViewBag.lang_url = "en/";
+            ViewBag.nav_privacy_security = "Privacy Policy";
+            ViewBag.nav_browser_setting = "Browser Suggestions";
+            ViewBag.nav_client_secret = "顧客資料保密措施";
+
+            ViewBag.company_full_name = "Cathay United Bank Company, Limited";
+            ViewBag.copyright = "Cathay United Bank All rights reserved.";
+
+            
+
+            ViewBag.cathay_holding_name = "Cathay Financial Holdings";
+            ViewBag.cathay_bank_name = "Cathay United Bank";
+            ViewBag.cathay_life_name = "Cathay Life Insurance";
+            ViewBag.cathay_century_insurance_name = "Cathay Century Insurance";
+            ViewBag.cathay_securities_corporation_name = "Cathay Securities Corporation";
+            ViewBag.cathay_securities_investment_name = "Cathay Securities Investment Trust";
+            ViewBag.cathay_securities_consulting_name = "Cathay Securities Investment Consulting";
+            break;
+    } }
+
+
+@if (ViewBag.PageTitle == "" || ViewBag.PageTitle == null)
+{
+    ViewBag.PageTitle = ViewBag.site_name;
+}
+else
+{
+    ViewBag.PageTitle = ViewBag.site_name + " - " + ViewBag.PageTitle;
+}
+
+@if (ViewBag.PageDescription == "" || ViewBag.PageDescription == null)
+{
+    if (ViewBag.lang == "zh-hant")
+    {
+        ViewBag.PageDescription = "國泰世華銀行致力於提供客戶廣泛的創新金融解決方案，降低風險並支持國際業務增長和機遇，並持續在全世界拓展業務";
+    }
+    else if (ViewBag.lang == "en")
+    {
+        ViewBag.PageDescription = "Cathay United Bank is committed to providing customers with a broad range of innovative financial solutions to reduce risks, support international business growth and opportunities, and continue expanding our business worldwide";
+    }
+}
+else
+{
+}
+
+<!DOCTYPE html>
+<html lang="@ViewBag.html_lang">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>@ViewBag.PageTitle</title>
+    <meta name="description" content="@ViewBag.PageDescription">
+
+    <!-- Meta for facebook Share Title -->
+    <meta property="og:title" content="@ViewBag.PageTitle">
+    <meta property="og:description" content="@ViewBag.PageDescription">
+    <meta property="og:image" content="@Request.Url.GetLeftPart(UriPartial.Authority)@Url.Content("~/OVSWS/Content/overseas/img/kv/bg-lg.jpg")">
+    <meta property="og:url" content="@Request.Url.AbsoluteUri">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="@ViewBag.site_name">
+
+    
+    
+    <link rel="alternate" hreflang="x-default" href="@Request.Url.GetLeftPart(UriPartial.Authority)" />
+    <link rel="alternate" hreflang="en-US" href="@Request.Url.GetLeftPart(UriPartial.Authority)/en" />
+
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/OVSWS/Content/css/branch.css")">
+
+    <script type='application/ld+json'>
+
+        {
+        "@@context": "http://www.schema.org",
+        "@@type": "Corporation",
+        "name": "@ViewBag.site_name",
+        "url": "@Request.Url.AbsoluteUri",
+        "logo": "@Request.Url.GetLeftPart(UriPartial.Authority)@Url.Content("~/OVSWS/Content/img/header/logo.svg")",
+        "image": "@Request.Url.GetLeftPart(UriPartial.Authority)@Url.Content("~/OVSWS/Content/overseas/img/kv/bg-lg.jpg")",
+        "description": "@ViewBag.PageDescription"
+        }
+    </script>
+</head>
+<body class='@ViewBag.html_lang'>
+    @RenderPage("header.cshtml")
+    @RenderPage(ViewBag.bodyPath, new { ViewBag = ViewBag })
+    @RenderPage("exit-window.cshtml")
+    @RenderPage("footer.cshtml")
+
+    <a href="javascript:;" class="component-gototop" role="page-go-top"></a>
+
+    <script>
+        function logElementEvent(eventName, element) {
+            //console.log(Date.now(), eventName, element.getAttribute("data-src"));
+        }
+
+        var callback_enter = function (element) {
+            logElementEvent("🔑 ENTERED", element);
+        };
+        var callback_exit = function (element) {
+            logElementEvent("🚪 EXITED", element);
+        };
+        var callback_loading = function (element) {
+            logElementEvent("⌚ LOADING", element);
+        };
+        var callback_loaded = function (element) {
+            logElementEvent("👍 LOADED", element);
+        };
+        var callback_error = function (element) {
+            logElementEvent("💀 ERROR", element);
+            element.src =
+                "https://via.placeholder.com/440x560/?text=Error+Placeholder";
+        };
+        var callback_finish = function () {
+            logElementEvent("✔️ FINISHED", document.documentElement);
+        };
+        var callback_cancel = function (element) {
+            logElementEvent("🔥 CANCEL", element);
+        };
+
+        window.lazyLoadOptions = {
+            threshold: 0,
+            // Assign the callbacks defined above
+            callback_enter: callback_enter,
+            callback_exit: callback_exit,
+            callback_cancel: callback_cancel,
+            callback_loading: callback_loading,
+            callback_loaded: callback_loaded,
+            callback_error: callback_error,
+            callback_finish: callback_finish
+        };
+        window.addEventListener(
+            "LazyLoad::Initialized",
+            function (e) {
+                console.log(e.detail.instance);
+            },
+            false
+        );
+    </script>
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/jquery-3.6.0.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/lazyload.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/picturePolyfill.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/component/header/main.js")"></script>
+
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/app.js")"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

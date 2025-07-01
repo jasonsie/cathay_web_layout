@@ -27,6 +27,79 @@
                height: auto;
             }
          }
+
+         /* Mobile menu toggle styles */
+         .mask-on body:before {
+            display: block;
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 150vh;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+         }
+
+         @media (min-width: 992px) {
+            .mask-on body:before {
+               z-index: 1030;
+            }
+         }
+
+         .body-lock body {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            overflow: hidden;
+         }
+
+         .menu-on .component-header .ch-nav {
+            -webkit-animation: fade-in 0.25s ease both;
+            animation: fade-in 0.25s ease both;
+         }
+
+         @keyframes fade-in {
+            from {
+               opacity: 0;
+               transform: translateY(-10px);
+            }
+            to {
+               opacity: 1;
+               transform: translateY(0);
+            }
+         }
+
+         /* Nav item hover styles */
+         @media (min-width: 992px) {
+            .component-header .ch-nav-item.ch-nav-item--hover .ch-nav-link {
+               background-color: #fff;
+               color: #00994e;
+               position: relative;
+            }
+
+            .component-header .ch-nav-item.ch-nav-item--hover .ch-nav-link:before {
+               content: '';
+               position: absolute;
+               top: 0;
+               left: 0;
+               width: 100%;
+               height: 2px;
+               background-color: #00994e;
+            }
+
+            .component-header .ch-nav-item.ch-nav-item--hover .ch-nav-lv2 {
+               display: flex;
+               visibility: visible;
+               top: 99%;
+               opacity: 1;
+            }
+         }
+
+         /* Login menu styles */
+         .login-menu-on .component-header .ch-login-nav {
+            display: block;
+         }
       </style>
    </head>
    <body class="zh-hant">
@@ -535,5 +608,115 @@
             </div>
          </div>
       </footer>
+
+      <script>
+         // Mobile menu toggle functionality
+         document.addEventListener('DOMContentLoaded', function() {
+            const htmlElement = document.documentElement;
+            const menuToggler = document.querySelector('.ch-toggler');
+            const loginToggler = document.querySelector('.ch-login-toggler');
+            const navItems = document.querySelectorAll('.ch-nav-item');
+            
+            // Function to toggle menu open/close
+            function toggleMenu() {
+               htmlElement.classList.toggle('mask-on');
+               htmlElement.classList.toggle('menu-on'); 
+               htmlElement.classList.toggle('body-lock');
+            }
+            
+            // Function to close menu
+            function closeMenu() {
+               htmlElement.classList.remove('mask-on', 'menu-on', 'body-lock', 'login-menu-on');
+               // Remove hover states from all nav items
+               navItems.forEach(item => {
+                  item.classList.remove('ch-nav-item--hover');
+               });
+            }
+            
+            // Function to toggle login menu
+            function toggleLoginMenu() {
+               htmlElement.classList.toggle('login-menu-on');
+               htmlElement.classList.toggle('mask-on');
+               htmlElement.classList.toggle('body-lock');
+            }
+            
+            // Menu toggler click event
+            if (menuToggler) {
+               menuToggler.addEventListener('click', function(e) {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  
+                  // Close login menu if open
+                  if (htmlElement.classList.contains('login-menu-on')) {
+                     htmlElement.classList.remove('login-menu-on');
+                  }
+                  
+                  toggleMenu();
+               });
+            }
+            
+            // Login toggler click event
+            if (loginToggler) {
+               loginToggler.addEventListener('click', function(e) {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  
+                  // Close main menu if open
+                  if (htmlElement.classList.contains('menu-on')) {
+                     htmlElement.classList.remove('menu-on');
+                  }
+                  
+                  toggleLoginMenu();
+               });
+            }
+            
+            // Nav item click events for hover state
+            navItems.forEach(function(navItem) {
+               const navLink = navItem.querySelector('.ch-nav-link');
+               const hasSubmenu = navItem.querySelector('.ch-nav-lv2');
+               
+               if (navLink && hasSubmenu) {
+                  navLink.addEventListener('click', function(e) {
+                     e.preventDefault();
+                     e.stopPropagation();
+                     
+                     // Remove hover state from all other nav items
+                     navItems.forEach(item => {
+                        if (item !== navItem) {
+                           item.classList.remove('ch-nav-item--hover');
+                        }
+                     });
+                     
+                     // Toggle hover state on clicked item
+                     navItem.classList.toggle('ch-nav-item--hover');
+                  });
+               }
+            });
+            
+            // Close menu when clicking on mask (outside menu area)
+            document.addEventListener('click', function(e) {
+               const isMenuOpen = htmlElement.classList.contains('menu-on') || htmlElement.classList.contains('login-menu-on');
+               const isClickInsideHeader = e.target.closest('.component-header');
+               
+               if (isMenuOpen && !isClickInsideHeader) {
+                  closeMenu();
+               }
+            });
+            
+            // Handle escape key to close menu
+            document.addEventListener('keydown', function(e) {
+               if (e.key === 'Escape') {
+                  closeMenu();
+               }
+            });
+            
+            // Handle window resize to close menu on larger screens
+            window.addEventListener('resize', function() {
+               if (window.innerWidth >= 992) {
+                  closeMenu();
+               }
+            });
+         });
+      </script>
    </body>
 </html>

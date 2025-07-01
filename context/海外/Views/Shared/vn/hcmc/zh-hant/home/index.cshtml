@@ -1,0 +1,256 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "";
+    ViewBag.PageDescription = "";
+}
+
+@section Scripts {
+
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/jquery.scrollbar.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/slick.min.js")"></script>
+
+
+    <script>
+        var homeCard = homeCard || {};
+        homeCard.prototype = {
+            sameHeight: function () {
+
+                let window_w = $(window).width();
+                let max_h = 0;
+                let scope = $('.component-oversea-services');
+                $('.cos-item-description', scope).css('min-height', 0);
+                if (window_w >= 768) {
+                    $('.cos-item', scope).each(function () {
+                        let h = $('.cos-item-description', $(this)).height();
+                        if (h > max_h) {
+                            max_h = h;
+                        }
+                    })
+                    $('.cos-item-description', scope).height(max_h);
+                } else {
+                    $('.cos-item-description', scope).css('height', 'auto');
+                }
+            },
+            addEventListener: function () {
+                let o = this;
+                $(window).on('resize.homeCard', function () {
+                    o.sameHeight();
+                }).trigger('resize.homeCard');
+            },
+            init: function () {
+                this.addEventListener();
+            }
+        }
+    </script>
+
+    <script>
+        $(function () {
+
+            var myHomeCard = homeCard.prototype;
+            myHomeCard.init();
+
+
+            //
+            $(window).resize(function () {
+
+                let window_w = $(window).width();
+                let offset_x;
+                let content_w;
+                if (window_w > 991) {
+                    offset_x = $('.cok-inner').offset().left;
+                    content_w = $('.cok-content').width();
+                    max_w = window_w - content_w - offset_x;
+                } else {
+                    offset_x = 0;
+                    content_w = 0;
+                    max_w = window_w;
+                }
+                $('.cok-figure-wrap').css('width', max_w);
+                $('.cok-figure-wrap').css('flex-basis', max_w);
+                $('.cok-figure-wrap').css('max-width', max_w);
+                $('.cok-figure-wrap').css('left', content_w + offset_x);
+
+            }).trigger('resize');
+
+            $(".cok-figure-slider").slick({
+                infinite: false,
+                slidesToShow: 1,
+                dots: false
+            });
+
+            ////////////////////////////
+
+            //$('.con-list', $(this)).scrollbar();
+        })
+    </script>
+
+    <script>
+        //fraud modal
+        $(function () {
+            let myFraudModal = fraudModal.prototype;
+            myFraudModal.init($('.component-oversea-modal--fraud'));
+            myFraudModal.show();
+        })
+    </script>
+}
+
+<div class='component-oversea-kv'>
+    <div class="cok-figure-wrap">
+        <div class="cok-figure-slider">
+            <div class="cok-figure-item">
+                <figure class='cok-figure'>
+                    <picture>
+                        <source media='(min-width: 992px)'
+                                srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv/bg-lg.jpg")' />
+                        <img class='cok-img' src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv/bg.jpg")' alt='@ViewBag.site_name'>
+                    </picture>
+                    <figcaption hidden>@ViewBag.site_name</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+
+    <div class="cok-inner">
+        <div class="cok-content">
+           <h1 class='cok-title'>
+                <span class='cok-title--company'>國泰世華銀行</span>
+                <span class='cok-title--slogan'>值得您<br />信賴的夥伴</span>
+            </h1>
+          
+            <div class='component-oversea-news'>
+                <h2 class='con-title'><a class='con-title-link' href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/")">@ViewBag.home_latest_news</a></h2>
+                <ul class='con-list scrollbar-inner'>
+                    <li class='con-item'>
+                           <a  href="@Url.Content("~/OVSWS/Content/pdf/" +@ViewBag.country_url+"/" +@ViewBag.city_url+"/announcements/Notice of Handling Dormant Account.pdf")" target="_blank" rel="noopener" class='con-item-link'>
+                               <span class='con-item-date'>2024-06-21</span>
+                               <span class='con-item-title'>
+                                   Notification of Dormant Account and Closed Account
+                               </span>
+                            </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class='component-oversea-services component-oversea-services--33  component-oversea-services--home'>
+    <div class="cos-inner">
+        <h2 class='cos-title'>
+            胡志明市分行
+        </h2>
+        <p class='cos-description' style="max-width:1200px">
+            國泰世華銀行自2005年以來陸續在越南設立分行及代表人辦事處，於2022年以深化越南市場經營為旨，
+            將分行遷址至胡志明市，代表人辦事處同步遷址至廣南省。目前本行在越南共有三個據點，
+            分別為胡志明市分行、河內代表人辦事處及廣南代表人辦事處，提供橫跨北、中、南越之金融服務管道。
+        </p>
+
+        <p class='cos-description' style="max-width:1200px">
+            國泰世華銀行胡志明市分行提供越南境內與境外企業多元化的金融服務，並隨著越南經濟發展，
+            本行於2024年3月進軍越南數位消金市場，成為越南台資銀行首家開辦全數位端到端消金業務。
+            國泰世華銀行將持續以專業團隊積極服務客戶，創造客戶優質體驗。
+        </p>
+        <ul class='cos-list'>
+            <li class='cos-item'>
+                <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"services/cash-management/")" class='cos-item-link'>
+                    <figure class='cos-item-figure'>
+                        <picture>
+                            <img class='cos-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services/home/cash-management.jpg")' alt='@ViewBag.nav_services_cash_management'>
+                        </picture>
+                        <figcaption hidden>@ViewBag.nav_services_cash_management</figcaption>
+                    </figure>
+                    <div class='cos-item-content'>
+                        <h3 class='cos-item-title'>@ViewBag.nav_services_cash_management</h3>
+                        <p class='cos-item-description'>提供便利且整合的現金管理產品，打造全方位金流服務，讓您有效管理收付款，提升資金運用效率。</p>
+                        <div class='cos-item-btn'>@ViewBag.btn_learn_more</div>
+                    </div>
+                </a>
+            </li>
+
+            <li class='cos-item'>
+                <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"services/corporate-financing/")" class='cos-item-link'>
+                    <figure class='cos-item-figure'>
+                        <picture>
+                            <img class='cos-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services/home/corporate-financing.jpg")' alt='@ViewBag.nav_services_corporate_finance'>
+                        </picture>
+                        <figcaption hidden>@ViewBag.nav_services_corporate_finance</figcaption>
+                    </figure>
+                    <div class='cos-item-content'>
+                        <h3 class='cos-item-title'>@ViewBag.nav_services_corporate_finance</h3>
+                        <p class='cos-item-description'>提供完整且多元化的企業融資，為您量身打造全面的金融服務。</p>
+                        <div class='cos-item-btn'>@ViewBag.btn_learn_more</div>
+                    </div>
+                </a>
+            </li>
+            <li class='cos-item'>
+                <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"services/otc-derivatives/")" class='cos-item-link'>
+                    <figure class='cos-item-figure'>
+                        <picture>
+                            <img class='cos-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services/home/otc-derivatives.jpg")' alt='衍生產品'>
+                        </picture>
+                        <figcaption hidden>衍生產品 </figcaption>
+                    </figure>
+                    <div class='cos-item-content'>
+                        <h3 class='cos-item-title'> 衍生產品 </h3>
+                        <p class='cos-item-description'>提供您金融避險專業服務，幫助企業完善利率風險管理</p>
+                        <div class='cos-item-btn'>@ViewBag.btn_learn_more</div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+        <ul class='cos-list'>
+            <li class='cos-item'>
+                <a href="https://www.vn.cathaybk.com/home" class='cos-item-link' target="_blank" rel="noopener" rel="noreferrer">
+                    <figure class='cos-item-figure'>
+                        <picture>
+                            <img class='cos-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services/home/digital-consumer-Loan.jpg")' alt='@ViewBag.nav_services_digital_consumer_loan'>
+                        </picture>
+                        <figcaption hidden>@ViewBag.nav_services_digital_consumer_loan</figcaption>
+                    </figure>
+                    <div class='cos-item-content'>
+                        <h3 class='cos-item-title'>@ViewBag.nav_services_digital_consumer_loan</h3>
+                        <p class='cos-item-description'>
+                            數位小額消費貸款服務，專為個人用戶提供便捷的消費貸款方案，滿足客戶的日常生活需求。貸款流程完全線上化，輕鬆申辦、快速撥款
+                        </p>
+                        <div class='cos-item-btn'>@ViewBag.btn_learn_more</div>
+                    </div>
+                </a>
+            </li>
+            <li class='cos-item'>
+                <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"services/trade-finance/")" class='cos-item-link'>
+                    <figure class='cos-item-figure'>
+                        <picture>
+                            <img class='cos-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services/home/trade-finance.jpg")' alt='@ViewBag.nav_services_trade_finance'>
+                        </picture>
+                        <figcaption hidden>@ViewBag.nav_services_trade_finance</figcaption>
+                    </figure>
+                    <div class='cos-item-content'>
+                        <h3 class='cos-item-title'>@ViewBag.nav_services_trade_finance</h3>
+                        <p class='cos-item-description'>提供您完整多元的國際貿易服務及融資，以滿足公司發展各時期的資金需求，量身訂做最適合您的產品。</p>
+
+                        <div class='cos-item-btn'>@ViewBag.btn_learn_more</div>
+                    </div>
+                </a>
+            </li>
+            <li class='cos-item'>
+                <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"services/foreign-exchange/")" class='cos-item-link'>
+                    <figure class='cos-item-figure'>
+                        <picture>
+                            <img class='cos-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services/home/foreign-exchange.jpg")' alt='@ViewBag.nav_services_foreign_exchange'>
+                        </picture>
+                        <figcaption hidden>@ViewBag.nav_services_foreign_exchange</figcaption>
+                    </figure>
+                    <div class='cos-item-content'>
+                        <h3 class='cos-item-title'>@ViewBag.nav_services_foreign_exchange</h3>
+                        <p class='cos-item-description'>
+                            提供您金融避險專業服務，幫助企業完善匯率風險管理。
+                        </p>
+                        <div class='cos-item-btn'>@ViewBag.btn_learn_more</div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+
+
+    </div>
+</div>

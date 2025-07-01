@@ -1,0 +1,207 @@
+﻿@model IndexViewModel
+
+@if (ViewBag.lang == "zh-hant")
+{
+    ViewBag.PageTitle = "收費標準";
+    ViewBag.PageDescription = "收費標準包括存匯服務收費表、經紀傭金暨服務費、網上銀行收費說明 、Global MyB2B電子憑證收費表等。";
+}
+else
+{
+    ViewBag.PageTitle = "Charging Standard";
+    ViewBag.PageDescription = "";
+}
+
+@section Scripts {}
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/fee-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/fee.jpg")' alt='@ViewBag.nav_fee'>
+
+        </picture>
+        <figcaption hidden>@ViewBag.nav_fee</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_fee</h1>
+        </div>
+    </div>
+</div>
+@if (ViewBag.lang == "zh-hant")
+{
+<div class='component-oversea-fee'>
+    <div class="cof-inner">
+        <div class="cof-item-wrap">
+            <div class="cof-item">
+                <div class="cof-item-title">存匯服務收費表</div>
+                @*<a href="@Url.Content("~/OVSWS/Content/pdf/hongkong/fee/fee-schedule-for-deposits-and-remittances.pdf")" target="_blank" rel="noopener" class="cof-item-btn"><span class="cof-item-btn-text">下載</span></a>(2021年8月9日生效)*@
+                <div>
+                    <table>
+                        <tr>
+                            <td>
+                                <div class="cof-item-title">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </div>
+                                <a href="@Url.Content("~/OVSWS/Content/pdf/hongkong/fee/fee-schedule-for-deposits-and-remittances-gb.pdf")" target="_blank" rel="noopener" class="cof-item-btn"><span class="cof-item-btn-text">下載</span></a>
+                            </td>
+                            <td>
+                                <div class="cof-item-title">私人銀行專用</div>
+                                <a href="@Url.Content("~/OVSWS/Content/pdf/hongkong/fee/PB_Fee Schedule(Chinese)_202506.pdf")" target="_blank" rel="noopener" class="cof-item-btn"><span class="cof-item-btn-text">下載</span></a>
+                            </td>
+                        </tr>
+                        @*<tr><td colspan="2">(2023年11月1日生效)</td></tr>*@
+                        <tr>
+                            <td>(2024年1月22日生效)</td>
+                            <td>(2025年6月1日生效)</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="cof-item">
+                <div class='cof-item-title'>
+                    經紀佣金暨服務費用表
+                </div>
+                <a href="@Url.Content("~/OVSWS/Content/pdf/hongkong/fee/Fee_Table_CN_Apr_2025.pdf")" target="_blank" rel="noopener" class='cof-item-btn'><span class='cof-item-btn-text'>下載</span></a>
+            </div>
+
+        </div>
+
+        <div class="cof-item-wrap">
+            <div class="cof-item">
+                <table>
+                    <tr>
+                        <td>
+                            <div class="cof-item-title">貿易融資服務收費表</div>
+                            <a href="@Url.Content("~/OVSWS/Content/pdf/hongkong/fee/Trade service pricing table_cht.pdf")" target="_blank" rel="noopener" class="cof-item-btn"><span class="cof-item-btn-text">下載</span></a>
+                        </td>
+
+                    </tr>
+                    @*<tr><td colspan="2">(2023年11月1日生效)</td></tr>*@
+                    <tr>
+                        <td>(2024年10月01日生效)</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class='component-oversea-fee-online-banking'>
+            <div class='cofob-title'>網上銀行收費說明</div>
+            <br />
+            @*<div class="cofob-item-wrap">*@
+                @*<div class="cofob-item">
+                    <div class="cofob-item-title">香港分行網路銀行</div>
+                    <div class="cofob-item-subtitle">HONG KONG E-BANKING</div>
+                    <div class="cofob-item-description">收費請詳閱本行之存匯服務收費表一覽</div>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/hongkong/fee/fee-schedule-for-deposits-and-remittances.pdf")" target="_blank" rel="noopener" class='cofob-item-btn'><span class='cofob-item-btn-text'>下載</span></a>
+                </div>*@
+
+                <div class="cofob-item" >
+                    <div class="cofob-item-title">全球企業網路銀行服務</div>
+                    <div class="cofob-item-subtitle">GLOBAL MYB2B</div>
+                    <div class="cofob-item-description">交易手續費請參閱<a href='https://www.globalmyb2b.com/GEBANK/html/qa_04_taiwan_zh-tw.html' rel='noopener nofollow' target="_blank" rel="noopener" class='cofob-item-text-link'>GLOBAL MYB2B常見問題-交易篇</a>之「GLOBAL MYB2B交易收費標準」[轉出帳號為香港地區(HK)]。</div>
+                </div>
+            @*</div>*@
+
+            <div class='component-oversea-table'>
+                <div class='cot-table cot--fee-online-banking'>
+                    <div class='cot-tr cot-tr--head'>
+                        <div class='cot-td'>Global MyB2B電子憑證收費表</div>
+                    </div>
+                    <div class='cot-tr'>
+                        <div class='cot-td cot-td--light-green'>第一年費用</div>
+                        <div class='cot-td cot-td--light-green'>第二年起之年費</div>
+                    </div>
+                    <div class='cot-tr'>
+                        <div class='cot-td cot-td--white'><span class='cot-td-currency'>HKD</span> 400</div>
+                        <div class='cot-td cot-td--white'><span class='cot-td-currency'>HKD</span> 250</div>
+                    </div>
+                </div>
+
+
+                <div class='cot-table cot--fee-online-banking-small'>
+                    <div class='cot-tr cot-tr--head'>
+                        <div class='cot-td'>Global MyB2B<br />電子憑證收費表</div>
+                    </div>
+                    <div class='cot-tr'>
+                        <div class='cot-td'>第一年費用</div>
+                        <div class='cot-td'><span class='cot-td-currency'>HKD</span> 400</div>
+                    </div>
+                    <div class='cot-tr'>
+                        <div class='cot-td'>第二年起之年費</div>
+                        <div class='cot-td'><span class='cot-td-currency'>HKD</span> 250</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> }
+else
+{
+<div class='component-oversea-fee'>
+    <div class="cof-inner">
+        <div class="cof-item-wrap">
+            <div class="cof-item">
+                <div class='cof-item-title'>Fee Schedule for<br />Deposits and Remittances</div>
+                <a href="@Url.Content("~/OVSWS/Content/pdf/hongkong/fee/fee-schedule-for-deposits-and-remittances_en.pdf")" target="_blank" rel="noopener" class='cof-item-btn'><span class='cof-item-btn-text'>Download</span></a>
+            </div>
+            <div class="cof-item">
+                <div class='cof-item-title'>Fee Schedule for<br />Brokerage Commission & Service</div>
+                <a href="@Url.Content("~/OVSWS/Content/pdf/hongkong/fee/fee-agent-English.pdf")" target="_blank" rel="noopener" class='cof-item-btn'><span class='cof-item-btn-text'>Download</span></a>
+            </div>
+        </div>
+
+
+        <div class='component-oversea-fee-online-banking'>
+            <div class='cofob-title'>Fee Schedule for Internet Banking</div>
+            <div class="cofob-item-wrap">
+                <div class="cofob-item">
+                    <div class="cofob-item-title">Hong Kong E-Banking</div>
+                    <div class="cofob-item-description">Please refer to “Fee Schedule for Deposits and Remittances of Hong Kong Branch” for the details.</div>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/hongkong/fee/fee-schedule-for-deposits-and-remittances_en.pdf")" target="_blank" rel="noopener" class='cofob-item-btn'><span class='cofob-item-btn-text'>Download</span></a>
+
+                </div>
+
+                <div class="cofob-item">
+                    <div class="cofob-item-title">Global MyB2B</div>
+                    <div class="cofob-item-description">Please refer to the <a href="https://www.globalmyb2b.com/GEBANK/PRECAUTION/ChargingStandards.zh-TW.pdf?20181029" target="_blank" rel="noopener" class='cofob-item-text-link'>website</a> for the details.</div>
+
+
+                </div>
+            </div>
+
+            <div class='component-oversea-table'>
+                <div class='cot-table cot--fee-online-banking'>
+                    <div class='cot-tr cot-tr--head'>
+                        <div class='cot-td'>Digital certificate fee of Global MyB2B</div>
+                    </div>
+                    <div class='cot-tr'>
+                        <div class='cot-td cot-td--light-green'>First year</div>
+                        <div class='cot-td cot-td--light-green'>Second year onwards</div>
+                    </div>
+                    <div class='cot-tr'>
+                        <div class='cot-td cot-td--white'><span class='cot-td-currency'>HKD</span> 400</div>
+                        <div class='cot-td cot-td--white'><span class='cot-td-currency'>HKD</span> 250</div>
+                    </div>
+                </div>
+
+
+                <div class='cot-table cot--fee-online-banking-small'>
+                    <div class='cot-tr cot-tr--head'>
+                        <div class='cot-td'>Digital<br />certificate fee of Global MyB2B</div>
+
+
+                    </div>
+                    <div class='cot-tr'>
+                        <div class='cot-td'>First year</div>
+                        <div class='cot-td'><span class='cot-td-currency'>HKD</span> 400</div>
+                    </div>
+                    <div class='cot-tr'>
+                        <div class='cot-td'>Second year onwards</div>
+                        <div class='cot-td'><span class='cot-td-currency'>HKD</span> 250</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>}

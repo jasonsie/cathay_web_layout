@@ -1,0 +1,67 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = @ViewBag.nav_news;
+}
+
+@if (ViewBag.lang == "zh-hant")
+{
+    ViewBag.PageDescription = "";
+}
+else
+{
+    ViewBag.PageDescription = "";
+}
+
+@section Scripts {
+    <script>
+    var country = "@ViewBag.country_url";
+    var city = "@ViewBag.city_url";
+    var id = "@ViewBag.id";
+    var lang = "zh-hant";
+    var branchId = "605";
+    </script>
+    <script src="~/OVSWS/Content/js/backendSystem/LatestNews.js"></script>
+}
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/sg/kv-short/news-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/sg/kv-short/news.jpg")' alt='@ViewBag.nav_news'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_news</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_news</h1>
+        </div>
+    </div>
+</div>
+
+
+<div class="component-newslist">
+    <div class="component-newslist-inner">
+        <div class="component-newslist-row">
+            <div class="component-newslist-col">
+                <a class="component-newsitem" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.lang_url+"/news/e-Advice/")" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2025-04-24 </div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">「電子通知書」(e-advice)服務 - 新交易單據類別及功能上線通知</h4>
+                        </div>
+                    </div>
+                </a>
+                <a class="component-newsitem" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.lang_url+"/news/password-encryption/")" rel="noopener">
+                    <div class="component-newsitem-inner">
+                        <div class="component-newsitem-date">2024-01-22 </div>
+                        <div class="component-newsitem-cont">
+                            <h4 class="component-newsitem-title">通知書版面調整與密碼加密處理</h4>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

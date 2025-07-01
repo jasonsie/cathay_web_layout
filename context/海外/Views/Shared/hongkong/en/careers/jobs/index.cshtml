@@ -1,0 +1,104 @@
+﻿@model IndexViewModel
+
+
+
+@{
+    ViewBag.PageTitle = "Careers";
+    ViewBag.PageDescription = "";
+}
+
+
+@section Scripts {}
+
+<div class='component-oversea-kv-short'>
+
+    <figure class='coks-figure'>
+
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    srcset='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/careers-lg.jpg")' />
+
+            <img class='coks-img' src='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/careers.jpg")' alt='Careers'>
+
+        </picture>
+
+        <figcaption hidden>Careers</figcaption>
+
+    </figure>
+
+    <div class="coks-inner">
+
+        <div class="coks-content">
+
+            <h1 class='coks-title'>Careers</h1>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<div class='component-oversea-list'>
+
+    <div class="col-inner">
+        <div class="col-list-wrap">
+            <ul class='col-list col-list--careers-list'>
+                <li class='col-item'>
+                    <span class='col-item-title'>Corporate Banking</span>
+                    <ul class='col-item-ul'>
+                        <li class='col-item-li'>
+                            <a href="@Url.Content("~/hongkong/en/careers/Corporate-Banking-Vice-President-Relationship-Manager-International-Corporates-Coverage/")" class='col-item-li-link'>Vice President, Relationship Manager, International Corporates Coverage</a>
+                        </li>
+                        <li class='col-item-li'>
+                            <a href="@Url.Content("~/hongkong/en/careers/Associate-Assistant-Relationship-Manager-Commercial-Banking/")" class='col-item-li-link'>Associate, Assistant Relationship Manager, Commercial Banking</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class='col-item'>
+                    <span class='col-item-title'>Information Technology</span>
+                    <ul class='col-item-ul'>
+                        <li class='col-item-li'>
+                            <a href="@Url.Content("~/hongkong/en/careers/Associate-IT-Operations-Information-Technology/")" class='col-item-li-link'>Associate, IT Operations</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class='col-item'>
+                    <span class='col-item-title'>Private Banking</span>
+                    <ul class='col-item-ul'>
+                        <li class='col-item-li'>
+                            <a href="@Url.Content("~/hongkong/en/careers/Head-of-Sales-Private-Banking/")" class='col-item-li-link'>Head of Sales, Private Banking</a>
+                        </li>
+                        <li class='col-item-li'>
+                            <a href="@Url.Content("~/hongkong/en/careers/private-wealth-management-vice-president-relationship-management/")" class='col-item-li-link'>Vice President, Relationship Management, Private Banking</a>
+                        </li>
+                        <li class='col-item-li'>
+                            <a href="@Url.Content("~/hongkong/en/careers/senior-associate-Assistant-Relationship-Manager-Private-Banking/")" class='col-item-li-link'>Senior Associate, Assistant Relationship Manager, Private Banking</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class='col-item'>
+                    <span class='col-item-title'>Risk Management</span>
+                    <ul class='col-item-ul'>
+                        <li class='col-item-li'>
+                            <a href="@Url.Content("~/hongkong/en/careers/risk-management-manager-credit-analysis/")" class='col-item-li-link'>Manager, Credit Analysis</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class='col-item'>
+                    <span class='col-item-title'>Treasury Solutions</span>
+                    <ul class='col-item-ul'>
+                        <li class='col-item-li'>
+                            <a href="@Url.Content("~/hongkong/en/careers/treasury-solutions-Full-Stack-Developer/")" class='col-item-li-link'>Full Stack Developer</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

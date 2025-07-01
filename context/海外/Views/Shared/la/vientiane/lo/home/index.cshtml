@@ -1,0 +1,236 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "";
+    ViewBag.PageDescription = "";
+}
+
+@section Scripts {
+
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/jquery.scrollbar.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/slick.min.js")"></script>
+
+
+    <script>
+        var homeCard = homeCard || {};
+        homeCard.prototype = {
+            sameHeight: function () {
+
+                let window_w = $(window).width();
+                let max_h = 0;
+                let scope = $('.component-oversea-services');
+                $('.cos-item-description', scope).css('min-height', 0);
+                if (window_w >= 768) {
+                    $('.cos-item', scope).each(function () {
+                        let h = $('.cos-item-description', $(this)).height();
+                        if (h > max_h) {
+                            max_h = h;
+                        }
+                    })
+                    $('.cos-item-description', scope).height(max_h);
+                } else {
+                    $('.cos-item-description', scope).css('height', 'auto');
+                }
+            },
+            addEventListener: function () {
+                let o = this;
+                $(window).on('resize.homeCard', function () {
+                    o.sameHeight();
+                }).trigger('resize.homeCard');
+            },
+            init: function () {
+                this.addEventListener();
+            }
+        }
+    </script>
+
+    <script>
+        $(function () {
+
+            var myHomeCard = homeCard.prototype;
+           myHomeCard.init();
+
+
+            //
+            $(window).resize(function () {
+
+                let window_w = $(window).width();
+                let offset_x;
+                let content_w;
+                if (window_w > 991) {
+                    offset_x = $('.cok-inner').offset().left;
+                    content_w = $('.cok-content').width();
+                    max_w = window_w - content_w - offset_x;
+                } else {
+                    offset_x = 0;
+                    content_w = 0;
+                    max_w = window_w;
+                }
+                $('.cok-figure-wrap').css('width', max_w);
+                $('.cok-figure-wrap').css('flex-basis', max_w);
+                $('.cok-figure-wrap').css('max-width', max_w);
+                $('.cok-figure-wrap').css('left', content_w + offset_x);
+
+            }).trigger('resize');
+
+            $(".cok-figure-slider").slick({
+                infinite: false,
+                slidesToShow: 1,
+                dots: false
+            });
+
+            ////////////////////////////
+
+            //$('.con-list', $(this)).scrollbar();
+        })
+    </script>
+
+    <script>
+        //fraud modal
+        $(function () {
+            let myFraudModal = fraudModal.prototype;
+            myFraudModal.init($('.component-oversea-modal--fraud'));
+            myFraudModal.show();
+        })
+    </script>
+}
+
+<div class='component-oversea-kv'>
+    <div class="cok-figure-wrap">
+        <div class="cok-figure-slider">
+            <div class="cok-figure-item">
+                <figure class='cok-figure'>
+                    <picture>
+                        <source media='(min-width: 992px)'
+                                srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv/bg-lg.jpg")' />
+                        <img class='cok-img' src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv/bg.jpg")' alt='@ViewBag.site_name'>
+                    </picture>
+                    <figcaption hidden>@ViewBag.site_name</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+
+    <div class="cok-inner">
+        <div class="cok-content">
+            
+                <h1 class='cok-title'>
+                    <span class='cok-title--company cok-title--company-bold'>ທະນາຄານ ຄາເທ ຢູໄນເຕັດ</span>
+                    <span class='cok-title--slogan'>ພັນທະມິດທີ່ທ່ານເຊື່ອຖືໄດ້</span>
+                </h1>
+        </div>
+    </div>
+</div>
+
+
+
+<div class='component-oversea-services component-oversea-services--home'>
+    <div class="cos-inner">
+
+
+        <h2 class='cos-title'>ການບໍລິການຂອງພວກເຮົາ</h2>
+        <p class='cos-description'>
+            ທະນາຄານຄາເທ ຢູໄນເຕັດ ສາຂານະຄອນຫຼວງ ວຽງຈັນ ສ້າງຕັ້ງຂື້ນທີ່ ສປປ ລາວ ໂດຍທະນາຄານ ຄາເທ ຢູໄນເຕັດ ເຊິ່ງເປັນກຸ່ມຜູ້ຖືຫຸ້ນທາງການເງິນຄາເທຂອງໄຕ້ຫວັນ
+        </p>
+        <p class='cos-description'>
+            <strong>Cathay Financial Holdings (Cathay FHC) and its subsidiaries including Cathay Life Insurance, Cathay United Bank, Cathay Century Insurance, Cathay Securities, and Cathay Securities Investment Trust </strong>
+            provide comprehensive and diversified financial services and solutions in Taiwan and around the world. We are independent from and not affiliated with Cathay Pacific Airways Limited and its subsidiaries.
+        </p>
+
+
+        <ul class='cos-list'>
+            <li class='cos-item'>
+                <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"services/cash-management/")" class='cos-item-link'>
+                    <figure class='cos-item-figure'>
+                        <picture>
+                            <img class='cos-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services/home/cash-management.jpg")' alt='@ViewBag.nav_services_cash_management'>
+                        </picture>
+                        <figcaption hidden>@ViewBag.nav_services_cash_management</figcaption>
+                    </figure>
+                    <div class='cos-item-content'>
+                        <h3 class='cos-item-title'>@ViewBag.nav_services_cash_management</h3>
+                        <p class='cos-item-description'>ພວກເຮົາສະໜອງຜະລິດຕະພັນເງິນຝາກແລະການໂອນເງິນທີ່ສະດວກແລະຄົບວົງຈອນ, ຄວບ​ຄຸມ​ການບໍລິການເງິນສົດຄົບວົງຈອນ, ຊ່ວຍໃຫ້ທ່ານສາມາດຈັດການ ການຮັບເງິນ ແລະ ການຊຳລະເງິນໄດ້ຢ່າງມີປະສິດຕິພາບ, ເພື່ອ​​ພັດ​ທະ​ນາປະສິດທິພາບຂອງການນຳໃຊ້ທຶນ </p>
+                        <div class='cos-item-btn'>@ViewBag.btn_learn_more</div>
+                    </div>
+                </a>
+            </li>
+
+            <li class='cos-item'>
+                <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"services/corporate-financing/")" class='cos-item-link'>
+                    <figure class='cos-item-figure'>
+                        <picture>
+                            <img class='cos-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services/home/corporate-financing.jpg")' alt='@ViewBag.nav_services_corporate_finance'>
+                        </picture>
+                        <figcaption hidden>@ViewBag.nav_services_corporate_finance</figcaption>
+                    </figure>
+                    <div class='cos-item-content'>
+                        <h3 class='cos-item-title'>@ViewBag.nav_services_corporate_finance</h3>
+                        <p class='cos-item-description'>ພວກເຮົາໃຫ້​ບໍ​ລິ​ການ​ດ້ານກ​ານ​ເງິນ​ແກ່​ອົງ​ກອນແບບ​ຄົບ​ຖ້ວນ ແລະ ຫຼາກ​ຫຼາຍ, ປັບ​ປ່ຽນການ​ບໍ​ລິ​ການ​ດ້ານ​ການ​ເງິນ​ທີ່​ສົມ​ບູນ​ແບບ​​ໃຫ້ແກ່​ທ່ານ</p>
+                        <div class='cos-item-btn'>@ViewBag.btn_learn_more</div>
+                    </div>
+                </a>
+            </li>
+
+        </ul>
+
+
+    </div>
+</div>
+
+
+<div class='component-awards component-awards--align-center'>
+    <div class="ca-inner">
+        <h2 class='ca-title'>ລາງວັນສຳລັບຢູ່ລາວ</h2>
+        <figure class='ca-figure'>
+            <picture>
+                <img class='ca-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/awards/awards-lg.jpg")' alt='ລາງວັນສຳລັບຢູ່ລາວ'>
+            </picture>
+            <figcaption hidden>ລາງວັນສຳລັບຢູ່ລາວ</figcaption>
+        </figure>
+        <a href='@Url.Content("~/OVSWS/Content/pdf/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/awards/awards-for-laos.pdf")' target="_blank" rel="noopener" class='ca-btn'>@ViewBag.btn_learn_more</a>
+    </div>
+</div>
+
+
+<div class='component-credit-table'>
+    <div class="cct-inner">
+        <h2 class='cct-title'>ລະດັບຄວາມໜ້າເຊື່ອຖື </h2>
+        <table class="cct-table">
+            <thead>
+                <tr class='cct-tr cct-tr--head cct-tr--green'>
+                    <td class='cct-td cct-td--align-center' rowspan="2">ບະເມີນຄວາມໜ້າເຊື່ອຖື</td>
+                    <td class='cct-td cct-td--align-center' colspan="2" >ປະເມີນຄັ້ງລ່າສຸດ</td>
+                    <td class='cct-td cct-td--align-center' rowspan="2">ຂໍ້ມູນອື່ນໆ</td>
+                </tr>
+
+                <tr class='cct-tr cct-tr--head'>
+                    <td class='cct-td cct-td--align-center'>ໄລລະຍາວ</td>
+                    <td class='cct-td cct-td--align-center'>ໄລຍະສັ້ນ</td>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr class='cct-tr cct-tr--grey'>
+                    <td class='cct-td cct-td--align-center'>Taiwan Rating</td>
+                    <td class='cct-td cct-td--align-center'>twAA+</td>
+                    <td class='cct-td cct-td--align-center'>twA-1+</td>
+                    <td class='cct-td cct-td--align-center'>ທ່າອ່ຽງ:<br/>ຄົງທີ່</td>
+                </tr>
+                
+                <tr class='cct-tr'>
+                    <td class='cct-td cct-td--align-center'>Standard&Poor's</td>
+                    <td class='cct-td cct-td--align-center'>A-</td>
+                    <td class='cct-td cct-td--align-center'>A-2</td>
+                    <td class='cct-td cct-td--align-center'>ທ່າອ່ຽງ:<br/>ຄົງທີ່</td>
+                </tr>
+                
+                <tr class='cct-tr cct-tr--grey'>
+                    <td class='cct-td cct-td--align-center'>Moody's</td>
+                    <td class='cct-td cct-td--align-center'>A2</td>
+                    <td class='cct-td cct-td--align-center'>P-1</td>
+                    <td class='cct-td cct-td--align-center'>ທ່າອ່ຽງ:<br/>ຄົງທີ່</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

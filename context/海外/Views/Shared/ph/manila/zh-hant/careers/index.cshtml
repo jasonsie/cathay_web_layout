@@ -1,0 +1,66 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "Page Title";
+    ViewBag.PageDescription = "Page Desctiption";
+}
+
+@section Scripts {}
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/careers-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img"+"/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/careers.jpg")' alt='@ViewBag.nav_contact'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_careers</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_careers</h1>
+        </div>
+    </div>
+</div>
+
+
+@if (ViewBag.lang == "zh-hant")
+{
+    <div class='component-oversea-info'>
+        <div class='coi-inner'>
+            <h2 class='coi-title'>
+                目前暫時無職缺
+
+            </h2>
+            <div class='coi-content'>
+                <p class="coi-p">
+
+                    我們辦公室位於31st F, Zuellig Building Makati Avenue corner Paseo de Roxas Makati City 1225 Philippines
+
+                    任何職缺相關的詢問，請e-mail：NT61524@cathaybk.com.tw
+                </p>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <div class='component-oversea-info'>
+        <div class='coi-inner'>
+            <h2 class='coi-title'>Service Address</h2>
+
+            <div class='coi-content'>
+                <ul class="coi-list">
+                    <li class="coi-item">
+                        <span class='coi-item-label'>Address:</span>
+                        <span class="coi-item-content">4F., Viettel Quang Nam Building, No.121 Hung Vuong Street, Tam Ky City, Quang Nam Province, Vietnam</span>
+                    </li>
+                    <li class="coi-item">
+                        <span class='coi-item-label'>Phone Number:</span>
+                        <span class="coi-item-content">+84 0235 3813035~38</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+}
+

@@ -1,0 +1,756 @@
+@{
+    ViewData["PageTitle"] = "用卡優惠";
+    ViewData["PageDescription"] = "享受 CUBC 為日常生活、節假日和季節精心策劃的卡片促銷活動，增加您的卡片價值";
+}
+
+
+<!-- Page START -->
+<main class="mastbody">
+
+    <!--
+        用卡優惠
+    -->
+    <div class="topkv kv  kv--txt-left">
+        <div class="kv-bg">
+            <div class="kv-bg-inner">
+                <figure class="kv-bg-img">
+                    <picture>
+                        <source media="(min-width:769px)" srcset="/assets/img/topkv/personal-cards.jpg" />
+                        <img srcset="/assets/img/topkv/personal-cards-mb.jpg">
+                    </picture>
+                </figure>
+            </div>
+        </div>
+        <div class="kv-cont">
+            <div class="kv-cont-inner">
+                <h2 class="display-1-sm  fw-bold lh-xs">信用卡與簽帳卡</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Breadcrumb  (lays on top of .topkv if places right after it) -->
+    <nav class="breadcrumb-nav text-white" aria-label="breadcrumb">
+        <div class="fluid">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]"><span>首頁</span><i class="ico-ui-home"></i></a></li>
+                <li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]personal/">個人金融</a></li>
+                <li class="breadcrumb-item active" aria-current="page">用卡優惠</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Menu -->
+    <nav class="tabmenu    d-none d-sm-block">
+        <div class="tabmenu-inner">
+            <a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/credit-cards/">
+                <span class="tabmenu-btn-txt">信用卡</span>
+                <i class="tabmenu-btn-line"></i>
+            </a>
+            <a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/debit-cards/">
+                <span class="tabmenu-btn-txt">簽帳卡</span>
+                <i class="tabmenu-btn-line"></i>
+            </a>
+            <a class="tabmenu-btn active" href="@ViewData["siteLangUrl"]personal/card-promotions/">
+                <span class="tabmenu-btn-txt">用卡優惠</span>
+                <i class="tabmenu-btn-line"></i>
+            </a>
+            <a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/rewards-program/">
+                <span class="tabmenu-btn-txt">紅利回饋</span>
+                <i class="tabmenu-btn-line"></i>
+            </a>
+            <a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/cubc-exclusive/">
+                <span class="tabmenu-btn-txt">點數禮遇</span>
+                <i class="tabmenu-btn-line"></i>
+            </a>
+            <a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/apply-online?Channel=Website">
+                <span class="tabmenu-btn-txt">線上申請</span>
+                <i class="tabmenu-btn-line"></i>
+            </a>
+        </div>
+    </nav>
+    <!-- Mobile dropdown -->
+    <div class="tabmenu-dropdown dropdown    d-block d-sm-none">
+        <a href="javascript:;" class="btn btn-sm btn-block  dropdown-toggle" data-toggle="dropdown">
+            <span class="text-truncate d-inline-block">用卡優惠</span>
+        </a>
+        <div class="dropdown-menu">
+            <span class="dropdown-item disabled">-- 前往頁面 --</span>
+            <a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/credit-cards/">信用卡</a>
+            <a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/debit-cards/">簽帳卡</a>
+            <a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/card-promotions/">用卡優惠</a>
+            <a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/rewards-program/">紅利回饋</a>
+            <a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/cubc-exclusive/">點數禮遇</a>
+            <a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/apply-online/">線上申請</a>
+        </div>
+    </div>
+
+
+
+    <!--
+         Card Promotions - Detail
+     -->
+    <section class="fluid overflow-hidden">
+
+        <div class="py-page"></div>
+
+        <!-- Page heading -->
+        <header class="compact  mb-5  text-center">
+            <h1 class="display-3 h1-mb  mb-3  text-black fw-bold">Card Promotions</h1>
+            <p>Add your card value by enjoying CUBC meticulously planned card promotions for daily life, holidays, and seasons. </p>
+        </header>
+
+        <!-- Card grids  (3 in a row;  use `flex-column` trick to align learn more button with neighborings) -->
+         <section class="mx-n3">
+            <ul class="compact-md  row justify-content-center justify-content-md-start">
+
+                <!-- Card grid -->
+                <li class="col-12 col-md-6 col-lg-4  mb-5  px-3  d-flex flex-column">
+                    <figure class="mb-3 mb-xl-4  flex-shrink-0  embed-responsive  embed-responsive-720by482  border bg-light">
+                        <img class="embed-responsive-item lazy" data-src="/assets/img/promotion/WelcomGift20241025.png" alt="VISA Card">
+                    </figure>
+                    <div class="px-xl-3   d-flex flex-column flex-grow-1  ie11fix">
+                        <h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">
+                            Earn up to 10 CashPoint Welcome Gift
+                        </h3>
+                        <ul class="list-disc">
+                            <li>
+                                Eligible for new primary Gold/Platinum Credit Card
+                            </li>
+                            <li>
+                                Now ~ 30 Sep 2025
+                            </li>
+                        </ul>
+                        <div class="mt-auto pt-3">
+                            <a class="btn btn-green" target="_blank" rel="noopener noreferrer" href="/file/card-promotions/Earn Up To 10 CashPoint Welcome Gift.pdf">Learn More<i class="ico-ui-external ml-2"></i></a>
+                        </div>
+                    </div>
+                </li>
+                <!-- Card grid -->
+                <li class="col-12 col-md-6 col-lg-4  mb-5  px-3  d-flex flex-column">
+                    <figure class="mb-3 mb-xl-4  flex-shrink-0  embed-responsive  embed-responsive-720by482  border bg-light">
+                        <img class="embed-responsive-item lazy" data-src="/assets/img/promotion/Taiwan Health & Hotel - Card Promotion.jpg" alt="VISA Card">
+                    </figure>
+                    <div class="px-xl-3   d-flex flex-column flex-grow-1  ie11fix">
+                        <h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">
+                            Enjoy Special Offer for Taiwan Premium Health Check-Up & Accommodation
+                        </h3>
+                        <ul class="list-disc">
+                            <li>
+                                Eligible for all CUBC Cards
+                            </li>
+                            <li>
+                                Reservation Period: 16 Dec 2024 ~ 15 Dec 2025
+                            </li>
+                            <li>
+                                Check-up/Stay Period: 16 Dec 2024 ~ 30 Dec 2025
+                            </li>
+                            <li>
+                                Redemption 100% of the expense with CashPoint if payment made by CUBC Visa Infinite Credit Card only,
+                                <a class="text-green-dark text-underline text-break" href="/file/card-promotions/[Terms and Conditions] Redemption Program 2025.pdf" target="_blank" rel="noopener noreferrer">T&C.</a>
+                            </li>
+                        </ul>
+                        <div class="mt-auto pt-3">
+                            <a class="btn btn-green" target="_blank" rel="noopener noreferrer" href="/file/card-promotions/[Terms and Conditions] Taiwan Premium Health Check-Up and Accommodation.pdf">Learn More<i class="ico-ui-external ml-2"></i></a>
+                        </div>
+                    </div>
+                </li>
+                <!-- Card grid -->
+                <li class="col-12 col-md-6 col-lg-4  mb-5  px-3  d-flex flex-column">
+                    <figure class="mb-3 mb-xl-4  flex-shrink-0  embed-responsive  embed-responsive-720by482  border bg-light">
+                        <img class="embed-responsive-item lazy" data-src="/assets/img/promotion/Lazada & Taobao Website.jpg" alt="VISA Card">
+                    </figure>
+                    <div class="px-xl-3   d-flex flex-column flex-grow-1  ie11fix">
+                        <h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">
+                            Online Shopping on LAZADA &
+                            TAOBAO, Get Up to USD45
+                        </h3>
+                        <ul class="list-disc">
+                            <li>
+                                Exclusive for CUBC Mastercard Gold &
+                                Platinum Credit Cards.
+                            </li>
+                            <li>
+                                Get up to 45 Cashpoint = USD45 on
+                                Lazada & Taobao
+                            </li>
+                            <li>
+                                01 Apr ~ 31 Dec 2025
+                            </li>
+                        </ul>
+                        <div class="mt-auto pt-3">
+                            <a class="btn btn-green" target="_blank" rel="noopener noreferrer" href="/file/card-promotions/[Terms and Conditons] Online Shopping on Lazada & Taobao, Get up to USD45.pdf">Learn More<i class="ico-ui-external ml-2"></i></a>
+                        </div>
+                    </div>
+                </li>
+                <!-- Card grid -->
+                <li class="col-12 col-md-6 col-lg-4  mb-5  px-3  d-flex flex-column">
+                    <figure class="mb-3 mb-xl-4  flex-shrink-0  embed-responsive  embed-responsive-720by482  border bg-light">
+                        <img class="embed-responsive-item lazy" data-src="/assets/img/promotion/Get2percentASEANCountriesWebsite.jpg" alt="VISA Card">
+                    </figure>
+                    <div class="px-xl-3   d-flex flex-column flex-grow-1  ie11fix">
+                        <h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">
+                            Travel to ASEAN Countries
+                            Earn 2% Rebate
+                        </h3>
+                        <ul class="list-disc">
+                            <li>
+                                Exclusive for CUBC Visa Platinum credit card only
+                            </li>
+                            <li>
+                                Earn 2% rebate on POS/ ePOS purchase in ASEAN Countries
+                            </li>
+                            <li>
+                                1 Apr ~ 30 Sep 2025
+                            </li>
+                        </ul>
+                        <div class="mt-auto pt-3">
+                            <a class="btn btn-green" target="_blank" rel="noopener noreferrer" href="/file/card-promotions/[Terms and Conditions] 2percent Rebate in ASEAN Coutries.pdf">Learn More<i class="ico-ui-external ml-2"></i></a>
+                        </div>
+                    </div>
+                </li>
+                <!-- Card grid -->
+                <li class="col-12 col-md-6 col-lg-4  mb-5  px-3  d-flex flex-column">
+                    <figure class="mb-3 mb-xl-4  flex-shrink-0  embed-responsive  embed-responsive-720by482  border bg-light">
+                        <img class="embed-responsive-item lazy" data-src="/assets/img/promotion/MemoireSpa.jpg" alt="VISA Card">
+                    </figure>
+                    <div class="px-xl-3   d-flex flex-column flex-grow-1  ie11fix">
+                        <h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">
+                            Memoire Palace Resort & Spa
+                        </h3>
+                        <ul class="list-disc">
+                            <li>
+                                Eligible for all CUBC Cards.
+                            </li>
+                            <li>
+                                Get up to 50% OFF Discount
+                            <li>Reservation: +855 69 285 888 or <a class="text-green text-underline" href="mailto:reservation@memoirepalace.com">reservation@memoirepalace.com</a></li>
+                            </li>
+                            <li>
+                                Now ~ 31 Dec 2025
+                            </li>
+                        </ul>
+                        <div class="mt-auto pt-3">
+                            <a class="btn btn-green" target="_blank" rel="noopener noreferrer" href="/file/card-promotions/[Terms and Conditions] Get up to 50percent Discount with Memoire Palace Resort and Spa.pdf">Learn More<i class="ico-ui-external ml-2"></i></a>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Card grid -->
+                <li class="col-12 col-md-6 col-lg-4  mb-5  px-3  d-flex flex-column">
+                    <figure class="mb-3 mb-xl-4  flex-shrink-0  embed-responsive  embed-responsive-720by482  border bg-light">
+                        <img class="embed-responsive-item lazy" data-src="/assets/img/promotion/Without Income Document - KH 1 Website.jpg" alt="VISA Card">
+                    </figure>
+                    <div class="px-xl-3   d-flex flex-column flex-grow-1  ie11fix">
+                        <h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">
+                            Apply CUBC Credit Card Without Income Document
+                        </h3>
+                        <ul class="list-disc">
+                            <li>
+                                Applicant must hold an active loan or credit card from any other bank for more than or equal one year.
+                            </li>
+                            <li>
+                                Credit limit USD500 with Gold Credit Card only
+                            </li>
+                            <li>
+                                Now ~ 30 Jun 2025
+                            </li>
+                        </ul>
+                        <div class="mt-auto pt-3">
+                            <a class="btn btn-green" target="_blank" rel="noopener noreferrer" href="/file/card-promotions/[Terms and Conditions] Apply for a CUBC Credit Card Withoout Income Doocuments.pdf">Learn More<i class="ico-ui-external ml-2"></i></a>
+                        </div>
+                    </div>
+                </li>
+
+                 <!-- Card grid -->
+                <li class="col-12 col-md-6 col-lg-4  mb-5  px-3  d-flex flex-column">
+                    <figure class="mb-3 mb-xl-4  flex-shrink-0  embed-responsive  embed-responsive-720by482  border bg-light">
+                        <img class="embed-responsive-item lazy" data-src="/assets/img/promotion/King Power Wesbite0514.jpg" alt="VISA Card">
+                    </figure>
+                    <div class="px-xl-3   d-flex flex-column flex-grow-1  ie11fix">
+                        <h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">
+                            King Power Duty Free
+                        </h3>
+                        <ul class="list-disc">
+                            <li>
+                                Exclusive for CUBC Mastercard World Credit Card.
+                            </li>
+                            <li>
+                                Get THB 500 off with minimum spend of THB 5,000 . 
+                                <a class="text-green-dark text-underline text-break" href="https://specials.priceless.com/en-ap/offers/King_Power_Duty_Free_Store?Oid=202312270004&issuerId=&productId=" target="_blank" rel="noopener noreferrer">LINK</a>
+                            </li>
+                            <li>
+                                Now ~ 31 Dec 2025
+                            </li>
+                        </ul>
+                        <div class="mt-auto pt-3">
+                            <a class="btn btn-green" target="_blank" rel="noopener noreferrer" href="/file/card-promotions/[Terms and Conditons] King Power Duty Free.pdf">Learn More<i class="ico-ui-external ml-2"></i></a>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Card grid -->
+                <li class="col-12 col-md-6 col-lg-4  mb-5  px-3  d-flex flex-column">
+                    <figure class="mb-3 mb-xl-4  flex-shrink-0  embed-responsive  embed-responsive-720by482  border bg-light">
+                    <img class="embed-responsive-item lazy" data-src="/assets/img/promotion/Qatar Airways  Wesbite.jpg" alt="VISA Card">
+                    </figure>
+                    <div class="px-xl-3   d-flex flex-column flex-grow-1  ie11fix">
+                        <h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">
+                        Save up to 10% on Your Next Qatar
+                        Airways Flight
+                        </h3>
+                        <ul class="list-disc">
+                        <li>
+                            Eligible for CUBC Mastercard credit
+                            cards
+                        </li>
+                            <li>
+                            Purchase period: Now ~ 31 Dec 2025
+                            </li>
+                            <li>
+                            Travel Period: Now ~ 31 Mar 2026
+                            </li>
+                        </ul>
+                        <div class="mt-auto pt-3">
+                        <a class="btn btn-green" target="_blank" rel="noopener noreferrer" href="/file/card-promotions/[Terms and Conditons] Save up to 10percent on Your Next Qatar Airways Flight.pdf">Learn More<i class="ico-ui-external ml-2"></i></a>
+                        </div>
+                    </div>
+                </li>
+            <!-- Card grid -->
+            <li class="col-12 col-md-6 col-lg-4  mb-5  px-3  d-flex flex-column">
+                <figure class="mb-3 mb-xl-4  flex-shrink-0  embed-responsive  embed-responsive-720by482  border bg-light">
+                    <img class="embed-responsive-item lazy" data-src="/assets/img/promotion/Summer Bay Wesbite.jpg" alt="VISA Card">
+                </figure>
+                <div class="px-xl-3   d-flex flex-column flex-grow-1  ie11fix">
+                    <h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">
+                        Summer Bay
+                    </h3>
+                    <ul class="list-disc">
+                        <li>
+                            Eligible for CUBC Visa Platinum and
+                            Infinite credit card.
+                        </li>
+                        <li>
+                            Stay 1 night get free 1 night or Get
+                            25% OFF
+                        </li>
+                        <li>
+                            Now ~ 31 Dec 2025
+                        </li>
+                    </ul>
+                    <div class="mt-auto pt-3">
+                        <a class="btn btn-green" target="_blank" rel="noopener noreferrer" href="/file/card-promotions/[Terms and Conditons]Summer Bay.pdf">Learn More<i class="ico-ui-external ml-2"></i></a>
+                    </div>
+                </div>
+            </li>
+            <!-- Card grid -->
+            <li class="col-12 col-md-6 col-lg-4  mb-5  px-3  d-flex flex-column">
+                <figure class="mb-3 mb-xl-4  flex-shrink-0  embed-responsive  embed-responsive-720by482  border bg-light">
+                    <img class="embed-responsive-item lazy" data-src="/assets/img/promotion/Agoda upto 10percent Wesbite.jpg" alt="VISA Card">
+                </figure>
+                <div class="px-xl-3   d-flex flex-column flex-grow-1  ie11fix">
+                    <h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">
+                        Enjoy up to 10% OFF with Agoda
+                    </h3>
+                    <ul class="list-disc">
+                        <li>
+                            Eligible for all CUBC Cards
+                        </li>
+                        <li>
+                            Mastercard 10% OFF:
+                            <a class="text-green-dark text-underline text-break" href="https://www.agoda.com/khmastercard" target="_blank" rel="noopener noreferrer">
+                                www.agoda.com/khmastercard
+                            </a>
+                        </li>
+                        <li>
+                            Visa 7% OFF:
+                            <a class="text-green-dark text-underline text-break" href="https://www.agoda.com/visakh" target="_blank" rel="noopener noreferrer">
+                                www.agoda.com/visakh
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="mt-auto pt-3">
+                        <a class="btn btn-green" target="_blank" rel="noopener noreferrer" href="/file/card-promotions/[Terms and Conditions] Enjoy up to 10percent OFF with Agoda.pdf">Learn More<i class="ico-ui-external ml-2"></i></a>
+                    </div>
+                </div>
+            </li>
+            <!-- Card grid -->
+            <li class="col-12 col-md-6 col-lg-4  mb-5  px-3  d-flex flex-column">
+                <figure class="mb-3 mb-xl-4  flex-shrink-0  embed-responsive  embed-responsive-720by482  border bg-light">
+                    <img class="embed-responsive-item lazy" data-src="/assets/img/promotion/Bodia Spa Wesbite.jpg" alt="VISA Card">
+                </figure>
+                <div class="px-xl-3   d-flex flex-column flex-grow-1  ie11fix">
+                    <h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">
+                        Enjoy up to 15% at Bodia Spa
+                    </h3>
+                    <ul class="list-disc">
+                        <li>
+                            Eligible for all CUBC Visa cards
+                        </li>
+                        <li>
+                            Get 15% OFF on spa service and
+                            10% for products
+                        </li>
+                        <li>
+                            Now ~ 31 Dec 2025
+                        </li>
+                    </ul>
+                    <div class="mt-auto pt-3">
+                        <a class="btn btn-green" target="_blank" rel="noopener noreferrer" href="/file/card-promotions/[Terms and Conditions]Bodia Spa.pdf">Learn More<i class="ico-ui-external ml-2"></i></a>
+                    </div>
+                </div>
+            </li>
+            <!-- Card grid -->
+            <li class="col-12 col-md-6 col-lg-4  mb-5  px-3  d-flex flex-column">
+                <figure class="mb-3 mb-xl-4  flex-shrink-0  embed-responsive  embed-responsive-720by482  border bg-light">
+                    <img class="embed-responsive-item lazy" data-src="/assets/img/promotion/The Hideout Barista & Lounge Wesbite.jpg" alt="VISA Card">
+                </figure>
+                <div class="px-xl-3   d-flex flex-column flex-grow-1  ie11fix">
+                    <h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">
+                        The Hideout Barista & Lounge
+                    </h3>
+                    <ul class="list-disc">
+                        <li>
+                            Eligible for all CUBC Visa cards.
+                        </li>
+                        <li>
+                            Get 10% OFF on food and
+                            beverage
+                        </li>
+                        <li>
+                            Now ~ 31 Dec 2025
+                        </li>
+                    </ul>
+                    <div class="mt-auto pt-3">
+                        <a class="btn btn-green" target="_blank" rel="noopener noreferrer" href="/file/card-promotions/[Terms and Conditions]The Hideout Barista and Lounge.pdf">Learn More<i class="ico-ui-external ml-2"></i></a>
+                    </div>
+                </div>
+            </li>
+
+                <!-- Card grid -->
+                <li class="col-12 col-md-6 col-lg-4  mb-5  px-3  d-flex flex-column">
+                    <figure class="mb-3 mb-xl-4  flex-shrink-0  embed-responsive  embed-responsive-720by482  border bg-light">
+                        <img class="embed-responsive-item lazy" data-src="/assets/img/promotion/Free Upsize at Starbucks Cambodia.jpg" alt="VISA Card">
+                    </figure>
+                    <div class="px-xl-3   d-flex flex-column flex-grow-1  ie11fix">
+                        <h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">
+                            Free Upsize at Starbucks Cambodia
+                        </h3>
+                        <ul class="list-disc">
+                            <li>
+                                Eligible for CUBC Visa Platinum and Infinite Card
+                            </li>
+                            <li>
+                                Free Upsize at selected Starbucks Stores
+                            </li>
+                            <li>
+                                Now ~ 31 Dec 2025 or while stocks last
+                            </li>
+                        </ul>
+                        <div class="mt-auto pt-3">
+                            <a class="btn btn-green" target="_blank" rel="noopener noreferrer" href="/file/card-promotions/[Terms and Conditons] Free Upsize at Starbucks Cambodia.pdf">Learn More<i class="ico-ui-external ml-2"></i></a>
+                        </div>
+                    </div>
+                </li>
+                <!-- Card grid -->
+                <li class="col-12 col-md-6 col-lg-4  mb-5  px-3  d-flex flex-column">
+                    <figure class="mb-3 mb-xl-4  flex-shrink-0  embed-responsive  embed-responsive-720by482  border bg-light">
+                        <img class="embed-responsive-item lazy" data-src="/assets/img/promotion/Shopping Privilege Offers.jpg" alt="VISA Card">
+                    </figure>
+                    <div class="px-xl-3   d-flex flex-column flex-grow-1  ie11fix">
+                        <h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">
+                            Shopping Privilege Offers
+                        </h3>
+                        <ul class="list-disc">
+                            <li>
+                                Get USD8 OFF when spending minimum of USD100 in single sales slip
+                            </li>
+                            <li>
+                                Eligible for CUBC Visa Platinum and Infinite Card
+                            </li>
+                            <li>
+                                Now ~ 31 Dec 2025
+                            </li>
+                        </ul>
+                        <div class="mt-auto pt-3">
+                            <a class="btn btn-green" target="_blank" rel="noopener noreferrer" href="/file/card-promotions/[Terms and Conditons] Shopping Privilege Offers.pdf">Learn More<i class="ico-ui-external ml-2"></i></a>
+                        </div>
+                    </div>
+                </li>
+                <!-- Card grid -->
+                <li class="col-12 col-md-6 col-lg-4  mb-5  px-3  d-flex flex-column">
+                    <figure class="mb-3 mb-xl-4  flex-shrink-0  embed-responsive  embed-responsive-720by482  border bg-light">
+                        <img class="embed-responsive-item lazy" data-src="/assets/img/promotion/Set-Menu-High-Tea-Wesbite.jpg" alt="VISA Card">
+                    </figure>
+                    <div class="px-xl-3   d-flex flex-column flex-grow-1  ie11fix">
+                        <h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">
+                            Get 50% Off or One Get One Set Menu or High Tea
+                        </h3>
+                        <ul class="list-disc">
+                            <li>
+                                Get 50% off or One get One on set menu or high tea for two at participating restaurants.
+                            </li>
+                            <li>
+                                Applicable for CUBC Visa Infinite and Visa Platinum cards.
+                            </li>
+                            <li>
+                                Now ~ 31 Dec 2025
+                            </li>
+                        </ul>
+                        <div class="mt-auto pt-3">
+                            <a class="btn btn-green" target="_blank" rel="noopener noreferrer" href="/file/card-promotions/[Terms and Conditons] Get 50 percent or One Get One Set Menu or High Tea.pdf">Learn More<i class="ico-ui-external ml-2"></i></a>
+                        </div>
+                    </div>
+                </li>
+                <!-- Card grid -->
+                <li class="col-12 col-md-6 col-lg-4  mb-5  px-3  d-flex flex-column">
+                    <figure class="mb-3 mb-xl-4  flex-shrink-0  embed-responsive  embed-responsive-720by482  border bg-light">
+                        <img class="embed-responsive-item lazy" data-src="/assets/img/promotion/Naya Omakase Website.jpg" alt="VISA Card">
+                    </figure>
+                    <div class="px-xl-3   d-flex flex-column flex-grow-1  ie11fix">
+                        <h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">
+                            Enjoy 50% Off on
+                            Omakase Set
+                            at Na Ya Omakase
+                        </h3>
+                        <ul class="list-disc">
+                            <li>
+                                Get 50% off on Omakase set at all
+                                participating restaurants.
+                            </li>
+                            <li>
+                                Exclusive for CUBC Visa Infinite card
+                                only.
+                            </li>
+                            <li>
+                                Now~31 Dec 2025
+                            </li>
+                        </ul>
+                        <div class="mt-auto pt-3">
+                            <a class="btn btn-green" target="_blank" rel="noopener noreferrer" href="/file/card-promotions/[Terms and Conditons] Na Ya Omakase.pdf">Learn More<i class="ico-ui-external ml-2"></i></a>
+                        </div>
+                    </div>
+                </li>
+                <!-- Card grid -->
+                <li class="col-12 col-md-6 col-lg-4  mb-5  px-3  d-flex flex-column">
+                    <figure class="mb-3 mb-xl-4  flex-shrink-0  embed-responsive  embed-responsive-720by482  border bg-light">
+                        <img class="embed-responsive-item lazy" data-src="/assets/img/promotion/Siam Premium Outlet Wesbite.jpg" alt="VISA Card">
+                    </figure>
+                    <div class="px-xl-3   d-flex flex-column flex-grow-1  ie11fix">
+                        <h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">
+                            Siam Premium Outlets in Bangkok
+                        </h3>
+                        <ul class="list-disc">
+                            <li>Eligible for all CUBC Visa Cards</li>
+                            <li>
+                                Get Siam Gift Card worth THB 200 when spending THB 4,000 on a single sale slip
+                            </li>
+                            <li>Now ~ 31 Dec 2025</li>
+                        </ul>
+                        <div class="mt-auto pt-3">
+                            <a class="btn btn-green" target="_blank" rel="noopener noreferrer" href="/file/card-promotions/[Terms and Conditons]  Siam Premium Outlets Bangkok.pdf">Learn More<i class="ico-ui-external ml-2"></i></a>
+                        </div>
+                    </div>
+                </li>
+                <!-- Card grid -->
+                <li class="col-12 col-md-6 col-lg-4  mb-5  px-3  d-flex flex-column">
+                    <figure class="mb-3 mb-xl-4  flex-shrink-0  embed-responsive  embed-responsive-720by482  border bg-light">
+                        <img class="embed-responsive-item lazy" data-src="/assets/img/promotion/One Siam Wesbite.jpg" alt="VISA Card">
+                    </figure>
+                    <div class="px-xl-3   d-flex flex-column flex-grow-1  ie11fix">
+                        <h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">
+                            Onesiam
+                        </h3>
+                        <ul class="list-disc">
+                            <li>Eligible for all CUBC Visa Cards</li>
+                            <li>
+                                Get Siam Gift Card worth THB 200
+                                when spending THB 4,000 on a single
+                                sales slip
+                            </li>
+                            <li>Now ~ 31 Dec 2025</li>
+                        </ul>
+                        <div class="mt-auto pt-3">
+                            <a class="btn btn-green" target="_blank" rel="noopener noreferrer" href="/file/card-promotions/[Terms and Conditions] Onesiam.pdf">Learn More<i class="ico-ui-external ml-2"></i></a>
+                        </div>
+                    </div>
+                </li>
+                <!-- Card grid -->
+                <li class="col-12 col-md-6 col-lg-4  mb-5  px-3  d-flex flex-column">
+                    <figure class="mb-3 mb-xl-4  flex-shrink-0  embed-responsive  embed-responsive-720by482  border bg-light">
+                        <img class="embed-responsive-item lazy" data-src="/assets/img/promotion/King Power Wesbite.jpg" alt="VISA Card">
+                    </figure>
+                    <div class="px-xl-3   d-flex flex-column flex-grow-1  ie11fix">
+                        <h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">
+                            King Power Duty Free
+                        </h3>
+                        <ul class="list-disc">
+                            <li>Eligible for all CUBC Visa Cards</li>
+                            <li>
+                                Get THB 500 discount when spending
+                                THB 8,000 or more on a single sales
+                                slip
+                            </li>
+                            <li>
+                                Now ~ 31 Dec 2025
+                             </li>
+                        </ul>
+                        <div class="mt-auto pt-3">
+                            <a class="btn btn-green" target="_blank" rel="noopener noreferrer" href="/file/card-promotions/[Terms and Conditions] King Power.pdf">Learn More<i class="ico-ui-external ml-2"></i></a>
+                        </div>
+                    </div>
+                </li>
+
+
+                <!-- Card grid -->
+                <li class="col-12 col-md-6 col-lg-4  mb-5  px-3  d-flex flex-column">
+                    <figure class="mb-3 mb-xl-4  flex-shrink-0  embed-responsive  embed-responsive-720by482  border bg-light">
+                        <img class="embed-responsive-item lazy" data-src="/assets/img/promotion/Central Department Store Wesbite.jpg" alt="VISA Card">
+                    </figure>
+                    <div class="px-xl-3   d-flex flex-column flex-grow-1  ie11fix">
+                        <h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">
+                            Central Department Store
+                        </h3>
+                        <ul class="list-disc">
+                            <li>
+                                Get Central gift voucher worth
+                                THB 200 when spending THB 4,000
+                                on a single sales slip.
+                            </li>
+                            <li>
+                                Exclusive for all CUBC Visa cards.
+                            </li>
+                            <li>Now~ 31 Dec 2025</li>
+                        </ul>
+                        <div class="mt-auto pt-3">
+                            <a class="btn btn-green" target="_blank" rel="noopener noreferrer" href="/file/card-promotions/[Terms and Conditons] Central Department Store.pdf">Learn More<i class="ico-ui-external ml-2"></i></a>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Card grid -->
+                <li class="col-12 col-md-6 col-lg-4  mb-5  px-3  d-flex flex-column">
+                    <figure class="mb-3 mb-xl-4  flex-shrink-0  embed-responsive  embed-responsive-720by482  border bg-light">
+                        <img class="embed-responsive-item lazy" data-src="/assets/img/promotion/Icon Siam Wesbite.jpg" alt="VISA Card">
+                    </figure>
+                    <div class="px-xl-3   d-flex flex-column flex-grow-1  ie11fix">
+                        <h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">
+                            Iconsiam
+                        </h3>
+                        <ul class="list-disc">
+                            <li>
+                                Get Siam Gift Card worth THB200
+                                when spending THB4,000 on a
+                                single sales slip.
+                            </li>
+                            <li>Exclusive for all CUBC Visa cards.</li>
+                            <li>Now~31 Dec 2025</li>
+                        </ul>
+                        <div class="mt-auto pt-3">
+                            <a class="btn btn-green" target="_blank" rel="noopener noreferrer" href="/file/card-promotions/[Terms and Conditons] Iconsiam.pdf">Learn More<i class="ico-ui-external ml-2"></i></a>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Card grid -->
+                <li class="col-12 col-md-6 col-lg-4  mb-5  px-3  d-flex flex-column">
+                    <figure class="mb-3 mb-xl-4  flex-shrink-0  embed-responsive  embed-responsive-720by482  border bg-light">
+                        <img class="embed-responsive-item lazy" data-src="/assets/img/promotion/Emsphere Wesbite.jpg" alt="VISA Card">
+                    </figure>
+                    <div class="px-xl-3   d-flex flex-column flex-grow-1  ie11fix">
+                        <h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">
+                            Emsphere
+                        </h3>
+                        <ul class="list-disc">
+                            <li>
+                                Get M Cash coupon worth THB 200
+                                when spending THB 4,000 on a single
+                                sales slip.
+                            </li>
+                            <li>Exclusive for all CUBC Visa cards.</li>
+                            <li>Now~ 31 Dec 2025</li>
+                        </ul>
+                        <div class="mt-auto pt-3">
+                            <a class="btn btn-green" target="_blank" rel="noopener noreferrer" href="/file/card-promotions/[Terms and Conditons] Emsphere.pdf">Learn More<i class="ico-ui-external ml-2"></i></a>
+                        </div>
+                    </div>
+                </li>
+
+                <!-- Card grid -->
+                <li class="col-12 col-md-6 col-lg-4  mb-5  px-3  d-flex flex-column">
+                    <figure class="mb-3 mb-xl-4  flex-shrink-0  embed-responsive  embed-responsive-720by482  border bg-light">
+                        <img class="embed-responsive-item lazy" data-src="/assets/img/promotion/Emporium & EmQuartier Wesbite.jpg" alt="VISA Card">
+                    </figure>
+                    <div class="px-xl-3   d-flex flex-column flex-grow-1  ie11fix">
+                        <h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">
+                            Emporium &
+                            Emquartier
+                        </h3>
+                        <ul class="list-disc">
+                            <li>
+                                Get M Cash coupon worth THB200
+                                when spending THB4,000 on a single
+                                sales slip.
+                            </li>
+                            <li>Exclusive for all CUBC Visa cards.</li>
+                            <li>Now~31 Dec 2025</li>
+                        </ul>
+                        <div class="mt-auto pt-3">
+                            <a class="btn btn-green" target="_blank" rel="noopener noreferrer" href="/file/card-promotions/[Terms and Conditons] Emporium & Emquartier.pdf">Learn More<i class="ico-ui-external ml-2"></i></a>
+                        </div>
+                    </div>
+                </li>
+                <!-- Card grid -->
+                <li class="col-12 col-md-6 col-lg-4  mb-5  px-3  d-flex flex-column">
+                    <figure class="mb-3 mb-xl-4  flex-shrink-0  embed-responsive  embed-responsive-720by482  border bg-light">
+                        <img class="embed-responsive-item lazy" data-src="/assets/img/promotion/Grab x Mastercard Web.jpg" alt="VISA Card">
+                    </figure>
+                    <div class="px-xl-3   d-flex flex-column flex-grow-1  ie11fix">
+                        <h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">
+                            GrabTransport Vouchers
+                        </h3>
+                        <ul class="list-disc">
+                            <li>Exclusive for CUBC Mastercard World</li>
+                            <li>Get voucher discount when booking a ride with Grab in Malaysia, Singapore, and Thailand.</li>
+                            <li>Now ~ 31 July 2025</li>
+                        </ul>
+                        <div class="mt-auto pt-3">
+                            <a class="btn btn-green" target="_blank" rel="noopener noreferrer" href="/file/card-promotions/T&C - GrabTransport Vouchers.pdf">Learn More<i class="ico-ui-external ml-2"></i></a>
+                        </div>
+                    </div>
+                </li>
+                <!-- Card grid -->
+                <li class="col-12 col-md-6 col-lg-4  mb-5  px-3  d-flex flex-column">
+                    <figure class="mb-3 mb-xl-4  flex-shrink-0  embed-responsive  embed-responsive-720by482  border bg-light">
+                        <img class="embed-responsive-item lazy" data-src="/assets/img/promotion/visa-card.jpg" alt="VISA Card">
+                    </figure>
+                    <div class="px-xl-3   d-flex flex-column flex-grow-1  ie11fix">
+                        <h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">VISA Card Offers</h3>
+                        <p>Seasonal offers for VISA Cards</p>
+                        <div class="mt-auto pt-3">
+                            <a class="btn btn-green" target="_blank" rel="noopener noreferrer" href="https://www.visa.com.kh/en_kh/visa-offers-and-perks/">Learn More<i class="ico-ui-external ml-2"></i></a>
+                        </div>
+                    </div>
+                </li>
+
+
+                <!-- Card grid -->
+                <li class="col-12 col-md-6 col-lg-4  mb-5  px-3  d-flex flex-column">
+                    <figure class="mb-3 mb-xl-4  flex-shrink-0  embed-responsive  embed-responsive-720by482  border bg-light">
+                        <img class="embed-responsive-item lazy" data-src="/assets/img/promotion/master-card.jpg" alt="MasterCard">
+                    </figure>
+                    <div class="px-xl-3   d-flex flex-column flex-grow-1  ie11fix">
+                        <h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">MasterCard Offers</h3>
+                        <p>Seasonal offers for MasterCard</p>
+                        <div class="mt-auto pt-3">
+                            <a class="btn btn-green" target="_blank" rel="noopener noreferrer" href="https://specials.priceless.com/en-ap/homepage">Learn More<i class="ico-ui-external ml-2"></i></a>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+
+        <div class="py-page"></div>
+    </section>
+
+</main>
+<!-- Page END -->

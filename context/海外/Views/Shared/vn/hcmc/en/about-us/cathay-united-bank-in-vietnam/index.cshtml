@@ -1,0 +1,182 @@
+﻿@model IndexViewModel
+@using System.Web.Configuration;
+@{
+    if (ViewBag.lang == "en")
+    {
+        ViewBag.PageTitle = "Cathay United Bank in Vietnam";
+        ViewBag.PageDescription = "";
+    }
+    else if (ViewBag.lang == "vi-vn")
+    {
+        ViewBag.PageTitle = "Ngân hàng Cathay United Bank tại Việt Nam";
+        ViewBag.PageDescription = "";
+    }
+    else
+    {
+        ViewBag.PageTitle = "國泰世華銀行越南據點";
+        ViewBag.PageDescription = "";
+    }
+}
+
+@section Scripts {
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/jquery.scrollbar.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/slick.min.js")"></script>
+
+    <script>
+        $(function () {
+            // 初始化 slick 輪播
+            $(".cok-figure-slider").slick({
+                infinite: false,
+                slidesToShow: 1,
+                dots: false
+            });
+
+            // 圖片容器調整
+            function updateImageContainer() {
+                let window_w = $(window).width();
+                let offset_x;
+                let content_w;
+                let max_w;
+
+                if (window_w > 991) {
+                    offset_x = $('.cok-inner').offset().left;
+                    content_w = $('.cok-content').width();
+                    max_w = window_w - content_w - offset_x;
+
+                    $('.cok-figure-wrap').css({
+                        'width': max_w,
+                        'flex-basis': max_w,
+                        'max-width': max_w,
+                        'left': content_w + offset_x,
+                        'position': 'absolute'
+                    });
+                } else {
+                    $('.cok-figure-wrap').css({
+                        'width': '100%',
+                        'flex-basis': 'auto',
+                        'max-width': '100%',
+                        'left': 'auto',
+                        'position': 'relative'
+                    });
+                }
+            }
+
+            $(window).on('resize', updateImageContainer);
+            updateImageContainer();
+        });
+    </script>
+}
+
+<div class='component-oversea-kv'>
+    <div class="cok-figure-wrap">
+        <div class="cok-figure-slider">
+            <div class="cok-figure-item">
+                <figure class='cok-figure'>
+                    <picture>
+                        <source media='(max-width: 767px)'
+                                srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/about-us/CathayUnitedBankinVietnam828x400.jpg")' />
+                        <source media='(min-width: 768px) and (max-width: 1279px)'
+                                srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/about-us/CathayUnitedBankinVietnam1536x400.jpg")' />
+                        <img class='cok-img'
+                             src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/about-us/CathayUnitedBankinVietnam2000x800.jpg")'
+                             alt='@ViewBag.nav_news'>
+                    </picture>
+                    <figcaption hidden>@ViewBag.site_name</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+    <div class="cok-inner">
+        <div class="cok-content">
+            <span class='cok-title--slogan'>@ViewBag.nav_about_us_cathay_united_bank_in_vietnam</span>
+        </div>
+    </div>
+</div>
+
+<div class='component-oversea-services component-oversea-services--33  component-oversea-services--home'>
+    <div class="cos-inner">
+        <h2 class='cos-title'>
+            Introduction
+        </h2>
+        <p class='cos-description' style="max-width:1200px">
+            Since 2005, Cathay United Bank has successively established a branch and representative offices in Vietnam. In 2022, the branch was relocated to Ho Chi Minh City to further develop the Vietnamese market and, concurrently, the HCMC representative office was relocated to Quang Nam province. Currently, Cathay United Bank has three footholds in Vietnam, namely, Ho Chi Minh City Branch, Hanoi Representative Office, and Quang Nam Representative Office, providing premium banking services in places across northern, central, and southern Vietnam.
+        </p>
+        <p class='cos-description' style="max-width:1200px">
+            Cathay United Bank Ho Chi Minh City Branch provides domestic and overseas enterprises with diverse financial services. Moreover, in line with the growing economy in Vietnam, the branch officially entered Vietnam’s digital consumer banking market in March 2024, becoming the first Taiwanese bank in Vietnam to launch fully digital, end-to-end consumer financing services. Boasting professional teams, Cathay United Bank will continue to serve customers proactively and build extraordinary customer experiences.
+        </p>
+    </div>
+</div>
+
+<div class='about-us'>
+    <div class='component-oversea-list'>
+        <div class="col-inner">
+            <div class="col-list-wrap">
+                <h2 class='col-title' style="font-size:24px !important">
+                    Cathay United Bank in Vietnam
+                </h2>
+                <ul class='col-list'>
+                    <li class='col-item'>
+                        <a href="@Url.Content("~/vn/hcmc/" + ViewBag.lang_url + "/")" target="_blank" rel="noopener">
+                            <figure class='col-item-figure'>
+                                <picture>
+                                    <img class='col-item-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/city")/chu-lai.png'
+                                         alt='Ho Chi Minh City Branch'>
+                                </picture>
+                                <figcaption hidden>
+                                    Ho Chi Minh City Branch
+                                </figcaption>
+                            </figure>
+                            <div class='col-item-title-wrap'>
+                                <div class='col-item-icon'>
+                                    <img class='col-item-icon-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/flag")/vietnam.png'>
+                                </div>
+                                <h3 class='col-item-title'>
+                                    <span>
+                                        Ho Chi Minh City Branch
+                                    </span>
+                                </h3>
+                            </div>
+                        </a>
+                    </li>
+                    <li class='col-item'>
+                        <a href="@Url.Content("~/vn/hanoi/" + ViewBag.lang_url + "/")" target="_blank" rel="noopener">
+                            <figure class='col-item-figure'>
+                                <picture>
+                                    <img class='col-item-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/city")/hanoi.png'
+                                         alt='Ha Noi Representative Office'>
+                                </picture>
+                                <figcaption hidden>Ha Noi Representative Office</figcaption>
+                            </figure>
+                            <div class='col-item-title-wrap'>
+                                <div class='col-item-icon'>
+                                    <img class='col-item-icon-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/flag")/vietnam.png'>
+                                </div>
+                                <h3 class='col-item-title'><span>Ha Noi Representative Office</span></h3>
+                            </div>
+                        </a>
+                    </li>
+                    <li class='col-item'>
+                        <a href="@Url.Content("~/vn/quang-nam/" + ViewBag.lang_url + "/")" target="_blank" rel="noopener">
+                            <figure class='col-item-figure'>
+                                <picture>
+                                    <img class='col-item-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/city")/ho-chi-minh.png'
+                                         alt='Quang Nam Representative Office'>
+                                </picture>
+                                <figcaption hidden>Quang Nam Representative Office</figcaption>
+                            </figure>
+                            <div class='col-item-title-wrap'>
+                                <div class='col-item-icon'>
+                                    <img class='col-item-icon-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/flag")/vietnam.png'>
+                                </div>
+                                <h3 class='col-item-title'><span>Quang Nam Representative Office</span></h3>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="about-us-back-button-container">
+                <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url)" class="about-us-back-button">@ViewBag.about_us_back_button</a>
+            </div>
+        </div>
+    </div>
+</div>

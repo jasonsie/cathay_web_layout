@@ -1,0 +1,220 @@
+﻿@{
+	ViewData["PageTitle"] = "Business Savings Account";
+	ViewData["PageDescription"] = "As our focus is on the needs of businesses, Cathay United Bank knows that the deposit accounts products you use need to fit your style of business, cash flow model, and current goals. Cathay United Bank provides the account choices, product features, and supporting services to suit your business needs at every stage of its growth.";
+}
+
+
+<!-- Page START -->
+<main class="mastbody">
+
+	<!--
+	Business Savings Account
+	-->
+	<div class="topkv kv  kv--txt-left">
+		<div class="kv-bg">
+			<div class="kv-bg-inner">
+				<figure class="kv-bg-img">
+					<picture>
+						<source media="(min-width:769px)" srcset="/assets/img/topkv/personal-deposit.jpg" />
+						<img srcset="/assets/img/topkv/personal-deposit-mb.jpg">
+					</picture>
+				</figure>
+			</div>
+		</div>
+		<div class="kv-cont">
+			<div class="kv-cont-inner">
+				<h2 class="display-1  fw-bold lh-xs">គណនីសន្សំសម្រាប់អាជីវកម្ម</h2>
+			</div>
+		</div>
+	</div>
+	<!-- Breadcrumb  (lays on top of .topkv if places right after it) -->
+	<nav class="breadcrumb-nav text-white" aria-label="breadcrumb">
+		<div class="fluid">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]"><span>ទំព័រដើម</span><i class="ico-ui-home"></i></a></li>
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]business/">ធនាគារពាណិជ្ជកម្ម</a></li>
+				<li class="breadcrumb-item active" aria-current="page">គណនីចរន្ត</li>
+			</ol>
+		</div>
+	</nav>
+
+	<!-- Menu -->
+	<nav class="tabmenu    d-none d-sm-block">
+		<div class="tabmenu-inner">
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]business/current-account/">
+				<span class="tabmenu-btn-txt">គណនីចរន្ត</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn active" href="@ViewData["siteLangUrl"]business/business-savings-account/">
+				<span class="tabmenu-btn-txt">គណនីសន្សំសម្រាប់អាជីវកម្ម</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+		</div>
+	</nav>
+	<!-- Mobile dropdown -->
+	<div class="tabmenu-dropdown dropdown    d-block d-sm-none">
+		<a href="javascript:;" class="btn btn-sm btn-block  dropdown-toggle" data-toggle="dropdown">
+			<span class="text-truncate d-inline-block">គណនីសន្សំសម្រាប់អាជីវកម្ម</span>
+		</a>
+		<div class="dropdown-menu">
+			<span class="dropdown-item disabled">-- Select page --</span>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]business/current-account/">គណនីចរន្ត</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]business/business-savings-account/">គណនីសន្សំសម្រាប់អាជីវកម្ម</a>
+		</div>
+	</div>
+
+	<section class="fluid overflow-hidden">
+		<div class="py-page"></div>
+
+		<!-- Page heading -->
+		<header class="compact  mb-5  text-center">
+			@*<blockquote class="h4 h4-mb">As our focus is on the needs of businesses, Cathay United Bank knows that the deposit accounts products you use need to fit your style of business, cash flow model, and current goals. Cathay United Bank provides the account choices, product features, and supporting services to suit your business needs at every stage of its growth.</blockquote>
+			<div class="py-section"></div>*@
+
+			<h1 class="display-3 h1-mb  mb-3  text-black fw-bold">គណនីសន្សំសម្រាប់អាជីវកម្ម</h1>
+			<p>
+				ធនាគារកាថេយូណៃធីត ជម្រុញអោយអតិថិជនជ្រើសរើសការប្រើប្រាស់គណនីសន្សំ ដើម្បីពន្លឿនការគ្រប់គ្រងប្រតិបត្តិការហិរញ្ញវត្ថុនៃអាជីវកម្មឱ្យកាន់តែងាយស្រួល ជាពិសេសក្នុងការពិនិត្យមើលលំហូរសាច់ប្រាក់របស់លោកអ្នក។ នេះហើយជាមូលហេតុដែលធនាគារផ្តល់ឱ្យលោកអ្នកនូវអត្ថប្រយោជន៍ដ៏គួរឱ្យទាក់ទាញ គឺការផ្ដល់នូវអត្រាការប្រាក់ខ្ពស់ទៅកាន់គណនីសន្សំសម្រាប់អាជីវកម្ម។ លោកអ្នក នឹងទទួល បានការប្រាក់បន្ថែមពីគណនីបញ្ញើសន្សំ ពោលគឺការប្រាក់ត្រូវបានបង្គរជាប្រចាំថ្ងៃ និងដាក់ចូលគណនីរបស់លោកអ្នករៀងរាល់កន្លះឆ្នាំម្តង។
+			</p>
+		</header>
+
+		<!-- Tabular data -->
+		<div class="tabular">
+
+			<div class="table-responsive-lg">
+				<table class="table h5-mb text-center">
+					<colgroup>
+						<col>
+						<col width="35%">
+						<col width="35%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col" class="h4 h4-mb">រូបិយបណ្ណ</th>
+							<th scope="col" class="h4 h4-mb">
+								<img class="flag-sm mr-sm-2" src="/assets/img/ui/flag-kh.png"><br class="d-block d-sm-none">រៀល
+							</th>
+							<th scope="col" class="h4 h4-mb">
+								<img class="flag-sm mr-sm-2" src="/assets/img/ui/flag-us.png"><br class="d-block d-sm-none">ដុល្លារ
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">ប្រាក់តម្កល់ដំបូង</th>
+							<td>KHR ៤,០០០,០០០.០០</td>
+							<td>
+								USD ១,០០០.០០
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">សមតុល្យអប្បបរមា</th>
+							<td>KHR ៤០០,០០០.០០</td>
+							<td>
+								USD ១០០.០០
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">អត្រាការប្រាក់   </th>
+							<td>KHR ១% ក្នុង១ឆ្នាំ</td>
+							<td>USD ០.២៥% ក្នុង១ឆ្នាំ</td>
+						</tr>
+						<tr>
+							<th scope="row">ផ្លាស់ប្តូរសៀវភៅធនាគារដែលបានបាត់     </th>
+							<td>KHR ២០,០០០.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១ក្បាល</small></td>
+							<td>USD ៥.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១ក្បាល</small></td>
+						</tr>
+						<tr>
+							<th scope="row">ការបិទគណនីក្នុងអំឡុងពេល៦ខែ</th>
+							<td>KHR ៨០,០០០.០០</td>
+							<td>USD ២០.០០</td>
+						</tr>
+						<tr>
+							<th scope="row">គណនីគ្មានសកម្មភាពក្នុងកំឡុងពេល១២ខែ</th>
+							<td>KHR ៤០,០០០.០០</td>
+							<td>USD ១០.០០</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div><!--/.tabular-->
+
+		<div class="py-section"></div>
+
+
+		<!-- Section heading -->
+		<h3 class="h1 h2-mb  mb-4  text-black fw-bold lh-sm">កម្រៃសេវាកម្មផ្សេងៗ</h3>
+
+		<!-- Tabular data -->
+		<div class="tabular">
+			<div class="table-responsive-lg">
+				<table class="table h5-mb text-center">
+					<colgroup>
+						<col>
+						<col width="35%">
+						<col width="35%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col" class="h4 h4-mb">រូបិយបណ្ណ</th> 
+							<th scope="col" class="h4 h4-mb">
+								<img class="flag-sm mr-sm-2" src="/assets/img/ui/flag-kh.png"><br class="d-block d-sm-none">រៀល
+							</th>
+							<th scope="col" class="h4 h4-mb">
+								<img class="flag-sm mr-sm-2" src="/assets/img/ui/flag-us.png"><br class="d-block d-sm-none">ដុល្លារ
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row" rowspan="2">ការស្នើរសុំរបាយការណ៍គណនី</th>
+                            <td>KHR ៤,០០០.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១ខែ</small></td>
+                            <td>USD ១.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១ខែ</small></td>
+						</tr>
+						<tr>
+					
+                            <td>KHR ៤០,០០០.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១ឆ្នាំ</small></td>
+                            <td>USD ១០.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១ឆ្នាំ</small></td>
+						</tr>
+						<tr>
+							<th scope="row">ការបញ្ជាក់សមតុល្យទឹកប្រាក់</th>
+                            <td>KHR ២០,០០០.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១សំណើ</small></td>
+                            <td>USD ៥.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១សំណើ</small></td>
+						</tr>
+						<tr>
+							<th scope="row">ការបញ្ជាក់សវនកម្ម</th>
+                            <td>KHR ៨០,០០០.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១សំណើ+សេវាផ្ញើលិខិតចេញក្រៅប្រទេស (ប្រសិនបើមាន)</small></td>
+                            <td>USD ២០.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១សំណើ+សេវាផ្ញើលិខិតចេញក្រៅប្រទេស (ប្រសិនបើមាន)</small></td>
+						</tr>
+						<tr>
+							<th scope="row">លិខិតបញ្ជាក់ពត៌មាន</th>
+                            <td>KHR ៤០,០០០.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១សំណើ</small></td>
+                            <td>USD ១០.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១សំណើ</small></td>
+						</tr>
+						<tr>
+							<th scope="row">សេវាបញ្ជាក់អចិន្រ្តៃយ៍</th>
+                            <td>KHR ២០,០០០.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១ប្រតិបត្តិការ</small></td>
+                            <td>USD ៥.០០<br><small class="d-inline lh-md text-gray-700">*ក្នុង១ប្រតិបត្តិការ</small></td>
+						</tr>
+						<tr>
+							<th scope="row">ការណែនាំអំពីការទូទាត់ប្រាក់បៀវត្សរ៍</th>
+							<td>ឥតគិតថ្លៃសេវា</td>
+							<td>ឥតគិតថ្លៃសេវា</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div><!--/.tabular-->
+
+		<ul class="list-disc  mt-4  h6 h6-mb">
+			<li>រាល់អត្រាការប្រាក់ និង កម្រៃសេវាកម្មអាចមានការផ្លាស់ប្តូរតាមបទប្បញ្ញាត្តិរបស់ធនាគារដោយពុំមានការជូនដំណឹងជាមុនឡើយ។</li>
+			<li>តតិយជន និងកម្រៃសេវាផ្សេងៗ នឹងត្រូវគិតថ្លៃសេវាកម្មបន្ថែមអាស្រ័យលើភាពជាក់ស្តែង(ប្រសិនបើមាន)។</li>
+			<li>ការទទួលយកមូលប្បទានប័ត្រនៃរូបិយបណ្ណបរទេស និង មូលប្បទានប័ត្រនៃធនាគារផ្សេងៗយោងតាមបទប្បញ្ញត្តិរបស់ធនាគារ។</li>
+			<li>រាល់លក្ខខណ្ឌផ្សេងៗនឹងត្រូវបានអនុម័ត។</li>
+		</ul>
+		<div class="py-page"></div>
+	</section>
+
+
+
+</main>
+<!-- Page END -->

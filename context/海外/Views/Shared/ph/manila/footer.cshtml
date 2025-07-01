@@ -1,0 +1,105 @@
+﻿
+<div class='component-oversea-privacy component-bg--white'>
+    <div class="cop-inner">
+        <div class="cop-remark cop-remark--single">
+            <ul class="cop-remark-list">
+                @if (ViewBag.lang == "zh-hant")
+                {
+
+                    <li class="cop-remark-item">本金融機構已參加PDIC存款保險，每一存款人存款保險最高保障金額為披索100萬元。</li>
+                    <li class="cop-remark-item">國泰世華商業銀行股份有限公司馬尼拉分行受菲律賓中央銀行監管。央行電子郵件：consumeraffairs@bsp.gov.ph；電話：(+632)87087087；傳真：(+632)87087088。</li>
+                }
+
+                else
+                {
+                    <li class="cop-remark-item">Deposits are insured by PDIC up to P1,000,000 per depositor.</li>                    
+                    <li class="cop-remark-item">Cathay United Bank Co., Ltd. Manila Branch is regulated by the Bangko Sentral ng Pilipinas with email: consumeraffairs@bsp.gov.ph ; Tel. No: (+632)87087087 ; Facsimile: (+632)87087088</li>
+                    <li class="cop-remark-item">Cathay United Bank Co., Ltd. Manila Branch would like to remind all our valued clients to comply with Republic Act No. 11934 "Subscriber Identity Modules (SIM) Registration Act". Under the said law, all SIM card owners shall register their SIM cards within the prescribed deadline, which has been recently extended to 25 July 2023. Failure to register will result in the automatic deactivation of existing SIM cards, and the deactivation may cause unnecessary interruptions in the access and use of the bank's electronic payments and financial services.</li>
+                    <li class="cop-remark-item">Please contact your telco provider to ensure the completion of your SIM card registration.</li>
+                    <li class="cop-remark-item"> Register your SIM card now to keep your number active and avoid inconveniences on your account.</li>
+                }
+            </ul>
+
+            <img src="@Url.Content("~/OVSWS/Content//img/ph/manila/NPC.jpg")">
+            <img src="@Url.Content("~/OVSWS/Content//img/ph/manila/PDIC20250303.jpg")">
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<footer class='component-footer'>
+    <div class="cf-inner">
+                <div class='cf-list-wrap cf-list-wrap--lang'>
+                    <ul class='cf-list cf-list--border'>
+                         @if (ViewBag.lang == "zh-hant") {
+                            <li class='cf-item cf-item--no-border'><a href='@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.section+@ViewBag.subsection+"")' class='cf-item-link cf-item-link--active'>@ViewBag.nav_lang_zh_hant</a></li>
+                            <li class='cf-item'><a href='@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/en/"+@ViewBag.section+@ViewBag.subsection+"")' class='cf-item-link'>@ViewBag.nav_lang_en</a></li>
+                        }else if(ViewBag.lang == "en")
+                        {
+                            <li class='cf-item cf-item--no-border'><a href='@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.section+@ViewBag.subsection+"")' class='cf-item-link'>@ViewBag.nav_lang_zh_hant</a></li>
+                            <li class='cf-item'><a href='@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/en/"+@ViewBag.section+@ViewBag.subsection+"")' class='cf-item-link cf-item-link--active'>@ViewBag.nav_lang_en</a></li>
+                        }
+                        else
+                        {
+                        }
+
+                    </ul>
+                </div>
+
+                <div class='cf-list-wrap cf-list-wrap--cathay-group'>
+                    <ul class='cf-list cf-list--border'>
+                        <ul class='cf-icon-list'>
+                            <li class='cf-item'>
+                                <a href='#' class='cf-item-link'>
+                                    <figure class='cf-item-figure'>
+                                        <picture>
+                                            <img class='cf-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/common/footer/logo.svg")' width="30" alt='@ViewBag.nav_cathay_united_bank'>
+                                        </picture>
+                                        <figcaption hidden>@ViewBag.nav_cathay_united_bank</figcaption>
+                                    </figure>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class='cf-list'>
+                            
+                            @if (ViewBag.lang == "zh-hant")
+                            {
+                                <li class='cf-item cf-item--no-border'><a href='https://www.cathayholdings.com/' target="_blank" rel='noopener' class='cf-item-link'>@ViewBag.nav_cathay_holdings</a></li>
+                                <li class='cf-item'><a href='https://www.cathaybk.com.tw/cathaybk' target="_blank" rel='noopener' class='cf-item-link'>@ViewBag.nav_cathay_united_bank</a></li>
+                                <li class='cf-item'><a href='@Url.Content("~/overseas/")' target="_blank" rel='noopener' class='cf-item-link'>@ViewBag.nav_oversea_branch</a></li>
+                            }
+                            else
+                            {
+                                <li class='cf-item cf-item--no-border'><a href='https://www.cathayholdings.com/en/holdings/intro/intro/about/' target="_blank" rel='noopener' class='cf-item-link'>@ViewBag.nav_cathay_holdings</a></li>
+                                <li class='cf-item'><a href='https://www.cathaybk.com.tw/en-us/cathaybk/english/about-us/about-us/company-history/' target="_blank" rel='noopener' class='cf-item-link'>@ViewBag.nav_cathay_united_bank</a></li>
+                                <li class='cf-item'><a href='@Url.Content("~/overseas/en/")' target="_blank" rel='noopener' class='cf-item-link'>@ViewBag.nav_oversea_branch</a></li>
+                            }
+                        </ul>
+                    </ul>
+                </div>
+                <div class='cf-list-wrap cf-list-wrap--link'>
+                    <ul class='cf-icon-list'>
+                        <li class='cf-item'><a href='https://www.facebook.com/cathayunitedbank' target="_blank" rel="noopener" class='cf-item-link cf-item-link--icon'><img class='cf-social-list-img lazy' width="35" data-src='@Url.Content("~/OVSWS/Content/img/common/footer/facebook.png")' alt='Facebook'></a></li>
+                        <li class='cf-item'><a href='https://www.youtube.com/user/cathayunitedbank' target="_blank" rel="noopener" class='cf-item-link cf-item-link--icon'><img class='cf-social-list-img lazy' width="35" data-src='@Url.Content("~/OVSWS/Content/img/common/footer/youtube.png")' alt='Youtube'></a></li>
+                        <li class='cf-item'><a href='https://tw.linkedin.com/company/cathay-united-bank-co-ltd-' target="_blank" rel='noopener nofollow' class='cf-item-link cf-item-link--icon'><img class='cf-social-list-img lazy' width="35" data-src='@Url.Content("~/OVSWS/Content/img/common/footer/linkedin.svg")' alt='Youtube'></a></li>
+                    </ul>
+                    <ul class='cf-list'>
+                        
+                        @if (ViewBag.lang == "zh-hant") {
+                            <li class='cf-item'><a href='https://www.cathaybk.com.tw/cathaybk/about/about/customer-benefits/client-privacy/?l=f' target="_blank" rel='noopener nofollow' class='cf-item-link'>@ViewBag.nav_privacy_security</a></li>
+                        }else if(ViewBag.lang == "en")
+                        {
+                            <li class='cf-item'><a href='https://www.cathaybk.com.tw/en-us/cathaybk/english/disclosures/disclosures/user-privacy-policy/' target="_blank" rel='noopener nofollow' class='cf-item-link'>@ViewBag.nav_privacy_security</a></li>
+                        }
+                        <li class='cf-item'><a href='@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"financial-disclosure")' class='cf-item-link'>@ViewBag.nav_financial_disclosure</a></li>
+                        
+                        <li class='cf-item'><a href='@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"browser-setting")' class='cf-item-link'>@ViewBag.nav_browser_setting</a></li>
+                        <li class='cf-item cf-item--copyright cf-item--copyright-flex'><span class='cf-item-link'>&#169; @ViewBag.copyright</span></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+

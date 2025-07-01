@@ -1,0 +1,48 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "Updates to Transaction Correspondences and Password Encryption";
+    ViewBag.PageDescription = "Updates to Transaction Correspondences and Password Encryption";
+}
+
+@section Scripts {}
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news.jpg")' alt='@ViewBag.nav_news'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_news</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_news</h1>
+        </div>
+    </div>
+</div>
+
+<!-- newsview -->
+<article class="component-newsview">
+    <div class="component-newsview-inner">
+        <header class="component-newsview-header">
+            <div class="component-newsview-date"></div>
+            <h1 class="component-newsview-title">通知書版面調整與密碼加密處理 </h1>
+        </header>
+
+        <div class="component-newsview-body">
+            <p>
+                親愛的客戶 您好，
+                感謝您一直以來對國泰世華銀行（新加坡分行）（以下簡稱「本行」）的支持。
+                為了提升服務品質，自2024/01/22起，本行將調整存款對帳單、存款轉帳、匯出匯款、匯入匯款之交易通知書版面，且交易通知書檔案將以新的預設密碼加密處理。日後當您點擊電郵附加檔案，請輸入密碼以瀏覽通知書內容。 如對此通知有任何疑問，歡迎聯絡本行客戶關係經理或致電客服專線+65 6593 9280。
+            </p>
+        </div>
+        <footer class="component-newsview-footer">
+            <div class="component-btn-row">
+                <a class="component-btn-main btn-green" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/")">回上一頁</a>
+            </div>
+        </footer>
+    </div>
+</article><!--/.component-newsview-->

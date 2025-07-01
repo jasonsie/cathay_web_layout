@@ -1,0 +1,228 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "";
+    ViewBag.PageDescription = "国泰世华银行新加坡分行最初于 2009 年创立。新加坡分行以批发银行的形式营运，同时在符合新加坡金融管理局规范下，具有豁免资本市场服务执照及豁免金融顾问之资格。本行专注于为一般企业、航空及海运业、及金融机构等企业客户，提供一站式商品及服务，包括企业融资、贸易融资、存汇款、及利、汇率避险解决方案。";
+}
+
+@section Scripts {
+
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/jquery.scrollbar.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/slick.min.js")"></script>
+
+
+    <script>
+        var homeCard = homeCard || {};
+        homeCard.prototype = {
+            sameHeight: function () {
+
+                let window_w = $(window).width();
+                let max_h = 0;
+                let scope = $('.component-oversea-services');
+                $('.cos-item-description', scope).css('min-height', 0);
+                if (window_w >= 768) {
+                    $('.cos-item', scope).each(function () {
+                        let h = $('.cos-item-description', $(this)).height();
+                        if (h > max_h) {
+                            max_h = h;
+                        }
+                    })
+                    $('.cos-item-description', scope).height(max_h);
+                } else {
+                    $('.cos-item-description', scope).css('height', 'auto');
+                }
+            },
+            addEventListener: function () {
+                let o = this;
+                $(window).on('resize.homeCard', function () {
+                    o.sameHeight();
+                }).trigger('resize.homeCard');
+            },
+            init: function () {
+                this.addEventListener();
+            }
+        }
+    </script>
+
+    <script>
+        $(function () {
+
+            var myHomeCard = homeCard.prototype;
+            myHomeCard.init();
+
+
+            //
+            $(window).resize(function () {
+
+                let window_w = $(window).width();
+                let offset_x;
+                let content_w;
+                if (window_w > 991) {
+                    offset_x = $('.cok-inner').offset().left;
+                    content_w = $('.cok-content').width();
+                    max_w = window_w - content_w - offset_x;
+                } else {
+                    offset_x = 0;
+                    content_w = 0;
+                    max_w = window_w;
+                }
+                $('.cok-figure-wrap').css('width', max_w);
+                $('.cok-figure-wrap').css('flex-basis', max_w);
+                $('.cok-figure-wrap').css('max-width', max_w);
+                $('.cok-figure-wrap').css('left', content_w + offset_x);
+
+            }).trigger('resize');
+
+            $(".cok-figure-slider").slick({
+                infinite: false,
+                slidesToShow: 1,
+                dots: false
+            });
+
+            ////////////////////////////
+
+            $('.con-list', $(this)).scrollbar();
+        })
+    </script>
+
+    <script>
+        //fraud modal
+        $(function () {
+            let myFraudModal = fraudModal.prototype;
+            myFraudModal.init($('.component-oversea-modal--fraud'));
+            myFraudModal.show();
+        })
+    </script>
+}
+
+<div class='component-oversea-kv'>
+    <div class="cok-figure-wrap">
+        <div class="cok-figure-slider">
+            <span class="cok-figure-item">
+                <figure class='cok-figure'>
+                    <picture>
+                        <source media='(min-width: 992px)'
+                                srcset='@Url.Content("~/OVSWS/Content/img/sg/kv/bg-lg.jpg")' />
+                        <source media='(min-width: 7686px)'
+                                srcset='@Url.Content("~/OVSWS/Content/img/sg/kv/bg-md.jpg")' />
+                        <img class='cok-img' src='@Url.Content("~/OVSWS/Content/img/sg/kv/bg.jpg")' alt='@ViewBag.site_name'>
+                    </picture>
+                    <figcaption hidden>@ViewBag.site_name</figcaption>
+                </figure>
+            </span>
+        </div>
+    </div>
+
+    <div class="cok-inner">
+        <div class="cok-content">
+            <h1 class='cok-title'>
+                    <span class='cok-title--company'>国泰世华银行</span>
+                    <span class='cok-title--slogan'>值得您<br />信赖的伙伴</span>
+                </h1>
+        </div>
+    </div>
+</div>
+@*<div class='component-oversea-services component-oversea-services--33  component-oversea-services--home'>*@
+<div class='component-oversea-services component-oversea-services--home'>
+    <div class="cos-inner">
+
+
+        <h2 class='cos-title'>我们的服务</h2>
+        <p class='cos-description'>国泰世华银行新加坡分行最初于 2009 年创立。新加坡分行以批发银行的形式营运，同时在符合新加坡金融管理局规范下，具有豁免资本市场服务执照及豁免金融顾问之资格。本行专注于为一般企业、航空及海运业、及金融机构等企业客户，提供一站式商品及服务，包括企业融资，贸易融资，存汇款以及避险解决方案。</p>
+        <p class='cos-description'>
+            <strong>国泰金控暨旗下子公司国泰人寿、国泰世华银行、国泰产险、国泰证券、</strong>
+            国泰投信等，在台湾及世界各国提供全面性且多元化的金融服务与解决方案，与国泰航空有限公司暨其关系企业互不隶属亦非关系企业。
+        </p>
+
+
+        <ul class='cos-list'>
+            <li class='cos-item'>
+                <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.lang_url+"services/cash-management/")" class='cos-item-link'>
+                    <figure class='cos-item-figure'>
+                        <picture>
+                            <img class='cos-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/sg/services/home/cash-management.jpg")' alt='@ViewBag.nav_services_cash_management'>
+                        </picture>
+                        <figcaption hidden>@ViewBag.nav_services_cash_management</figcaption>
+                    </figure>
+                    <div class='cos-item-content'>
+                        <h3 class='cos-item-title'>@ViewBag.nav_services_cash_management</h3>
+                        <p class='cos-item-description'>提供便利且整合的现金管理产品，打造全方位金流服务，让您有效管理收付款，提升资金运用效率。</p>
+                        <div class='cos-item-btn'>@ViewBag.btn_learn_more</div>
+                    </div>
+                </a>
+            </li>
+
+            <li class='cos-item'>
+                <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.lang_url+"services/corporate-financing/")" class='cos-item-link'>
+                    <figure class='cos-item-figure'>
+                        <picture>
+                            <img class='cos-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/sg/services/home/corporate-financing.jpg")' alt='@ViewBag.nav_services_corporate_finance'>
+                        </picture>
+                        <figcaption hidden>@ViewBag.nav_services_corporate_finance</figcaption>
+                    </figure>
+                    <div class='cos-item-content'>
+                        <h3 class='cos-item-title'>@ViewBag.nav_services_corporate_finance</h3>
+                        <p class='cos-item-description'>提供完整且多元化的企业融资，为您量身打造全面的金融服务。</p>
+                        <div class='cos-item-btn'>@ViewBag.btn_learn_more</div>
+                    </div>
+                </a>
+            </li>
+
+
+            <li class='cos-item'>
+                <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.lang_url+"services/trade-finance/")" class='cos-item-link'>
+                    <figure class='cos-item-figure'>
+                        <picture>
+                            <img class='cos-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/sg/services/home/trade-finance.jpg")' alt='@ViewBag.nav_services_trade_finance'>
+                        </picture>
+                        <figcaption hidden>@ViewBag.nav_services_trade_finance</figcaption>
+                    </figure>
+                    <div class='cos-item-content'>
+                        <h3 class='cos-item-title'>@ViewBag.nav_services_trade_finance</h3>
+                        <p class='cos-item-description'>提供您完整多元的国际贸易服务及融资，以满足公司发展各时期的资金需求，量身订做最适合您的产品。</p>
+                        <div class='cos-item-btn'>@ViewBag.btn_learn_more</div>
+                    </div>
+                </a>
+            </li>
+
+
+
+            <li class='cos-item'>
+                <a href='@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.lang_url+"services/financial-derivatives/")' class='cos-item-link'>
+                    <figure class='cos-item-figure'>
+                        <picture>
+                            <img class='cos-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/sg/services/home/financial-derivatives.jpg")' alt='@ViewBag.nav_services_financial_derivatives'>
+                        </picture>
+                        <figcaption hidden>@ViewBag.nav_services_financial_derivatives</figcaption>
+                    </figure>
+                    <div class='cos-item-content'>
+                        <h3 class='cos-item-title'>@ViewBag.nav_services_financial_derivatives</h3>
+                        <p class='cos-item-description'>
+                            拥有具丰富国际金融实务经验之专业团队，密切掌握市场及配合企业营运状况，提供专业、精准的避险策略，致力提供最佳服务。
+                        </p>
+                        <div class='cos-item-btn'>@ViewBag.btn_learn_more</div>
+                    </div>
+                </a>
+            </li>
+            @*
+            <li class='cos-item'>
+                <a href="@Url.Content("~/sg/private-bank/")" target="_blank" rel="noopener"  class='cos-item-link'>
+                    <figure class='cos-item-figure'>
+                        <picture>
+                            <img class='cos-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/sg/services/home/private-banking.jpg")' alt='@ViewBag.nav_services_wealth_management'>
+                        </picture>
+                        <figcaption hidden>@ViewBag.nav_services_wealth_management</figcaption>
+                    </figure>
+                    <div class='cos-item-content'>
+                        <h3 class='cos-item-title'>@ViewBag.nav_services_wealth_management</h3>
+                        <p class='cos-item-description'>专注于提供具有高资产之客户及其家族私人银行服务，致力于协助客户规划专属资产配置方案。</p>
+
+                        <div class='cos-item-btn'>@ViewBag.btn_learn_more</div>
+
+                    </div>
+                                </a>
+                            </li>*@
+
+        </ul>
+    </div>
+        </div>

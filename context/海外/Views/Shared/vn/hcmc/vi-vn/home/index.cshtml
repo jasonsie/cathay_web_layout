@@ -1,0 +1,262 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "";
+    ViewBag.PageDescription = "";
+}
+
+@section Scripts {
+
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/jquery.scrollbar.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/slick.min.js")"></script>
+
+
+    <script>
+        var homeCard = homeCard || {};
+        homeCard.prototype = {
+            sameHeight: function () {
+
+                let window_w = $(window).width();
+                let max_h = 0;
+                let scope = $('.component-oversea-services');
+                $('.cos-item-description', scope).css('min-height', 0);
+                if (window_w >= 768) {
+                    $('.cos-item', scope).each(function () {
+                        let h = $('.cos-item-description', $(this)).height();
+                        if (h > max_h) {
+                            max_h = h;
+                        }
+                    })
+                    $('.cos-item-description', scope).height(max_h);
+                } else {
+                    $('.cos-item-description', scope).css('height', 'auto');
+                }
+            },
+            addEventListener: function () {
+                let o = this;
+                $(window).on('resize.homeCard', function () {
+                    o.sameHeight();
+                }).trigger('resize.homeCard');
+            },
+            init: function () {
+                this.addEventListener();
+            }
+        }
+    </script>
+
+    <script>
+        $(function () {
+
+            var myHomeCard = homeCard.prototype;
+           myHomeCard.init();
+
+
+            //
+            $(window).resize(function () {
+
+                let window_w = $(window).width();
+                let offset_x;
+                let content_w;
+                if (window_w > 991) {
+                    offset_x = $('.cok-inner').offset().left;
+                    content_w = $('.cok-content').width();
+                    max_w = window_w - content_w - offset_x;
+                } else {
+                    offset_x = 0;
+                    content_w = 0;
+                    max_w = window_w;
+                }
+                $('.cok-figure-wrap').css('width', max_w);
+                $('.cok-figure-wrap').css('flex-basis', max_w);
+                $('.cok-figure-wrap').css('max-width', max_w);
+                $('.cok-figure-wrap').css('left', content_w + offset_x);
+
+            }).trigger('resize');
+
+            $(".cok-figure-slider").slick({
+                infinite: false,
+                slidesToShow: 1,
+                dots: false
+            });
+
+            ////////////////////////////
+
+            //$('.con-list', $(this)).scrollbar();
+        })
+    </script>
+
+    <script>
+        //fraud modal
+        $(function () {
+            let myFraudModal = fraudModal.prototype;
+            myFraudModal.init($('.component-oversea-modal--fraud'));
+            myFraudModal.show();
+        })
+    </script>
+}
+
+<div class='component-oversea-kv'>
+    <div class="cok-figure-wrap">
+        <div class="cok-figure-slider">
+            <div class="cok-figure-item">
+                <figure class='cok-figure'>
+                    <picture>
+                        <source media='(min-width: 992px)'
+                                srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv/bg-lg.jpg")' />
+                        <img class='cok-img' src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv/bg.jpg")' alt='@ViewBag.site_name'>
+                    </picture>
+                    <figcaption hidden>@ViewBag.site_name</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+
+    <div class="cok-inner">
+        <div class="cok-content">
+            
+            <h1 class='cok-title'>
+                <span class='cok-title--company cok-title--company--bold'>Cathay United Bank</span>
+                <span class='cok-title--slogan'>Đối tác tin cậy</span>
+            </h1>
+          
+            <div class='component-oversea-news'>
+                <h2 class='con-title'><a class='con-title-link' href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/")">@ViewBag.home_latest_news</a></h2>
+                <ul class='con-list scrollbar-inner'>
+                    <li class='con-item'>
+                        <a href="@Url.Content("~/OVSWS/Content/pdf/" +@ViewBag.country_url+"/" +@ViewBag.city_url+"/announcements/Notice of Handling Dormant Account.pdf")" target="_blank" rel="noopener" class='con-item-link'>
+                            <span class='con-item-date'>2024-06-21</span>
+                            <span class='con-item-title'>
+                                Thông báo về việc tài khoản không hoạt động và tài khoản bị đóng
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class='component-oversea-services component-oversea-services--33  component-oversea-services--home'>
+    <div class="cos-inner">
+
+        <h2 class='cos-title'>
+            Chi nhánh Thành phố Hồ Chí Minh
+        </h2>
+        <p class='cos-description' style="max-width:1200px">
+            Đến năm 2005, Ngân hàng Cathay United Bank đã thành lập được 01 chi nhánh và 02 văn phòng đại diện tại Việt Nam.
+            Năm 2022, Chi nhánh Chu Lai tại Quảng Nam đã được di dời đến Thành phố Hồ Chí Minh nhằm thuận tiện hơn cho việc phát triển tại thị trường Việt Nam,
+            và đồng thời, Văn phòng đại diện tại Thành phố Hồ Chí Minh đã được di dời về Tỉnh Quảng Nam để tiếp tục duy trì mối quan hệ với
+            các khách hàng hiện hữu tại khu vực này. Cho đến hiện tại, Ngân hàng Cathay United Bank có tổng cộng 03 hiện diện thương mại tại Việt Nam, cụ thể
+            là Chi nhánh Thành phố Hồ Chí Minh, Văn phòng đại diện tại Thành phố Hà Nội và Văn phòng đại diện Tỉnh Quảng Nam, đã và đang hỗ trợ lẫn nhau
+            để cung cấp các dịch vụ ngân hàng cao cấp trải dài khắp 03 miền Bắc - Trung - Nam tại Việt Nam.
+        </p>
+        <p class='cos-description' style="max-width:1200px">
+            Trong đó, Ngân hàng Cathay United Bank – Chi nhánh Thành phố Hồ Chí Minh chuyên cung cấp các giải pháp, dịch vụ tài chính đa dạng
+            đến các doanh nghiệp trong nước và nước ngoài. Đặc biệt, song hành cùng nền kinh tế đang phát triển tại Việt Nam,
+            Ngân hàng Cathay United Bank – Chi nhánh Thành phố Hồ Chí Minh đã chính thức gia nhập thị trường ngân hàng tiêu dùng kỹ thuật số của Việt Nam vào tháng 3 năm 2024
+            với ứng dụng CUB Vietnam,
+            trở thành ngân hàng Đài Loan đầu tiên tại Việt Nam ra mắt dịch vụ tài chính tiêu dùng hoàn toàn bằng kỹ thuật số. Với đội ngũ chuyên nghiệp và tận tâm,
+            Ngân hàng Cathay United Bank sẽ tiếp tục chủ động đáp ứng và tạo ra những trải nghiệm ưu việt cho Quý khách hàng tại Việt Nam.
+        </p>
+            <ul class='cos-list'>
+                <li class='cos-item'>
+                    <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"services/cash-management/")" class='cos-item-link'>
+                        <figure class='cos-item-figure'>
+                            <picture>
+                                <img class='cos-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services/home/cash-management.jpg")' alt='@ViewBag.nav_services_cash_management'>
+                            </picture>
+                            <figcaption hidden>@ViewBag.nav_services_cash_management</figcaption>
+                        </figure>
+                        <div class='cos-item-content'>
+                            <h3 class='cos-item-title'>@ViewBag.nav_services_cash_management</h3>
+                            <p class='cos-item-description'>Chúng tôi cung cấp cho Quý khách hàng các sản phẩm hoàn chỉnh và tiện lợi cho việc quản lý tiền tệ, tạo nên một dịch vụ quản lý dòng tiền toàn diện để Quý khách hàng quản lý hiệu quả các khoản phải trả và các khoản phải thu, nhằm nâng cao hiệu quả sử dụng vốn.</p>
+                            <div class='cos-item-btn'>@ViewBag.btn_learn_more</div>
+                        </div>
+                    </a>
+                </li>
+
+                <li class='cos-item'>
+                    <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"services/corporate-financing/")" class='cos-item-link'>
+                        <figure class='cos-item-figure'>
+                            <picture>
+                                <img class='cos-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services/home/corporate-financing.jpg")' alt='@ViewBag.nav_services_corporate_finance'>
+                            </picture>
+                            <figcaption hidden>@ViewBag.nav_services_corporate_finance</figcaption>
+                        </figure>
+                        <div class='cos-item-content'>
+                            <h3 class='cos-item-title'>@ViewBag.nav_services_corporate_finance</h3>
+                            <p class='cos-item-description'>Chúng tôi cung cấp các sản phẩm cho vay vốn kinh doanh hoàn thiện và đa dạng, sẵn sàng linh hoạt hỗ trợ Quý khách hàng với các dịch vụ tài chính toàn diện.</p>
+                            <div class='cos-item-btn'>@ViewBag.btn_learn_more</div>
+                        </div>
+                    </a>
+                </li>
+                <li class='cos-item'>
+                    <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"services/otc-derivatives/")" class='cos-item-link'>
+                        <figure class='cos-item-figure'>
+                            <picture>
+                                <img class='cos-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services/home/otc-derivatives.jpg")' alt='Sản phẩm phái sinh '>
+                            </picture>
+                            <figcaption hidden>Sản phẩm phái sinh </figcaption>
+                        </figure>
+                        <div class='cos-item-content'>
+                            <h3 class='cos-item-title'> Sản phẩm phái sinh </h3>
+                            <p class='cos-item-description'>Chúng tôi cung cấp đến Quý khách hàng các sản phẩm phái sinh phòng ngừa rủi ro lãi suất chuyên nghiệp, qua đó hỗ trợ Quý khách hàng trong việc quản lý và giảm thiểu rủi ro từ các biến động lãi suất trên thị trường.</p>
+                            <div class='cos-item-btn'>@ViewBag.btn_learn_more</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <ul class='cos-list'>
+                <li class='cos-item'>
+                    <a href="https://www.vn.cathaybk.com/home" class='cos-item-link' target="_blank" rel="noopener" rel="noreferrer">
+                        <figure class='cos-item-figure'>
+                            <picture>
+                                <img class='cos-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services/home/digital-consumer-Loan.jpg")' alt='@ViewBag.nav_services_digital_consumer_loan'>
+                            </picture>
+                            <figcaption hidden>@ViewBag.nav_services_digital_consumer_loan</figcaption>
+                        </figure>
+                        <div class='cos-item-content'>
+                            <h3 class='cos-item-title'>@ViewBag.nav_services_digital_consumer_loan</h3>
+                            <p class='cos-item-description'>
+                                Vay tiêu dùng trực tuyến là sản phẩm vay tín chấp dành cho khách hàng cá nhân dùng cho mục đích tiêu dùng, phục vụ nhu cầu đời sống và nhận tiền thông qua các phương thức giải ngân của Ngân Hàng. Đây là sản phẩm cho vay với quy trình được số hóa hoàn toàn.
+                            </p>
+                            <div class='cos-item-btn'>@ViewBag.btn_learn_more</div>
+                        </div>
+                    </a>
+                </li>
+                <li class='cos-item'>
+                    <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"services/trade-finance/")" class='cos-item-link'>
+                        <figure class='cos-item-figure'>
+                            <picture>
+                                <img class='cos-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services/home/trade-finance.jpg")' alt='@ViewBag.nav_services_trade_finance'>
+                            </picture>
+                            <figcaption hidden>@ViewBag.nav_services_trade_finance</figcaption>
+                        </figure>
+                        <div class='cos-item-content'>
+                            <h3 class='cos-item-title'>@ViewBag.nav_services_trade_finance</h3>
+                            <p class='cos-item-description'>Chúng tôi cung cấp các dịch vụ tài chính và thương mại quốc tế toàn diện và đa dạng để đáp ứng nhu cầu vốn của mỗi công ty trong từng giai đoạn phát triển và cung cấp các sản phẩm phù hợp nhất, đặc biệt dành riêng cho Quý khách hàng.</p>
+                            <div class='cos-item-btn'>@ViewBag.btn_learn_more</div>
+                        </div>
+                    </a>
+                </li>
+                <li class='cos-item'>
+                    <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"services/foreign-exchange/")" class='cos-item-link'>
+                        <figure class='cos-item-figure'>
+                            <picture>
+                                <img class='cos-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services/home/foreign-exchange.jpg")' alt='@ViewBag.nav_services_foreign_exchange'>
+                            </picture>
+                            <figcaption hidden>@ViewBag.nav_services_foreign_exchange</figcaption>
+                        </figure>
+                        <div class='cos-item-content'>
+                            <h3 class='cos-item-title'>@ViewBag.nav_services_foreign_exchange</h3>
+                            <p class='cos-item-description'>
+                                Chúng tôi cung cấp đến Quý Khách hàng các dịch vụ phòng ngừa rủi ro tỷ giá chuyên nghiệp, qua đó hỗ trợ Quý Khách hàng trong việc quản lý và giảm thiểu các biến động từ thị trường ngoại hối.
+                            </p>
+                            <div class='cos-item-btn'>@ViewBag.btn_learn_more</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+
+
+    </div>
+</div>

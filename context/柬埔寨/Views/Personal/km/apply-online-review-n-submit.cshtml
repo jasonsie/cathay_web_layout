@@ -1,0 +1,500 @@
+﻿@model CathayBankKh.Models.ApplyOnlineReviewNSubmitModel
+
+@{
+	Layout = null;
+}
+
+<style>
+	body {
+		font-family: sans-serif;
+		padding: 1em 0;
+	}
+
+	.header {
+		margin-bottom: 1.5em;
+		clear: both;
+	}
+
+		.header > img {
+			width: 260px;
+			display: inline-block;
+		}
+
+		.header > div {
+			width: calc(100% - 260px);
+			text-align: right;
+			display: inline-block;
+			float: right;
+		}
+
+			.header > div > hr {
+				height: 2px;
+				border-width: 0;
+				color: black;
+				background-color: black;
+				margin: 0;
+			}
+
+			.header > div > p {
+				font-size: 1.2rem;
+				font-weight: bold;
+				text-align: right;
+				margin: 4px 0;
+			}
+
+	.form-title {
+	}
+
+	.section-title {
+		padding: 2px;
+		background-color: #d0cece;
+		font-weight: bold;
+		font-size: 18px;
+	}
+
+	.field {
+		clear: both;
+		font-size: 0;
+	}
+
+	.field-title,
+	.field-value {
+		box-sizing: border-box;
+		padding: 2px;
+		font-size: 14px;
+		margin-bottom: 2px;
+		display: inline-block;
+		vertical-align: top;
+		width: 100%;
+		min-height: 26px;
+	}
+
+	@@media (min-width: 768px) {
+		.field-title, .field-value {
+			height: 26px;
+		}
+	}
+
+	.field-title {
+		border-bottom: 1px solid #d0cece;
+	}
+
+	.field-value {
+		background-color: #fff2cc;
+		text-align: center;
+		border-bottom: 1px solid #d0cece;
+	}
+
+	.sign-section {
+		text-align: right;
+		margin-top: 140px;
+		float: right;
+	}
+
+	@@media (min-width: 768px) {
+		.sign-section {
+			height: 200px;
+		}
+	}
+
+	.sign-section > div {
+		width: 260px;
+		height: 200px;
+		display: inline-block;
+		text-align: left;
+		margin-left: 1em;
+		border-top: 1px solid black;
+		vertical-align: top;
+	}
+
+	.consent {
+		text-align: center;
+		font-size: 1.2rem;
+		clear: both;
+	}
+
+		.consent > h5 {
+			margin: 0.5em 0;
+		}
+
+	article {
+		margin-bottom: 3em;
+	}
+
+		article p {
+			text-indent: 1em;
+			line-height: 2em;
+			font-size: 14px;
+		}
+
+	.confirm {
+		font-size: 0;
+	}
+
+		.confirm > div {
+			font-size: 16px;
+			width: 50%;
+			display: inline-block;
+			box-sizing: border-box;
+			position: relative;
+		}
+
+		.confirm > .right {
+			font-size: 0;
+			text-align: right;
+			float: right;
+		}
+
+			.confirm > .right > .date {
+				font-size: 16px;
+				display: inline-block;
+				box-sizing: border-box;
+				text-align: right;
+			}
+
+			.confirm > .right > .value {
+				font-size: 16px;
+				display: inline-block;
+				box-sizing: border-box;
+				width: 200px;
+				padding: 0.5rem 1rem;
+				background-color: #fff2cc;
+				line-height: 71px;
+				text-align: center;
+				vertical-align: top;
+			}
+
+	@@media (min-width: 768px) {
+		.w-md-10 {
+			width: 10%;
+		}
+
+		.w-md-15 {
+			width: 15%;
+		}
+
+		.w-md-20 {
+			width: 20%;
+		}
+
+		.w-md-30 {
+			width: 30%;
+		}
+
+		.w-md-35 {
+			width: 35%;
+		}
+
+		.w-md-40 {
+			width: 40%;
+		}
+
+		.w-md-50 {
+			width: 50%;
+		}
+
+		.w-md-60 {
+			width: 60%;
+		}
+
+		.w-md-65 {
+			width: 65%;
+		}
+
+		.w-md-70 {
+			width: 70%;
+		}
+	}
+
+</style>
+
+<section>
+
+	<h3 class="h1 h2-mb  mb-4 text-black fw-bold lh-sm">Review</h3>
+
+	<!--
+		review form
+	-->
+
+
+	<div class="section-title">ព័ត៌មានផ្ទាល់ខ្លួនរបស់អ្នកស្នើសុំ / Personal Information</div>
+	<div class="field">
+		<div class="field-title w-md-30">
+			គោត្តនាម-នាម / Surname & Name:
+		</div>
+		<div class="field-value w-md-30" id="formName"></div>
+		<div class="field-title w-md-20">
+			ភេទ / Gender:
+		</div>
+		<div class="field-value w-md-20" id="formGender"></div>
+
+		<div class="field-title w-md-30">
+			ស្ថានភាពគ្រួសារ / Marital Status:
+		</div>
+		<div class="field-value w-md-20" id="formMaritalStatus"></div>
+		<div class="field-title w-md-40">
+			ចំនួនអ្នកស្ថិតក្នុងបន្ទុក / # of Dependent:
+		</div>
+		<div class="field-value w-md-10" id="formDependent"></div>
+
+		<div class="field-title w-md-50">
+			លេខអត្តសញ្ញាណប័ណ្ណ​ ឬ លិខិតឆ្លងដែន​ / National ID or Passport:
+		</div>
+		<div class="field-value w-md-15" id="formIdPassport"></div>
+		<div class="field-title w-md-15">
+			ការសិក្សា / Education:
+		</div>
+		<div class="field-value w-md-20" id="formEducation"></div>
+
+		<div class="field-title w-md-20">
+			អ៊ីម៉ែល / Email:
+		</div>
+		<div class="field-value w-md-30" id="formEmail"></div>
+
+		<div class="field-title w-md-30">
+			ថ្ងៃខែឆ្នាំកំណើត /​​ Date of Birth:
+		</div>
+		<div class="field-value w-md-20" id="formDateOfBirth"></div>
+
+		<div class="field-title w-md-30">
+			លេខទូរស័ព្ទផ្ទាល់ខ្លួន / Phone No:
+		</div>
+		<div class="field-value w-md-20" id="formMobileNumber"></div>
+		<div class="field-title w-md-30">
+			កម្មសិទ្ធលំនៅស្ថាន / Residential Type:
+		</div>
+		<div class="field-value w-md-20" id="formResidentialType"></div>
+
+		<div class="field-title w-md-35">
+			អាសយដ្ឋានបច្ចុប្បន្ន / Current Address:
+		</div>
+		<div class="field-value w-md-65" id="formAddress"></div>
+	</div>
+
+	<div class="section-title">
+		ព័ត៌មានអំពីកន្លែងធ្វើការងារ និង ប្រាក់ចំណូល / Employment & Financial Information
+	</div>
+	<div class="field">
+		<div class="field-title w-md-30">
+			ឈ្មោះក្រុមហ៊ុន / Company Name:
+		</div>
+		<div class="field-value w-md-70" id="formCompanyName"></div>
+		<div class="field-title w-md-30">
+			មុខតំណែង​ / Position:
+		</div>
+		<div class="field-value w-md-70" id="formPosition"></div>
+
+		<div class="field-title w-md-50">
+			លេខទូរស័ព្ទក្រុមហ៊ុន / Company Phone No:
+		</div>
+		<div class="field-value w-md-50" id="formCompanyPhoneNumber"></div>
+		<div class="field-title w-md-35">
+			អាសយដ្ឋានក្រុមហ៊ុន/Company Address:
+		</div>
+		<div class="field-value w-md-65" id="formCompanyAddress"></div>
+
+		<div class="field-title w-md-30">
+			រយៈពេលធ្វើការ / Length of Service:
+		</div>
+		<div class="field-value w-md-20" id="formLengthOfService"></div>
+		<div class="field-title w-md-30">
+			ចំណូលប្រចាំឆ្នាំ / Annual Income:
+		</div>
+		<div class="field-value w-md-20" id="formAnnualIncome"></div>
+
+		<div class="field-title w-md-30">
+			ប្រភេទក្រុមហ៊ុន / Company Type:
+		</div>
+		<div class="field-value w-md-70" id="formCompanyType"></div>
+
+		<div class="field-title w-md-30">
+			ប្រភេទសេវាកម្ម / Service Type:
+		</div>
+		<div class="field-value w-md-70" id="formServiceType"></div>
+	</div>
+
+	<div class="section-title">ព័ត៌មានអំពីគ្រួសារ និង សាច់ញាតិ / Family & Relative Information</div>
+	<div class="field">
+		<div class="field-title w-md-50">
+			គោត្តនាម-នាមរបស់សាច់ញាត្តិ / Relative Name:
+		</div>
+		<div class="field-value w-md-50" id="formRelativeName"></div>
+		<div class="field-title w-md-50">
+			ទំនាក់ទំនងជាមួយអ្នកស្នើសុំ / Relationship with Applicant:
+		</div>
+		<div class="field-value w-md-50" id="formRelationship"></div>
+
+		<div class="field-title w-md-50">
+			លេខទូរស័ព្ទរបស់សាច់ញាត្តិ / Relative Phone No:
+		</div>
+		<div class="field-value w-md-50" id="formRelativePhoneNumber"></div>
+		<div class="field-title w-md-35">
+			អាសយដ្ឋានបច្ចុប្បន្ន / Current Address:
+		</div>
+		<div class="field-value w-md-65" id="formRelativeAddress"></div>
+	</div>
+
+	<div class="section-title">
+		ប្រភេទប័ណ្ណឥណទាន / Credit Card Type
+	</div>
+	<div class="field mb-5">
+		<div class="field-title w-md-30">
+			ប្រភេទប័ណ្ណ / Card Type:
+		</div>
+		<div class="field-value w-md-70" id="formCardType"></div>
+		<div class="field-title w-md-50">
+			ទីតាំងទទួលយកប័ណ្ណនៅសាខា / Card Pickup Branch:
+		</div>
+		<div class="field-value w-md-50" id="formPreferBranch"></div>
+
+		<div class="field-title w-md-30">
+			ការទូទាត់វិក្កយបត្រ / Payment Method:
+		</div>
+		<div class="field-value w-md-20" id="formPaymentMethod"></div>
+		<div class="field-title w-md-35">
+			គណនីសម្រាប់ទូទាត់​ / Auto-pay Account:
+		</div>
+		<div class="field-value w-md-15" id="formAccountNo"></div>
+		<div class="field-title w-md-15">
+			Referral Code:
+		</div>
+		<div class="field-value w-md-20" id="formReferralCode"></div>
+		<div class="field-title w-md-15">
+			Channel:
+		</div>
+		<div class="field-value w-md-15" id="formChannel"></div>
+		<div class="field-title w-md-15">
+			Promo Code:
+		</div>
+		<div class="field-value w-md-20" id="formPromoCode"></div>
+	</div>
+
+	<!--
+		repeat part end
+	-->
+
+
+	<div class="section-title">
+		សេចក្តីប្រកាសរបស់អ្នកស្នើសុំ / Applicant's Declaration
+	</div>
+	<p>
+		ការចុះហត្ថលេខារបស់យើងខ្ញុំនេះ សូមបញ្ជាក់ថា យើងខ្ញុំពិតជាបានស្នើសុំប័ណ្ណឥណទាន តាមរយៈប្រព័ន្ធស្នើសុំតាមអនឡាញ និងបានអាន និងយល់ស្របជាមួយលក្ខខណ្ឌផ្សេងៗរបស់ធនាគារ កាថេយូណៃធីត (ខេមបូឌា) ម.ក។
+	</p>
+	<p>
+		By signing this Application Form, I confirm that I have submitted my Credit Card Application via CUBC Online
+		Application Channel and I have read and fully agree with CUBC Applicant(s)’s Declaration and Cardmember Agreement.
+	</p>
+
+	<div class="sign-section">
+		<div>
+			<p style="margin-top: 0;">ហត្ថលេខា និងឈ្មោះអ្នកស្នើសុំ</p>
+			<p>Applicant's Name & Signature</p>
+			<p>កាលបរិច្ឆេទ / Date:</p>
+		</div>
+		<div>
+			<p style="margin-top: 0;">ហត្ថលេខាបុគ្គលិកធនាគារ</p>
+			<p>Staff's Signature</p>
+			<p>Name:</p>
+			<p>Position:</p>
+		</div>
+	</div>
+
+	<!--
+		letter of consent
+	-->
+	<!--
+							letter of consent
+						-->
+
+	<div class="consent">
+		<h5>ព្រះរាជាណាចក្រកម្ពុជា</h5>
+		<h5>ជាតិ សាសនា ព្រះមហាក្សត្រ</h5>
+		<h5>************</h5>
+		<h5>លិខិតបញ្ជាក់ពីការយល់ព្រម</h5>
+		<h5>LETTER OF CONSENT</h5>
+	</div>
+	<div class="field">
+		<div class="field-title w-md-15">
+			ឈ្មោះ / Name:
+		</div>
+		<div class="field-value w-md-50" id="consentName"></div>
+		<div class="field-title w-md-15">
+			ភេទ / Gender:
+		</div>
+		<div class="field-value w-md-20" id="consentGender"></div>
+		<div class="field-title w-md-70">
+			លេខអត្តសញ្ញាណប័ណ្ណ / លេខលិខិតឆ្លងដែន / ID CARDS No / PASSPORT No:
+		</div>
+		<div class="field-value w-md-30" id="consentIdPassport"></div>
+		<div class="field-title w-md-35">
+			អាសយដ្ឋានបច្ចុប្បន្ន / Current Address:
+		</div>
+		<div class="field-value w-md-65" id="consentAddress"></div>
+	</div>
+
+	<article>
+		<p>
+			ខ្ញុំបាទ/ នាងខ្ញុំ/ យើងខ្ញុំយល់ព្រមផ្តល់សិទ្ធិឱ្យ <b>ធនាគារ កាថេយូណៃធីត (ខេមបូឌា) ម.ក</b> ប្រមូលព័ត៌មានដែលមាននៅក្នុងពាក្យស្នើសុំ និងព័ត៌មានដទៃទៀតដែលមានពាក់ព័ន្ធនឹងពាក្យស្នើសុំនេះ ព្រមទាំងចែករំលែកព័ត៌មានទាំងនេះទៅឱ្យតតិយជននូវរាល់ឥណទានរួមមានដូចជា ការស្នើសុំឥណទានថ្មី ការស្នើសុំបន្ថែមលើឥណទានចាស់ ការស្នើសុំបន្តឥណទានចាស់ និងរាល់ការរៀបចំឥណទានឡើងវិញ ចាប់ពីការស្នើសុំរហូតដល់ឥណទានទាំងអស់បានទូទាត់ចប់សព្វគ្រប់ជូនធនាគារវិញ ដូចមានចែងក្នុងប្រកាសស្តីពីការចែករំលែកព័ត៌មានឥណទាន។
+		</p>
+		<p>
+			I/ we, hereby authorize <b>CATHAY UNITED BANK (CAMBODIA) PLC.</b> to collect information contained
+			in the
+			present application and other information relevant to this application, and disclose it to third parties for
+			full cycle of loan including new,
+			renewal, additional, and other restricting loan established under the Prakas on Credit Reporting.
+		</p>
+		<p>
+			ខ្ញុំបាទ/ នាងខ្ញុំ/ យើងខ្ញុំយល់ថា <b>ក្រុមហ៊ុនក្រេឌីតប្យូរ៉ូ (ខេមបូឌា) ខូអិលធីឌី</b> ដែលមានអាស័យដ្ឋានបច្ចុប្បន្ននៅ អគារវឌ្ឍនៈ ជាន់ទី៩ អគារលេខ៦៦ មហាវិថីព្រះមុនីវង្ស សង្កាត់វត្តភ្នំ ខណ្ឌដូនពេញ រាជធានីភ្នំពេញ ព្រះរាជាណាចក្រកម្ពុជា និង <b>ធនាគារ កាថេយូណៃធីត (ខេមបូឌា) ម.ក</b> ជាអ្នកទទួលខុសត្រូវលើការប្រមូល ការដាក់ឱ្យដំណើរការ និងការចែករំលែកទិន្នន័យ។ យើងខ្ញុំមានសិទ្ធិទទួលព័ត៌មាននិងទិន្នន័យរបស់យើងខ្ញុំ និងមានសិទ្ធិតវ៉ាដើម្បីស្នើសុំកែតម្រូវ ឬលុបចោលទិន្នន័យទាំងនោះប្រសិនបើមានហេតុផលគ្រប់គ្រាន់ស្របតាមនីតិវិធី ដូចមានចែងក្នុងប្រកាសស្តីពីការចែករំលែកព័ត៌មានឥណទាន និង/ឬក្រមប្រតិបត្តិ។
+		</p>
+		<p>
+			I/we understand that <b>Credit Bureau (Cambodia) Co., Ltd.</b> with present address at Vattanac Capital, Level 9,
+			Building № 99, Preah
+			Monivong Blvd, Sangkat Wat Phnom, Khan Duan Penh, Phnom Penh, Cambodia and <b>CATHAY UNITED BANK (CAMBODIA) PLC.</b>
+			will be responsible for the collection, processing and dissemination of the data. I/we
+			are entitled to access
+			my/our information and have the right to complain in order to appeal for correction or deletion of such data
+			when there is an adequate
+			reason in line with the procedures established under the Prakas on Credit Reporting and the code of conduct.
+		</p>
+	</article>
+
+	<div class="confirm">
+		<div class="left">
+			<p>
+				យើងខ្ញុំសូមបញ្ជាក់យ៉ាងម៉ឹងម៉ាត់ពីការយល់ព្រមទាំងឡាយខាងលើ។
+			</p>
+			<p>I/we hereby severely confirm the consent of the above.</p>
+		</div>
+		<div class="right">
+			<div class="date">
+				<p>កាលបរិច្ឆេទ៖</p>
+				<p>
+					Date:
+				</p>
+			</div>
+			<div class="value" id="today"></div>
+		</div>
+	</div>
+
+
+	<div class="text-center py-4" style="clear: both;">
+		<div class="d-md-flex d-block justify-content-center">
+			<input id="txtCaptcha" name="txtCaptcha" class="txt mb-3" style="height: 48px;" type="text" autocomplete="off" placeholder="please input captcha code" maxlength="5">
+			<div class="d-flex justify-content-center mb-3">
+				<img src="#" alt="" id="imgCaptcha" style="width: 110px; height: 48px; border-radius:5px;margin-left:5px; margin-right: 5px;">
+				<button type="button" class="btn btn-outline-green" id="getCaptchaBtn">
+					<span class="px-2">Refresh</span>
+				</button>
+			</div>
+		</div>
+		<button type="button" class="btn btn-outline-green mr-3" id="goPrevToTerms">
+			<span class="px-2"><i class="ico-ui-left-v mr-2 big"></i>Previous Step</span>
+		</button>
+		<button type="button" class="btn btn-green" id="goNextToSubmit">
+			<span class="px-2">Submit<i class="ico-ui-right-v ml-2 big"></i></span>
+		</button>
+	</div>
+
+
+</section>
+<!-- Page END -->

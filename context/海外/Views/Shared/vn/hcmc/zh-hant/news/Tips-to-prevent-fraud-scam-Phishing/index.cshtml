@@ -1,0 +1,70 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "Tips to prevent fraud/ scam/ Phishing ";
+    ViewBag.PageDescription = "";
+}
+
+@section Scripts {}
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news.jpg")' alt='@ViewBag.nav_news'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_news</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_news</h1>
+        </div>
+    </div>
+</div>
+
+<!-- newsview -->
+<article class="component-newsview">
+    <div class="component-newsview-inner">
+        <header class="component-newsview-header">
+            <div class="component-newsview-date"></div>
+            <h1 class="component-newsview-title">Tips to prevent fraud/ scam/ Phishing </h1>
+        </header>
+
+        <div class="component-newsview-body">
+            <p>1. Cathay United Bank- Ho Chi Minh City (“We”) will not use e-mail, phone call to ask any of your personal information or ask you to log in to Internet Banking to bind your user information.  If you have recently entered your Internet Banking User ID and Password on a suspicious website, it is advised to change them as soon as possible. We will only make phone call to confirm on your submission of transaction instruction. If you receive any contact with the doubt,  please call our Customer Service Hotline at +84 28 38258768<br>
+            
+            <p>2.  Steps to protect yourself from Phishing<br>
+           
+            <p>Internet protection starts with your mindset and behavior toward potential cyberthreats.<br>
+           
+            <p>Phishing tricks victims into giving over credentials for all sorts of sensitive accounts, such as email, corporate intranets and more.<br>
+            
+            <p>Even for cautious users, it's sometimes difficult to detect a phishing attack. These attacks become more sophisticated over time, and hackers find ways to tailor their scams and give very convincing messages, which can easily trip people up.<br>
+            
+            <p>Here are a few basic measures to always take with your emails and other communications:<br>
+            
+            <p>(1). Employ common sense before handing over sensitive information. When you get an alert from your bank or other major institution, never click the link in the email. Instead, open your browser window and type the address directly into the URL field so you can make sure the site is real.<br>
+            
+            <p>(2). Never trust alarming messages. Most reputable companies will not request personally identifiable information or account details, via email. This includes your bank, insurance company, and any company you do business with. If you ever receive an email asking for any type of account information, immediately delete it and then call the company to confirm that your account is OK.<br>
+            
+            <p>(3). Do not open attachments in these suspicious or strange emails — especially Word, Excel, PowerPoint or PDF attachments.<br>
+            
+            <p>(4). Avoid clicking embedded links in emails at all times, because these can be seeded with malware. Be cautious when receiving messages from vendors or third parties; never click on embedded URLs in the original message. Instead, visit the site directly by typing in the correct URL address to verify the request, and review the vendor's contact policies and procedures for requesting information. Before you login GlobalMyB2B, please check in at www.globalmyb2b.com.<br>
+            
+            <p>(5). Keep your software and operating system up to date; Not install strange software, unlicensed software, or software of unknown origin.<br>
+            
+            <p>(6). Protect passwords, PINs and OTPs and not sharing equipment storing such information.<br>
+            
+            <p>(7). Immediately notify us of the loss of, or damage to OTP generators, phone numbers to receive SMS, devices storing e-signature-generating keys; and cases of fraudulence or suspicious fraudulence; or attacks or suspicious attacks by hackers.<br>
+
+        </div>
+
+        <footer class="component-newsview-footer">
+            <div class="component-btn-row">
+                <a class="component-btn-main btn-green" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/")">回上一頁</a>
+            </div>
+        </footer>
+    </div>
+</article><!--/.component-newsview-->

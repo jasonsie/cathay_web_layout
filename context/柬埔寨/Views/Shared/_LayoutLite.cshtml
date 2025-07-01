@@ -1,0 +1,145 @@
+﻿@{
+    switch(ViewData["lang"]){
+        case "zh-hant":
+            ViewData["siteLangUrl"] = "/"+ViewData["lang"]+"/";
+
+            if(ViewData["PageTitle"] == ""){
+                ViewData["PageTitle"] = "國泰世華銀行（柬埔寨）CUBC";
+            }else{
+                if(ViewData["pageUrl"] == ""){
+                    ViewData["PageTitle"] =  ViewData["PageTitle"];
+                }else{
+                    ViewData["PageTitle"] =  ViewData["PageTitle"]+" - "+"國泰世華銀行（柬埔寨）CUBC";
+                }
+            }
+
+            if(ViewData["PageDescription"] == ""){
+                ViewData["PageDescription"] = "值得您信賴的夥伴";
+            }
+            
+
+            ViewData["fonts"] = "https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap";
+        break;
+
+        case "km":
+            ViewData["siteLangUrl"] = "/"+ViewData["lang"]+"/";
+
+            if(ViewData["PageTitle"] == ""){
+                ViewData["PageTitle"] = "ធនាគារ កាថេយូណៃធីត (ខេមបូឌា) ម.ក";
+            }else{
+                if(ViewData["pageUrl"] == ""){
+                    ViewData["PageTitle"] =  ViewData["PageTitle"];
+                }else{
+                    ViewData["PageTitle"] =  ViewData["PageTitle"]+" - "+"ធនាគារ កាថេយូណៃធីត (ខេមបូឌា) ម.ក";
+                }
+            }
+
+            if(ViewData["PageDescription"] == ""){
+                ViewData["PageDescription"] = "ដៃគូហិរញ្ញវត្ថដែលលោកអ្នកអាចទុកចិត្តបាន";
+            }
+
+            ViewData["fonts"] = "https://fonts.googleapis.com/css2?family=Hanuman:wght@100;300;400;500;700&family=Roboto:wght@400;500;700&display=swap";
+
+        break;
+
+        default:
+            ViewData["siteLangUrl"] = "/";
+
+            if(ViewData["PageTitle"] == ""){
+                ViewData["PageTitle"] = "Cathay United Bank (Cambodia) Plc. (CUBC)";
+            }else{
+                if(ViewData["pageUrl"] == ""){
+                    ViewData["PageTitle"] =  ViewData["PageTitle"];
+                }else{
+                    ViewData["PageTitle"] =  ViewData["PageTitle"]+" - "+"Cathay United Bank (Cambodia) Plc. (CUBC)";
+                }
+            }
+
+            if(ViewData["PageDescription"] == ""){
+                ViewData["PageDescription"] = "A financial partner you can trust";
+            }
+            ViewData["fonts"] = "https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap";
+        break;
+    }
+}
+<!DOCTYPE html>
+<html lang="@ViewData["lang"]" class="home">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+
+    <title>@ViewData["PageTitle"]</title>
+    <meta name="description" content="@ViewData["PageDescription"]"> 
+    <link rel="icon" type="image/x-icon" href="https://www.cathaybk.com.tw/cathaybk/web/img/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/base.css?r=20221213">
+    <link rel="stylesheet" href="/assets/css/jquery-ui.min.css">
+
+    
+    <link rel="alternate" hreflang="zh-hant" href="https://www.cathaybk.com.kh/zh-hant/@ViewData["pageUrl"]" />
+    <link rel="alternate" hreflang="km" href="https://www.cathaybk.com.kh/km/@ViewData["pageUrl"]" />
+    <link rel="alternate" hreflang="x-default" href="https://www.cathaybk.com.kh/@ViewData["pageUrl"]" />
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="@ViewData["fonts"]">
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MPVMSKZ');</script>
+    <!-- End Google Tag Manager -->
+    
+    <style>
+        .masthead{
+            height:80px;
+        }
+        @@media (max-width: 992px){
+            .masthead {
+                height: 60px;
+            }
+        }
+        @@media (max-width: 992px){
+            .mastbody {
+                padding-top: 100px;
+            }
+        }
+    
+    </style>
+
+    @RenderSection("Styles", required: false)
+</head>
+ 
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPVMSKZ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- Global Header -->
+    <header class="masthead">
+        <div class="masthead-inner">
+            <div class="masthead-logo">
+                <img class="masthead-logo-img" src="~/assets/img/ui/header-logo.svg" alt="CUBU Bank">
+            </div>
+        </div>
+    </header> 
+
+    @RenderBody()
+
+    <script src="/assets/js/libs/jquery.min.js"></script>
+    <script src="/assets/js/libs/jquery-ui.min.js"></script>
+    <script src="/assets/js/libs/bootstrap.bundle.min.js"></script>
+    <script src="/assets/js/libs/swiper.min.js"></script>
+    <script src="/assets/js/base.min.js?20231222"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+
+</html>

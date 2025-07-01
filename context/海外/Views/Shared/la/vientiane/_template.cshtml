@@ -1,0 +1,355 @@
+﻿
+@{ 
+    ViewBag.nav_lang_zh_hant = "繁體中文";
+    ViewBag.nav_lang_en = "English";
+    ViewBag.nav_lang_zh_cn = "簡體中文";
+    ViewBag.nav_lang_local = "ພາສາລາວ";
+    
+
+    if(ViewBag.section == "home/")
+    {
+        ViewBag.section = "";
+    }
+    switch (ViewBag.lang)
+    {
+        case "zh-hant":
+            ViewBag.site_name = "國泰世華銀行永珍分行";
+            ViewBag.html_lang = ViewBag.lang;
+            ViewBag.lang_url = "";
+            ViewBag.faq_title = "常見問題";
+            ViewBag.download_title = "常用表單";
+
+            ViewBag.nav_contact = "聯繫我們";
+            ViewBag.nav_careers = "人才招募";
+            ViewBag.nav_login = "網銀登入";
+            ViewBag.nav_gebank = "全球企網銀登入";
+            ViewBag.nav_ebank = "網路銀行登入";
+            ViewBag.nav_services = "服務項目";
+            ViewBag.nav_services_cash_management = "現金管理";
+            ViewBag.nav_services_depository_remittance = "存匯服務";
+            ViewBag.nav_services_corporate_finance = "企業融資";
+            ViewBag.nav_services_trade_finance = "貿易融資";
+            ViewBag.nav_services_wealth_management = "私人銀行";
+            ViewBag.nav_services_financial_derivatives = "衍生性金融商品";
+            ViewBag.nav_services_online_banking = "網上銀行";
+            ViewBag.nav_interest_rate = "利率查詢";
+            ViewBag.nav_fee = "收費標準";
+            ViewBag.nav_bulletin_board = "公告專區";
+            ViewBag.nav_news = "最新消息";
+            ViewBag.nav_financial_disclosure = "財務揭露";
+            ViewBag.nav_terms_condition = "條款與細則";
+            ViewBag.nav_download = ViewBag.download_title;
+            ViewBag.nav_faq = ViewBag.faq_title;
+            ViewBag.nav_privacy_security = "安全與私隱";
+            ViewBag.nav_important_notice = "重要聲明";
+            ViewBag.nav_browser_setting = "瀏覽器建議";
+            ViewBag.nav_suggestions_feedback = "意見反應";
+            ViewBag.nav_cathay_united_bank = "國泰世華銀行";
+            ViewBag.nav_cathay_holdings = "國泰金控集團";
+            ViewBag.nav_oversea_branch = "海外據點";
+
+
+            //home
+            ViewBag.home_latest_news = "最新消息";
+
+            ViewBag.btn_learn_more = "了解更多";
+
+            //online banking
+            ViewBag.online_banking_e_bank = "新加坡分行網路銀行";
+            ViewBag.online_banking_ge_bank = "全球企業網路銀行服務";
+
+            //download
+            ViewBag.download_e_bank = ViewBag.online_banking_e_bank;
+            ViewBag.download_ge_bank = ViewBag.online_banking_ge_bank;
+            ViewBag.download_csr = "CRS自我證明表格";
+            ViewBag.download_fatca = "FATCA IRS Forms";
+
+            //services
+            ViewBag.services_title = "服務內容";
+
+
+            //common
+            ViewBag.company_full_name = "國泰世華商業銀行股份有限公司";
+            ViewBag.copyright = "國泰世華商業銀行股份有限公司";
+
+            break;
+
+        case "lo":
+            ViewBag.site_name = "Cathay United Bank Vientiane Branch";
+            ViewBag.html_lang = "lo";
+            ViewBag.lang_url = "lo/";
+            ViewBag.faq_title = "FAQ";
+            ViewBag.download_title = "Forms";
+
+            ViewBag.nav_contact = "ຊ່ອງທາງຕິດຕໍ່";
+            ViewBag.nav_careers = "Careers";
+            ViewBag.nav_login = "Login";
+            ViewBag.nav_ebank = "Singapore E-Banking";
+            ViewBag.nav_gebank = "Global MyB2B";
+            ViewBag.nav_services = "ເນື້ອໃນການບໍລິການ";
+            ViewBag.nav_services_cash_management = "ການ​ຄຸ້ມ​ຄອງບໍ​ລິ​ຫານ​ເງິນ​ສົດ";
+            ViewBag.nav_services_depository_remittance = "Deposits and Remittance";
+            ViewBag.nav_services_corporate_finance = "ການ​​ໃຫ້ບໍ​ລິ​ການ ການ​ເງິນ​ຂອງ​ອົງ​ກອນ";
+            ViewBag.nav_services_trade_finance = "Trade Finance";
+            ViewBag.nav_services_wealth_management = "Private Bank";
+            ViewBag.nav_services_financial_derivatives = "Financial Derivatives";
+            ViewBag.nav_services_online_banking = "Internet Banking";
+            ViewBag.nav_interest_rate = "Interest Rate Enquiry";
+            ViewBag.nav_fee = "ມາດຕະຖານຄ່າທຳນຽມ";
+            ViewBag.nav_bulletin_board = "ພື້ນທີປະກາດ";
+            ViewBag.nav_news = "ຂ່າວລ່າສຸດ";
+            ViewBag.nav_financial_disclosure = "ການເປີດເຜຍຂໍ້ມູນທາງການເງິນ";
+            ViewBag.nav_terms_condition = "Terms and Conditions";
+            ViewBag.nav_browser_setting = "ຄຳແນະນຳ Browser";
+            ViewBag.nav_download = ViewBag.download_title;
+            ViewBag.nav_faq = ViewBag.faq_title;
+            ViewBag.nav_privacy_security = "ຄວາມປອດໄພ ແລະ ຄວາມເປັນສ່ວນຕົວ";
+            ViewBag.nav_important_notice = "Important Notice";
+            ViewBag.nav_suggestions_feedback = "Suggestions and Feedback";
+            ViewBag.nav_cathay_united_bank = "ທະນາຄານ ອຸດສາຫະກຳ ການຄ້າ ຄາເທ ຢູໄນເຕັດ ບໍລິສັດຫຸ້ນສ່ວນ ຈຳກັດ";
+            ViewBag.nav_cathay_holdings = "ກຸ່ມບໍລິສັດທາງການເງິນ ຄາເທ	";
+            ViewBag.nav_oversea_branch = "ພື້ນທີຢູ່ຕ່າງປະເທດ	";
+
+            //home
+            ViewBag.home_latest_news = "Latest News";
+
+
+            //online banking
+            ViewBag.online_banking_e_bank = "Singapore E-Banking";
+            ViewBag.online_banking_ge_bank = "Global MyB2B";
+
+            //download
+            ViewBag.download_e_bank = ViewBag.online_banking_e_bank;
+            ViewBag.download_ge_bank = ViewBag.online_banking_ge_bank;
+            ViewBag.download_csr = "CRS自我證明表格";
+            ViewBag.download_fatca = "FATCA IRS Forms";
+
+            //services
+            ViewBag.services_title = "ເນື້ອໃນການບໍລິການ";
+            //common
+            ViewBag.btn_learn_more = "ລາຍລະອຽດເພີ່ມເຕີມ";
+            ViewBag.company_full_name = "Cathay United Bank Company, Limited";
+            ViewBag.copyright = "Cathay United Bank All rights reserved.";
+            break;
+
+            
+
+        case "en":
+            ViewBag.site_name = "Cathay United Bank Vientiane Branch";
+            ViewBag.html_lang = "en";
+            ViewBag.lang_url = "en/";
+            ViewBag.faq_title = "FAQ";
+            ViewBag.download_title = "Forms";
+
+            ViewBag.nav_contact = "Contact Us";
+            ViewBag.nav_careers = "Careers";
+            ViewBag.nav_login = "Login";
+            ViewBag.nav_ebank = "Singapore E-Banking";
+            ViewBag.nav_gebank = "Global MyB2B";
+            ViewBag.nav_services = "Services";
+            ViewBag.nav_services_cash_management = "Cash Management";
+            ViewBag.nav_services_depository_remittance = "Deposits and Remittance";
+            ViewBag.nav_services_corporate_finance = "Corporate Financing";
+            ViewBag.nav_services_trade_finance = "Trade Finance";
+            ViewBag.nav_services_wealth_management = "Private Bank";
+            ViewBag.nav_services_financial_derivatives = "Financial Derivatives";
+            ViewBag.nav_services_online_banking = "Internet Banking";
+            ViewBag.nav_interest_rate = "Interest Rate Enquiry";
+            ViewBag.nav_fee = "Charging Standard";
+            ViewBag.nav_bulletin_board = "Announcements";
+            ViewBag.nav_news = "Latest News";
+            ViewBag.nav_financial_disclosure = "Financial Disclosure";
+            ViewBag.nav_terms_condition = "Terms and Conditions";
+            ViewBag.nav_browser_setting = "Browser Suggestions";
+            ViewBag.nav_download = ViewBag.download_title;
+            ViewBag.nav_faq = ViewBag.faq_title;
+            ViewBag.nav_privacy_security = "Privacy Security";
+            ViewBag.nav_important_notice = "Important Notice";
+            ViewBag.nav_suggestions_feedback = "Suggestions and Feedback";
+            ViewBag.nav_cathay_united_bank = "Cathay United Bank";
+            ViewBag.nav_cathay_holdings = "Cathay Holdings";
+            ViewBag.nav_oversea_branch = "Overseas Units";
+
+            //home
+            ViewBag.home_latest_news = "Latest News";
+
+
+            //online banking
+            ViewBag.online_banking_e_bank = "Singapore E-Banking";
+            ViewBag.online_banking_ge_bank = "Global MyB2B";
+
+            //download
+            ViewBag.download_e_bank = ViewBag.online_banking_e_bank;
+            ViewBag.download_ge_bank = ViewBag.online_banking_ge_bank;
+            ViewBag.download_csr = "CRS自我證明表格";
+            ViewBag.download_fatca = "FATCA IRS Forms";
+
+            //services
+            ViewBag.services_title = "Services";
+            //common
+            ViewBag.btn_learn_more = "Learn More";
+            ViewBag.company_full_name = "Cathay United Bank Company, Limited";
+            ViewBag.copyright = "Cathay United Bank All rights reserved.";
+            break;
+
+    } }
+
+
+@if (ViewBag.PageTitle == "" || ViewBag.PageTitle == null)
+{
+    ViewBag.PageTitle = ViewBag.site_name;
+}
+else
+{
+    ViewBag.PageTitle = ViewBag.site_name + " - " + ViewBag.PageTitle;
+}
+
+@if (ViewBag.PageDescription == "" || ViewBag.PageDescription == null)
+{
+    if (ViewBag.lang == "zh-hant")
+    {
+        ViewBag.PageDescription = "國泰世華銀行於2014年9月成立緬甸仰光代表人辦事處，透過對當地經濟發展做出貢獻並樹立良好形象，為分行奠定深厚的基礎。2020年4月獲得緬甸中央銀行核准設立分行，2021年1月仰光分行正式開業。仰光分行依照當地銀行法規可承作企金業務，提供存款、匯款、外匯、保證、各類融資及網路銀行等服務，藉由串聯台灣、東協及大中華各國據點，國泰世華將與客戶攜手共同成長，持續提供優質且完整之金融服務。";
+    }
+    else if (ViewBag.lang == "en")
+    {
+        ViewBag.PageDescription = "Cathay United Bank (CUB), Singapore Branch was first established in [2009]. We are currently operating as a Wholesale Bank as well as an Exempt Capital Markets Services Entity and Exempt Financial Adviser under the purview of The Monetary Authority of Singapore (MAS). We provide an array of products & services which include corporate lendings, trade financing, cash deposits/remittances alongside with hedging solutions to our clients with focus on General Corporates, Transportation (Aviation & Shipping)  and Financial Institutions (FIs) sectors.";
+    }
+}
+else
+{
+}
+
+<!DOCTYPE html>
+<html lang="@ViewBag.html_lang">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>@ViewBag.PageTitle</title>
+    <meta name="description" content="@ViewBag.PageDescription">
+
+    <!-- Meta for facebook Share Title -->
+    <meta property="og:title" content="@ViewBag.PageTitle">
+    <meta property="og:description" content="@ViewBag.PageDescription">
+    <meta property="og:image" content="@Request.Url.GetLeftPart(UriPartial.Authority)@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv/bg-lg.jpg")">
+    <meta property="og:url" content="@Request.Url.AbsoluteUri">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="@ViewBag.site_name">
+    
+    <link rel="alternate" hreflang="x-default" href="@Request.Url.GetLeftPart(UriPartial.Authority)" />
+    <link rel="alternate" hreflang="en-US" href="@Request.Url.GetLeftPart(UriPartial.Authority)/en" />
+    <link rel="alternate" hreflang="lo-la" href="@Request.Url.GetLeftPart(UriPartial.Authority)/lo" />
+
+    <link rel="stylesheet" type="text/css" href="@Url.Content("~/OVSWS/Content/css/style.css")">
+
+    <script type='application/ld+json'>
+
+        {
+        "@@context": "http://www.schema.org",
+        "@@type": "Corporation",
+        "name": "@ViewBag.site_name",
+        "url": "@Request.Url.AbsoluteUri",
+        "logo": "@Request.Url.GetLeftPart(UriPartial.Authority)@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/header/logo-lg.svg")",
+        "image": "@Request.Url.GetLeftPart(UriPartial.Authority)@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv/bg-lg.jpg")",
+        "description": "@ViewBag.PageDescription",
+        "address": {
+        "@@type": "PostalAddress",
+        "streetAddress": "Hatsady Village, Unit 40, Khounboulom Road, Chanthabouly District, Vientiane Capital, and Lao PDR"
+        },
+        "contactPoint": {
+        "@@type": "ContactPoint",
+        "telephone": "021-255-688"
+        }
+        }
+    </script>
+
+
+    <style>
+        .component-header .ch-brand {
+            padding-right: 0;
+        }
+
+            .component-header .ch-brand .ch-img {
+                width: 230px;
+                height: 24px;
+            }
+
+        @@media (min-width: 992px) {
+            .component-header .ch-brand .ch-img {
+                width: 289px;
+                height: auto;
+            }
+        }
+    </style>
+
+</head>
+<body class='@ViewBag.html_lang'>
+    @RenderPage("header.cshtml")
+    @RenderPage(ViewBag.bodyPath, new { ViewBag = ViewBag })
+    @RenderPage("fraud-prevention-window.cshtml")
+    @RenderPage("exit-window.cshtml")
+    @RenderPage("footer.cshtml")
+
+    <a href="javascript:;" class="component-gototop" role="page-go-top"></a>
+    <script>
+        window.faq_title = "@ViewBag.faq_title";
+        window.download_title = "@ViewBag.download_title";
+    </script>
+    <script>
+        function logElementEvent(eventName, element) {
+            //console.log(Date.now(), eventName, element.getAttribute("data-src"));
+        }
+
+        var callback_enter = function (element) {
+            logElementEvent("🔑 ENTERED", element);
+        };
+        var callback_exit = function (element) {
+            logElementEvent("🚪 EXITED", element);
+        };
+        var callback_loading = function (element) {
+            logElementEvent("⌚ LOADING", element);
+        };
+        var callback_loaded = function (element) {
+            logElementEvent("👍 LOADED", element);
+        };
+        var callback_error = function (element) {
+            logElementEvent("💀 ERROR", element);
+            element.src =
+                "https://via.placeholder.com/440x560/?text=Error+Placeholder";
+        };
+        var callback_finish = function () {
+            logElementEvent("✔️ FINISHED", document.documentElement);
+        };
+        var callback_cancel = function (element) {
+            logElementEvent("🔥 CANCEL", element);
+        };
+
+        window.lazyLoadOptions = {
+            threshold: 0,
+            // Assign the callbacks defined above
+            callback_enter: callback_enter,
+            callback_exit: callback_exit,
+            callback_cancel: callback_cancel,
+            callback_loading: callback_loading,
+            callback_loaded: callback_loaded,
+            callback_error: callback_error,
+            callback_finish: callback_finish
+        };
+        window.addEventListener(
+            "LazyLoad::Initialized",
+            function (e) {
+                console.log(e.detail.instance);
+            },
+            false
+        );
+    </script>
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/jquery-3.6.0.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/lazyload.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/picturePolyfill.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/component/header/main.js")"></script>
+
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/app.js")"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

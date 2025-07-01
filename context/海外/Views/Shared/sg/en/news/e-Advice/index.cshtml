@@ -1,0 +1,55 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "e-Advice Service - New Transaction and Function Announcement";
+    ViewBag.PageDescription = "e-Advice Service - New Transaction and Function Announcement";
+}
+
+@section Scripts {}
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news.jpg")' alt='@ViewBag.nav_news'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_news</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_news</h1>
+        </div>
+    </div>
+</div>
+
+<!-- newsview -->
+<article class="component-newsview">
+    <div class="component-newsview-inner">
+        <header class="component-newsview-header">
+            <div class="component-newsview-date"></div>
+            <h1 class="component-newsview-title">e-Advice Service - New Transaction and Function Announcement</h1>
+        </header>
+
+        <div class="component-newsview-body">
+            <p class='cosc-item-description'>
+                Starting from March 10, 2025, the e-Advice "Deposit and Remittance" Advice Type will include a new type of transaction advice, being the “Time Deposit” transaction advice.<br>
+            </p>
+            <p class='cosc-item-description'>
+                In addition, new users of "Global MyB2B" can quickly activate the e-Advice service and set up the receiving email address through the automated step-by-step guidance in Global MyB2B, allowing such new users to access transaction advices more promptly and conveniently.<br>
+            </p>
+            <p class='cosc-item-description'>
+                Cathay United Bank is committed to provide more efficient services to our customers and look forward to our customers’ enjoyment of the convenience brought by these new features.<br>
+            </p>
+            <p class='cosc-item-description'>
+                If there are any questions regarding the e-Advice service, please feel free to contact your relationship manager or call our customer service hotline at +65 6593 9280.<br>
+            </p>
+        </div>
+        <footer class="component-newsview-footer">
+            <div class="component-btn-row">
+                <a class="component-btn-main btn-green" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/")">Back</a>
+            </div>
+        </footer>
+    </div>
+</article><!--/.component-newsview-->

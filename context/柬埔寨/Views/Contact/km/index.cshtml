@@ -1,0 +1,502 @@
+@{
+	ViewData["PageTitle"] = "ទំនាក់ទំនងមកពួកយើង";
+	ViewData["PageDescription"] = "សូមទាក់មកកាន់សហការីយើងខ្ញុំ ប្រសិនបើលោកអ្នកត្រូវការជំនួយឬព័ត៌មានបន្ថែម។ យើងខ្ញុំតែងតែរីករាយក្នុងការផ្ដល់ជំនួយជូនលោកអ្នក។ ប្រសិនបើលោកអ្នកត្រូវការស្វែងរកទីតាំងផ្ទាល់របស់សាខានិងម៉ាស៊ីនអេធីអឹម សូមស្វែងរកព័ត៌មានលម្អិតដូចខាងក្រោម៖";
+}
+
+@section Scripts {
+	<script src="/assets/js/branch.js"></script>
+    <script src="/assets/js/purify.js"></script>
+	<script nonce="NhOc3wZFJ7hZvX9oqCrl/g">
+        const urlImg = '@Url.Content("~/")' + 'Contact/ReadCaptcha';//
+        const url = '@Url.Content("~/")' + 'Contact/SummitData';
+        $(function () {
+            getCaptcha();
+			console.log('initBranch');
+			var branchElms = $('[data-comp="branch"]');
+			branchElms.each(function () {
+				var elm = $(this),
+					json = elm.attr('data-json'),
+					_branch = new branch();
+				_branch.init(elm, json);
+			});
+        });
+        function getCaptcha() {
+            //alert(urlImg);
+            var obj = new Object();
+            $.ajax({
+                type: "GET",
+                async:false,
+                url: urlImg,
+                data: JSON.stringify(obj),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    //alert(JSON.stringify(textStatus));
+                    const imgStr = "data:image/jpeg;base64," + data.Data.PictureBase64;
+                    //alert(imgStr);
+                    $("#imgCaptcha").attr("src", imgStr);
+                    //ShowMsg(data.responseText);
+                },
+                error: function (xhr, textStatus) {
+                    ShowMsg(xhr.responseText);
+                }
+            });
+        }
+        function onSubmit() {
+            ClearMsg();
+            //alert('submit');
+            var obj = new Object();
+            obj.chkaccept = "Y";
+            obj.txtName = "";
+            if ($("#subject").val() === "") {
+                obj.chkaccept = "N";
+                if (!$("#subject").hasClass('is-invalid'))
+                    $("#subject").toggleClass('is-invalid');
+            } else {
+                obj.txtSubject = $("#subject").val();
+                $("#subject").removeClass('is-invalid');
+            }
+            if ($("#comments").val() === "") {
+                if (!$("#comments").hasClass('is-invalid'))
+                    $("#comments").toggleClass('is-invalid');
+                obj.chkaccept = "N";
+            } else {
+                obj.txtAreaCom = $("#comments").val();
+                $("#comments").removeClass('is-invalid');
+            }
+
+            //obj.txtMobileNum = "0923127356";
+            if ($("#email").val() === "") {
+                if (!$("#email").hasClass('is-invalid'))
+                    $("#email").toggleClass('is-invalid');
+                obj.chkaccept = "N";
+            } else {
+                obj.txtEmail = $("#email").val();
+                $("#email").removeClass('is-invalid');
+            }
+            if ($("#customerName").val() === "") {
+                if (!$("#customerName").hasClass('is-invalid'))
+                    $("#customerName").toggleClass('is-invalid');
+                obj.chkaccept = "N";
+            } else {
+                obj.txtCustomerName = $("#customerName").val();
+                $("#customerName").removeClass('is-invalid');
+            }
+            if ($("#account").val() === "") {
+                if (!$("#account").hasClass('is-invalid'))
+                    $("#account").toggleClass('is-invalid');
+                obj.chkaccept = "N";
+            } else {
+                obj.txtAccount = $("#account").val();
+                $("#account").removeClass('is-invalid');
+            }
+            if ($("#product").val() === "សូមជ្រើសរើស") {
+                if (!$("#product").hasClass('is-invalid'))
+                    $("#product").toggleClass('is-invalid');
+                obj.chkaccept = "N";
+            } else {
+                obj.selProduct = $("#product").val();
+                $("#product").removeClass('is-invalid');
+            }
+            //obj.txtEmail = "newJob@gmail.com";
+            //obj.txtAreaCom = "";
+            if ($("#phone").val() === "") {
+                if (!$("#phone").hasClass('is-invalid'))
+                    $("#phone").toggleClass('is-invalid');
+                obj.chkaccept = "N";
+            } else {
+                obj.txtPhone = $("#phone").val();
+                $("#phone").removeClass('is-invalid');
+            }
+
+            if ($("#txtCaptcha").val() === "") {
+                $("#errCaptcha").show();
+                obj.chkaccept = "N";
+            } else {
+                obj.txtCaptcha = $("#txtCaptcha").val();
+                $("#errCaptcha").hide();
+            }
+            //alert(url);
+            //obj.txtAreaCom = "txtAreaCom";
+            if (obj.chkaccept === "Y") {
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: JSON.stringify(obj),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (data, textStatus, xhr) {
+                        //alert(JSON.stringify(textStatus));
+                        //alert(JSON.stringify(data));
+                        ShowMsg(data.ReturnMessage);
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        //alert('failed');
+                        ShowMsg(xhr.responseText);
+                    }
+                });
+            }
+        }
+        function ShowMsg(str) {
+            $("#showmsg").html(DOMPurify.sanitize(str)).css({ "color": "red", "font-size": "200%" });
+        }
+        function ClearMsg() {
+            $("#showmsg").html("");
+        }
+	</script>
+}
+
+
+
+<!-- Page START -->
+<main class="mastbody">
+
+    <!-- 先顯示圖片在頁面最上方 -->
+    <div class="topkv kv  kv--txt-left">
+        <div class="kv-bg">
+            <div class="kv-bg-inner">
+                <figure class="kv-bg-img">
+                    <picture>
+                        <source media="(min-width:769px)" srcset="/assets/img/topkv/contact.jpg" />
+                        <img srcset="/assets/img/topkv/contact-mb.jpg">
+                    </picture>
+                </figure>
+            </div>
+        </div>
+        <div class="kv-cont">
+            <div class="kv-cont-inner">
+                <h1 class="display-1-sm fw-bold lh-xs">ពិភាក្សា</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- Breadcrumb 置於圖片下方 -->
+    <nav class="breadcrumb-nav text-white" aria-label="breadcrumb">
+        <div class="fluid">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]"><span>ទំព័រដើម</span><i class="ico-ui-home"></i></a></li>
+                <li class="breadcrumb-item active" aria-current="page">ពិភាក្សា</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Tab Navigation -->
+    <nav class="tabmenu d-none d-sm-block">
+        <div class="tabmenu-inner">
+            <a class="tabmenu-btn" href="#" data-tab="contactUs">
+                <span class="tabmenu-btn-txt">ទំនាក់ទំនងមកពួកយើង</span>
+                <i class="tabmenu-btn-line"></i>
+            </a>
+            <a class="tabmenu-btn" href="#" data-tab="feedbackForm">
+                <span class="tabmenu-btn-txt">បញ្ចេញមតិយោបល់មកពួកយើង</span>
+                <i class="tabmenu-btn-line"></i>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Mobile dropdown -->
+    <div class="tabmenu-dropdown dropdown d-block d-sm-none">
+        <a href="javascript:;" class="btn btn-sm btn-block dropdown-toggle" data-toggle="dropdown">
+            <span class="text-truncate d-inline-block">ទំនាក់ទំនងមកពួកយើង</span>
+        </a>
+        <div class="dropdown-menu">
+            <span class="dropdown-item disabled">-- Select page --</span>
+            <a class="dropdown-item text-truncate" href="#" data-tab="contactUs">ទំនាក់ទំនងមកពួកយើង</a>
+            <a class="dropdown-item text-truncate" href="#" data-tab="feedbackForm">បញ្ចេញមតិយោបល់មកពួកយើង</a>
+        </div>
+    </div>
+
+    <!-- 聯繫我們 Section -->
+    <div id="contactUs" class="tab-content">
+        <section class="fluid overflow-hidden">
+            <div class="py-page"></div>
+
+            <header class="compact  mb-5  text-center">
+                <h3 class="display-3 h1-mb  mb-3  text-black fw-bold">គេហទំព័រផ្លូវការរបស់យើង</h3>
+                <h4 class="tdisplay-3 h1-mb  mb-3  text-black ">សូមជម្រាបជូនថា គេហទំព័រផ្លូវការរបស់ធនាគារ កាថេយូណៃធីត (ខេមបូឌា) ម.ក </h4>
+                <h5 class="h1 h2-mb  mb-4  text-black fw-bold text-center lh-sm">www.cathaybk.com.kh</h5>
+            </header>
+
+
+            <!-- Page heading -->
+            <header class="compact  mb-5  text-center">
+                <h2 class="display-3 h1-mb  mb-3  text-black fw-bold">ព័ត៌មានទំនាក់ទំនង</h2>
+                <p class="text-left">សូមធ្វើការទំនាក់ទំនងមកកាន់យើងខ្ញុំប្រសិនបើលោកអ្នកត្រូវការជំនួយរឺព័ត៌មានបន្ថែម។យើងខ្ញុំ   សូមស្វាគមន៍សំរាប់លោកអ្នកជានិច្ច ។ ប្រសិនបើលោកអ្នកត្រូវការស្វែងរកទីតាំងរបស់យើងខ្ញុំ   សូមសំដៅទៅរកផែនទីសាខា និង ផែនទីទីតាំង អេធីអឹម របស់យើងខ្ញុំ ។ ខាងក្រោមជាព័ត៌មានលំអិតនៃទីតាំងរបស់យើងខ្ញុំ</p>
+            </header>
+
+            <div class="compact">
+
+                <!-- Section heading -->
+                <h3 class="h1 h2-mb  mb-4  text-black fw-bold text-center lh-sm">ការិយាល័យកណ្តាល</h3>
+
+                <ul class="list-disc mb-4">
+                    <li>Address: No.48, Samdach Pan St.(214), Sangkat Boeung Raing, Khan Daun Penh, Phnom Penh</li>
+                    <li>Tel: (855) 23 -211 211</li>
+                    <li>Hotline 24/7: (855) 23 885 500</li>
+                    <li>Fax: (855) 23 -21 21 21</li>
+                    <li>Swift: CSBC KHPP</li>
+                </ul>
+
+                <!--
+                    Form
+                -->
+                <!-- QA item -->
+                <div class="qaitem" js-foldable-group="internet">
+                    <div class="qaitem-title" role="button" tabindex="0" js-foldable-head>
+                        <h3 class="qaitem-title-txt  h3 h4-mb text-dark fw-bold">Contact Form</h3>
+                    </div>
+                    <div class="qaitem-detail" js-foldable-body>
+
+                        <!-- Form container -->
+                        <div class="px-3 py-4 px-sm-4 px-lg-5">
+                            <!-- Form fields START -->
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <label for="subject">ប្រធានបទ</label>
+                                    <input type="text" class="form-control" id="subject" placeholder="ប្រធានបទ" required>
+                                    <div class="invalid-feedback">សូមពិនិត្យមើលទិន្នន័យបញ្ចូលរបស់អ្នក។</div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="customerName">ឈ្មោះអតិថិជន</label>
+                                    <input type="text" class="form-control" id="customerName" placeholder="ឈ្មោះអតិថិជន" required>
+                                    <div class="invalid-feedback">សូមពិនិត្យមើលទិន្នន័យបញ្ចូលរបស់អ្នក។.</div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="account">លេខគណនី</label>
+                                    <input type="text" class="form-control" id="account" placeholder="លេខគណនី" required>
+                                    <div class="invalid-feedback">សូមពិនិត្យមើលទិន្នន័យបញ្ចូលរបស់អ្នក។</div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="email">អាសយដ្ឋានអ៊ីមែល</label>
+                                    <input type="email" class="form-control" id="email" placeholder="អាសយដ្ឋានអ៊ីមែល" required>
+                                    <div class="invalid-feedback">សូមពិនិត្យមើលទិន្នន័យបញ្ចូលរបស់អ្នក។</div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="phone">លេខទូរស័ព្ទ</label>
+                                    <input type="text" class="form-control" id="phone" placeholder="លេខទូរស័ព្ទ" required>
+                                    <div class="invalid-feedback">សូមពិនិត្យមើលទិន្នន័យបញ្ចូលរបស់អ្នក។</div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <label for="product">ផលិតផល/សេវាកម្ម</label>
+                                    <select class="custom-select" id="product" required>
+                                        <option selected>សូមជ្រើសរើស</option>
+                                        <option value="ការផ្ទេរប្រាក់">ការផ្ទេរប្រាក់</option>
+                                        <option value="ឥណទាន">ឥណទាន</option>
+                                        <option value="អេធីអឹម">អេធីអឹម</option>
+                                        <option value="ប័ណ្ណឥណពន្ធ">ប័ណ្ណឥណពន្ធ</option>
+                                        <option value="ប័ណ្ណឥណទាន">ប័ណ្ណឥណទាន</option>
+                                        <option value="គណនីសន្សំ">គណនីសន្សំ</option>
+                                        <option value="គណនីចរន្ត">គណនីចរន្ត</option>
+                                        <option value="ប្រត្តិបត្តិការធនាគារចល័ត">ប្រតិបត្តិការធនាគារចល័ត</option>
+                                        <option value="សេវាកម្មផ្សេងៗ">សេវាកម្មផ្សេងៗ</option>
+                                    </select>
+                                    <div class="invalid-feedback">Please check your input data.</div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="comments">Comments</label>
+                                    <textarea class="form-control" rows="5" id="comments" required></textarea>
+                                    <div class="invalid-feedback">សូមពិនិត្យមើលទិន្នន័យបញ្ចូលរបស់អ្នក។</div>
+                                </div>
+                            </div>
+                            <!-- Form fields END -->
+
+                            <div class="text-center">
+                                <div class="d-flex justify-content-center mb-3">
+                                    <div class="g-recaptcha" data-sitekey="6Le-wvkSAAAAAPBMRTvw0Q4Muexq9bi0DJwx_mJ-" data-callback="onSuccess" data-action="action">
+                                    </div>
+                                    <input id="txtCaptcha" name="txtCaptcha" class="txt" type="text" autocomplete="off" placeholder="please input captcha code">
+                                    <img onclick="getCaptcha()" src="#" alt="" id="imgCaptcha" style="width: 110px; height: 48px; border-radius:5px;margin-left:5px;">
+
+                                </div>
+                                <div class="invalid-feedback" id="errCaptcha" style="margin-top:-10px;margin-bottom:10px;">សូមពិនិត្យមើលទិន្នន័យបញ្ចូលរបស់អ្នក។</div>
+                                <button type="button" class="btn btn-green" onclick="onSubmit(); return false;">
+                                    <span class="px-2">យល់ព្រម<i class="ico-ui-right-v ml-2 big"></i></span>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="qaitem" js-foldable-group="internet">
+                    <div class="qaitem-title" role="button" tabindex="0" js-foldable-head>
+                        <h3 class="qaitem-title-txt  h3 h4-mb text-dark fw-bold">Close CUBC Account ?</h3>
+                    </div>
+                    <div class="qaitem-detail" js-foldable-body>
+                        <div class="px-3 py-4 px-sm-4 px-lg-5">
+                            <img class="w-100 lazy" data-src="/assets/img/topkv/close_cubc_account.jpg" alt="Personal Banking">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="py-page" id="showmsg"></div>
+        </section>
+
+        <!--
+            ATM & Branch Locator
+        -->
+        <section class="branchfinder" id="find-us" data-comp="branch" data-json="/assets/json/branch-atm.json">
+            <div class="py-page"></div>
+
+            <!-- Section heading -->
+            <h2 class="h1 h2-mb  mb-4  text-black fw-bold text-center lh-sm">ទីតាំងពួកយើង</h2>
+
+            <div class="branchfinder-wrap row bg-gray-100">
+
+                <!-- Google map -->
+                <div class="branchfinder-map  col-12 col-lg-6  d-flex flex-column ie11fix">
+                    <div class="w-100 h-100">
+                        <iframe id="branchMap" tabindex="-1" class="w-100 h-100" src="about:blank" width="960" height="600" allowfullscreen="" scrolling="no" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+
+                <!-- Search Panel -->
+                <div class="branchfinder-panel  col-12 col-lg-6  d-flex flex-column ie11fix">
+
+                    <!-- Input -->
+                    <div class="branchfinder-input  p-3 p-md-4 px-xl-5">
+                        <!-- Block heading -->
+                        <h3 class="h3 h3-mb  mb-3  text-black fw-bolder">Find ATM / Branch</h3>
+
+                        <div class="row align-items-center">
+                            <div class="col-12 col-md-auto">
+
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="typeBranch" name="type" class="custom-control-input type" value="branch">
+                                    <label class="custom-control-label" for="typeBranch"><span class="d-block fw-bolder">Branch</span></label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="typeATM" name="type" class="custom-control-input type" value="atm">
+                                    <label class="custom-control-label" for="typeATM"><span class="d-block fw-bolder">ATM</span></label></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Result -->
+                    <div class="branchfinder-result  p-3 p-md-4 px-xl-5" role="branchListHolder">
+
+                        <!-- Result item -->
+                        <script type="text/template" id="branchListItemTemplate">
+                            <div class="mb-4 branchListItem %type%" data-type="%type%" data-map="%map%" data-url="%url%">
+                                <h6 role="button" class="branchItemName h4 hover-green text-black lh-sm d-flex">
+                                    <i class="ico-ui-location h2 mr-2 ml-1 mt-n1"></i>
+                                    <div>
+                                        <span class="d-block mb-1 fw-bolder">%city%</span>
+                                    </div>
+                                </h6>
+                            </div>
+                        </script>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="py-page"></div>
+        </section>
+    </div>
+
+    <!-- 意見反應表 Section -->
+    <div id="feedbackForm" class="tab-content" style="display: none;">
+        <section class="fluid overflow-hidden">
+            <div class="py-page"></div>
+            <header class="compact mb-5 text-center">
+                <h3 class="display-3 h1-mb mb-3 text-black fw-bold">ការ​ដោះស្រាយបណ្តឹង</h3>
+            </header>
+            <figure class="kv-bg-img">
+                <picture class="mb-4">
+                <source media="(min-width:769px)" srcset="/assets/img/topkv/feedback1_KM.png" class="mb-4"/>
+                <img srcset="/assets/img/topkv/feedback1_KM-mb.jpg" class="mb-4">
+            </picture>
+            </figure>
+
+            <!-- 新增投訴流程內容 -->
+            <div class="text-left px-3">
+                <h1 class="complaints-process-title mb-4">ផ្នែកដោះស្រាយបណ្តឹង</h1>
+                <ul style="list-disc mb-4"> ប្រសិនបើ​លោក​អ្នក​មិន​ពេញចិត្ត​ជាមួយនឹង​សេវាកម្ម​ដែល​ផ្តល់​ជូន​លោក​អ្នក​ សូម​​ទាក់ទង​មក​កាន់​យើងខ្ញុំ​ តាម​រយៈ​បណ្តាញ​ ដូច​ខាងក្រោម​៖
+                </ul>
+                <ul class="list-disc">
+                        <li>
+                            ទូរសព្ទមកលេខ: (៨៥៥)២៣ ៨៨២ ៨០០ (បម្រើជូនចាប់ពីម៉ោង ៨:០០ ដល់ម៉ោង ១៧:០០ រៀងរាល់ថ្ងៃធ្វើការ)
+                        </li>
+                        <li>​តាមរយ:អ៊ីម៉ែល:  <a href="mailto:complainthandling@cathaybk.com.kh" style="color: #008000; font-weight:bold">complainthandling@cathaybk.com.kh</a></li>
+                        <li>អញ្ជើញ​មក​កាន់ការិយាល័យកណ្តាល ឬ​សាខា ​​ធនាគារ​ ​​ដែល​នៅ​ជិត​លោក​អ្នក​បំផុត ដើម្បី​ឱ្យ​យើង​ខ្ញុំ​ដោះ​ស្រាយ​បញ្ហា​ជូន​លោក​អ្នក</li>
+                        <li>
+                            ឬបំពេញ​ព័ត៌មាន​នៅ​ក្នុង​ទម្រង់​បណ្តឹង​​របស់​អតិថិជន សូម​បំពេញ
+                            <a href="@ViewData["siteLangUrl"]feedback" target="_blank" style="color: #008000; font-weight: bold;">
+                                Complaint Acknowledgement Form
+                            </a>និង​ចុច​បញ្ជូន
+                        </li>
+                    </ul>
+
+                    <ul>អ្នកជំនាញ​ផ្នែក​ដោះស្រាយ​បណ្តឹង​​ នឹង​ទាក់ទង​លោក​អ្នក​ភ្លាមៗ</ul>
+               <figure class="kv-bg-img">
+                    <picture>
+                        <source media="(min-width:769px)" srcset="/assets/img/topkv/feedback2_KM.jpg" class="mb-4" />
+                        <img srcset="/assets/img/topkv/feedback2_KM-mb.jpg" class="mb-4">
+                    </picture>
+                </figure>
+                <ul class="list-disc mb-4">
+                        <li>
+                            ពាក្យបណ្តឹងមិនត្រូវលើសពី​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​ ៦០ថ្ងៃបន្ទាប់ពីអ្នកប្រើប្រាស់បានដឹងអំពីបញ្ហា
+                        </li>
+                        <li>
+                            បណ្តឹង​ផ្ទាល់​មាត់​របស់​លោក​អ្នក​អាច​ត្រូវ​បាន​ដោះ​ស្រាយ​ក្នុង​អំឡុង​ពេល ២ថ្ងៃ​ នៃ​ ថ្ងៃ​ធ្វើការ។ ប្រសិនបើការតវ៉ាដោយបណ្តឹង​ផ្ទាល់​មាត់មិនអាចដោះស្រាយបានក្នុងរយៈពេល ២ថ្ងៃ​ នៃ​ថ្ងៃ​ធ្វើ​ការ ក្រុមប្រឹក្សា ដោះស្រាយបណ្តឹងនឹងលើកទឹកចិត្ត
+                            អតិថិជនឱ្យដាក់ពាក្យបណ្តឹងជាលាយលក្ខណ៍អក្សរ
+                        </li>
+                        <li>
+                            ធនាគារនឹងផ្តល់ព័ត៌មានជាលាយលក្ខណ៍អក្សរលើការស៊ើបអង្កេតពាក្យបណ្តឹងក្នុងរយៈពេល ៣០ ថ្ងៃបន្ទាប់ពីទទួលបានទម្រង់បែបបទបណ្តឹង
+                        </li>
+                        <li>
+                            រាល់​ព័ត៌មាន​របស់​លោក​អ្នក​ត្រូវ​បាន​រក្សា​ជាការសម្ងាត់
+                        </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+</main>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // 預設顯示聯繫我們內容
+        document.getElementById('contactUs').style.display = 'block';
+
+        // 設定聯繫我們標籤為選取的樣式
+        const contactTabButton = document.querySelector('.tabmenu-btn[data-tab="contactUs"]');
+        if (contactTabButton) {
+            contactTabButton.classList.add('active');
+            // 顯示選中的標籤名稱
+            document.querySelector('.dropdown-toggle span').textContent = contactTabButton.textContent;
+        }
+    });
+
+    document.querySelectorAll('.tabmenu-btn, .dropdown-item').forEach(button => {
+        button.addEventListener('click', function (event) {
+            event.preventDefault();
+            const tabId = this.getAttribute('data-tab');
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.style.display = 'none';
+            });
+            document.getElementById(tabId).style.display = 'block';
+
+            // 更新選中的按鈕樣式
+            document.querySelectorAll('.tabmenu-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`.tabmenu-btn[data-tab="${tabId}"]`).classList.add('active');
+
+            // 更新 dropdown 的顯示文字
+            const selectedText = this.textContent.trim();
+            document.querySelector('.dropdown-toggle span').textContent = selectedText;
+        });
+    });
+</script>
+<!-- Page END -->

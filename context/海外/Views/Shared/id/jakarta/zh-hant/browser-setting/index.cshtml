@@ -1,0 +1,60 @@
+﻿@model IndexViewModel
+
+@if (ViewBag.lang == "zh-hant")
+{
+    ViewBag.PageTitle = "瀏覽器建議";
+    ViewBag.PageDescription = "";
+}
+else
+{
+    ViewBag.PageTitle = "Browser Setting";
+    ViewBag.PageDescription = "";
+}
+
+
+@section Scripts {}
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/browser-setting-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/browser-setting.jpg")' alt='@ViewBag.nav_important_notice'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_browser_setting</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_browser_setting</h1>
+        </div>
+    </div>
+</div>
+
+<div class='component-oversea-info'>
+    <div class="coi-inner">
+        <h1 class="coi-title">@ViewBag.nav_browser_setting</h1>
+        <div class="coi-content">
+            <p class="coi-p">
+                親愛的客戶 您好：<br />
+                為了提供您最佳的瀏覽體驗，本行將不再支援IE11(含)以下的瀏覽器。<br />※ 提醒您：微軟於2022 年 6 月 15 日 起，某些 Windows 10 版本不再支援 Internet Explorer 11 傳統型應用程式， 詳情請見《<a class='coi-link' href='https://docs.microsoft.com/zh-tw/lifecycle/announcements/internet-explorer-11-end-of-support?rtc=1' target="_blank" rel='noopener nofollow'>微軟停止支援公告</a>》
+            </p>
+
+            <p class="coi-p">
+                建議您選用其他瀏覽器：<br />
+                <ul class="coi-ul">
+                    <li class="coi-li">
+                        <a class='coi-link' href="https://www.google.com.tw/chrome/" target="_blank" rel='noopener nofollow'>點此下載 Google Chrome</a>
+                    </li>
+                    <li class="coi-li">
+                        <a class='coi-link' href="https://www.microsoft.com/zh-tw/edge" target="_blank" rel='noopener nofollow'>點此下載 Edge</a>
+                    </li>
+                    <li class="coi-li">
+                        <a class='coi-link' href="https://www.mozilla.org/zh-TW/firefox/new/" target="_blank" rel='noopener nofollow'>點此下載 Firefox</a>
+                    </li>
+                </ul>
+            </p>
+
+
+        </div>
+
+    </div>
+</div><!--/.component-oversea-info-->

@@ -1,0 +1,69 @@
+﻿@if (ViewBag.lang == "zh-hant")
+{
+
+
+    <div class='component-oversea-modal component-oversea-modal--exit'>
+        <div class="modal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="com-body">
+                        <div class="com-title">您即將離開我們的網站</div>
+                        <p class="com-p">此連結將帶你進入第三方營運的網站，<br />不屬於本行控制範圍內</p>
+                        <div class="com-btn-wrap">
+                            <button type="button" role='close-com-modal' class="com-btn com-btn--halo" data-bs-dismiss="modal">取消</button>
+                            <a href="javascript:;" role='confirm-com-modal' target="_blank" rel="noopener" class="com-btn">我了解，請繼續</a>
+                        </div>
+                    </div>
+                    <button type="button" role='close-com-modal' class="com-btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+else if(ViewBag.lang == "en")
+{
+
+    <div class='component-oversea-modal component-oversea-modal--exit'>
+        <div class="modal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="com-body">
+                        <div class="com-title">You are leaving our website.</div>
+                        <p class="com-p">
+                            This link will direct you to a third party website.<br />Cathay United Bank has no supervision or control over the third party website.
+                        </p>
+                        <div class="com-btn-wrap com-btn-wrap--column">
+                            <button type="button" role='close-com-modal' class="com-btn com-btn--halo" data-bs-dismiss="modal">Cancel </button>
+                            <a href="javascript:;" role='confirm-com-modal' target="_blank" rel="noopener" class="com-btn">I understand, please proceed</a>
+                        </div>
+                    </div>
+                    <button type="button" role='close-com-modal' class="com-btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+
+    <div class='component-oversea-modal component-oversea-modal--exit'>
+        <div class="modal" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="com-body">
+                        <div class="com-title">You are leaving our website.</div>
+                        <p class="com-p">
+                            This link will direct you to a third party website.<br />Cathay United Bank has no supervision or control over the third party website.
+                        </p>
+                        <div class="com-btn-wrap com-btn-wrap--column">
+                            <button type="button" role='close-com-modal' class="com-btn com-btn--halo" data-bs-dismiss="modal">Cancel </button>
+                            <a href="javascript:;" role='confirm-com-modal' target="_blank" rel="noopener" class="com-btn">I understand, please proceed</a>
+                        </div>
+                    </div>
+                    <button type="button" role='close-com-modal' class="com-btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+}

@@ -1,0 +1,264 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "";
+    ViewBag.PageDescription = "";
+}
+
+@section Scripts {
+
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/jquery.scrollbar.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/slick.min.js")"></script>
+
+
+    <script>
+        var homeCard = homeCard || {};
+        homeCard.prototype = {
+            sameHeight: function () {
+
+                let window_w = $(window).width();
+                let max_h = 0;
+                let scope = $('.component-oversea-services');
+                $('.cos-item-description', scope).css('min-height', 0);
+                if (window_w >= 768) {
+                    $('.cos-item', scope).each(function () {
+                        let h = $('.cos-item-description', $(this)).height();
+                        if (h > max_h) {
+                            max_h = h;
+                        }
+                    })
+                    $('.cos-item-description', scope).height(max_h);
+                } else {
+                    $('.cos-item-description', scope).css('height', 'auto');
+                }
+            },
+            addEventListener: function () {
+                let o = this;
+                $(window).on('resize.homeCard', function () {
+                    o.sameHeight();
+                }).trigger('resize.homeCard');
+            },
+            init: function () {
+                this.addEventListener();
+            }
+        }
+    </script>
+
+    <script>
+        $(function () {
+
+            var myHomeCard = homeCard.prototype;
+           myHomeCard.init();
+
+
+            //
+            $(window).resize(function () {
+
+                let window_w = $(window).width();
+                let offset_x;
+                let content_w;
+                if (window_w > 991) {
+                    offset_x = $('.cok-inner').offset().left;
+                    content_w = $('.cok-content').width();
+                    max_w = window_w - content_w - offset_x;
+                } else {
+                    offset_x = 0;
+                    content_w = 0;
+                    max_w = window_w;
+                }
+                $('.cok-figure-wrap').css('width', max_w);
+                $('.cok-figure-wrap').css('flex-basis', max_w);
+                $('.cok-figure-wrap').css('max-width', max_w);
+                $('.cok-figure-wrap').css('left', content_w + offset_x);
+
+            }).trigger('resize');
+
+            $(".cok-figure-slider").slick({
+                infinite: false,
+                slidesToShow: 1,
+                dots: false
+            });
+
+            ////////////////////////////
+
+            //$('.con-list', $(this)).scrollbar();
+        })
+    </script>
+
+    <script>
+        //fraud modal
+        $(function () {
+            let myFraudModal = fraudModal.prototype;
+            myFraudModal.init($('.component-oversea-modal--fraud'));
+            myFraudModal.show();
+        })
+    </script>
+}
+
+<div class='component-oversea-kv'>
+    <div class="cok-figure-wrap">
+        <div class="cok-figure-slider">
+            <div class="cok-figure-item">
+                <figure class='cok-figure'>
+                    <picture>
+                        <source media='(min-width: 992px)'
+                                srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv/bg-lg.jpg")' />
+                        <img class='cok-img' src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv/bg.jpg")' alt='@ViewBag.site_name'>
+                    </picture>
+                    <figcaption hidden>@ViewBag.site_name</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+
+    <div class="cok-inner">
+        <div class="cok-content">
+            
+            <h1 class='cok-title'>
+                <span class='cok-title--company'>Cathay United Bank</span>
+                <span class='cok-title--slogan'>A partner worthy of your trust</span>
+            </h1>
+          
+            <div class='component-oversea-news'>
+                <h2 class='con-title'><a class='con-title-link' href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/")">@ViewBag.home_latest_news</a></h2>
+                <ul class='con-list scrollbar-inner'>
+                    <li class='con-item'>
+                        <a href="@Url.Content("~/OVSWS/Content/pdf/" +@ViewBag.country_url+"/" +@ViewBag.city_url+"/announcements/Notice of Handling Dormant Account.pdf")" target="_blank" rel="noopener" class='con-item-link'>
+                            <span class='con-item-date'>2024-06-21</span>
+                            <span class='con-item-title'>
+                                Notification of Dormant Account and Closed Account
+                            </span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class='component-oversea-services component-oversea-services--33  component-oversea-services--home'>
+    <div class="cos-inner">
+
+        <h2 class='cos-title'>
+            Ho Chi Minh City Branch
+        </h2>
+        <p class='cos-description' style="max-width:1200px">
+            Since 2005, Cathay United Bank has successively established a branch and representative offices in Vietnam. In 2022,
+            the branch was relocated to Ho Chi Minh City to further develop the Vietnamese market and, concurrently,
+            the HCMC representative office was relocated to Quang Nam province. Currently, Cathay United Bank has three footholds in Vietnam,
+            namely, Ho Chi Minh City Branch, Hanoi Representative Office, and Quang Nam Representative Office,
+            providing premium banking services in places across northern, central, and southern Vietnam.
+        </p>
+        <p></p>
+        <p class='cos-description' style="max-width:1200px">
+            Cathay United Bank Ho Chi Minh City Branch provides domestic and overseas enterprises with diverse financial services. Moreover,
+            in line with the growing economy in Vietnam, the branch officially entered Vietnam’s digital consumer banking market in March 2024,
+            becoming the first Taiwanese bank in Vietnam to launch fully digital, end-to-end consumer financing services. Boasting professional teams,
+            Cathay United Bank will continue to serve customers proactively and build extraordinary customer experiences.
+        </p>
+
+            <ul class='cos-list'>
+                <li class='cos-item'>
+                    <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"services/cash-management/")" class='cos-item-link'>
+                        <figure class='cos-item-figure'>
+                            <picture>
+                                <img class='cos-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services/home/cash-management.jpg")' alt='@ViewBag.nav_services_cash_management'>
+                            </picture>
+                            <figcaption hidden>@ViewBag.nav_services_cash_management</figcaption>
+                        </figure>
+                        <div class='cos-item-content'>
+                            <h3 class='cos-item-title'>@ViewBag.nav_services_cash_management</h3>
+                            <p class='cos-item-description'>We provide you convenient and comprehensive cash management products and create all-round cash flow services for you to effectively manage your accounts payable and accounts receivable to enhance the fund utilization efficiency.</p>
+                            <div class='cos-item-btn'>@ViewBag.btn_learn_more</div>
+                        </div>
+                    </a>
+                </li>
+
+                <li class='cos-item'>
+                    <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"services/corporate-financing/")" class='cos-item-link'>
+                        <figure class='cos-item-figure'>
+                            <picture>
+                                <img class='cos-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services/home/corporate-financing.jpg")' alt='@ViewBag.nav_services_corporate_finance'>
+                            </picture>
+                            <figcaption hidden>@ViewBag.nav_services_corporate_finance</figcaption>
+                        </figure>
+                        <div class='cos-item-content'>
+                            <h3 class='cos-item-title'>@ViewBag.nav_services_corporate_finance</h3>
+                            <p class='cos-item-description'>We provide the complete and diversified corporate finance services, customize the comprehensive financial services for you.</p>
+                            <div class='cos-item-btn'>@ViewBag.btn_learn_more</div>
+                        </div>
+                    </a>
+                </li>
+                <li class='cos-item'>
+                    <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"services/otc-derivatives/")" class='cos-item-link'>
+                        <figure class='cos-item-figure'>
+                            <picture>
+                                <img class='cos-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services/home/otc-derivatives.jpg")' alt='Derivative Products'>
+                            </picture>
+                            <figcaption hidden>Derivative Products</figcaption>
+                        </figure>
+                        <div class='cos-item-content'>
+                            <h3 class='cos-item-title'> Derivative Products</h3>
+                            <p class='cos-item-description'>We provide professional interest rate hedging derivative products for you to manage and mitigate the volatility of interest rate in market.</p>
+                            <div class='cos-item-btn'>@ViewBag.btn_learn_more</div>
+                        </div>
+                    </a>
+                </li>
+
+
+            </ul>
+            <ul class='cos-list'>
+
+                <li class='cos-item'>
+                    <a href="https://www.vn.cathaybk.com/home" class='cos-item-link' target="_blank" rel="noopener" rel="noreferrer">
+                        <figure class='cos-item-figure'>
+                            <picture>
+                                <img class='cos-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services/home/digital-consumer-Loan.jpg")' alt='@ViewBag.nav_services_digital_consumer_loan'>
+                            </picture>
+                            <figcaption hidden>@ViewBag.nav_services_digital_consumer_loan</figcaption>
+                        </figure>
+                        <div class='cos-item-content'>
+                            <h3 class='cos-item-title'>@ViewBag.nav_services_digital_consumer_loan</h3>
+                            <p class='cos-item-description'>
+                                Digital consumer loan is an unsecured loan provided to individuals for consumer purposes, living needs and receives a disbursement amount via Bank’s disbursement methods. This is a loan product with fully digitalized process.
+                            </p>
+                            <div class='cos-item-btn'>@ViewBag.btn_learn_more</div>
+                        </div>
+                    </a>
+                </li>
+                <li class='cos-item'>
+                    <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"services/trade-finance/")" class='cos-item-link'>
+                        <figure class='cos-item-figure'>
+                            <picture>
+                                <img class='cos-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services/home/trade-finance.jpg")' alt='@ViewBag.nav_services_trade_finance'>
+                            </picture>
+                            <figcaption hidden>@ViewBag.nav_services_trade_finance</figcaption>
+                        </figure>
+                        <div class='cos-item-content'>
+                            <h3 class='cos-item-title'>@ViewBag.nav_services_trade_finance</h3>
+                            <p class='cos-item-description'>We provide comprehensive and diversified international trade and finance services to meet each company's fund needs in all development stages and offer the most suitable products that are especially tailor made for you.</p>
+                            <div class='cos-item-btn'>@ViewBag.btn_learn_more</div>
+                        </div>
+                    </a>
+                </li>
+                <li class='cos-item'>
+                    <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"services/foreign-exchange/")" class='cos-item-link'>
+                        <figure class='cos-item-figure'>
+                            <picture>
+                                <img class='cos-item-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/services/home/foreign-exchange.jpg")' alt='@ViewBag.nav_services_foreign_exchange'>
+                            </picture>
+                            <figcaption hidden>@ViewBag.nav_services_foreign_exchange</figcaption>
+                        </figure>
+                        <div class='cos-item-content'>
+                            <h3 class='cos-item-title'>@ViewBag.nav_services_foreign_exchange</h3>
+                            <p class='cos-item-description'>
+                                We provide professional FX hedging service for you to manage and mitigate the volatility in the foreign exchange market.
+                            </p>
+                            <div class='cos-item-btn'>@ViewBag.btn_learn_more</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+
+
+    </div>
+</div>

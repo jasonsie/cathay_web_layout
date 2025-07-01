@@ -1,0 +1,688 @@
+﻿@using CathayBankKh.ViewComponents
+<!-- Global Header -->
+<header class="masthead">
+    <div class="masthead-inner">
+        <a class="masthead-logo" href="/">
+            <img class="masthead-logo-img" src="~/assets/img/ui/header-logo.svg" alt="CUBU Bank">
+        </a>
+
+        <!-- PC navigation -->
+        <nav class="navbar">
+            <div class="navbar-item">
+                <a class="navbar-link" href="@ViewData["siteLangUrl"]personal/" js-panel-btn="subnav-personal">
+                    <!-- Bind js-panel ID -->
+                    <span class="navbar-link-txt">Personal Banking</span>
+                    <i class="navbar-link-ico ico-ui-down-v"></i>
+                </a>
+            </div>
+            <div class="navbar-item">
+                <a class="navbar-link" href="@ViewData["siteLangUrl"]business/" js-panel-btn="subnav-business">
+                    <!-- Bind js-panel ID -->
+                    <span class="navbar-link-txt">Business Banking</span>
+                    <i class="navbar-link-ico ico-ui-down-v"></i>
+                </a>
+            </div>
+            <div class="navbar-item">
+                <a class="navbar-link" href="@ViewData["siteLangUrl"]about-us/">
+                    <span class="navbar-link-txt">About Us</span>
+                </a>
+            </div>
+            <div class="navbar-item">
+                <a class="navbar-link" href="@ViewData["siteLangUrl"]careers/">
+                    <span class="navbar-link-txt">Careers</span>
+                </a>
+            </div>
+            <div class="navbar-item">
+                <a class="navbar-link" href="@ViewData["siteLangUrl"]contact/">
+                    <span class="navbar-link-txt">Support</span>
+                </a>
+            </div>
+
+            @await Component.InvokeAsync(typeof(ExchangeRateViewComponent))
+        </nav>
+
+
+        <!-- PC subnav-personal -->
+        <nav class="subnav panel--full" js-panel="subnav-personal">
+            <!-- Bind js-panel ID -->
+            <div class="subnav-inner">
+
+                <!-- Personal overview -->
+                <!-- <div class="subnav-row">
+                    <div class="subnav-col">
+                        <div class="subnav-item">
+                            <a class="subnav-link fw-bolder text-dark" href="@ViewData["siteLangUrl"]personal/">
+                                <span class="subnav-link-txt">Personal Banking</span>
+                                <i class="subnav-link-ico ico-ui-right-v ml-2 text-green-dark big"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- Personal pages -->
+                <div class="subnav-row  subnav--scrollable">
+                    <div class="subnav-col">
+                        <div class="subnav-item">
+                            <span class="subnav-link fw-bold text-dark">
+                                <span class="subnav-link-txt">Deposit Accounts<b class="underdash"></b></span>
+                            </span>
+                        </div>
+                        <div class="subnav-item">
+                            <a class="subnav-link" href="@ViewData["siteLangUrl"]personal/current-account/">
+                                <span class="subnav-link-txt">Current Account</span>
+                            </a>
+                        </div>
+                        <div class="subnav-item">
+                            <a class="subnav-link" href="@ViewData["siteLangUrl"]personal/savings-account/">
+                                <span class="subnav-link-txt">Savings Account</span>
+                            </a>
+                        </div>
+                        <div class="subnav-item">
+                            <a class="subnav-link" href="@ViewData["siteLangUrl"]personal/fixed-deposit/">
+                                <span class="subnav-link-txt">Fixed Deposit</span>
+                            </a>
+                        </div>
+                        <div class="subnav-item">
+                            <a class="subnav-link" href="@ViewData["siteLangUrl"]personal/deposit-pricing-guide/">
+                                <span class="subnav-link-txt">Deposit Pricing Guide</span>
+                            </a>
+                        </div>
+                    </div><!--/.subnav-col-->
+
+                    <div class="subnav-col">
+                        <div class="subnav-item">
+                            <span class="subnav-link fw-bold text-dark">
+                                <span class="subnav-link-txt">Remittances<b class="underdash"></b></span>
+                            </span>
+                        </div>
+                        <div class="subnav-item">
+                            <a class="subnav-link" href="@ViewData["siteLangUrl"]personal/inward-and-outward-remittance/">
+                                <span class="subnav-link-txt">Inward & Outward Remittances</span>
+                            </a>
+                        </div>
+                        <div class="subnav-item">
+                            <a class="subnav-link" href="@ViewData["siteLangUrl"]personal/payment-and-transfer/">
+                                <span class="subnav-link-txt">Payment & Transfer</span>
+                            </a>
+                        </div>
+                    </div><!--/.subnav-col-->
+
+                    <div class="subnav-col">
+                        <div class="subnav-item">
+                            <span class="subnav-link fw-bold text-dark">
+                                <span class="subnav-link-txt">Borrowing Solutions<b class="underdash"></b></span>
+                            </span>
+                        </div>
+                        <div class="subnav-item">
+                            <a class="subnav-link" href="@ViewData["siteLangUrl"]personal/individual-loan/">
+                                <span class="subnav-link-txt">Individual Loan</span>
+                            </a>
+                        </div>
+                    </div><!--/.subnav-col-->
+
+                    <div class="subnav-col">
+                        <div class="subnav-item">
+                            <span class="subnav-link fw-bold text-dark">
+                                <span class="subnav-link-txt">Personal Cards<b class="underdash"></b></span>
+                            </span>
+                        </div>
+                        <div class="subnav-item">
+                            <a class="subnav-link" href="@ViewData["siteLangUrl"]personal/credit-cards/">
+                                <span class="subnav-link-txt">Credit Cards</span>
+                            </a>
+                            <a class="subnav-link" href="@ViewData["siteLangUrl"]personal/debit-cards/">
+                                <span class="subnav-link-txt">Debit Cards</span>
+                            </a>
+                            <a class="subnav-link" href="@ViewData["siteLangUrl"]personal/card-promotions/">
+                                <span class="subnav-link-txt">Card Promotions</span>
+                            </a>
+                            <a class="subnav-link" href="@ViewData["siteLangUrl"]personal/rewards-program/">
+                                <span class="subnav-link-txt">Rewards Program</span>
+                            </a>
+                            <a class="subnav-link" href="@ViewData["siteLangUrl"]personal/cubc-exclusive/">
+
+								<span class="subnav-link-txt">Experience with CashPoint</span>
+
+                            </a>
+                            <a class="subnav-link" href="@ViewData["siteLangUrl"]personal/apply-online?Channel=Website">
+                                <span class="subnav-link-txt">Apply Credit Card</span>
+                            </a>
+                        </div>
+                    </div><!--/.subnav-col-->
+
+                    <div class="subnav-col">
+                        <div class="subnav-item">
+                            <span class="subnav-link fw-bold text-dark">
+                                <span class="subnav-link-txt">ATM<b class="underdash"></b></span>
+                            </span>
+                        </div>
+                        <div class="subnav-item">
+                            <a class="subnav-link" href="@ViewData["siteLangUrl"]personal/atm-service/">
+                                <span class="subnav-link-txt">ATM Service</span>
+                            </a>
+                        </div>
+                    </div><!--/.subnav-col-->
+
+                    <div class="subnav-col">
+                        <div class="subnav-item">
+                            <span class="subnav-link fw-bold text-dark">
+                                <span class="subnav-link-txt">Online Banking<b class="underdash"></b></span>
+                            </span>
+                        </div>
+                        <div class="subnav-item">
+                            <a class="subnav-link" href="@ViewData["siteLangUrl"]personal/internet-banking/">
+                                <span class="subnav-link-txt">iBanking</span>
+                            </a>
+                            <a class="subnav-link" href="@ViewData["siteLangUrl"]personal/mobile-banking/">
+                                <span class="subnav-link-txt">mBanking</span>
+                            </a>
+                            <a class="subnav-link" href="@ViewData["siteLangUrl"]personal/merchant-app/">
+                                <span class="subnav-link-txt">Merchant App</span>
+                            </a>
+                            <a class="subnav-link" href="@ViewData["siteLangUrl"]personal/alert-services/">
+                                <span class="subnav-link-txt">Alert Services</span>
+                            </a>
+                            <a class="subnav-link" href="@ViewData["siteLangUrl"]personal/user-guide/">
+                                <span class="subnav-link-txt">User Guide</span>
+                            </a>
+                        </div>
+                    </div><!--/.subnav-col-->
+
+                    <div class="subnav-col">
+                        <div class="subnav-item">
+                            <span class="subnav-link fw-bold text-dark">
+                                <span class="subnav-link-txt">Exchange Rates<b class="underdash"></b></span>
+                            </span>
+                        </div>
+                        <div class="subnav-item">
+                            <a class="subnav-link" href="@ViewData["siteLangUrl"]personal/available-exchange-at-counter/">
+                                <span class="subnav-link-txt">Available Exchange at Counter</span>
+                            </a>
+                            <a class="subnav-link" href="@ViewData["siteLangUrl"]personal/swift-exchange-transfer/">
+                                <span class="subnav-link-txt">SWIFT Transfer Exchange</span>
+                            </a>
+                        </div>
+                    </div><!--/.subnav-col-->
+
+                </div><!--/.subnav-row-->
+            </div>
+        </nav>
+
+        <!-- PC subnav-business -->
+        <nav class="subnav panel--full" js-panel="subnav-business">
+            <!-- Bind js-panel ID -->
+            <div class="subnav-inner">
+
+                <!-- Business overview -->
+                <!-- <div class="subnav-row">
+                    <div class="subnav-col">
+                        <div class="subnav-item">
+                            <a class="subnav-link fw-bolder text-dark" href="@ViewData["siteLangUrl"]business/">
+                                <span class="subnav-link-txt">Business Banking</span>
+                                <i class="subnav-link-ico ico-ui-right-v ml-2 text-green-dark big"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div> -->
+                <!-- Business pages -->
+                <div class="subnav-row row--scrollable">
+                    <div class="subnav-col">
+                        <div class="subnav-item">
+                            <span class="subnav-link fw-bold text-dark">
+                                <span class="subnav-link-txt">Deposit Accounts<b class="underdash"></b></span>
+                            </span>
+                        </div>
+                        <div class="subnav-item">
+                            <a class="subnav-link" href="@ViewData["siteLangUrl"]business/current-account/">
+                                <span class="subnav-link-txt">Current Account</span>
+                            </a>
+                            <a class="subnav-link" href="@ViewData["siteLangUrl"]business/business-savings-account/">
+                                <span class="subnav-link-txt">Business Savings Account</span>
+                            </a>
+                        </div>
+                    </div><!--/.subnav-col-->
+
+                    <div class="subnav-col">
+                        <div class="subnav-item">
+                            <a class="subnav-link fw-bold text-dark" href="@ViewData["siteLangUrl"]business/remittance/">
+                                <span class="subnav-link-txt">Remittances<b class="underdash"></b></span>
+                            </a>
+                        </div>
+                    </div><!--/.subnav-col-->
+
+                    <div class="subnav-col">
+                        <div class="subnav-item">
+                            <span class="subnav-link fw-bold text-dark">
+                                <span class="subnav-link-txt">Credit Facilities<b class="underdash"></b></span>
+                            </span>
+                        </div>
+                        <div class="subnav-item">
+                            <a class="subnav-link" href="@ViewData["siteLangUrl"]business/commercial-loan/">
+                                <span class="subnav-link-txt">Commercial Loan</span>
+                            </a>
+                        </div>
+                    </div><!--/.subnav-col-->
+
+                    <div class="subnav-col">
+                        <div class="subnav-item">
+                            <span class="subnav-link fw-bold text-dark">
+                                <span class="subnav-link-txt">Online Banking<b class="underdash"></b></span>
+                            </span>
+                        </div>
+                        <div class="subnav-item">
+                            <a class="subnav-link" href="@ViewData["siteLangUrl"]business/global-myb2b/">
+                                <span class="subnav-link-txt">Global MyB2B</span>
+                            </a>
+                        </div>
+                    </div><!--/.subnav-col-->
+
+                    <div class="subnav-col">
+                        <div class="subnav-item">
+                            <a class="subnav-link fw-bold text-dark" href="@ViewData["siteLangUrl"]business/merchant-services/">
+                                <span class="subnav-link-txt">Merchant Services<b class="underdash"></b></span>
+                            </a>
+                        </div>
+                    </div><!--/.subnav-col-->
+
+                    <div class="subnav-col">
+                        <div class="subnav-item">
+                            <a class="subnav-link fw-bold text-dark" href="@ViewData["siteLangUrl"]business/international-trade/">
+                                <span class="subnav-link-txt">International Trade<b class="underdash"></b></span>
+                            </a>
+                        </div>
+                    </div><!--/.subnav-col-->
+
+                    <div class="subnav-col">
+                        <div class="subnav-item">
+                            <a class="subnav-link fw-bold text-dark" href="@ViewData["siteLangUrl"]business/payroll-service/">
+                                <span class="subnav-link-txt">Payroll Service<b class="underdash"></b></span>
+                            </a>
+                        </div>
+
+                    </div><!--/.subnav-col-->
+
+                    <div class="subnav-col">
+                        <div class="subnav-item">
+                            <a class="subnav-link fw-bold text-dark" href="@ViewData["siteLangUrl"]business/escrow-service/">
+                                <span class="subnav-link-txt">Escrow Service<b class="underdash"></b></span>
+                            </a>
+                        </div>
+
+                    </div><!--/.subnav-col-->
+                </div><!--/.subnav-row-->
+            </div>
+        </nav>
+
+
+
+
+        <!-- Mobile navigation -->
+        <div class="mbpanel" js-panel="mbpanel">
+            <!-- Bind js-panel -->
+            <div class="mbpanel-inner">
+                <div class="mbpanel-col">
+
+                    <!-- Personal -->
+                    <nav class="mbpanel-item" js-foldable-group>
+
+                        <!-- main btn  -->
+                        <a class="mbpanel-link" href="@ViewData["siteLangUrl"]personal/" js-foldable-head>
+                            <span class="mbpanel-link-txt">Personal Banking</span>
+                            <i class="mbpanel-link-ico ico-ui-right-v"></i>
+                        </a>
+
+                        <!-- sub menu -->
+                        <div class="mbpanel-sub" js-foldable-body>
+
+                            <!-- overview item -->
+                            <div class="mbpanel-subitem">
+                                <a class="mbpanel-sublink" href="@ViewData["siteLangUrl"]personal/">
+                                    <span class="mbpanel-sublink-txt">Overview</span>
+                                </a>
+                            </div>
+
+                            <!-- item group -->
+                            <hr class="mbpanel-hr">
+                            <div class="mbpanel-subitem">
+                                <span class="mbpanel-sublink fw-bold text-dark">
+                                    <span class="mbpanel-sublink-txt">Deposit Accounts<b class="underdash"></b></span>
+                                </span>
+                            </div>
+                            <div class="mbpanel-subitem">
+                                <a class="mbpanel-sublink" href="@ViewData["siteLangUrl"]personal/current-account/">
+                                    <span class="mbpanel-sublink-txt">Current Account</span>
+                                </a>
+                            </div>
+                            <div class="mbpanel-subitem">
+                                <a class="mbpanel-sublink" href="@ViewData["siteLangUrl"]personal/savings-account/">
+                                    <span class="mbpanel-sublink-txt">Savings Account</span>
+                                </a>
+                            </div>
+                            <div class="mbpanel-subitem">
+                                <a class="mbpanel-sublink" href="@ViewData["siteLangUrl"]personal/fixed-deposit/">
+                                    <span class="mbpanel-sublink-txt">Fixed Deposit</span>
+                                </a>
+                            </div>
+                            <div class="mbpanel-subitem">
+                                <a class="mbpanel-sublink" href="@ViewData["siteLangUrl"]personal/deposit-pricing-guide/">
+                                    <span class="mbpanel-sublink-txt">Deposit Pricing Guide</span>
+                                </a>
+                            </div>
+
+                            <!-- item group -->
+                            <hr class="mbpanel-hr">
+                            <div class="mbpanel-subitem">
+                                <span class="mbpanel-sublink fw-bold text-dark">
+                                    <span class="mbpanel-sublink-txt">Remittances<b class="underdash"></b></span>
+                                </span>
+                            </div>
+                            <div class="mbpanel-subitem">
+                                <a class="mbpanel-sublink" href="@ViewData["siteLangUrl"]personal/inward-and-outward-remittance/">
+                                    <span class="mbpanel-sublink-txt">Inward & Outward Remittances</span>
+                                </a>
+                            </div>
+                            <div class="mbpanel-subitem">
+                                <a class="mbpanel-sublink" href="@ViewData["siteLangUrl"]personal/payment-and-transfer/">
+                                    <span class="mbpanel-sublink-txt">Payment & Transfer</span>
+                                </a>
+                            </div>
+
+                            <!-- item group -->
+                            <hr class="mbpanel-hr">
+                            <div class="mbpanel-subitem">
+                                <span class="mbpanel-sublink fw-bold text-dark">
+                                    <span class="mbpanel-sublink-txt">Borrowing Solutions<b class="underdash"></b></span>
+                                </span>
+                            </div>
+                            <div class="mbpanel-subitem">
+                                <a class="mbpanel-sublink" href="@ViewData["siteLangUrl"]personal/individual-loan/">
+                                    <span class="mbpanel-sublink-txt">Individual Loan</span>
+                                </a>
+                            </div>
+
+                            <!-- item group -->
+                            <hr class="mbpanel-hr">
+                            <div class="mbpanel-subitem">
+                                <span class="mbpanel-sublink fw-bold text-dark">
+                                    <span class="mbpanel-sublink-txt">Personal Cards<b class="underdash"></b></span>
+                                </span>
+                            </div>
+                            <div class="mbpanel-subitem">
+                                <a class="mbpanel-sublink" href="@ViewData["siteLangUrl"]personal/credit-cards/">
+                                    <span class="mbpanel-sublink-txt">Credit Cards</span>
+                                </a>
+                                <a class="mbpanel-sublink" href="@ViewData["siteLangUrl"]personal/debit-cards/">
+                                    <span class="mbpanel-sublink-txt">Debit Cards</span>
+                                </a>
+                                <a class="mbpanel-sublink" href="@ViewData["siteLangUrl"]personal/card-promotions/">
+                                    <span class="mbpanel-sublink-txt">Card Promotions</span>
+                                </a>
+                                <a class="mbpanel-sublink" href="@ViewData["siteLangUrl"]personal/rewards-program/">
+                                    <span class="mbpanel-sublink-txt">Rewards Program</span>
+                                </a>
+                                <a class="mbpanel-sublink" href="@ViewData["siteLangUrl"]personal/cubc-exclusive/">
+
+									<span class="mbpanel-sublink-txt">Experience with CashPoint</span>
+
+                                </a>
+                                <a class="mbpanel-sublink" href="@ViewData["siteLangUrl"]personal/apply-online?Channel=Website">
+                                    <span class="mbpanel-sublink-txt">Apply Credit Card</span>
+                                </a>
+                            </div>
+
+                            <!-- item group -->
+                            <hr class="mbpanel-hr">
+                            <div class="mbpanel-subitem">
+                                <span class="mbpanel-sublink fw-bold text-dark">
+                                    <span class="mbpanel-sublink-txt">ATM<b class="underdash"></b></span>
+                                </span>
+                            </div>
+                            <div class="mbpanel-subitem">
+                                <a class="mbpanel-sublink" href="@ViewData["siteLangUrl"]personal/atm-service/">
+                                    <span class="mbpanel-sublink-txt">ATM Service</span>
+                                </a>
+                            </div>
+
+                            <!-- item group -->
+                            <hr class="mbpanel-hr">
+                            <div class="mbpanel-subitem">
+                                <span class="mbpanel-sublink fw-bold text-dark">
+                                    <span class="mbpanel-sublink-txt">Online Banking<b class="underdash"></b></span>
+                                </span>
+                            </div>
+                            <div class="mbpanel-subitem">
+                                <a class="mbpanel-sublink" href="@ViewData["siteLangUrl"]personal/internet-banking/">
+                                    <span class="mbpanel-sublink-txt">iBanking</span>
+                                </a>
+                                <a class="mbpanel-sublink" href="@ViewData["siteLangUrl"]personal/mobile-banking/">
+                                    <span class="mbpanel-sublink-txt">mBanking</span>
+                                </a>
+                                <a class="mbpanel-sublink" href="@ViewData["siteLangUrl"]personal/merchant-app/">
+                                    <span class="mbpanel-sublink-txt">Merchant App</span>
+                                </a>
+                                <a class="mbpanel-sublink" href="@ViewData["siteLangUrl"]personal/alert-services/">
+                                    <span class="mbpanel-sublink-txt">Alert Services</span>
+                                </a>
+                                <a class="mbpanel-sublink" href="@ViewData["siteLangUrl"]personal/user-guide/">
+                                    <span class="mbpanel-sublink-txt">User Guide</span>
+                                </a>
+                            </div>
+
+                            <!-- item group -->
+                            <hr class="mbpanel-hr">
+                            <div class="mbpanel-subitem">
+                                <span class="mbpanel-sublink fw-bold text-dark">
+                                    <span class="mbpanel-sublink-txt">Exchange Rates<b class="underdash"></b></span>
+                                </span>
+                            </div>
+                            <div class="mbpanel-subitem">
+                                <a class="mbpanel-sublink" href="@ViewData["siteLangUrl"]personal/available-exchange-at-counter/">
+                                    <span class="mbpanel-sublink-txt">Available Exchange at Counter</span>
+                                </a>
+                            </div>
+                            <div class="mbpanel-subitem">
+                                <a class="mbpanel-sublink" href="@ViewData["siteLangUrl"]personal/swift-exchange-transfer/">
+                                    <span class="mbpanel-sublink-txt">SWIFT Transfer Exchange</span>
+                                </a>
+                            </div>
+
+                        </div>
+                    </nav>
+
+                    <!-- Business -->
+                    <nav class="mbpanel-item" js-foldable-group>
+                        <!-- main btn  -->
+                        <a class="mbpanel-link" href="@ViewData["siteLangUrl"]business/" js-foldable-head>
+                            <span class="mbpanel-link-txt">Business Banking</span>
+                            <i class="mbpanel-link-ico ico-ui-right-v"></i>
+                        </a>
+                        <!-- sub menu -->
+                        <div class="mbpanel-sub" js-foldable-body>
+
+                            <!-- overview item -->
+                            <div class="mbpanel-subitem">
+                                <a class="mbpanel-sublink" href="@ViewData["siteLangUrl"]business/">
+                                    <span class="mbpanel-sublink-txt">Overview</span>
+                                </a>
+                            </div>
+
+                            <!-- item group -->
+                            <hr class="mbpanel-hr">
+                            <div class="mbpanel-subitem">
+                                <span class="mbpanel-sublink fw-bold text-dark">
+                                    <span class="mbpanel-sublink-txt">Deposit Accounts<b class="underdash"></b></span>
+                                </span>
+                            </div>
+                            <div class="mbpanel-subitem">
+                                <a class="mbpanel-sublink" href="@ViewData["siteLangUrl"]business/current-account/">
+                                    <span class="mbpanel-sublink-txt">Current Account</span>
+                                </a>
+                                
+                            </div>
+                            <div class="mbpanel-subitem">
+                                <a class="mbpanel-sublink" href="@ViewData["siteLangUrl"]business/business-savings-account/">
+                                    <span class="mbpanel-sublink-txt">Business Savings Account</span>
+                                </a>
+                            </div>
+
+
+                            <!-- item group -->
+                            <hr class="mbpanel-hr">
+                            <div class="mbpanel-subitem">
+                                <span class="mbpanel-sublink fw-bold text-dark">
+                                    <span class="mbpanel-sublink-txt">Remittances<b class="underdash"></b></span>
+                                </span>
+                            </div>
+                            <div class="mbpanel-subitem">
+                                <a class="mbpanel-sublink" href="@ViewData["siteLangUrl"]business/remittance/">
+                                    <span class="mbpanel-sublink-txt">Remittances</span>
+                                </a>
+                            </div>
+
+                            <!-- item group -->
+                            <hr class="mbpanel-hr">
+                            <div class="mbpanel-subitem">
+                                <span class="mbpanel-sublink fw-bold text-dark">
+                                    <span class="mbpanel-sublink-txt">Credit Facilities<b class="underdash"></b></span>
+                                </span>
+                            </div>
+                            <div class="mbpanel-subitem">
+                                <a class="mbpanel-sublink" href="@ViewData["siteLangUrl"]business/commercial-loan/">
+                                    <span class="mbpanel-sublink-txt">Commercial Loan</span>
+                                </a>
+                            </div>
+
+                            <!-- item group -->
+                            <hr class="mbpanel-hr">
+                            <div class="mbpanel-subitem">
+                                <span class="mbpanel-sublink fw-bold text-dark">
+                                    <span class="mbpanel-sublink-txt">Online Banking<b class="underdash"></b></span>
+                                </span>
+                            </div>
+                            <div class="mbpanel-subitem">
+                                <a class="mbpanel-sublink" href="@ViewData["siteLangUrl"]business/global-myb2b/">
+                                    <span class="mbpanel-sublink-txt">Global MyB2B</span>
+                                </a>
+                            </div>
+
+                            <!-- item group -->
+                            <hr class="mbpanel-hr">
+                            <div class="mbpanel-subitem">
+                                <span class="mbpanel-sublink fw-bold text-dark">
+                                    <span class="mbpanel-sublink-txt">Merchant Services<b class="underdash"></b></span>
+                                </span>
+                            </div>
+                            <div class="mbpanel-subitem">
+                                <a class="mbpanel-sublink" href="@ViewData["siteLangUrl"]business/merchant-services/">
+                                    <span class="mbpanel-sublink-txt">Merchant Services</span>
+                                </a>
+                            </div>
+
+                            <!-- item group -->
+                            <hr class="mbpanel-hr">
+                            <div class="mbpanel-subitem">
+                                <span class="mbpanel-sublink fw-bold text-dark">
+                                    <span class="mbpanel-sublink-txt">International Trade<b class="underdash"></b></span>
+                                </span>
+                            </div>
+                            <div class="mbpanel-subitem">
+                                <a class="mbpanel-sublink" href="@ViewData["siteLangUrl"]business/international-trade/">
+                                    <span class="mbpanel-sublink-txt">International Trade</span>
+                                </a>
+                            </div>
+
+                            <!-- item group -->
+                            <hr class="mbpanel-hr">
+                            <div class="mbpanel-subitem">
+                                <span class="mbpanel-sublink fw-bold text-dark">
+                                    <span class="mbpanel-sublink-txt">Payroll Service<b class="underdash"></b></span>
+                                </span>
+                            </div>
+                            <div class="mbpanel-subitem">
+                                <a class="mbpanel-sublink" href="@ViewData["siteLangUrl"]business/payroll-service/">
+                                    <span class="mbpanel-sublink-txt">Payroll Service</span>
+                                </a>
+                            </div>
+
+                            <!-- item group -->
+                            <hr class="mbpanel-hr">
+                            <div class="mbpanel-subitem">
+                                <span class="mbpanel-sublink fw-bold text-dark">
+                                    <span class="mbpanel-sublink-txt">Escrow Service<b class="underdash"></b></span>
+                                </span>
+                            </div>
+                            <div class="mbpanel-subitem">
+                                <a class="mbpanel-sublink" href="@ViewData["siteLangUrl"]business/escrow-service/">
+                                    <span class="mbpanel-sublink-txt">Escrow Service</span>
+                                </a>
+                            </div>
+                        </div>
+                    </nav>
+
+                    <nav class="mbpanel-item">
+                        <!-- main btn  -->
+                        <a class="mbpanel-link" href="@ViewData["siteLangUrl"]about-us/">
+                            <span class="mbpanel-link-txt">About Us</span>
+                        </a>
+                    </nav>
+
+                    <nav class="mbpanel-item">
+                        <!-- main btn  -->
+                        <a class="mbpanel-link" href="@ViewData["siteLangUrl"]careers/">
+                            <span class="mbpanel-link-txt">Careers</span>
+                        </a>
+                    </nav>
+
+                    <nav class="mbpanel-item border-bottom-0">
+                        <!-- main btn  -->
+                        <a class="mbpanel-link" href="@ViewData["siteLangUrl"]contact/">
+                            <span class="mbpanel-link-txt">Support</span>
+                        </a>
+                    </nav>
+
+                    <nav class="mbpanel-service">
+                        <div class="d-flex align-items-center">
+                            <a class="btn w-100 btn-outline-green-dark mr-1   px-2 h5-mb nowrap" href="https://www.globalmyb2b.com/GEBANK/Login.aspx">Global MyB2B<i class="ico-ui-exit ml-1"></i></a>
+                            <a class="btn w-100 btn-green-dark ml-1   px-2 h5-mb nowrap" href="https://ibanking.cathaybk.com.kh/">CUBC iBanking<i class="ico-ui-exit ml-1"></i></a>
+                        </div>
+                        <div class="mt-3">
+                            <div class="masthead-lang">
+                                <select class="custom-select  border-gray-dark h5-mb" onchange="location.href=this.value">
+                                    <option value="/@ViewData["pageUrl"]" selected>EN</option>
+                                    <option value="/zh-hant/@ViewData["pageUrl"]">中文</option>
+                                    <option value="/km/@ViewData["pageUrl"]">ខ្មែរ</option>
+                                </select>
+                            </div>
+                        </div>
+                    </nav>
+
+                    <nav class="mbpanel-worldwide">
+                        <div class="splits splits--sm">
+                            <a class="text-green-dark" target="_blank" rel="noopener noreferrer" href="https://www.cathayholdings.com/en/holdings/intro/intro/about">Cathay <br>Holdings</a>
+                            <a class="text-green-dark" target="_blank" rel="noopener noreferrer" href="https://www.cathaybk.com.tw/en-us/cathaybk/english/about-us/about-us/company-history/">Cathay <br>United Bank</a>
+                            <a class="text-green-dark" target="_blank" rel="noopener noreferrer" href="https://www.cathaybk.com.tw/overseas/en/">Overseas <br>Units</a>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div><!--/.mbpanel-->
+
+        <a class="masthead-toggle" href="javascript:;" js-panel-btn="mbpanel" aria-label="Open navigation"><i></i><i></i><i></i></a>
+
+
+        <nav class="masthead-service">
+            <div class="d-flex align-items-center">
+                <a class="btn btn-outline-green-dark" href="https://www.globalmyb2b.com/GEBANK/Login.aspx">Global MyB2B<i class="ico-ui-exit ml-2"></i></a>
+                <a class="btn btn-green-dark ml-2" href="https://ibanking.cathaybk.com.kh/">CUBC iBanking<i class="ico-ui-exit ml-2"></i></a>
+            </div>
+            <div class="d-flex align-items-center ml-2">
+                <div class="masthead-lang">
+                    <select class="custom-select border-gray-dark" onchange="location.href=this.value">
+                        <option value="/@ViewData["pageUrl"]" selected>EN</option>
+                        <option value="/zh-hant/@ViewData["pageUrl"]">中文</option>
+                        <option value="/km/@ViewData["pageUrl"]">ខ្មែរ</option>
+                    </select>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>

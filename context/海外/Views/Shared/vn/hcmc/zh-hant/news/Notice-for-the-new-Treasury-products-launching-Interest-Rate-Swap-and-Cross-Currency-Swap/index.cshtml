@@ -1,0 +1,49 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "公告新產品 – 遠期外匯交易及外匯交換交易";
+    ViewBag.PageDescription = "公告新產品 – 遠期外匯交易及外匯交換交易";
+}
+
+@section Scripts {}
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news.jpg")' alt='@ViewBag.nav_news'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_news</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_news</h1>
+        </div>
+    </div>
+</div>
+
+<!-- newsview -->
+<article class="component-newsview">
+    <div class="component-newsview-inner">
+        <header class="component-newsview-header">
+            <div class="component-newsview-date"></div>
+            <h1 class="component-newsview-title">公告新產品 – 利率交換及外換匯換利交易</h1>
+        </header>
+
+        <div class="component-newsview-body">
+            親愛的顧客 您好：
+            <p>
+                感謝您對國泰世華銀行胡志明市分行的支持與愛護，分行正式提供利率交換 (IRS)及換匯換利交易 (CCS) 合約，提供授信往來客戶多元的避險服務，謹此敬告。
+            <p>
+                歡迎親洽分行或於營業時間致電，將由客戶關係經理與您接洽：+84-28-3825-8768，國泰世華銀行將誠摯為您服務。
+
+</div>
+        <footer class="component-newsview-footer">
+            <div class="component-btn-row">
+                <a class="component-btn-main btn-green" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/")">回上一頁</a>
+            </div>
+        </footer>
+    </div>
+</article><!--/.component-newsview-->

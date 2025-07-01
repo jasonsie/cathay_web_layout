@@ -1,0 +1,328 @@
+﻿@model IndexViewModel
+@using System.Web.Configuration;
+@{
+    ViewBag.PageTitle = "Overseas Units";
+    ViewBag.PageDescription = "Cathay United Bank is committed to providing customers with a broad range of innovative financial solutions to reduce risks, support international business growth and opportunities, and continue expanding our business worldwide.";
+}
+
+
+@section Scripts {
+
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/jquery.scrollbar.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/slick.min.js")"></script>
+
+
+    <script>
+        var card = card || {};
+        card.prototype = {
+            sameHeight: function () {
+                let window_w = $(window).width();
+                let max_h = 0;
+                let scope = $('.col-list');
+                let item_h = 35;
+                if (window_w >= 768) {
+                    item_h = 25;
+                } else {
+                    item_h = 5;
+                }
+                if (window_w >= 0) {
+                    scope.each(function () {
+                        max_h = item_h;
+                        let scope_list = $(this);
+                        $('.col-item', scope_list).each(function () {
+                            let h = $('.col-item-title', $(this)).height();
+                            if (h > max_h) {
+                                max_h = h;
+                            }
+                        })
+                        
+                        $('.col-item-title', scope_list).height(max_h);
+                        $('.col-item-title-wrap', scope_list).css('padding','10px 4px');
+                    })
+                } else {
+                    $('.col-item-title', scope).css('height', 'auto');
+                }
+                
+            },
+            addEventListener: function () {
+                let o = this;
+                $(window).on('resize.card', function () {
+                    o.sameHeight();
+                }).trigger('resize.card');
+            },
+            init: function () {
+                this.addEventListener();
+            }
+        }
+    </script>
+
+    <script>
+        $(function () {
+            var myCard = card.prototype;
+            myCard.init();
+        })
+    </script>
+
+}
+<div class='component-oversea-kv'>
+    <div class="cok-inner">
+        <figure class='cok-figure'>
+            <picture>
+                <source media='(min-width: 992px)' srcset='@Url.Content("~/OVSWS/Content/img/overseas/kv/bg-lg.jpg")' />
+                <img class='cok-img' src='@Url.Content("~/OVSWS/Content/img/overseas/kv/bg.jpg")' alt='Overseas Units'>
+            </picture>
+
+
+            <figcaption hidden>Overseas Units</figcaption>
+        </figure>
+        <h1 class="cok-title">Overseas Units</h1>
+    </div>
+</div>
+<div class='component-oversea-overview'>
+    <div class="coo-inner">
+        <div class="coo-description">
+            Cathay United Bank is committed to providing customers with a broad range of innovative financial solutions to reduce risks, support international business growth and opportunities, and continue expanding our business worldwide.
+        </div>
+    </div>
+</div>
+<div class='component-oversea-list'>
+    <div class="col-inner">
+
+            <div class="col-list-wrap">
+                <h2 class='col-title'>Subsidiary</h2>
+                <ul class='col-list'>
+                    <li class='col-item'>
+                        <a href="https://www.cathaybk.com.kh/" target="_blank" rel="noopener">
+                            <figure class='col-item-figure'>
+                                <picture>
+                                    <img class='col-item-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/city")/cambodia.png'
+                                         alt='Cathay United Bank (Cambodia) Plc.'>
+                                </picture>
+                                <figcaption hidden>Cathay United Bank (Cambodia) Plc.</figcaption>
+                            </figure>
+                            <div class='col-item-title-wrap'>
+                                <div class='col-item-icon'>
+                                    <img class='col-item-icon-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/flag")/cambodia.png'>
+                                </div>
+                                <h3 class='col-item-title'><span>Cathay United Bank (Cambodia) Plc.</h3>
+                            </div>
+                        </a>
+                    </li>
+                    <li class='col-item'>
+                        <a href="https://www.cathaybk.com.cn/Cathaybk/oversea/ShangHai/index.aspx" target="_blank" rel="noopener">
+                            <figure class='col-item-figure'>
+                                <picture>
+                                    <img class='col-item-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/city")/china.png'
+                                         alt='Cathay United Bank (China) Ltd.'>
+                                </picture>
+                                <figcaption hidden>Cathay United Bank (China) Ltd.</figcaption>
+                            </figure>
+                            <div class='col-item-title-wrap'>
+                                <div class='col-item-icon'>
+                                    <img class='col-item-icon-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/flag")/china.png'>
+                                </div>
+                                <h3 class='col-item-title'><span>Cathay United Bank (China) Ltd.</span></h3>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        <div class="col-list-wrap">
+            <h2 class='col-title'>Branch</h2>
+            <ul class='col-list'>
+                <li class='col-item'>
+                    <a href="@Url.Content("~/hongkong/" + ViewBag.lang_url + "/")" target="_blank" rel="noopener">
+                        <figure class='col-item-figure'>
+                            <picture>
+                                <img class='col-item-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/city")/hongkong.png'
+                                     alt='Hong Kong Branch'>
+                            </picture>
+                            <figcaption hidden>Hong Kong Branch</figcaption>
+                        </figure>
+                        <div class='col-item-title-wrap'>
+                            <div class='col-item-icon'>
+                                <img class='col-item-icon-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/flag")/hongkong.png'>
+                            </div>
+                            <h3 class='col-item-title'><span>Hong Kong Branch</span></h3>
+                        </div>
+                    </a>
+                </li>
+                <li class='col-item'>
+                    <a href="@Url.Content("~/sg/" + ViewBag.lang_url + "/")" target="_blank" rel="noopener">
+                        <figure class='col-item-figure'>
+                            <picture>
+                                <img class='col-item-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/city")/singapore.png'
+                                     alt='Singapore Branch'>
+                            </picture>
+                            <figcaption hidden>Singapore Branch</figcaption>
+                        </figure>
+                        <div class='col-item-title-wrap'>
+                            <div class='col-item-icon'>
+                                <img class='col-item-icon-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/flag")/singapore.png'>
+                            </div>
+                            <h3 class='col-item-title'><span>Singapore Branch</span></h3>
+                        </div>
+                    </a>
+                </li>
+                <li class='col-item'>
+                    <a href="@Url.Content("~/ph/manila/" + ViewBag.lang_url + "/")" target="_blank" rel="noopener">
+                        <figure class='col-item-figure'>
+                            <picture>
+                                <img class='col-item-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/city")/manila.png'
+                                     alt='Manila Branch'>
+                            </picture>
+                            <figcaption hidden>Manila Branch</figcaption>
+                        </figure>
+                        <div class='col-item-title-wrap'>
+                            <div class='col-item-icon'>
+                                <img class='col-item-icon-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/flag")/philippines.png'>
+                            </div>
+                            <h3 class='col-item-title'><span>Manila Branch</span></h3>
+                        </div>
+                    </a>
+                </li>
+                <li class='col-item'>
+                    <a href="@Url.Content("~/my/labuan/" + ViewBag.lang_url + "/")" target="_blank" rel="noopener">
+                        <figure class='col-item-figure'>
+                            <picture>
+                                <img class='col-item-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/city")/labuan.png'
+                                     alt='Labuan Branch'>
+                            </picture>
+                            <figcaption hidden>Labuan Branch</figcaption>
+                        </figure>
+                        <div class='col-item-title-wrap'>
+                            <div class='col-item-icon'>
+                                <img class='col-item-icon-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/flag")/malaysia.png'>
+                            </div>
+                            <h3 class='col-item-title'><span>Labuan Branch</span></h3>
+                        </div>
+                    </a>
+                </li>
+                <li class='col-item'>
+                    <a href="@Url.Content("~/vn/hcmc/" + ViewBag.lang_url + "/")" target="_blank" rel="noopener">
+                        <figure class='col-item-figure'>
+                            <picture>
+                                <img class='col-item-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/city")/chu-lai.png'
+                                     alt='Ho Chi Minh City Branch'>
+                            </picture>
+                            <figcaption hidden>Ho Chi Minh City Branch</figcaption>
+                        </figure>
+                        <div class='col-item-title-wrap'>
+                            <div class='col-item-icon'>
+                                <img class='col-item-icon-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/flag")/vietnam.png'>
+                            </div>
+                            <h3 class='col-item-title'><span>Ho Chi Minh City Branch</span></h3>
+                        </div>
+                    </a>
+                </li>
+                <li class='col-item'>
+                    <a href="@Url.Content("~/la/vientiane/" + ViewBag.lang_url + "/")" target="_blank" rel="noopener">
+                        <figure class='col-item-figure'>
+                            <picture>
+                                <img class='col-item-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/city")/vientiane.png'
+                                     alt='Vientiane Branch'>
+                            </picture>
+                            <figcaption hidden>Vientiane Branch</figcaption>
+                        </figure>
+                        <div class='col-item-title-wrap'>
+                            <div class='col-item-icon'>
+                                <img class='col-item-icon-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/flag")/laos.png'>
+                            </div>
+                            <h3 class='col-item-title'><span>Vientiane Branch</span></h3>
+                        </div>
+                    </a>
+                </li>
+                <li class='col-item'>
+                    <a href="@Url.Content("~/mm/yangon/" + ViewBag.lang_url + "/")" target="_blank" rel="noopener">
+                        <figure class='col-item-figure'>
+                            <picture>
+                                <img class='col-item-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/city")/yangon.png'
+                                     alt='Yangon Branch'>
+                            </picture>
+                            <figcaption hidden>Yangon Branch</figcaption>
+                        </figure>
+                        <div class='col-item-title-wrap'>
+                            <div class='col-item-icon'>
+                                <img class='col-item-icon-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/flag")/myanmar.png'>
+                            </div>
+                            <h3 class='col-item-title'><span>Yangon Branch</span></h3>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+            <div class="col-list-wrap">
+                <h2 class='col-title'>Representative office</h2>
+                <ul class='col-list'>
+                    <li class='col-item'>
+                        <a href="@Url.Content("~/th/bangkok/" + ViewBag.lang_url + "/")" target="_blank" rel="noopener">
+                            <figure class='col-item-figure'>
+                                <picture>
+                                    <img class='col-item-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/city")/bangkok.png'
+                                         alt='Bangkok Representative Office'>
+                                </picture>
+                                <figcaption hidden>Bangkok Representative Office</figcaption>
+                            </figure>
+                            <div class='col-item-title-wrap'>
+                                <div class='col-item-icon'>
+                                    <img class='col-item-icon-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/flag")/thailand.png'>
+                                </div>
+                                <h3 class='col-item-title'><span>Bangkok<br/>Representative Office</span></h3>
+                            </div>
+                        </a>
+                    </li>
+                    <li class='col-item'>
+                        <a href="@Url.Content("~/vn/hanoi/" + ViewBag.lang_url + "/")" target="_blank" rel="noopener">
+                            <figure class='col-item-figure'>
+                                <picture>
+                                    <img class='col-item-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/city")/hanoi.png'
+                                         alt='Hanoi Representative Office'>
+                                </picture>
+                                <figcaption hidden>Hanoi Representative Office</figcaption>
+                            </figure>
+                            <div class='col-item-title-wrap'>
+                                <div class='col-item-icon'>
+                                    <img class='col-item-icon-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/flag")/vietnam.png'>
+                                </div>
+                                <h3 class='col-item-title'><span>Hanoi<br/>Representative Office</span></h3>
+                            </div>
+                        </a>
+                    </li>
+                    <li class='col-item'>
+                        <a href="@Url.Content("~/vn/quang-nam/" + ViewBag.lang_url + "/")" target="_blank" rel="noopener">
+                            <figure class='col-item-figure'>
+                                <picture>
+                                    <img class='col-item-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/city")/ho-chi-minh.png'
+                                         alt='Quang Nam Representative Office'>
+                                </picture>
+                                <figcaption hidden>Quang Nam <br/>Representative Office</figcaption>
+                            </figure>
+                            <div class='col-item-title-wrap'>
+                                <div class='col-item-icon'>
+                                    <img class='col-item-icon-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/flag")/vietnam.png'>
+                                </div>
+                                <h3 class='col-item-title'><span>Quang Nam <br />Representative Office</span></h3>
+                            </div>
+                        </a>
+                    </li>
+                    <li class='col-item'>
+                        <a href="@Url.Content("~/id/jakarta/" + ViewBag.lang_url + "/")" target="_blank" rel="noopener">
+                            <figure class='col-item-figure'>
+                                <picture>
+                                    <img class='col-item-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/city")/jakarta.png'
+                                         alt='Jakarta<br/>Representative Office'>
+                                </picture>
+                                <figcaption hidden>Jakarta Representative Office</figcaption>
+                            </figure>
+                            <div class='col-item-title-wrap'>
+                                <div class='col-item-icon'>
+                                    <img class='col-item-icon-img' src='@Url.Content("~/OVSWS/Content/img/overseas/list/flag")/indonesia.png'>
+                                </div>
+                                <h3 class='col-item-title'><span>Jakarta<br/>Representative Office</span></h3>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+    </div>
+</div>

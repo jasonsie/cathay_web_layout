@@ -1,0 +1,33 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = @ViewBag.nav_services_corporate_finance;
+    ViewBag.PageDescription = "";
+}
+
+@section Scripts {}
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/coroperate-financing-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/coroperate-financing.jpg")' alt='@ViewBag.nav_services_corporate_finance'>
+
+        </picture>
+        <figcaption hidden>@ViewBag.nav_services_corporate_finance</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_services_corporate_finance</h1>
+        </div>
+    </div>
+</div>
+
+    <div class='component-oversea-services-list component-bg--white'>
+        <div class="cosl-inner">
+            <h2 class='cosl-title'>@ViewBag.services_title</h2>
+            <p class="cosl-description">We offer Loan, Working Capital Finance, Syndicated Loan, Project finance, and Trade finance for locally registered legal entities.</p>
+        </div>
+    </div>

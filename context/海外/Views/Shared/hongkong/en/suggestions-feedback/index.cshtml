@@ -1,0 +1,56 @@
+﻿@model IndexViewModel
+
+@if (ViewBag.lang == "zh-hant")
+{
+}
+else
+{
+    ViewBag.PageTitle = "Suggestions and Feedback";
+    ViewBag.PageDescription = "";
+}
+@section Scripts {}
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/suggestions-feedback-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/suggestions-feedback.jpg")' alt='@ViewBag.nav_suggestions_feedback'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_suggestions_feedback</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_suggestions_feedback</h1>
+        </div>
+    </div>
+</div>
+    <div class='component-oversea-suggestions-feedback'>
+        <div class='cosf-inner'>
+            <h2 class='cosf-title'>Customer's feedback and complaints</h2>
+            <div class='cosf-content'>
+                <ul class='cosf-list'>
+                    <li class='cosf-item'>
+                        If you have any comments or suggestions with regards to the products or services of the Bank, you may contact the Bank in the following ways and leave your valuable feedback for us to improve:
+                        <ul class='cosf-list'>
+                            <li class='cosf-item'>Send an email to complaint@hk.cathaybk.com.</li>
+                            <li class='cosf-item'>Contact the Bank's Complaint Handling Officer (Tel: 852-3921-7317) during the business hours.</li>
+                            <li class='cosf-item'>
+                                Download <a class='cosf-link' href="@Url.Content("~/OVSWS/Content/pdf/hongkong/client-complaint.pdf")" target="_blank" rel="noopener">the Complaint Form</a> from our website and send the completed form to “Complaint Handling officer, Cathay United Bank Hong Kong Branch, 10F, Lee Garden Three, No.1, Sunning Rd, Causeway Bay, Hong Kong” or fax to 852-2527-0966.
+                                <ul class='cosf-list'>
+                                    <li class='cosf-item'>An independent Complaint Handling Officer will be responsible to handle the complaint.</li>
+                                    <li class='cosf-item'>
+                                        The Bank shall address your comment and feedback within 30 days (excluding the day of receipt) by (including but not limited to) visiting you personally, phone call, post and email.
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class='cosf-item'>
+                        The related personnel handling customer complaints are obligated to keep the complaint and the customer's information confidential.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>

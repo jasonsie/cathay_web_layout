@@ -1,0 +1,48 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "Notice for the new Treasury products launching – Foreign Exchange Forward and Foreign Exchange Swap";
+    ViewBag.PageDescription = "Notice for the new Treasury products launching – Foreign Exchange Forward and Foreign Exchange Swap";
+}
+
+@section Scripts {}
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/kv-short/news.jpg")' alt='@ViewBag.nav_news'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_news</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_news</h1>
+        </div>
+    </div>
+</div>
+
+<!-- newsview -->
+<article class="component-newsview">
+    <div class="component-newsview-inner">
+        <header class="component-newsview-header">
+            <div class="component-newsview-date"></div>
+            <h1 class="component-newsview-title">Cập nhật phiên bản ứng dụng CUB Vietnam mới nhất!</h1>
+        </header>
+
+        <div class="component-newsview-body">
+            <p>
+                Cảm ơn quý khách đã quan tâm và sử dụng dịch vụ của CUBHCM. Để đảm bảo ứng dụng CUB Vietnam đạt hiệu quả hoạt động tốt nhất, đồng thời nâng cao trải nghiệm người dùng, CUBHCM sẽ phát hành phiên bản ứng dụng nâng cấp 1.1.0. Chúng tôi khuyến khích Quý khách nâng cấp lên phiên bản mới nhất từ ngày 13/03/2024.
+            <p>
+                Quý khách có thể dễ dàng thao tác chọn cập nhật từ App Store đối với hệ điều hành iOS và từ Play Store đối với hệ điều hành Android. Mọi thắc mắc cần hỗ trợ thêm, Quý khách có thể liên hệ Hotline dịch vụ khách hàng trong giờ hành chính theo số 028 3622 6836. Trân trọng!
+
+</div>
+        <footer class="component-newsview-footer">
+            <div class="component-btn-row">
+                <a class="component-btn-main btn-green" href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url+"/news/")">Trở lại</a>
+            </div>
+        </footer>
+    </div>
+</article><!--/.component-newsview-->

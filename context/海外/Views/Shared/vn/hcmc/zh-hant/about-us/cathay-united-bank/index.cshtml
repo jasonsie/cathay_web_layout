@@ -1,0 +1,140 @@
+﻿@model IndexViewModel
+@using System.Web.Configuration;
+@{
+    if (ViewBag.lang == "en")
+    {
+        ViewBag.PageTitle = "Cathay United Bank";
+        ViewBag.PageDescription = "";
+    }
+    else if (ViewBag.lang == "vi-vn")
+    {
+        ViewBag.PageTitle = "Ngân hàng Cathay United Bank";
+        ViewBag.PageDescription = "";
+    }
+    else
+    {
+        ViewBag.PageTitle = "國泰世華銀行";
+        ViewBag.PageDescription = "";
+    }
+}
+@section Scripts {
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/jquery.scrollbar.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/OVSWS/Content/js/lib/slick.min.js")"></script>
+
+    <script>
+        $(function () {
+            $(".cok-figure-slider").slick({
+                infinite: false,
+                slidesToShow: 1,
+                dots: false
+            });
+
+            function updateImageContainer() {
+                let window_w = $(window).width();
+                let offset_x;
+                let content_w;
+                let max_w;
+
+                if (window_w > 991) {
+                    offset_x = $('.cok-inner').offset().left;
+                    content_w = $('.cok-content').width();
+                    max_w = window_w - content_w - offset_x;
+
+                    $('.cok-figure-wrap').css({
+                        'width': max_w,
+                        'flex-basis': max_w,
+                        'max-width': max_w,
+                        'left': content_w + offset_x,
+                        'position': 'absolute'
+                    });
+                } else {
+                    $('.cok-figure-wrap').css({
+                        'width': '100%',
+                        'flex-basis': 'auto',
+                        'max-width': '100%',
+                        'left': 'auto',
+                        'position': 'relative'
+                    });
+                }
+            }
+
+            $(window).on('resize', updateImageContainer);
+            updateImageContainer();
+        });</script>
+}
+
+<div class='component-oversea-kv'>
+    <div class="cok-figure-wrap">
+        <div class="cok-figure-slider">
+            <div class="cok-figure-item">
+                <figure class='cok-figure'>
+                    <picture>
+                        <source media='(max-width: 767px)'
+                                srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/about-us/CathayUnitedBank828x400.jpg")' />
+                        <source media='(min-width: 768px) and (max-width: 1279px)'
+                                srcset='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/about-us/CathayUnitedBank1536x400.jpg")' />
+                        <img class='cok-img'
+                             src='@Url.Content("~/OVSWS/Content/img/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/about-us/CathayUnitedBank2000x800.jpg")'
+                             alt='@ViewBag.nav_about_us_cathay_united_bank'>
+                    </picture>
+                    <figcaption hidden>@ViewBag.nav_about_us_cathay_united_bank</figcaption>
+                </figure>
+            </div>
+        </div>
+    </div>
+    <div class="cok-inner">
+        <div class="cok-content">
+            <span class='cok-title--slogan'>@ViewBag.nav_about_us_cathay_united_bank</span>
+        </div>
+    </div>
+</div>
+
+<div class='component-oversea-services component-oversea-services--33  component-oversea-services--home'>
+    <div class="cos-inner">
+        <h2 class='cos-title'>
+            公司簡介
+        </h2>
+        <p class='cos-description' style="max-width:1200px">
+            國泰世華銀行於1975年創立，為國泰金控成員之一，在亞太地區擁有 232個服務據點，遍及台灣、中國、越南、香港、泰國、新加坡、馬來西亞、菲律賓、寮國、柬埔寨、緬甸、印度尼西亞等國，海內外員工數合計逾1萬人。面對全球高通膨、高利率等快變化的嚴峻經濟環境，國泰世華銀行建構彈性的營運思維穩健經營，耕耘企業永續，持續投入低碳經濟、環境永續、健康促進、財務健康、職場培力、社會培力等六大構面，並透過創新、數位方式，持續朝「亞太地區最佳金融機構」目標穩健邁進。
+        </p>
+
+        <p class='cos-description' style="max-width:1200px">
+            <strong>
+                深化數位轉型 打造未來金融
+            </strong>
+        </p>
+        <p class='cos-description' style="max-width:1200px">
+            國泰世華銀行領先同業佈局數位轉型，以Mobile first為發展策略，將創新科技應用在各種數位產品與服務上，透過數位、數據、技術三大主軸打造數據驅動文化，推出應用於多項新數位產品與服務，打造出線上、線下無斷點，全通路的金融服務。榮獲《國際數據資訊IDC》未來企業大獎、《Euromoney》最佳數位銀行及《Asian Banking & Finance》台灣金融科技倡議獎等多項殊榮肯定！
+        </p>
+        <p class='cos-description' style="max-width:1200px">
+            <strong>
+                發揮金融職能 助客戶打造永續企業
+            </strong>
+        </p>
+        <p class='cos-description' style="max-width:1200px">
+            國泰世華銀行深耕永續金融，致力實踐ESG，不僅提供客戶多元永續商品，更協助媒合淨零轉型資源，持續提供值得信賴的全方位財務顧問服務，攜手客戶邁向永續。同時，國泰世華也推動「零碳營運轉型」，接軌全球再生能源百分之百倡議(RE100)，將低碳營運落實在日常業務，目標國內所有據點在2030年全面使用再生能源，做好「永續發展先行者」的責任。
+        </p>
+        <p class='cos-description' style="max-width:1200px">
+            國泰世華銀行發揮金融業的核心職能，致力提供全方面、有溫度的金融服務，並深化企業永續，服務客戶遍及海內外，未來將持續以前瞻的思維、穩健的腳步，繼續做客戶的最佳金融夥伴。
+        </p>
+        <p class='cos-description' style="max-width:1200px">
+            <strong>
+                金融服務據點
+            </strong>
+        </p>
+        <p class='cos-description' style="max-width:1200px">
+            <strong>
+                持續深化海外市場投資佈局 打造標竿區域性銀行
+            </strong>
+        </p>
+        <p class='cos-description' style="max-width:1200px">
+            國泰世華銀行積極搶攻海外市場，將持續投資香港、新加坡、越南三大分行，及中國大陸和柬埔寨子行，結合香港、新加坡的私人銀行服務，提供台商客戶個人理財、企業金融、財務管理等全方位的服務。
+        </p>
+        <p class='cos-description' style="max-width:1200px">
+            國泰世華為台資銀行在東協布局範圍最廣的銀行之一，於東協十國中的新加坡、越南、馬來西亞、菲律賓、緬甸、寮國、柬埔寨、泰國、印尼分別設有分子行或辦事處，藉由67個綿密布局的海外據點，提供客戶在地化的服務與完整跨境整合性資金需求的解決方案，滿足客戶在資金、投資、避險等各面向需求，協助企業強化國際競爭力，致力開拓在地客群及台資跨國企業，強化跨境合作平台，多方開展聯貸主辦、策略性參貸及自貸等授信業務，並推廣綠能專案融資，健全企業金融解決方案，陪伴客戶一同深耕台灣，立足國際。
+        </p>
+    </div>
+    <div class="about-us-back-button-container">
+        <a href="@Url.Content("~/"+@ViewBag.country_url+"/"+@ViewBag.city_url+"/"+@ViewBag.lang_url)" class="about-us-back-button">@ViewBag.about_us_back_button</a>
+    </div>
+</div>

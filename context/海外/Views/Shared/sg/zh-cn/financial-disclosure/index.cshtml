@@ -1,0 +1,41 @@
+﻿@model IndexViewModel
+
+@{
+    ViewBag.PageTitle = "财务揭露";
+    ViewBag.PageDescription = "Page Desctiption";
+}
+
+@section Scripts {}
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/sg/kv-short/financial-disclosure-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/sg/kv-short/financial-disclosure.jpg")' alt='@ViewBag.nav_financial_disclosure'>
+        </picture>
+        <figcaption hidden>@ViewBag.nav_financial_disclosure</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_financial_disclosure</h1>
+        </div>
+    </div>
+</div>
+
+<div class='component-oversea-list'>
+    <div class="col-inner">
+
+        <div class="col-list-wrap">
+            <ul class='col-list'>
+                <li class='col-item'>
+                    <span class='col-item-date'>2019.12.31</span>
+                    <span class='col-item-title'>Financial Highlights</span>
+                    <a href="@Url.Content("~/OVSWS/Content/pdf/sg/financial-disclosure/2019-financial-highlights.pdf")" target="_blank" rel='noopener' class='col-item-btn'><span class='col-item-btn-text'>PDF</span></a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</div>

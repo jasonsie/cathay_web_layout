@@ -1,0 +1,144 @@
+﻿@model IndexViewModel
+
+@if (ViewBag.lang == "zh-hant")
+{
+    ViewBag.PageTitle = "企業融資";
+    ViewBag.PageDescription = "國泰世華商業銀行香港分行提供完整且多元化的企業融資，為您量身打造全面的金融服務。服務內容包含透支、保證、進出口融資、轉口貿易融資、應收 /應付帳款融資、房屋貸款、工商貸款、國際銀行團聯貸、結構融資及專案融資。";
+}
+else
+{
+    ViewBag.PageTitle = "Corporate Finance";
+    ViewBag.PageDescription = "We provide complete and diversified corporate finance services, and customize comprehensive financial services for you.";
+}
+
+@section Scripts {
+    <script>
+        $(function () {
+            var myFaq = faq.prototype;
+            myFaq.init();
+            myFaq.getData('corporate-finance');
+        })
+    </script>
+}
+
+
+<div class='component-oversea-kv-short'>
+    <figure class='coks-figure'>
+        <picture>
+
+            <source media='(min-width: 768px)'
+                    data-srcset='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/coroperate-finance-lg.jpg")' />
+            <img class='coks-img lazy' data-src='@Url.Content("~/OVSWS/Content/img/hongkong/kv-short/coroperate-finance.jpg")' alt='@ViewBag.nav_services_corporate_finance'>
+
+        </picture>
+        <figcaption hidden>@ViewBag.nav_services_corporate_finance</figcaption>
+    </figure>
+    <div class="coks-inner">
+        <div class="coks-content">
+            <h1 class='coks-title'>@ViewBag.nav_services_corporate_finance</h1>
+        </div>
+    </div>
+</div>
+
+@if (ViewBag.lang == "zh-hant")
+{
+    <div class='component-oversea-services-list component-bg--white'>
+        <div class="cosl-inner">
+            <h2 class='cosl-title'>@ViewBag.services_title</h2>
+            <ul class='cosl-list'>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>透支</h3>
+                </li>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>保證</h3>
+                </li>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>進出口融資</h3>
+                </li>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>轉口貿易融資</h3>
+                </li>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>應收 /應付帳款融資</h3>
+                </li>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>房屋貸款</h3>
+                </li>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>工商貸款</h3>
+                </li>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>國際銀行團聯貸</h3>
+                </li>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>結構融資</h3>
+                </li>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>專案融資</h3>
+                </li>
+            </ul>
+        </div>
+    </div>
+}
+else
+{
+    <div class='component-oversea-services-list component-bg--white'>
+        <div class="cosl-inner">
+            <h2 class='cosl-title'>@ViewBag.services_title</h2>
+            <ul class='cosl-list'>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>Overdraft</h3>
+                </li>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>Guarantee</h3>
+                </li>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>Import and export financing</h3>
+                </li>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>Re-export trade finance</h3>
+                </li>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>Accounts receivable/ Accounts payable financing</h3>
+                </li>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>Mortgage loan</h3>
+                </li>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>Corporate lending</h3>
+                </li>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>International syndicated loan</h3>
+                </li>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>Structured financing</h3>
+                </li>
+                <li class='cosl-item'>
+                    <h3 class='cosl-item-title'>Project financing</h3>
+                </li>
+            </ul>
+        </div>
+    </div>
+}
+
+@RenderPage("../../faq.cshtml")
+
+
+<div class='component-oversea-support'>
+    <figure class='cos-figure'>
+        <picture>
+            <source media='(min-width: 768px)'
+                    srcset='@Url.Content("~/OVSWS/Content/img/hongkong/support/bg-lg.jpg")' />
+           
+                <img class='cos-img' src='@Url.Content("~/OVSWS/Content/img/hongkong/support/bg.jpg")' alt='Contact the Branch' s RMs'>
+
+        </picture>
+       
+            <figcaption hidden>Contact the Branch's RMs</figcaption>
+    </figure>
+    <div class="cos-inner">
+       <div class="cos-content">
+            If you want to know more about the content of financing products, <br />please contact <a href="@Url.Content("~/hongkong/en/contact/")" class='cos-link'> our customer relationship manager</a>.
+       </div>
+    </div>
+</div>

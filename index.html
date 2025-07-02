@@ -610,113 +610,317 @@
       </footer>
 
       <script>
-         // Mobile menu toggle functionality
-         document.addEventListener('DOMContentLoaded', function() {
-            const htmlElement = document.documentElement;
-            const menuToggler = document.querySelector('.ch-toggler');
-            const loginToggler = document.querySelector('.ch-login-toggler');
-            const navItems = document.querySelectorAll('.ch-nav-item');
+         // Header functionality following main.js patterns
+         var HeaderHandler = (function() {
+            // Constants
+            var DEVICE_BREAK_POINT = 992;
+            var OPEN_MASK_CLASS = 'mask-on';
+            var OPEN_NAV_CLASS = 'menu-on';
+            var OPEN_LOGIN_NAV_CLASS = 'login-menu-on';
+            var LOCK_BODY_CLASS = 'body-lock';
+            var lastScrollTop = 0;
             
-            // Function to toggle menu open/close
-            function toggleMenu() {
-               htmlElement.classList.toggle('mask-on');
-               htmlElement.classList.toggle('menu-on'); 
-               htmlElement.classList.toggle('body-lock');
-            }
+            // Variables
+            var mobileMode;
+            var windowScrollTop = 0;
             
-            // Function to close menu
-            function closeMenu() {
-               htmlElement.classList.remove('mask-on', 'menu-on', 'body-lock', 'login-menu-on');
-               // Remove hover states from all nav items
-               navItems.forEach(item => {
-                  item.classList.remove('ch-nav-item--hover');
-               });
-            }
+            // Elements
+            var scope = document.querySelector('.component-header');
+            var html = document.documentElement;
+            var body = document.body;
+            var navbar = scope ? scope.querySelector('.ch-navbar') : null;
+            var toggler = scope ? scope.querySelector('.ch-toggler') : null;
+            var loginToggler = scope ? scope.querySelector('.ch-login-toggler') : null;
+            var navItems = scope ? scope.querySelectorAll('.ch-nav-item') : [];
             
-            // Function to toggle login menu
-            function toggleLoginMenu() {
-               htmlElement.classList.toggle('login-menu-on');
-               htmlElement.classList.toggle('mask-on');
-               htmlElement.classList.toggle('body-lock');
-            }
-            
-            // Menu toggler click event
-            if (menuToggler) {
-               menuToggler.addEventListener('click', function(e) {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  
-                  // Close login menu if open
-                  if (htmlElement.classList.contains('login-menu-on')) {
-                     htmlElement.classList.remove('login-menu-on');
+            var checkDevice = function() {
+               var windowWidth = window.innerWidth;
+               if (windowWidth < DEVICE_BREAK_POINT) {
+                  if (mobileMode !== true) {
+                     mobileMode = true;
+                     switchMode();
                   }
-                  
-                  toggleMenu();
-               });
-            }
-            
-            // Login toggler click event
-            if (loginToggler) {
-               loginToggler.addEventListener('click', function(e) {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  
-                  // Close main menu if open
-                  if (htmlElement.classList.contains('menu-on')) {
-                     htmlElement.classList.remove('menu-on');
+               } else {
+                  if (mobileMode !== false) {
+                     mobileMode = false;
+                     switchMode();
                   }
-                  
-                  toggleLoginMenu();
-               });
-            }
+               }
+            };
             
-            // Nav item click events for hover state
-            navItems.forEach(function(navItem) {
-               const navLink = navItem.querySelector('.ch-nav-link');
-               const hasSubmenu = navItem.querySelector('.ch-nav-lv2');
+            var reset = function() {
+               if (!scope) return;
                
-               if (navLink && hasSubmenu) {
-                  navLink.addEventListener('click', function(e) {
+               // Remove all navigation states
+               var elements = scope.querySelectorAll('.ch-nav-lv2--show');
+               for (var i = 0; i < elements.length; i++) {
+                  elements[i].classList.remove('ch-nav-lv2--show');
+               }
+               
+               elements = scope.querySelectorAll('.ch-nav-item');
+               for (var i = 0; i < elements.length; i++) {
+                  elements[i].classList.remove('ch-nav-item--hover');
+               }
+               
+               elements = scope.querySelectorAll('.ch-nav-link');
+               for (var i = 0; i < elements.length; i++) {
+                  elements[i].setAttribute('aria-expanded', 'false');
+               }
+               
+               elements = scope.querySelectorAll('.ch-nav');
+               for (var i = 0; i < elements.length; i++) {
+                  elements[i].style.removeProperty('display');
+               }
+               
+               elements = scope.querySelectorAll('.ch-login-nav');
+               for (var i = 0; i < elements.length; i++) {
+                  elements[i].style.removeProperty('display');
+               }
+            };
+            
+            var initMobileMode = function() {
+               reset();
+               
+               var initDropdown = function() {
+                  var navLinks = scope.querySelectorAll('.ch-nav-link');
+                  
+                  for (var i = 0; i < navLinks.length; i++) {
+                     (function(navLink) {
+                        var hasSubmenu = navLink.parentNode.querySelector('.ch-nav-lv2');
+                        
+                        if (hasSubmenu) {
+                           navLink.addEventListener('click', function(e) {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              
+                              var submenu = this.parentNode.querySelector('.ch-nav-lv2');
+                              var isExpanded = this.getAttribute('aria-expanded') === 'true';
+                              
+                              if (isExpanded) {
+                                 this.setAttribute('aria-expanded', 'false');
+                                 submenu.classList.remove('ch-nav-lv2--show');
+                              } else {
+                                 this.setAttribute('aria-expanded', 'true');
+                                 submenu.classList.add('ch-nav-lv2--show');
+                              }
+                              
+                              return false;
+                           });
+                        }
+                     })(navLinks[i]);
+                  }
+               };
+               
+               var initToggler = function() {
+                  if (!toggler) return;
+                  
+                  toggler.addEventListener('click', function(e) {
                      e.preventDefault();
                      e.stopPropagation();
                      
-                     // Remove hover state from all other nav items
-                     navItems.forEach(item => {
-                        if (item !== navItem) {
-                           item.classList.remove('ch-nav-item--hover');
+                     if (this.classList.contains('moving')) {
+                        return false;
+                     }
+                     
+                     if (!this.classList.contains('ch-toggler--active')) {
+                        lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                        
+                        this.setAttribute('aria-expanded', 'true');
+                        var nav = navbar.querySelector('.ch-nav');
+                        if (nav) nav.style.display = 'block';
+                        
+                        this.classList.add('moving');
+                        setTimeout(function() {
+                           toggler.classList.remove('moving');
+                        }, 10);
+                        
+                        if (!html.classList.contains(OPEN_NAV_CLASS)) {
+                           html.classList.add(OPEN_MASK_CLASS);
+                           html.classList.add(OPEN_NAV_CLASS);
+                           html.classList.add(LOCK_BODY_CLASS);
+                           body.style.top = -lastScrollTop + 'px';
                         }
+                        
+                        // Add click handler to close menu when clicking outside
+                        setTimeout(function() {
+                           document.addEventListener('click', closeMenuHandler);
+                        }, 10);
+                        
+                     } else {
+                        html.classList.remove(OPEN_MASK_CLASS);
+                        html.classList.remove(OPEN_NAV_CLASS);
+                        html.classList.remove(LOCK_BODY_CLASS);
+                        body.style.top = 'auto';
+                        window.scrollTo(0, lastScrollTop);
+                        
+                        this.classList.add('moving');
+                        setTimeout(function() {
+                           var nav = navbar.querySelector('.ch-nav');
+                           if (nav) nav.style.display = 'none';
+                           toggler.classList.remove('moving');
+                           toggler.setAttribute('aria-expanded', 'false');
+                        }, 500);
+                        
+                        document.removeEventListener('click', closeMenuHandler);
+                     }
+                     
+                     this.classList.toggle('ch-toggler--active');
+                     return false;
+                  });
+               };
+               
+               var initLoginToggler = function() {
+                  if (!loginToggler) return;
+                  
+                  loginToggler.addEventListener('click', function(e) {
+                     e.preventDefault();
+                     e.stopPropagation();
+                     
+                     if (this.classList.contains('moving')) {
+                        return false;
+                     }
+                     
+                     if (!this.classList.contains('ch-login-toggler--active')) {
+                        lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                        
+                        this.setAttribute('aria-expanded', 'true');
+                        var loginNav = navbar.querySelector('.ch-login-nav');
+                        if (loginNav) loginNav.style.display = 'block';
+                        
+                        this.classList.add('moving');
+                        setTimeout(function() {
+                           loginToggler.classList.remove('moving');
+                        }, 10);
+                        
+                        if (!html.classList.contains(OPEN_LOGIN_NAV_CLASS)) {
+                           html.classList.add(OPEN_MASK_CLASS);
+                           html.classList.add(OPEN_LOGIN_NAV_CLASS);
+                           html.classList.add(LOCK_BODY_CLASS);
+                           body.style.top = -lastScrollTop + 'px';
+                        }
+                        
+                        // Add click handler to close menu when clicking outside
+                        setTimeout(function() {
+                           document.addEventListener('click', closeLoginMenuHandler);
+                        }, 10);
+                        
+                     } else {
+                        html.classList.remove(OPEN_MASK_CLASS);
+                        html.classList.remove(OPEN_LOGIN_NAV_CLASS);
+                        html.classList.remove(LOCK_BODY_CLASS);
+                        body.style.top = 'auto';
+                        window.scrollTo(0, lastScrollTop);
+                        
+                        this.classList.add('moving');
+                        setTimeout(function() {
+                           var loginNav = navbar.querySelector('.ch-login-nav');
+                           if (loginNav) loginNav.style.display = 'none';
+                           loginToggler.classList.remove('moving');
+                           loginToggler.setAttribute('aria-expanded', 'false');
+                        }, 500);
+                        
+                        document.removeEventListener('click', closeLoginMenuHandler);
+                     }
+                     
+                     this.classList.toggle('ch-login-toggler--active');
+                     return false;
+                  });
+               };
+               
+               initDropdown();
+               initToggler();
+               initLoginToggler();
+            };
+            
+            var initDefaultMode = function() {
+               reset();
+               
+               html.classList.remove(OPEN_MASK_CLASS);
+               html.classList.remove(OPEN_NAV_CLASS);
+               html.classList.remove(LOCK_BODY_CLASS);
+               body.style.top = 'auto';
+               
+               if (toggler) {
+                  toggler.classList.remove('moving');
+                  toggler.setAttribute('aria-expanded', 'false');
+                  toggler.classList.add('collapsed');
+               }
+               
+               // Remove event listeners
+               document.removeEventListener('click', closeMenuHandler);
+               document.removeEventListener('click', closeLoginMenuHandler);
+               
+               // Add hover events for desktop
+               for (var i = 0; i < navItems.length; i++) {
+                  (function(navItem) {
+                     navItem.addEventListener('mouseover', function() {
+                        this.classList.add('ch-nav-item--hover');
                      });
                      
-                     // Toggle hover state on clicked item
-                     navItem.classList.toggle('ch-nav-item--hover');
-                  });
+                     navItem.addEventListener('mouseout', function() {
+                        this.classList.remove('ch-nav-item--hover');
+                     });
+                  })(navItems[i]);
                }
-            });
+            };
             
-            // Close menu when clicking on mask (outside menu area)
-            document.addEventListener('click', function(e) {
-               const isMenuOpen = htmlElement.classList.contains('menu-on') || htmlElement.classList.contains('login-menu-on');
-               const isClickInsideHeader = e.target.closest('.component-header');
-               
-               if (isMenuOpen && !isClickInsideHeader) {
-                  closeMenu();
+            var switchMode = function() {
+               if (mobileMode) {
+                  initMobileMode();
+               } else {
+                  initDefaultMode();
                }
-            });
+            };
             
-            // Handle escape key to close menu
-            document.addEventListener('keydown', function(e) {
+            var closeMenuHandler = function(e) {
+               var isClickInsideHeader = e.target.closest('.component-header');
+               if (!isClickInsideHeader && toggler) {
+                  toggler.click();
+               }
+            };
+            
+            var closeLoginMenuHandler = function(e) {
+               var isClickInsideHeader = e.target.closest('.component-header');
+               if (!isClickInsideHeader && loginToggler) {
+                  loginToggler.click();
+               }
+            };
+            
+            var handleKeydown = function(e) {
                if (e.key === 'Escape') {
-                  closeMenu();
+                  if (html.classList.contains(OPEN_NAV_CLASS) && toggler) {
+                     toggler.click();
+                  }
+                  if (html.classList.contains(OPEN_LOGIN_NAV_CLASS) && loginToggler) {
+                     loginToggler.click();
+                  }
                }
-            });
+            };
             
-            // Handle window resize to close menu on larger screens
-            window.addEventListener('resize', function() {
-               if (window.innerWidth >= 992) {
-                  closeMenu();
-               }
-            });
-         });
+            var init = function() {
+               // Initial setup
+               checkDevice();
+               
+               // Event listeners
+               window.addEventListener('resize', checkDevice);
+               document.addEventListener('keydown', handleKeydown);
+               
+               // Trigger initial resize check
+               window.dispatchEvent(new Event('resize'));
+            };
+            
+            // Public API
+            return {
+               init: init
+            };
+         })();
+         
+         // Initialize when DOM is ready
+         if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', HeaderHandler.init);
+         } else {
+            HeaderHandler.init();
+         }
       </script>
    </body>
 </html>

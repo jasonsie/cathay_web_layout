@@ -1,0 +1,11 @@
+# CathayWebApp Development Aliases
+# Add these lines to your ~/.zshrc file for quick access
+
+# Navigate to project and run development workflow
+alias cathay-dev="cd /Users/jason/Developer/z-lab/cathay/cathay_web_layout/CathayWebApp && ./dev-run.sh"
+
+# Quick kill port 5221
+alias kill-5221="lsof -ti:5221 | xargs -r kill -9 2>/dev/null || echo 'No processes found on port 5221'"
+
+# Quick NuGet clear and restore
+alias nuget-refresh="dotnet nuget locals all --clear && dotnet restore --no-cache"

@@ -4,6 +4,30 @@
     <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+    <RestoreNoCache>true</RestoreNoCache>
   </PropertyGroup>
+
+  <!-- Custom target to kill processes on port 5221 before running -->
+  <Target Name="KillPortProcesses" BeforeTargets="Run">
+    <Message Text="Killing processes on port 5221..." Importance="high" />
+    <Exec Command="lsof -ti:5221 | xargs -r kill -9" 
+          ContinueOnError="true" 
+          Condition="'$(OS)' != 'Windows_NT'" />
+    <Exec Command="for /f &quot;tokens=5&quot; %a in ('netstat -aon ^| find &quot;:5221&quot;') do taskkill /f /pid %a" 
+          ContinueOnError="true" 
+          Condition="'$(OS)' == 'Windows_NT'" />
+  </Target>
+
+  <!-- Custom target to clear NuGet cache before restore -->
+  <Target Name="ClearNuGetCache" BeforeTargets="Restore">
+    <Message Text="Clearing NuGet cache..." Importance="high" />
+    <Exec Command="dotnet nuget locals all --clear" />
+  </Target>
+
+  <!-- Custom target for development workflow -->
+  <Target Name="DevRun" DependsOnTargets="KillPortProcesses;ClearNuGetCache;Restore;Build">
+    <Message Text="Starting development server..." Importance="high" />
+    <Exec Command="dotnet run --no-restore --no-build" />
+  </Target>
 
 </Project>

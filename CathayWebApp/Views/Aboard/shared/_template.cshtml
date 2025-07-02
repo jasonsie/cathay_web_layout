@@ -1,0 +1,267 @@
+﻿
+@{ 
+    ViewBag.nav_lang_zh_hant = "繁體中文";
+    ViewBag.nav_lang_en = "English";
+    ViewBag.nav_lang_local = "Tiếng Việt";
+    
+
+    if(ViewBag.section == "home/")
+    {
+        ViewBag.section = "";
+    }
+    switch (ViewBag.lang)
+    {
+        case "zh-hant":
+            ViewBag.site_name = "國泰世華銀行香港分行";
+            ViewBag.html_lang = ViewBag.lang;
+            ViewBag.lang_url = "";
+            ViewBag.faq_title = "常見問題";
+            ViewBag.download_title = "常用表單";
+
+            ViewBag.nav_contact = "聯繫我們";
+            ViewBag.nav_careers = "人才招募";
+            ViewBag.nav_login = "網銀登入";
+            ViewBag.nav_gebank = "全球企網銀登入";
+            ViewBag.nav_ebank = "網路銀行登入";
+            ViewBag.nav_services = "服務項目";
+            ViewBag.nav_services_cash_management = "現金管理";
+            ViewBag.nav_services_depository_remittance = "存匯服務";
+            ViewBag.nav_services_corporate_finance = "企業融資";
+            ViewBag.nav_services_trade_finance = "貿易融資";
+            ViewBag.nav_services_wealth_management = "私人銀行";
+            ViewBag.nav_services_financial_derivatives = "衍生性金融商品";
+            ViewBag.nav_services_online_banking = "網上銀行";
+            ViewBag.nav_interest_rate = "利率查詢";
+            ViewBag.nav_fee = "收費標準";
+            ViewBag.nav_bulletin_board = "公告專區";
+            ViewBag.nav_news = "最新消息";
+            ViewBag.nav_financial_disclosure = "財務揭露";
+            ViewBag.nav_terms_condition = "條款與細則";
+            ViewBag.nav_download = ViewBag.download_title;
+            ViewBag.nav_faq = ViewBag.faq_title;
+            ViewBag.nav_privacy_security = "安全與私隱";
+            ViewBag.nav_important_notice = "重要聲明";
+            ViewBag.nav_browser_setting = "瀏覽器建議";
+            ViewBag.nav_suggestions_feedback = "意見反應";
+            ViewBag.nav_cathay_united_bank = "國泰世華銀行";
+            ViewBag.nav_cathay_holdings = "國泰金控集團";
+            ViewBag.nav_oversea_branch = "海外據點";
+
+
+            //home
+            ViewBag.home_latest_news = "最新消息";
+
+            ViewBag.btn_learn_more = "了解更多";
+
+            //online banking
+            ViewBag.online_banking_e_bank = "香港分行網路銀行";
+            ViewBag.online_banking_ge_bank = "全球企業網路銀行服務";
+
+            //download
+            ViewBag.download_e_bank = ViewBag.online_banking_e_bank;
+            ViewBag.download_ge_bank = ViewBag.online_banking_ge_bank;
+            ViewBag.download_csr = "CRS自我證明表格";
+            ViewBag.download_fatca = "FATCA IRS Forms";
+
+            //services
+            ViewBag.services_title = "服務內容";
+
+
+            //common
+            ViewBag.company_full_name = "國泰世華商業銀行股份有限公司";
+            ViewBag.copyright = "國泰世華商業銀行股份有限公司";
+            break;
+
+        case "en":
+            ViewBag.site_name = "Cathay United Bank Hong Kong Branch";
+            ViewBag.html_lang = "en";
+            ViewBag.lang_url = "en/";
+            ViewBag.faq_title = "FAQ";
+            ViewBag.download_title = "Forms";
+
+            ViewBag.nav_contact = "Contact Us";
+            ViewBag.nav_careers = "Careers";
+            ViewBag.nav_login = "Login";
+            ViewBag.nav_ebank = "Hong Kong E-Banking";
+            ViewBag.nav_gebank = "Global MyB2B";
+            ViewBag.nav_services = "Services";
+            ViewBag.nav_services_cash_management = "Cash Management";
+            ViewBag.nav_services_depository_remittance = "Deposits and Remittance";
+            ViewBag.nav_services_corporate_finance = "Corporate Financing";
+            ViewBag.nav_services_trade_finance = "Trade Finance";
+            ViewBag.nav_services_wealth_management = "Private Bank";
+            ViewBag.nav_services_financial_derivatives = "Financial Derivatives";
+            ViewBag.nav_services_online_banking = "Internet Banking";
+            ViewBag.nav_interest_rate = "Interest Rate Enquiry";
+            ViewBag.nav_fee = "Charging Standard";
+            ViewBag.nav_bulletin_board = "Announcements";
+            ViewBag.nav_news = "Latest News";
+            ViewBag.nav_financial_disclosure = "Financial Disclosure";
+            ViewBag.nav_terms_condition = "Terms and Conditions";
+            ViewBag.nav_browser_setting = "Browser Suggestions";
+            ViewBag.nav_download = ViewBag.download_title;
+            ViewBag.nav_faq = ViewBag.faq_title;
+            ViewBag.nav_privacy_security = "Privacy Policy";
+            ViewBag.nav_important_notice = "Important Notice";
+            ViewBag.nav_suggestions_feedback = "Suggestions and Feedback";
+            ViewBag.nav_cathay_united_bank = "Cathay United Bank";
+            ViewBag.nav_cathay_holdings = "Cathay Holdings";
+            ViewBag.nav_oversea_branch = "Overseas Units";
+
+            //home
+            ViewBag.home_latest_news = "Latest News";
+
+
+            //online banking
+            ViewBag.online_banking_e_bank = "Hong Kong E-Banking";
+            ViewBag.online_banking_ge_bank = "Global MyB2B";
+
+            //download
+            ViewBag.download_e_bank = ViewBag.online_banking_e_bank;
+            ViewBag.download_ge_bank = ViewBag.online_banking_ge_bank;
+            ViewBag.download_csr = "CRS自我證明表格";
+            ViewBag.download_fatca = "FATCA IRS Forms";
+
+            //services
+            ViewBag.services_title = "Services";
+            //common
+            ViewBag.btn_learn_more = "Learn More";
+            ViewBag.company_full_name = "Cathay United Bank Company, Limited";
+            ViewBag.copyright = "Cathay United Bank All rights reserved.";
+            break;
+
+        case "vi-vn":
+            ViewBag.site_name = "Cathay United Bank Văn phòng đại diện Quảng Nam";
+            ViewBag.html_lang = "vi-vn";
+            ViewBag.lang_url = "vi-vn/";
+            ViewBag.faq_title = "FAQ";
+            ViewBag.download_title = "Forms";
+
+            ViewBag.nav_contact = "Liên hệ";
+            ViewBag.nav_careers = "Careers";
+            ViewBag.nav_login = "Login";
+            ViewBag.nav_ebank = "Singapore E-Banking";
+            ViewBag.nav_gebank = "Global MyB2B";
+            ViewBag.nav_services = "Dịch vụ";
+            ViewBag.nav_services_cash_management = "Quản lý tiền tệ";
+            ViewBag.nav_services_depository_remittance = "Deposits and Remittance";
+            ViewBag.nav_services_corporate_finance = "Tín dụng doanh nghiệp";
+            ViewBag.nav_services_trade_finance = "Tài trợ thương mại";
+            ViewBag.nav_services_wealth_management = "Private Bank";
+            ViewBag.nav_services_financial_derivatives = "Financial Derivatives";
+            ViewBag.nav_services_online_banking = "Internet Banking";
+            ViewBag.nav_interest_rate = "Tra cứu Lãi suất";
+            ViewBag.nav_fee = "Biểu phí";
+            ViewBag.nav_bulletin_board = "Thông báo";
+            ViewBag.nav_news = "Tin tức mới nhất";
+            ViewBag.nav_financial_disclosure = "Công khai tài chính";
+            ViewBag.nav_terms_condition = "Terms and Conditions";
+            ViewBag.nav_browser_setting = "Đề xuất trình duyệt";
+            ViewBag.nav_download = ViewBag.download_title;
+            ViewBag.nav_faq = ViewBag.faq_title;
+            ViewBag.nav_privacy_security = "Quyền riêng tư và Bảo mật";
+            ViewBag.nav_important_notice = "Important Notice";
+            ViewBag.nav_suggestions_feedback = "Suggestions and Feedback";
+            ViewBag.nav_cathay_united_bank = "Cathay United Bank";
+            ViewBag.nav_cathay_holdings = "Cathay Holdings";
+            ViewBag.nav_oversea_branch = "Văn phòng ở nước ngoài";
+
+            //home
+            ViewBag.home_latest_news = "Tin tức mới nhất";
+
+
+            //online banking
+            ViewBag.online_banking_e_bank = "Singapore E-Banking";
+            ViewBag.online_banking_ge_bank = "Global MyB2B";
+
+            //download
+            ViewBag.download_e_bank = ViewBag.online_banking_e_bank;
+            ViewBag.download_ge_bank = ViewBag.online_banking_ge_bank;
+            ViewBag.download_csr = "CRS自我證明表格";
+            ViewBag.download_fatca = "FATCA IRS Forms";
+
+            //services
+            ViewBag.services_title = "Dịch vụ";
+            //common
+            ViewBag.btn_learn_more = "Tìm hiểu thêm";
+            ViewBag.company_full_name = "Cathay United Bank Company, Limited";
+            ViewBag.copyright = "Cathay United Bank All rights reserved.";
+            break;
+    } }
+
+
+@if (ViewBag.PageTitle == "" || ViewBag.PageTitle == null)
+{
+    ViewBag.PageTitle = ViewBag.site_name;
+}
+else
+{
+    ViewBag.PageTitle = ViewBag.site_name + " - " + ViewBag.PageTitle;
+}
+
+@if (ViewBag.PageDescription == "" || ViewBag.PageDescription == null)
+{
+    if (ViewBag.lang == "zh-hant")
+    {
+        ViewBag.PageDescription = "國泰世華商業銀行香港分行於2002年2月1日成立及註冊，提供一站式銀行服務，包括存匯、企業金融、貿易融資、私人銀行、埸外交易衍生工具等服務。此外，香港分行可透過網上銀行平台，提供優質的銀行服務。";
+    }
+    else if (ViewBag.lang == "en")
+    {
+        ViewBag.PageDescription = "Cathay United Bank Hong Kong Branch was established and registered on February 1, 2002. We provide one-stop banking services including deposits and remittances, corporate finance, trade finance, private banking, over-the-counter derivatives and other services. In addition, the Hong Kong branch can provide quality banking services through the online banking platform.";
+    }
+    else
+    {
+        ViewBag.PageDescription = "國泰世華商業銀行香港分行於2002年2月1日成立及註冊，提供一站式銀行服務，包括存匯、企業金融、貿易融資、私人銀行、埸外交易衍生工具等服務。此外，香港分行可透過網上銀行平台，提供優質的銀行服務。";
+    }
+}
+
+<!DOCTYPE html>
+<html lang="@ViewBag.html_lang">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>@ViewBag.PageTitle</title>
+    <meta name="description" content="@ViewBag.PageDescription">
+
+    <!-- Meta for facebook Share Title -->
+    <meta property="og:title" content="@ViewBag.PageTitle">
+    <meta property="og:description" content="@ViewBag.PageDescription">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="@ViewBag.site_name">
+    
+    <link rel="stylesheet" href="~/css/header.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/footer.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/oversea-components.css" asp-append-version="true" />
+    <style>
+        .component-header .ch-brand {
+            padding-right: 0;
+        }
+        .component-header .ch-brand .ch-img {
+            width: 230px;
+            height: 20px;
+        }
+
+        @@media (min-width: 992px) {
+            .component-header .ch-brand .ch-img {
+                
+                width: 365px;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body class="@ViewBag.html_lang">
+    @await Html.PartialAsync("header.cshtml")
+    @RenderBody()
+    @await Html.PartialAsync("footer.cshtml")
+    <!-- point to  -->
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script type="text/javascript" src="@Url.Content("~/js/libs/jquery-ui.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/js/libs/jquery.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/js/libs/bootstrap.bundle.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/js/app/main.js")"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

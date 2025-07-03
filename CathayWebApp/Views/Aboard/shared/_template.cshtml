@@ -234,23 +234,6 @@ else
     <link rel="stylesheet" href="~/css/header.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/footer.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/oversea-components.css" asp-append-version="true" />
-    <style>
-        .component-header .ch-brand {
-            padding-right: 0;
-        }
-        .component-header .ch-brand .ch-img {
-            width: 230px;
-            height: 20px;
-        }
-
-        @@media (min-width: 992px) {
-            .component-header .ch-brand .ch-img {
-                
-                width: 365px;
-                height: auto;
-            }
-        }
-    </style>
 </head>
 <body class="@ViewBag.html_lang">
     @await Html.PartialAsync("header.cshtml")

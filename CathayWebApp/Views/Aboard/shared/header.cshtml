@@ -4,17 +4,16 @@
     {
         controller_name = "";
     }
-    if (ViewBag.section == "home/")
+    if (ViewData["section"] == "home/")
     {
-        ViewBag.section = "";
+        ViewData["section"] = "";
     }
 }
-
-<!-- component-header -->
+<!-- Global Header -->
 <header class="component-header">
     <nav class="ch-navbar">
         <div class="ch-brand-wrap">
-            <a href="/hongkong/" class="ch-brand" title="國泰世華銀行香港分行">
+            <a href="/hongkong/" class="ch-brand" title="@ViewData["site_name"]">
                 <figure class="ch-figure">
                     <picture>
                         <source
@@ -26,24 +25,24 @@
                             normal-src="https://www.cathaybk.com.tw/OVSWS/Content/img/hongkong/header/logo.svg"
                             active-src="https://www.cathaybk.com.tw/OVSWS/Content/img/hongkong/header/logo-white.svg"
                             src="https://www.cathaybk.com.tw/OVSWS/Content/img/hongkong/header/logo.svg"
-                            alt="國泰世華銀行香港分行"
+                            alt="@ViewData["site_name"]"
                         />
                     </picture>
-                    <figcaption hidden>國泰世華銀行香港分行</figcaption>
+                    <figcaption hidden>@ViewData["site_name"]</figcaption>
                 </figure>
             </a>
             <ul class="ch-subnav-list">
                 <li class="ch-subnav-item">
-                    <a href="/hongkong/contact/" class="ch-subnav-link">聯繫我們</a>
+                    <a href="/hongkong/contact/" class="ch-subnav-link">@ViewData["nav_contact"]</a>
                 </li>
                 <li class="ch-subnav-item">
-                    <a href="/hongkong/careers/" class="ch-subnav-link">人才招募</a>
+                    <a href="/hongkong/careers/" class="ch-subnav-link">@ViewData["nav_careers"]</a>
                 </li>
                 <li class="ch-subnav-item">
                     <div class="language-form">
                         <select role="language-select" class="form-select">
-                            <option value="/hongkong/">繁體中文</option>
-                            <option value="/hongkong/en/">English</option>
+                            <option value="/hongkong/">@ViewData["nav_lang_zh_hant"]</option>
+                            <option value="/hongkong/en/">@ViewData["nav_lang_en"]</option>
                         </select>
                     </div>
                 </li>
@@ -51,7 +50,7 @@
         </div>
 
         <button class="ch-login-toggler" type="button">
-            <span class="ch-login-toggler-inner">網銀登入</span>
+            <span class="ch-login-toggler-inner">@ViewData["nav_login"]</span>
         </button>
 
         <div class="ch-login-nav ch-login-nav--full">
@@ -62,7 +61,7 @@
                         target="_blank"
                         rel="noopener"
                         class="ch-login-nav-item-link"
-                        >全球企網銀登入</a
+                        >@ViewData["nav_gebank"]</a
                     >
                 </li>
 
@@ -86,33 +85,33 @@
              <ul class="ch-nav-list">
                  <li class="ch-nav-item">
                      <div class="ch-nav-lv2">
-                         <div class="ch-nav-lv2-title" title="服務項目">服務項目</div>
+                         <div class="ch-nav-lv2-title" title="@ViewData["nav_services"]">@ViewData["nav_services"]</div>
                          <ul class="ch-nav-lv2-list">
                              <li class="ch-nav-lv2-item">
-                                 <h4 class="ch-nav-lv3-title">個人金融</h4>
+                                 <h4 class="ch-nav-lv3-title">@ViewData["nav_personal_finance"]</h4>
                                  <ul class="ch-nav-lv3">
                                      <li class="ch-nav-lv3-item">
                                          <a
                                              href="/hongkong/services/depository-remittance/"
                                              class="ch-nav-lv3-link"
-                                             title="存款帳戶"
-                                             >存款帳戶</a
+                                             title="@ViewData["nav_deposit_account"]"
+                                             >@ViewData["nav_deposit_account"]</a
                                          >
                                      </li>
                                      <li class="ch-nav-lv3-item">
                                          <a
                                              href="/hongkong/services/corporate-finance/"
                                              class="ch-nav-lv3-link"
-                                             title="匯款服務"
-                                             >匯款服務</a
+                                             title="@ViewData["nav_remittance_service"]"
+                                             >@ViewData["nav_remittance_service"]</a
                                          >
                                      </li>
                                      <li class="ch-nav-lv3-item">
                                          <a
                                              href="/hongkong/services/trade-finance/"
                                              class="ch-nav-lv3-link"
-                                             title="借款方案"
-                                             >借款方案</a
+                                             title="@ViewData["nav_loan_solutions"]"
+                                             >@ViewData["nav_loan_solutions"]</a
                                          >
                                      </li>
                                      <li class="ch-nav-lv3-item">
@@ -121,69 +120,69 @@
                                              target="_blank"
                                              rel="noopener"
                                              class="ch-nav-lv3-link"
-                                             title="信用卡與簽帳卡"
-                                             >信用卡與簽帳卡</a
+                                             title="@ViewData["nav_credit_debit_cards"]"
+                                             >@ViewData["nav_credit_debit_cards"]</a
                                          >
                                      </li>
                                      <li class="ch-nav-lv3-item">
                                          <a
                                              href="/hongkong/services/otc-derivatives/"
                                              class="ch-nav-lv3-link"
-                                             title="ATM服務"
-                                             >ATM服務</a
+                                             title="@ViewData["nav_atm_service"]"
+                                             >@ViewData["nav_atm_service"]</a
                                          >
                                      </li>
                                      <li class="ch-nav-lv3-item">
                                          <a
                                              href="/hongkong/services/internet-banking/"
                                              class="ch-nav-lv3-link"
-                                             title="數位銀行服務"
-                                             >數位銀行服務</a
+                                             title="@ViewData["nav_digital_banking"]"
+                                             >@ViewData["nav_digital_banking"]</a
                                          >
                                      </li>
                                      <li class="ch-nav-lv3-item">
                                          <a
                                              href="/hongkong/interest-rate/"
                                              class="ch-nav-lv3-link"
-                                             title="匯率"
-                                             >匯率
+                                             title="@ViewData["nav_exchange_rate"]"
+                                             >@ViewData["nav_exchange_rate"]
                                          </a>
                                      </li>
                                      <li class="ch-nav-lv3-item">
                                          <a
                                              href="/hongkong/fee/"
                                              class="ch-nav-lv3-link"
-                                             title="Merchant App"
-                                             >Merchant App</a
+                                             title="@ViewData["nav_merchant_app"]"
+                                             >@ViewData["nav_merchant_app"]</a
                                          >
                                      </li>
                                  </ul>
                              </li>
                              <li class="ch-nav-lv2-item">
-                                 <h4 class="ch-nav-lv3-title">法人金融</h4>
+                                 <h4 class="ch-nav-lv3-title">@ViewData["nav_corporate_finance"]</h4>
                                  <ul class="ch-nav-lv3">
                                      <li class="ch-nav-lv3-item">
                                          <a
                                              href="/hongkong/services/depository-remittance/"
                                              class="ch-nav-lv3-link"
-                                             title="存款帳戶"
-                                             >存款帳戶</a
+                                             title="@ViewData["nav_deposit_account"]"
+                                             >@ViewData["nav_deposit_account"]</a
                                          >
                                      </li>
                                      <li class="ch-nav-lv3-item">
                                          <a
                                              href="/hongkong/services/corporate-finance/"
                                              class="ch-nav-lv3-link"
-                                             title="匯款服務"
-                                             >匯款服務</a
+                                             title="@ViewData["nav_remittance_service"]"
+                                             >@ViewData["nav_remittance_service"]</a
                                          >
                                      </li>
                                      <li class="ch-nav-lv3-item">
                                          <a
                                              href="/hongkong/services/trade-finance/"
                                              class="ch-nav-lv3-link"
-                                             title="信用額度"
-                                             >信用額度</a
+                                             title="@ViewData["nav_credit_limit"]"
+                                             >@ViewData["nav_credit_limit"]</a
                                          >
                                      </li>
                                      <li class="ch-nav-lv3-item">
@@ -192,53 +191,53 @@
                                              target="_blank"
                                              rel="noopener"
                                              class="ch-nav-lv3-link"
-                                             title="網路銀行"
-                                             >網路銀行</a
+                                             title="@ViewData["nav_online_banking"]"
+                                             >@ViewData["nav_online_banking"]</a
                                          >
                                      </li>
                                      <li class="ch-nav-lv3-item">
                                          <a
                                              href="/hongkong/services/otc-derivatives/"
                                              class="ch-nav-lv3-link"
-                                             title="收單特店服務"
-                                             >收單特店服務</a
+                                             title="@ViewData["nav_merchant_services"]"
+                                             >@ViewData["nav_merchant_services"]</a
                                          >
                                      </li>
                                      <li class="ch-nav-lv3-item">
                                          <a
                                              href="/hongkong/services/internet-banking/"
                                              class="ch-nav-lv3-link"
-                                             title="國際貿易"
-                                             >國際貿易</a
+                                             title="@ViewData["nav_international_trade"]"
+                                             >@ViewData["nav_international_trade"]</a
                                          >
                                      </li>
                                      <li class="ch-nav-lv3-item">
                                          <a
                                              href="/hongkong/interest-rate/"
                                              class="ch-nav-lv3-link"
-                                             title="薪轉服務"
-                                             >薪轉服務
+                                             title="@ViewData["nav_payroll_service"]"
+                                             >@ViewData["nav_payroll_service"]
                                          </a>
                                      </li>
                                      <li class="ch-nav-lv3-item">
                                          <a
                                              href="/hongkong/fee/"
                                              class="ch-nav-lv3-link"
-                                             title="價金信託"
-                                             >價金信託</a
+                                             title="@ViewData["nav_escrow_trust"]"
+                                             >@ViewData["nav_escrow_trust"]</a
                                          >
                                      </li>
                                  </ul>
                              </li>
                          </ul>
                      </div>
-                     <a href='javascript:;' class="ch-nav-link" title="服務項目">
-                         <span>服務項目</span>
+                     <a href='javascript:;' class="ch-nav-link" title="@ViewData["nav_services"]">
+                         <span>@ViewData["nav_services"]</span>
                      </a>
                  </li>
                  <li class="ch-nav-item">
                      <div class="ch-nav-lv2">
-                         <div class="ch-nav-lv2-title" title="公告專區">公告專區</div>
+                         <div class="ch-nav-lv2-title" title="@ViewData["nav_bulletin_board"]">@ViewData["nav_bulletin_board"]</div>
                          <ul class="ch-nav-lv2-list">
                              <li class="ch-nav-lv2-item">
                                  <ul class="ch-nav-lv3">
@@ -246,44 +245,44 @@
                                          <a
                                              href="/hongkong/news/"
                                              class="ch-nav-lv3-link"
-                                             title="最新消息"
-                                             >最新消息</a
+                                             title="@ViewData["nav_news"]"
+                                             >@ViewData["nav_news"]</a
                                          >
                                      </li>
                                      <li class="ch-nav-lv3-item">
                                          <a
                                              href="/hongkong/financial-disclosure/"
                                              class="ch-nav-lv3-link"
-                                             title="財務揭露"
-                                             >財務揭露</a
+                                             title="@ViewData["nav_financial_disclosure"]"
+                                             >@ViewData["nav_financial_disclosure"]</a
                                          >
                                      </li>
                                      <li class="ch-nav-lv3-item">
                                          <a
                                              href="/hongkong/terms-condition/"
                                              class="ch-nav-lv3-link"
-                                             title="條款與細則"
-                                             >條款與細則</a
+                                             title="@ViewData["nav_terms_condition"]"
+                                             >@ViewData["nav_terms_condition"]</a
                                          >
                                      </li>
                                  </ul>
                              </li>
                          </ul>
                      </div>
-                     <a href='javascript:;' class="ch-nav-link" title="公告專區">
-                         <span>公告專區</span>
+                     <a href='javascript:;' class="ch-nav-link" title="@ViewData["nav_bulletin_board"]">
+                         <span>@ViewData["nav_bulletin_board"]</span>
                      </a>
                  </li>
 
                  <li class="ch-nav-item">
-                     <a href="/hongkong/download/" class="ch-nav-link" title="常用表單">
-                         <span>常用表單</span>
+                     <a href="/hongkong/download/" class="ch-nav-link" title="@ViewData["nav_download"]">
+                         <span>@ViewData["nav_download"]</span>
                      </a>
                  </li>
 
                  <li class="ch-nav-item">
-                     <a href="/hongkong/faq/" class="ch-nav-link" title="常見問題">
-                         <span>常見問題</span>
+                     <a href="/hongkong/faq/" class="ch-nav-link" title="@ViewData["nav_faq"]">
+                         <span>@ViewData["nav_faq"]</span>
                      </a>
                  </li>
 
@@ -296,9 +295,9 @@
                          target="_blank"
                          rel="noopener"
                          class="ch-nav-link"
-                         title="全球企網銀登入"
+                         title="@ViewData["nav_gebank"]"
                      >
-                         <span>全球企網銀登入</span>
+                         <span>@ViewData["nav_gebank"]</span>
                      </a>
                  </li>
 
@@ -315,21 +314,21 @@
                  </li>
 
                  <li class="ch-nav-item ch-nav-item--hide-lg">
-                     <a href="/hongkong/careers/" class="ch-nav-link" title="人才招募">
-                         <span>人才招募</span>
+                     <a href="/hongkong/careers/" class="ch-nav-link" title="@ViewData["nav_careers"]">
+                         <span>@ViewData["nav_careers"]</span>
                      </a>
                  </li>
 
                  <li class="ch-nav-item ch-nav-item--hide-lg">
-                     <a href="/hongkong/contact/" class="ch-nav-link" title="聯繫我們">
-                         <span>聯繫我們</span>
+                     <a href="/hongkong/contact/" class="ch-nav-link" title="@ViewData["nav_contact"]">
+                         <span>@ViewData["nav_contact"]</span>
                      </a>
                  </li>
 
                  <li class='ch-nav-item ch-nav-item--group ch-nav-item--hide-lg'>
-                     <a href='https://www.cathayholdings.com' rel='noopener nofollow' target="_blank" rel="noopener" class='ch-nav-link'>國泰金控集團</a>
-                     <a href='https://www.cathaybk.com.tw/cathaybk' rel='noopener nofollow' target="_blank" rel="noopener" class='ch-nav-link'>國泰世華銀行</a>
-                     <a href="/hongkong/" target="_blank" rel="noopener" class="ch-nav-link">海外據點</a>
+                     <a href='https://www.cathayholdings.com' rel='noopener nofollow' target="_blank" rel="noopener" class='ch-nav-link'>@ViewData["nav_cathay_holdings"]</a>
+                     <a href='https://www.cathaybk.com.tw/cathaybk' rel='noopener nofollow' target="_blank" rel="noopener" class='ch-nav-link'>@ViewData["nav_cathay_united_bank"]</a>
+                     <a href="/hongkong/" target="_blank" rel="noopener" class="ch-nav-link">@ViewData["nav_oversea_branch"]</a>
                  </li>
                  <li class='ch-nav-item ch-nav-item--social ch-nav-item--hide-lg'>
                      <a href='https://www.facebook.com/cathayunitedbank' rel='noopener nofollow' target="_blank" rel="noopener" class='ch-nav-link'><img class='ch-nav-item-social-img' src='https://www.cathaybk.com.tw/OVSWS/Content/img/common/header/facebook.svg' alt="Facebook icon"></a>

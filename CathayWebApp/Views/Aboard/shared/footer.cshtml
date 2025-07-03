@@ -1,11 +1,20 @@
-﻿<footer class="component-footer">
+﻿@{
+    // Get current language from route data
+    string currentLanguage = ViewContext.RouteData.Values["language"]?.ToString() ?? "zh-hant";
+}
+<footer class="component-footer">
     <div class="cf-inner">
         <div class="cf-list-wrap cf-list-wrap--lang">
             <ul class="cf-list cf-list--border">
                 <li class="cf-item cf-item--no-border">
-                    <a href="/hongkong/" class="cf-item-link cf-item-link--active">繁體中文</a>
+                    <a href="@Url.SwitchLanguage("zh-hant")" class="cf-item-link @(currentLanguage == "zh-hant" ? "cf-item-link--active" : "")">@ViewData["nav_lang_zh_hant"]</a>
                 </li>
-                <li class="cf-item"><a href="/hongkong/en/" class="cf-item-link">English</a></li>
+                <li class="cf-item">
+                    <a href="@Url.SwitchLanguage("en")" class="cf-item-link @(currentLanguage == "en" ? "cf-item-link--active" : "")">@ViewData["nav_lang_en"]</a>
+                </li>
+                <li class="cf-item">
+                    <a href="@Url.SwitchLanguage("km")" class="cf-item-link @(currentLanguage == "km" ? "cf-item-link--active" : "")">Tiếng Việt</a>
+                </li>
             </ul>
         </div>
 
@@ -48,9 +57,7 @@
                         >
                     </li>
                     <li class="cf-item">
-                        <a href="/overseas/" target="_blank" rel="noopener" class="cf-item-link"
-                            >海外據點</a
-                        >
+                        <a href="@Url.ActionWithLanguage("Index", "Home", currentLanguage, new { section = "overseas" })" class="cf-item-link">@ViewData["nav_oversea_branch"]</a>
                     </li>
                 </ul>
             </ul>
@@ -93,29 +100,31 @@
                             class="cf-social-list-img lazy"
                             width="35"
                             src="https://www.cathaybk.com.tw/OVSWS/Content/img/common/footer/linkedin.svg"
-                            alt="Youtube"
+                            alt="LinkedIn"
                     /></a>
                 </li>
             </ul>
             <ul class="cf-list">
                 <li class="cf-item">
-                    <a href="/hongkong/security-privacy" class="cf-item-link">安全與私隱</a>
+                    <a href="@Url.ActionWithLanguage("Privacy", "Home", currentLanguage)" class="cf-item-link">@ViewData["nav_privacy_security"]</a>
                 </li>
                 <li class="cf-item">
-                    <a href="/hongkong/financial-disclosure" class="cf-item-link">財務揭露</a>
+                    <a href="@Url.ActionWithLanguage("FinancialDisclosure", "Home", currentLanguage)" class="cf-item-link">@ViewData["nav_financial_disclosure"]</a>
                 </li>
                 <li class="cf-item">
-                    <a href="/hongkong/important-notice" class="cf-item-link">重要聲明</a>
-                </li>
-                <li class="cf-item"><a href="/hongkong/fee" class="cf-item-link">收費標準</a></li>
-                <li class="cf-item">
-                    <a href="/hongkong/suggestions-feedback" class="cf-item-link">意見反應</a>
+                    <a href="@Url.ActionWithLanguage("ImportantNotice", "Home", currentLanguage)" class="cf-item-link">@ViewData["nav_important_notice"]</a>
                 </li>
                 <li class="cf-item">
-                    <a href="/hongkong/browser-setting" class="cf-item-link">瀏覽器建議</a>
+                    <a href="@Url.ActionWithLanguage("Fee", "Home", currentLanguage)" class="cf-item-link">@ViewData["nav_fee"]</a>
+                </li>
+                <li class="cf-item">
+                    <a href="@Url.ActionWithLanguage("Feedback", "Home", currentLanguage)" class="cf-item-link">@ViewData["nav_suggestions_feedback"]</a>
+                </li>
+                <li class="cf-item">
+                    <a href="@Url.ActionWithLanguage("BrowserSetting", "Home", currentLanguage)" class="cf-item-link">@ViewData["nav_browser_setting"]</a>
                 </li>
                 <li class="cf-item cf-item--copyright cf-item--copyright-flex">
-                    <span class="cf-item-link">© 國泰世華商業銀行股份有限公司</span>
+                    <span class="cf-item-link">© @ViewData["copyright"]</span>
                 </li>
             </ul>
         </div>

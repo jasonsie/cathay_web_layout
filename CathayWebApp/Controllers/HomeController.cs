@@ -4,7 +4,7 @@ using CathayWebApp.Models;
 
 namespace CathayWebApp.Controllers;
 
-public class HomeController : Controller
+public class HomeController : BaseController
 {
     private readonly ILogger<HomeController> _logger;
 
@@ -13,13 +13,20 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-    public IActionResult Index()
+    public IActionResult Index(string language = "zh-hant")
     {
+        // Setup language and common view data
+        SetupLanguageViewData(language);
+        SetupCommonViewData("home/");
+        
         return View();
     }
 
-    public IActionResult Privacy()
+    public IActionResult Privacy(string language = "zh-hant")
     {
+        SetupLanguageViewData(language);
+        SetupCommonViewData("home/", "privacy");
+        
         return View();
     }
 

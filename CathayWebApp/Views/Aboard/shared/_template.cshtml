@@ -3,12 +3,19 @@
     ViewData["nav_lang_zh_hant"] = "繁體中文";
     ViewData["nav_lang_en"] = "English";
     
+    // Get language from route data or ViewData
+    string currentLanguage = ViewData["lang"]?.ToString() ?? "zh-hant";
+    if (Context.Request.RouteValues.ContainsKey("language"))
+    {
+        currentLanguage = Context.Request.RouteValues["language"]?.ToString() ?? "zh-hant";
+        ViewData["lang"] = currentLanguage;
+    }
 
-    if(ViewData["section"] == "home/")
+    if(ViewData["section"]?.ToString() == "home/")
     {
         ViewData["section"] = "";
     }
-    switch (ViewData["lang"])
+    switch (currentLanguage)
     {
         case "zh-hant":
             ViewData["site_name"] = "國泰世華銀行香港分行";
@@ -228,7 +235,7 @@
     } }
 
 
-@if (ViewData["PageTitle"] == "" || ViewData["PageTitle"] == null)
+@if (ViewData["PageTitle"]?.ToString() == "" || ViewData["PageTitle"] == null)
 {
     ViewData["PageTitle"] = ViewData["site_name"];
 }
@@ -237,13 +244,13 @@ else
     ViewData["PageTitle"] = ViewData["site_name"] + " - " + ViewData["PageTitle"];
 }
 
-@if (ViewData["PageDescription"] == "" || ViewData["PageDescription"] == null)
+@if (ViewData["PageDescription"]?.ToString() == "" || ViewData["PageDescription"] == null)
 {
-    if (ViewData["lang"] == "zh-hant")
+    if (ViewData["lang"]?.ToString() == "zh-hant")
     {
         ViewData["PageDescription"] = "國泰世華商業銀行香港分行於2002年2月1日成立及註冊，提供一站式銀行服務，包括存匯、企業金融、貿易融資、私人銀行、埸外交易衍生工具等服務。此外，香港分行可透過網上銀行平台，提供優質的銀行服務。";
     }
-    else if (ViewData["lang"] == "en")
+    else if (ViewData["lang"]?.ToString() == "en")
     {
         ViewData["PageDescription"] = "Cathay United Bank Hong Kong Branch was established and registered on February 1, 2002. We provide one-stop banking services including deposits and remittances, corporate finance, trade finance, private banking, over-the-counter derivatives and other services. In addition, the Hong Kong branch can provide quality banking services through the online banking platform.";
     }
@@ -280,6 +287,7 @@ else
     @await Html.PartialAsync("footer.cshtml")
     
     <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/language-selector.js" asp-append-version="true"></script>
     <script type="text/javascript" src="@Url.Content("~/js/libs/jquery-ui.min.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/js/libs/jquery.min.js")"></script>
     <script type="text/javascript" src="@Url.Content("~/js/libs/bootstrap.bundle.min.js")"></script>

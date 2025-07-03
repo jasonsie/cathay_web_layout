@@ -1,19 +1,22 @@
 ﻿@{ 
-    var controller_name = this.ViewContext.RouteData.Values["controller"].ToString();
+    var controller_name = this.ViewContext.RouteData.Values["controller"]?.ToString() ?? "";
     if (controller_name == "Home")
     {
         controller_name = "";
     }
-    if (ViewData["section"] == "home/")
+    if (ViewData["section"]?.ToString() == "home/")
     {
         ViewData["section"] = "";
     }
+    
+    // Get current language from route data
+    string currentLanguage = ViewContext.RouteData.Values["language"]?.ToString() ?? "zh-hant";
 }
 <!-- Global Header -->
 <header class="component-header">
     <nav class="ch-navbar">
         <div class="ch-brand-wrap">
-            <a href="/hongkong/" class="ch-brand" title="@ViewData["site_name"]">
+            <a href="@Url.ActionWithLanguage("Index", "Home", currentLanguage)" class="ch-brand" title="@ViewData["site_name"]">
                 <figure class="ch-figure">
                     <picture>
                         <source
@@ -33,16 +36,38 @@
             </a>
             <ul class="ch-subnav-list">
                 <li class="ch-subnav-item">
-                    <a href="/hongkong/contact/" class="ch-subnav-link">@ViewData["nav_contact"]</a>
+                    <a href="@Url.ActionWithLanguage("Contact", "Home", currentLanguage)" class="ch-subnav-link">@ViewData["nav_contact"]</a>
                 </li>
                 <li class="ch-subnav-item">
-                    <a href="/hongkong/careers/" class="ch-subnav-link">@ViewData["nav_careers"]</a>
+                    <a href="@Url.ActionWithLanguage("Careers", "Home", currentLanguage)" class="ch-subnav-link">@ViewData["nav_careers"]</a>
                 </li>
                 <li class="ch-subnav-item">
                     <div class="language-form">
                         <select role="language-select" class="form-select">
-                            <option value="/hongkong/">@ViewData["nav_lang_zh_hant"]</option>
-                            <option value="/hongkong/en/">@ViewData["nav_lang_en"]</option>
+                            @if (currentLanguage == "zh-hant")
+                            {
+                                <option value="@Url.SwitchLanguage("zh-hant")" selected>@ViewData["nav_lang_zh_hant"]</option>
+                            }
+                            else
+                            {
+                                <option value="@Url.SwitchLanguage("zh-hant")">@ViewData["nav_lang_zh_hant"]</option>
+                            }
+                            @if (currentLanguage == "en")
+                            {
+                                <option value="@Url.SwitchLanguage("en")" selected>@ViewData["nav_lang_en"]</option>
+                            }
+                            else
+                            {
+                                <option value="@Url.SwitchLanguage("en")">@ViewData["nav_lang_en"]</option>
+                            }
+                            @if (currentLanguage == "km")
+                            {
+                                <option value="@Url.SwitchLanguage("km")" selected>Tiếng Việt</option>
+                            }
+                            else
+                            {
+                                <option value="@Url.SwitchLanguage("km")">Tiếng Việt</option>
+                            }
                         </select>
                     </div>
                 </li>

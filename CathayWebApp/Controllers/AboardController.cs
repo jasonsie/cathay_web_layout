@@ -2,29 +2,34 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CathayWebApp.Controllers
 {
-    public class AboardController : Controller
+    public class AboardController : BaseController
     {
-        public IActionResult Index()
+        public IActionResult Index(string language = "zh-hant")
         {
-            // Set up mock ViewBag variables required by the template
-            SetupMockViewBag();
+            // Setup language and common view data
+            SetupLanguageViewData(language);
+            SetupCommonViewData("aboard/");
+            
             return View();
         }
         
-        private void SetupMockViewBag()
+        // Generic action to handle different pages with language support
+        public IActionResult Page(string pageName, string language = "zh-hant")
         {
-            // Mock the required ViewBag variables for Hong Kong branch
-            ViewBag.lang = "zh-hant";
-            ViewBag.country_url = "hongkong";
-            ViewBag.city_url = "";
-            ViewBag.section = "aboard/";
-            ViewBag.subsection = "";
-            ViewBag.bodyPath = "~/Views/Aboard/content.cshtml"; // We'll create this
-            ViewBag.PageTitle = "";
-            ViewBag.PageDescription = "";
+            SetupLanguageViewData(language);
+            SetupCommonViewData("aboard/", pageName);
+            
+            // Try to find the specific view, fallback to Index if not found
+            var viewName = ViewExists(pageName) ? pageName : "Index";
+            return View(viewName);
         }
         
-        // Add additional action methods for each .cshtml file in aboard directory
-        // Example: public IActionResult PageName() { return View(); }
+        private bool ViewExists(string viewName)
+        {
+            var viewPath = $"~/Views/Aboard/{viewName}.cshtml";
+            return System.IO.File.Exists(Path.Combine(
+                Directory.GetCurrentDirectory(), 
+                "Views", "Aboard", $"{viewName}.cshtml"));
+        }
     }
 }

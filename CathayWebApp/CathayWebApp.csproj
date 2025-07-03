@@ -30,4 +30,8 @@
     <Exec Command="dotnet run --no-restore --no-build" />
   </Target>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="7.0.0" />
+  </ItemGroup>
+
 </Project>

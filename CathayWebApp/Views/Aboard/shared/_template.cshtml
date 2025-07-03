@@ -254,6 +254,7 @@ else
 </head>
 <body class="@ViewBag.html_lang">
     @await Html.PartialAsync("header.cshtml")
+    <html lang="@ViewBag.html_lang" class="component-header">
     @RenderBody()
     @await Html.PartialAsync("footer.cshtml")
     <!-- point to  -->

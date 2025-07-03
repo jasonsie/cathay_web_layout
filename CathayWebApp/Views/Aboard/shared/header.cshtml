@@ -62,11 +62,11 @@
                             }
                             @if (currentLanguage == "km")
                             {
-                                <option value="@Url.SwitchLanguage("km")" selected>Tiếng Việt</option>
+                                <option value="@Url.SwitchLanguage("km")" selected>@ViewData["nav_lang_km"]</option>
                             }
                             else
                             {
-                                <option value="@Url.SwitchLanguage("km")">Tiếng Việt</option>
+                                <option value="@Url.SwitchLanguage("km")">@ViewData["nav_lang_km"]</option>
                             }
                         </select>
                     </div>
@@ -96,7 +96,7 @@
                         target="_blank"
                         rel="noopener"
                         class="ch-login-nav-item-link"
-                        >私人銀行網銀登入</a
+                        >@ViewData["nav_pbank"]</a
                     >
                 </li>
             </ul>
@@ -332,9 +332,9 @@
                          target="_blank"
                          rel="noopener"
                          class="ch-nav-link"
-                         title="私人銀行網銀登入"
+                         title="@ViewData["nav_pbank"]"
                      >
-                         <span>私人銀行網銀登入</span>
+                         <span>@ViewData["nav_pbank"]</span>
                      </a>
                  </li>
 

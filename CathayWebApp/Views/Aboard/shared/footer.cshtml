@@ -44,7 +44,7 @@
                             target="_blank"
                             rel="noopener"
                             class="cf-item-link"
-                            >國泰金控集團</a
+                            >@ViewData["footer_cathay_holdings"]</a
                         >
                     </li>
                     <li class="cf-item">
@@ -53,7 +53,7 @@
                             target="_blank"
                             rel="noopener"
                             class="cf-item-link"
-                            >國泰世華銀行</a
+                            >@ViewData["footer_cathay_united_bank"]</a
                         >
                     </li>
                     <li class="cf-item">
@@ -110,15 +110,6 @@
                 </li>
                 <li class="cf-item">
                     <a href="@Url.ActionWithLanguage("FinancialDisclosure", "Home", currentLanguage)" class="cf-item-link">@ViewData["nav_financial_disclosure"]</a>
-                </li>
-                <li class="cf-item">
-                    <a href="@Url.ActionWithLanguage("ImportantNotice", "Home", currentLanguage)" class="cf-item-link">@ViewData["nav_important_notice"]</a>
-                </li>
-                <li class="cf-item">
-                    <a href="@Url.ActionWithLanguage("Fee", "Home", currentLanguage)" class="cf-item-link">@ViewData["nav_fee"]</a>
-                </li>
-                <li class="cf-item">
-                    <a href="@Url.ActionWithLanguage("Feedback", "Home", currentLanguage)" class="cf-item-link">@ViewData["nav_suggestions_feedback"]</a>
                 </li>
                 <li class="cf-item">
                     <a href="@Url.ActionWithLanguage("BrowserSetting", "Home", currentLanguage)" class="cf-item-link">@ViewData["nav_browser_setting"]</a>

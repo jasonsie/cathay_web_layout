@@ -2,6 +2,7 @@
 @{ 
     ViewData["nav_lang_zh_hant"] = "繁體中文";
     ViewData["nav_lang_en"] = "English";
+    ViewData["nav_lang_km"] = "ខ្មែរ";
     
     // Get language from route data or ViewData
     string currentLanguage = ViewData["lang"]?.ToString() ?? "zh-hant";
@@ -29,6 +30,7 @@
             ViewData["nav_login"] = "網銀登入";
             ViewData["nav_gebank"] = "全球企網銀登入";
             ViewData["nav_ebank"] = "網路銀行登入";
+            ViewData["nav_pbank"] = "私人銀行網銀登入";
             ViewData["nav_services"] = "服務項目";
             ViewData["nav_interest_rate"] = "利率查詢";
             ViewData["nav_fee"] = "收費標準";
@@ -65,6 +67,10 @@
             ViewData["nav_cathay_united_bank"] = "國泰世華銀行";
             ViewData["nav_cathay_holdings"] = "國泰金控集團";
             ViewData["nav_oversea_branch"] = "海外據點";
+            
+            // Footer specific variables
+            ViewData["footer_cathay_holdings"] = "國泰金控集團";
+            ViewData["footer_cathay_united_bank"] = "國泰世華銀行";
 
 
             //home
@@ -103,6 +109,7 @@
             ViewData["nav_login"] = "Login";
             ViewData["nav_ebank"] = "Hong Kong E-Banking";
             ViewData["nav_gebank"] = "Global MyB2B";
+            ViewData["nav_pbank"] = "PB E-Banking";
             ViewData["nav_services"] = "Services";
             ViewData["nav_interest_rate"] = "Interest Rate Enquiry";
             ViewData["nav_fee"] = "Charging Standard";
@@ -112,7 +119,7 @@
             ViewData["nav_terms_condition"] = "Terms and Conditions";
             
             // Personal finance services
-            ViewData["nav_personal_finance"] = "Personal Finance";
+            ViewData["nav_personal_finance"] = "Personal Banking";
             ViewData["nav_deposit_account"] = "Deposit Account";
             ViewData["nav_remittance_service"] = "Remittance Service";
             ViewData["nav_loan_solutions"] = "Loan Solutions";
@@ -139,6 +146,10 @@
             ViewData["nav_cathay_united_bank"] = "Cathay United Bank";
             ViewData["nav_cathay_holdings"] = "Cathay Holdings";
             ViewData["nav_oversea_branch"] = "Overseas Units";
+            
+            // Footer specific variables
+            ViewData["footer_cathay_holdings"] = "Cathay Holdings";
+            ViewData["footer_cathay_united_bank"] = "Cathay United Bank";
 
             //home
             ViewData["home_latest_news"] = "Latest News";
@@ -163,60 +174,65 @@
             break;
 
         case "km":
-            ViewData["site_name"] = "Cathay United Bank Văn phòng đại diện Quảng Nam";
-            ViewData["html_lang"] = "vi-vn";
-            ViewData["lang_url"] = "vi-vn/";
+            ViewData["site_name"] = "Cathay United Bank Hong Kong Branch";
+            ViewData["html_lang"] = "km";
+            ViewData["lang_url"] = "km/";
             ViewData["faq_title"] = "FAQ";
             ViewData["download_title"] = "Forms";
 
-            ViewData["nav_contact"] = "Liên hệ";
+            ViewData["nav_contact"] = "Contact Us";
             ViewData["nav_careers"] = "Careers";
             ViewData["nav_login"] = "Login";
-            ViewData["nav_ebank"] = "Singapore E-Banking";
+            ViewData["nav_ebank"] = "Hong Kong E-Banking";
             ViewData["nav_gebank"] = "Global MyB2B";
-            ViewData["nav_services"] = "Dịch vụ";
-            ViewData["nav_interest_rate"] = "Tra cứu Lãi suất";
-            ViewData["nav_fee"] = "Biểu phí";
-            ViewData["nav_bulletin_board"] = "Thông báo";
-            ViewData["nav_news"] = "Tin tức mới nhất";
-            ViewData["nav_financial_disclosure"] = "Công khai tài chính";
+            ViewData["nav_pbank"] = "PB E-Banking";
+            ViewData["nav_services"] = "Services";
+            ViewData["nav_interest_rate"] = "Interest Rate Enquiry";
+            ViewData["nav_fee"] = "Charging Standard";
+            ViewData["nav_bulletin_board"] = "Announcements";
+            ViewData["nav_news"] = "Latest News";
+            ViewData["nav_financial_disclosure"] = "Financial Disclosure";
             ViewData["nav_terms_condition"] = "Terms and Conditions";
             
             // Personal finance services
-            ViewData["nav_personal_finance"] = "Tài chính cá nhân";
-            ViewData["nav_deposit_account"] = "Tài khoản tiền gửi";
-            ViewData["nav_remittance_service"] = "Dịch vụ chuyển tiền";
-            ViewData["nav_loan_solutions"] = "Giải pháp vay vốn";
-            ViewData["nav_credit_debit_cards"] = "Thẻ tín dụng & ghi nợ";
-            ViewData["nav_atm_service"] = "Dịch vụ ATM";
-            ViewData["nav_digital_banking"] = "Dịch vụ ngân hàng số";
-            ViewData["nav_exchange_rate"] = "Tỷ giá hối đoái";
+            ViewData["nav_personal_finance"] = "Personal Banking";
+            ViewData["nav_deposit_account"] = "Deposit Account";
+            ViewData["nav_remittance_service"] = "Remittance Service";
+            ViewData["nav_loan_solutions"] = "Loan Solutions";
+            ViewData["nav_credit_debit_cards"] = "Credit & Debit Cards";
+            ViewData["nav_atm_service"] = "ATM Service";
+            ViewData["nav_digital_banking"] = "Digital Banking Service";
+            ViewData["nav_exchange_rate"] = "Exchange Rate";
             ViewData["nav_merchant_app"] = "Merchant App";
             
             // Corporate finance services
-            ViewData["nav_corporate_finance"] = "Tài chính doanh nghiệp";
-            ViewData["nav_credit_limit"] = "Hạn mức tín dụng";
-            ViewData["nav_online_banking"] = "Ngân hàng trực tuyến";
-            ViewData["nav_merchant_services"] = "Dịch vụ thương gia";
-            ViewData["nav_international_trade"] = "Thương mại quốc tế";
-            ViewData["nav_payroll_service"] = "Dịch vụ trả lương";
-            ViewData["nav_escrow_trust"] = "Ký quỹ ủy thác";
-            ViewData["nav_browser_setting"] = "Đề xuất trình duyệt";
+            ViewData["nav_corporate_finance"] = "Corporate Finance";
+            ViewData["nav_credit_limit"] = "Credit Limit";
+            ViewData["nav_online_banking"] = "Online Banking";
+            ViewData["nav_merchant_services"] = "Merchant Services";
+            ViewData["nav_international_trade"] = "International Trade";
+            ViewData["nav_payroll_service"] = "Payroll Service";
+            ViewData["nav_escrow_trust"] = "Escrow Trust";
+            ViewData["nav_browser_setting"] = "Browser Suggestions";
             ViewData["nav_download"] = ViewData["download_title"];
             ViewData["nav_faq"] = ViewData["faq_title"];
-            ViewData["nav_privacy_security"] = "Quyền riêng tư và Bảo mật";
+            ViewData["nav_privacy_security"] = "Privacy Policy";
             ViewData["nav_important_notice"] = "Important Notice";
             ViewData["nav_suggestions_feedback"] = "Suggestions and Feedback";
             ViewData["nav_cathay_united_bank"] = "Cathay United Bank";
             ViewData["nav_cathay_holdings"] = "Cathay Holdings";
-            ViewData["nav_oversea_branch"] = "Văn phòng ở nước ngoài";
+            ViewData["nav_oversea_branch"] = "Overseas Units";
+            
+            // Footer specific variables
+            ViewData["footer_cathay_holdings"] = "Cathay Holdings";
+            ViewData["footer_cathay_united_bank"] = "Cathay United Bank";
 
             //home
-            ViewData["home_latest_news"] = "Tin tức mới nhất";
+            ViewData["home_latest_news"] = "Latest News";
 
 
             //online banking
-            ViewData["online_banking_e_bank"] = "Singapore E-Banking";
+            ViewData["online_banking_e_bank"] = "Hong Kong E-Banking";
             ViewData["online_banking_ge_bank"] = "Global MyB2B";
 
             //download
@@ -226,9 +242,9 @@
             ViewData["download_fatca"] = "FATCA IRS Forms";
 
             //services
-            ViewData["services_title"] = "Dịch vụ";
+            ViewData["services_title"] = "Services";
             //common
-            ViewData["btn_learn_more"] = "Tìm hiểu thêm";
+            ViewData["btn_learn_more"] = "Learn More";
             ViewData["company_full_name"] = "Cathay United Bank Company, Limited";
             ViewData["copyright"] = "Cathay United Bank All rights reserved.";
             break;

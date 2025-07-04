@@ -1,0 +1,206 @@
+{
+   "nav_contact": {
+      "zh-hant": "聯繫我們",
+      "en": "Contact Us",
+      "km": "Contact Us",
+      "url": "https://www.cathaybk.com.kh/zh-hant/contact/"
+   },
+   "nav_careers": {
+      "zh-hant": "人才招募",
+      "en": "Careers",
+      "km": "Careers",
+      "url": "https://www.cathaybk.com.kh/careers/"
+   },
+   "nav_services": {
+      "zh-hant": "服務項目",
+      "en": "Services",
+      "km": "សេវាកម្ម",
+      "url": ""
+   },
+   "nav_bulletin_board": {
+      "zh-hant": "公告專區",
+      "en": "Announcements",
+      "km": "សេចក្តីប្រកាស",
+      "url": "https://www.cathaybk.com.kh/zh-hant/about-us/"
+   },
+   "nav_news": {
+      "zh-hant": "最新消息",
+      "en": "Latest News",
+      "km": "ព័ត៌មានចុងក្រោយ",
+      "url": "https://www.cathaybk.com.kh/zh-hant/personal/index"
+   },
+   "nav_gebank": {
+      "zh-hant": "Global My B2B",
+      "en": "Global My B2B",
+      "km": "Global My B2B",
+      "url": "https://www.globalmyb2b.com/GEBANK/Login.aspx"
+   },
+   "nav_ebank": {
+      "zh-hant": "CUBC網路銀行",
+      "en": "CUBC iBanking",
+      "km": "CUBC iBanking",
+      "url": "https://ibanking.cathaybk.com.kh/"
+   },
+   "nav_personal_finance": {
+      "zh-hant": "個人金融",
+      "en": "Personal Banking",
+      "km": "Personal Banking",
+      "url": "https://www.cathaybk.com.kh/zh-hant/personal/index"
+   },
+   "nav_deposit_account": {
+      "zh-hant": "存款帳戶",
+      "en": "Deposit Accounts",
+      "km": "Deposit Accounts",
+      "url": "https://www.cathaybk.com.kh/zh-hant/personal/current-account"
+   },
+   "nav_remittance_service": {
+      "zh-hant": "匯款服務",
+      "en": "Remittances",
+      "km": "Remittances",
+      "url": "https://www.cathaybk.com.kh/zh-hant/personal/inward-and-outward-remittance/"
+   },
+   "nav_loan_solutions": {
+      "zh-hant": "借款方案",
+      "en": "Borrowing Solutions",
+      "km": "Borrowing Solutions",
+      "url": "https://www.cathaybk.com.kh/zh-hant/personal/individual-loan/"
+   },
+   "nav_credit_debit_cards": {
+      "zh-hant": "信用卡與簽帳卡",
+      "en": "Personal Cards",
+      "km": "Personal Cards",
+      "url": "https://www.cathaybk.com.kh/zh-hant/personal/credit-cards/"
+   },
+   "nav_atm_service": {
+      "zh-hant": "ATM服務",
+      "en": "ATM",
+      "km": "ATM",
+      "url": "https://www.cathaybk.com.kh/zh-hant/personal/atm-service/"
+   },
+   "nav_digital_banking": {
+      "zh-hant": "數位銀行服務",
+      "en": "Online Banking",
+      "km": "Online Banking",
+      "url": "https://www.cathaybk.com.kh/zh-hant/personal/internet-banking/"
+   },
+   "nav_exchange_rate": {
+      "zh-hant": "匯率",
+      "en": "Exchange Rates",
+      "km": "Exchange Rates",
+      "url": "https://www.cathaybk.com.kh/zh-hant/personal/available-exchange-at-counter/"
+   },
+   "nav_merchant_app": {
+      "zh-hant": "Merchant App",
+      "en": "Merchant App",
+      "km": "Merchant App",
+      "url": "https://www.cathaybk.com.kh/zh-hant/personal/merchant-app/"
+   },
+   "nav_corporate_finance": {
+      "zh-hant": "法人金融",
+      "en": "Business Banking",
+      "km": "Business Banking",
+      "url": "https://www.cathaybk.com.kh/zh-hant/business/index"
+   },
+   "nav_credit_limit": {
+      "zh-hant": "信用額度",
+      "en": "Credit Facilities",
+      "km": "Credit Facilities",
+      "url": "https://www.cathaybk.com.kh/zh-hant/business/commercial-loan/"
+   },
+   "nav_online_banking": {
+      "zh-hant": "網路銀行",
+      "en": "Online Banking",
+      "km": "Online Banking",
+      "url": "https://www.cathaybk.com.kh/zh-hant/business/global-myb2b/"
+   },
+   "nav_merchant_services": {
+      "zh-hant": "收單特店服務",
+      "en": "Merchant Services",
+      "km": "Merchant Services",
+      "url": "https://www.cathaybk.com.kh/zh-hant/business/merchant-services/"
+   },
+   "nav_international_trade": {
+      "zh-hant": "國際貿易",
+      "en": "International Trade",
+      "km": "International Trade",
+      "url": "https://www.cathaybk.com.kh/zh-hant/business/international-trade/"
+   },
+   "nav_payroll_service": {
+      "zh-hant": "薪轉服務",
+      "en": "Payroll Service",
+      "km": "Payroll Service",
+      "url": "https://www.cathaybk.com.kh/zh-hant/business/payroll-service/"
+   },
+   "nav_escrow_trust": {
+      "zh-hant": "價金信託",
+      "en": "Escrow Service",
+      "km": "Escrow Service",
+      "url": "https://www.cathaybk.com.kh/zh-hant/business/escrow-service/"
+   },
+   "nav_cathay_holdings": {
+      "zh-hant": "國泰金控集團",
+      "en": "Cathay Holdings",
+      "km": "Cathay Holdings",
+      "url": "https://www.cathayholdings.com/en/holdings/intro/intro/about"
+   },
+   "nav_cathay_united_bank": {
+      "zh-hant": "國泰世華銀行",
+      "en": "Cathay United Bank",
+      "km": "Cathay United Bank",
+      "url": "https://www.cathaybk.com.tw/en-us/cathaybk/english/about-us/about-us/company-history/"
+   },
+   "nav_oversea_branch": {
+      "zh-hant": "海外據點",
+      "en": "Overseas Units",
+      "km": "Overseas Units",
+      "url": "https://www.cathaybk.com.tw/overseas/en/"
+   },
+   "nav_privacy_security": {
+      "zh-hant": "安全與隱私",
+      "en": "Privacy & Security",
+      "km": "Privacy & Security",
+      "url": "https://www.cathaybk.com.kh/zh-hant/privacy/"
+   },
+   "nav_ethical_management": {
+      "zh-hant": "從業道德規範管理",
+      "en": "Conduct for Ethical Management",
+      "km": "Conduct for Ethical Management",
+      "url": "https://www.cathaybk.com.kh/zh-hant/ethical-management/"
+   },
+   "social_facebook": {
+      "zh-hant": "FB icon",
+      "en": "FB icon",
+      "km": "FB icon",
+      "url": "https://www.facebook.com/cathayunitedbankcambodiaplc"
+   },
+   "social_instagram": {
+      "zh-hant": "IG icon",
+      "en": "IG icon",
+      "km": "IG icon",
+      "url": "https://www.instagram.com/cathayunitedbankcambodiaplc?igsh=MW9tanU4M3Q2cXV4Zw==&utm_source=qr"
+   },
+   "social_telegram": {
+      "zh-hant": "Twitter icon",
+      "en": "Twitter icon",
+      "km": "Twitter icon",
+      "url": "https://t.me/2HNnBwp5lhAxMjQ1"
+   },
+   "social_youtube": {
+      "zh-hant": "Youtube icon",
+      "en": "Youtube icon",
+      "km": "Youtube icon",
+      "url": "https://www.youtube.com/@Cathayunitedbankcambodia"
+   },
+   "social_linkedin": {
+      "zh-hant": "Linkedin icon",
+      "en": "Linkedin icon",
+      "km": "Linkedin icon",
+      "url": "https://tw.linkedin.com/company/cathay-united-bank-co-ltd-"
+   },
+   "copyright": {
+      "zh-hant": "國泰世華商業股份有限公司",
+      "en": "© Cathay United Bank. All Rights Reserved",
+      "km": "© Cathay United Bank. All Rights Reserved",
+      "url": ""
+   }
+}

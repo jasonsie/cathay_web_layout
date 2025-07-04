@@ -210,6 +210,10 @@
    padding-right: 15px;
 }
 
+.component-header .ch-brand figure {
+   margin: 0;
+}
+
 @media (min-width: 992px) {
    .component-header .ch-brand {
       margin: auto auto auto 0;
@@ -919,11 +923,11 @@
    .component-header .ch-nav-lv2-list {
       margin: 0;
       padding: 0 50px;
-      display: flex;
+      /* display: flex; */
       max-height: none;
       min-height: 0;
       overflow-y: hidden;
-      flex: 1 0 auto;
+      /* flex: 1 0 auto; */
    }
 }
 
@@ -934,6 +938,8 @@
 .component-header .ch-nav-lv2-item .ch-nav-lv3-title {
    font-size: 20px;
    font-weight: 800;
+   text-decoration: none;
+   color: #333;
 }
 
 @media (max-width: 992px) {
@@ -943,6 +949,7 @@
       padding: 12px 0;
       margin: 0 0 0 45px;
       position: relative;
+      display: block;
    }
 }
 

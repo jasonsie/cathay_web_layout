@@ -22,15 +22,6 @@ body {
    vertical-align: middle;
 }
 
-[class^='component'] a {
-   color: #0d6efd;
-   text-decoration: underline;
-}
-
-[class^='component'] a:hover {
-   color: #0a58ca;
-}
-
 [class^='component'] a:not([href]):not([class]),
 [class^='component'] a:not([href]):not([class]):hover {
    color: inherit;

@@ -156,6 +156,10 @@
    padding: 8px 12px;
 }
 
+.component-footer .cf-item-link figure {
+   margin: 0;
+}
+
 .component-footer .cf-item-link:hover {
    color: #fff;
 }

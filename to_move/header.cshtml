@@ -1,0 +1,326 @@
+﻿@{
+    var controller_name = this.ViewContext.RouteData.Values["controller"]?.ToString() ?? "";
+    if (controller_name == "Home")
+    {
+        controller_name = "";
+    }
+    if (ViewData["section"]?.ToString() == "home/")
+    {
+        ViewData["section"] = "";
+    }
+
+    // Get current language from route data
+    string currentLanguage = ViewContext.RouteData.Values["language"]?.ToString() ?? "zh-hant";
+    
+    // Load translations from JSON with URLs
+    var navigationUrls = new Dictionary<string, string>
+{
+    ["nav_contact"] = $"{currentLanguage}/contact/",
+    ["nav_careers"] = "careers/",
+    ["nav_bulletin_board"] = $"{currentLanguage}/about-us/",
+    ["nav_news"] = $"{currentLanguage}/personal/index",
+    ["nav_gebank"] = "https://www.globalmyb2b.com/GEBANK/Login.aspx",
+    ["nav_ebank"] = "https://ibanking.cathaybk.com.kh/",
+    ["nav_personal_finance"] = $"{currentLanguage}/personal/index",
+    ["nav_deposit_account"] = $"{currentLanguage}/personal/current-account",
+    ["nav_remittance_service"] = $"{currentLanguage}/personal/inward-and-outward-remittance/",
+    ["nav_loan_solutions"] = $"{currentLanguage}/personal/individual-loan/",
+    ["nav_credit_debit_cards"] = $"{currentLanguage}/personal/credit-cards/",
+    ["nav_atm_service"] = $"{currentLanguage}/personal/atm-service/",
+    ["nav_digital_banking"] = $"{currentLanguage}/personal/internet-banking/",
+    ["nav_exchange_rate"] = $"{currentLanguage}/personal/available-exchange-at-counter/",
+    ["nav_merchant_app"] = $"{currentLanguage}/personal/merchant-app/",
+    ["nav_corporate_finance"] = $"{currentLanguage}/business/index",
+    ["nav_credit_limit"] = $"{currentLanguage}/business/commercial-loan/",
+    ["nav_online_banking"] = $"{currentLanguage}/business/global-myb2b/",
+    ["nav_merchant_services"] = $"{currentLanguage}/business/merchant-services/",
+    ["nav_international_trade"] = $"{currentLanguage}/business/international-trade/",
+    ["nav_payroll_service"] = $"{currentLanguage}/business/payroll-service/",
+    ["nav_escrow_trust"] = $"{currentLanguage}/business/escrow-service/",
+    ["nav_cathay_holdings"] = "https://www.cathayholdings.com/en/holdings/intro/intro/about",
+    ["nav_cathay_united_bank"] = "https://www.cathaybk.com.tw/en-us/cathaybk/english/about-us/about-us/company-history/",
+    ["nav_oversea_branch"] = "https://www.cathaybk.com.tw/overseas/en/",
+    ["nav_privacy_security"] = $"{currentLanguage}/privacy/",
+    ["nav_ethical_management"] = $"{currentLanguage}/ethical-management/",
+
+    ["social_facebook"] = "https://www.facebook.com/cathayunitedbankcambodiaplc",
+    ["social_instagram"] = "https://www.instagram.com/cathayunitedbankcambodiaplc?igsh=MW9tanU4M3Q2cXV4Zw==&utm_source=qr",
+    ["social_telegram"] = "https://t.me/2HNnBwp5lhAxMjQ1",
+    ["social_youtube"] = "https://www.youtube.com/@Cathayunitedbankcambodia",
+    ["social_linkedin"] = "https://tw.linkedin.com/company/cathay-united-bank-co-ltd-"
+};
+
+    // Function to get URL with proper language handling
+    string GetNavigationUrl(string key)
+    {
+        if (navigationUrls.ContainsKey(key))
+        {
+            return navigationUrls[key];
+        }
+        return "javascript:;";
+    }
+}
+<!-- Global Header -->
+<header class="component-header">
+    <nav class="ch-navbar">
+        <div class="ch-brand-wrap">
+            <a href="@ViewData["siteLangUrl"]" class="ch-brand" title="@ViewData["site_name"]">
+                <figure class="ch-figure">
+                    <picture>
+                        <source media="(min-width: 992px)" />
+                        <img class="ch-img" src="~/assets/img/ui/header-logo.svg" alt="@ViewData["site_name"]" />
+                    </picture>
+                    <figcaption hidden>@ViewData["site_name"]</figcaption>
+                </figure>
+            </a>
+            <ul class="ch-subnav-list">
+                <li class="ch-subnav-item">
+                    <a href="@GetNavigationUrl("nav_contact")" class="ch-subnav-link">@ViewData["nav_contact"]</a>
+                </li>
+                <li class="ch-subnav-item">
+                    <a href="@GetNavigationUrl("nav_careers")" class="ch-subnav-link">@ViewData["nav_careers"]</a>
+                </li>
+                <li class="ch-subnav-item">
+                    <div class="language-form">
+                        <select role="language-select" class="form-select">
+                            @if (currentLanguage == "zh-hant")
+                            {
+                                <option value="@Url.SwitchLanguage("zh-hant")" selected>@ViewData["nav_lang_zh_hant"]
+                                </option>
+                            }
+                            else
+                            {
+                                <option value="@Url.SwitchLanguage("zh-hant")">@ViewData["nav_lang_zh_hant"]</option>
+                            }
+                            @if (currentLanguage == "en")
+                            {
+                                <option value="@Url.SwitchLanguage("en")" selected>@ViewData["nav_lang_en"]</option>
+                            }
+                            else
+                            {
+                                <option value="@Url.SwitchLanguage("en")">@ViewData["nav_lang_en"]</option>
+                            }
+                            @if (currentLanguage == "km")
+                            {
+                                <option value="@Url.SwitchLanguage("km")" selected>@ViewData["nav_lang_km"]</option>
+                            }
+                            else
+                            {
+                                <option value="@Url.SwitchLanguage("km")">@ViewData["nav_lang_km"]</option>
+                            }
+                        </select>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <button class="ch-login-toggler" type="button">
+            <span class="ch-login-toggler-inner">@ViewData["nav_login"]</span>
+        </button>
+
+        <div class="ch-login-nav ch-login-nav--full">
+            <ul class="ch-login-nav-list">
+                <li class="ch-login-nav-item">
+                    <a href="@GetNavigationUrl("nav_gebank")" target="_blank" rel="noopener"
+                        class="ch-login-nav-item-link">@ViewData["nav_gebank"]</a>
+                </li>
+
+                <li class="ch-login-nav-item">
+                    <a href="@GetNavigationUrl("nav_ebank")" target="_blank" rel="noopener"
+                        class="ch-login-nav-item-link">@ViewData["nav_pbank"]</a>
+                </li>
+            </ul>
+        </div>
+
+        <button class="ch-toggler" type="button">
+            <span class='ch-toggler-inner'></span>
+        </button>
+
+        <div class="ch-nav">
+            <ul class="ch-nav-list">
+                <li class="ch-nav-item">
+                    <div class="ch-nav-lv2">
+                        <div class="ch-nav-lv2-title" title="@ViewData["nav_services"]">@ViewData["nav_services"]</div>
+                        <ul class="ch-nav-lv2-list">
+                            <li class="ch-nav-lv2-item">
+                                <a class="ch-nav-lv3-title" href="@GetNavigationUrl("nav_personal_finance")">
+                                    <h4 >@ViewData["nav_personal_finance"]</h4>
+                                </a>
+                                <ul class="ch-nav-lv3">
+                                    <li class="ch-nav-lv3-item">
+                                        <a href="@GetNavigationUrl("nav_deposit_account")" class="ch-nav-lv3-link"
+                                            title="@ViewData["nav_deposit_account"]">@ViewData["nav_deposit_account"]</a>
+                                    </li>
+                                    <li class="ch-nav-lv3-item">
+                                        <a href="@GetNavigationUrl("nav_remittance_service")" class="ch-nav-lv3-link"
+                                            title="@ViewData["nav_remittance_service"]">@ViewData["nav_remittance_service"]</a>
+                                    </li>
+                                    <li class="ch-nav-lv3-item">
+                                        <a href="@GetNavigationUrl("nav_loan_solutions")" class="ch-nav-lv3-link"
+                                            title="@ViewData["nav_loan_solutions"]">@ViewData["nav_loan_solutions"]</a>
+                                    </li>
+                                    <li class="ch-nav-lv3-item">
+                                        <a href="@GetNavigationUrl("nav_credit_debit_cards")" target="_blank"
+                                            rel="noopener" class="ch-nav-lv3-link"
+                                            title="@ViewData["nav_credit_debit_cards"]">@ViewData["nav_credit_debit_cards"]</a>
+                                    </li>
+                                    <li class="ch-nav-lv3-item">
+                                        <a href="@GetNavigationUrl("nav_atm_service")" class="ch-nav-lv3-link"
+                                            title="@ViewData["nav_atm_service"]">@ViewData["nav_atm_service"]</a>
+                                    </li>
+                                    <li class="ch-nav-lv3-item">
+                                        <a href="@GetNavigationUrl("nav_digital_banking")" class="ch-nav-lv3-link"
+                                            title="@ViewData["nav_digital_banking"]">@ViewData["nav_digital_banking"]</a>
+                                    </li>
+                                    <li class="ch-nav-lv3-item">
+                                        <a href="@GetNavigationUrl("nav_exchange_rate")" class="ch-nav-lv3-link"
+                                            title="@ViewData["nav_exchange_rate"]">@ViewData["nav_exchange_rate"]
+                                        </a>
+                                    </li>
+                                    <li class="ch-nav-lv3-item">
+                                        <a href="@GetNavigationUrl("nav_merchant_app")" class="ch-nav-lv3-link"
+                                            title="@ViewData["nav_merchant_app"]">@ViewData["nav_merchant_app"]</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="ch-nav-lv2-item">
+                                <a class="ch-nav-lv3-title" href="@GetNavigationUrl("nav_corporate_finance")">
+                                    <h4 >@ViewData["nav_corporate_finance"]</h4>
+                                </a>
+                                <ul class="ch-nav-lv3">
+                            <li class="ch-nav-lv3-item">
+                                <a href="@GetNavigationUrl("nav_deposit_account")" class="ch-nav-lv3-link"
+                                    title="@ViewData["nav_deposit_account"]">@ViewData["nav_deposit_account"]</a>
+                            </li>
+                            <li class="ch-nav-lv3-item">
+                                <a href="@GetNavigationUrl("nav_remittance_service")" class="ch-nav-lv3-link"
+                                    title="@ViewData["nav_remittance_service"]">@ViewData["nav_remittance_service"]</a>
+                            </li>
+                            <li class="ch-nav-lv3-item">
+                                <a href="@GetNavigationUrl("nav_credit_limit")" class="ch-nav-lv3-link"
+                                    title="@ViewData["nav_credit_limit"]">@ViewData["nav_credit_limit"]</a>
+                            </li>
+                            <li class="ch-nav-lv3-item">
+                                <a href="@GetNavigationUrl("nav_online_banking")" target="_blank" rel="noopener"
+                                    class="ch-nav-lv3-link"
+                                    title="@ViewData["nav_online_banking"]">@ViewData["nav_online_banking"]</a>
+                            </li>
+                            <li class="ch-nav-lv3-item">
+                                <a href="@GetNavigationUrl("nav_merchant_services")" class="ch-nav-lv3-link"
+                                    title="@ViewData["nav_merchant_services"]">@ViewData["nav_merchant_services"]</a>
+                            </li>
+                            <li class="ch-nav-lv3-item">
+                                <a href="@GetNavigationUrl("nav_international_trade")" class="ch-nav-lv3-link"
+                                    title="@ViewData["nav_international_trade"]">@ViewData["nav_international_trade"]</a>
+                            </li>
+                            <li class="ch-nav-lv3-item">
+                                <a href="@GetNavigationUrl("nav_payroll_service")" class="ch-nav-lv3-link"
+                                    title="@ViewData["nav_payroll_service"]">@ViewData["nav_payroll_service"]
+                                </a>
+                            </li>
+                            <li class="ch-nav-lv3-item">
+                                <a href="@GetNavigationUrl("nav_escrow_trust")" class="ch-nav-lv3-link"
+                                    title="@ViewData["nav_escrow_trust"]">@ViewData["nav_escrow_trust"]</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <a href='javascript:;' class="ch-nav-link" title="@ViewData["nav_services"]">
+                <span>@ViewData["nav_services"]</span>
+            </a>
+        </li>
+        <li class="ch-nav-item">
+            <div class="ch-nav-lv2">
+                <div class="ch-nav-lv2-title" title="@ViewData["nav_bulletin_board"]">
+                    @ViewData["nav_bulletin_board"]</div>
+                <ul class="ch-nav-lv2-list">
+                    <li class="ch-nav-lv2-item">
+                        <ul class="ch-nav-lv3">
+                            <li class="ch-nav-lv3-item">
+                                <a href="@GetNavigationUrl("nav_news")" class="ch-nav-lv3-link"
+                                    title="@ViewData["nav_news"]">@ViewData["nav_news"]</a>
+                            </li>
+                            @* <li class="ch-nav-lv3-item">
+                                         <a
+                                             href="/hongkong/financial-disclosure/"
+                                             class="ch-nav-lv3-link"
+                                             title="@ViewData["nav_financial_disclosure"]"
+                                             >@ViewData["nav_financial_disclosure"]</a
+                                         >
+                                     </li>
+                                     <li class="ch-nav-lv3-item">
+                                         <a
+                                             href="/hongkong/terms-condition/"
+                                             class="ch-nav-lv3-link"
+                                             title="@ViewData["nav_terms_condition"]"
+                                             >@ViewData["nav_terms_condition"]</a
+                                         >
+                                     </li> *@
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <a href='javascript:;' class="ch-nav-link" title="@ViewData["nav_bulletin_board"]">
+                <span>@ViewData["nav_bulletin_board"]</span>
+            </a>
+        </li>
+
+        <li class="ch-nav-item">
+            <a href="@GetNavigationUrl("nav_bulletin_board")" class="ch-nav-link" title="@ViewData["nav_faq"]">
+                <span>@ViewData["nav_aboutUs"]</span>
+            </a>
+        </li>
+
+        <li class="ch-nav-item ch-nav-item--align-right ch-nav-item--block" style="margin-left: auto">
+            <a href="@GetNavigationUrl("nav_gebank")" target="_blank" rel="noopener" class="ch-nav-link"
+                title="@ViewData["nav_gebank"]">
+                <span>@ViewData["nav_gebank"]</span>
+            </a>
+        </li>
+
+        <li class="ch-nav-item ch-nav-item--block">
+            <a href="@GetNavigationUrl("nav_ebank")" target="_blank" rel="noopener" class="ch-nav-link"
+                title="@ViewData["nav_pbank"]">
+                <span>@ViewData["nav_pbank"]</span>
+            </a>
+        </li>
+
+        <li class="ch-nav-item ch-nav-item--hide-lg">
+            <a href="@GetNavigationUrl("nav_careers")" class="ch-nav-link" title="@ViewData["nav_careers"]">
+                <span>@ViewData["nav_careers"]</span>
+            </a>
+        </li>
+
+        <li class="ch-nav-item ch-nav-item--hide-lg">
+            <a href="@GetNavigationUrl("nav_contact")" class="ch-nav-link" title="@ViewData["nav_contact"]">
+                <span>@ViewData["nav_contact"]</span>
+            </a>
+        </li>
+
+        <li class='ch-nav-item ch-nav-item--group ch-nav-item--hide-lg'>
+            <a href='@GetNavigationUrl("nav_cathay_holdings")' rel='noopener nofollow' target="_blank" 
+                class='ch-nav-link'>@ViewData["nav_cathay_holdings"]</a>
+            <a href='@GetNavigationUrl("nav_cathay_united_bank")' rel='noopener nofollow' target="_blank" 
+                class='ch-nav-link'>@ViewData["nav_cathay_united_bank"]</a>
+            <a href='@GetNavigationUrl("nav_oversea_branch")' target="_blank" rel="noopener" class="ch-nav-link">@ViewData["nav_oversea_branch"]</a>
+        </li>
+        <li class='ch-nav-item ch-nav-item--social ch-nav-item--hide-lg'>
+            <a href='@GetNavigationUrl("social_facebook")' rel='noopener nofollow' target="_blank" 
+                class='ch-nav-link'><img class='ch-nav-item-social-img'
+                    src='https://www.cathaybk.com.tw/OVSWS/Content/img/common/header/facebook.svg'
+                    alt="Facebook icon"></a>
+            <a href='@GetNavigationUrl("social_youtube")' rel='noopener nofollow' target="_blank" 
+                class='ch-nav-link'><img class='ch-nav-item-social-img'
+                    src='https://www.cathaybk.com.tw/OVSWS/Content/img/common/header/youtube.svg'
+                    alt="Youtube icon"></a>
+            <a href='@GetNavigationUrl("social_linkedin")' rel='noopener nofollow' target="_blank" 
+                class='ch-nav-link'><img class='ch-nav-item-social-img' 
+                    src='https://www.cathaybk.com.tw/OVSWS/Content/img/common/header/linkedin-hover.svg' 
+                    alt="linkedin icon"></a>
+        </li>
+        </ul>
+        </div>
+    </nav>
+</header>
+<!-- component-header end -->

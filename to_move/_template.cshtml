@@ -1,0 +1,200 @@
+﻿
+@{
+    ViewData["nav_lang_zh_hant"] = "繁體中文";
+    ViewData["nav_lang_en"] = "English";
+    ViewData["nav_lang_km"] = "ខ្មែរ";
+    
+    // Get language from route data or ViewData
+    string currentLanguage = ViewData["lang"]?.ToString() ?? "zh-hant";
+    if (Context.Request.RouteValues.ContainsKey("language"))
+    {
+        currentLanguage = Context.Request.RouteValues["language"]?.ToString() ?? "zh-hant";
+        ViewData["lang"] = currentLanguage;
+    }
+
+    if(ViewData["section"]?.ToString() == "home/")
+    {
+        ViewData["section"] = "";
+    }
+
+    // Load translations from JSON (this would typically be loaded from a service or configuration)
+    var translations = new Dictionary<string, Dictionary<string, string>>
+    {
+        ["nav_contact"] = new() { ["zh-hant"] = "聯繫我們", ["en"] = "Contact Us", ["km"] = "Contact Us" },
+        ["nav_careers"] = new() { ["zh-hant"] = "人才招募", ["en"] = "Careers", ["km"] = "Careers" },
+        ["nav_services"] = new() { ["zh-hant"] = "服務項目", ["en"] = "Services", ["km"] = "សេវាកម្ម" },
+        ["nav_bulletin_board"] = new() { ["zh-hant"] = "公告專區", ["en"] = "Announcements", ["km"] = "សេចក្តីប្រកាស" },
+        ["nav_news"] = new() { ["zh-hant"] = "最新消息", ["en"] = "Latest News", ["km"] = "ព័ត៌មានចុងក្រោយ" },
+        ["nav_gebank"] = new() { ["zh-hant"] = "Global My B2B", ["en"] = "Global My B2B", ["km"] = "Global My B2B" },
+        ["nav_ebank"] = new() { ["zh-hant"] = "CUBC網路銀行", ["en"] = "CUBC iBanking", ["km"] = "CUBC iBanking" },
+        ["nav_personal_finance"] = new() { ["zh-hant"] = "個人金融", ["en"] = "Personal Banking", ["km"] = "Personal Banking" },
+        ["nav_deposit_account"] = new() { ["zh-hant"] = "存款帳戶", ["en"] = "Deposit Accounts", ["km"] = "Deposit Accounts" },
+        ["nav_remittance_service"] = new() { ["zh-hant"] = "匯款服務", ["en"] = "Remittances", ["km"] = "Remittances" },
+        ["nav_loan_solutions"] = new() { ["zh-hant"] = "借款方案", ["en"] = "Borrowing Solutions", ["km"] = "Borrowing Solutions" },
+        ["nav_credit_debit_cards"] = new() { ["zh-hant"] = "信用卡與簽帳卡", ["en"] = "Personal Cards", ["km"] = "Personal Cards" },
+        ["nav_atm_service"] = new() { ["zh-hant"] = "ATM服務", ["en"] = "ATM", ["km"] = "ATM" },
+        ["nav_digital_banking"] = new() { ["zh-hant"] = "數位銀行服務", ["en"] = "Online Banking", ["km"] = "Online Banking" },
+        ["nav_exchange_rate"] = new() { ["zh-hant"] = "匯率", ["en"] = "Exchange Rates", ["km"] = "Exchange Rates" },
+        ["nav_merchant_app"] = new() { ["zh-hant"] = "Merchant App", ["en"] = "Merchant App", ["km"] = "Merchant App" },
+        ["nav_corporate_finance"] = new() { ["zh-hant"] = "法人金融", ["en"] = "Business Banking", ["km"] = "Business Banking" },
+        ["nav_credit_limit"] = new() { ["zh-hant"] = "信用額度", ["en"] = "Credit Facilities", ["km"] = "Credit Facilities" },
+        ["nav_online_banking"] = new() { ["zh-hant"] = "網路銀行", ["en"] = "Online Banking", ["km"] = "Online Banking" },
+        ["nav_merchant_services"] = new() { ["zh-hant"] = "收單特店服務", ["en"] = "Merchant Services", ["km"] = "Merchant Services" },
+        ["nav_international_trade"] = new() { ["zh-hant"] = "國際貿易", ["en"] = "International Trade", ["km"] = "International Trade" },
+        ["nav_payroll_service"] = new() { ["zh-hant"] = "薪轉服務", ["en"] = "Payroll Service", ["km"] = "Payroll Service" },
+        ["nav_escrow_trust"] = new() { ["zh-hant"] = "價金信託", ["en"] = "Escrow Service", ["km"] = "Escrow Service" },
+        ["nav_cathay_holdings"] = new() { ["zh-hant"] = "國泰金控集團", ["en"] = "Cathay Holdings", ["km"] = "Cathay Holdings" },
+        ["nav_cathay_united_bank"] = new() { ["zh-hant"] = "國泰世華銀行", ["en"] = "Cathay United Bank", ["km"] = "Cathay United Bank" },
+        ["nav_oversea_branch"] = new() { ["zh-hant"] = "海外據點", ["en"] = "Overseas Units", ["km"] = "Overseas Units" },
+        ["nav_privacy_security"] = new() { ["zh-hant"] = "安全與隱私", ["en"] = "Privacy & Security", ["km"] = "Privacy & Security" },
+        ["nav_ethical_management"] = new() { ["zh-hant"] = "從業道德規範管理", ["en"] = "Conduct for Ethical Management", ["km"] = "Conduct for Ethical Management" },
+        ["company_full_name"] = new() { ["zh-hant"] = "國泰世華商業股份有限公司", ["en"] = "Cathay United Bank. All Rights Reserved", ["km"] = "Cathay United Bank. All Rights Reserved" }
+    };
+
+    // Function to get translation value
+    string GetTranslation(string key, string language = null)
+    {
+        language ??= currentLanguage;
+        return translations.ContainsKey(key) && translations[key].ContainsKey(language) 
+            ? translations[key][language] 
+            : translations.ContainsKey(key) && translations[key].ContainsKey("zh-hant") 
+                ? translations[key]["zh-hant"] 
+                : key;
+    }
+
+    // Set common translations
+    foreach (var translationKey in translations.Keys)
+    {
+        ViewData[translationKey] = GetTranslation(translationKey);
+    }
+
+    // Set language-specific settings
+    switch (currentLanguage)
+    {
+        case "zh-hant":
+            ViewData["html_lang"] = ViewData["lang"];
+            ViewData["site_name"] = "國泰世華銀行(柬埔寨)CUBC";
+
+            ViewData["nav_login"] = "網銀登入";
+            ViewData["nav_pbank"] = "CUBC網路銀行";
+            ViewData["nav_aboutUs"] = "關於我們";
+            ViewData["nav_browser_setting"] = "瀏覽器建議";
+            
+            if(ViewData["PageDescription"] == ""){
+                ViewData["PageDescription"] = "值得您信賴的夥伴";
+            }
+            ViewData["fonts"] = "https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Roboto:wght@400;500;700&display=swap";
+            break;
+
+        case "en":
+            ViewData["html_lang"] = "en";
+            ViewData["site_name"] = "Cathay United Bank Cambodia PLC";
+
+            ViewData["nav_login"] = "Login";
+            ViewData["nav_pbank"] = "CUBC iBanking";
+            ViewData["nav_aboutUs"] = "About Us";
+            ViewData["nav_browser_setting"] = "Browser Suggestions";
+            if(ViewData["PageDescription"] == ""){
+                ViewData["PageDescription"] = "A financial partner you can trust";
+            }
+            ViewData["fonts"] = "https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap";
+            break;
+
+        case "km":
+            ViewData["html_lang"] = "km";
+            ViewData["site_name"] = "ធនាគារ កាថេយូណៃធីត (ខេមបូឌា) ម.ក";
+
+            ViewData["nav_login"] = "Login";
+            ViewData["nav_pbank"] = "CUBC iBanking";
+            ViewData["nav_aboutUs"] = "About Us";
+            ViewData["nav_browser_setting"] = "Browser Suggestions";
+            if(ViewData["PageDescription"] == ""){
+                ViewData["PageDescription"] = "ដៃគូហិរញ្ញវត្ថដែលលោកអ្នកអាចទុកចិត្តបាន";
+            }
+            ViewData["fonts"] = "https://fonts.googleapis.com/css2?family=Hanuman:wght@100;300;400;500;700&family=Roboto:wght@400;500;700&display=swap";
+            break;
+    }
+
+    ViewData["lang_url"] = "/"+ViewData["lang"]+"/";
+    ViewData["footer_cathay_holdings"] = GetTranslation("nav_cathay_holdings");
+    ViewData["footer_cathay_united_bank"] = GetTranslation("nav_cathay_united_bank");
+    ViewData["copyright"] = GetTranslation("company_full_name");
+}
+
+
+<!DOCTYPE html>
+<html lang="@ViewData["html_lang"]" class="home">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no">
+
+    <title>@ViewData["site_name"]</title>
+    <meta name="description" content="@ViewData["PageDescription"]">
+    <link rel="icon" type="image/x-icon" href="https://www.cathaybk.com.tw/cathaybk/web/img/favicon.ico">
+    <link rel="stylesheet" href="/assets/css/base.css?r=20221213">
+    <link rel="stylesheet" href="/assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="~/css/header.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/footer.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/oversea-components.css" asp-append-version="true" />
+
+    <link rel="alternate" hreflang="zh-hant" href="https://www.cathaybk.com.kh/zh-hant/@ViewData["site_name"]" />
+    <link rel="alternate" hreflang="km" href="https://www.cathaybk.com.kh/km/@ViewData["site_name"]" />
+    <link rel="alternate" hreflang="x-default" href="https://www.cathaybk.com.kh/@ViewData["site_name"]" />
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="@ViewData["fonts"]">
+
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-MPVMSKZ');</script>
+    <!-- End Google Tag Manager -->
+
+
+    <script type="application/ld+json">
+        {
+            "@@context": "https://schema.org",
+            "@@type": "Organization",
+            "url": "https://www.cathaybk.com.kh/",
+            "logo": "https://www.cathaybk.com.kh/assets/img/ui/header-logo.svg",
+            "address": {
+                "@@type": "PostalAddress",
+                "streetAddress": "No.68, Samdach Pan St.(214), Sangkat Boeung Raing, Khan Daun Penh, Phnom Penh"
+            },
+            "legalName":"Cathay United Bank (Cambodia) Plc. (CUBC)",
+            "name": "Cathay United Bank (Cambodia) Plc. (CUBC)",
+            "telephone": "+85523211211"
+        }
+    </script>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MPVMSKZ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+
+    @await Html.PartialAsync("header.cshtml")    
+    @RenderBody()
+    @await Html.PartialAsync("footer.cshtml")
+    
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/language-selector.js" asp-append-version="true"></script>
+    <script type="text/javascript" src="@Url.Content("~/js/libs/jquery-ui.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/js/libs/jquery.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/js/libs/bootstrap.bundle.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("~/js/app/main.js")"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

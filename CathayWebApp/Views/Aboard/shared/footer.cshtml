@@ -1,19 +1,47 @@
 ﻿@{
     // Get current language from route data
     string currentLanguage = ViewContext.RouteData.Values["language"]?.ToString() ?? "zh-hant";
+
+    // Load translations from JSON with URLs
+    var navigationUrls = new Dictionary<string, string>
+    {
+        ["nav_cathay_holdings"] = "https://www.cathayholdings.com/en/holdings/intro/intro/about",
+        ["nav_cathay_united_bank"] = "https://www.cathaybk.com.tw/en-us/cathaybk/english/about-us/about-us/company-history/",
+        ["nav_oversea_branch"] = "https://www.cathaybk.com.tw/overseas/en/",
+        ["nav_privacy_security"] = $"https://www.cathaybk.com.kh/{currentLanguage}/privacy/",
+        ["nav_ethical_management"] = $"https://www.cathaybk.com.kh/{currentLanguage}/ethical-management/",
+        ["social_facebook"] = "https://www.facebook.com/cathayunitedbankcambodiaplc",
+        ["social_instagram"] = "https://www.instagram.com/cathayunitedbankcambodiaplc?igsh=MW9tanU4M3Q2cXV4Zw==&utm_source=qr",
+        ["social_telegram"] = "https://t.me/2HNnBwp5lhAxMjQ1",
+        ["social_youtube"] = "https://www.youtube.com/@Cathayunitedbankcambodia",
+        ["social_linkedin"] = "https://tw.linkedin.com/company/cathay-united-bank-co-ltd-"
+    };
+
+    // Function to get URL with proper language handling
+    string GetNavigationUrl(string key)
+    {
+        if (navigationUrls.ContainsKey(key))
+        {
+            return navigationUrls[key];
+        }
+        return "javascript:;";
+    }
 }
 <footer class="component-footer">
     <div class="cf-inner">
         <div class="cf-list-wrap cf-list-wrap--lang">
             <ul class="cf-list cf-list--border">
                 <li class="cf-item cf-item--no-border">
-                    <a href="@Url.SwitchLanguage("zh-hant")" class="cf-item-link @(currentLanguage == "zh-hant" ? "cf-item-link--active" : "")">@ViewData["nav_lang_zh_hant"]</a>
+                    <a href="@Url.SwitchLanguage("zh-hant")"
+                        class="cf-item-link @(currentLanguage == "zh-hant" ? "cf-item-link--active" : "")">@ViewData["nav_lang_zh_hant"]</a>
                 </li>
                 <li class="cf-item">
-                    <a href="@Url.SwitchLanguage("en")" class="cf-item-link @(currentLanguage == "en" ? "cf-item-link--active" : "")">@ViewData["nav_lang_en"]</a>
+                    <a href="@Url.SwitchLanguage("en")"
+                        class="cf-item-link @(currentLanguage == "en" ? "cf-item-link--active" : "")">@ViewData["nav_lang_en"]</a>
                 </li>
                 <li class="cf-item">
-                    <a href="@Url.SwitchLanguage("km")" class="cf-item-link @(currentLanguage == "km" ? "cf-item-link--active" : "")">Tiếng Việt</a>
+                    <a href="@Url.SwitchLanguage("km")"
+                        class="cf-item-link @(currentLanguage == "km" ? "cf-item-link--active" : "")">@ViewData["nav_lang_km"]</a>
                 </li>
             </ul>
         </div>
@@ -25,12 +53,9 @@
                         <a href="javascript:;" class="cf-item-link">
                             <figure class="cf-item-figure">
                                 <picture>
-                                    <img
-                                        class="cf-item-img lazy"
+                                    <img class="cf-item-img lazy"
                                         src="https://www.cathaybk.com.tw/OVSWS/Content/img/common/footer/logo.svg"
-                                        width="30"
-                                        alt="國泰世華銀行"
-                                    />
+                                        width="30" alt="國泰世華銀行" />
                                 </picture>
                                 <figcaption hidden>國泰世華銀行</figcaption>
                             </figure>
@@ -39,25 +64,16 @@
                 </ul>
                 <ul class="cf-list">
                     <li class="cf-item cf-item--no-border">
-                        <a
-                            href="https://www.cathayholdings.com/"
-                            target="_blank"
-                            rel="noopener"
-                            class="cf-item-link"
-                            >@ViewData["footer_cathay_holdings"]</a
-                        >
+                        <a href="@GetNavigationUrl("nav_cathay_holdings")" target="_blank" rel="noopener"
+                            class="cf-item-link">@ViewData["footer_cathay_holdings"]</a>
                     </li>
                     <li class="cf-item">
-                        <a
-                            href="https://www.cathaybk.com.tw/cathaybk"
-                            target="_blank"
-                            rel="noopener"
-                            class="cf-item-link"
-                            >@ViewData["footer_cathay_united_bank"]</a
-                        >
+                        <a href="@GetNavigationUrl("nav_cathay_united_bank")" target="_blank" rel="noopener"
+                            class="cf-item-link">@ViewData["footer_cathay_united_bank"]</a>
                     </li>
                     <li class="cf-item">
-                        <a href="@Url.ActionWithLanguage("Index", "Home", currentLanguage, new { section = "overseas" })" class="cf-item-link">@ViewData["nav_oversea_branch"]</a>
+                        <a href="@GetNavigationUrl("nav_oversea_branch")"
+                            class="cf-item-link">@ViewData["nav_oversea_branch"]</a>
                     </li>
                 </ul>
             </ul>
@@ -65,57 +81,39 @@
         <div class="cf-list-wrap cf-list-wrap--link">
             <ul class="cf-icon-list">
                 <li class="cf-item">
-                    <a
-                        href="https://www.facebook.com/cathayunitedbank"
-                        target="_blank"
-                        rel="noopener"
-                        class="cf-item-link cf-item-link--icon"
-                        ><img
-                            class="cf-social-list-img lazy"
-                            width="35"
+                    <a href="@GetNavigationUrl("social_facebook")" target="_blank" rel="noopener"
+                        class="cf-item-link cf-item-link--icon"><img class="cf-social-list-img lazy" width="35"
                             src="https://www.cathaybk.com.tw/OVSWS/Content/img/common/footer/facebook.png"
-                            alt="Facebook"
-                    /></a>
+                            alt="Facebook" /></a>
                 </li>
                 <li class="cf-item">
-                    <a
-                        href="https://www.youtube.com/user/cathayunitedbank"
-                        target="_blank"
-                        rel="noopener"
-                        class="cf-item-link cf-item-link--icon"
-                        ><img
-                            class="cf-social-list-img lazy"
-                            width="35"
+                    <a href="@GetNavigationUrl("social_youtube")" target="_blank" rel="noopener"
+                        class="cf-item-link cf-item-link--icon"><img class="cf-social-list-img lazy" width="35"
                             src="https://www.cathaybk.com.tw/OVSWS/Content/img/common/footer/youtube.png"
-                            alt="Youtube"
-                    /></a>
+                            alt="Youtube" /></a>
                 </li>
                 <li class="cf-item">
-                    <a
-                        href="https://tw.linkedin.com/company/cathay-united-bank-co-ltd-"
-                        target="_blank"
-                        rel="noopener nofollow"
-                        class="cf-item-link cf-item-link--icon"
-                        ><img
-                            class="cf-social-list-img lazy"
-                            width="35"
+                    <a href="@GetNavigationUrl("social_linkedin")" target="_blank" rel="noopener nofollow"
+                        class="cf-item-link cf-item-link--icon"><img class="cf-social-list-img lazy" width="35"
                             src="https://www.cathaybk.com.tw/OVSWS/Content/img/common/footer/linkedin.svg"
-                            alt="LinkedIn"
-                    /></a>
+                            alt="LinkedIn" /></a>
                 </li>
             </ul>
             <ul class="cf-list">
                 <li class="cf-item">
-                    <a href="@Url.ActionWithLanguage("Privacy", "Home", currentLanguage)" class="cf-item-link">@ViewData["nav_privacy_security"]</a>
+                    <a href="@GetNavigationUrl("nav_privacy_security")"
+                        class="cf-item-link">@ViewData["nav_privacy_security"]</a>
                 </li>
                 <li class="cf-item">
-                    <a href="@Url.ActionWithLanguage("FinancialDisclosure", "Home", currentLanguage)" class="cf-item-link">@ViewData["nav_financial_disclosure"]</a>
+                    <a href="@GetNavigationUrl("nav_ethical_management")"
+                        class="cf-item-link">@ViewData["nav_ethical_management"]</a>
                 </li>
                 <li class="cf-item">
-                    <a href="@Url.ActionWithLanguage("BrowserSetting", "Home", currentLanguage)" class="cf-item-link">@ViewData["nav_browser_setting"]</a>
+                    <a href="@Url.ActionWithLanguage("BrowserSetting", "Home", currentLanguage)"
+                        class="cf-item-link">@ViewData["nav_browser_setting"]</a>
                 </li>
                 <li class="cf-item cf-item--copyright cf-item--copyright-flex">
-                    <span class="cf-item-link">© @ViewData["company_full_name"]</span>
+                    <span class="cf-item-link">@ViewData["copyright"]</span>
                 </li>
             </ul>
         </div>

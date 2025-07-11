@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     ViewData["nav_lang_zh_hant"] = "繁體中文";
     ViewData["nav_lang_en"] = "English";
     ViewData["nav_lang_km"] = "ខ្មែរ";
@@ -119,8 +118,19 @@
     ViewData["footer_cathay_holdings"] = GetTranslation("nav_cathay_holdings");
     ViewData["footer_cathay_united_bank"] = GetTranslation("nav_cathay_united_bank");
     ViewData["copyright"] = GetTranslation("company_full_name");
-}
 
+    // Add missing ViewData properties for news section
+    ViewData["country_url"] = "";
+    ViewData["city_url"] = "";
+    ViewData["home_latest_news"] = currentLanguage switch
+    {
+        "zh-hant" => "最新消息",
+        "en" => "Latest News", 
+        "km" => "ព័ត៌មានចុងក្រោយ",
+        _ => "最新消息"
+    };
+
+}
 
 <!DOCTYPE html>
 <html lang="@ViewData["html_lang"]" class="home">

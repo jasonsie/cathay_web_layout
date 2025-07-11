@@ -34,7 +34,7 @@ body {
 .component-oversea-kv {
     position: relative;
     display: flex;
-    min-height: 600px;
+    max-height: 400px;
     background: #f8f9fa;
     overflow: hidden;
 }
@@ -121,9 +121,9 @@ body {
 
 /* Image and Carousel Section */
 .oversea-kv__image {
-    flex: 1;
+    flex: 2.5;
     position: relative;
-    min-height: 600px;
+    height: inherit;
 }
 
 .oversea-kv__carousel {

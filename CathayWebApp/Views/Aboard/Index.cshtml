@@ -315,46 +315,47 @@ else
             if ($('.oversea-kv__carousel-slide').length > 0) {
                 bannerCarousel.init();
             }
+
+            $(window).resize(function () {
+
+                let window_w = $(window).width();
+                let offset_x;
+                let content_w;
+                if (window_w > 991) {
+                    offset_x = $('.cok-inner').offset().left;
+                    content_w = $('.cok-content').width();
+                    max_w = window_w - content_w - offset_x;
+                } else {
+                    offset_x = 0;
+                    content_w = 0;
+                    max_w = window_w;
+                }
+                $('.cok-figure-wrap').css('width', max_w);
+                $('.cok-figure-wrap').css('flex-basis', max_w);
+                $('.cok-figure-wrap').css('max-width', max_w);
+                $('.cok-figure-wrap').css('left', content_w + offset_x);
+
+            }).trigger('resize');
         })
     </script>
 }
 
 <div class='component-oversea-kv'>
-    <div class="oversea-kv__content">
-        <div class="oversea-kv__text">
-            <h1 class='oversea-kv__title'>
-                <span class='oversea-kv__dynamic-title'></span>
-            </h1>
-            @{ var newsList = ViewData["ListOfNews"] as IEnumerable<dynamic>; }
-            @if (newsList?.Any() == true)
-            {
-                <div class='oversea-kv__news'>
-                    <h2 class='oversea-kv__news-title'>@ViewData["home_latest_news"]</h2>
-                    @foreach (var news in newsList)
-                    {
-                        <div class='oversea-kv__news-item'>
-                            <span class='oversea-kv__news-date'>@news.PublishDate.ToString("yyyy-MM-dd")</span>
-                            <p class='oversea-kv__news-content'>@news.Title</p>
-                        </div>
-                    }
-                </div>
-            }
-        </div>
-    </div>
-    
-    <div class="oversea-kv__image">
+    <div class="cok-figure-wrap">
         @{ var bannersList = ViewData["ListOfBanner"] as IEnumerable<dynamic>; }
         @if (bannersList?.Any() == true)
         {
-            <div class="oversea-kv__carousel">
+            <div class="cok-figure-slider">
                 @foreach (var banner in bannersList)
                 {
-                    
-                    <div class="oversea-kv__carousel-slide @(banner.index == 1 ? "oversea-kv__carousel-slide--active" : "")" 
-                         data-title="@banner.title" 
-                         data-url="@banner.url">
-                        <img class='oversea-kv__img' src='@Url.Content(banner.image)' alt='@banner.title' />
-                    </div>
+                    <span class="cok-figure-item">
+                        <figure class='cok-figure oversea-kv__carousel-slide @(banner.index == 1 ? "oversea-kv__carousel-slide--active" : "")'
+                                data-title="@banner.title" 
+                                data-url="@banner.url">
+                            <img class='cok-img oversea-kv__img' src='@Url.Content(banner.image)' alt='@banner.title' />
+                            <figcaption hidden>@banner.title</figcaption>
+                        </figure>
+                    </span>
                 }
                 
                 <!-- Navigation arrows -->
@@ -383,13 +384,51 @@ else
         else
         {
             <!-- Fallback static image -->
-            <picture>
-                <source media='(min-width: 992px)'
-                        srcset='@Url.Content("~/assets/img/ui/bg-lg.jpg")' />
-                <source media='(min-width: 768px)'
-                        srcset='@Url.Content("~/assets/img/ui/bg-md.jpg")' />
-                <img class='oversea-kv__img' src='@Url.Content("~/assets/img/ui/bg.jpg")' alt='海外據點'>
-            </picture>
+            <span class="cok-figure-item">
+                <figure class='cok-figure'>
+                    <picture>
+                        <source media='(min-width: 992px)'
+                                srcset='@Url.Content("~/assets/img/ui/bg-lg.jpg")' />
+                        <source media='(min-width: 768px)'
+                                srcset='@Url.Content("~/assets/img/ui/bg-md.jpg")' />
+                        <img class='cok-img' src='@Url.Content("~/assets/img/ui/bg.jpg")' alt='海外據點'>
+                    </picture>
+                    <figcaption hidden>海外據點</figcaption>
+                </figure>
+            </span>
         }
+    </div>
+
+    <div class="cok-inner">
+        <div class="cok-content">
+            <h1 class='cok-title'>
+                <span class='cok-title--company'>
+                    @(ViewData["lang"] as string == "zh-hant" ? "國泰世華銀行" : 
+                      ViewData["lang"] as string == "en" ? "Cathay United Bank" : "國泰世華銀行")
+                </span>
+                <span class='cok-title--slogan oversea-kv__dynamic-title'></span>
+            </h1>
+
+            @{ var newsList = ViewData["ListOfNews"] as IEnumerable<dynamic>; }
+            @if (newsList?.Any() == true)
+            {
+                <div class='component-oversea-news'>
+                    <h2 class='con-title'>
+                        <a class='con-title-link' href="#">@ViewData["home_latest_news"]</a>
+                    </h2>
+                    <ul class='con-list scrollbar-inner'>
+                        @foreach (var news in newsList)
+                        {
+                            <li class='con-item'>
+                                <a href="@news.Url" class='con-item-link'>
+                                    <span class='con-item-date'>@news.PublishDate.ToString("yyyy-MM-dd")</span>
+                                    <span class='con-item-title'>@news.Title</span>
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            }
+        </div>
     </div>
 </div>

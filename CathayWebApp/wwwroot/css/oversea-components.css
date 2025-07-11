@@ -1,16 +1,21 @@
+/* =============================================================================
+   Cathay Web Layout - Overseas Components Stylesheet
+   ============================================================================= */
+
+/* Base Styles */
 body {
    margin: 0;
    font-size: 1rem;
    font-weight: 400;
    line-height: 1.5;
    color: #212529;
-   background-color: #fff;
+   background-color: #f8f8f8; /* Consolidated background color */
    -webkit-text-size-adjust: 100%;
    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-   background-color: #f8f8f8;
    overflow-x: hidden;
 }
 
+/* Component Base Rules */
 [class^='component'] *,
 [class^='component'] :after,
 [class^='component'] :before {
@@ -31,6 +36,8 @@ body {
 /* ============================================================================
    Component: Oversea Key Visual
    ============================================================================ */
+
+/* Main container with responsive background */
 .component-oversea-kv {
    position: relative;
 }
@@ -41,6 +48,7 @@ body {
    }
 }
 
+/* Inner wrapper with flexbox layout and responsive constraints */
 .component-oversea-kv .cok-inner {
    padding: 0;
    width: 100%;
@@ -53,16 +61,18 @@ body {
    flex-wrap: wrap;
 }
 
+/* Responsive padding and max-width breakpoints */
 @media (min-width: 768px) {
    .component-oversea-kv .cok-inner {
-      padding: 45px 30px;
+      padding: 0; /* Combined repeated rule */
    }
 }
 
 @media (min-width: 992px) {
    .component-oversea-kv .cok-inner {
       max-width: 960px;
-      padding: 70px 0;
+      padding: 0; /* Combined repeated rule */
+      height: 400px;
    }
 }
 
@@ -78,20 +88,7 @@ body {
    }
 }
 
-@media (min-width: 768px) {
-   .component-oversea-kv .cok-inner {
-      padding: 0;
-   }
-}
-
-@media (min-width: 992px) {
-   .component-oversea-kv .cok-inner {
-      padding-top: 0;
-      padding-bottom: 0;
-      height: 400px;
-   }
-}
-
+/* Content wrapper - mobile-first with overlay style */
 .component-oversea-kv .cok-content {
    width: 88%;
    margin: -65px auto 0;
@@ -120,6 +117,7 @@ body {
    }
 }
 
+/* Figure wrapper - image container */
 .component-oversea-kv .cok-figure-wrap {
    order: 1;
    flex-basis: 100%;
@@ -139,6 +137,7 @@ body {
    }
 }
 
+/* Figure element */
 .component-oversea-kv .cok-figure {
    position: relative;
    height: 200px;
@@ -153,6 +152,7 @@ body {
    }
 }
 
+/* Title Styles */
 .component-oversea-kv .cok-title {
    margin: 0;
    padding: 0;
@@ -164,6 +164,7 @@ body {
    }
 }
 
+/* Company title styling */
 .component-oversea-kv .cok-title--company {
    font-weight: 300;
    font-size: 22px;
@@ -181,15 +182,15 @@ body {
       font-weight: 100;
       font-size: 30px;
    }
-}
-
-@media (min-width: 992px) {
+   
+   /* Bold variant and English text styling */
    .component-oversea-kv .cok-title--company.cok-title--company--bold,
    .en .component-oversea-kv .cok-title--company {
       font-weight: 300;
    }
 }
 
+/* Slogan title styling */
 .component-oversea-kv .cok-title--slogan {
    font-weight: 300;
    font-size: 30px;
@@ -211,16 +212,11 @@ body {
    }
 }
 
-.component-oversea-kv .cok-img {
-   position: absolute;
-   min-width: 1000%;
-   min-height: 1000%;
-   left: 50%;
-   top: 50%;
-   transform: translateX(-50%) translateY(-50%) scale(0.1);
-}
+/* ============================================================================
+   Carousel Component Styles
+   ============================================================================ */
 
-/* Carousel styles integrated with reference structure */
+/* Carousel container */
 .component-oversea-kv .cok-figure-slider {
    position: relative;
    width: 100%;
@@ -228,6 +224,7 @@ body {
    overflow: hidden;
 }
 
+/* Individual carousel slides */
 .component-oversea-kv .oversea-kv__carousel-slide {
    position: absolute;
    top: 0;
@@ -247,6 +244,7 @@ body {
    z-index: 2;
 }
 
+/* Carousel images */
 .component-oversea-kv .oversea-kv__img {
    width: 100%;
    height: 100%;
@@ -254,6 +252,7 @@ body {
    display: block;
 }
 
+/* Navigation Arrows */
 /* Navigation Arrows */
 .component-oversea-kv .oversea-kv__carousel-prev,
 .component-oversea-kv .oversea-kv__carousel-next {
@@ -274,13 +273,17 @@ body {
    z-index: 10;
    transition: all 0.3s ease;
    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+   opacity: 0.7; /* Combined with hover effect styles */
 }
 
 .component-oversea-kv .oversea-kv__carousel-prev:hover,
-.component-oversea-kv .oversea-kv__carousel-next:hover {
+.component-oversea-kv .oversea-kv__carousel-next:hover,
+.component-oversea-kv:hover .oversea-kv__carousel-prev,
+.component-oversea-kv:hover .oversea-kv__carousel-next {
    background: rgba(255, 255, 255, 1);
    transform: translateY(-50%) scale(1.1);
    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+   opacity: 1;
 }
 
 .component-oversea-kv .oversea-kv__carousel-prev {
@@ -328,6 +331,7 @@ body {
 }
 
 /* Dynamic title styling */
+/* Dynamic title styling */
 .component-oversea-kv .oversea-kv__dynamic-title {
    font-weight: 300;
    font-size: 22px;
@@ -341,9 +345,8 @@ body {
       font-weight: 100;
       font-size: 30px;
    }
-}
-
-@media (min-width: 992px) {
+   
+   /* Bold variant and English text styling */
    .component-oversea-kv .oversea-kv__dynamic-title.oversea-kv__dynamic-title--bold,
    .en .component-oversea-kv .oversea-kv__dynamic-title {
       font-weight: 300;
@@ -351,6 +354,11 @@ body {
 }
 
 /* News Section - Aligned with original reference */
+/* ============================================================================
+   News Section Styles
+   ============================================================================ */
+
+/* News container */
 .component-oversea-kv .component-oversea-news {
    padding: 0;
 }
@@ -361,6 +369,7 @@ body {
    }
 }
 
+/* News title */
 .component-oversea-kv .con-title {
    padding: 0;
    font-weight: 400;
@@ -381,6 +390,7 @@ body {
    }
 }
 
+/* News title link */
 .component-oversea-kv .con-title-link {
    text-decoration: none;
    color: #00994e;
@@ -390,13 +400,23 @@ body {
    color: #35b879;
 }
 
+/* News list */
 .component-oversea-kv .con-list {
    margin: 0;
    padding: 0;
    list-style: none;
    max-height: 190px;
+   height: 130px;
+   overflow-y: auto;
+   font-size: 15px;
+   font-weight: 400;
+   line-height: 1.5;
+   color: #333;
+   text-align: left;
+   padding-right: 30px;
 }
 
+/* News list items */
 .component-oversea-kv .con-item + .con-item {
    border-top: 1px solid #ddd;
 }
@@ -419,6 +439,7 @@ body {
    }
 }
 
+/* News item date */
 .component-oversea-kv .con-item-date {
    font-size: 16px;
    font-weight: 400;
@@ -438,6 +459,7 @@ body {
    }
 }
 
+/* News item title */
 .component-oversea-kv .con-item-title {
    font-size: 16px;
    font-weight: 400;
@@ -446,12 +468,18 @@ body {
 }
 
 /* Scrollbar styles for news list */
+/* ============================================================================
+   Custom Scrollbar Styles for News List
+   ============================================================================ */
+
+/* Scrollbar wrapper container */
 .component-oversea-kv .scroll-wrapper {
    overflow: hidden !important;
    padding: 0 !important;
    position: relative;
 }
 
+/* Scrollbar content area */
 .component-oversea-kv .scroll-wrapper > .scroll-content {
    border: none !important;
    box-sizing: content-box !important;
@@ -467,11 +495,13 @@ body {
    width: auto !important;
 }
 
+/* Hide default webkit scrollbar */
 .component-oversea-kv .scroll-wrapper > .scroll-content::-webkit-scrollbar {
    height: 0;
    width: 0;
 }
 
+/* Scrollbar element styling */
 .component-oversea-kv .scroll-element {
    display: none;
 }
@@ -481,16 +511,19 @@ body {
    box-sizing: content-box;
 }
 
+/* Show visible scrollbars */
 .component-oversea-kv .scroll-element.scroll-x.scroll-scrollx_visible,
 .component-oversea-kv .scroll-element.scroll-y.scroll-scrolly_visible {
    display: block;
 }
 
+/* Scrollbar cursor styles */
 .component-oversea-kv .scroll-element .scroll-arrow,
 .component-oversea-kv .scroll-element .scroll-bar {
    cursor: default;
 }
 
+/* Inner scrollbar styling */
 .component-oversea-kv .scrollbar-inner > .scroll-element,
 .component-oversea-kv .scrollbar-inner > .scroll-element div {
    border: none;
@@ -508,6 +541,7 @@ body {
    width: 100%;
 }
 
+/* Horizontal scrollbar positioning */
 .component-oversea-kv .scrollbar-inner > .scroll-element.scroll-x {
    bottom: 2px;
    height: 8px;
@@ -515,6 +549,7 @@ body {
    width: 100%;
 }
 
+/* Vertical scrollbar positioning */
 .component-oversea-kv .scrollbar-inner > .scroll-element.scroll-y {
    height: 100%;
    right: 2px;
@@ -522,6 +557,7 @@ body {
    width: 8px;
 }
 
+/* Scrollbar component styling */
 .component-oversea-kv .scrollbar-inner > .scroll-element .scroll-element_outer {
    overflow: hidden;
 }
@@ -537,14 +573,17 @@ body {
    opacity: 0.8;
 }
 
+/* Scrollbar track color */
 .component-oversea-kv .scrollbar-inner > .scroll-element .scroll-element_track {
    background-color: #eaeaea;
 }
 
+/* Scrollbar handle color */
 .component-oversea-kv .scrollbar-inner > .scroll-element .scroll-bar {
    background-color: #00a94f;
 }
 
+/* Scrollbar hover effects */
 .component-oversea-kv .scrollbar-inner > .scroll-element:hover .scroll-bar {
    opacity: 0.6;
 }
@@ -553,17 +592,7 @@ body {
    background-color: #919191;
 }
 
-.component-oversea-kv .con-list {
-   height: 130px;
-   overflow-y: auto;
-   font-size: 15px;
-   font-weight: 400;
-   line-height: 1.5;
-   color: #333;
-   text-align: left;
-   padding-right: 30px;
-}
-
+/* News list specific scrollbar rules */
 .component-oversea-kv .con-list .scroll-element.scroll-x {
    display: none !important;
    width: 0;
@@ -578,6 +607,11 @@ body {
 }
 
 /* Responsive Design */
+/* ============================================================================
+   Responsive Design
+   ============================================================================ */
+
+/* Mobile responsive styles */
 @media (max-width: 991px) {
    .component-oversea-kv .cok-figure-wrap {
       min-height: 400px;
@@ -596,6 +630,7 @@ body {
    }
 }
 
+/* Small mobile responsive styles */
 @media (max-width: 767px) {
    .component-oversea-kv .cok-content {
       padding: 1.5rem;
@@ -635,20 +670,11 @@ body {
       width: 12px;
       height: 12px;
    }
-
-
 }
 
-/* Enhanced hover effects */
-.component-oversea-kv:hover .oversea-kv__carousel-prev,
-.component-oversea-kv:hover .oversea-kv__carousel-next {
-   opacity: 1;
-}
-
-.component-oversea-kv .oversea-kv__carousel-prev,
-.component-oversea-kv .oversea-kv__carousel-next {
-   opacity: 0.7;
-}
+/* ============================================================================
+   Accessibility & Focus States
+   ============================================================================ */
 
 /* Focus states for accessibility */
 .component-oversea-kv .oversea-kv__carousel-prev:focus,

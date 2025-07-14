@@ -1,16 +1,28 @@
+/* =============================================================================
+   Cathay Web Layout - Overseas Components Stylesheet
+   ============================================================================= */
+
+/* Base Styles */
 body {
    margin: 0;
    font-size: 1rem;
    font-weight: 400;
    line-height: 1.5;
    color: #212529;
-   background-color: #fff;
+   background-color: #f8f8f8; /* Consolidated background color */
    -webkit-text-size-adjust: 100%;
    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-   background-color: #f8f8f8;
    overflow-x: hidden;
 }
+.zh-cn [class^='component'] {
+   font-family: 'Montserrat, Noto Sans SC, 微軟正黑體, Microsoft JhengHei, Heiti TC, 黑體, sans-serif';
+}
 
+.en [class^='component'] {
+   font-family: 'Montserrat', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* Component Base Rules */
 [class^='component'] *,
 [class^='component'] :after,
 [class^='component'] :before {
@@ -26,4 +38,655 @@ body {
 [class^='component'] a:not([href]):not([class]):hover {
    color: inherit;
    text-decoration: none;
+}
+
+/* ============================================================================
+   Component: Oversea Key Visual
+   ============================================================================ */
+
+/* Main container with responsive background */
+.component-oversea-kv {
+   position: relative;
+}
+
+@media (min-width: 992px) {
+   .component-oversea-kv {
+      background-color: #fff;
+   }
+}
+
+/* Inner wrapper with flexbox layout and responsive constraints */
+.component-oversea-kv .cok-inner {
+   padding: 0;
+   width: 100%;
+   max-width: 100%;
+   margin-right: auto;
+   margin-left: auto;
+   position: relative;
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+}
+
+/* Responsive padding and max-width breakpoints */
+@media (min-width: 768px) {
+   .component-oversea-kv .cok-inner {
+      padding: 0; /* Combined repeated rule */
+   }
+}
+
+@media (min-width: 992px) {
+   .component-oversea-kv .cok-inner {
+      max-width: 960px;
+      padding: 0; /* Combined repeated rule */
+      height: 400px;
+   }
+}
+
+@media (min-width: 1200px) {
+   .component-oversea-kv .cok-inner {
+      max-width: 1140px;
+   }
+}
+
+@media (min-width: 2000px) {
+   .component-oversea-kv .cok-inner {
+      max-width: 1320px;
+   }
+}
+
+/* Content wrapper - mobile-first with overlay style */
+.component-oversea-kv .cok-content {
+   width: 88%;
+   margin: 0 auto;
+   order: 2;
+   z-index: 20;
+   position: relative;
+   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.05), 0 10px 10px rgba(0, 0, 0, 0.02);
+   padding: 30px 20px;
+   background-color: #fff;
+}
+
+@media (min-width: 992px) {
+   .component-oversea-kv .cok-content {
+      padding: 0;
+      background-color: transparent;
+      order: 1;
+      max-width: 340px;
+      margin: 0;
+      box-shadow: none;
+   }
+}
+
+@media (min-width: 1200px) {
+   .component-oversea-kv .cok-content {
+      order: 1;
+   }
+}
+
+/* Figure wrapper - image container */
+.component-oversea-kv .cok-figure-wrap {
+   order: 1;
+   flex-basis: 100%;
+   position: relative;
+   z-index: 10;
+   background-color: #ddd;
+   height: 200px;
+}
+
+@media (min-width: 992px) {
+   .component-oversea-kv .cok-figure-wrap {
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      order: 2;
+   }
+}
+
+/* Figure element */
+.component-oversea-kv .cok-figure {
+   position: relative;
+   height: 200px;
+}
+
+@media (min-width: 992px) {
+   .component-oversea-kv .cok-figure {
+      width: 100%;
+      max-width: 100%;
+      height: 400px;
+      order: 2;
+   }
+}
+
+/* Title Styles */
+.component-oversea-kv .cok-title {
+   margin: 0;
+   padding: 0;
+}
+
+@media (min-width: 992px) {
+   .component-oversea-kv .cok-title {
+      padding: 30px 5px 25px 0;
+   }
+}
+
+/* Company title styling */
+.component-oversea-kv .cok-title--company {
+   font-weight: 300;
+   font-size: 22px;
+   color: #333;
+   line-height: 1;
+   display: block;
+}
+
+.component-oversea-kv .cok-title--company + .cok-title--slogan {
+   margin-top: 10px;
+}
+
+@media (min-width: 992px) {
+   .component-oversea-kv .cok-title--company {
+      font-weight: 100;
+      font-size: 30px;
+   }
+
+   /* Bold variant and English text styling */
+   .component-oversea-kv .cok-title--company.cok-title--company--bold,
+   .en .component-oversea-kv .cok-title--company {
+      font-weight: 300;
+   }
+}
+
+/* Slogan title styling */
+.component-oversea-kv .cok-title--slogan {
+   font-weight: 300;
+   font-size: 30px;
+   color: #333;
+   line-height: 1.2;
+   display: block;
+}
+
+.component-oversea-kv .cok-title--slogan br {
+   display: none;
+}
+
+@media (min-width: 992px) {
+   .component-oversea-kv .cok-title--slogan {
+      font-size: 40px;
+   }
+   .component-oversea-kv .cok-title--slogan br {
+      display: block;
+   }
+}
+
+/* ============================================================================
+   Carousel Component Styles
+   ============================================================================ */
+
+/* Carousel container */
+.component-oversea-kv .cok-figure-slider {
+   position: relative;
+   width: 100%;
+   height: 100%;
+   overflow: hidden;
+}
+
+/* Individual carousel slides */
+.component-oversea-kv .oversea-kv__carousel-slide {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   margin: 0;
+   opacity: 0;
+   transform: translateX(100%);
+   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+   z-index: 1;
+}
+
+.component-oversea-kv .oversea-kv__carousel-slide--active {
+   opacity: 1;
+   transform: translateX(0);
+   z-index: 2;
+}
+
+/* Carousel images */
+.component-oversea-kv .oversea-kv__img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   display: block;
+}
+
+/* Navigation Arrows */
+/* Navigation Arrows */
+.component-oversea-kv .oversea-kv__carousel-prev,
+.component-oversea-kv .oversea-kv__carousel-next {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   width: 50px;
+   height: 50px;
+   background: rgba(255, 255, 255, 0.9);
+   border: none;
+   border-radius: 50%;
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   color: #003366;
+   font-size: 1.2rem;
+   z-index: 10;
+   transition: all 0.3s ease;
+   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+   opacity: 0.7; /* Combined with hover effect styles */
+}
+
+.component-oversea-kv .oversea-kv__carousel-prev:hover,
+.component-oversea-kv .oversea-kv__carousel-next:hover,
+.component-oversea-kv:hover .oversea-kv__carousel-prev,
+.component-oversea-kv:hover .oversea-kv__carousel-next {
+   background: rgba(255, 255, 255, 1);
+   transform: translateY(-50%) scale(1.1);
+   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+   opacity: 1;
+}
+
+.component-oversea-kv .oversea-kv__carousel-prev {
+   left: 20px;
+}
+
+.component-oversea-kv .oversea-kv__carousel-next {
+   right: 20px;
+}
+
+.component-oversea-kv .oversea-kv__carousel-prev svg,
+.component-oversea-kv .oversea-kv__carousel-next svg {
+   pointer-events: none;
+}
+
+/* Dot Indicators */
+.component-oversea-kv .oversea-kv__carousel-dots {
+   position: absolute;
+   bottom: 30px;
+   left: 50%;
+   transform: translateX(-50%);
+   display: flex;
+   gap: 12px;
+   z-index: 10;
+}
+
+.component-oversea-kv .oversea-kv__carousel-dot {
+   width: 14px;
+   height: 14px;
+   border-radius: 50%;
+   border: 2px solid rgba(255, 255, 255, 0.7);
+   background: transparent;
+   cursor: pointer;
+   transition: all 0.3s ease;
+}
+
+.component-oversea-kv .oversea-kv__carousel-dot:hover {
+   border-color: rgba(255, 255, 255, 1);
+   transform: scale(1.2);
+}
+
+.component-oversea-kv .oversea-kv__carousel-dot--active {
+   background: rgba(255, 255, 255, 1);
+   border-color: rgba(255, 255, 255, 1);
+}
+
+/* Dynamic title styling */
+/* Dynamic title styling */
+.component-oversea-kv .oversea-kv__dynamic-title {
+   font-weight: 300;
+   font-size: 22px;
+   color: #333;
+   line-height: 1;
+   display: block;
+}
+
+@media (min-width: 992px) {
+   .component-oversea-kv .oversea-kv__dynamic-title {
+      font-weight: 100;
+      font-size: 30px;
+   }
+
+   /* Bold variant and English text styling */
+   .component-oversea-kv .oversea-kv__dynamic-title.oversea-kv__dynamic-title--bold,
+   .en .component-oversea-kv .oversea-kv__dynamic-title {
+      font-weight: 300;
+   }
+}
+
+/* News Section - Aligned with original reference */
+/* ============================================================================
+   News Section Styles
+   ============================================================================ */
+
+/* News container */
+.component-oversea-kv .component-oversea-news {
+   padding: 0;
+}
+
+@media (min-width: 992px) {
+   .component-oversea-kv .component-oversea-news {
+      padding: 0 20px 0 0;
+   }
+}
+
+/* News title */
+.component-oversea-kv .con-title {
+   padding: 0;
+   font-weight: 400;
+   margin: 10px 0 0;
+}
+
+@media (min-width: 992px) {
+   .component-oversea-kv .con-title {
+      display: block;
+      font-weight: 300;
+      line-height: 1;
+      margin: 0;
+      font-size: 16px;
+      color: #333;
+   }
+   .component-oversea-kv .con-title + .con-list {
+      margin-top: 0;
+   }
+}
+
+/* News title link */
+.component-oversea-kv .con-title-link {
+   text-decoration: none;
+   color: #00994e;
+}
+
+.component-oversea-kv .con-title-link:hover {
+   color: #35b879;
+}
+
+/* News list */
+.component-oversea-kv .con-list {
+   margin: 0;
+   padding: 0;
+   list-style: none;
+   max-height: 190px;
+   height: 130px;
+   overflow-y: auto;
+   font-size: 15px;
+   font-weight: 400;
+   line-height: 1.5;
+   color: #333;
+   text-align: left;
+   padding-right: 30px;
+}
+
+/* News list items */
+.component-oversea-kv .con-item + .con-item {
+   border-top: 1px solid #ddd;
+}
+
+.component-oversea-kv .con-item-link {
+   display: flex;
+   text-decoration: none;
+   padding: 15px 0;
+   flex-direction: column;
+}
+
+.component-oversea-kv .con-item-link:hover {
+   text-decoration: none;
+}
+
+@media (min-width: 768px) {
+   .component-oversea-kv .con-item-link {
+      flex-direction: row;
+      flex-wrap: nowrap;
+   }
+}
+
+/* News item date */
+.component-oversea-kv .con-item-date {
+   font-size: 16px;
+   font-weight: 400;
+   color: #12a847;
+   line-height: 1.3;
+   min-width: 100px;
+}
+
+.component-oversea-kv .con-item-date + .con-item-title {
+   margin-top: 5px;
+}
+
+@media (min-width: 768px) {
+   .component-oversea-kv .con-item-date + .con-item-title {
+      margin-top: 0;
+      margin-left: 10px;
+   }
+}
+
+/* News item title */
+.component-oversea-kv .con-item-title {
+   font-size: 16px;
+   font-weight: 400;
+   color: #333;
+   line-height: 1.5;
+}
+
+/* Scrollbar styles for news list */
+/* ============================================================================
+   Custom Scrollbar Styles for News List
+   ============================================================================ */
+
+/* Scrollbar wrapper container */
+.component-oversea-kv .scroll-wrapper {
+   overflow: hidden !important;
+   padding: 0 !important;
+   position: relative;
+}
+
+/* Scrollbar content area */
+.component-oversea-kv .scroll-wrapper > .scroll-content {
+   border: none !important;
+   box-sizing: content-box !important;
+   height: auto;
+   left: 0;
+   margin: 0;
+   max-height: none;
+   max-width: none !important;
+   overflow: scroll !important;
+   padding: 0 20px 0 0;
+   position: relative !important;
+   top: 0;
+   width: auto !important;
+}
+
+/* Hide default webkit scrollbar */
+.component-oversea-kv .scroll-wrapper > .scroll-content::-webkit-scrollbar {
+   height: 0;
+   width: 0;
+}
+
+/* Scrollbar element styling */
+.component-oversea-kv .scroll-element {
+   display: none;
+}
+
+.component-oversea-kv .scroll-element,
+.component-oversea-kv .scroll-element div {
+   box-sizing: content-box;
+}
+
+/* Show visible scrollbars */
+.component-oversea-kv .scroll-element.scroll-x.scroll-scrollx_visible,
+.component-oversea-kv .scroll-element.scroll-y.scroll-scrolly_visible {
+   display: block;
+}
+
+/* Scrollbar cursor styles */
+.component-oversea-kv .scroll-element .scroll-arrow,
+.component-oversea-kv .scroll-element .scroll-bar {
+   cursor: default;
+}
+
+/* Inner scrollbar styling */
+.component-oversea-kv .scrollbar-inner > .scroll-element,
+.component-oversea-kv .scrollbar-inner > .scroll-element div {
+   border: none;
+   margin: 0;
+   padding: 0;
+   position: absolute;
+   z-index: 10;
+}
+
+.component-oversea-kv .scrollbar-inner > .scroll-element div {
+   display: block;
+   height: 100%;
+   left: 0;
+   top: 0;
+   width: 100%;
+}
+
+/* Horizontal scrollbar positioning */
+.component-oversea-kv .scrollbar-inner > .scroll-element.scroll-x {
+   bottom: 2px;
+   height: 8px;
+   left: 0;
+   width: 100%;
+}
+
+/* Vertical scrollbar positioning */
+.component-oversea-kv .scrollbar-inner > .scroll-element.scroll-y {
+   height: 100%;
+   right: 2px;
+   top: 0;
+   width: 8px;
+}
+
+/* Scrollbar component styling */
+.component-oversea-kv .scrollbar-inner > .scroll-element .scroll-element_outer {
+   overflow: hidden;
+}
+
+.component-oversea-kv .scrollbar-inner > .scroll-element .scroll-bar,
+.component-oversea-kv .scrollbar-inner > .scroll-element .scroll-element_outer,
+.component-oversea-kv .scrollbar-inner > .scroll-element .scroll-element_track {
+   border-radius: 8px;
+}
+
+.component-oversea-kv .scrollbar-inner > .scroll-element .scroll-bar,
+.component-oversea-kv .scrollbar-inner > .scroll-element .scroll-element_track {
+   opacity: 0.8;
+}
+
+/* Scrollbar track color */
+.component-oversea-kv .scrollbar-inner > .scroll-element .scroll-element_track {
+   background-color: #eaeaea;
+}
+
+/* Scrollbar handle color */
+.component-oversea-kv .scrollbar-inner > .scroll-element .scroll-bar {
+   background-color: #00a94f;
+}
+
+/* Scrollbar hover effects */
+.component-oversea-kv .scrollbar-inner > .scroll-element:hover .scroll-bar {
+   opacity: 0.6;
+}
+
+.component-oversea-kv .scrollbar-inner > .scroll-element.scroll-draggable .scroll-bar {
+   background-color: #919191;
+}
+
+/* News list specific scrollbar rules */
+.component-oversea-kv .con-list .scroll-element.scroll-x {
+   display: none !important;
+   width: 0;
+   height: 0;
+   opacity: 0;
+   visibility: hidden;
+}
+
+.component-oversea-kv .con-list .scroll-element.scroll-y {
+   visibility: visible;
+   opacity: 1;
+}
+
+/* Responsive Design */
+/* ============================================================================
+   Responsive Design
+   ============================================================================ */
+
+/* Mobile responsive styles */
+@media (max-width: 991px) {
+   .component-oversea-kv .cok-figure-wrap {
+      min-height: 400px;
+   }
+
+   .component-oversea-kv .cok-content {
+      background: white;
+   }
+
+   .component-oversea-kv .cok-title--company {
+      font-size: 2rem;
+   }
+
+   .component-oversea-kv .oversea-kv__dynamic-title {
+      font-size: 1.3rem;
+   }
+}
+
+/* Small mobile responsive styles */
+@media (max-width: 767px) {
+   .component-oversea-kv .cok-content {
+      padding: 1.5rem;
+   }
+
+   .component-oversea-kv .cok-figure-wrap {
+      min-height: 300px;
+   }
+
+   .component-oversea-kv .cok-title--company {
+      font-size: 1.8rem;
+   }
+
+   .component-oversea-kv .oversea-kv__dynamic-title {
+      font-size: 1.1rem;
+   }
+
+   .component-oversea-kv .oversea-kv__carousel-prev,
+   .component-oversea-kv .oversea-kv__carousel-next {
+      width: 40px;
+      height: 40px;
+   }
+
+   .component-oversea-kv .oversea-kv__carousel-prev {
+      left: 15px;
+   }
+
+   .component-oversea-kv .oversea-kv__carousel-next {
+      right: 15px;
+   }
+
+   .component-oversea-kv .oversea-kv__carousel-dots {
+      bottom: 20px;
+   }
+
+   .component-oversea-kv .oversea-kv__carousel-dot {
+      width: 12px;
+      height: 12px;
+   }
+}
+
+/* ============================================================================
+   Accessibility & Focus States
+   ============================================================================ */
+
+/* Focus states for accessibility */
+.component-oversea-kv .oversea-kv__carousel-prev:focus,
+.component-oversea-kv .oversea-kv__carousel-next:focus,
+.component-oversea-kv .oversea-kv__carousel-dot:focus {
+   outline: 2px solid #0066cc;
+   outline-offset: 2px;
 }

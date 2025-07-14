@@ -14,6 +14,13 @@ body {
    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
    overflow-x: hidden;
 }
+.zh-cn [class^='component'] {
+   font-family: 'Montserrat, Noto Sans SC, 微軟正黑體, Microsoft JhengHei, Heiti TC, 黑體, sans-serif';
+}
+
+.en [class^='component'] {
+   font-family: 'Montserrat', 'Noto Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
 
 /* Component Base Rules */
 [class^='component'] *,
@@ -182,7 +189,7 @@ body {
       font-weight: 100;
       font-size: 30px;
    }
-   
+
    /* Bold variant and English text styling */
    .component-oversea-kv .cok-title--company.cok-title--company--bold,
    .en .component-oversea-kv .cok-title--company {
@@ -345,7 +352,7 @@ body {
       font-weight: 100;
       font-size: 30px;
    }
-   
+
    /* Bold variant and English text styling */
    .component-oversea-kv .oversea-kv__dynamic-title.oversea-kv__dynamic-title--bold,
    .en .component-oversea-kv .oversea-kv__dynamic-title {

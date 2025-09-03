@@ -14,19 +14,37 @@ namespace CathayWebApp.Controllers
         // Handle root language URL: domain/{language}/
         public IActionResult LanguageRoot(string language = "zh-hant")
         {
+            // Validate language and redirect if invalid
+            if (!IsValidLanguage(language))
+            {
+                return RedirectToAction("LanguageRoot", new { language = "zh-hant" });
+            }
+            
             SetupLanguageViewData(language);
             SetupCommonViewData("home/");
             SetupSiteLangUrl(language);
             
-            // Redirect to Home controller instead of using Aboard
-            return RedirectToAction("Index", "Home", new { language = language });
+            // Directly return the Home view without redirect to avoid routing issues
+            return View($"~/Views/Home/{language}/Index.cshtml");
         }
 
         // Handle specific path URLs: domain/{language}/{path}/
         public IActionResult LanguagePath(string language = "zh-hant", string path = "")
         {
+            // Validate language and redirect if invalid
+            if (!IsValidLanguage(language))
+            {
+                return RedirectToAction("LanguageRoot", new { language = "zh-hant" });
+            }
+            
             SetupLanguageViewData(language);
             SetupSiteLangUrl(language);
+            
+            // Special handling for "home" path - redirect to root
+            if (path.ToLower() == "home")
+            {
+                return RedirectToAction("LanguageRoot", new { language = language });
+            }
             
             SetupCommonViewData("liao/", path);
             
@@ -38,8 +56,15 @@ namespace CathayWebApp.Controllers
                 return View(viewPath);
             }
             
-            // Fallback to Liao Index if specific view not found
-            return View("~/Views/Liao/Index.cshtml");
+            // Check if there's a view in the standard Views folder structure
+            var standardViewPath = GetStandardViewPath(path, language);
+            if (!string.IsNullOrEmpty(standardViewPath) && ViewExists(standardViewPath))
+            {
+                return View(standardViewPath);
+            }
+            
+            // If no view found, redirect to home page instead of returning 404
+            return RedirectToAction("LanguageRoot", new { language = language });
         }
 
         // Handle specific page within a path: domain/{language}/{path}/{page}/
@@ -57,8 +82,81 @@ namespace CathayWebApp.Controllers
                 return View(viewPath);
             }
             
-            // Fallback to path index
-            return LanguagePath(language, path);
+            // If page not found, try to fallback to path index
+            var pathExists = !string.IsNullOrEmpty(GetViewPathFromReference(path, language)) || 
+                           !string.IsNullOrEmpty(GetStandardViewPath(path, language));
+            
+            if (pathExists)
+            {
+                return LanguagePath(language, path);
+            }
+            
+            // If neither page nor path exists, redirect to home
+            return RedirectToAction("LanguageRoot", new { language = language });
+        }
+
+        // Catch-all action for invalid URLs
+        public IActionResult RedirectToHome(string url = "")
+        {
+            // Try to extract language from the URL if possible
+            var language = "zh-hant"; // default
+            
+            if (!string.IsNullOrEmpty(url))
+            {
+                var urlParts = url.Split('/');
+                if (urlParts.Length > 0)
+                {
+                    var potentialLang = urlParts[0].ToLower();
+                    if (potentialLang == "en" || potentialLang == "km" || potentialLang == "zh-hant")
+                    {
+                        language = potentialLang;
+                    }
+                }
+            }
+            
+            // Redirect to the appropriate language home page
+            return RedirectToAction("LanguageRoot", new { language = language });
+        }
+
+        private string? GetStandardViewPath(string path, string language)
+        {
+            if (string.IsNullOrEmpty(path))
+                return null;
+
+            // Map path names to standard Views folder structure  
+            var pathMappings = new Dictionary<string, string>
+            {
+                {"about-us", "AboutUs"},
+                {"business", "Business"},
+                {"personal", "Personal"},
+                {"careers", "Careers"},
+                {"contact", "Contact"},
+                {"ethical-management", "EthicalManagement"},
+                {"event", "Event"},
+                {"feedback", "Feedback"},
+                {"home", "Home"},
+                {"job-openings", "JobOpenings"},
+                {"privacy", "Privacy"},
+                {"app", "App"}
+            };
+
+            var folderName = pathMappings.ContainsKey(path.ToLower()) 
+                ? pathMappings[path.ToLower()] 
+                : CapitalizePath(path);
+
+            // Check if this path exists in the standard Views structure
+            var viewFolderPath = Path.Combine(_environment.ContentRootPath, "Views", folderName, language);
+            
+            if (Directory.Exists(viewFolderPath))
+            {
+                var indexPath = Path.Combine(viewFolderPath, "Index.cshtml");
+                if (System.IO.File.Exists(indexPath))
+                {
+                    return $"~/Views/{folderName}/{language}/Index.cshtml";
+                }
+            }
+
+            return null;
         }
 
         private string? GetViewPathFromReference(string path, string language)
@@ -192,6 +290,12 @@ namespace CathayWebApp.Controllers
                 "km" => "/km/",
                 _ => "/zh-hant/"
             };
+        }
+
+        private bool IsValidLanguage(string language)
+        {
+            var validLanguages = new[] { "zh-hant", "en", "km" };
+            return validLanguages.Contains(language?.ToLower());
         }
     }
 }

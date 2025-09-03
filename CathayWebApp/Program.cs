@@ -76,4 +76,10 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}",
     defaults: new { language = "zh-hant" });
 
+// Catch-all route for invalid URLs - redirect to home
+app.MapControllerRoute(
+    name: "catchAll",
+    pattern: "{*url}",
+    defaults: new { controller = "Site", action = "RedirectToHome" });
+
 app.Run();

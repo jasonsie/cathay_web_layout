@@ -46,21 +46,21 @@ namespace CathayWebApp.Controllers
                 return RedirectToAction("LanguageRoot", new { language = language });
             }
             
-            SetupCommonViewData("liao/", path);
+            // Check if there's a view in the standard Views folder structure first
+            var standardViewPath = GetStandardViewPath(path, language);
+            if (!string.IsNullOrEmpty(standardViewPath) && ViewExists(standardViewPath))
+            {
+                SetupCommonViewData("", path); // No liao/ prefix for standard views
+                return View(standardViewPath);
+            }
             
-            // Try to find the specific view in the reference structure
+            // Fallback to reference structure
+            SetupCommonViewData("liao/", path);
             var viewPath = GetViewPathFromReference(path, language);
             
             if (!string.IsNullOrEmpty(viewPath) && ViewExists(viewPath))
             {
                 return View(viewPath);
-            }
-            
-            // Check if there's a view in the standard Views folder structure
-            var standardViewPath = GetStandardViewPath(path, language);
-            if (!string.IsNullOrEmpty(standardViewPath) && ViewExists(standardViewPath))
-            {
-                return View(standardViewPath);
             }
             
             // If no view found, redirect to home page instead of returning 404
@@ -70,8 +70,14 @@ namespace CathayWebApp.Controllers
         // Handle specific page within a path: domain/{language}/{path}/{page}/
         public IActionResult LanguagePathPage(string language = "zh-hant", string path = "", string page = "")
         {
+            // Validate language and redirect if invalid
+            if (!IsValidLanguage(language))
+            {
+                return RedirectToAction("LanguageRoot", new { language = "zh-hant" });
+            }
+            
             SetupLanguageViewData(language);
-            SetupCommonViewData("liao/", path);
+            SetupCommonViewData("", path); // Remove liao/ prefix for standard views
             SetupSiteLangUrl(language);
             
             // Try to find the specific page view
@@ -83,8 +89,8 @@ namespace CathayWebApp.Controllers
             }
             
             // If page not found, try to fallback to path index
-            var pathExists = !string.IsNullOrEmpty(GetViewPathFromReference(path, language)) || 
-                           !string.IsNullOrEmpty(GetStandardViewPath(path, language));
+            var pathExists = !string.IsNullOrEmpty(GetStandardViewPath(path, language)) || 
+                           !string.IsNullOrEmpty(GetViewPathFromReference(path, language));
             
             if (pathExists)
             {
@@ -118,6 +124,64 @@ namespace CathayWebApp.Controllers
             return RedirectToAction("LanguageRoot", new { language = language });
         }
 
+        // Debug action to test routing
+        public IActionResult TestRouting()
+        {
+            var routeData = RouteData.Values;
+            var queryString = Request.QueryString.ToString();
+            
+            return Json(new
+            {
+                RouteData = routeData,
+                QueryString = queryString,
+                RequestPath = Request.Path.ToString(),
+                AvailableViews = GetAvailableViews()
+            });
+        }
+
+        private object GetAvailableViews()
+        {
+            var viewsPath = Path.Combine(_environment.ContentRootPath, "Views");
+            var result = new Dictionary<string, object>();
+            
+            if (Directory.Exists(viewsPath))
+            {
+                var directories = Directory.GetDirectories(viewsPath)
+                    .Where(d => !Path.GetFileName(d).StartsWith("_") && Path.GetFileName(d) != "Shared")
+                    .ToArray();
+                
+                foreach (var dir in directories)
+                {
+                    var dirName = Path.GetFileName(dir);
+                    var langDirs = Directory.GetDirectories(dir);
+                    var viewsByLang = new Dictionary<string, string[]>();
+                    
+                    foreach (var langDir in langDirs)
+                    {
+                        var langName = Path.GetFileName(langDir);
+                        var views = Directory.GetFiles(langDir, "*.cshtml")
+                            .Select(f => Path.GetFileNameWithoutExtension(f))
+                            .ToArray();
+                        viewsByLang[langName] = views;
+                    }
+                    
+                    // Also check for direct files in the folder (like Download, Error)
+                    var directFiles = Directory.GetFiles(dir, "*.cshtml")
+                        .Select(f => Path.GetFileNameWithoutExtension(f))
+                        .ToArray();
+                    
+                    if (directFiles.Any())
+                    {
+                        viewsByLang["direct"] = directFiles;
+                    }
+                    
+                    result[dirName] = viewsByLang;
+                }
+            }
+            
+            return result;
+        }
+
         private string? GetStandardViewPath(string path, string language)
         {
             if (string.IsNullOrEmpty(path))
@@ -127,7 +191,7 @@ namespace CathayWebApp.Controllers
             var pathMappings = new Dictionary<string, string>
             {
                 {"about-us", "AboutUs"},
-                {"business", "Business"},
+                {"business", "Business copy"}, // Note: Using "Business copy" for business routes
                 {"personal", "Personal"},
                 {"careers", "Careers"},
                 {"contact", "Contact"},
@@ -137,7 +201,9 @@ namespace CathayWebApp.Controllers
                 {"home", "Home"},
                 {"job-openings", "JobOpenings"},
                 {"privacy", "Privacy"},
-                {"app", "App"}
+                {"app", "App"},
+                {"download", "Download"},
+                {"error", "Error"}
             };
 
             var folderName = pathMappings.ContainsKey(path.ToLower()) 
@@ -149,11 +215,18 @@ namespace CathayWebApp.Controllers
             
             if (Directory.Exists(viewFolderPath))
             {
-                var indexPath = Path.Combine(viewFolderPath, "Index.cshtml");
+                var indexPath = Path.Combine(viewFolderPath, "index.cshtml");
                 if (System.IO.File.Exists(indexPath))
                 {
-                    return $"~/Views/{folderName}/{language}/Index.cshtml";
+                    return $"~/Views/{folderName}/{language}/index.cshtml";
                 }
+            }
+
+            // Also check for folders without language subdirectories (like Download, Error)
+            var directViewPath = Path.Combine(_environment.ContentRootPath, "Views", folderName, "index.cshtml");
+            if (System.IO.File.Exists(directViewPath))
+            {
+                return $"~/Views/{folderName}/index.cshtml";
             }
 
             return null;
@@ -178,7 +251,9 @@ namespace CathayWebApp.Controllers
                 {"home", "Home"},
                 {"job-openings", "JobOpenings"},
                 {"privacy", "Privacy"},
-                {"app", "App"}
+                {"app", "App"},
+                {"download", "Download"},
+                {"error", "Error"}
             };
 
             var referencePath = pathMappings.ContainsKey(path.ToLower()) 
@@ -209,6 +284,12 @@ namespace CathayWebApp.Controllers
             if (string.IsNullOrEmpty(path) || string.IsNullOrEmpty(page))
                 return null;
 
+            // First try to get the page from the standard Views structure
+            var standardPagePath = GetStandardPageViewPath(path, page, language);
+            if (!string.IsNullOrEmpty(standardPagePath))
+                return standardPagePath;
+
+            // Fallback to reference structure
             // Map path names to reference structure (same as above)
             var pathMappings = new Dictionary<string, string>
             {
@@ -238,6 +319,48 @@ namespace CathayWebApp.Controllers
             if (System.IO.File.Exists(fullPath))
             {
                 return $"~/Reference/liao/Views/{referencePath}/{language}/{pageFileName}.cshtml";
+            }
+
+            return null;
+        }
+
+        private string? GetStandardPageViewPath(string path, string page, string language)
+        {
+            if (string.IsNullOrEmpty(path) || string.IsNullOrEmpty(page))
+                return null;
+
+            // Map path names to standard Views folder structure  
+            var pathMappings = new Dictionary<string, string>
+            {
+                {"about-us", "AboutUs"},
+                {"business", "Business copy"}, // Note: Using "Business copy" for business routes
+                {"personal", "Personal"},
+                {"careers", "Careers"},
+                {"contact", "Contact"},
+                {"ethical-management", "EthicalManagement"},
+                {"event", "Event"},
+                {"feedback", "Feedback"},
+                {"home", "Home"},
+                {"job-openings", "JobOpenings"},
+                {"privacy", "Privacy"},
+                {"app", "App"},
+                {"download", "Download"},
+                {"error", "Error"}
+            };
+
+            var folderName = pathMappings.ContainsKey(path.ToLower()) 
+                ? pathMappings[path.ToLower()] 
+                : CapitalizePath(path);
+
+            // Convert page name from URL format to file format (keep kebab-case)
+            var pageFileName = ConvertUrlToFileName(page);
+
+            // Try to find the specific page view
+            var pageViewPath = Path.Combine(_environment.ContentRootPath, "Views", folderName, language, $"{pageFileName}.cshtml");
+            
+            if (System.IO.File.Exists(pageViewPath))
+            {
+                return $"~/Views/{folderName}/{language}/{pageFileName}.cshtml";
             }
 
             return null;

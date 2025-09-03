@@ -146,9 +146,9 @@
     <link rel="icon" type="image/x-icon" href="https://www.cathaybk.com.tw/cathaybk/web/img/favicon.ico">
     <link rel="stylesheet" href="/assets/css/base.css?r=20221213">
     <link rel="stylesheet" href="/assets/css/jquery-ui.min.css">
-    <link rel="stylesheet" href="~/css/header.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/footer.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/css/oversea-components.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/assets/css/header.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/assets/css/footer.css" asp-append-version="true" />
+    <link rel="stylesheet" href="/assets/css/oversea-components.css" asp-append-version="true" />
 
     <link rel="alternate" hreflang="zh-hant" href="https://www.cathaybk.com.kh/zh-hant/@ViewData["site_name"]" />
     <link rel="alternate" hreflang="km" href="https://www.cathaybk.com.kh/km/@ViewData["site_name"]" />
@@ -195,12 +195,12 @@
     @RenderBody()
     @await Html.PartialAsync("footer.cshtml")
     
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    <script src="~/js/language-selector.js" asp-append-version="true"></script>
-    <script type="text/javascript" src="@Url.Content("~/js/libs/jquery-ui.min.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/js/libs/jquery.min.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/js/libs/bootstrap.bundle.min.js")"></script>
-    <script type="text/javascript" src="@Url.Content("~/js/app/main.js")"></script>
+    <script src="/assets/js/site.js" asp-append-version="true"></script>
+    <script src="/assets/js/language-selector.js" asp-append-version="true"></script>
+    <script type="text/javascript" src="@Url.Content("/assets/js/libs/jquery-ui.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("/assets/js/libs/jquery.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("/assets/js/libs/bootstrap.bundle.min.js")"></script>
+    <script type="text/javascript" src="@Url.Content("/assets/js/app/main.js")"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

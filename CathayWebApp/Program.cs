@@ -40,13 +40,25 @@ app.MapControllerRoute(
 // Route 2: domain/{language}/{path}/{page}/ -> Specific page within a path
 app.MapControllerRoute(
     name: "languagePathPage",
-    pattern: "{language:regex(zh-hant|en|km)}/{path}/{page}/",
+    pattern: "{language:regex(zh-hant|en|km)}/{path:regex([a-z-]+)}/{page:regex([a-z-]+)}/",
     defaults: new { controller = "Site", action = "LanguagePathPage" });
 
-// Route 3: domain/{language}/{path}/ -> Path index
+// Route 3: domain/{language}/{path}/{page} -> Specific page within a path (without trailing slash)
+app.MapControllerRoute(
+    name: "languagePathPageNoSlash",
+    pattern: "{language:regex(zh-hant|en|km)}/{path:regex([a-z-]+)}/{page:regex([a-z-]+)}",
+    defaults: new { controller = "Site", action = "LanguagePathPage" });
+
+// Route 4: domain/{language}/{path}/ -> Path index
 app.MapControllerRoute(
     name: "languagePath",
-    pattern: "{language:regex(zh-hant|en|km)}/{path}/",
+    pattern: "{language:regex(zh-hant|en|km)}/{path:regex([a-z-]+)}/",
+    defaults: new { controller = "Site", action = "LanguagePath" });
+
+// Route 5: domain/{language}/{path} -> Path index (without trailing slash)
+app.MapControllerRoute(
+    name: "languagePathNoSlash",
+    pattern: "{language:regex(zh-hant|en|km)}/{path:regex([a-z-]+)}",
     defaults: new { controller = "Site", action = "LanguagePath" });
 
 // Legacy routes for backward compatibility

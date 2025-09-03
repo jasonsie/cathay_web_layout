@@ -185,7 +185,7 @@
     <!-- Tab Navigation -->
     <nav class="tabmenu d-none d-sm-block">
         <div class="tabmenu-inner">
-            <a class="tabmenu-btn" href="#" data-tab="contactUs">
+            <a class="tabmenu-btn" href="@ViewData["siteLangUrl"]contact/#contactForm" data-tab="contactUs">
                 <span class="tabmenu-btn-txt">Contact Us</span>
                 <i class="tabmenu-btn-line"></i>
             </a>
@@ -241,7 +241,7 @@
                     Form
                 -->
                 <!-- QA item -->
-                <div class="qaitem" js-foldable-group="internet">
+                <div class="qaitem" js-foldable-group="internet" id="contactForm">
                     <div class="qaitem-title" role="button" tabindex="0" js-foldable-head>
                         <h3 class="qaitem-title-txt  h3 h4-mb text-dark fw-bold">Contact Form</h3>
                     </div>
@@ -338,10 +338,7 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
-            <div class="py-page" id="showmsg"></div>
         </section>
 
 
@@ -413,7 +410,7 @@
     </div>
 
     <!-- 意見反應表 Section -->
-    <div id="feedbackForm" class="tab-content" style="display: none;">
+    <div id="feedbackForm" class="tab-content">
         <section class="fluid overflow-hidden">
             <div class="py-page"></div>
             <header class="compact mb-5 text-center">
@@ -475,9 +472,59 @@
 </main>
 
 <script>
+    // 滾動到聯繫表單並自動展開的函數
+    function scrollToAndOpenContactForm() {
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            // 先自動展開表單 (如果它是可折疊的)
+            const formTitle = contactForm.querySelector('[js-foldable-head]');
+            const formBody = contactForm.querySelector('[js-foldable-body]');
+            if (formTitle && formBody) {
+                // 檢查表單是否已經展開
+                if (!contactForm.classList.contains('foldable--expanded')) {
+                    formTitle.click(); // 觸發展開
+                }
+            }
+            
+            // 等待表單展開後再滾動
+            setTimeout(() => {
+                // 確保表單完全展開後再計算位置
+                const calculateAndScroll = () => {
+                    // 使用 offsetTop 獲取元素相對於文檔的絕對位置
+                    let absoluteElementTop = 0;
+                    let element = contactForm;
+                    
+                    // 累計所有父元素的 offsetTop 來獲取真正的絕對位置
+                    while (element) {
+                        absoluteElementTop += element.offsetTop;
+                        element = element.offsetParent;
+                    }
+                    
+                    const elementHeight = contactForm.offsetHeight;
+                    const windowHeight = window.innerHeight;
+                    
+                    // 計算元素中心點的絕對位置
+                    const elementCenter = absoluteElementTop + (elementHeight / 2);
+                    
+                    // 計算滾動位置，使元素中心對齊視窗中心
+                    const scrollToPosition = elementCenter - (windowHeight / 2);
+                    
+                    // 平滑滾動到計算的位置
+                    window.scrollTo({
+                        top: Math.max(0, scrollToPosition),
+                        behavior: 'smooth'
+                    });
+                };
+                
+                calculateAndScroll();
+            }, 100); // 短暫延遲確保表單完全展開
+        }
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
         // 預設顯示聯繫我們內容
         document.getElementById('contactUs').style.display = 'block';
+        document.getElementById('feedbackForm').style.display = 'none';
 
         // 設定聯繫我們標籤為選取的樣式
         const contactTabButton = document.querySelector('.tabmenu-btn[data-tab="contactUs"]');
@@ -486,16 +533,30 @@
             // 顯示選中的標籤名稱
             document.querySelector('.dropdown-toggle span').textContent = contactTabButton.textContent;
         }
+
+        // 檢查 URL hash，如果是 #contactForm 則自動滾動並展開表單
+        if (window.location.hash === '#contactForm') {
+            setTimeout(() => {
+                scrollToAndOpenContactForm();
+            }, 500); // 延遲確保頁面完全載入
+        }
     });
 
     document.querySelectorAll('.tabmenu-btn, .dropdown-item').forEach(button => {
         button.addEventListener('click', function (event) {
             event.preventDefault();
             const tabId = this.getAttribute('data-tab');
+            
+            // 隱藏所有 tab 內容
             document.querySelectorAll('.tab-content').forEach(content => {
                 content.style.display = 'none';
             });
-            document.getElementById(tabId).style.display = 'block';
+            
+            // 顯示選中的 tab 內容
+            const selectedTab = document.getElementById(tabId);
+            if (selectedTab) {
+                selectedTab.style.display = 'block';
+            }
 
             // 更新選中的按鈕樣式
             document.querySelectorAll('.tabmenu-btn').forEach(btn => btn.classList.remove('active'));
@@ -504,6 +565,13 @@
             // 更新 dropdown 的顯示文字
             const selectedText = this.textContent.trim();
             document.querySelector('.dropdown-toggle span').textContent = selectedText;
+
+            // 如果點擊的是 Contact Us 按鈕，滾動到表單並自動展開
+            if (tabId === 'contactUs') {
+                setTimeout(() => {
+                    scrollToAndOpenContactForm();
+                }, 100); // 短暫延遲確保 tab 內容已顯示
+            }
         });
     });
 </script>

@@ -1,0 +1,75 @@
+﻿@model CathayBankKh.Models.ApplyOnlineFilesUploadModel
+
+@{
+	Layout = null;
+}
+
+
+<section>
+
+	<!--
+		Form - Requirement Documents
+	-->
+	<!-- Section heading -->
+	<h3 class="h1 h2-mb  mb-4  text-black fw-bold lh-sm">Requirement Documents</h3>
+	<!-- Gray container -->
+
+	<div class="bg-gray-100  px-3 py-4 px-sm-4 px-lg-5">
+
+		<!-- Form fields START -->
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<label for="idPassport">NID or Passport<span class="text-red">*</span></label>
+				<input type="file" class="form-control" id="idPassport" placeholder="NID or Passport No." accept=".pdf, image/*, .heic" required>
+				<div class="small">File size should be smaller than 1.5 MB</div>
+				<div class="invalid-feedback">Please check your input data.</div>
+				<div class="file-name" id="idPassport_name"></div>
+			</div>
+			<div class="form-group col-md-6">
+				<label for="selfiePhoto">Selfie Photo<span class="text-red">*</span></label>
+				<input type="file" class="form-control" id="selfiePhoto" placeholder="Selfie Photo" accept="image/*, .heic" required>
+				<div class="small">File size should be smaller than 1.5 MB</div>
+				<div class="invalid-feedback">Please check your input data.</div>
+				<div class="file-name" id="selfiePhoto_name"></div>
+			</div>
+		</div>
+		<div class="form-row">
+			<div class="form-group col-md-6">
+				<label for="salaryValidationType">Salary Validation Type<span class="text-red">*</span></label>
+				<select class="custom-select" id="salaryValidationType" required>
+					<option selected value="">Select validation type</option>
+					<option value="Employment Letter, Employee Contact or Staff ID">
+						Employment Letter, Employee Contact or Staff ID
+					</option>
+					<option value="Salary Conformation Letter, Employee Contact">
+						Salary Conformation Letter, Employee Contact
+					</option>
+					<option value="Submit Staff ID or Name Card for $500 Credit Limit only">
+						Submit Staff ID or Name Card for $500 Credit Limit only
+					</option>
+				</select>
+				<div class="invalid-feedback">Please check your input data.</div>
+			</div>
+			<div class="form-group col-md-6">
+				<label for="salaryValidation">Salary Validation File<span class="text-red">*</span></label>
+				<input type="file" class="form-control" id="salaryValidation" placeholder="Salary Validation File" accept=".pdf, image/*, .heic" required>
+				<div class="small">File size should be smaller than 1.5 MB</div>
+				<div class="invalid-feedback">Please check your input data.</div>
+				<div class="file-name" id="salaryValidation_name"></div>
+			</div>
+		</div>
+		<!-- Form fields END -->
+	</div>
+
+	<div class="text-center my-4">
+		<button type="button" class="btn btn-outline-green mr-3" id="goPrevToFormFillBtn">
+			<span class="px-2"><i class="ico-ui-left-v mr-2 big"></i>Previous Step</span>
+		</button>
+		<button type="button" class="btn btn-green" id="goNextToPaymentMethodPageBtn">
+			<span class="px-2">Next Step<i class="ico-ui-right-v ml-2 big"></i></span>
+		</button>
+	</div>
+
+
+</section>
+<!-- Page END -->

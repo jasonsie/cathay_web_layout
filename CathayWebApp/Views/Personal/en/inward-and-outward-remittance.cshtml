@@ -1,0 +1,128 @@
+@{
+	ViewData["PageTitle"] = "Inward & Outward Remittances";
+	ViewData["PageDescription"] = "Remittance (a money transfer, funds transfer or payment order) is the process of transferring money, which is begun with the originator’s payment order, made for a specific purpose to the designated beneficiary, and completed upon acceptance by the beneficiary’s bank.";
+}
+
+
+<!-- Page START -->
+<main class="mastbody">
+
+	<!--
+		Inward & Outward Remittances
+	-->
+	<div class="topkv kv  kv--txt-left">
+		<div class="kv-bg">
+			<div class="kv-bg-inner">
+				<figure class="kv-bg-img">
+					<picture>
+						<source media="(min-width:769px)" srcset="/assets/img/topkv/personal-remittance.jpg" />
+						<img srcset="/assets/img/topkv/personal-remittance-mb.jpg">
+					</picture>
+				</figure>
+			</div>
+		</div>
+		<div class="kv-cont">
+			<div class="kv-cont-inner">
+				<h2 class="display-1  fw-bold lh-xs">Remittances</h2>
+			</div>
+		</div>
+	</div>
+
+	<!-- Breadcrumb  (lays on top of .topkv if places right after it) -->
+	<nav class="breadcrumb-nav text-white" aria-label="breadcrumb">
+		<div class="fluid">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]"><span>Home</span><i class="ico-ui-home"></i></a></li>
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]personal/">Personal Banking</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Inward & Outward Remittances</li>
+			</ol>
+		</div>
+	</nav>
+
+	<!-- Menu -->
+	<nav class="tabmenu    d-none d-sm-block">
+		<div class="tabmenu-inner">
+			<a class="tabmenu-btn active" href="@ViewData["siteLangUrl"]personal/inward-and-outward-remittance/">
+				<span class="tabmenu-btn-txt">Inward & Outward Remittances</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/payment-and-transfer/">
+				<span class="tabmenu-btn-txt">Payment & Transfer</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+		</div>
+	</nav>
+	<!-- Mobile dropdown -->
+	<div class="tabmenu-dropdown dropdown    d-block d-sm-none">
+		<a href="javascript:;" class="btn btn-sm btn-block  dropdown-toggle" data-toggle="dropdown">
+			<span class="text-truncate d-inline-block">Inward & Outward Remittances</span>
+		</a>
+		<div class="dropdown-menu">
+			<span class="dropdown-item disabled">-- Select page --</span>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/inward-and-outward-remittance/">Inward & Outward Remittances</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/payment-and-transfer/">Payment & Transfer</a>
+		</div>
+	</div>
+
+
+
+	<!--
+		Inward & Outward Remittances - Detail
+	-->
+	<section class="fluid overflow-hidden">
+
+		<div class="py-page"></div>
+
+		<!-- Page heading -->
+		<header class="compact  mb-5  text-center">
+			<h1 class="display-3 h1-mb  mb-3  text-black fw-bold">Inward & Outward Remittances</h1>
+			<p>Remittance (a money transfer, funds transfer or payment order) is the process of transferring money, which is begun with the originator’s payment order, made for a specific purpose to the designated beneficiary, and completed upon acceptance by the beneficiary’s bank.</p>
+		</header>
+
+		<!-- Tabular data -->
+		<div class="tabular">
+
+			<div class="table-responsive-lg">
+				<table class="table h5-mb text-center">
+					<colgroup>
+						<col>
+						<col width="35%">
+						<col width="35%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col" class="h4 h4-mb">Item</th> 
+							<th scope="col" class="h4 h4-mb">Inward Remittances Fees</th>
+							<th scope="col" class="h4 h4-mb">Outward Remittances Fees</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">Overseas Transfer</th>
+							<td>0.10% commission; min USD10.00</td>
+							<td>
+								0.20% commission; min USD15.00 + USD20.00 cable fee
+								(Additional fee of USD30.00 will be charged if you select “OUR” option or all charges are borne by applicant)
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">Domestic Transfer</th>
+							<td>USD5.00</td>
+							<td>0.05% commission; min USD5.00</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div><!--/.tabular-->
+
+		<ul class="list-disc  mt-4  h6 h6-mb">
+			<li>Overseas bank fees incurred for the outward remittance business will be charged based on the actual fees charged by the overseas bank.</li>
+			<li>All commissions and charges are subject to change at the Bank's sole discretion.</li>
+			<li>Third party and other charges which may be applicable will be charged accordingly.</li>
+		</ul>
+
+		<div class="py-page"></div>
+	</section>
+
+</main>
+<!-- Page END -->

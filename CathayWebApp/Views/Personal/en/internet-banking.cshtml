@@ -1,0 +1,299 @@
+@{
+   ViewData["PageTitle"] = "iBanking";
+   ViewData["PageDescription"] = "";
+}
+
+
+<!-- Page START -->
+<main class="mastbody">
+	
+	<!--
+		iBanking
+	-->
+	<div class="topkv kv  kv--txt-left">
+		<div class="kv-bg">
+			<div class="kv-bg-inner">
+				<figure class="kv-bg-img">
+					<picture>
+						<source media="(min-width:769px)" srcset="/assets/img/topkv/personal-online.jpg" />
+						<img srcset="/assets/img/topkv/personal-online-mb.jpg">
+					</picture>
+				</figure>
+			</div>
+		</div>
+		<div class="kv-cont">
+			<div class="kv-cont-inner">
+				<h2 class="display-1  fw-bold lh-xs">Online Banking</h2>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Breadcrumb  (lays on top of .topkv if places right after it) -->
+	<nav class="breadcrumb-nav text-white" aria-label="breadcrumb">
+		<div class="fluid">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]"><span>Home</span><i class="ico-ui-home"></i></a></li>
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]personal/">Personal Banking</a></li>
+				<li class="breadcrumb-item active" aria-current="page">iBanking</li>
+			</ol>
+		</div>
+	</nav>
+	
+	<!-- Menu -->
+	<nav class="tabmenu    d-none d-sm-block">
+		<div class="tabmenu-inner">
+			<a class="tabmenu-btn active" href="@ViewData["siteLangUrl"]personal/internet-banking/">
+				<span class="tabmenu-btn-txt">iBanking</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/mobile-banking/">
+				<span class="tabmenu-btn-txt">mBanking</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/merchant-app/">
+				<span class="tabmenu-btn-txt">Merchant App</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/alert-services/">
+				<span class="tabmenu-btn-txt">Alert Services</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/user-guide/">
+				<span class="tabmenu-btn-txt">User Guide</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+		</div>
+	</nav>
+	<!-- Mobile dropdown -->
+	<div class="tabmenu-dropdown dropdown    d-block d-sm-none">
+		<a href="javascript:;" class="btn btn-sm btn-block  dropdown-toggle" data-toggle="dropdown">
+			<span class="text-truncate d-inline-block">iBanking</span>
+		</a>
+		<div class="dropdown-menu">
+			<span class="dropdown-item disabled">-- Select page --</span>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/internet-banking/">iBanking</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/mobile-banking/">mBanking</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/merchant-app/">Merchant App</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/alert-services/">Alert Services</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/user-guide/">User Guide</a>
+		</div>
+	</div>
+
+	
+	
+	<!--
+		iBanking - Detail
+	-->
+	<section class="fluid overflow-hidden">
+		
+		<div class="py-page"></div>
+		
+		<!-- Page heading -->
+		<header class="compact  mb-5  text-center">
+			<h1 class="h3 h4-mb  mb-2 mb-md-3  text-black  lh-xs">iBanking</h1>
+			<h2 class="display-3 h1-mb  mb-3  text-black fw-bold">Quick & Easy Way To Manage Your Finances 24/7</h2>
+			<p class="text-left">Skip the line and bank in the comfort of your home, office or wherever you go. Our iBanking provides you with total convenience and lets you control your time to manage your money from any computer that is connected to the internet. You can now access your account information, credit card information, transfer funds, pay bills, top up your mobile prepaid card and a lot more in just a few clicks!</p>
+		</header>
+		
+		
+		<!-- Features -->
+		<section class="compact-sm">
+			
+			<!-- Section heading -->
+			<h3 class="h1 h2-mb  mb-4  text-black fw-bold text-center lh-sm">Features of iBanking</h3>
+			
+			<!-- Graph icon list #2  (3 in a row)-->
+			<ul class="row  mb-n4  pl-xl-5">
+	
+				<!-- Graph item  (one column on mobile)-->
+				<li class="col-12 col-md-3  mb-4  px-md-1 px-xl-4">
+					<div class="d-flex align-items-center  mb-3">
+						<figure class="graph  mr-3">
+							<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/view.svg">
+						</figure>
+						<h4 class="h3 text-dark fw-bolder lh-sm">View</h4>
+					</div>
+					<div>
+						<ul class="list-disc list--item-mb-xs">
+							<li>Account balances</li>
+							<li>Fixed Deposit Details</li>
+							<li>Transaction Details Up To 6 Months</li>
+							<li>Scheduled future payment and transfer</li>
+							<li>Loan Statement</li>
+							<li>Credit Card Statement</li>
+						</ul>
+					</div>
+				</li>
+	
+				<!-- Graph item  (one column on mobile)-->
+				<li class="col-12 col-md-3  mb-4  px-md-1 px-xl-4">
+					<div class="d-flex align-items-center  mb-3">
+						<figure class="graph  mr-3">
+							<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/transfer.svg">
+						</figure>
+						<h4 class="h3 text-dark fw-bolder lh-sm">Transfer</h4>
+					</div>
+					<div>
+						<ul class="list-disc list--item-mb-xs">
+							<li>Between Your Account</li>
+							<li>To Other Account Holder Within CUBC</li>
+							<li>To Other Local Bank Account or Bakong wallet</li>
+							<li>To Other Oversea Account</li>
+						</ul>
+					</div>
+				</li>
+	
+				<!-- Graph item -->
+				<li class="col-6 col-md-3  mb-4  px-1 px-xl-4">
+					<div class="d-flex align-items-center  mb-3">
+						<figure class="graph  mr-3">
+							<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/pay.svg">
+						</figure>
+						<h4 class="h3 text-dark fw-bolder lh-sm">Pay</h4>
+					</div>
+					<div>
+						<ul class="list-disc list--item-mb-xs">
+							<li>Credit card bill</li>
+							<li>Mobile top up</li>
+						</ul>
+					</div>
+				</li>
+	
+				<!-- Graph item -->
+				<li class="col-6 col-md-3  mb-4  px-1 px-xl-4">
+					<div class="d-flex align-items-center  mb-3">
+						<figure class="graph  mr-3">
+							<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/Fix-deposit.png">
+						</figure>
+						<h4 class="h3 text-dark fw-bolder">
+							Fixed Deposit
+						</h4>
+					</div>
+					<div>
+						<ul class="list-disc list--item-mb-xs">
+							<li>Open Fixed Deposit</li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+			
+			<div class="text-center mt-4">
+				<a class="btn btn-green" target="_blank" rel="noopener noreferrer" href="/file/MIBankingApplicationForm.pdf">
+					<span class="px-2">Apply Now<i class="ico-ui-right-v ml-2 big"></i></span>
+				</a>
+				<p class="mt-3">Visit any of our <a class="text-green text-underline" href="@ViewData["siteLangUrl"]contact/#find-us">branches</a> to apply</p> 
+			</div>
+		</section>
+		
+		<div class="py-page"></div>
+		
+		
+		<!-- FAQ -->
+		<section class="compact">
+			<!-- Section heading -->
+			<h3 class="h1 h2-mb  mb-4  text-black fw-bold text-center lh-sm">Frequently Asked Questions</h3>
+			
+			<!-- FAQ list -->
+
+			<!-- QA item -->
+			<section class="qaitem" js-foldable-group="internet">
+				<div class="qaitem-title" role="button" tabindex="0" js-foldable-head>
+					<h5 class="qaitem-title-txt  h3 h3-mb text-dark fw-bold">
+						Q1: What are the features/services of CUBC iBanking?
+					</h5>
+				</div>
+				<div class="qaitem-detail" js-foldable-body>
+					<div class="qaitem-detail-content">
+						<div class="badge badge-green h5 h5-mb mb-3">Answer</div>
+						<p>Please <a class="text-green text-underline" href="@ViewData["siteLangUrl"]personal/internet-banking/">click here</a> for the list of services that we presently offer.</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- QA item -->
+			<section class="qaitem" js-foldable-group="internet">
+				<div class="qaitem-title" role="button" tabindex="0" js-foldable-head>
+					<h5 class="qaitem-title-txt  h3 h3-mb text-dark fw-bold">
+						Q2: Why should I choose CUBC iBanking?
+					</h5>
+				</div>
+				<div class="qaitem-detail" js-foldable-body>
+					<div class="qaitem-detail-content">
+						<div class="badge badge-green h5 h5-mb mb-3">Answer</div>
+						<p>There are so many benefits to using our iBanking service. With iBanking, you can have instant access to the latest information on you Cathay United bank accounts, debit and credit transactions, pay bills, make transfers, top up your prepaid mobile and much more. You can access your Cathay United Bank Account anytime, anywhere at your convenience, allowing you to do your banking online without the hassle standing in line at the bank branch. Furthermore, it's safe and easy to use.</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- QA item -->
+			<section class="qaitem" js-foldable-group="internet">
+				<div class="qaitem-title" role="button" tabindex="0" js-foldable-head>
+					<h5 class="qaitem-title-txt  h3 h3-mb text-dark fw-bold">
+						Q3: Do I have to pay to use CUBC iBanking?
+					</h5>
+				</div>
+				<div class="qaitem-detail" js-foldable-body>
+					<div class="qaitem-detail-content">
+						<div class="badge badge-green h5 h5-mb mb-3">Answer</div>
+						<p>There is no fee to sign up and the iBanking service is free. Standard transaction fees will still apply for services such as purchases of bank draft, cashier's orders, bank transfers, etc.</p>
+					</div>
+				</div>
+			</section>
+
+			<!-- QA item -->
+			<section class="qaitem" js-foldable-group="internet">
+				<div class="qaitem-title" role="button" tabindex="0" js-foldable-head>
+					<h5 class="qaitem-title-txt  h3 h3-mb text-dark fw-bold">
+						Q4：What type of fund transfers can I perform?
+					</h5>
+				</div>
+				<div class="qaitem-detail" js-foldable-body>
+					<div class="qaitem-detail-content">
+						<div class="badge badge-green h5 h5-mb mb-3">Answer</div>
+						<p class="mb-2">You can perform the following fund transfers:</p>
+						<ul class="list-disc">
+							<li>Fund transfers to your own Cathay United Bank Accounts</li>
+							<li>Fund transfers to another Cathay United Bank Account Holder</li>
+							<li>Fund transfers to an account of another bank in Cambodia</li>
+							<li>Fund transfer to an account of another bank overseas</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			
+		</section>
+		
+		<div class="py-page"></div>
+		
+		
+		<!-- Safety Tips -->
+		<section class="compact">
+			<!-- Section heading -->
+			<h3 class="h1 h2-mb  mb-4  text-black fw-bold text-center lh-sm">Safety Tips for Using iBanking</h3>
+			
+			<p class="mb-3">We are committed to providing you with a secure banking experience and we want to safeguard you with security controls and measures against viruses and malicious attacks that can compromise your personal information. It is also crucial to remember that you, the user, have an important role to play to ensure the full security of your online banking transactions.</p>
+			<p class="mb-2">Here are some tips for safeguarding yourself in using online banking.</p>
+			<ul class="list-disc">
+				<li>Ensure that you have anti-virus and anti-spyware software on your computer.</li>
+				<li>Perform a daily update of your anti-virus and anti-spyware software.</li>
+				<li>Configure your operating system to perform automatic updates.</li>
+				<li>Do not use the same password for iBanking as those that you have used for other web services such as email or other web-based subscription services.</li>
+				<li>Do not click on links from emails or install any programs with doubtful origins.</li>
+				<li>Do not perform online transactions on a computer that you suspect to be compromised.</li>
+				<li>Delete junk and spam emails.</li>
+			</ul>
+		</section>
+		
+		<div class="py-page"></div>
+
+		
+		
+    	<partial name="@("~/Views/Shared/"+@ViewData["viewUrl"]+"PersonalInternetBankingTC.cshtml")" />
+		
+		
+		<div class="py-page"></div>
+	</section>
+	
+	
+</main>
+<!-- Page END -->

@@ -1,0 +1,207 @@
+@{
+	ViewData["PageTitle"] = "កាតឥណពន្ធ";
+	ViewData["PageDescription"] = "ប័ណ្ណឥណពន្ធ CUBC អនុញ្ញាតិអោយលោកអ្នកធ្វើប្រតិបត្តិការណ៏លើការទិញទំនិញនៅលើប្រព័ន្ធអ៊ីនធឺណិត ម៉ាស៊ីនឆូតកាត និងដកសាច់ប្រាក់ពីម៉ាស៊ីនATM";
+}
+
+
+<!-- Page START -->
+<main class="mastbody">
+	<!--
+		កាតឥណពន្ធ
+	-->
+	<div class="topkv kv  kv--txt-left">
+		<div class="kv-bg">
+			<div class="kv-bg-inner">
+				<figure class="kv-bg-img">
+					<picture>
+						<source media="(min-width:769px)" srcset="/assets/img/topkv/personal-cards.jpg" />
+						<img srcset="/assets/img/topkv/personal-cards-mb.jpg">
+					</picture>
+				</figure>
+			</div>
+		</div>
+		<div class="kv-cont">
+			<div class="kv-cont-inner">
+				<h2 class="display-1  fw-bold lh-xs">កាតបុគ្គល</h2>
+			</div>
+		</div>
+	</div>
+
+	<!-- Breadcrumb  (lays on top of .topkv if places right after it) -->
+	<nav class="breadcrumb-nav text-white" aria-label="breadcrumb">
+		<div class="fluid">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]"><span>ទំព័រដើម</span><i class="ico-ui-home"></i></a></li>
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]personal/">សេវាកម្មធនាគារផ្ទាល់ខ្លួន</a></li>
+				<li class="breadcrumb-item active" aria-current="page">កាតឥណពន្ធ</li>
+			</ol>
+		</div>
+	</nav>
+
+	<!-- Menu -->
+	<nav class="tabmenu    d-none d-sm-block">
+		<div class="tabmenu-inner">
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/credit-cards/">
+				<span class="tabmenu-btn-txt">ប័ណ្ណឥណទាន</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn active" href="@ViewData["siteLangUrl"]personal/debit-cards/">
+				<span class="tabmenu-btn-txt">ប័ណ្ណឥណពន្ធ</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/card-promotions/">
+				<span class="tabmenu-btn-txt">ប័ណ្ណប្រូម៉្រូសិន</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/rewards-program/">
+				<span class="tabmenu-btn-txt">កម្មវិធីសន្សំពិន្ទុ</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/cubc-exclusive/">
+				<span class="tabmenu-btn-txt">
+					ទទួលយកបទពិសោធន៏ជាមួយ CashPoint
+				</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/apply-online?Channel=Website">
+				<span class="tabmenu-btn-txt">ស្នើសុំប័ណ្ណឥណទាន</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+		</div>
+	</nav>
+	<!-- Mobile dropdown -->
+	<div class="tabmenu-dropdown dropdown    d-block d-sm-none">
+		<a href="javascript:;" class="btn btn-sm btn-block  dropdown-toggle" data-toggle="dropdown">
+			<span class="text-truncate d-inline-block">កាតឥណពន្ធ</span>
+		</a>
+		<div class="dropdown-menu">
+			<span class="dropdown-item disabled">-- Select page --</span>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/credit-cards/">កាតឥណទាន</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/debit-cards/">កាតឥណពន្ធ</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/card-promotions/">កាតប្រូម៉ូសិន</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/rewards-program/">កម្មវិធីប្ដូររង្វាន់</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/cubc-exclusive/">Experience with CashPoint</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/apply-online?Channel=Website">Apply Credit Card</a>
+		</div>
+	</div>
+
+
+
+	<!--
+		កាតឥណពន្ធ - Detail
+	-->
+	<section class="fluid overflow-hidden">
+
+		<div class="py-page"></div>
+
+		<!-- Page heading -->
+		<header class="compact  mb-5  text-center">
+			<h1 class="h3 h4-mb  mb-2 mb-md-3  text-black  lh-xs">កាតឥណពន្ធ</h1>
+			<h2 class="display-3 h1-mb  mb-3  text-black fw-bold">ទិញទំនិញមានភាពងាយស្រួល និងមានសុវត្ថិភាព</h2>
+			<p>ប័ណ្ណឥណពន្ធ CUBC អនុញ្ញាតអោយលោកអ្នកធ្វើប្រតិបត្តិការណ៍លើការទិញទំនិញនៅលើប្រព័ន្ធអ៊ីនធឺណិត ម៉ាស៊ីនឆូតកាត និងដកសាច់ប្រាក់ពីម៉ាស៊ីន ATM ដោយធ្វើការកាត់សាច់ប្រាក់ចេញពីគណនីធនាគាររបស់លោកអ្នកដោយផ្ទាល់ និង ទទួលបានអត្ថប្រយោជន៍ដែលផ្តល់ជូនដោយ ធនាគារ កាថេ យូណៃធីត និងដៃគូរសហការរបស់ VISA ។</p>
+		</header>
+
+
+		<!-- Features -->
+		<section class="compact-sm">
+			<!-- Graph icon list #4  (N in a row) -->
+			<ul class="row  justify-content-center  mb-n4">
+
+				<!-- Graph item -->
+				<li class="col-12 col-md-4  mb-4  px-md-1 px-xl-4   d-flex flex-md-column align-items-md-center ie11fix">
+					<figure class="graph  mx-3 mx-md-0  flex-shrink-0  mb-md-3">
+						<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/manage.svg">
+					</figure>
+					<div class="">
+						<h5 class="h3 h3-mb  mb-2 mb-md-3  text-dark fw-bolder lh-sm text-md-center">Manage Your $</h5>
+						<ul class="list-disc">
+							<li>ភ្ជាប់ និងប្រើប្រាស់ CUBC i/mBanking ដោយឥតគិតថ្លៃ</li>
+							<li>ពិនិត្យចំនួនទឹកប្រាក់ និងប្រតិបត្តិការណ៍សាច់ប្រាក់តាមរយៈ CUBC i/mBanking</li>
+							<li>មានភាពងាយស្រួលនៅក្នុងការគ្រប់គ្រងការចំណាយ</li>
+							<li>មិនមានការប្រាក់ និងមិនមានការផាកពិន័យផ្សេងៗ</li>
+						</ul>
+					</div>
+				</li>
+
+				<!-- Graph item -->
+				<li class="col-12 col-md-4  mb-4  px-md-1 px-xl-4   d-flex flex-md-column align-items-md-center ie11fix">
+					<figure class="graph  mx-3 mx-md-0  flex-shrink-0  mb-md-3">
+						<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/card-insert.svg">
+					</figure>
+					<div class="">
+						<h5 class="h3 h3-mb  mb-2 mb-md-3  text-dark fw-bolder lh-sm text-md-center">Convenient to Your $</h5>
+						<ul class="list-disc">
+							<li>កំណត់ការចំណាយ និងការដកសាច់ប្រាក់ប្រចាំថ្ងៃតាមការកំណត់របស់លោកអ្នក</li>
+							<li>សារសុវត្ថិភាពពីរជាន់ (OTP) សម្រាប់ប្រតិបត្តិការសាច់ប្រាក់លើអ៊ីនធឺណិត</li>
+							<li>ការជូនដំណឹងទៅលើការធ្វើប្រតិបត្តិការណ៍សាច់ប្រាក់ដោយឥតគិតថ្លៃ ជាមួយ i/mBanking</li>
+						</ul>
+					</div>
+				</li>
+
+				<!-- Graph item -->
+				<li class="col-12 col-md-4  mb-4  px-md-1 px-xl-4   d-flex flex-md-column align-items-md-center ie11fix">
+					<figure class="graph  mx-3 mx-md-0  flex-shrink-0  mb-md-3">
+						<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/card-hold.svg">
+					</figure>
+					<div class="">
+						<h5 class="h3 h3-mb  mb-2 mb-md-3  text-dark fw-bolder lh-sm text-md-center">Save Your $</h5>
+						<ul class="list-disc">
+							<li>កំណត់ការចំណាយ និងការដកសាច់ប្រាក់ប្រចាំថ្ងៃតាមការកំណត់របស់លោកអ្នក</li>
+							<li>សារសុវត្ថិភាពពីរជាន់ (OTP) សម្រាប់ប្រតិបត្តិការសាច់ប្រាក់លើអ៊ីនធឺណិត</li>
+							<li>ការជូនដំណឹងទៅលើការធ្វើប្រតិបត្តិការណ៍សាច់ប្រាក់ដោយឥតគិតថ្លៃ ជាមួយ i/mBanking</li>
+						</ul>
+					</div>
+				</li>
+
+			</ul>
+
+			<div class="text-center mt-4">
+				<p>ស្វែងយល់ព័ត៌មានបន្ថែមនៃដៃគូសហការដែលផ្តល់អោយដោយ<a class="text-green text-underline" target="_blank" rel="noopener noreferrer" href="https://www.visa.com.kh/en_kh/visa-offers-and-perks/">VISA</a></p>
+			</div>
+		</section>
+
+		<div class="py-section"></div>
+
+
+		<!--  Banking card columns
+			  (Multiple cards available; 1~3 columns a row; column auto wrap when row is not wide enough) -->
+
+		<section class="compact-sm">
+			<div class="row justify-content-center  mx-sm-n2 mx-xl-n3   mb-n4">
+
+				<!-- column 1 -->
+				<div class="col-12 col-md-4 d-flex   mb-4">
+					<div class="w-100 bg-gray-100  mx-md-2 mx-xl-3  px-3 py-4 p-lg-5">
+						<figure class="card-w320  mx-auto mb-3 mb-md-4">
+							<div class="embed-responsive embed-responsive-1by1">
+								<img class="embed-responsive-item ofi-contain lazy" data-src="/assets/img/card/debitcard-classic-visa.png" alt="Classic Card">
+							</div>
+						</figure>
+						<h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">Classic</h3>
+						<ul class="list-disc">
+							<li>ចំនួនទឹកប្រាក់សំរាប់ការទិញប្រចាំថ្ងៃ $5,000 (អតិបរមា១០ដងក្នុង១ថ្ងៃ)</li>
+							<li>ចំនួនទឹកប្រាក់សំរាប់ការដកសាច់ប្រាក់ពីATM $5,000 (អតិបរមា១០ដងក្នុង១ថ្ងៃ)</li>
+						</ul>
+					</div>
+				</div>
+				
+			</div>
+		</section>
+
+		<div class="py-section"></div>
+
+
+		<!-- Downloads -->
+		<p class="d-sm-flex flex-wrap align-items-center justify-content-center   px-4 px-sm-0">
+			<a class="btn btn-outline-green-dark rounded-pill  d-block d-sm-inline-block h4-mb mx-sm-1 mx-md-2 mb-2" target="_blank" rel="noopener noreferrer" href="/file/debit fee charge.pdf">តម្លៃសេវាកម្ម<i class="ico-ui-download ml-2"></i></a>
+			<a class="btn btn-outline-green-dark rounded-pill  d-block d-sm-inline-block h4-mb mx-sm-1 mx-md-2 mb-2" target="_blank" rel="noopener noreferrer" href="/file/debit agreement.pdf">កិច្ចព្រមព្រៀងនៃប័ណ្ណ<i class="ico-ui-download ml-2"></i></a>
+			<a class="btn btn-outline-green-dark rounded-pill  d-block d-sm-inline-block h4-mb mx-sm-1 mx-md-2 mb-2" target="_blank" rel="noopener noreferrer" href="/file/DEBIT Request Form EN.PDF">ពាក្យស្នើសុំផ្លាស់ប្តូរព័ត៌មាន (EN)<i class="ico-ui-download ml-2"></i></a>
+			<a class="btn btn-outline-green-dark rounded-pill  d-block d-sm-inline-block h4-mb mx-sm-1 mx-md-2 mb-2" target="_blank" rel="noopener noreferrer" href="/file/Debit Request Form KH.PDF">ពាក្យស្នើសុំផ្លាស់ប្តូរព័ត៌មាន (KH)<i class="ico-ui-download ml-2"></i></a>
+		</p>
+
+
+		<div class="py-page"></div>
+	</section>
+
+</main>
+<!-- Page END -->

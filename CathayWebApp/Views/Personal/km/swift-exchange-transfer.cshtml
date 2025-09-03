@@ -1,0 +1,136 @@
+@using CathayBankKh.ViewComponents
+
+@{
+    ViewData["PageTitle"] = "អត្រាប្ដូរប្រាក់";
+    ViewData["PageDescription"] = "Remittance (a money transfer, funds transfer or payment order) is the process of transferring money, which is begun with the originator’s payment order, made for a specific purpose to the designated beneficiary, and completed upon acceptance by the beneficiary’s bank.";
+}
+
+
+<!-- Page START -->
+<main class="mastbody">
+    
+    <!--
+        Inward & Outward Remittances
+    -->
+    <div class="topkv kv  kv--txt-left">
+        <div class="kv-bg">
+            <div class="kv-bg-inner">
+                <figure class="kv-bg-img">
+                    <picture>
+                        <source media="(min-width:769px)" srcset="/assets/img/topkv/personal-exchange-rate.jpg" />
+                        <img srcset="/assets/img/topkv/personal-exchange-rate-mb.jpg">
+                    </picture>
+                </figure>
+            </div>
+        </div>
+        <div class="kv-cont">
+            <div class="kv-cont-inner">
+                <h2 class="display-1  fw-bold lh-xs">អត្រាប្ដូរប្រាក់</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Breadcrumb  (lays on top of .topkv if places right after it) -->
+    <nav class="breadcrumb-nav text-white" aria-label="breadcrumb">
+        <div class="fluid">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]"><span>ទំព័រដើម</span><i class="ico-ui-home"></i></a></li>
+                <li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]personal/">សេវាកម្មធនាគារផ្ទាល់ខ្លួន</a></li>
+                <li class="breadcrumb-item active" aria-current="page">អត្រាប្ដូរប្រាក់</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Menu -->
+    <nav class="tabmenu    d-none d-sm-block">
+        <div class="tabmenu-inner">
+            <a class="tabmenu-btn " href="@ViewData["siteLangUrl"]personal/available-exchange-at-counter/">
+                <span class="tabmenu-btn-txt">រូបិយប័ណ្ណដែលអាចប្តូរបាន</span>
+                <i class="tabmenu-btn-line"></i>
+            </a>
+            <a class="tabmenu-btn active" href="@ViewData["siteLangUrl"]personal/swift-exchange-transfer/">
+                <span class="tabmenu-btn-txt">អត្រាផ្ទេរប្រាក់តាមប្រព័ន្ធ SWIFT</span>
+                <i class="tabmenu-btn-line"></i>
+            </a>
+        </div>
+    </nav>
+    <!-- Mobile dropdown -->
+    <div class="tabmenu-dropdown dropdown    d-block d-sm-none">
+        <a href="javascript:;" class="btn btn-sm btn-block  dropdown-toggle" data-toggle="dropdown">
+            <span class="text-truncate d-inline-block">អត្រាផ្ទេរប្រាក់តាមប្រព័ន្ធ SWIFT</span>
+        </a>
+        <div class="dropdown-menu">
+            <span class="dropdown-item disabled">-- Select page --</span>
+            <a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/available-exchange-at-counter/">រូបិយប័ណ្ណដែលអាចប្តូរបាន</a>
+            <a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/swift-exchange-transfer/">អត្រាផ្ទេរប្រាក់តាមប្រព័ន្ធ SWIFT</a>
+        </div>
+    </div>
+
+
+
+    <!--
+        Inward & Outward Remittances - Detail
+    -->
+    <section class="fluid overflow-hidden">
+
+        <div class="py-page"></div>
+
+        <!-- Page heading -->
+        <header class="compact  mb-5  text-center">
+            <h1 class="display-3 h1-mb  mb-3  text-black fw-bold">អត្រាផ្ទេរប្រាក់តាមប្រព័ន្ធ SWIFT</h1>
+        </header>
+
+        <!-- Tabular data -->
+
+        <div>កាលបរិច្ឆេទ : @ViewBag.RateDate</div>
+        <div class="tabular mt-1">
+            <div class="table-responsive-lg">
+                <table class="table h5-mb text-center">
+                    <colgroup>
+                        <col>
+                        <col width="35%">
+                        <col width="35%">
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th scope="col" class="h4 h4-mb">រូបិយប័ណ្ណ</th>
+                            <th scope="col" class="h4 h4-mb">ទិញ</th>
+                            <th scope="col" class="h4 h4-mb">លក់</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @* loop start*@
+                        @foreach (var exchangeRate in ViewBag.ExchangeRate)
+                        {
+                            @if (exchangeRate.Ccy != "KHR" && exchangeRate.Ccy != "USD" && exchangeRate.Ccy != "VND")
+                            {
+                                <tr>
+                                    @if (exchangeRate.Ccy == "AUD" || exchangeRate.Ccy == "NZD" || exchangeRate.Ccy == "EUR" || exchangeRate.Ccy == "GBP")
+                                    {
+                                        <th scope="row">@exchangeRate.Ccy / USD</th>
+                                    }
+                                    else
+                                    {
+                                        <th scope="row">USD / @exchangeRate.Ccy</th>
+                                    }
+                                    <td>@exchangeRate.C_ExrateB</td>
+                                    <td>@exchangeRate.C_ExrateS</td>
+                                </tr>
+                            }
+                        }
+                        @* loop end*@
+                    </tbody>
+                </table>
+            </div>
+        </div><!--/.tabular-->
+
+        <ul class="list-disc  mt-4  h6 h6-mb">
+            <li>អត្រាប្តូរប្រាក់ដែលបង្ហាញខាងលើនេះ​​​​​​គឺគ្រាន់តែជាអត្រាបឋមប៉ុណ្ណោះ ហើយធនាគាររក្សាសិទ្ធិក្នុងការផ្លាស់ប្តូរដោយមិនមានការជូនដំណឹងជាមុនឡើយ។</li>
+            <li>អត្រាប្តូរប្រាក់ដែលបង្ហាញខាងលើនេះ ​​​​​​គឺប្រើសម្រាប់តែការផ្ទេរប្រាក់តាមរយៈប្រព័ន្ធ SWIFT តែប៉ុណ្ណោះ</li>
+        </ul>
+
+        <div class="py-page"></div>
+    </section>
+
+</main>
+<!-- Page END -->

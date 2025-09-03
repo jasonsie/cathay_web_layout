@@ -84,7 +84,7 @@ dotnet watch run
 
 -  **HTTPS**: <https://localhost:5001>
 -  **HTTP**: <http://localhost:5000>
--  **海外據點頁面**: <https://localhost:5001/aboard>
+-  **首頁**: <https://localhost:5001/>
 -  **廖氏頁面**: <https://localhost:5001/liao>
 
 ## 資料夾結構說明 (Folder Structure Usage)
@@ -98,8 +98,7 @@ CathayWebApp/                          # .NET MVC 應用程式根目錄
 │
 ├── Controllers/                      # MVC 控制器目錄
 │   ├── HomeController.cs            # 首頁控制器，處理主要頁面路由
-│   ├── AboardController.cs          # 海外據點控制器
-│   └── LiaoController.cs            # 廖氏頁面控制器
+│   ├── HomeController.cs             # 首頁控制器
 │
 ├── Models/                          # 資料模型目錄
 │   ├── IndexViewModel.cs           # 首頁視圖模型
@@ -113,7 +112,7 @@ CathayWebApp/                          # .NET MVC 應用程式根目錄
 │   │   ├── Index.cshtml           # 主頁面視圖
 │   │   └── Privacy.cshtml         # 隱私政策頁面
 │   │
-│   ├── Aboard/                     # 海外據點視圖
+│   ├── Home/                       # 首頁視圖
 │   │   └── Index.cshtml           # 海外據點主頁面
 │   │
 │   ├── Liao/                       # 廖氏頁面視圖
@@ -177,7 +176,7 @@ CathayWebApp/                          # .NET MVC 應用程式根目錄
 ## 頁面路由 (Page Routing)
 
 -  **首頁**: `/` 或 `/Home/Index`
--  **海外據點**: `/aboard` 或 `/Aboard/Index`
+-  **首頁**: `/` 或 `/Home/Index`
 -  **廖氏頁面**: `/liao` 或 `/Liao/Index`
 -  **隱私政策**: `/Home/Privacy`
 -  **錯誤頁面**: `/Home/Error`
@@ -346,13 +345,4 @@ az webapp deployment source config-zip \
 ## 授權與聯絡 (License & Contact)
 
 此專案為國泰世華銀行內部開發專案，僅供內部使用。
-
 ---
-
-## 授權與聯絡 (License & Contact)
-
-此專案為國泰世華銀行內部開發專案，僅供內部使用。
-
----
-
-**開發愉快！Happy Coding! 🚀**

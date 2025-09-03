@@ -1,0 +1,65 @@
+@{
+   ViewData["PageTitle"] = "";
+   ViewData["PageDescription"] = "";
+   Layout = "_LayoutLite";
+}
+
+@section Styles {
+	<style>
+		.qaitem{
+			display:none;
+		}
+		.tcHint{
+			display:none;
+		}
+		.qaitem-title-hide-toggle{
+			pointer-events: none;
+		}
+		.qaitem-title-hide-toggle .qaitem-title:after{
+			display:none;
+		}
+		.masthead-logo {
+			top: 0;
+			bottom: 0;
+			margin: auto;
+		}
+	</style>
+}
+<!-- Page START -->
+<main class="mastbody">
+	@{
+		switch(ViewData["param1"]){
+			case "ibanking":
+				<partial name="@("~/Views/Shared/"+ViewData["viewUrl"]+"PersonalInternetBankingTC.cshtml")" />
+			break;
+			
+			case "mbanking":
+				<partial name="@("~/Views/Shared/"+ViewData["viewUrl"]+"PersonalMobileBankingTC.cshtml")" />
+			break;
+
+			case "merchant-app":
+				<partial name="@("~/Views/Shared/" + ViewData["viewUrl"] + "PersonalMerchantApp.cshtml")" />
+				break;
+
+			default:
+
+			break;
+		}
+	}
+</main>
+<!-- Page END -->
+
+@section Scripts {
+	<script>
+		$(function(){
+			const currentLabel = "@ViewData["param2"]";
+			const elm = $('.qaitem[data-label="'+currentLabel+'"');
+			if(elm.length==0){
+				$('.qaitem').show();
+			}else{
+				elm.addClass("qaitem-title-hide-toggle").addClass("foldable--expanded").show();
+				$('.qaitem-detail',elm).show();
+			}
+		})
+	</script>
+}

@@ -1,0 +1,421 @@
+﻿@{
+    ViewData["PageTitle"] = "國泰世華銀行香港分行";
+    ViewData["home_latest_news"]= "最新消息";
+        // Mock ListOfNews data
+    var  currentLanguage = ViewData["lang"] as string;
+    var mockNews = new List<dynamic>
+    { 
+        new {
+            Id = 1,
+            Title = currentLanguage switch
+            {
+                "zh-hant" => "國泰世華舉辦「2025大灣區經貿研討會」 知名經濟學家陶冬擔任演講嘉賓 逾百位亞洲商界領袖共襄盛舉",
+                "en" => "Cathay United Bank Latest Service Announcement",
+                "km" => "ការប្រកាសសេវាកម្មចុងក្រោយរបស់ធនាគារ Cathay United",
+                _ => "國泰世華銀行最新服務公告"
+            },
+            Summary = currentLanguage switch
+            {
+                "zh-hant" => "國泰世華銀行2024年於台灣舉行「國泰世華銀行香港經貿研討會」，邀集多位知名經貿專家，深入解析香港總體經濟趨勢及稅務操作實務，廣受客戶好評。今年，國泰世華將研討會移師香港舉辦，並以「2025大灣區經貿研討會」為題，匯聚逾百位來自中國、香港和台灣的企業領袖，聚焦2025年全球及粵港澳大灣區的經濟形勢、市場融資趨勢、經貿和稅務政策等議題，助客戶洞見商機，掌握投資前瞻布局。",
+                "en" => "To provide better financial services, we are launching new digital banking features.",
+                "km" => "ដើម្បីផ្តល់សេវាកម្មហិរញ្ញវត្ថុកាន់តែប្រសើរ យើងកំពុងបើកដំណើរការលក្ខណៈពិសេសធនាគារឌីជីថលថ្មី។",
+                _ => "為提供更優質的金融服務，本行將推出全新數位銀行功能。"
+            },
+            PublishDate = DateTime.Now.AddDays(-1),
+            Url = "/news/digital-banking-features"
+        },
+        new {
+            Id = 2,
+            Title = currentLanguage switch
+            {
+                "zh-hant" => "全球經濟發展態勢以及各地不同的法規和稅制，對於在地及跨境企業的未來發展，均有舉足輕重的影響。今年研討會特別邀請著名經濟學家、淡水泉香港投資管理有限公司總裁陶冬博士、君倫律師事務所創始合夥人、主任律師丁德應先生、德勤香港事務所稅務合夥人潘宗杰先生，以及德勤香港事務所稅務經理許雅雯女士擔任演講嘉賓，分別就「2025年全球經濟展望」、「中國最新政策及趨勢下跨境融資的法律實務」、「全球稅賦趨勢與香港稅務優惠政策」等議題案例進行專業分析。",
+                "en" => "Special Exchange Rate Promotion",
+                "km" => "ការផ្តល់ជូនអត្រាប្តូរប្រាក់ពិសេស",
+                _ => "匯率優惠活動開跑"
+            },
+            Summary = currentLanguage switch
+            {
+                "zh-hant" => "國泰世華銀行總經理李偉正表示：「國泰世華一直以來以客戶為中心，致力於提供整體服務。我們在中國和香港設有據點，於東協的9個國家也有網絡。香港分行於2002年設立，至今已有23年，除了針對企業提供金融服務外，2016年開始提供財富管理和私人銀行服務。2022年，我們更針對台商及有跨境需求的企業設立了專責團隊，希望提升整體金融服務，滿足客戶各方面的需求。」",
+                "en" => "From now until the end of the month, enjoy better foreign exchange rates.",
+                "km" => "ចាប់ពីឥឡូវនេះរហូតដល់ចុងខែ រីករាយជាមួយអត្រាប្តូរប្រាក់បរទេសប្រសើរជាង។",
+                _ => "即日起至月底，享受更優惠的外幣兌換服務。"
+            },
+            PublishDate = DateTime.Now.AddDays(-3),
+            Url = "/news/exchange-rate-promotion"
+        },
+        new {
+            Id = 3,
+            Title = currentLanguage switch
+            {
+                "zh-hant" => "ATM服務據點擴展通知",
+                "en" => "ATM Service Point Expansion Notice",
+                "km" => "ការជូនដំណឹងពីការពង្រីកចំណុចសេវាកម្ម ATM",
+                _ => "ATM服務據點擴展通知"
+            },
+            Summary = currentLanguage switch
+            {
+                "zh-hant" => "為方便客戶使用，新增多個ATM服務據點。",
+                "en" => "For customer convenience, we have added multiple new ATM service points.",
+                "km" => "ដើម្បីភាពងាយស្រួលរបស់អតិថិជន យើងបានបន្ថែមចំណុចសេវាកម្ម ATM ថ្មីជាច្រើន។",
+                _ => "為方便客戶使用，新增多個ATM服務據點。"
+            },
+            PublishDate = DateTime.Now.AddDays(-7),
+            Url = "/news/atm-expansion"
+        }
+    };
+    ViewData["ListOfNews"] = mockNews;
+
+    var mockBanners = new List<dynamic>
+    {
+        new { 
+            index = 1, 
+            title = currentLanguage switch 
+            {
+                "zh-hant" => "1. 申辦信用卡\n免年費",
+                "en" => "Apply CUBC Credit Card\nFree Annual Fee", 
+                "km" => "ដាក់ពាក្យសុំកាតឥណទាន CUBC\nគ្មានថ្លៃប្រចាំឆ្នាំ",
+                _ => "申辦信用卡\n免年費"
+            },
+            url = "/banner/main",
+            image = "~/assets/img/banners/1.png"
+        },
+        new { 
+            index = 2, 
+            title = currentLanguage switch 
+            {
+                "zh-hant" => "2. 匯率優惠\n限時活動",
+                "en" => "Exchange Rate\nSpecial Promotion", 
+                "km" => "អត្រាប្តូរប្រាក់\nកម្មវិធីពិសេស",
+                _ => "匯率優惠\n限時活動"
+            },
+            url = "/banner/promo",
+            image = "~/assets/img/banners/2.png"
+        },
+        new { 
+            index = 3, 
+            title = currentLanguage switch 
+            {
+                "zh-hant" => "3. 數位銀行\n全新體驗",
+                "en" => "Digital Banking\nNew Experience", 
+                "km" => "ធនាគារឌីជីថល\nបទពិសោធន៍ថ្មី",
+                _ => "數位銀行\n全新體驗"
+            },
+            url = "/banner/seasonal",
+            image = "~/assets/img/banners/3.png"
+        }
+    };
+    ViewData["ListOfBanner"] = mockBanners;
+
+    if (ViewData["lang"] as string == "zh-hant")
+    {
+        ViewData["PageTitle"] = "";
+        ViewData["PageDescription"] = "國泰世華商業銀行香港分行於2002年2月1日 成立及註冊，提供一站式銀行服務，包括存匯、企業金融、貿易融資、私人銀行、埸外交易衍生工具等服務。此外，香港分行可透過網上銀行平台，提供優質的銀行服務。";
+    }
+    else
+    {
+        ViewData["PageTitle"] = "";
+        ViewData["PageDescription"] = "";
+    }
+}
+
+@section Scripts {
+    <script>
+        var homeCard = homeCard || {};
+        homeCard.prototype = {
+            sameHeight: function () {
+
+                let window_w = $(window).width();
+                let max_h = 0;
+                let scope = $('.component-oversea-services');
+                $('.cos-item-description', scope).css('min-height', 0);
+                if (window_w >= 768) {
+                    $('.cos-item', scope).each(function () {
+                        let h = $('.cos-item-description', $(this)).height();
+                        if (h > max_h) {
+                            max_h = h;
+                        }
+                    })
+                    $('.cos-item-description', scope).height(max_h);
+                } else {
+                    $('.cos-item-description', scope).css('height', 'auto');
+                }
+            },
+            addEventListener: function () {
+                let o = this;
+                $(window).on('resize.homeCard', function () {
+                    o.sameHeight();
+                }).trigger('resize.homeCard');
+            },
+            init: function () {
+                this.addEventListener();
+            }
+        }
+    </script>
+
+    <script>
+        $(function () {
+
+            var myHomeCard = homeCard.prototype;
+            myHomeCard.init();
+
+            // Banner Carousel Implementation
+            var bannerCarousel = {
+                currentIndex: 0,
+                totalBanners: $('.oversea-kv__carousel-slide').length,
+                autoPlayInterval: null,
+                isTransitioning: false,
+                
+                init: function() {
+                    if (this.totalBanners === 0) return;
+                    this.setupEvents();
+                    this.showSlide(0);
+                    this.startAutoPlay();
+                },
+                
+                setupEvents: function() {
+                    var self = this;
+                    
+                    // Dot navigation
+                    $('.oversea-kv__carousel-dot').on('click', function() {
+                        if (self.isTransitioning) return;
+                        var index = $(this).data('index');
+                        self.goToSlide(index);
+                    });
+                    
+                    // Arrow navigation
+                    $('.oversea-kv__carousel-prev').on('click', function() {
+                        if (self.isTransitioning) return;
+                        self.prevSlide();
+                    });
+                    
+                    $('.oversea-kv__carousel-next').on('click', function() {
+                        if (self.isTransitioning) return;
+                        self.nextSlide();
+                    });
+                    
+                    // Pause on hover
+                    $('.component-oversea-kv').hover(
+                        function() { self.stopAutoPlay(); },
+                        function() { self.startAutoPlay(); }
+                    );
+                    
+                    // Keyboard navigation
+                    $(document).on('keydown', function(e) {
+                        if ($('.component-oversea-kv:hover').length > 0) {
+                            if (e.keyCode === 37) { // Left arrow
+                                e.preventDefault();
+                                self.prevSlide();
+                            } else if (e.keyCode === 39) { // Right arrow
+                                e.preventDefault();
+                                self.nextSlide();
+                            }
+                        }
+                    });
+                },
+                
+                showSlide: function(index) {
+                    var self = this;
+                    var $currentSlide = $('.oversea-kv__carousel-slide').eq(this.currentIndex);
+                    var $nextSlide = $('.oversea-kv__carousel-slide').eq(index);
+                    
+                    // If this is the initial call or same index, just set the title without animation
+                    if (index === this.currentIndex || !this.isTransitioning) {
+                        this.currentIndex = index;
+                        
+                        // Set active slide
+                        $('.oversea-kv__carousel-slide').removeClass('oversea-kv__carousel-slide--active');
+                        $nextSlide.addClass('oversea-kv__carousel-slide--active');
+                        
+                        // Update dots
+                        $('.oversea-kv__carousel-dot').removeClass('oversea-kv__carousel-dot--active');
+                        $('.oversea-kv__carousel-dot').eq(index).addClass('oversea-kv__carousel-dot--active');
+                        
+                        // Set title immediately for initial load
+                        var $title = $('.oversea-kv__dynamic-title');
+                        var title = $nextSlide.data('title');
+                        $title.html(title);
+                        
+                        return;
+                    }
+                    
+                    if (this.isTransitioning) return;
+                    
+                    this.isTransitioning = true;
+                    
+                    // Update current index
+                    this.currentIndex = index;
+                    
+                    // Remove active class from current slide
+                    $currentSlide.removeClass('oversea-kv__carousel-slide--active');
+                    
+                    // Add active class to next slide with slight delay for smooth transition
+                    setTimeout(function() {
+                        $nextSlide.addClass('oversea-kv__carousel-slide--active');
+                        
+                        // Update dots
+                        $('.oversea-kv__carousel-dot').removeClass('oversea-kv__carousel-dot--active');
+                        $('.oversea-kv__carousel-dot').eq(index).addClass('oversea-kv__carousel-dot--active');
+                        
+                        // Update title with fade effect
+                        var $title = $('.oversea-kv__dynamic-title');
+                        $title.fadeOut(200, function() {
+                            var title = $nextSlide.data('title');
+                            $title.html(title.replace(/\n/g, '<br>')).fadeIn(200);
+                        });
+                        
+                        // Reset transition flag after animation completes
+                        setTimeout(function() {
+                            self.isTransitioning = false;
+                        }, 600);
+                    }, 50);
+                },
+                
+                nextSlide: function() {
+                    var nextIndex = (this.currentIndex + 1) % this.totalBanners;
+                    this.goToSlide(nextIndex);
+                },
+                
+                prevSlide: function() {
+                    var prevIndex = (this.currentIndex - 1 + this.totalBanners) % this.totalBanners;
+                    this.goToSlide(prevIndex);
+                },
+                
+                goToSlide: function(index) {
+                    this.stopAutoPlay();
+                    this.showSlide(index);
+                    this.startAutoPlay();
+                },
+                
+                startAutoPlay: function() {
+                    var self = this;
+                    this.stopAutoPlay();
+                    this.autoPlayInterval = setInterval(function() {
+                        self.nextSlide();
+                    }, 3000);
+                },
+                
+                stopAutoPlay: function() {
+                    if (this.autoPlayInterval) {
+                        clearInterval(this.autoPlayInterval);
+                        this.autoPlayInterval = null;
+                    }
+                }
+            };
+            
+            // Initialize banner carousel
+            if ($('.oversea-kv__carousel-slide').length > 0) {
+                bannerCarousel.init();
+            }
+
+            $(window).resize(function () {
+
+                let window_w = $(window).width();
+                let offset_x;
+                let content_w;
+                if (window_w > 991) {
+                    offset_x = $('.cok-inner').offset().left;
+                    content_w = $('.cok-content').width();
+                    max_w = window_w - content_w - offset_x;
+                } else {
+                    offset_x = 0;
+                    content_w = 0;
+                    max_w = window_w;
+                }
+                $('.cok-figure-wrap').css('width', max_w);
+                $('.cok-figure-wrap').css('flex-basis', max_w);
+                $('.cok-figure-wrap').css('max-width', max_w);
+                $('.cok-figure-wrap').css('left', content_w + offset_x);
+
+            }).trigger('resize');
+        })
+    </script>
+}
+
+<div class='component-oversea-kv'>
+    <div class="cok-figure-wrap">
+        @{ var bannersList = ViewData["ListOfBanner"] as IEnumerable<dynamic>; }
+        @if (bannersList?.Any() == true)
+        {
+            <div class="cok-figure-slider">
+                @foreach (var banner in bannersList)
+                {
+                    <span class="cok-figure-item">
+                        <figure class='cok-figure oversea-kv__carousel-slide @(banner.index == 1 ? "oversea-kv__carousel-slide--active" : "")'
+                                data-title="@banner.title" 
+                                data-url="@banner.url">
+                            <img class='cok-img oversea-kv__img' src='@Url.Content(banner.image)' alt='@banner.title' />
+                            <figcaption hidden>@banner.title</figcaption>
+                        </figure>
+                    </span>
+                }
+                
+                <!-- Navigation arrows -->
+                <button class="oversea-kv__carousel-prev" aria-label="Previous slide">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <button class="oversea-kv__carousel-next" aria-label="Next slide">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                
+                <!-- Dot indicators -->
+                <div class="oversea-kv__carousel-dots">
+                    @for (int i = 0; i < bannersList.Count(); i++)
+                    {
+                        <button class="oversea-kv__carousel-dot @(i == 0 ? "oversea-kv__carousel-dot--active" : "")" 
+                                data-index="@i" 
+                                aria-label="Go to slide @(i + 1)"></button>
+                    }
+                </div>
+            </div>
+        }
+        else
+        {
+            <!-- Fallback static image -->
+            <span class="cok-figure-item">
+                <figure class='cok-figure'>
+                    <picture>
+                        <source media='(min-width: 992px)'
+                                srcset='@Url.Content("~/assets/img/ui/bg-lg.jpg")' />
+                        <source media='(min-width: 768px)'
+                                srcset='@Url.Content("~/assets/img/ui/bg-md.jpg")' />
+                        <img class='cok-img' src='@Url.Content("~/assets/img/ui/bg.jpg")' alt='海外據點'>
+                    </picture>
+                    <figcaption hidden>海外據點</figcaption>
+                </figure>
+            </span>
+        }
+    </div>
+
+    <div class="cok-inner">
+        <div class="cok-content">
+            <h1 class='cok-title'>
+                <span class='cok-title--company oversea-kv__dynamic-title'></span>
+            </h1>
+
+            @{ var newsList = ViewData["ListOfNews"] as IEnumerable<dynamic>; }
+            @if (newsList?.Any() == true)
+            {
+                <div class='component-oversea-news'>
+                    <h2 class='con-title'>
+                        <a class='con-title-link' href="#">@ViewData["home_latest_news"]</a>
+                    </h2>
+                    <ul class='con-list scrollbar-inner'>
+                        @foreach (var news in newsList)
+                        {
+                            <li class='con-item'>
+                                <a href="@news.Url" class='con-item-link'>
+                                    <span class='con-item-date'>@news.PublishDate.ToString("yyyy-MM-dd")</span>
+                                    <span class='con-item-title'>@news.Title</span>
+                                </a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            }
+        </div>
+    </div>
+</div>

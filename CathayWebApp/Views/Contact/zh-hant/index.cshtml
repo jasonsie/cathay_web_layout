@@ -1,0 +1,504 @@
+@{
+    ViewData["PageTitle"] = "聯繫我們";
+    ViewData["PageDescription"] = "如需其他協助或資訊，請聯繫我們。 我們很高興能幫助您。 如果您需要找到我們，請參閱我們的 ATM 和分行定位地圖。我們辦公室的聯繫方式如下。";
+}
+
+@section Scripts {
+    <script src="/assets/js/branch.js"></script>
+    <script src="/assets/js/purify.js"></script>
+    <script nonce="NhOc3wZFJ7hZvX9oqCrl/g">
+        const urlImg = '@Url.Content("~/")' + 'Contact/ReadCaptcha';//
+        const url = '@Url.Content("~/")' + 'Contact/SummitData';
+        $(function () {
+            getCaptcha();
+			console.log('initBranch');
+			var branchElms = $('[data-comp="branch"]');
+			branchElms.each(function () {
+				var elm = $(this),
+					json = elm.attr('data-json'),
+					_branch = new branch();
+				_branch.init(elm, json);
+			});
+        });
+        function getCaptcha() {
+            //alert(urlImg);
+            var obj = new Object();
+            $.ajax({
+                type: "GET",
+                async:false,
+                url: urlImg,
+                data: JSON.stringify(obj),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) {
+                    //alert(JSON.stringify(textStatus));
+                    const imgStr = "data:image/jpeg;base64," + data.Data.PictureBase64;
+                    //alert(imgStr);
+                    $("#imgCaptcha").attr("src", imgStr);
+                    //ShowMsg(data.responseText);
+                },
+                error: function (xhr, textStatus) {
+                    ShowMsg(xhr.responseText);
+                }
+            });
+        }
+        function onSubmit() {
+            ClearMsg();
+            //alert('submit');
+            var obj = new Object();
+            obj.chkaccept = "Y";
+            obj.txtName = "";
+            if ($("#subject").val() === "") {
+                obj.chkaccept = "N";
+                if (!$("#subject").hasClass('is-invalid'))
+                    $("#subject").toggleClass('is-invalid');
+            } else {
+                obj.txtSubject = $("#subject").val();
+                $("#subject").removeClass('is-invalid');
+            }
+            if ($("#comments").val() === "") {
+                if (!$("#comments").hasClass('is-invalid'))
+                    $("#comments").toggleClass('is-invalid');
+                obj.chkaccept = "N";
+            } else {
+                obj.txtAreaCom = $("#comments").val();
+                $("#comments").removeClass('is-invalid');
+            }
+
+            //obj.txtMobileNum = "0923127356";
+            if ($("#email").val() === "") {
+                if (!$("#email").hasClass('is-invalid'))
+                    $("#email").toggleClass('is-invalid');
+                obj.chkaccept = "N";
+            } else {
+                obj.txtEmail = $("#email").val();
+                $("#email").removeClass('is-invalid');
+            }
+
+            if ($("#customerName").val() === "") {
+                if (!$("#customerName").hasClass('is-invalid'))
+                    $("#customerName").toggleClass('is-invalid');
+                obj.chkaccept = "N";
+            } else {
+                obj.txtCustomerName = $("#customerName").val();
+                $("#customerName").removeClass('is-invalid');
+            }
+            if ($("#account").val() === "") {
+                if (!$("#account").hasClass('is-invalid'))
+                    $("#account").toggleClass('is-invalid');
+                obj.chkaccept = "N";
+            } else {
+                obj.txtAccount = $("#account").val();
+                $("#account").removeClass('is-invalid');
+            }
+            if ($("#product").val() === "請選擇產品別/服務") {
+                if (!$("#product").hasClass('is-invalid'))
+                    $("#product").toggleClass('is-invalid');
+                obj.chkaccept = "N";
+            } else {
+                obj.selProduct = $("#product").val();
+                $("#product").removeClass('is-invalid');
+            }
+
+            //obj.txtEmail = "newJob@gmail.com";
+            //obj.txtAreaCom = "";
+            if ($("#phone").val() === "") {
+                if (!$("#phone").hasClass('is-invalid'))
+                    $("#phone").toggleClass('is-invalid');
+                obj.chkaccept = "N";
+            } else {
+                obj.txtPhone = $("#phone").val();
+                $("#phone").removeClass('is-invalid');
+            }
+
+            if ($("#txtCaptcha").val() === "") {
+                $("#errCaptcha").show();
+                obj.chkaccept = "N";
+            } else {
+                obj.txtCaptcha = $("#txtCaptcha").val();
+                $("#errCaptcha").hide();
+            }
+            //alert(url);
+            //obj.txtAreaCom = "txtAreaCom";
+            if (obj.chkaccept === "Y") {
+                $.ajax({
+                    type: "POST",
+                    url: url,
+                    data: JSON.stringify(obj),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    success: function (data, textStatus, xhr) {
+                        //alert(JSON.stringify(textStatus));
+                        //alert(JSON.stringify(data));
+                        ShowMsg(data.ReturnMessage);
+                    },
+                    error: function (xhr, textStatus, errorThrown) {
+                        //alert('failed');
+                        ShowMsg(xhr.responseText);
+                    }
+                });
+            }
+        }
+        function ShowMsg(str) {
+            $("#showmsg").html(DOMPurify.sanitize(str)).css({ "color": "red", "font-size": "200%" });
+        }
+        function ClearMsg() {
+            $("#showmsg").html("");
+        }
+    </script>
+}
+
+
+<!-- Page START -->
+<main class="mastbody">
+
+    <!-- 先顯示圖片在頁面最上方 -->
+    <div class="topkv kv  kv--txt-left">
+        <div class="kv-bg">
+            <div class="kv-bg-inner">
+                <figure class="kv-bg-img">
+                    <picture>
+                        <source media="(min-width:769px)" srcset="/assets/img/topkv/contact.jpg" />
+                        <img srcset="/assets/img/topkv/contact-mb.jpg">
+                    </picture>
+                </figure>
+            </div>
+        </div>
+        <div class="kv-cont">
+            <div class="kv-cont-inner">
+                <h1 class="display-1-sm fw-bold lh-xs">首頁</h1>
+            </div>
+        </div>
+    </div>
+
+    <!-- Breadcrumb 置於圖片下方 -->
+    <nav class="breadcrumb-nav text-white" aria-label="breadcrumb">
+        <div class="fluid">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]"><span>首頁</span><i class="ico-ui-home"></i></a></li>
+                <li class="breadcrumb-item active" aria-current="page">支援</li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Tab Navigation -->
+    <nav class="tabmenu d-none d-sm-block">
+        <div class="tabmenu-inner">
+            <a class="tabmenu-btn" href="#" data-tab="contactUs">
+                <span class="tabmenu-btn-txt">聯繫我們</span>
+                <i class="tabmenu-btn-line"></i>
+            </a>
+            <a class="tabmenu-btn" href="#" data-tab="feedbackForm">
+                <span class="tabmenu-btn-txt">意見反應表</span>
+                <i class="tabmenu-btn-line"></i>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Mobile dropdown -->
+    <div class="tabmenu-dropdown dropdown d-block d-sm-none">
+        <a href="javascript:;" class="btn btn-sm btn-block dropdown-toggle" data-toggle="dropdown">
+            <span class="text-truncate d-inline-block">聯繫我們</span>
+        </a>
+        <div class="dropdown-menu">
+            <span class="dropdown-item disabled">-- 前往頁面 --</span>
+            <a class="dropdown-item text-truncate" href="#" data-tab="contactUs">聯繫我們</a>
+            <a class="dropdown-item text-truncate" href="#" data-tab="feedbackForm">意見反應表</a>
+        </div>
+    </div>
+
+    <!-- 聯繫我們 Section -->
+    <div id="contactUs" class="tab-content">
+        <section class="fluid overflow-hidden">
+            <div class="py-page"></div>
+
+            <!-- Page heading -->
+
+            <header class="compact  mb-5  text-center">
+                    <h3 class="display-3 h1-mb  mb-3  text-black fw-bold">我們的官方網站</h3>
+                <h4 class="tdisplay-3 h1-mb  mb-3  text-black ">
+                    國泰世華銀行（柬埔寨）CUBC 官方網站
+                </h4>
+                    <h3 class="h1 h2-mb  mb-4  text-black fw-bold text-center lh-sm">www.cathaybk.com.kh</h3>
+            </header>
+
+            <header class="compact  mb-5  text-center">
+                <h2 class="display-3 h1-mb  mb-3  text-black fw-bold">聯絡資訊</h2>
+                <p class="text-left">如需其他協助或資訊，請聯繫我們。 我們很高興能幫助您。 如果您需要找到我們，請參閱我們的 ATM 和分行定位地圖。我們辦公室的聯繫方式如下。</p>
+            </header>
+
+            <div class="compact">
+
+                <!-- Section heading -->
+                <h3 class="h1 h2-mb  mb-4  text-black fw-bold text-center lh-sm">總行</h3>
+
+                <ul class="list-disc mb-4">
+                    <li>Address: No.48, Samdach Pan St.(214), Sangkat Boeung Raing, Khan Daun Penh, Phnom Penh</li>
+                    <li>Tel: (855) 23 -211 211</li>
+                    <li>Hotline 24/7: (855) 23 885 500</li>
+                    <li>Fax: (855) 23 -21 21 21</li>
+                    <li>Swift: CSBC KHPP</li>
+                </ul>
+
+                <!--
+                    Form
+                -->
+                <!-- QA item -->
+                <div class="qaitem" js-foldable-group="internet">
+                    <div class="qaitem-title" role="button" tabindex="0" js-foldable-head>
+                        <h3 class="qaitem-title-txt  h3 h4-mb text-dark fw-bold">Contact Form</h3>
+                    </div>
+                    <div class="qaitem-detail" js-foldable-body>
+
+                        <!-- Form container -->
+                        <div class="px-3 py-4 px-sm-4 px-lg-5">
+                            <!-- Form fields START -->
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <label for="subject">主題</label>
+                                    <input type="text" class="form-control" id="subject" placeholder="主題" required>
+                                    <div class="invalid-feedback">請檢查您輸入的資料</div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="customerName">姓名</label>
+                                    <input type="text" class="form-control" id="customerName" placeholder="姓名" required>
+                                    <div class="invalid-feedback">請檢查您輸入的資料</div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="account">銀行帳號</label>
+                                    <input type="text" class="form-control" id="account" placeholder="銀行帳號" required>
+                                    <div class="invalid-feedback">請檢查您輸入的資料</div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="email">電子郵件</label>
+                                    <input type="email" class="form-control" id="email" placeholder="電子郵件" required>
+                                    <div class="invalid-feedback">請檢查您輸入的資料</div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="phone">手機號碼</label>
+                                    <input type="text" class="form-control" id="phone" placeholder="手機號碼" required>
+                                    <div class="invalid-feedback">請檢查您輸入的資料</div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    <label for="product">反應產品別/服務</label>
+                                    <select class="custom-select" id="product" required>
+                                        <option selected>請選擇產品別/服務</option>
+                                        <option value="匯款">匯款</option>
+                                        <option value="貸款">貸款</option>
+                                        <option value="ATM自動櫃員機">ATM自動櫃員機</option>
+                                        <option value="提款/簽帳卡">提款/簽帳卡</option>
+                                        <option value="信用卡">信用卡</option>
+                                        <option value="活期存款帳戶">活期存款帳戶</option>
+                                        <option value="支票存款帳戶">支票存款帳戶</option>
+                                        <option value="網銀服務/交易">網銀服務/交易</option>
+                                        <option value="其他">其他</option>
+                                    </select>
+                                    <div class="invalid-feedback">請檢查您輸入的資料</div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-12">
+                                    <label for="comments">意見內容</label>
+                                    <textarea class="form-control" rows="5" id="comments" placeholder="意見內容" required></textarea>
+                                    <div class="invalid-feedback">請檢查您輸入的資料</div>
+                                </div>
+                            </div>
+                            <!-- Form fields END -->
+
+                            <div class="text-center">
+                                <div class="d-flex justify-content-center mb-3">
+                                    <div class="g-recaptcha" data-sitekey="6Le-wvkSAAAAAPBMRTvw0Q4Muexq9bi0DJwx_mJ-" data-callback="onSuccess" data-action="action">
+                                    </div>
+                                    <input id="txtCaptcha" name="txtCaptcha" class="txt" type="text" autocomplete="off" placeholder="please input captcha code">
+                                    <img onclick="getCaptcha()" src="#" alt="" id="imgCaptcha" style="width: 110px; height: 48px; border-radius:5px;margin-left:5px;">
+
+                                </div>
+                                <div class="invalid-feedback" id="errCaptcha" style="margin-top:-10px;margin-bottom:10px;">請檢查您輸入的資料</div>
+                                <button type="button" class="btn btn-green" onclick="onSubmit(); return false;">
+                                    <span class="px-2">送出<i class="ico-ui-right-v ml-2 big"></i></span>
+                                </button>
+                                <div>
+                                    若未能正確提供姓名、<strong>地址</strong>和<strong>電話號碼/電子郵件</strong>，投訴將被作廢。
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="qaitem" js-foldable-group="internet">
+                    <div class="qaitem-title" role="button" tabindex="0" js-foldable-head>
+                        <h3 class="qaitem-title-txt  h3 h4-mb text-dark fw-bold">Close CUBC Account ?</h3>
+                    </div>
+                    <div class="qaitem-detail" js-foldable-body>
+                        <div class="px-3 py-4 px-sm-4 px-lg-5">
+                            <img class="w-100 lazy" data-src="/assets/img/topkv/close_cubc_account.jpg" alt="Personal Banking">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="py-page" id="showmsg"></div>
+        </section>
+
+
+
+        <!--
+            ATM & Branch Locator
+        -->
+        <section class="branchfinder" id="find-us" data-comp="branch" data-json="/assets/json/branch-atm.json">
+            <div class="py-page"></div>
+
+            <!-- Section heading -->
+            <h2 class="h1 h2-mb  mb-4  text-black fw-bold text-center lh-sm">鄰近分行/ATM</h2>
+
+            <div class="branchfinder-wrap row bg-gray-100">
+
+                <!-- Google map -->
+                <div class="branchfinder-map  col-12 col-lg-6  d-flex flex-column ie11fix">
+                    <div class="w-100 h-100">
+                        <iframe id="branchMap" tabindex="-1" class="w-100 h-100" src="about:blank" width="960" height="600" allowfullscreen="" scrolling="no" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+
+                <!-- Search Panel -->
+                <div class="branchfinder-panel  col-12 col-lg-6  d-flex flex-column ie11fix">
+
+                    <!-- Input -->
+                    <div class="branchfinder-input  p-3 p-md-4 px-xl-5">
+                        <!-- Block heading -->
+                        <h3 class="h3 h3-mb  mb-3  text-black fw-bolder">查詢分行/ATM</h3>
+
+                        <div class="row align-items-center">
+                            <div class="col-12 col-md-auto">
+
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="typeBranch" name="type" class="custom-control-input type" value="branch">
+                                    <label class="custom-control-label" for="typeBranch"><span class="d-block fw-bolder">Branch</span></label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" id="typeATM" name="type" class="custom-control-input type" value="atm">
+                                    <label class="custom-control-label" for="typeATM"><span class="d-block fw-bolder">ATM</span></label></label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- Result -->
+                    <div class="branchfinder-result  p-3 p-md-4 px-xl-5" role="branchListHolder">
+
+                        <!-- Result item -->
+                        <script type="text/template" id="branchListItemTemplate">
+                            <div class="mb-4 branchListItem %type%" data-type="%type%" data-map="%map%" data-url="%url%">
+                                <h6 role="button" class="branchItemName h4 hover-green text-black lh-sm d-flex">
+                                    <i class="ico-ui-location h2 mr-2 ml-1 mt-n1"></i>
+                                    <div>
+                                        <span class="d-block mb-1 fw-bolder">%city%</span>
+                                    </div>
+                                </h6>
+                            </div>
+                        </script>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="py-page"></div>
+        </section>
+    </div>
+
+    <!-- 意見反應表 Section -->
+    <div id="feedbackForm" class="tab-content" style="display: none;">
+        <section class="fluid overflow-hidden">
+            <div class="py-page"></div>
+            <header class="compact mb-5 text-center">
+                <h3 class="display-3 h1-mb mb-3 text-black fw-bold">投訴解決</h3>
+            </header>
+            <figure class="kv-bg-img">
+                <picture class="mb-4">
+                <source media="(min-width:769px)" srcset="/assets/img/topkv/feedback1_CN.jpg" class="mb-4"/>
+                <img srcset="/assets/img/topkv/feedback1_CN-mb.jpg" class="mb-4">
+            </picture>
+            </figure>
+
+            <!-- 新增投訴流程內容 -->
+            <div class="text-left px-3">
+                <h1 class="complaints-process-title mb-4">投訴流程</h1>
+                <ul style="list-disc mb-4">
+                    如果我們提供的服務未能達到您的期望˒您可以通過下列方式與我們聯繫：
+                </ul>
+                <ul class="list-disc ">
+                    <li>
+                        撥打電話號碼：（855) 23 882 800（營業日上午8時至下午5時）
+                    </li>
+                    <li>寄送電子郵件：<a href="mailto:complainthandling@cathaybk.com.kh" style="color: #008000; font-weight:bold">complainthandling@cathaybk.com.kh</a></li>
+                    <li>
+                        前往總行或鄰近分行提交投訴表格
+                    </li>
+                    <li>填寫表格 <a href="@ViewData["siteLangUrl"]feedback" target="_blank" style="color: #008000; font-weight: bold;">Complaint Acknowledgement Form</a>並點擊提交</li>
+                </ul>
+                <ul>投訴處理團隊將會盡快與您聯繫</ul>
+               
+                <figure class="kv-bg-img">
+                <picture>
+                    <source media="(min-width:769px)" srcset="/assets/img/topkv/feedback2_CN.jpg" class="mb-4"/>
+                    <img srcset="/assets/img/topkv/feedback2_CN-mb.jpg" class="mb-4">
+                </picture>
+                </figure>
+                <ul class="list-disc mb-4">
+                    <li>
+                        投訴應在消費者意識到問題後的60天內提交
+                    </li>
+                    <li>
+                        口頭投訴可能需要至多2個工作日處理完成 ∘ 如果口頭投訴未能於2個工作日內解決˒投訴處理小組將建議客戶以書面形式提交投訴
+                    </li>
+                    <li>
+                        銀行應在收到投訴表格後的30個日曆天內向投訴人書面回覆調查結果
+                    </li>
+                    <li>您的信息將被保密</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+</main>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // 預設顯示聯繫我們內容
+        document.getElementById('contactUs').style.display = 'block';
+
+        // 設定聯繫我們標籤為選取的樣式
+        const contactTabButton = document.querySelector('.tabmenu-btn[data-tab="contactUs"]');
+        if (contactTabButton) {
+            contactTabButton.classList.add('active');
+            // 顯示選中的標籤名稱
+            document.querySelector('.dropdown-toggle span').textContent = contactTabButton.textContent;
+        }
+    });
+
+    document.querySelectorAll('.tabmenu-btn, .dropdown-item').forEach(button => {
+        button.addEventListener('click', function (event) {
+            event.preventDefault();
+            const tabId = this.getAttribute('data-tab');
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.style.display = 'none';
+            });
+            document.getElementById(tabId).style.display = 'block';
+
+            // 更新選中的按鈕樣式
+            document.querySelectorAll('.tabmenu-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`.tabmenu-btn[data-tab="${tabId}"]`).classList.add('active');
+
+            // 更新 dropdown 的顯示文字
+            const selectedText = this.textContent.trim();
+            document.querySelector('.dropdown-toggle span').textContent = selectedText;
+        });
+    });
+</script>
+<!-- Page END -->

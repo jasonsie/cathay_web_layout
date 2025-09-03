@@ -1,0 +1,129 @@
+@{
+	ViewData["PageTitle"] = "ការផ្ទេរប្រាក់ចូលនិងការផ្ទេរប្រាក់ចេញ";
+	ViewData["PageDescription"] = "AAការផ្ទេរប្រាក់ (ការផ្ទេរប្រាក់ ឬការទូទាត់)​ គឺជាដំណើរការនៃការផ្ទេរប្រាក់ ដែលចាប់ផ្តើមជាមួយនឹងការទូទាត់របស់អ្នកផ្ញើ ដែលធ្វើឡើងក្នុងគោលបំណងជាក់លាក់មួយទៅកាន់អ្នកទទួលផល ហើយបានបញ្ចប់នៅពេលដែលធនាគាររបស់អ្នកទទួលផលបានទទួល។AAAAAAAAAAA";
+}
+
+
+<!-- Page START -->
+<main class="mastbody">
+
+	<!--
+		ការផ្ទេរប្រាក់ចូលនិងការផ្ទេរប្រាក់ចេញ
+	-->
+	<div class="topkv kv  kv--txt-left">
+		<div class="kv-bg">
+			<div class="kv-bg-inner">
+				<figure class="kv-bg-img">
+					<picture>
+						<source media="(min-width:769px)" srcset="/assets/img/topkv/personal-remittance.jpg" />
+						<img srcset="/assets/img/topkv/personal-remittance-mb.jpg">
+					</picture>
+				</figure>
+			</div>
+		</div>
+		<div class="kv-cont">
+			<div class="kv-cont-inner">
+				<h2 class="display-1  fw-bold lh-xs">ការផ្ទេរប្រាក់</h2>
+			</div>
+		</div>
+	</div>
+
+	<!-- Breadcrumb  (lays on top of .topkv if places right after it) -->
+	<nav class="breadcrumb-nav text-white" aria-label="breadcrumb">
+		<div class="fluid">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]"><span>ទំព័រដើម</span><i class="ico-ui-home"></i></a></li>
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]personal/">សេវាកម្មធនាគារផ្ទាល់ខ្លួន</a></li>
+				<li class="breadcrumb-item active" aria-current="page">ការផ្ទេរប្រាក់ចូលនិងការផ្ទេរប្រាក់ចេញ</li>
+			</ol>
+		</div>
+	</nav>
+
+	<!-- Menu -->
+	<nav class="tabmenu    d-none d-sm-block">
+		<div class="tabmenu-inner">
+			<a class="tabmenu-btn active" href="@ViewData["siteLangUrl"]personal/inward-and-outward-remittance/">
+				<span class="tabmenu-btn-txt">ការផ្ទេរប្រាក់ចូលនិងការផ្ទេរប្រាក់ចេញ</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/payment-and-transfer/">
+				<span class="tabmenu-btn-txt">ការទូរទាត់និងការផ្ទេរប្រាក់</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+		</div>
+	</nav>
+	<!-- Mobile dropdown -->
+	<div class="tabmenu-dropdown dropdown    d-block d-sm-none">
+		<a href="javascript:;" class="btn btn-sm btn-block  dropdown-toggle" data-toggle="dropdown">
+			<span class="text-truncate d-inline-block">ការផ្ទេរប្រាក់ចូលនិងការផ្ទេរប្រាក់ចេញ</span>
+		</a>
+		<div class="dropdown-menu">
+			<span class="dropdown-item disabled">-- Select page --</span>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/inward-and-outward-remittance/">ការផ្ទេរប្រាក់ចូលនិងការផ្ទេរប្រាក់ចេញ</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/payment-and-transfer/">ការទូរទាត់និងការផ្ទេរប្រាក់</a>
+		</div>
+	</div>
+
+
+
+	<!--
+		ការផ្ទេរប្រាក់ចូលនិងការផ្ទេរប្រាក់ចេញ - Detail
+	-->
+	<section class="fluid overflow-hidden">
+
+		<div class="py-page"></div>
+
+		<!-- Page heading -->
+		<header class="compact  mb-5  text-center">
+			<h1 class="display-3 h1-mb  mb-3  text-black fw-bold">ការផ្ទេរប្រាក់ចូលនិងការផ្ទេរប្រាក់ចេញ</h1>
+			<p>ការផ្ទេរប្រាក់ (ការផ្ទេរប្រាក់ ការផ្ទេររូបិយវត្ថុ ឬការទូទាត់លើការបញ្ជាទិញ)គឺជាដំណើរការនៃការផ្ទេរប្រាក់ដែលចាប់ផ្តើមជាមួយនឹងការទូទាត់លើការបញ្ជាទិញរបស់លោកអ្នក ធ្វើឡើងក្នុងគោលបំណងជាក់លាក់ទៅកាន់អ្នកទទួលផលដែលបានកំណត់ ហើយបានបញ្ចប់នៅពេលទទួលយកដោយធនាគាររបស់អ្នកទទួលផល។</p>
+		</header>
+
+		<!-- Tabular data -->
+		<div class="tabular">
+
+			<div class="table-responsive-lg">
+				<table class="table h5-mb text-center">
+					<colgroup>
+						<col>
+						<col width="40%">
+						<col width="40%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col" class="h4 h4-mb">សេវា</th>
+							<th scope="col" class="h4 h4-mb">ថ្លៃសេវាផ្ទេរប្រាក់ចូល</th>
+							<th scope="col" class="h4 h4-mb">ថ្លៃសេវាផ្ទេរប្រាក់ចេញ</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">ផ្ទេរទៅក្រៅប្រទេស</th>
+							<td>សោហ៊ុយជើងសារ ០.១០% (យ៉ាងតិច USD១០ ឬ KHR៤០,០០០ សម្រាប់គណនីKHR)</td>
+							<td>
+								សោហ៊ុយជើងសារ ០.២០% (យ៉ាងតិច USD១៥ ឬ KHR៦០,០០០ សម្រាប់គណនីKHR)
+								+ សោហ៊ុយសារទូរលេខ USD២០ ឬ KHR៨០,០០០ សម្រាប់គណនីKHR
+								(ថ្លៃសេវាបន្ថែមចំនួន USD៣០.០០ នឹងត្រូវគិតថ្លៃ ប្រសិនបើលោកអ្នកជ្រើសរើសជម្រើស ”OUR” ឬសោហ៊ុយទាំងអស់ជាបន្ទុករបស់អ្នកស្នើសុំ)
+							</td>
+						</tr>
+						<tr>
+							<th scope="row">ផ្ទេរក្នុងប្រទេស</th>
+							<td>USD៥ ឬ KHR២០,០០០ សម្រាប់គណនីKHR</td>
+							<td>សោហ៊ុយជើងសារ ០.០៥% (យ៉ាងតិច USD៥ ឬ KHR២០,០០០ សម្រាប់គណនីKHR)</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div><!--/.tabular-->
+
+		<ul class="list-disc  mt-4  h6 h6-mb">
+			<li>ថ្លៃសេវារបស់ធនាគារក្រៅប្រទេសដែលកើតឡើងសម្រាប់ការផ្ទេរប្រាក់ទៅក្រៅប្រទេសនឹងត្រូវគិតថ្លៃដោយផ្អែកលើថ្លៃសេវាជាក់ស្តែងដែលគិតដោយធនាគារក្រៅប្រទេស។</li>
+			<li>សោហ៊ុយជើងសារនិងការគិតថ្លៃទាំងអស់អាចផ្លាស់ប្តូរទៅតាមការសម្រេចរបស់ធនាគារ។</li>
+			<li>ភាគីទីបី និងថ្លៃសេវាផ្សេងទៀតណាមួយដែលអនុវត្តនឹងត្រូវបានគិតថ្លៃសេវាតាមជាក់ស្តែង។</li>
+		</ul>
+
+		<div class="py-page"></div>
+	</section>
+
+</main>
+<!-- Page END -->

@@ -1,0 +1,101 @@
+﻿@model CathayBankKh.Models.ApplyOnlineOtpModel
+
+@{
+    Layout = null;
+}
+
+<section>
+    <!--
+        Form - OTP
+    -->
+    <!-- Section heading -->
+    <div class="d-flex align-items-center flex-column px-2 py-3 px-sm-3 px-lg-4 mb-3">
+        <h5 class="display-6 text-center font-weight-bold mb-2">Applicant must be:</h5>
+        <ul class="list-disc">
+            <li>Cambodian</li>
+            <li>18-50 Years Old</li>
+            <li>Monthly Income ≥ $200</li>
+            <li>Check CBC</li>
+            <li>Working at least 3 months at current company</li>
+        </ul>
+        <div class="py-4">
+            <input type="checkbox" id="confirm" required>
+            <label for="confirm">
+                I agree with CUBC’s Cardmember Agreement:
+                <a style="color: #007aff; text-decoration: underline;" target="_blank" href="https://www.cathaybk.com.kh/file/Agreement.pdf">Click here</a>
+                <span class="text-red">*</span>
+            </label>
+        </div>
+    </div>
+
+
+
+    <h3 class="h1 h2-mb  mb-4  text-black fw-bold lh-sm">Verify Your Identity</h3>
+
+    <!-- Gray container -->
+    <div class="bg-gray-100  px-3 py-4 px-sm-4 px-lg-5">
+
+        <!-- Form fields START -->
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="idNumber">ID Number<span class="text-red">*</span></label>
+                <input type="text" class="form-control" id="idNumber" placeholder="ID Number" required pattern="^[0-9]{9,10}$" maxlength="10"> <!--最多十位數字-->
+                <div class="invalid-feedback">Please check your input data.</div>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="dateOfBirth">Date of Birth<span class="text-red">*</span></label>
+                <input type="text" class="form-control" id="dateOfBirth" placeholder="DD/MM/YYYY" required>
+                <div class="invalid-feedback">Please check your input data.</div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="referralCode">Referral Code</label>
+                <input type="text" class="form-control" id="referralCode" placeholder="Referral Code" maxlength="15"><!--最少十位(最多十五位)-->
+                <div class="invalid-feedback">Please check your input data.</div>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="phoneNumber">Phone Number<span class="text-red">*</span></label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="basic-addon1">+855(0)</span>
+                    </div>
+                    <input type="text" class="form-control" id="phoneNumber" placeholder="Phone Number" required pattern="^[0-9]{8,12}$" maxlength="12"> <!--最少十位(最多二十位)-->
+                    <div class="input-group-append d-md-inline-block d-none">
+                        <button class="btn btn-green rounded-right" type="button" id="getOtpBtn" style="z-index: 1;">Get OTP Code</button>
+                    </div>
+                    <div class="invalid-feedback">Please check your input data.</div>
+                </div>
+                <div class="input-group mt-3 d-md-none d-flex">
+                    <button class="btn btn-green rounded-right" type="button" id="getOtpBtnPhone" style="z-index: 1;">Get OTP Code</button>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="verifyCode">The Verify Code<span class="text-red">*</span></label>
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text d-none" id="otpPac"></span>
+                    </div>
+                    <input type="text" class="form-control" id="verifyCode" placeholder="The Verify Code" required  pattern="^[0-9]{6}$" maxlength="6" disabled>
+                    <div class="invalid-feedback">Please check your input data.</div>
+                </div>
+            </div>
+            <div class="form-group col-md-6">
+                <label for="promoCode">Promo Code</label>
+                <input type="text" class="form-control" id="promoCode" placeholder="Promo Code" maxlength="10" disabled><!--最多十位-->
+                <div class="invalid-feedback">Please check your input data.</div>
+            </div>
+        </div>
+        <!-- Form fields END -->
+    </div>
+
+    <div class="text-center my-4">
+        <button type="button" id="verifyOtpAndGoNextBtn" class="btn btn-green">
+            <span class="px-2">Next Step<i class="ico-ui-right-v ml-2 big"></i></span>
+        </button>
+    </div>
+
+</section>
+<!-- Page END -->

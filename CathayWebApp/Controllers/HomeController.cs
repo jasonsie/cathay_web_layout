@@ -18,6 +18,7 @@ public class HomeController : BaseController
         // Setup language and common view data
         SetupLanguageViewData(language);
         SetupCommonViewData("home/");
+        SetupSiteLangUrl(language);
         
         return View();
     }
@@ -26,6 +27,7 @@ public class HomeController : BaseController
     {
         SetupLanguageViewData(language);
         SetupCommonViewData("home/", "privacy");
+        SetupSiteLangUrl(language);
         
         return View();
     }
@@ -34,5 +36,17 @@ public class HomeController : BaseController
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+    }
+
+    private void SetupSiteLangUrl(string language)
+    {
+        // Set up the site language URL for use in views
+        ViewData["siteLangUrl"] = language switch
+        {
+            "zh-hant" => "/zh-hant/",
+            "en" => "/en/",
+            "km" => "/km/",
+            _ => "/zh-hant/"
+        };
     }
 }

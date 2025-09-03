@@ -1,0 +1,234 @@
+﻿@{
+   ViewData["PageTitle"] = "Fixed Deposit";
+   ViewData["PageDescription"] = "Cathay United Bank fixed deposit account is a safe and secure way to earn higher fixed rate of interest on your savings, guaranteed for the entire period your money is invested.";
+}
+
+
+<!-- Page START -->
+<main class="mastbody">
+	
+	<!--
+		Fixed Deposit
+	-->
+	<div class="topkv kv  kv--txt-left">
+		<div class="kv-bg">
+			<div class="kv-bg-inner">
+				<figure class="kv-bg-img">
+					<picture>
+						<source media="(min-width:769px)" srcset="/assets/img/topkv/personal-deposit.jpg" />
+						<img srcset="/assets/img/topkv/personal-deposit-mb.jpg">
+					</picture>
+				</figure>
+			</div>
+		</div>
+		<div class="kv-cont">
+			<div class="kv-cont-inner">
+				<h2 class="display-1  fw-bold lh-xs">Deposit Accounts</h2>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Breadcrumb  (lays on top of .topkv if places right after it) -->
+	<nav class="breadcrumb-nav text-white" aria-label="breadcrumb">
+		<div class="fluid">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]"><span>Home</span><i class="ico-ui-home"></i></a></li>
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]personal/">Personal Banking</a></li>
+				<li class="breadcrumb-item active" aria-current="page">Fixed Deposit</li>
+			</ol>
+		</div>
+	</nav>
+	
+	<!-- Menu -->
+	<nav class="tabmenu    d-none d-sm-block">
+		<div class="tabmenu-inner">
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/current-account/">
+				<span class="tabmenu-btn-txt">Current Account</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/savings-account/">
+				<span class="tabmenu-btn-txt">Savings Account</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn active" href="@ViewData["siteLangUrl"]personal/fixed-deposit/">
+				<span class="tabmenu-btn-txt">Fixed Deposit</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/deposit-pricing-guide/">
+				<span class="tabmenu-btn-txt">Deposit Pricing Guide</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+		</div>
+	</nav>
+	<!-- Mobile dropdown -->
+	<div class="tabmenu-dropdown dropdown    d-block d-sm-none">
+		<a href="javascript:;" class="btn btn-sm btn-block  dropdown-toggle" data-toggle="dropdown">
+			<span class="text-truncate d-inline-block">Fixed Deposit</span>
+		</a>
+		<div class="dropdown-menu">
+			<span class="dropdown-item disabled">-- Select page --</span>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/current-account/">Current Account</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/savings-account/">Savings Account</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/fixed-deposit/">Fixed Deposit</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/deposit-pricing-guide/">Deposit Pricing Guide</a>
+		</div>
+	</div>
+
+	
+	
+	<!--
+		Fixed Deposit - Detail
+	-->
+	<section class="fluid overflow-hidden">
+		<div class="py-page"></div>
+		
+		<!-- Page heading -->
+		<header class="compact  mb-5  text-center">
+			<h1 class="display-3 h1-mb  mb-3  text-black fw-bold">Fixed Deposit</h1>
+			<p>You may prefer to tuck away sums in a fixed term account with a fixed interest rate, which offers more precise forward financial planning. Cathay United Bank fixed deposit account is a safe and secure way to earn higher fixed rate of interest on your savings, guaranteed for the entire period your money is invested. If you know exactly how long you can invest your money before you need it back, this could be the ideal savings vehicle for you. The placement starts with only USD1,000 (KHR4,000,000.00) and we offer wide ranges of placement periods ranging from 3 months to 12 months depending on the amount of deposit.</p>
+		</header>
+		
+		<!-- Tabular data -->
+		<div class="tabular">
+	
+			<!-- Block heading -->
+			<h3 class="h3 h3-mb  mb-3  text-black fw-bolder">Personal</h3>
+	
+			<div class="table-responsive-lg">
+				<table class="table h5-mb text-center">
+					<colgroup>
+						<col>
+						<col width="35%">
+						<col width="35%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col" class="h4 h4-mb">Currency</th> 
+							<th scope="col" class="h4 h4-mb">
+								<img class="flag-sm mr-sm-2" src="/assets/img/ui/flag-kh.png"><br class="d-block d-sm-none">KHR
+							</th>
+							<th scope="col" class="h4 h4-mb">
+								<img class="flag-sm mr-sm-2" src="/assets/img/ui/flag-us.png"><br class="d-block d-sm-none">USD
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row">Initial Deposit</th>
+							<td>≥ KHR 4,000,000.00</td>
+							<td>≥ USD 1,000.00</td>
+						</tr>
+						<tr>
+							<th scope="row">3 months</th>
+							<td>3.50% P.A</td>
+							<td>2.50% P.A</td>
+						</tr>
+						<tr>
+							<th scope="row">6 months</th>
+							<td>4.75% P.A</td>
+							<td>3.50% P.A</td>
+						</tr>
+						<tr>
+							<th scope="row">12 months</th>
+							<td>5.75% P.A</td>
+							<td>4.00% P.A</td>
+						</tr>
+						<tr>
+							<th scope="row"></th>
+							<td>Replacement of lost Fixed Deposit Certificate KHR 20,000.00</td>
+							<td colspan="2">Replacement of lost Fixed Deposit Certificate USD 5.00</td>
+					
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div><!--/.tabular-->
+
+		<ul class="list-disc  mt-4  h6 h6-mb">
+			<li>Interest on fixed deposit account is subject to withholding tax.</li>
+			<li>Early uplifting is subject to arrangement.</li>
+			<li>The Fixed Deposit Interest Rates will be followed by CUBC Bank counter.</li>
+		</ul>
+		
+		<div class="py-section"></div>
+		
+		
+		<!-- Section heading -->
+		<h3 class="h1 h2-mb  mb-4  text-black fw-bold lh-sm">Miscellaneous</h3>
+		
+		<!-- Tabular data -->
+		<div class="tabular">
+			<div class="table-responsive-lg">
+				<table class="table h5-mb text-center">
+					<colgroup>
+						<col>
+						<col width="35%">
+						<col width="35%">
+					</colgroup>
+					<thead>
+						<tr>
+							<th scope="col" class="h4 h4-mb">Currency</th> 
+							<th scope="col" class="h4 h4-mb">
+								<img class="flag-sm mr-sm-2" src="/assets/img/ui/flag-kh.png"><br class="d-block d-sm-none">KHR
+							</th>
+							<th scope="col" class="h4 h4-mb">
+								<img class="flag-sm mr-sm-2" src="/assets/img/ui/flag-us.png"><br class="d-block d-sm-none">USD
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th scope="row" rowspan="2">Past Statement Request</th>
+							<td>KHR 4,000.00<br><small class="d-inline-block lh-md text-gray-700">*per month</small></td>
+							<td>USD 1.00<br><small class="d-inline-block lh-md text-gray-700">*per month</small></td>
+						</tr>
+						<tr>
+					
+							<td>KHR 40,000.00<br><small class="d-inline-block lh-md text-gray-700">*per year</small></td>
+							<td>USD 10.00<br><small class="d-inline-block lh-md text-gray-700">*per year</small></td>
+						</tr>
+						<tr>
+                            <th scope="row">Balance Confirmation</th>
+							<td>KHR 20,000.00<br><small class="d-inline-block lh-md text-gray-700">*per request</small></td>
+							<td>USD 5.00<br><small class="d-inline-block lh-md text-gray-700">*per request</small></td>
+						</tr>
+						<tr>
+							<th scope="row">Audit Confirmation</th>
+							<td>KHR 80,000.00<br><small class="d-inline-block lh-md text-gray-700">*per request+postage (if applicable)</small></td>
+							<td>USD 20.00<br><small class="d-inline-block lh-md text-gray-700">*per request+postage (if applicable)</small></td>
+						</tr>
+						<tr>
+							<th scope="row">Letter of Reference</th>
+							<td>KHR 40,000.00<br><small class="d-inline-block lh-md text-gray-700">*per request</small></td>
+							<td>USD 10.00<br><small class="d-inline-block lh-md text-gray-700">*per request</small></td>
+						</tr>
+						<tr>
+							<th scope="row">Standing Order</th>
+							<td>KHR 20,000.00<br><small class="d-inline-block lh-md text-gray-700">*per payee</small></td>
+							<td>USD 5.00<br><small class="d-inline-block lh-md text-gray-700">*per payee</small></td>
+						</tr>
+						<tr>
+							<th scope="row">Salary Payment Instructions</th>
+							<td>FREE</td>
+							<td>FREE</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div><!--/.tabular-->
+
+		<ul class="list-disc  mt-4  h6 h6-mb">
+			<li>All rates and fee charges are subject to change without notice at the Bank's sole discretion.</li>
+			<li>Third party and other charges which may be applicable will be charged accordingly.</li>
+			<li>Acceptance of Foreign Currency checks and other bank's checks is at the sole discretion of the bank.</li>
+			<li>Other Terms and Conditions apply.</li>
+		</ul>
+
+		
+
+		
+		<div class="py-page"></div>
+	</section>
+	
+</main>
+<!-- Page END -->

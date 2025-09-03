@@ -1,0 +1,228 @@
+@{
+   ViewData["PageTitle"] = "紅利回饋";
+	ViewData["PageDescription"] = "單筆消費每滿2美元,累積1點CashPoint 點數加速器：在柬埔寨的餐廳、咖啡廳、超市、百貨公司與加油站的實體商店刷卡消費。";
+}
+
+
+<!-- Page START -->
+<main class="mastbody">
+	<!--
+		紅利回饋
+	-->
+	<div class="topkv kv  kv--txt-left">
+		<div class="kv-bg">
+			<div class="kv-bg-inner">
+				<figure class="kv-bg-img">
+					<picture>
+						<source media="(min-width:769px)" srcset="/assets/img/topkv/personal-cards.jpg" />
+						<img srcset="/assets/img/topkv/personal-cards-mb.jpg">
+					</picture>
+				</figure>
+			</div>
+		</div>
+		<div class="kv-cont">
+			<div class="kv-cont-inner">
+				<h2 class="display-1-sm  fw-bold lh-xs">信用卡與簽帳卡</h2>
+			</div>
+		</div>
+	</div>
+	
+	<!-- Breadcrumb  (lays on top of .topkv if places right after it) -->
+	<nav class="breadcrumb-nav text-white" aria-label="breadcrumb">
+		<div class="fluid">
+			<ol class="breadcrumb">
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]"><span>首頁</span><i class="ico-ui-home"></i></a></li>
+				<li class="breadcrumb-item"><a href="@ViewData["siteLangUrl"]personal/">個人金融</a></li>
+				<li class="breadcrumb-item active" aria-current="page">紅利回饋</li>
+			</ol>
+		</div>
+	</nav>
+	
+	<!-- Menu -->
+	<nav class="tabmenu    d-none d-sm-block">
+		<div class="tabmenu-inner">
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/credit-cards/">
+				<span class="tabmenu-btn-txt">信用卡</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/debit-cards/">
+				<span class="tabmenu-btn-txt">簽帳卡</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/card-promotions/">
+				<span class="tabmenu-btn-txt">用卡優惠</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn active" href="@ViewData["siteLangUrl"]personal/rewards-program/">
+				<span class="tabmenu-btn-txt">紅利回饋</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/cubc-exclusive/">
+				<span class="tabmenu-btn-txt">點數禮遇</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+			<a class="tabmenu-btn" href="@ViewData["siteLangUrl"]personal/apply-online?Channel=Website">
+				<span class="tabmenu-btn-txt">線上申請</span>
+				<i class="tabmenu-btn-line"></i>
+			</a>
+		</div>
+	</nav>
+	<!-- Mobile dropdown -->
+	<div class="tabmenu-dropdown dropdown    d-block d-sm-none">
+		<a href="javascript:;" class="btn btn-sm btn-block  dropdown-toggle" data-toggle="dropdown">
+			<span class="text-truncate d-inline-block">紅利回饋</span>
+		</a>
+		<div class="dropdown-menu">
+			<span class="dropdown-item disabled">-- 前往頁面 --</span>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/credit-cards/">信用卡</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/debit-cards/">簽帳卡</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/card-promotions/">用卡優惠</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/rewards-program/">紅利回饋</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/cubc-exclusive/">點數禮遇</a>
+			<a class="dropdown-item text-truncate" href="@ViewData["siteLangUrl"]personal/apply-online?Channel=Website">線上申請</a>
+		</div>
+	</div>
+
+	
+	
+	<!--
+		紅利回饋 - Detail
+	-->
+	<section class="fluid overflow-hidden">
+		
+		<div class="py-page"></div>
+		
+		<!-- Page heading -->
+		<header class="compact  mb-5  text-center">
+			<h1 class="display-3 h1-mb  mb-3  text-black fw-bold">紅利回饋</h1> 
+		</header>
+		
+		
+		<!-- Section heading -->
+		<h2 class="h1 h2-mb  mb-4  text-black fw-bold text-center lh-sm">如何快速賺取現金點數</h2>
+		
+		
+		<!-- Features -->
+		<section class="compact px-xl-4">
+			<!-- Graph icon list #1  (3 in a row) -->
+			<ul class="row  justify-content-center  mb-n4">
+	
+				<!-- Graph item -->
+				<li class="col-12 col-md-4  mb-4  px-md-1 px-xl-4   d-flex flex-md-column align-items-md-center ie11fix">
+					<figure class="graph  mx-3 mx-md-0  flex-shrink-0  mb-md-3">
+						<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/cubc-reward.svg">
+					</figure>
+					<div class="text-md-center">
+						<h5 class="h3 h3-mb  mb-2 mb-md-3  text-dark fw-bolder lh-sm minh-lg-48">Purchase Rewards</h5>
+						<p>
+							每筆消費皆可獲得現金點數,並以其消費金額之0.5%計算。
+							每1點現金點數可兌換1美元現金回饋。
+						</p>
+					</div>
+				</li>
+	
+				<!-- Graph item -->
+				<li class="col-12 col-md-4  mb-4  px-md-1 px-xl-4   d-flex flex-md-column align-items-md-center ie11fix">
+					<figure class="graph  mx-3 mx-md-0  flex-shrink-0  mb-md-3">
+						<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/cubc-10x.svg">
+					</figure>
+					<div class="text-md-center">
+						<h5 class="h3 h3-mb  mb-2 mb-md-3  text-dark fw-bolder lh-sm minh-lg-48">Selected Merchants Rewards</h5>
+						<p>於指定商家消費並符合活動條件，可享有高於0.5%回饋。</p>
+					</div>
+				</li>
+	
+				<!-- Graph item -->
+				<li class="col-12 col-md-4  mb-4  px-md-1 px-xl-4   d-flex flex-md-column align-items-md-center ie11fix">
+					<figure class="graph  mx-3 mx-md-0  flex-shrink-0  mb-md-3">
+						<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/cubc-welcome.svg">
+					</figure>
+					<div class="text-md-center">
+						<h5 class="h3 h3-mb  mb-2 mb-md-3  text-dark fw-bolder lh-sm minh-lg-48">Welcome Rewards</h5>
+						<p>申辦金卡與白金卡，即有機會獲得刷卡禮。</p>
+					</div>
+				</li>
+			</ul>
+		
+			<div class="py-section"></div>
+			
+			<!-- Info box -->
+			<h3 class="h3 h3-mb  p-3  bg-green text-white text-center fw-bolder">點數加速器</h3>
+			
+			<div class="py-4 px-2 px-lg-4  border border-green text-center">
+				<p class="mb-3">在柬埔寨的餐廳、咖啡廳、超市與加油站的實體商店刷卡消費,皆可享有倍增的點數回饋。</p>
+				
+				<!-- Graph icon list #3  (3 in a row) -->
+				<ul class="row  justify-content-center  mb-n4">
+	
+					<!-- Graph item -->
+					<li class="col-4  mb-4  px-1 px-xl-4   d-flex flex-column align-items-center ie11fix">
+						<figure class="graph-flat  mx-3 mx-0  flex-shrink-0  mb-3">
+							<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/cubc-boost-2x.svg">
+						</figure>
+						<div class="text-center">
+							<h5 class="h4 h4-mb  text-green-dark fw-bold lh-sm">普卡&金卡</h5> 
+						</div>
+					</li>
+	
+					<!-- Graph item -->
+					<li class="col-4  mb-4  px-1 px-xl-4   d-flex flex-column align-items-center ie11fix">
+						<figure class="graph-flat  mx-3 mx-0  flex-shrink-0  mb-3">
+							<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/cubc-boost-3x.svg">
+						</figure>
+						<div class="text-center">
+							<h5 class="h4 h4-mb  text-green-dark fw-bold lh-sm">白金卡</h5>
+						</div>
+					</li>
+	
+					<!-- Graph item -->
+					<li class="col-4  mb-4  px-1 px-xl-4   d-flex flex-column align-items-center ie11fix">
+						<figure class="graph-flat  mx-3 mx-0  flex-shrink-0  mb-3">
+							<img class="ofi-contain lazy" data-src="/assets/img/ui/graph/cubc-boost-5x.svg">
+						</figure>
+						<div class="text-center">
+							<h5 class="h4 h4-mb  text-green-dark fw-bold lh-sm">世界卡&無限卡</nobr></h5>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</section>
+		
+		<div class="py-page"></div> 
+		
+		
+		
+		<!-- Section heading -->
+		<h2 class="h1 h2-mb  mb-4  text-black fw-bold text-center lh-sm">如何使用現金點數</h2>
+		
+		<!-- Two-columns -->
+		<section class="row mx-sm-n2 mx-xl-n3">
+			
+			<!-- Left column -->
+			<div class="col-12 col-sm-6 d-flex">
+				<div class="w-100 bg-gray-100  mx-sm-2 mx-xl-3  px-3 py-4 p-sm-4 p-lg-5">
+					<h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">現金回饋</h3>
+					<p>透過登記於CUBC信用卡的電子信箱寄信至：<a class="text-green text-underline" href="mailto:rewards@cathaybk.com.kh">rewards@cathaybk.com.kh</a>，即可以1點現金點數兌換1美元現金回饋。</p>
+				</div>
+			</div>
+			
+			<!-- Right column -->
+			<div class="col-12 col-sm d-flex    mt-3 mt-sm-0">
+				<div class="w-100 bg-gray-100  mx-sm-2 mx-xl-3  px-3 py-4 p-sm-4 p-lg-5">
+					<h3 class="h2 h2-mb  mb-3 text-gold fw-bold lh-md">點數專屬禮遇</h3>
+					<p>使用現金點數可享有更多合作特店提供的專屬禮遇。 <a class="text-green text-underline" href="@ViewData["siteLangUrl"]personal/cubc-exclusive/">了解更多</a></p>
+				</div>
+			</div>
+		</section>
+		
+		<div class="py-page"></div>
+		
+		
+		<p class="text-center">了解更多<a class="text-green text-underline" rel="noopener noreferrer" href="/file/card-promotions/[Terms and Conditions] Rewards Program 2025.pdf" target="_blank">條款與條件</a></p>
+		
+		
+		<div class="py-page"></div>
+	</section>
+
+</main>
+<!-- Page END -->

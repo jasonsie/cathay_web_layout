@@ -7,8 +7,7 @@ namespace CathayWebApp.Controllers
         protected void SetupLanguageViewData(string language = "zh-hant")
         {
             // Validate and set default language if invalid
-            var validLanguages = new[] { "zh-hant", "en", "km" };
-            if (!validLanguages.Contains(language))
+            if (!IsValidLanguage(language))
             {
                 language = "zh-hant";
             }
@@ -50,6 +49,24 @@ namespace CathayWebApp.Controllers
             ViewData["subsection"] = subsection;
             ViewData["PageTitle"] = "";
             ViewData["PageDescription"] = "";
+        }
+
+        protected void SetupSiteLangUrl(string language)
+        {
+            // Set up the site language URL for use in views
+            ViewData["siteLangUrl"] = language switch
+            {
+                "zh-hant" => "/zh-hant/",
+                "en" => "/en/",
+                "km" => "/km/",
+                _ => "/zh-hant/"
+            };
+        }
+
+        protected bool IsValidLanguage(string language)
+        {
+            var validLanguages = new[] { "zh-hant", "en", "km" };
+            return validLanguages.Contains(language?.ToLower());
         }
     }
 }

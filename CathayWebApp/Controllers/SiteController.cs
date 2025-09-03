@@ -279,23 +279,5 @@ namespace CathayWebApp.Controllers
             
             return System.IO.File.Exists(physicalPath);
         }
-
-        private void SetupSiteLangUrl(string language)
-        {
-            // Set up the site language URL for use in views
-            ViewData["siteLangUrl"] = language switch
-            {
-                "zh-hant" => "/zh-hant/",
-                "en" => "/en/",
-                "km" => "/km/",
-                _ => "/zh-hant/"
-            };
-        }
-
-        private bool IsValidLanguage(string language)
-        {
-            var validLanguages = new[] { "zh-hant", "en", "km" };
-            return validLanguages.Contains(language?.ToLower());
-        }
     }
 }
